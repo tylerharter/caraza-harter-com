@@ -12,7 +12,8 @@ def main():
             new = path[:-len(suffix)] + '.html'
             print('%s => %s' % (path, new))
             with open(new, 'w') as f:
-                f.write(template.replace("{CONTENT}", content))
+                full = template.replace("{CONTENT}", content)
+                f.write(full)
 
 if __name__ == '__main__':
     main()
