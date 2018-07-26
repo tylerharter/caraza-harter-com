@@ -40,6 +40,17 @@ class Syncer:
                       Body=commit.encode('utf-8'),
                       ContentType='text/plain')
 
+    def delete_path(self, local_path):
+        s3_path = self.get_s3_path(local_path)
+        if s3_path.startswith('..'):
+            print('SKIP ' + local_path)
+            return
+        print('DELETE %s' % (s3_path))
+
+        # do upload
+        if not self.dry:
+            s3.delete_object(Bucket=self.bucket, Key=s3_path)
+
     def sync_path(self, local_path):
         s3_path = self.get_s3_path(local_path)
         if s3_path.startswith('..'):
@@ -64,15 +75,20 @@ class Syncer:
                 local_path = os.path.join(dirpath, filename)
                 sync_path(local_path)
         self.set_last_commit(git.Repo('.').commit().hexsha)
-                    
+
     def sync(self):
         repo = git.Repo('.')
         prev = repo.commit(self.get_last_commit())
         curr = repo.commit()
         for d in prev.diff(curr):
             change_type = d.change_type
+            print('GIT: %s %s' % (change_type, d.b_path))
             if change_type in ['A', 'M']:
                 self.sync_path(d.b_path)
+            elif change_type in ['D']:
+                self.delete_path(d.b_path)
+            else:
+                print('Cannot sync mutations of type "%s" yet, please resync all.' % change_type)
         if not self.dry:
             self.set_last_commit(curr.hexsha)
 
