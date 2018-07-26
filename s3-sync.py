@@ -87,6 +87,9 @@ class Syncer:
                 self.sync_path(d.b_path)
             elif change_type in ['D']:
                 self.delete_path(d.b_path)
+            elif change_type in ['R']:
+                self.delete_path(d.a_path)
+                self.sync_path(d.b_path)
             else:
                 print('Cannot sync mutations of type "%s" yet, please resync all.' % change_type)
         if not self.dry:
