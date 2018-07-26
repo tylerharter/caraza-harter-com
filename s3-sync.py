@@ -6,9 +6,9 @@ s3 = boto3.client('s3')
 
 class Syncer:
     def __init__(self):
-        self.subdomain = 'tyler'
+        self.subdomain = 'tyler' # will be the root directory locally
         self.bucket = self.get_web_bucket('%s.caraza-harter.com' % self.subdomain)
-        print(self.bucket)
+        self.dry = False # dry run
     
     def get_web_bucket(self, search):
         for bucket in s3.list_buckets()['Buckets']:
@@ -29,13 +29,6 @@ class Syncer:
     def get_s3_path(self, local_path):
         return os.path.relpath(local_path, self.subdomain)
 
-    def get_content_type(self, path):
-        ext = path.split('.')[-1]
-        return {
-            'htm': 'text/html',
-            'html': 'text/html',
-        }.get(ext, 'string')
-
     def get_last_commit(self):
         response = s3.get_object(Bucket=self.bucket,
                                      Key='commit.txt')
@@ -47,31 +40,41 @@ class Syncer:
                       Body=commit.encode('utf-8'),
                       ContentType='text/plain')
 
+    def sync_path(self, local_path):
+        s3_path = self.get_s3_path(local_path)
+        if s3_path.startswith('..'):
+            print('SKIP ' + local_path)
+            return
+        print('%s => %s' % (local_path, s3_path))
+
+        # do upload
+        with open(local_path, 'rb') as f:
+            ContentType = mimetypes.guess_type(local_path)[0]
+            if ContentType == None:
+                ContentType = 'string'
+            if not self.dry:
+                s3.put_object(Bucket=self.bucket,
+                              Key=s3_path,
+                              Body=f,
+                              ContentType=ContentType)
+
     def sync_all(self):
         for dirpath,_,filenames in os.walk(self.subdomain):
             for filename in filenames:
                 local_path = os.path.join(dirpath, filename)
-                s3_path = self.get_s3_path(local_path)
-                print(local_path, s3_path)
-
-                # do upload
-                with open(local_path, 'rb') as f:
-                    ContentType = mimetypes.guess_type(local_path)[0]
-                    if ContentType == None:
-                        ContentType = 'string'
-                    print(ContentType)
-                    s3.put_object(Bucket=self.bucket,
-                                  Key=s3_path,
-                                  Body=f,
-                                  ContentType=ContentType)
-
+                sync_path(local_path)
         self.set_last_commit(git.Repo('.').commit().hexsha)
                     
     def sync(self):
         repo = git.Repo('.')
         prev = repo.commit(self.get_last_commit())
         curr = repo.commit()
-        print(prev, curr)
+        for d in prev.diff(curr):
+            change_type = d.change_type
+            if change_type in ['A', 'M']:
+                self.sync_path(d.b_path)
+        if not self.dry:
+            self.set_last_commit(curr.hexsha)
 
 def main():
     Syncer().sync()
