@@ -35,3 +35,14 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+/*----------------------------------------------*/
+
+.week {
+    font-size: 16pt;
+    text-align: center;
+}
+
+.compact-ul {
+    margin-bottom: 0pt;
+}

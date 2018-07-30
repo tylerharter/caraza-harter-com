@@ -1,0 +1,43 @@
+No Class
+
+=
+Machine Org
+
+Topics:
+* CPU/Memory/Devices
+* File System
+* Network
+
+=
+UNIX Shell
+
+Topics:
+* Bash, Navigation
+* Programs+Arguments
+* Pipes+Redirects
+* Bash scripts
+
+=
+Memory
+
+Topics:
+* Bits+Bytes
+* Addresses
+* Numbers+Text
+
+=
+Computation
+
+Topics:
+* Registers
+* Instructions
+* Pseudocode
+
+=
+Programming
+
+Topics:
+* Syntax+Parsing
+* Values+Types
+* Calculation+Operators
+<b>Read</b>: Downey Chapter 1.
