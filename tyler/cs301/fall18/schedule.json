@@ -1,0 +1,9 @@
+{
+    "events":{
+	"4": ["Exam!  Details soon."]
+    },
+    "sections":{
+	"1": ["Part 1: Basic Programming"],
+	"5": ["Part 2: Structured Programming"]
+    }
+}

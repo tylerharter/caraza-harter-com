@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import calendar, os
+import calendar, os, json
 from datetime import date, timedelta
 
 def template():
@@ -17,7 +17,7 @@ def template():
                 f.write(full)
 
 def format_day(day):
-    lines = day.split('\n')
+    lines = list(filter(lambda line: not line.startswith('#'), day.split('\n')))
     out = []
     for i,line in enumerate(lines):
         if line.startswith('*'):
@@ -50,23 +50,40 @@ def schedule():
                 free += 1
             content = days.pop(0) if len(days)>0 else 'TBD\n...'
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
-            header = '<h4>%s: %s (%s)</h4>' % (curr.strftime("%a"),
+            header = '<h5><strong>%s</strong>: %s (%s)</h5>' % (curr.strftime("%a"),
                                                title,
                                                curr.strftime("%b %-d"))
             cells.append('%s\n%s\n' % (header, content))
     print('%d free days' % free)
 
+    with open('schedule.json') as extra_sched:
+        extra = json.loads(extra_sched.read())
+    events = extra['events'] # indexed by week
+    sections = extra['sections'] # indexed by week
+    
     # dump cells
     cols = 3
     for i in range(0, len(cells), cols):
+        week = i//cols+1
+
+        # sections
+        for section in sections.get(str(week), []):
+            f.write('<div class="alert alert-primary my-4 week">%s</div>\n' % section)
+
+        # days
         row = cells[i:i+cols]
-        f.write('<div class="alert alert-primary my-4 week">Week %d</div>\n' % (i/cols+1))
+        f.write('<h3 class="my-3 border-bottom border-top">Week %d</h2>\n' % week)
+        
         f.write('<div class="row">\n')
         for cell in row:
-            f.write('<div class="col-md-4">\n')
+            f.write('<div class="col-md-4 my-3">\n')
             f.write(cell)
             f.write('</div>\n')
         f.write('</div>\n')
+
+        # warnings
+        for event in events.get(str(week), []):
+            f.write('<div class="alert alert-danger my-2">%s</div>\n' % event)
     f.write('<br>')
 
     f.close()

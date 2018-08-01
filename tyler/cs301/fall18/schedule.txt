@@ -1,3 +1,7 @@
+################################################################################
+# PART 1
+################################################################################
+
 No Class
 
 =
@@ -15,7 +19,7 @@ Topics:
 * Bash, Navigation
 * Programs+Arguments
 * Pipes+Redirects
-* Bash scripts
+* Bash Scripts
 
 =
 Memory
@@ -40,4 +44,146 @@ Topics:
 * Syntax+Parsing
 * Values+Types
 * Calculation+Operators
-<b>Read</b>: Downey Chapter 1.
+<b>Read</b>: Downey Ch 1.
+
+=
+Vars and Exprs
+
+Topics:
+* Interactive vs. Script Mode, print
+* Naming Rules
+* Assignment
+* Types of errors
+* Comments
+
+<b>Read</b>: Downey Ch 2.
+
+=
+Using Functions
+
+Topics:
+* Functions
+* input, str funcs, float funcs
+* Arguments, Return Values
+* Importing Modules
+* Math Module
+
+<b>Read</b>: Downey Ch 3 (pgs 21-23).<br>
+<b>Due</b>: P1.
+
+=
+Creating Functions
+
+Topics:
+* Parameters
+* Scope: Local vs. Global
+* Stack Diagrams
+* Functions Type
+* TODO: diff materials about return values
+
+<b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61).
+
+=
+Conditions
+
+Topics:
+* Boolean Logic
+* if,elif,else
+* Reading Nested Code
+* True and "Truthy"
+* Modular arithmetic
+
+<b>Read</b>: Downey Ch 5 (pgs 47-51, 54-60).<br>
+<b>Optional</b>: Downey Ch 4.
+
+=
+Iteration
+
+Topics:
+* Reassignment
+* While Loop
+* Infinite Iteration
+* Break/Continue
+* TODO
+
+<b>Read</b>: Downey Ch 7.<br>
+
+=
+Strings
+
+Topics:
+* Indexing/Slicing
+* Sequences
+* For Loop, range()
+* Searching
+* Comparison
+* String formatting
+
+<b>Read</b>: Downey Ch 8.<br>
+<b>Optional</b>: Downey Ch 9.
+
+################################################################################
+# PART 2
+################################################################################
+
+=
+Lists
+* Sequence, Like a String
+* Indexing, Slicing
+* sys.argv, dir()
+* Mutable vs. Immutable
+* List Methods
+
+<b>Read</b>: Downey Ch 10 (pgs 107-111).<br>
+
+=
+Recursion
+
+Topics:
+* Base/Resursive Cases
+* Lists of Lists
+* Web Crawling
+* More Stack Diagrams
+* Stack Overflow
+
+<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6.
+
+=
+Functional Prog. w/ Lists
+* Anonymous Functions (lambdas)
+* Map, Filter, Sum
+* Sorting
+* List Comprehensions
+
+<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225).<br>
+
+=
+Objects
+* namedtuple
+* recordclass
+* references
+* object arguments
+* deep/shallow copy
+
+<b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc).<br>
+
+=
+CSV, tables
+
+TODO
+
+=
+Dictionaries
+* TODO
+
+<b>Read</b>: Downey Ch 11.<br>
+
+=
+JSON
+* TODO
+
+<b>Read</b>: TODO.<br>
+
+################################################################################
+# PART 3
+################################################################################
