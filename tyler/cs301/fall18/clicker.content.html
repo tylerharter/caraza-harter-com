@@ -1,0 +1,13 @@
+<h1 class="mt-5">Clicker Questions</h1>
+
+<!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+
+<a href="#" onclick="common.googleSignOut();">Sign out</a>
+
+<script>
+  function onSignIn(googleUser) {
+    // TODO: why can't this directly be the event?
+    common.googleSignIn(googleUser)
+  };
+</script>
