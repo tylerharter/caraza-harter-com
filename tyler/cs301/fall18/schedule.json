@@ -1,9 +1,10 @@
 {
     "events":{
-	"4": ["Exam!  Details soon."]
+	"5": ["Exam!  Details soon."]
     },
     "sections":{
 	"1": ["Part 1: Basic Programming"],
-	"5": ["Part 2: Structured Programming"]
+	"6": ["Part 2: Working with Data"],
+	"10": ["Part 3: Data Science"]
     }
 }

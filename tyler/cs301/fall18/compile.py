@@ -42,19 +42,22 @@ def schedule():
     day_count = (end_date - start_date).days + 1
 
     cells = []
+    full = 0
     free = 0
     for curr in (start_date + timedelta(n) for n in range(day_count)):
         day = calendar.day_abbr[curr.weekday()]
         if day in ['Mon', 'Wed', 'Fri']:
             if len(days) == 0:
                 free += 1
+            else:
+                full += 1
             content = days.pop(0) if len(days)>0 else 'TBD\n...'
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
             header = '<h5><strong>%s</strong>: %s (%s)</h5>' % (curr.strftime("%a"),
                                                title,
                                                curr.strftime("%b %-d"))
             cells.append('%s\n%s\n' % (header, content))
-    print('%d free days' % free)
+    print('%d free days, %d full days' % (free, full))
 
     with open('schedule.json') as extra_sched:
         extra = json.loads(extra_sched.read())
@@ -68,7 +71,7 @@ def schedule():
 
         # sections
         for section in sections.get(str(week), []):
-            f.write('<div class="alert alert-primary my-4 week">%s</div>\n' % section)
+            f.write('<div class="alert alert-primary my-5 week">%s</div>\n' % section)
 
         # days
         row = cells[i:i+cols]

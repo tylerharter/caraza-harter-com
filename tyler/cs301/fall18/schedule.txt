@@ -7,7 +7,6 @@ No Class
 =
 Machine Org
 
-Topics:
 * CPU/Memory/Devices
 * File System
 * Network
@@ -15,7 +14,6 @@ Topics:
 =
 UNIX Shell
 
-Topics:
 * Bash, Navigation
 * Programs+Arguments
 * Pipes+Redirects
@@ -24,7 +22,6 @@ Topics:
 =
 Memory
 
-Topics:
 * Bits+Bytes
 * Addresses
 * Numbers+Text
@@ -32,15 +29,15 @@ Topics:
 =
 Computation
 
-Topics:
 * Registers
 * Instructions
 * Pseudocode
 
+<b>Due</b>: P0 (ungraded).
+
 =
 Programming
 
-Topics:
 * Syntax+Parsing
 * Values+Types
 * Calculation+Operators
@@ -49,7 +46,6 @@ Topics:
 =
 Vars and Exprs
 
-Topics:
 * Interactive vs. Script Mode, print
 * Naming Rules
 * Assignment
@@ -61,7 +57,6 @@ Topics:
 =
 Using Functions
 
-Topics:
 * Functions
 * input, str funcs, float funcs
 * Arguments, Return Values
@@ -74,7 +69,6 @@ Topics:
 =
 Creating Functions
 
-Topics:
 * Parameters
 * Scope: Local vs. Global
 * Stack Diagrams
@@ -86,7 +80,6 @@ Topics:
 =
 Conditions
 
-Topics:
 * Boolean Logic
 * if,elif,else
 * Reading Nested Code
@@ -99,19 +92,18 @@ Topics:
 =
 Iteration
 
-Topics:
 * Reassignment
 * While Loop
 * Infinite Iteration
 * Break/Continue
-* TODO
 
 <b>Read</b>: Downey Ch 7.<br>
+<b>Due</b>: P2.
+
 
 =
 Strings
 
-Topics:
 * Indexing/Slicing
 * Sequences
 * For Loop, range()
@@ -121,6 +113,18 @@ Topics:
 
 <b>Read</b>: Downey Ch 8.<br>
 <b>Optional</b>: Downey Ch 9.
+
+=
+Simple Graphics
+* Lines
+* Squares
+* Circles
+
+=
+Slack Day
+
+=
+Exam 1
 
 ################################################################################
 # PART 2
@@ -137,9 +141,13 @@ Lists
 <b>Read</b>: Downey Ch 10 (pgs 107-111).<br>
 
 =
+CSV, tables
+
+TODO
+
+=
 Recursion
 
-Topics:
 * Base/Resursive Cases
 * Lists of Lists
 * Web Crawling
@@ -151,7 +159,7 @@ Topics:
 =
 Functional Prog. w/ Lists
 * Anonymous Functions (lambdas)
-* Map, Filter, Sum
+* Map, Filter, Sum, Max, Min
 * Sorting
 * List Comprehensions
 
@@ -159,8 +167,7 @@ Functional Prog. w/ Lists
 
 =
 Objects
-* namedtuple
-* recordclass
+* object, namedtuple, recordclass
 * references
 * object arguments
 * deep/shallow copy
@@ -168,22 +175,87 @@ Objects
 <b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc).<br>
 
 =
-CSV, tables
-
-TODO
-
-=
 Dictionaries
+* Dictionary Comprehensions
 * TODO
 
 <b>Read</b>: Downey Ch 11.<br>
 
 =
 JSON
-* TODO
+* Deserialization
+* Serialization
+* Pretty Printing
 
 <b>Read</b>: TODO.<br>
+
+=
+Flexible Args
+* *args
+* **kwargs
+* wrappers
+
+=
+Files and Directories
+
+=
+Error Handling
+* Catching Exceptions
+* Throwing Exceptions
+* Asserts
+
+=
+Web Content
+* urllib Module
+* Downloading Pages
+* RPCs
+
+=
+HTML
+* General Syntax
+* Tables
+* Generating
+* Parsing
 
 ################################################################################
 # PART 3
 ################################################################################
+
+=
+Plotting
+
+=
+Tracing
+* Date/Time Types
+* Collecting Logs
+* Parsing Logs
+* Plotting Time Data
+
+=
+Simulation
+* Randomness
+* Seeding
+* Distributions
+* Monte Carlo Simulation
+
+=
+Hypothesis Testing
+* Simulated p-values
+* <b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
+
+=
+Markov Models
+* Inference
+* Prediction
+
+=
+Jupyter Notebook
+
+=
+Numpy
+
+=
+Slack
+
+=
+Thanksgiving Break
