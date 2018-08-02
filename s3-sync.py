@@ -1,4 +1,4 @@
-import boto3, uuid, os, io, json, mimetypes, git
+import boto3, uuid, os, io, json, mimetypes, git, sys
 
 # https://s3.us-east-2.amazonaws.com/caraza-harter-4dcf7c05-8564-11e8-a86d-6a00020017a0/index.html
 
@@ -51,7 +51,7 @@ class Syncer:
         if not self.dry:
             s3.delete_object(Bucket=self.bucket, Key=s3_path)
 
-    def sync_path(self, local_path):
+    def sync_path(self, local_path, ttl=600):
         s3_path = self.get_s3_path(local_path)
         if s3_path.startswith('..'):
             print('SKIP ' + local_path)
@@ -67,7 +67,8 @@ class Syncer:
                 s3.put_object(Bucket=self.bucket,
                               Key=s3_path,
                               Body=f,
-                              ContentType=ContentType)
+                              ContentType=ContentType,
+                              CacheControl='max-age=%d'%ttl)
 
     def sync_all(self):
         for dirpath,_,filenames in os.walk(self.subdomain):
@@ -96,7 +97,15 @@ class Syncer:
             self.set_last_commit(curr.hexsha)
 
 def main():
-    Syncer().sync()
+    syncer = Syncer()
+    paths = sys.argv[1:]
+    if len(paths) == 0:
+        syncer.sync()
+    else:
+        for path in paths:
+            # use short cache timeout for these since we're debugging
+            print('sync %s' % path)
+            syncer.sync_path(path, ttl=10)
 
 if __name__ == '__main__':
     main()
