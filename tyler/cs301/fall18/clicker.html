@@ -75,7 +75,11 @@
 <!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> -->
 <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
-<a href="#" onclick="common.googleSignOut();">Sign out</a>
+<button type="button" class="btn btn-primary" onclick="common.googleSignOut()">Logoff</button>
+
+<button type="button" class="btn btn-primary" onclick="common.clickerSubmit()">Answer</button>
+
+<button type="button" class="btn btn-primary" onclick="common.clickerGetAnswers()">View Answers</button>
 
 <script>
   function onSignIn(googleUser) {
@@ -104,6 +108,6 @@
 	    crossorigin="anonymous"></script>
 
     <!-- main js -->
-    <script src="js/main2.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

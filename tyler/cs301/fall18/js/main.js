@@ -1,6 +1,9 @@
 var common = {};
 
 $(function() {
+    var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
+    var googleToken = null
+    
     function main() {
 	// highlight current page
 	var curr_page = window.location.pathname.split('/').slice(-1)[0]
@@ -18,7 +21,7 @@ $(function() {
 	auth2.signOut().then(function () {
 	    console.log('User signed out.');
 	});
-    }
+    };
 
     common.googleSignIn = function(googleUser) {
 	// Useful data for your client-side scripts:
@@ -31,8 +34,53 @@ $(function() {
 	console.log("Email: " + profile.getEmail());
 	
 	// The ID token you need to pass to your backend:
-	var id_token = googleUser.getAuthResponse().id_token;
-	console.log("ID Token: " + id_token);
+	googleToken = googleUser.getAuthResponse().id_token;
+	console.log("ID Token: " + googleToken);
+    };
+
+    common.clickerSubmit = function() {
+	var data = {
+	    "GoogleToken": googleToken,
+	    "fn": "answer",
+	    "question_id": "123",
+	    "answer": "A"
+	}
+
+	$.ajax({
+	    type: "POST",
+	    url: lambdaUrl,
+	    data: JSON.stringify(data),
+	    contentType: "application/json; charset=utf-8",
+	    dataType: "json",
+	    success: function(data){
+		console.log(data);
+	    },
+	    failure: function(errMsg) {
+		console.log(errMsg);
+	    }
+	});
+    };
+
+    common.clickerGetAnswers = function() {
+	var data = {
+	    "GoogleToken": googleToken,
+	    "fn": "get_answers",
+	    "question_id": "123"
+	}
+
+	$.ajax({
+	    type: "POST",
+	    url: lambdaUrl,
+	    data: JSON.stringify(data),
+	    contentType: "application/json; charset=utf-8",
+	    dataType: "json",
+	    success: function(data){
+		console.log(data);
+	    },
+	    failure: function(errMsg) {
+		console.log(errMsg);
+	    }
+	});
     };
 
     main()
