@@ -1,8 +1,11 @@
+"use strict";
+
 var common = {};
 
 $(function() {
     var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
     var googleToken = null
+    var currQuestionId = null
     
     function main() {
 	// highlight current page
@@ -17,6 +20,7 @@ $(function() {
     }
 
     common.googleSignOut = function() {
+	googleToken = null
 	var auth2 = gapi.auth2.getAuthInstance();
 	auth2.signOut().then(function () {
 	    console.log('User signed out.');
@@ -38,34 +42,65 @@ $(function() {
 	console.log("ID Token: " + googleToken);
     };
 
-    common.clickerSubmit = function() {
-	var data = {
-	    "GoogleToken": googleToken,
-	    "fn": "answer",
-	    "question_id": "123",
-	    "answer": "A"
-	}
-
+    function callLambda(data, successFn, failureFn) {
 	$.ajax({
 	    type: "POST",
 	    url: lambdaUrl,
 	    data: JSON.stringify(data),
 	    contentType: "application/json; charset=utf-8",
 	    dataType: "json",
-	    success: function(data){
-		console.log(data);
+	    success: function(data) {
+		console.log("post succeeded, got back %o", data)
+		successFn(data)
 	    },
 	    failure: function(errMsg) {
-		console.log(errMsg);
+		console.log("post failed")
+		failureFn(errMsg)
 	    }
 	});
+    }
+
+    common.clickerSubmit = function(answer) {
+	var data = {
+	    "GoogleToken": googleToken,
+	    "fn": "answer",
+	    "question_id": currQuestionId,
+	    "answer": answer
+	}
+	callLambda(data, function(data) {
+	    // pass
+	}, function(error) {
+	    console.log(errMsg)
+	})
     };
 
     common.clickerGetAnswers = function() {
 	var data = {
 	    "GoogleToken": googleToken,
 	    "fn": "get_answers",
-	    "question_id": "123"
+	}
+	// TODO
+    };
+
+    common.clickerRefreshQuestion = function() {
+	var data = {
+	    "GoogleToken": googleToken,
+	    "fn": "get_question"
+	}
+	callLambda(data, function(data) {
+	    $("#question").val(data.body.question)
+	    currQuestionId = data.body.id
+	}, function(error) {
+	    console.log(errMsg)
+	})	
+    };
+
+    common.clickerUploadQuestion = function() {
+	console.log($("#question").val())
+	var data = {
+	    "GoogleToken": googleToken,
+	    "fn": "put_question",
+	    "question": $("#question").val()
 	}
 
 	$.ajax({

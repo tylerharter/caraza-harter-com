@@ -1,4 +1,4 @@
-import boto3, zipfile
+import boto3, zipfile, os
 
 client = boto3.client('lambda')
 
@@ -12,6 +12,8 @@ def main():
 
     with open(tmp, 'rb') as f:
         response = client.update_function_code(FunctionName=fname, ZipFile=f.read())
+
+    os.remove(tmp)
 
 if __name__ == '__main__':
     main()
