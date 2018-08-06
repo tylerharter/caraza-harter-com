@@ -58,11 +58,21 @@
   </div>
 </div>
 
+<div class="row justify-content-md-center my-5 admin_content">
+  <div class="col col-12 px-1">
+    <input type="checkbox" id="open_question" value=""> Open Question (does not require auth)<br>
+  </div>
+</div>
+
 <br>
 
 <!-- popus -->
 
 <div class="loader" id="loader_wheel"></div>
+
+<div class="center_fixed_text alert alert-success" id="thank_you">
+    <strong>Submitted</strong> - thank you.
+</div>
 
 <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box">
   <button type="button" class="close" onclick="$('#error_box').hide()">

@@ -1,4 +1,4 @@
-import json, urllib, boto3, botocore, base64, time, traceback
+import json, urllib, boto3, botocore, base64, time, traceback, random, string
 from collections import defaultdict as ddict
 
 ROUTES = {}
@@ -13,15 +13,26 @@ def route(fn):
     ROUTES[fn.__name__] = fn
     return fn
 
-# @admin must be after @route
+# decorator: user must authenticate to the admin user
 def admin(fn):
     EXTRA_AUTH[fn.__name__].append(admin_check)
     return fn
 
+# decorator: user must authenticate and have a valid email
+def user(fn):
+    EXTRA_AUTH[fn.__name__].append(user_check)
+    return fn
+
+def user_check(user):
+    if user == None:
+        raise Exception('could not authenticate user with google')
+    if not user['email_verified']:
+        raise Exception('google email not verified')
+
 def admin_check(user):
+    user_check(user)
     if user['email'] != ADMIN_EMAIL:
         raise Exception('admin required')
-    return None
 
 def get_user(event):
     token = event['GoogleToken']
@@ -34,7 +45,9 @@ def get_user(event):
 @admin
 def put_question(user, event):
     question_id = '%.2f' % time.time()
-    question = {'id': question_id, 'question': event['question']}
+    question = {'id': question_id,
+                'question': event['question'],
+                'open_question': event.get('open_question', False)}
     for path in ['questions/%s.json'%question_id, 'questions/curr.json']:
         s3.put_object(Bucket=BUCKET,
                       Key=path,
@@ -60,14 +73,25 @@ def get_question(user, event):
 
 @route
 def answer(user, event):  
-    user_id = user['sub']
     question_id = event['question_id']
-    answer = event['answer']
-
-    # is it current?
     question = get_question_raw()
     if question == None:
         return (500, 'no question set')
+
+    if user != None:
+        user_check(user)
+        user_id = user['sub']
+    else:
+        # user didn't authenticate; check if it's required
+        if question.get('open_question', False):
+            # use random ID
+            user_id = 'anon-' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(16))
+        else:
+            return (500, 'this question requires authentication')
+
+    answer = event['answer']
+
+    # is it current?
     if question_id != question['id']:
         return (500, 'question has changed, please refresh')
 
@@ -148,10 +172,9 @@ def lambda_handler(event, context):
     try:
         user = get_user(event)
     except Exception as e:
-        return error('exception thrown during authentication')
-    if not user['email_verified']:
-        return error('google email not verified')
-    save_user_info(user)
+        user = None
+    if user != None:
+        save_user_info(user)
 
     # invoke
     fn = ROUTES.get(event['fn'], None)

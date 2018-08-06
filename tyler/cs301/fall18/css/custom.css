@@ -53,3 +53,11 @@ code {
     width: 80%;
     position:fixed;
 }
+
+.center_fixed_text {
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    position:fixed;
+    text-align: center;
+}
