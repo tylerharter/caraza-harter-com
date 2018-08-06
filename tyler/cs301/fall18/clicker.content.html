@@ -10,7 +10,11 @@
 
 <script>
   function onSignIn(googleUser) {
-    // TODO: why can't this directly be the event?
+    /*
+    TODO: why can't this directly be
+    the event?  This is a problem when this runs before the .js is
+    loaded.
+    */
     common.googleSignIn(googleUser)
   };
 </script>
@@ -20,31 +24,31 @@
     <textarea class="form-control" rows="5" id="question"></textarea>
   </div>
   <div class="col-12 my-1 px-1">
-    <button type="button" class="btn btn-dark btn-block" onclick="common.clickerRefreshQuestion()">Refresh Question</button>
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerRefreshQuestion()">Refresh Question</button>
   </div>
 </div>
 
 <div class="row py-3">
   <div class="col-3 px-1">
-    <button type="button" class="btn btn-danger btn-block" onclick="common.clickerSubmit('A')">A</button>
+    <button type="button" class="btn btn-danger btn-block" onclick="clicker.clickerSubmit('A')">A</button>
   </div>
   <div class="col-3 px-1">
-    <button type="button" class="btn btn-success btn-block" onclick="common.clickerSubmit('B')">B</button>
+    <button type="button" class="btn btn-success btn-block" onclick="clicker.clickerSubmit('B')">B</button>
   </div>
   <div class="col-3 px-1">
-    <button type="button" class="btn btn-primary btn-block" onclick="common.clickerSubmit('C')">C</button>
+    <button type="button" class="btn btn-primary btn-block" onclick="clicker.clickerSubmit('C')">C</button>
   </div>
   <div class="col-3 px-1">
-    <button type="button" class="btn btn-warning btn-block" onclick="common.clickerSubmit('D')">D</button>
+    <button type="button" class="btn btn-warning btn-block" onclick="clicker.clickerSubmit('D')">D</button>
   </div>
 </div>
 
 <div class="row justify-content-md-center my-5">
   <div class="col col-6 px-1">
-    <button type="button" class="btn btn-dark btn-block" onclick="common.clickerUploadQuestion()">Upload Question</button>
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerUploadQuestion()">Upload Question</button>
   </div>
   <div class="col col-6 px-1">
-    <button type="button" class="btn btn-dark btn-block" onclick="common.clickerSummarizeAnswers()">View Answers</button>
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerSummarizeAnswers()">View Answers</button>
   </div>
 </div>
 

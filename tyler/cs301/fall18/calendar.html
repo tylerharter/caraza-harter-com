@@ -9,7 +9,6 @@
     <!-- Google Auth stuff -->
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <title>Tyler R. Caraza-Harter</title>
 
@@ -71,14 +70,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Semester Schedule</h1>
-
-<p><a href="https://calendar.google.com/calendar/embed?src=u6r6gg5qtf9iknlfv3bjmlaogg%40group.calendar.google.com&ctz=America%2FChicago">This
-calendar</a> will be used to show classes, labs, office hours, review
-sessions, and exam times for lecture sections 001 and 002.</p>
-
-<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=u6r6gg5qtf9iknlfv3bjmlaogg%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FChicago" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-
+      {CONTENT}
     </main>
 
     <footer class="footer">
@@ -99,6 +91,8 @@ sessions, and exam times for lecture sections 001 and 002.</p>
 	    crossorigin="anonymous"></script>
 
     <!-- main js -->
-    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
   </body>
 </html>

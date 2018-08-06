@@ -7,7 +7,7 @@ $(function() {
     var outstandingCalls = 0
     var googleToken = null
     var currQuestionId = null
-    
+
     function main() {
 	// highlight current page
 	var curr_page = window.location.pathname.split('/').slice(-1)[0]
@@ -35,11 +35,6 @@ $(function() {
 	$("#useremail").text("")
     };
 
-    common.popError = function(msg) {
-	$('#error_message').text(msg)
-	$('#error_box').show()
-    }
-
     common.googleSignIn = function(googleUser) {
 	// Useful data for your client-side scripts:
 	var profile = googleUser.getBasicProfile();
@@ -53,7 +48,20 @@ $(function() {
 	common.clickerRefreshQuestion()
     };
 
-    function callLambda(data, successFn, failureFn) {
+    common.getUrlParameter = function(name) {
+	name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+	var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+	var results = regex.exec(location.search);
+	return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    common.popError = function(msg) {
+	$('#error_message').text(msg)
+	$('#error_box').show()
+    }
+
+    common.callLambda = function(data, successFn, failureFn) {
+	data["GoogleToken"] = googleToken
 	outstandingCalls += 1
 	console.log("outstanding calls=%d", outstandingCalls)
 	$("#loader_wheel").show()

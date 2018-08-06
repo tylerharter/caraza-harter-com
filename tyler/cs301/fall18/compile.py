@@ -10,10 +10,16 @@ def template():
         if path.endswith(suffix):
             with open(path) as f:
                 content = f.read()
-            new = path[:-len(suffix)] + '.html'
+            name = path[:-len(suffix)]
+            new = name + '.html'
+
+            full = template.replace("{CONTENT}", content)
+            script = 'js/%s.js' % name
+            include = '<script src="%s"></script>'%script if os.path.exists(script) else ''
+            full = template.replace("{SCRIPTS}", include)
+
             print('%s => %s' % (path, new))
             with open(new, 'w') as f:
-                full = template.replace("{CONTENT}", content)
                 f.write(full)
 
 def format_day(day):
