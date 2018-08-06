@@ -18,7 +18,6 @@ $(function() {
 
     clicker.clickerSummarizeAnswers = function() {
 	var data = {
-	    "GoogleToken": googleToken,
 	    "fn": "get_answer_counts",
 	}
 	callLambda(data, function(data) {
@@ -44,7 +43,6 @@ $(function() {
 
     clicker.clickerRefreshQuestion = function() {
 	var data = {
-	    "GoogleToken": googleToken,
 	    "fn": "get_question"
 	}
 	callLambda(data, function(data) {
@@ -56,7 +54,6 @@ $(function() {
     clicker.clickerUploadQuestion = function() {
 	console.log($("#question").val())
 	var data = {
-	    "GoogleToken": googleToken,
 	    "fn": "put_question",
 	    "question": $("#question").val()
 	}
@@ -65,6 +62,4 @@ $(function() {
 	    console.log("question uploaded")
 	})
     };
-
-    main()
 })

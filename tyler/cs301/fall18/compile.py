@@ -16,7 +16,7 @@ def template():
             full = template.replace("{CONTENT}", content)
             script = 'js/%s.js' % name
             include = '<script src="%s"></script>'%script if os.path.exists(script) else ''
-            full = template.replace("{SCRIPTS}", include)
+            full = full.replace("{SCRIPTS}", include)
 
             print('%s => %s' % (path, new))
             with open(new, 'w') as f:

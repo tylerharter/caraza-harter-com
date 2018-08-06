@@ -70,7 +70,77 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      {CONTENT}
+      <h1 class="mt-5">Questions</h1>
+
+<div class="row my-5">
+  <div class="col col-12">
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
+    <span id="useremail"></span>
+    <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
+  </div>
+</div>
+
+<script>
+  function onSignIn(googleUser) {
+    /*
+    TODO: why can't this directly be
+    the event?  This is a problem when this runs before the .js is
+    loaded.
+    */
+    common.googleSignIn(googleUser)
+  };
+</script>
+
+<div class="row">
+  <div class="col-12 px-1">
+    <textarea class="form-control" rows="5" id="question"></textarea>
+  </div>
+  <div class="col-12 my-1 px-1">
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerRefreshQuestion()">Refresh Question</button>
+  </div>
+</div>
+
+<div class="row py-3">
+  <div class="col-3 px-1">
+    <button type="button" class="btn btn-danger btn-block" onclick="clicker.clickerSubmit('A')">A</button>
+  </div>
+  <div class="col-3 px-1">
+    <button type="button" class="btn btn-success btn-block" onclick="clicker.clickerSubmit('B')">B</button>
+  </div>
+  <div class="col-3 px-1">
+    <button type="button" class="btn btn-primary btn-block" onclick="clicker.clickerSubmit('C')">C</button>
+  </div>
+  <div class="col-3 px-1">
+    <button type="button" class="btn btn-warning btn-block" onclick="clicker.clickerSubmit('D')">D</button>
+  </div>
+</div>
+
+<div class="row justify-content-md-center my-5">
+  <div class="col col-6 px-1">
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerUploadQuestion()">Upload Question</button>
+  </div>
+  <div class="col col-6 px-1">
+    <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerSummarizeAnswers()">View Answers</button>
+  </div>
+</div>
+
+<div class="row justify-content-md-center my-5">
+  <div class="col col-12 px-1">
+    <textarea class="form-control" rows="5" id="answers"></textarea>
+  </div>
+</div>
+
+<br>
+
+<div class="loader" id="loader_wheel"></div>
+
+<div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box">
+  <button type="button" class="close" onclick="$('#error_box').hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Error:</strong> <span id="error_message"></span>
+</div>
+
     </main>
 
     <footer class="footer">
