@@ -97,10 +97,11 @@ def get_answer_counts(user, event):
 
     user_id = user['sub']
     path = 'questions/%s/answers' % question['id']
-    files = s3.list_objects(Bucket=BUCKET, Prefix=path, MaxKeys=10000)['Contents']
 
     # count answers/errors
     response = {'errors': ddict(int), 'answers': ddict(int)}
+
+    files = s3.list_objects(Bucket=BUCKET, Prefix=path, MaxKeys=10000).get('Contents', [])
     for obj in files:
         key = obj['Key']
         name = key.split('/')[-1]

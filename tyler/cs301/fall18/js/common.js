@@ -21,6 +21,7 @@ $(function() {
 
 	$("#signout").hide()
 	$('#error_box').hide()
+	$("#loader_wheel").hide()
     }
 
     common.googleSignOut = function() {
@@ -44,8 +45,6 @@ $(function() {
 	$("#signin").hide()
 	$("#signout").show()
 	$("#useremail").text(profile.getEmail() + " ")
-
-	common.clickerRefreshQuestion()
     };
 
     common.getUrlParameter = function(name) {
@@ -103,68 +102,6 @@ $(function() {
 		}
 	    });
     }
-
-    common.clickerSubmit = function(answer) {
-	var data = {
-	    "GoogleToken": googleToken,
-	    "fn": "answer",
-	    "question_id": currQuestionId,
-	    "answer": answer
-	}
-	callLambda(data, function(data) {
-	    console.log("answer uploaded")
-	})
-    };
-
-    common.clickerSummarizeAnswers = function() {
-	var data = {
-	    "GoogleToken": googleToken,
-	    "fn": "get_answer_counts",
-	}
-	callLambda(data, function(data) {
-	    var answers = data.body.answers
-	    var total = 0
-	    for(var k in answers) {
-		total += answers[k]
-	    }
-
-	    var text = ""
-	    Object.keys(answers).sort().forEach(function(k){
-		var count = answers[k]
-		text += (k + ": " + count + " (" + Math.round(count*100/total) + "%)\n")
-	    })
-	    $("#answers").val(text)
-
-	    if (data.body.errors.length > 0) {
-		console.log("Errors:")
-		console.log(data.body.errors)
-	    }
-	})
-    };
-
-    common.clickerRefreshQuestion = function() {
-	var data = {
-	    "GoogleToken": googleToken,
-	    "fn": "get_question"
-	}
-	callLambda(data, function(data) {
-	    $("#question").val(data.body.question)
-	    currQuestionId = data.body.id
-	})
-    };
-
-    common.clickerUploadQuestion = function() {
-	console.log($("#question").val())
-	var data = {
-	    "GoogleToken": googleToken,
-	    "fn": "put_question",
-	    "question": $("#question").val()
-	}
-
-	callLambda(data, function(data) {
-	    console.log("question uploaded")
-	})
-    };
 
     main()
 })

@@ -10,14 +10,12 @@
 
 <script>
   function onSignIn(googleUser) {
-    /*
-    TODO: why can't this directly be
-    the event?  This is a problem when this runs before the .js is
-    loaded.
-    */
     common.googleSignIn(googleUser)
+    clicker.clickerRefreshQuestion()
   };
 </script>
+
+<!-- student stuff -->
 
 <div class="row">
   <div class="col-12 px-1">
@@ -43,7 +41,9 @@
   </div>
 </div>
 
-<div class="row justify-content-md-center my-5">
+<!-- teacher stuff -->
+
+<div class="row justify-content-md-center my-5 admin_content">
   <div class="col col-6 px-1">
     <button type="button" class="btn btn-dark btn-block" onclick="clicker.clickerUploadQuestion()">Upload Question</button>
   </div>
@@ -52,13 +52,15 @@
   </div>
 </div>
 
-<div class="row justify-content-md-center my-5">
+<div class="row justify-content-md-center my-5 admin_content">
   <div class="col col-12 px-1">
     <textarea class="form-control" rows="5" id="answers"></textarea>
   </div>
 </div>
 
 <br>
+
+<!-- popus -->
 
 <div class="loader" id="loader_wheel"></div>
 
