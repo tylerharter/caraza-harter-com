@@ -46,3 +46,10 @@ code {
 .compact-ul {
     margin-bottom: 0pt;
 }
+
+.clicker_alert {
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    position:fixed;
+}

@@ -33,16 +33,15 @@ def get_user(event):
 @route
 @admin
 def put_question(user, event):
-    # TODO: requires admin privilege
     question_id = '%.2f' % time.time()
     question = {'id': question_id, 'question': event['question']}
-    path = 'questions/curr.json'
-    s3.put_object(Bucket=BUCKET,
-                  Key=path,
-                  Body=bytes(json.dumps(question, indent=2), 'utf-8'),
-                  ContentType='text/json',
-    )
-    return (200, {'message': 'question saved to '+path})
+    for path in ['questions/%s.json'%question_id, 'questions/curr.json']:
+        s3.put_object(Bucket=BUCKET,
+                      Key=path,
+                      Body=bytes(json.dumps(question, indent=2), 'utf-8'),
+                      ContentType='text/json',
+        )
+    return (200, {'message': 'question saved'})
 
 def get_question_raw():
     try:
@@ -90,10 +89,14 @@ def answer(user, event):
         return (500, 'answer too long')
 
 @route
+@admin
 def get_answer_counts(user, event):
+    question = get_question_raw()
+    if question == None:
+        return (500, 'no question set')
+
     user_id = user['sub']
-    question_id = event['question_id']
-    path = 'questions/%s/answers' % (question_id)
+    path = 'questions/%s/answers' % question['id']
     files = s3.list_objects(Bucket=BUCKET, Prefix=path, MaxKeys=10000)['Contents']
 
     # count answers/errors
@@ -105,11 +108,10 @@ def get_answer_counts(user, event):
             b = base64.b64decode(name)
             txt = str(b, 'utf-8')
             row = json.loads(txt)
-            response['errors']['answer'] += 1
+            response['answers'][row['answer']] += 1
         except Exception as e:
             response['errors'][str(e)] += 1
             continue
-        answers.append(row)
     return (200, response)
 
 def error(message):
@@ -117,7 +119,7 @@ def error(message):
         "isBase64Encoded": False,
         "statusCode": 500,
         "headers": {},
-        "body": {'error': message}
+        "body": message
     }
 
 def save_user_info(user):

@@ -255,7 +255,16 @@ Jupyter Notebook
 Numpy
 
 =
-Slack
+Slack Day
 
 =
 Thanksgiving Break
+
+=
+Generators
+* yield
+
+=
+Decorators
+* frameworks
+* wrappers

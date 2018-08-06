@@ -4,6 +4,7 @@ var common = {};
 
 $(function() {
     var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
+    var outstandingCalls = 0
     var googleToken = null
     var currQuestionId = null
     
@@ -17,6 +18,9 @@ $(function() {
 		$(link).parent().addClass("active")
 	    }
 	});
+
+	$("#signout").hide()
+	$('#error_box').hide()
     }
 
     common.googleSignOut = function() {
@@ -25,39 +29,71 @@ $(function() {
 	auth2.signOut().then(function () {
 	    console.log('User signed out.');
 	});
+
+	$("#signin").show()
+	$("#signout").hide()
+	$("#useremail").text("")
     };
+
+    common.popError = function(msg) {
+	$('#error_message').text(msg)
+	$('#error_box').show()
+    }
 
     common.googleSignIn = function(googleUser) {
 	// Useful data for your client-side scripts:
 	var profile = googleUser.getBasicProfile();
-	console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-	console.log('Full Name: ' + profile.getName());
-	console.log('Given Name: ' + profile.getGivenName());
-	console.log('Family Name: ' + profile.getFamilyName());
-	console.log("Image URL: " + profile.getImageUrl());
-	console.log("Email: " + profile.getEmail());
-	
-	// The ID token you need to pass to your backend:
+	console.log("log on by " + profile.getEmail());
 	googleToken = googleUser.getAuthResponse().id_token;
-	console.log("ID Token: " + googleToken);
+
+	$("#signin").hide()
+	$("#signout").show()
+	$("#useremail").text(profile.getEmail() + " ")
+
+	common.clickerRefreshQuestion()
     };
 
     function callLambda(data, successFn, failureFn) {
-	$.ajax({
+	outstandingCalls += 1
+	console.log("outstanding calls=%d", outstandingCalls)
+	$("#loader_wheel").show()
+
+	function fail(error) {
+	    console.log("post failed")
+	    if (failureFn != null) {
+		failureFn(error)
+	    } else {
+		common.popError(error)
+	    }
+	}
+
+	$.post({
 	    type: "POST",
 	    url: lambdaUrl,
 	    data: JSON.stringify(data),
 	    contentType: "application/json; charset=utf-8",
-	    dataType: "json",
-	    success: function(data) {
-		console.log("post succeeded, got back %o", data)
-		successFn(data)
-	    },
-	    failure: function(errMsg) {
-		console.log("post failed")
-		failureFn(errMsg)
-	    }
-	});
+	    dataType: "json"
+	})
+	    .done(function(data) {
+		if (data.statusCode == 200) {
+		    console.log("post succeeded, got back %o", data)
+		    successFn(data)
+		} else {
+		    console.log("post returned status "+data.statusCode)
+		    console.log("error body %o", data.body)
+		    fail(data.body)
+		}
+	    })
+	    .fail(function(error) {
+		fail(error)
+	    })
+	    .always(function() {
+		outstandingCalls -= 1
+		console.log("outstanding calls=%d", outstandingCalls)
+		if (outstandingCalls == 0) {
+		    $("#loader_wheel").hide()
+		}
+	    });
     }
 
     common.clickerSubmit = function(answer) {
@@ -68,18 +104,34 @@ $(function() {
 	    "answer": answer
 	}
 	callLambda(data, function(data) {
-	    // pass
-	}, function(error) {
-	    console.log(errMsg)
+	    console.log("answer uploaded")
 	})
     };
 
-    common.clickerGetAnswers = function() {
+    common.clickerSummarizeAnswers = function() {
 	var data = {
 	    "GoogleToken": googleToken,
-	    "fn": "get_answers",
+	    "fn": "get_answer_counts",
 	}
-	// TODO
+	callLambda(data, function(data) {
+	    var answers = data.body.answers
+	    var total = 0
+	    for(var k in answers) {
+		total += answers[k]
+	    }
+
+	    var text = ""
+	    Object.keys(answers).sort().forEach(function(k){
+		var count = answers[k]
+		text += (k + ": " + count + " (" + Math.round(count*100/total) + "%)\n")
+	    })
+	    $("#answers").val(text)
+
+	    if (data.body.errors.length > 0) {
+		console.log("Errors:")
+		console.log(data.body.errors)
+	    }
+	})
     };
 
     common.clickerRefreshQuestion = function() {
@@ -90,9 +142,7 @@ $(function() {
 	callLambda(data, function(data) {
 	    $("#question").val(data.body.question)
 	    currQuestionId = data.body.id
-	}, function(error) {
-	    console.log(errMsg)
-	})	
+	})
     };
 
     common.clickerUploadQuestion = function() {
@@ -103,19 +153,9 @@ $(function() {
 	    "question": $("#question").val()
 	}
 
-	$.ajax({
-	    type: "POST",
-	    url: lambdaUrl,
-	    data: JSON.stringify(data),
-	    contentType: "application/json; charset=utf-8",
-	    dataType: "json",
-	    success: function(data){
-		console.log(data);
-	    },
-	    failure: function(errMsg) {
-		console.log(errMsg);
-	    }
-	});
+	callLambda(data, function(data) {
+	    console.log("question uploaded")
+	})
     };
 
     main()

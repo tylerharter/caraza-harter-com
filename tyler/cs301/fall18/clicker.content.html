@@ -1,11 +1,10 @@
-<h1 class="mt-5">Interactive Lecture Questions</h1>
+<h1 class="mt-5">Questions</h1>
 
-<div class="row justify-content-md-center my-5">
-  <div class="col col-lg-2">
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-  </div>
-  <div class="col col-lg-2">
-    <button type="button" class="btn btn-primary" onclick="common.googleSignOut()">Logoff</button>
+<div class="row my-5">
+  <div class="col col-12">
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
+    <span id="useremail"></span>
+    <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
   </div>
 </div>
 
@@ -40,8 +39,28 @@
   </div>
 </div>
 
+<div class="row justify-content-md-center my-5">
+  <div class="col col-6 px-1">
+    <button type="button" class="btn btn-dark btn-block" onclick="common.clickerUploadQuestion()">Upload Question</button>
+  </div>
+  <div class="col col-6 px-1">
+    <button type="button" class="btn btn-dark btn-block" onclick="common.clickerSummarizeAnswers()">View Answers</button>
+  </div>
+</div>
 
+<div class="row justify-content-md-center my-5">
+  <div class="col col-12 px-1">
+    <textarea class="form-control" rows="5" id="answers"></textarea>
+  </div>
+</div>
 
-<button type="button" class="btn btn-primary" onclick="common.clickerGetAnswers()">View Answers</button>
+<br>
 
-<button type="button" class="btn btn-primary" onclick="common.clickerUploadQuestion()">Upload Question</button>
+<div class="loader" id="loader_wheel"></div>
+
+<div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box">
+  <button type="button" class="close" onclick="$('#error_box').hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Error:</strong> <span id="error_message"></span>
+</div>
