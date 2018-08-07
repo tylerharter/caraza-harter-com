@@ -7,8 +7,11 @@ def main():
     print(client.get_function(FunctionName=fname))
 
     tmp = 'tmp.zip'
-    with zipfile.ZipFile(tmp, 'w') as z:
-        z.write('lambdas/cs301/lambda_function.py', '/lambda_function.py')
+    lambda_dirs = ['lambdas/cs301']
+    for lambda_dir in lambda_dirs:
+        with zipfile.ZipFile(tmp, 'w') as z:
+            for name in (n for n in os.listdir(lambda_dir) if n.endswith('.py')):
+                z.write(os.path.join(lambda_dir, name), '/'+name)
 
     with open(tmp, 'rb') as f:
         response = client.update_function_code(FunctionName=fname, ZipFile=f.read())
