@@ -65,3 +65,7 @@ code {
 .code-review-link {
     background-color: yellow;
 }
+
+.prettyprint {
+    background-color: white;
+}

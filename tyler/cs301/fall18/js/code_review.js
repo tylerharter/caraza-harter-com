@@ -1,21 +1,14 @@
 "use strict";
 
-var submission = {};
+var code_review = {};
 
 $(function() {
-  var max_file_kb = 40 // 40KB
-  // for upload package
-  var filename = null
-  var payload = null
-
   // code review object
   var cr = null
 
   function init() {
-    $("#project_file").change(submission.openFile)
-    $("#project_id").change(function() {
-      $("#code_viewer").html("")
-    })
+    $("#code_review_title").html("Code Review (" + common.getUrlParameter('project_id').toUpperCase() + ")")
+    $("#code_viewer").html("")
   }
 
   // keep going up the DOM until we find the immediate child of a lang-py element
@@ -32,7 +25,7 @@ $(function() {
     }
     return node
   }
-  
+
   function plainTextOffset(node) {
     var offset = 0
     for (var i=0; i< node.parentElement.childNodes.length; i++) {
@@ -76,7 +69,7 @@ $(function() {
     }
 
     console.log('does not overlap')
-    
+
     cr.highlights[filename].push({offset:offset, length:length})
     console.log(cr.highlights)
     refreshHighlights()
@@ -90,21 +83,6 @@ $(function() {
     c += code.slice(offset+length)
     return c
   }
-
-  submission.uploadCode = function() {
-    var project_id = $("#project_id").val()
-
-    var data = {
-      "fn": "project_upload",
-      "project_id": project_id,
-      "filename": filename,
-      "payload": payload
-    }
-    common.callLambda(data, function(data) {
-      console.log("project uploaded")
-      common.popThankYou()
-    })
-  };
 
   function refreshHighlights() {
     if (Object.keys(cr.project.files).length == 0) {
@@ -137,53 +115,41 @@ $(function() {
     $(".prettyprint").mouseup(codeMouseUp)
   }
 
-  submission.viewCode = function() {
+  code_review.fetchReview = function(force_new) {
+    $("#code_viewer").html("")
     var project_id = $("#project_id").val()
 
     var data = {
       "fn": "get_code_review",
-      "project_id": project_id,
-      "submitter_id": null,
-      "force_new": true
+      "project_id": common.getUrlParameter('project_id'),
+      "submitter_id": common.getUrlParameter('submitter_id'),
+      "force_new": force_new
     }
+
     common.callLambda(data, function(data) {
       cr = data.body
       refreshHighlights()
     })
   };
 
-  submission.viewCodeReview = function() {
-    var submitter_id = common.getGoogleUserId() // submitted by self
-    var project_id = $("#project_id").val()
-    var url = "code_review.html?project_id="+project_id+"&submitter_id="+submitter_id
-    window.open(url)
-  };
+  code_review.startFresh = function() {
+    code_review.fetchReview(true)
+  }
 
-  submission.openFile = function(event) {
-    var reader = new FileReader();
-    var file = event.target.files[0]
+  code_review.saveCodeReview = function() {
+    var new_cr = Object.assign({}, cr) // shallow copy
+    new_cr.project = null // no reason to upload the code again
 
-    reader.onload = function() {
-      var b64contents = btoa(reader.result)
-      filename = null
-      payload = null
+    var data = {
+      "fn": "put_code_review",
+      "project_id": common.getUrlParameter('project_id'),
+      "submitter_id": common.getUrlParameter('submitter_id'),
+      "cr": new_cr
+    }
 
-      if (file.name.endsWith('.zip') || file.name.endsWith('.py')) {
-        if (reader.result.length <= max_file_kb*1024) {
-          filename = file.name
-          payload = b64contents
-          $("#submit_button").prop('disabled', false)
-        } else {
-          common.popError("max file size is "+max_file_kb+"KB")
-          $("#submit_button").prop('disabled', true)
-        }
-      } else {
-        common.popError("only .py or .zip are accepted")
-        $("#submit_button").prop('disabled', true)
-      }
-    };
-
-    reader.readAsBinaryString(file)
+    common.callLambda(data, function(data) {
+      common.popThankYou()
+    })
   }
 
   init()

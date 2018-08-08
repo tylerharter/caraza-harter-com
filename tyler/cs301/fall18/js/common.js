@@ -5,8 +5,8 @@ var common = {};
 $(function() {
   var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
   var outstandingCalls = 0
-  var googleToken = null
-  var currQuestionId = null
+  var googleProfile = null
+  var googleAuth = null
 
   function main() {
     // highlight current page
@@ -26,7 +26,8 @@ $(function() {
   }
 
   common.googleSignOut = function() {
-    googleToken = null
+    googleProfile = null
+    googleAuth = null
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
@@ -39,14 +40,22 @@ $(function() {
 
   common.googleSignIn = function(googleUser) {
     // Useful data for your client-side scripts:
-    var profile = googleUser.getBasicProfile();
-    console.log("log on by " + profile.getEmail());
-    googleToken = googleUser.getAuthResponse().id_token;
+    googleProfile = googleUser.getBasicProfile();
+    console.log("log on by " + googleProfile.getEmail() + " (" + googleProfile.getId() + ")");
+    googleAuth = googleUser.getAuthResponse()
+    console.log("token " + googleAuth.id_token + " expires in " + googleAuth.expires_in + " seconds");
 
     $("#signin").hide()
     $("#signout").show()
-    $("#useremail").text(profile.getEmail() + " ")
+    $("#useremail").text(googleProfile.getEmail() + " ")
   };
+
+  common.getGoogleUserId = function() {
+    if (googleProfile == null) {
+      return null
+    }
+    return googleProfile.getId()
+  }
 
   common.getUrlParameter = function(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -66,7 +75,7 @@ $(function() {
   }
 
   common.callLambda = function(data, successFn, failureFn) {
-    data["GoogleToken"] = googleToken
+    data["GoogleToken"] = googleAuth.id_token
     outstandingCalls += 1
     console.log("outstanding calls=%d", outstandingCalls)
     $("#loader_wheel").show()
@@ -111,7 +120,9 @@ $(function() {
 
   // hide errors if click outside them 
   $(document).click(function(event) {
-    if ($(event.target).closest(".alert").length == 0) {
+    console.log(event)
+    //console.log($(event.target).closest(".alert"))
+    if ($(event.target).closest("#error_box").length == 0) {
       $('#error_box').hide()
     }
   });

@@ -92,16 +92,6 @@ def project_upload(user, event):
 
 @route
 @user
-def project_view(user, event):
-    user_id = user['sub']
-    project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-    result = load_project(user_id, project_id)
-    return (200, result)
-
-@route
-@user
 def get_partner(user, event):
     return (500, 'not implemented yet')
 
@@ -114,20 +104,49 @@ def get_code_review(user, event):
         submitter_user_id = user_id # assume self
     project_id = event['project_id']
     if user_id != submitter_user_id:
-        return (500, 'not authorized to view that submission') # TODO: TA exception
+        # only graders can view the code of other users
+        if not is_grader(user):
+            return (500, 'not authorized to view that submission')
 
     # step 1: get CR
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key=code_review_path(submitter_user_id, project_id))
-        cr = json.loads(str(response['Body'].read(), 'utf-8'))
-    except:
+    cr = None
+    if not event.get('force_new', False):
+        try:
+            response = s3().get_object(Bucket=BUCKET, Key=code_review_path(submitter_user_id, project_id))
+            cr = json.loads(str(response['Body'].read(), 'utf-8'))
+        except:
+            pass
+
+    # create a new empty CR
+    if cr == None:
         cr = {'submission_id':None, 'ready':False, 'highlights':None}
 
     # step 2: get associated code
-    project = load_project(user_id, project_id, submission_id=cr['submission_id'])
+    try:
+        project = load_project(submitter_user_id, project_id, submission_id=cr['submission_id'])
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return (500, 'no project submission found')
+        return (500, str(e.response))
+
     cr['submission_id'] = project['submission_id'] # resolve curr to actual ID
     cr['project'] = project
     if cr['highlights'] == None:
-        cr['highlights'] = {k:[{'offset':5,'length':10}] for k in project['files'].keys()} # start with none
+        cr['highlights'] = {k:[] for k in project['files'].keys()} # start with none
 
     return (200, cr)
+
+@route
+@grader
+def put_code_review(user, event):
+    cr = event['cr']
+    submitter_user_id = event['submitter_id']
+    project_id = event['project_id']
+    path = code_review_path(submitter_user_id, project_id)
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json',
+    )
+
+    return (200, 'uploaded review')

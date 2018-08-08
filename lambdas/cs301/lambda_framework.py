@@ -5,6 +5,7 @@ ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
+GRADER_EMAILS = ['pivotlibre@gmail.com']
 
 s3_cache = None # client
 
@@ -31,6 +32,11 @@ def user(fn):
     EXTRA_AUTH[fn.__name__].append(user_check)
     return fn
 
+# decorator: user must authenticate and be a grader
+def grader(fn):
+    EXTRA_AUTH[fn.__name__].append(grader_check)
+    return fn
+
 def user_check(user):
     if user == None:
         raise Exception('could not authenticate user with google')
@@ -40,7 +46,15 @@ def user_check(user):
 def admin_check(user):
     user_check(user)
     if user['email'] != ADMIN_EMAIL:
-        raise Exception('admin required')
+        raise Exception('admin permissions required')
+
+def grader_check(user):
+    user_check(user)
+    if not user['email'] in GRADER_EMAILS:
+        raise Exception('grader permissions required')
+
+def is_grader(user):
+    return user['email'] in GRADER_EMAILS
 
 def get_user(event):
     token = event['GoogleToken']
@@ -64,7 +78,7 @@ def save_user_info(user):
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "404":
             # does not exist yet
-            s3.put_object(Bucket=BUCKET,
+            s3().put_object(Bucket=BUCKET,
                           Key=path,
                           Body=bytes(json.dumps(user, indent=2), 'utf-8'),
                           ContentType='text/json',

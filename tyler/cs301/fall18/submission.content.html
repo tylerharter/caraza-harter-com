@@ -20,13 +20,34 @@
   };
 </script>
 
-<h2 class="my-3">Step 2: Link with CS Account</h2>
+<h2 class="my-3">Step 2: Link with CS Account (1st time only)</h2>
 
 <div class="alert alert-dark">
   TODO
 </div>
 
-<h2 class="my-3">Step 3: Upload Your Code</h2>
+<h2 class="my-3">Step 3: Choose which Project</h2>
+
+<div class="alert alert-dark">
+  <div class="row justify-content-md-center">
+    <div class="col col-12 px-1">
+      <select class="form-control" id="project_id">
+        <option value="p0">Project 0</option>
+        <option value="p1">Project 1</option>
+        <option value="p2">Project 2</option>
+        <option value="p3">Project 3</option>
+        <option value="p4">Project 4</option>
+        <option value="p5">Project 5</option>
+        <option value="p6">Project 6</option>
+        <option value="p7">Project 7</option>
+        <option value="p8">Project 8</option>
+        <option value="p9">Project 9</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<h2 class="my-3">Step 4: Upload Your Code (.py or .zip)</h2>
 
 <div class="alert alert-dark">
   <div class="row justify-content-md-center">
@@ -42,21 +63,18 @@
   </div>
 </div>
 
-<h2 class="my-3">Step 4: Verify Your Submission</h2>
+<h2 class="my-3">Step 5: Verify Your Submission</h2>
 
 <div class="alert alert-dark">
-  <div class="row justify-content-md-center">
-    <div class="col col-2 px-1">
-      TODO
-    </div>
-
-    <div class="col col-2 px-1">
-      <button type="button" class="btn btn-dark btn-block" onclick="submission.viewCode()">View</button>
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.viewCode()">Preview</button>
+      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview()">Check Code Review</button>
     </div>
   </div>
 
   <div class="row">
-    <div class="col col-8" id="code_viewer">
+    <div class="col col-12" id="code_viewer">
 
     </div>
   </div>

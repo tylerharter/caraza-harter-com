@@ -1,0 +1,52 @@
+<h1 class="mt-5" id="code_review_title">Code Review</h1>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
+      <span id="useremail"></span>
+      <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function onSignIn(googleUser) {
+  common.googleSignIn(googleUser)
+  code_review.fetchReview(false)
+  };
+</script>
+
+<div class="alert alert-dark">
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="code_review.startFresh(false)">Startover (lose unsaved work)</button>
+      <button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Save/Publish Code Review</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12" id="code_viewer">
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- popus -->
+
+<div class="loader" id="loader_wheel" style="display:none;"></div>
+
+<div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+  <strong>Submitted</strong> - thank you.
+</div>
+
+<div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+  <button type="button" class="close" onclick="$('#error_box').hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Error:</strong> <span id="error_message"></span>
+</div>
