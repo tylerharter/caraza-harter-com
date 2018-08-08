@@ -1,0 +1,80 @@
+<h1 class="mt-5">Project Submission</h1>
+
+<br>
+
+<h2 class="my-3">Step 1: Authenticate with Google</h2>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
+      <span id="useremail"></span>
+      <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function onSignIn(googleUser) {
+  common.googleSignIn(googleUser)
+  };
+</script>
+
+<h2 class="my-3">Step 2: Link with CS Account</h2>
+
+<div class="alert alert-dark">
+  TODO
+</div>
+
+<h2 class="my-3">Step 3: Upload Your Code</h2>
+
+<div class="alert alert-dark">
+  <div class="row justify-content-md-center">
+    <div class="col col-8 px-1">
+      <div class="form-group">
+        <input type="file" class="form-control-file" id="project_file">
+      </div>
+    </div>
+    
+    <div class="col col-4 px-1">
+      <button type="button" id="submit_button" class="btn btn-dark btn-block" onclick="submission.uploadCode()" disabled>Submit</button>
+    </div>
+  </div>
+</div>
+
+<h2 class="my-3">Step 4: Verify Your Submission</h2>
+
+<div class="alert alert-dark">
+  <div class="row justify-content-md-center">
+    <div class="col col-2 px-1">
+      TODO
+    </div>
+
+    <div class="col col-2 px-1">
+      <button type="button" class="btn btn-dark btn-block" onclick="submission.viewCode()">View</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-8" id="code_viewer">
+
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-- popus -->
+
+<div class="loader" id="loader_wheel"></div>
+
+<div class="center_fixed_text alert alert-success" id="thank_you">
+  <strong>Submitted</strong> - thank you.
+</div>
+
+<div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box">
+  <button type="button" class="close" onclick="$('#error_box').hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Error:</strong> <span id="error_message"></span>
+</div>

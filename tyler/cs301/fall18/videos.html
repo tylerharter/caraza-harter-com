@@ -58,9 +58,17 @@
 		<a class="dropdown-item" href="extra.html">Extras</a>
 	      </div>
 	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" href="projects.html">Projects</a>
+
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Projects
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		<a class="dropdown-item" href="projects.html">Specifications</a>
+		<a class="dropdown-item" href="submission.html">Submission</a>
+	      </div>
 	    </li>
+
 	    <li class="nav-item">
 	      <a class="nav-link" href="datasets.html">Datasets</a>
 	    </li>
@@ -95,6 +103,7 @@
 
     <!-- main js -->
     <script src="js/common.js"></script>
+    <script src="js/code-prettify/run_prettify.js"></script>
     
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </body>

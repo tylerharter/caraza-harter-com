@@ -9,7 +9,6 @@ $(function() {
     if (common.getUrlParameter('admin') != '1') {
       $(".admin_content").hide()
     }
-    $("#thank_you").hide()
   }
 
   clicker.clickerSubmit = function(answer) {

@@ -22,6 +22,7 @@ $(function() {
     $("#signout").hide()
     $('#error_box').hide()
     $("#loader_wheel").hide()
+    $("#thank_you").hide()
   }
 
   common.googleSignOut = function() {
