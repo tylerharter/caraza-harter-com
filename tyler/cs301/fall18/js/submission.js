@@ -9,13 +9,12 @@ $(function() {
   var payload = null
 
   // dict of individual files
-  var code_files = {}
-  var highlights = {}
+  var cr = null
+  //var code_files = {}
+  //var highlights = {}
 
   function init() {
     $("#project_file").change(submission.openFile)
-
-    //document.addEventListener("selectionchange", selectionChange);
   }
 
   // keep going up the DOM until we find the immediate child of a lang-py element
@@ -44,7 +43,8 @@ $(function() {
     }
     return offset
   }
-  
+
+  // this considers adding a higlight
   function codeMouseUp() {
     var s = window.getSelection()
     console.log(s)
@@ -54,12 +54,30 @@ $(function() {
       return
     }
 
-    var filename = node1.parentElement.getAttribute("filename")
     console.log(node1, node2)
+    if (plainTextOffset(node1) > plainTextOffset(node2)) {
+      var tmp = node1
+      node1 = node2
+      node2 = tmp
+    }
+
+    var filename = node1.parentElement.getAttribute("filename")  
     var offset = plainTextOffset(node1)
     var length = plainTextOffset(node2)+node2.textContent.length - offset
-    highlights[filename].push({offset:offset, length:length})
-    console.log(highlights)
+
+    for(var i=0; i<cr.highlights[filename].length; i++) {
+      var highlight = cr.highlights[filename][i]
+      if (!(offset+length <= highlight.offset || highlight.offset+highlight.length <= offset)) {
+        // too close to another highlight (or overlapping)
+        console.log('overlaps')
+        return
+      }
+    }
+
+    console.log('does not overlap')
+    
+    cr.highlights[filename].push({offset:offset, length:length})
+    console.log(cr.highlights)
     refreshHighlights()
   }
 
@@ -73,11 +91,11 @@ $(function() {
   }
 
   submission.uploadCode = function() {
-    var project = 'p0' // TODO
+    var project_id = 'p0' // TODO
 
     var data = {
       "fn": "project_upload",
-      "project": project,
+      "project_id": project_id,
       "filename": filename,
       "payload": payload
     }
@@ -88,13 +106,23 @@ $(function() {
   };
 
   function refreshHighlights() {
+    if (Object.keys(cr.project.files).length == 0) {
+      $("#code_viewer").html("no files found")
+      return
+    }
+    
     var html = ''
-    for (var filename in code_files) {
-      var code = code_files[filename]
+    for (var filename in cr.project.files) {
+      var code = cr.project.files[filename]
+
+      // sort highlights from last to first.  Otherwise, injecting
+      // HTML at specific offsets gets messed up, as early injections
+      // move where later injections should go.
+      cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
 
       // add all highlights
-      for(var i=0; i<highlights[filename].length; i++) {
-        var highlight = highlights[filename][i]
+      for(var i=0; i<cr.highlights[filename].length; i++) {
+        var highlight = cr.highlights[filename][i]
         code = addCodeReviewLink(code, highlight.offset, highlight.length)
       }
 
@@ -107,22 +135,27 @@ $(function() {
     PR.prettyPrint()
     $(".prettyprint").mouseup(codeMouseUp)
   }
-  
+
   submission.viewCode = function() {
-    var project = 'p0' // TODO
+    var project_id = 'p0' // TODO
 
     var data = {
-      "fn": "project_view",
-      "project": project,
+      "fn": "get_code_review",
+      "project_id": project_id,
+      "submitter_id": null
     }
     common.callLambda(data, function(data) {
-      console.log(data)
-      code_files = {}
+      cr = data.body
+      console.log(cr)
+
+      /*
+      cr.project.files = {}
       for (var filename in data.body.files) {
         var code = data.body.files[filename]
-        code_files[filename] = code
+        cr.project.files[filename] = code
         highlights[filename] = []
       }
+      */
 
       refreshHighlights()
     })
