@@ -7,6 +7,7 @@ $(function() {
   var outstandingCalls = 0
   var googleProfile = null
   var googleAuth = null
+  var authExpiresTimestamp = 0 // seconds
 
   function main() {
     // highlight current page
@@ -15,7 +16,7 @@ $(function() {
       var curr_link = link.href.split('/').slice(-1)[0]
 
       if (curr_link == curr_page) {
-	$(link).parent().addClass("active")
+        $(link).parent().addClass("active")
       }
     });
 
@@ -28,6 +29,7 @@ $(function() {
   common.googleSignOut = function() {
     googleProfile = null
     googleAuth = null
+    authExpiresTimestamp = 0
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
@@ -44,6 +46,7 @@ $(function() {
     console.log("log on by " + googleProfile.getEmail() + " (" + googleProfile.getId() + ")");
     googleAuth = googleUser.getAuthResponse()
     console.log("token " + googleAuth.id_token + " expires in " + googleAuth.expires_in + " seconds");
+    authExpiresTimestamp = Date.now()/1000 + googleAuth.expires_in
 
     $("#signin").hide()
     $("#signout").show()
@@ -75,6 +78,15 @@ $(function() {
   }
 
   common.callLambda = function(data, successFn, failureFn) {
+    if (Date.now()/1000 > authExpiresTimestamp) {
+      // this must run after the event handler looking for clicks to dismiss the error popup
+      setTimeout(function() {
+        $('#error_message').text("Session Expired.  Please refresh and sign in again (if necessary).")
+        $('#error_box').show()
+      }, 1)
+      return
+    }
+
     data["GoogleToken"] = googleAuth.id_token
     outstandingCalls += 1
     console.log("outstanding calls=%d", outstandingCalls)
@@ -83,9 +95,9 @@ $(function() {
     function fail(error) {
       console.log("post failed")
       if (failureFn != null) {
-	failureFn(error)
+        failureFn(error)
       } else {
-	common.popError(error)
+        common.popError(error)
       }
     }
 
@@ -97,28 +109,28 @@ $(function() {
       dataType: "json"
     })
       .done(function(data) {
-	if (data.statusCode == 200) {
-	  console.log("post succeeded, got back %o", data)
-	  successFn(data)
-	} else {
-	  console.log("post returned status "+data.statusCode)
-	  console.log("error body %o", data.body)
-	  fail(data.body)
-	}
+        if (data.statusCode == 200) {
+          console.log("post succeeded, got back %o", data)
+          successFn(data)
+        } else {
+          console.log("post returned status "+data.statusCode)
+          console.log("error body %o", data.body)
+          fail(data.body)
+        }
       })
       .fail(function(error) {
-	fail(error)
+        fail(error)
       })
       .always(function() {
-	outstandingCalls -= 1
-	console.log("outstanding calls=%d", outstandingCalls)
-	if (outstandingCalls == 0) {
-	  $("#loader_wheel").hide()
-	}
+        outstandingCalls -= 1
+        console.log("outstanding calls=%d", outstandingCalls)
+        if (outstandingCalls == 0) {
+          $("#loader_wheel").hide()
+        }
       });
   }
 
-  // hide errors if click outside them 
+  // hide errors if click outside them
   $(document).click(function(event) {
     if ($(event.target).closest("#error_box").length == 0) {
       $('#error_box').hide()
