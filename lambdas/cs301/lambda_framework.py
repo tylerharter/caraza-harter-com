@@ -16,6 +16,18 @@ def s3():
         s3_cache = boto3.client('s3')
     return s3_cache
 
+def s3_all_keys(Prefix):
+    ls = s3().list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
+    keys = []
+    while True:
+        contents = [obj['Key'] for obj in ls.get('Contents',[])]
+        keys.extend(contents)
+        if not 'NextContinuationToken' in ls:
+            break
+        ls = s3.list_objects_v2(Bucket='caraza-harter-cs301', Prefix=Prefix,
+                                ContinuationToken=ls['NextContinuationToken'],
+                                MaxKeys=10000)
+    return keys
 
 # decorators
 def route(fn):

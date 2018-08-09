@@ -51,6 +51,11 @@ $(function() {
 
   // this considers adding a higlight
   function codeMouseUp() {
+    if (cr == null || !cr.is_grader) {
+      // students don't need to highlight
+      return
+    }
+    
     var s = window.getSelection()
     if (s.anchorNode == null || s.focusNode == null) {
       // these nodes are null when one clicks on a hyperlink

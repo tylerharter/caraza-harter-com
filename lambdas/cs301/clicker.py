@@ -87,9 +87,7 @@ def get_answer_counts(user, event):
     # count answers/errors
     response = {'errors': ddict(int), 'answers': ddict(int)}
 
-    files = s3().list_objects(Bucket=BUCKET, Prefix=path, MaxKeys=10000).get('Contents', [])
-    for obj in files:
-        key = obj['Key']
+    for key in s3_all_keys(path):
         name = key.split('/')[-1]
         try:
             b = base64.b64decode(name)
