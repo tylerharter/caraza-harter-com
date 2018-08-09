@@ -5,10 +5,21 @@ var code_review = {};
 $(function() {
   // code review object
   var cr = null
+  var cr_dirty = false
 
   function init() {
     $("#code_review_title").html("Code Review (" + common.getUrlParameter('project_id').toUpperCase() + ")")
     $("#code_viewer").html("")
+
+    // prompt before leaving with unsaved work
+    window.addEventListener("beforeunload", function (e) {
+      if (cr_dirty) {
+        var confirmationMessage = 'Leave without saving?';
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+      }
+    });
   }
 
   // keep going up the DOM until we find the immediate child of a lang-py element
@@ -73,8 +84,9 @@ $(function() {
     console.log('does not overlap')
 
     cr.highlights[filename].push({offset:offset, length:length, comment:""})
+    cr_dirty = true
     console.log(cr.highlights)
-    refreshHighlights()
+    refreshCR()
   }
 
   function getHighlightComment(filename, offset, length) {
@@ -93,12 +105,25 @@ $(function() {
       var highlight = cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
         highlight.comment = comment
+        cr_dirty = true
         return
       }
     }
     console.log("could not find highlight")
   }
 
+  function deleteHighlight(filename, offset, length) {
+    for(var i=0; i<cr.highlights[filename].length; i++) {
+      var highlight = cr.highlights[filename][i]
+      if (highlight.offset == offset && highlight.length == length) {
+        cr.highlights[filename].splice(i, 1) // delete at index i
+        cr_dirty = true
+        return
+      }
+    }
+    console.log("could not find highlight")
+  }
+  
   function addCodeReviewLink(code, filename, offset, length) {
     var c = code.slice(0, offset)
     var span_id = ('highlight_'+offset+'_'+length)
@@ -167,7 +192,10 @@ $(function() {
               '<button type="button" data-highlight-id="'+highlight_id+'" data-highlight-button="ok" class="btn btn-dark">OK</button>'
              )
       if (cr.is_grader) {
-        html += '<button type="button" data-highlight-id="'+highlight_id+'"data-highlight-button="delete" class="btn btn-dark">Delete</button>'
+        html += (' <button type="button" data-highlight-id="' + highlight_id +
+                 '"data-highlight-button="cancel" class="btn btn-dark">Cancel</button>')
+        html += (' <button type="button" data-highlight-id="' + highlight_id +
+                 '"data-highlight-button="delete" class="btn btn-dark">Delete</button>')
       }
       $(this).attr("data-content", html)
 
@@ -176,23 +204,26 @@ $(function() {
         var txt = $("textarea[data-highlight-id="+highlight_id+"]")
         var ok_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=ok]")
         var delete_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=delete]")
+        var cancel_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=cancel]")
 
         txt.val(getHighlightComment(filename, offset, length))
 
         ok_btn.click(function() {
+          if (cr.is_grader) {
+            setHighlightComment(filename, offset, length, txt.val())
+          }
+          highlight_element.popover('hide')
+        })
+
+        cancel_btn.click(function() {
+          refreshCR()
           highlight_element.popover('hide')
         })
 
         delete_btn.click(function() {
-          console.log('delete')
+          deleteHighlight(filename, offset, length)
+          refreshCR()
         })
-      })
-
-      // on close, persist results
-      $(this).on('hide.bs.popover', function () {
-        var txt = $("textarea[data-highlight-id="+highlight_id+"]")
-        console.log(txt.val())
-        setHighlightComment(filename, offset, length, txt.val())
       })
     })
   }
@@ -230,6 +261,7 @@ $(function() {
     }
 
     common.callLambda(data, function(data) {
+      cr_dirty = false
       common.popThankYou()
     })
   }
