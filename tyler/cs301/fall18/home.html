@@ -85,6 +85,20 @@
   TODO
 </p>
 
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
     </main>
 
     <footer class="footer">
