@@ -131,6 +131,7 @@ def get_code_review(user, event):
 
     cr['submission_id'] = project['submission_id'] # resolve curr to actual ID
     cr['project'] = project
+    cr['is_grader'] = is_grader(user)
     if cr['highlights'] == None:
         cr['highlights'] = {k:[] for k in project['files'].keys()} # start with none
 

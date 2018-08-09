@@ -111,7 +111,13 @@ $(function() {
     return c
   }
 
-  function refreshHighlights() {
+  function refreshCR() {
+    if (cr.is_grader) {
+      $(".grader_content").show()
+    } else {
+      $(".grader_content").hide()
+    }
+    
     // remove all previous highlight popovers
     $(".popover").remove()
 
@@ -155,20 +161,30 @@ $(function() {
       var offset = $(this).attr('data-highlight-offset')
       var length = $(this).attr('data-highlight-length')
       var filename = $(this).attr('data-highlight-filename')
-      html = ('<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40"></textarea>' +
+      var readonly = cr.is_grader ? "" : "readonly"
+      html = ('<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40" '+readonly+'></textarea>' +
               '<br>' +
-              '<button type="button" data-highlight-id="'+highlight_id+'" class="btn btn-dark" onclick="">OK</button>'
+              '<button type="button" data-highlight-id="'+highlight_id+'" data-highlight-button="ok" class="btn btn-dark">OK</button>'
              )
+      if (cr.is_grader) {
+        html += '<button type="button" data-highlight-id="'+highlight_id+'"data-highlight-button="delete" class="btn btn-dark">Delete</button>'
+      }
       $(this).attr("data-content", html)
 
       // on show, register button events
       $(this).on('shown.bs.popover', function () {
         var txt = $("textarea[data-highlight-id="+highlight_id+"]")
+        var ok_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=ok]")
+        var delete_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=delete]")
+
         txt.val(getHighlightComment(filename, offset, length))
 
-        var btn = $("button[data-highlight-id="+highlight_id+"]")
-        btn.click(function() {
+        ok_btn.click(function() {
           highlight_element.popover('hide')
+        })
+
+        delete_btn.click(function() {
+          console.log('delete')
         })
       })
 
@@ -194,7 +210,7 @@ $(function() {
 
     common.callLambda(data, function(data) {
       cr = data.body
-      refreshHighlights()
+      refreshCR()
     })
   };
 
