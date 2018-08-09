@@ -41,7 +41,9 @@ $(function() {
   // this considers adding a higlight
   function codeMouseUp() {
     var s = window.getSelection()
-    console.log(s)
+    if (s.anchorNode == null || s.focusNode == null) {
+      // these nodes are null when one clicks on a hyperlink
+    }
     var node1 = findPyCodeChild(s.anchorNode)
     var node2 = findPyCodeChild(s.focusNode)
     if (node1 == null || node2 == null) {
@@ -55,7 +57,7 @@ $(function() {
       node2 = tmp
     }
 
-    var filename = node1.parentElement.getAttribute("filename")  
+    var filename = node1.parentElement.getAttribute("data-filename")
     var offset = plainTextOffset(node1)
     var length = plainTextOffset(node2)+node2.textContent.length - offset
 
@@ -70,26 +72,54 @@ $(function() {
 
     console.log('does not overlap')
 
-    cr.highlights[filename].push({offset:offset, length:length})
+    cr.highlights[filename].push({offset:offset, length:length, comment:""})
     console.log(cr.highlights)
     refreshHighlights()
   }
 
-  function addCodeReviewLink(code, offset, length) {
+  function getHighlightComment(filename, offset, length) {
+    for(var i=0; i<cr.highlights[filename].length; i++) {
+      var highlight = cr.highlights[filename][i]
+      if (highlight.offset == offset && highlight.length == length) {
+        return highlight.comment
+      }
+    }
+    console.log("could not find highlight")
+    return ""
+  }
+
+  function setHighlightComment(filename, offset, length, comment) {
+    for(var i=0; i<cr.highlights[filename].length; i++) {
+      var highlight = cr.highlights[filename][i]
+      if (highlight.offset == offset && highlight.length == length) {
+        highlight.comment = comment
+        return
+      }
+    }
+    console.log("could not find highlight")
+  }
+
+  function addCodeReviewLink(code, filename, offset, length) {
     var c = code.slice(0, offset)
-    c += '<a href="#" class="code-review-link">'
+    var span_id = ('highlight_'+offset+'_'+length)
+    c += ('<span id="'+span_id+'" data-highlight-filename="'+filename+'" '+
+          'data-highlight-offset="'+offset+'" data-highlight-length="'+length+'" '+
+          'class="code-review-link" data-toggle="popover" data-placement="right" title="Comment">')
     c += code.slice(offset, offset+length)
-    c += '</a>'
+    c += '</span>'
     c += code.slice(offset+length)
     return c
   }
 
   function refreshHighlights() {
+    // remove all previous highlight popovers
+    $(".popover").remove()
+
     if (Object.keys(cr.project.files).length == 0) {
       $("#code_viewer").html("no files found")
       return
     }
-    
+
     var html = ''
     for (var filename in cr.project.files) {
       var code = cr.project.files[filename]
@@ -102,17 +132,53 @@ $(function() {
       // add all highlights
       for(var i=0; i<cr.highlights[filename].length; i++) {
         var highlight = cr.highlights[filename][i]
-        code = addCodeReviewLink(code, highlight.offset, highlight.length)
+        code = addCodeReviewLink(code, filename, highlight.offset, highlight.length)
       }
 
       html += ('<h3>'+filename+'</h3>')
-      html += ('<pre class="prettyprint lang-py" filename="'+filename+'">' +
+      html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'">' +
                code +
                '</pre>')
     }
+
     $("#code_viewer").html(html)
     PR.prettyPrint()
+
+    // for selection
     $(".prettyprint").mouseup(codeMouseUp)
+
+    // must be after pretty printing
+    $("[data-toggle=popover]").popover({html:true, container:"body"})
+    $("[data-toggle=popover]").each(function() {
+      var highlight_element = $(this)
+      var highlight_id = $(this).attr('id')
+      var offset = $(this).attr('data-highlight-offset')
+      var length = $(this).attr('data-highlight-length')
+      var filename = $(this).attr('data-highlight-filename')
+      html = ('<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40"></textarea>' +
+              '<br>' +
+              '<button type="button" data-highlight-id="'+highlight_id+'" class="btn btn-dark" onclick="">OK</button>'
+             )
+      $(this).attr("data-content", html)
+
+      // on show, register button events
+      $(this).on('shown.bs.popover', function () {
+        var txt = $("textarea[data-highlight-id="+highlight_id+"]")
+        txt.val(getHighlightComment(filename, offset, length))
+
+        var btn = $("button[data-highlight-id="+highlight_id+"]")
+        btn.click(function() {
+          highlight_element.popover('hide')
+        })
+      })
+
+      // on close, persist results
+      $(this).on('hide.bs.popover', function () {
+        var txt = $("textarea[data-highlight-id="+highlight_id+"]")
+        console.log(txt.val())
+        setHighlightComment(filename, offset, length, txt.val())
+      })
+    })
   }
 
   code_review.fetchReview = function(force_new) {

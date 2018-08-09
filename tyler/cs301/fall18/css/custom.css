@@ -64,8 +64,15 @@ code {
 
 .code-review-link {
     background-color: yellow;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .prettyprint {
     background-color: white;
+}
+
+.popover{
+    max-width:800px;
 }
