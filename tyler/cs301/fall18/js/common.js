@@ -120,8 +120,6 @@ $(function() {
 
   // hide errors if click outside them 
   $(document).click(function(event) {
-    console.log(event)
-    //console.log($(event.target).closest(".alert"))
     if ($(event.target).closest("#error_box").length == 0) {
       $('#error_box').hide()
     }
