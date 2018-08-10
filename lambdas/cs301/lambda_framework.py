@@ -68,6 +68,7 @@ def grader_check(user):
 def is_grader(user):
     return user['email'] in GRADER_EMAILS
 
+# TODO: cache this
 def get_user(event):
     token = event['GoogleToken']
     req = urllib.request.Request('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='+token)
@@ -84,7 +85,7 @@ def error(message):
     }
 
 def save_user_info(user):
-    path = 'users/%s.json' % user['sub']
+    path = 'users/google/%s.json' % user['sub']
     try:
         boto3.resource('s3').Object(BUCKET, path).load()
     except botocore.exceptions.ClientError as e:

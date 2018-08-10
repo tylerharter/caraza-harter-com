@@ -1,6 +1,7 @@
 "use strict";
 
 var common = {};
+console.log("common.js loads")
 
 $(function() {
   var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
@@ -10,6 +11,9 @@ $(function() {
   var authExpiresTimestamp = 0 // seconds
 
   function main() {
+    console.log("common.js main()")
+    console.log("gapiLoaded="+gapiLoaded)
+
     // highlight current page
     var curr_page = window.location.pathname.split('/').slice(-1)[0]
     $('.nav-link').each(function(i,link) {
@@ -24,6 +28,26 @@ $(function() {
     $('#error_box').hide()
     $("#loader_wheel").hide()
     $("#thank_you").hide()
+
+    // we don't know whether google has loaded yet.  If yes, use it
+    // now.  If not, setup callback to use it later.
+    if (gapiLoaded) {
+      common.googleSignInRender()
+    } else {
+      gapiLoadedCallback = common.googleSignInRender
+    }
+  }
+
+  common.googleSignInRender = function() {
+    console.log('render signin')
+    gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': common.googleSignIn
+    });
   }
 
   common.googleSignOut = function() {

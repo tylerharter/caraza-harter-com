@@ -84,10 +84,8 @@
       <h1 class="mt-5">Questions</h1>
 
 <div class="row my-5">
-  <div class="col col-12">
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
-    <span id="useremail"></span>
-    <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
+  <div class="col col-12" id="sign-in-area">
+    <!-- main() in common.js will populate this -->
   </div>
 </div>
 
@@ -150,6 +148,22 @@
 <br>
 
 
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+          console.log("in gapiLoad")
+          gapiLoaded = true
+          if (gapiLoadedCallback != null) {
+            console.log("call gapi callback")
+            gapiLoadedCallback()
+          }
+        }
+      </script>
+
       <!-- popups -->
       <div class="loader" id="loader_wheel" style="display:none;"></div>
 
@@ -183,9 +197,9 @@
 	    crossorigin="anonymous"></script>
 
     <!-- main js -->
-    <script src="js/common.js"></script>
     <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/clicker.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

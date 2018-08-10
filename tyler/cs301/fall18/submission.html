@@ -166,6 +166,22 @@
 <br>
 
 
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+          console.log("in gapiLoad")
+          gapiLoaded = true
+          if (gapiLoadedCallback != null) {
+            console.log("call gapi callback")
+            gapiLoadedCallback()
+          }
+        }
+      </script>
+
       <!-- popups -->
       <div class="loader" id="loader_wheel" style="display:none;"></div>
 
@@ -199,9 +215,9 @@
 	    crossorigin="anonymous"></script>
 
     <!-- main js -->
-    <script src="js/common.js"></script>
     <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/submission.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

@@ -90,6 +90,22 @@ sessions, and exam times for lecture sections 001 and 002.</p>
 <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=u6r6gg5qtf9iknlfv3bjmlaogg%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=America%2FChicago" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+          console.log("in gapiLoad")
+          gapiLoaded = true
+          if (gapiLoadedCallback != null) {
+            console.log("call gapi callback")
+            gapiLoadedCallback()
+          }
+        }
+      </script>
+
       <!-- popups -->
       <div class="loader" id="loader_wheel" style="display:none;"></div>
 
@@ -123,9 +139,9 @@ sessions, and exam times for lecture sections 001 and 002.</p>
 	    crossorigin="anonymous"></script>
 
     <!-- main js -->
-    <script src="js/common.js"></script>
     <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
     
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>
