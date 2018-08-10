@@ -29,6 +29,16 @@ def s3_all_keys(Prefix):
                                 MaxKeys=10000)
     return keys
 
+def s3_path_exists(path):
+    try:
+        boto3.resource('s3').Object(BUCKET, path).load()
+        return True
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "404":
+            return False
+        else:
+            raise e
+
 # decorators
 def route(fn):
     ROUTES[fn.__name__] = fn

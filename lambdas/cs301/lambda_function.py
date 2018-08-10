@@ -4,6 +4,7 @@ from collections import defaultdict as ddict
 from lambda_framework import *
 from clicker import *
 from projects import *
+from roster import *
 
 def lambda_handler(event, context):
     # identify user

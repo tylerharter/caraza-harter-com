@@ -81,11 +81,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Project Submission</h1>
-
-<br>
-
-<h2 class="my-3">Step 1: Authenticate with Google</h2>
+      <h1 class="mt-5" id="code_review_title">Admin</h1>
 
 <div class="alert alert-dark">
   <div class="row">
@@ -97,67 +93,20 @@
   </div>
 </div>
 
-<h2 class="my-3">Step 2: Link with CS Account (1st time only)</h2>
+<div class="alert alert-dark grader_content">
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="admin.get_roster()">Get Roster</button>
+      <button type="button" class="btn btn-dark" onclick="admin.put_roster()">Put Roster</button>
+      <button type="button" class="btn btn-dark" onclick="admin.gen_link_codes()">Gen Link Codes</button>
+    </div>
+  </div>
+</div>
 
 <div class="alert alert-dark">
   <div class="row">
     <div class="col col-12">
-      Please enter your instructor-provided link code: <input type="text" id="link_code">
-      <button type="button" id="link_button" class="btn btn-dark" onclick="submission.linkAccounts()">Confirm</button>
-    </div>
-  </div>
-</div>
-
-<h2 class="my-3">Step 3: Choose which Project</h2>
-
-<div class="alert alert-dark">
-  <div class="row justify-content-md-center">
-    <div class="col col-12 px-1">
-      <select class="form-control" id="project_id">
-        <option value="p0">Project 0</option>
-        <option value="p1">Project 1</option>
-        <option value="p2">Project 2</option>
-        <option value="p3">Project 3</option>
-        <option value="p4">Project 4</option>
-        <option value="p5">Project 5</option>
-        <option value="p6">Project 6</option>
-        <option value="p7">Project 7</option>
-        <option value="p8">Project 8</option>
-        <option value="p9">Project 9</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-<h2 class="my-3">Step 4: Upload Your Code (.py or .zip)</h2>
-
-<div class="alert alert-dark">
-  <div class="row justify-content-md-center">
-    <div class="col col-8 px-1">
-      <div class="form-group">
-        <input type="file" class="form-control-file" id="project_file">
-      </div>
-    </div>
-    
-    <div class="col col-4 px-1">
-      <button type="button" id="submit_button" class="btn btn-dark btn-block" onclick="submission.uploadCode()" disabled>Submit</button>
-    </div>
-  </div>
-</div>
-
-<h2 class="my-3">Step 5: Verify Your Submission</h2>
-
-<div class="alert alert-dark">
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.viewCode()">Preview</button>
-      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview()">Check Code Review</button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col col-12" id="code_viewer">
-
+      <textarea id="roster" style="width:100%;"></textarea>
     </div>
   </div>
 </div>
@@ -216,7 +165,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/submission.js"></script>
+    <script src="js/admin.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

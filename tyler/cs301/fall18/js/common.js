@@ -75,13 +75,11 @@ var common = {};
     googleAuth = null
     authExpiresTimestamp = 0
     var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
 
-    $("#signin").show()
-    $("#signout").hide()
-    $("#useremail").text("")
+    // show wait wheel while page refreshes
+    auth2.signOut().then(function () {
+      location.reload()
+    });
   };
 
   common.getGoogleUserId = function() {

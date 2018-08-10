@@ -16,6 +16,8 @@ var submission = {};
     $("#project_id").change(function() {
       $("#code_viewer").html("")
     })
+
+    common.signinCallback = submission.lookupCSLogin
   }
 
   submission.uploadCode = function() {
@@ -102,6 +104,29 @@ var submission = {};
     };
 
     reader.readAsBinaryString(file)
+  }
+
+  submission.linkAccounts = function(event) {
+    var data = {
+      "fn": "roster_attach_user",
+      "link_code": $("#link_code").val()
+    }
+    common.callLambda(data, function(data) {
+      submission.lookupCSLogin()
+    })
+  }
+
+  submission.lookupCSLogin = function() {
+    var data = {
+      "fn": "get_cs_login",
+    }
+    common.callLambda(data, function(data) {
+      if (data.body.cs_login != null) {
+        $("#link_code").val("linked to " + data.body.cs_login)
+        $("#link_code").prop("disabled", true)
+        $("#link_button").prop("disabled", true)
+      }
+    })
   }
 
   init()
