@@ -63,7 +63,10 @@ var common = {};
     $("#useremail").text(googleProfile.getEmail() + " ")
 
     if (common.signinCallback != null) {
+      console.log("call signin callback")
       common.signinCallback()
+    } else {
+      console.log("no signin callback")
     }
   };
 

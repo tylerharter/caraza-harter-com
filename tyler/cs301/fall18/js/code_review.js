@@ -11,6 +11,8 @@ var code_review = {};
     $("#code_review_title").html("Code Review (" + common.getUrlParameter('project_id').toUpperCase() + ")")
     $("#code_viewer").html("")
 
+    common.signinCallback = function() {code_review.fetchReview(false)}
+
     // prompt before leaving with unsaved work
     window.addEventListener("beforeunload", function (e) {
       if (cr_dirty) {
@@ -91,7 +93,7 @@ var code_review = {};
     cr.highlights[filename].push({offset:offset, length:length, comment:""})
     cr_dirty = true
     console.log(cr.highlights)
-    refreshCR()
+    code_review.refreshCR()
   }
 
   function getHighlightComment(filename, offset, length) {
@@ -141,7 +143,7 @@ var code_review = {};
     return c
   }
 
-  function refreshCR() {
+  code_review.refreshCR = function() {
     if (cr.is_grader) {
       $(".grader_content").show()
     } else {
@@ -221,13 +223,13 @@ var code_review = {};
         })
 
         cancel_btn.click(function() {
-          refreshCR()
+          code_review.refreshCR()
           highlight_element.popover('hide')
         })
 
         delete_btn.click(function() {
           deleteHighlight(filename, offset, length)
-          refreshCR()
+          code_review.refreshCR()
         })
       })
     })
@@ -246,7 +248,7 @@ var code_review = {};
 
     common.callLambda(data, function(data) {
       cr = data.body
-      refreshCR()
+      code_review.refreshCR()
     })
   };
 
