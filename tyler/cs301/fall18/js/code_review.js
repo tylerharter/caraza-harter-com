@@ -2,7 +2,7 @@
 
 var code_review = {};
 
-$(function() {
+(function() {
   // code review object
   var cr = null
   var cr_dirty = false
@@ -272,4 +272,4 @@ $(function() {
   }
 
   init()
-})
+})()

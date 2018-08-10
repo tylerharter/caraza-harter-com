@@ -90,18 +90,12 @@
 <div class="alert alert-dark">
   <div class="row">
     <div class="col col-12">
-      <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" id="signin"></div>
+      <div id="signin"></div> <!-- common.js will render this -->
       <span id="useremail"></span>
       <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
     </div>
   </div>
 </div>
-
-<script>
-  function onSignIn(googleUser) {
-  common.googleSignIn(googleUser)
-  };
-</script>
 
 <h2 class="my-3">Step 2: Link with CS Account (1st time only)</h2>
 

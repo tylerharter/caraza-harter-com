@@ -2,7 +2,7 @@
 
 var submission = {};
 
-$(function() {
+(function() {
   var max_file_kb = 40 // 40KB
   // for upload package
   var filename = null
@@ -105,4 +105,4 @@ $(function() {
   }
 
   init()
-})
+})()

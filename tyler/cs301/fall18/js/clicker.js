@@ -2,13 +2,15 @@
 
 var clicker = {};
 
-$(function() {
+(function() {
   var currQuestionId = null
 
   function init() {
-    if (common.getUrlParameter('admin') != '1') {
-      $(".admin_content").hide()
+    if (common.getUrlParameter('admin') == '1') {
+      $(".admin_content").show()
     }
+
+    common.signinCallback = clicker.clickerRefreshQuestion
   }
 
   clicker.clickerSubmit = function(answer) {
@@ -80,4 +82,4 @@ $(function() {
   };
 
   init()
-})
+})()

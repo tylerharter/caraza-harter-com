@@ -1,16 +1,17 @@
 "use strict";
 
-var common = {};
 console.log("common.js loads")
+var common = {};
 
-$(function() {
+(function() {
+  common.signinCallback = null
   var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
   var outstandingCalls = 0
   var googleProfile = null
   var googleAuth = null
   var authExpiresTimestamp = 0 // seconds
 
-  function main() {
+  function init() {
     console.log("common.js main()")
     console.log("gapiLoaded="+gapiLoaded)
 
@@ -40,7 +41,7 @@ $(function() {
 
   common.googleSignInRender = function() {
     console.log('render signin')
-    gapi.signin2.render('my-signin2', {
+    gapi.signin2.render('signin', {
       'scope': 'profile email',
       'width': 240,
       'height': 50,
@@ -49,6 +50,22 @@ $(function() {
       'onsuccess': common.googleSignIn
     });
   }
+
+  common.googleSignIn = function(googleUser) {
+    googleProfile = googleUser.getBasicProfile();
+    console.log("log on by " + googleProfile.getEmail() + " (" + googleProfile.getId() + ")");
+    googleAuth = googleUser.getAuthResponse()
+    console.log("token " + googleAuth.id_token + " expires in " + googleAuth.expires_in + " seconds");
+    authExpiresTimestamp = Date.now()/1000 + googleAuth.expires_in
+
+    $("#signin").hide()
+    $("#signout").show()
+    $("#useremail").text(googleProfile.getEmail() + " ")
+
+    if (common.signinCallback != null) {
+      common.signinCallback()
+    }
+  };
 
   common.googleSignOut = function() {
     googleProfile = null
@@ -62,19 +79,6 @@ $(function() {
     $("#signin").show()
     $("#signout").hide()
     $("#useremail").text("")
-  };
-
-  common.googleSignIn = function(googleUser) {
-    // Useful data for your client-side scripts:
-    googleProfile = googleUser.getBasicProfile();
-    console.log("log on by " + googleProfile.getEmail() + " (" + googleProfile.getId() + ")");
-    googleAuth = googleUser.getAuthResponse()
-    console.log("token " + googleAuth.id_token + " expires in " + googleAuth.expires_in + " seconds");
-    authExpiresTimestamp = Date.now()/1000 + googleAuth.expires_in
-
-    $("#signin").hide()
-    $("#signout").show()
-    $("#useremail").text(googleProfile.getEmail() + " ")
   };
 
   common.getGoogleUserId = function() {
@@ -161,5 +165,5 @@ $(function() {
     }
   });
 
-  main()
-})
+  init()
+})()
