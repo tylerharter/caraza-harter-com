@@ -9,7 +9,11 @@ var reviewer = {};
 
   reviewer.refresh_submissions = function() {
     console.log("refresh")
-    $("submissions").val("")
+    $("#submissions").empty()
+
+    if ($("#project_id").val() == "") {
+      return
+    }
 
     var data = {
       "fn": "project_list_submissions",
@@ -21,11 +25,23 @@ var reviewer = {};
       // break submissions into categories
       var categories = {}
       for (var i=0; i<submissions.length; i++) {
-        var category = 'general'
+        var submission = submissions[i]
+        var display = submission.submitter_id
+        var category = 'Misc'
+        if (submission.info.cs_login != null) {
+          display = submission.info.cs_login
+          category = 'Students'
+        }
+        if (submission.info.ta != null) {
+          category = submission.info.ta
+        }
+
         if (!(category in categories)) {
           categories[category] = []
         }
-        categories[category].push(submissions[i])
+
+        submissions[i].display = display
+        categories[category].push(submission)
       }
 
       // display links
@@ -40,7 +56,7 @@ var reviewer = {};
           var url = ('code_review.html?project_id=' + submission.project_id +
                      '&submitter_id=' + submission.submitter_id)
           $('<a>',{
-            text:'submitter='+submission.submitter_id,
+            text:submission.display,
             href:url,
             target:'_blank'
           }).appendTo(body)

@@ -104,3 +104,29 @@ def get_cs_login(user, event):
         raise e
 
     return (200, {"cs_login": cs_login})
+
+@route
+@admin
+def roster_merge_google_ids(user, event):
+    '''
+    Look at individual files that link cs logins to google IDs and add
+    that information to the main roster file for fast lookup.
+    '''
+    suffix = '.txt'
+    all_files = s3_all_keys('users/cs_login_to_google/')
+    linked_users = {path.split('/')[-1][:-4]
+                    for path in all_files
+                    if path.endswith('.txt')}
+
+    roster = json.loads(get_roster_raw())
+    for student in roster:
+        user_id = student.get('user_id', None)
+        cs_login = student.get('cs_login', None)
+        # see if there's a link file with data we could roll into the main roster
+        if user_id == None and cs_login in linked_users:
+            path = 'users/cs_login_to_google/%s.txt' % cs_login
+            response = s3().get_object(Bucket=BUCKET, Key=path)
+            user_id = response['Body'].read().decode('utf-8')
+            student['user_id'] = user_id
+    body = put_roster_raw(roster)
+    return (200, {'roster':body})

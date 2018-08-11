@@ -36,5 +36,14 @@ var admin = {};
     })
   };
 
+  admin.merge_google_ids = function() {
+    var data = {
+      "fn": "roster_merge_google_ids",
+    }
+    common.callLambda(data, function(data) {
+      $("#roster").val(data.body.roster)
+    })
+  }
+
   init()
 })()

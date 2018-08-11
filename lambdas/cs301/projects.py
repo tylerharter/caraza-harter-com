@@ -3,12 +3,14 @@ import zipfile, io
 from collections import defaultdict as ddict
 
 from lambda_framework import *
+from roster import *
 
 PROJECT_IDS = ['p0', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9']
 MAX_SIZE_KB = 40
 
-# take a binary string, and force to be an ascii string with UNIX newlines
+
 def normalize_py_bytes(b):
+    '''take a binary string, and force to be an ascii string with UNIX newlines'''
     code = str(b, 'utf-8') # assume a .py is utf-8
     # force to ascii
     code = str(bytes(code, 'ascii', 'replace'), 'ascii')
@@ -17,6 +19,7 @@ def normalize_py_bytes(b):
     return code
 
 def project_path(user_id, project_id, submission_id=None):
+    '''Get location where submission should be saved'''
     path = 'projects/%s/users/%s/' % (project_id, user_id)
     path += (submission_id if submission_id != None else 'curr.json')
     return path
@@ -24,8 +27,11 @@ def project_path(user_id, project_id, submission_id=None):
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
-# get displayable version, excluding binary files
 def load_project(user_id, project_id, submission_id=None):
+    '''
+    Fetch project in human readable format, extracting content from
+    plaintext code files inside zip packages.
+    '''
     path = project_path(user_id, project_id, submission_id)
     response = s3().get_object(Bucket=BUCKET, Key=path)
     row = json.loads(str(response['Body'].read(), 'utf-8'))
@@ -155,7 +161,13 @@ def put_code_review(user, event):
 @route
 @grader
 def project_list_submissions(user, event):
+    # get partial roster indexed by google IDs
+    roster = json.loads(get_roster_raw())
+    roster = {student['user_id']: student for student in roster if 'user_id' in student}
+
     project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'invalid project id')
     paths = s3_all_keys('projects/'+project_id)
     submissions = []
     for path in paths:
@@ -164,5 +176,8 @@ def project_list_submissions(user, event):
             parts[2] != 'users' or parts[4] != 'curr.json'):
             continue
         submitter_id = parts[3]
-        submissions.append({'project_id':project_id, 'submitter_id':submitter_id})
+        submission = {'project_id':project_id, 'submitter_id':submitter_id, 'info': {}}
+        for field in ['cs_login', 'ta']:
+            submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
+        submissions.append(submission)
     return (200, {'submissions':submissions})
