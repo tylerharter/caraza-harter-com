@@ -81,7 +81,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5" id="code_review_title">Admin</h1>
+      <h1 class="mt-5" id="code_review_title">Submissions</h1>
 
 <div class="alert alert-dark">
   <div class="row">
@@ -96,17 +96,27 @@
 <div class="alert alert-dark">
   <div class="row my-3">
     <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="admin.get_roster()">Get Roster</button>
-      <button type="button" class="btn btn-dark" onclick="admin.put_roster()">Put Roster</button>
-      <button type="button" class="btn btn-dark" onclick="admin.gen_link_codes()">Gen Link Codes</button>
+      Project: <select id="project_id">
+        <option value=""></option>
+        <option value="p0">Project 0</option>
+        <option value="p1">Project 1</option>
+        <option value="p2">Project 2</option>
+        <option value="p3">Project 3</option>
+        <option value="p4">Project 4</option>
+        <option value="p5">Project 5</option>
+        <option value="p6">Project 6</option>
+        <option value="p7">Project 7</option>
+        <option value="p8">Project 8</option>
+        <option value="p9">Project 9</option>
+      </select>
     </div>
   </div>
 </div>
 
 <div class="alert alert-dark">
   <div class="row">
-    <div class="col col-12">
-      <textarea id="roster" style="width:100%;"></textarea>
+    <div class="col col-12" id="submissions">
+      
     </div>
   </div>
 </div>
@@ -165,7 +175,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="js/reviewer.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

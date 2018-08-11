@@ -151,3 +151,18 @@ def put_code_review(user, event):
     )
 
     return (200, 'uploaded review')
+
+@route
+@grader
+def project_list_submissions(user, event):
+    project_id = event['project_id']
+    paths = s3_all_keys('projects/'+project_id)
+    submissions = []
+    for path in paths:
+        parts = path.split('/')
+        if (len(parts) != 5 or parts[0] != 'projects' or
+            parts[2] != 'users' or parts[4] != 'curr.json'):
+            continue
+        submitter_id = parts[3]
+        submissions.append({'project_id':project_id, 'submitter_id':submitter_id})
+    return (200, {'submissions':submissions})
