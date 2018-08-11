@@ -6,29 +6,27 @@ No Class
 
 =
 Machine Org
-
+* Class Overview
 * CPU/Memory/Devices
-* File System
+* Storage
 * Network
 
 =
-UNIX Shell
-
-* Bash, Navigation
+The Terminal
+* Shells: Powershell and Bash
 * Programs+Arguments
 * Pipes+Redirects
-* Bash Scripts
+* Scripts
 
 =
 Memory
-
 * Bits+Bytes
+* Numbers
+* Text
 * Addresses
-* Numbers+Text
 
 =
 Computation
-
 * Registers
 * Instructions
 * Pseudocode
@@ -158,9 +156,9 @@ Recursion
 
 =
 Generators
-* execution flow
-* yield syntax
-* saving memory
+* Execution Flow
+* "yield" Syntax
+* Saving Memory
 
 =
 Functional Prog. w/ Lists
@@ -232,17 +230,35 @@ Exam 2
 ################################################################################
 
 =
+Numpy
+* Arrays
+* Element-Wise Operations
+* Matrix Multiplication
+
+=
 Plotting
+* matplotlib
+* Line, Bar, and Scatter Plots
+* Axes and Annotations
+
+=
+Notebooks
+* iPython
+* Interactive Plotting
 
 =
 Tracing 1
-* *args and **kwargs
-* Wrappers and Decorators
+* Trace Collection
+* Wrappers with *args and **kwargs
+* Decorators
 
 =
 Tracing 2
 * Date/Time Types
 * Plotting Timeseries Data
+
+=
+Thanksgiving Break
 
 =
 Web Content
@@ -258,14 +274,9 @@ HTML
 * Parsing
 
 =
-Thanksgiving Break
-
-=
 Approximation
-* Integration
-
-=
-Numpy
+* Derivatives
+* Integrals
 
 =
 Simulation
@@ -276,6 +287,7 @@ Simulation
 
 =
 Markov Chains
+* Simple Modeling
 * Inference
 * Prediction
 
@@ -285,10 +297,7 @@ Hypothesis Testing
 * <b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
 
 =
-Notebooks
-* ipython
-* pandas
-* interactive plotting
+Slack Day
 
 =
-Slack Day
+Review
