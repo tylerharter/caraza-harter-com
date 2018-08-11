@@ -157,6 +157,12 @@ Recursion
 <b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6.
 
 =
+Generators
+* execution flow
+* yield syntax
+* saving memory
+
+=
 Functional Prog. w/ Lists
 * Anonymous Functions (lambdas)
 * Map, Filter, Sum, Max, Min
@@ -169,7 +175,6 @@ Functional Prog. w/ Lists
 Objects
 * object, namedtuple, recordclass
 * references
-* object arguments
 * deep/shallow copy
 
 <b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc).<br>
@@ -190,12 +195,6 @@ JSON
 <b>Read</b>: TODO.<br>
 
 =
-Flexible Args
-* *args
-* **kwargs
-* wrappers
-
-=
 Files and Directories
 
 =
@@ -203,6 +202,47 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
+
+=
+Database 1
+* schemas/types
+* queries
+* where
+* sqlite
+
+=
+Database 2
+* group by
+* aggregates
+* inserts
+
+=
+Database 3
+* sqlite3 library
+* accessing DBs in Python
+
+=
+Slack Day
+
+=
+Exam 2
+
+################################################################################
+# PART 3
+################################################################################
+
+=
+Plotting
+
+=
+Tracing 1
+* *args and **kwargs
+* Wrappers and Decorators
+
+=
+Tracing 2
+* Date/Time Types
+* Plotting Timeseries Data
 
 =
 Web Content
@@ -217,26 +257,27 @@ HTML
 * Generating
 * Parsing
 
-################################################################################
-# PART 3
-################################################################################
+=
+Thanksgiving Break
 
 =
-Plotting
+Approximation
+* Integration
 
 =
-Tracing
-* Date/Time Types
-* Collecting Logs
-* Parsing Logs
-* Plotting Time Data
+Numpy
 
 =
 Simulation
 * Randomness
 * Seeding
 * Distributions
-* Monte Carlo Simulation
+* Monte Carlo
+
+=
+Markov Chains
+* Inference
+* Prediction
 
 =
 Hypothesis Testing
@@ -244,27 +285,10 @@ Hypothesis Testing
 * <b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
 
 =
-Markov Models
-* Inference
-* Prediction
-
-=
-Jupyter Notebook
-
-=
-Numpy
+Notebooks
+* ipython
+* pandas
+* interactive plotting
 
 =
 Slack Day
-
-=
-Thanksgiving Break
-
-=
-Generators
-* yield
-
-=
-Decorators
-* frameworks
-* wrappers
