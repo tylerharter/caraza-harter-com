@@ -13,6 +13,7 @@ var admin = {};
     }
     common.callLambda(data, function(data) {
       $("#roster").val(data.body.roster)
+      $("#put_roster").prop('disabled', false);
     })
   };
 
