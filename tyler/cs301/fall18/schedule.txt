@@ -120,6 +120,7 @@ Simple Graphics
 
 =
 Slack Day
+<b>Due</b>: P3.
 
 =
 Exam 1
@@ -140,6 +141,7 @@ Lists
 
 =
 CSV, tables
+<b>Due</b>: P4.
 
 TODO
 
@@ -168,6 +170,7 @@ Functional Prog. w/ Lists
 * List Comprehensions
 
 <b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225).<br>
+<b>Due</b>: P5.
 
 =
 Objects
@@ -191,6 +194,7 @@ JSON
 * Pretty Printing
 
 <b>Read</b>: TODO.<br>
+<b>Due</b>: P6.
 
 =
 Files and Directories
@@ -207,6 +211,7 @@ Database 1
 * queries
 * where
 * sqlite
+<b>Due</b>: P7.
 
 =
 Database 2
@@ -221,6 +226,7 @@ Database 3
 
 =
 Slack Day
+<b>Due</b>: P8.
 
 =
 Exam 2
@@ -240,6 +246,7 @@ Plotting
 * matplotlib
 * Line, Bar, and Scatter Plots
 * Axes and Annotations
+<b>Due</b>: P9.
 
 =
 Notebooks
@@ -256,6 +263,7 @@ Tracing 1
 Tracing 2
 * Date/Time Types
 * Plotting Timeseries Data
+<b>Due</b>: P10.
 
 =
 Thanksgiving Break
@@ -272,6 +280,7 @@ HTML
 * Tables
 * Generating
 * Parsing
+<b>Due</b>: P11.
 
 =
 Approximation
@@ -290,6 +299,7 @@ Markov Chains
 * Simple Modeling
 * Inference
 * Prediction
+<b>Due</b>: P12.
 
 =
 Hypothesis Testing
@@ -301,3 +311,4 @@ Slack Day
 
 =
 Review
+<b>Due</b>: P13.

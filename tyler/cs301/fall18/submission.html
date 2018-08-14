@@ -55,9 +55,6 @@
 	      </a>
 	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		<a class="dropdown-item" href="resources.html">Primary Materials</a>
-                <a class="dropdown-item" href="https://piazza.com/wisc/fall2018/cs301/home" target="_blank">Discussion (Piazza)</a>
-                <a class="dropdown-item" href="https://goo.gl/forms/2w7JujJrg9cKGtYj2" target="_blank">Feedback Form</a>
-                <a class="dropdown-item" href="clicker.html">Lecture Questions</a>
 		<a class="dropdown-item" href="videos.html">Videos</a>
 		<a class="dropdown-item" href="extra.html">Extras</a>
 	      </div>
@@ -68,14 +65,24 @@
 		Projects
 	      </a>
 	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="datasets.html">Datasets</a>
 		<a class="dropdown-item" href="projects.html">Specifications</a>
 		<a class="dropdown-item" href="submission.html">Submission</a>
                 <a class="dropdown-item" href="reviewer.html">TA Only</a>
 	      </div>
 	    </li>
 
-	    <li class="nav-item">
-	      <a class="nav-link" href="datasets.html">Datasets</a>
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/wisc/fall2018/cs301/home" target="_blank">Discussion (Piazza)</a>
+                <a class="dropdown-item" href="https://goo.gl/forms/2w7JujJrg9cKGtYj2" target="_blank">Feedback Form</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/120690/gradebook" target="_blank">Grades (Sec 001)</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/120691/gradebook" target="_blank">Grades (Sec 002)</a>
+                <a class="dropdown-item" href="clicker.html">Lecture Questions</a>
+	      </div>
 	    </li>
 	  </ul>
 	</div>
@@ -175,12 +182,12 @@
         var gapiLoadedCallback = null
 
         function gapiLoad() {
-          console.log("in gapiLoad")
-          gapiLoaded = true
-          if (gapiLoadedCallback != null) {
-            console.log("call gapi callback")
-            gapiLoadedCallback()
-          }
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
         }
       </script>
 
