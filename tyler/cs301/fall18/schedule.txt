@@ -263,7 +263,7 @@ Tracing 1
 Tracing 2
 * Date/Time Types
 * Plotting Timeseries Data
-<b>Due</b>: P10.
+<b>No Project Due</b>
 
 =
 Thanksgiving Break
@@ -280,7 +280,7 @@ HTML
 * Tables
 * Generating
 * Parsing
-<b>Due</b>: P11.
+<b>Due</b>: P10.
 
 =
 Approximation
@@ -299,7 +299,7 @@ Markov Chains
 * Simple Modeling
 * Inference
 * Prediction
-<b>Due</b>: P12.
+<b>Due</b>: P11.
 
 =
 Hypothesis Testing
@@ -311,4 +311,4 @@ Slack Day
 
 =
 Review
-<b>Due</b>: P13.
+<b>Due</b>: P12.

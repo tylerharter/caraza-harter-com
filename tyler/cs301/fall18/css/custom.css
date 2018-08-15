@@ -76,3 +76,9 @@ code {
 .popover{
     max-width:800px;
 }
+
+pre.example {
+    background-color: #EEEEEE;
+    padding: 8pt;
+    border-left: 4px solid black;
+}
