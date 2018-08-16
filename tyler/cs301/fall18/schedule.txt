@@ -31,7 +31,7 @@ Computation
 * Instructions
 * Pseudocode
 
-<b>Due</b>: P0 (ungraded).
+<b>Due</b>: P0 (ungraded)
 
 =
 Programming
@@ -39,7 +39,7 @@ Programming
 * Syntax+Parsing
 * Values+Types
 * Calculation+Operators
-<b>Read</b>: Downey Ch 1.
+<b>Read</b>: Downey Ch 1
 
 =
 Vars and Exprs
@@ -50,7 +50,7 @@ Vars and Exprs
 * Types of errors
 * Comments
 
-<b>Read</b>: Downey Ch 2.
+<b>Read</b>: Downey Ch 2
 
 =
 Using Functions
@@ -61,8 +61,8 @@ Using Functions
 * Importing Modules
 * Math Module
 
-<b>Read</b>: Downey Ch 3 (pgs 21-23).<br>
-<b>Due</b>: P1.
+<b>Read</b>: Downey Ch 3 (pgs 21-23)<br>
+<b>Due</b>: P1
 
 =
 Creating Functions
@@ -73,7 +73,7 @@ Creating Functions
 * Functions Type
 * TODO: diff materials about return values
 
-<b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61).
+<b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61)
 
 =
 Conditions
@@ -84,8 +84,8 @@ Conditions
 * True and "Truthy"
 * Modular arithmetic
 
-<b>Read</b>: Downey Ch 5 (pgs 47-51, 54-60).<br>
-<b>Optional</b>: Downey Ch 4.
+<b>Read</b>: Downey Ch 5 (pgs 47-51, 54-60)<br>
+<b>Optional</b>: Downey Ch 4
 
 =
 Iteration
@@ -95,8 +95,8 @@ Iteration
 * Infinite Iteration
 * Break/Continue
 
-<b>Read</b>: Downey Ch 7.<br>
-<b>Due</b>: P2.
+<b>Read</b>: Downey Ch 7<br>
+<b>Due</b>: P2
 
 
 =
@@ -109,18 +109,19 @@ Strings
 * Comparison
 * String formatting
 
-<b>Read</b>: Downey Ch 8.<br>
-<b>Optional</b>: Downey Ch 9.
+<b>Read</b>: Downey Ch 8<br>
+<b>Optional</b>: Downey Ch 9
 
 =
 Simple Graphics
 * Lines
 * Squares
 * Circles
+* Text
 
 =
 Slack Day
-<b>Due</b>: P3.
+<b>Due</b>: P3
 
 =
 Exam 1
@@ -137,11 +138,11 @@ Lists
 * Mutable vs. Immutable
 * List Methods
 
-<b>Read</b>: Downey Ch 10 (pgs 107-111).<br>
+<b>Read</b>: Downey Ch 10 (pgs 107-111)<br>
 
 =
 CSV, tables
-<b>Due</b>: P4.
+<b>Due</b>: P4
 
 TODO
 
@@ -154,7 +155,7 @@ Recursion
 * More Stack Diagrams
 * Stack Overflow
 
-<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6.
+<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
 
 =
 Generators
@@ -169,8 +170,8 @@ Functional Prog. w/ Lists
 * Sorting
 * List Comprehensions
 
-<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225).<br>
-<b>Due</b>: P5.
+<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
+<b>Due</b>: P5
 
 =
 Objects
@@ -178,14 +179,14 @@ Objects
 * references
 * deep/shallow copy
 
-<b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc).<br>
+<b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc)<br>
 
 =
 Dictionaries
 * Dictionary Comprehensions
 * TODO
 
-<b>Read</b>: Downey Ch 11.<br>
+<b>Read</b>: Downey Ch 11<br>
 
 =
 JSON
@@ -193,8 +194,8 @@ JSON
 * Serialization
 * Pretty Printing
 
-<b>Read</b>: TODO.<br>
-<b>Due</b>: P6.
+<b>Read</b>: TODO<br>
+<b>Due</b>: P6
 
 =
 Files and Directories
@@ -211,7 +212,7 @@ Database 1
 * queries
 * where
 * sqlite
-<b>Due</b>: P7.
+<b>Due</b>: P7
 
 =
 Database 2
@@ -226,7 +227,7 @@ Database 3
 
 =
 Slack Day
-<b>Due</b>: P8.
+<b>Due</b>: P8
 
 =
 Exam 2
@@ -246,7 +247,7 @@ Plotting
 * matplotlib
 * Line, Bar, and Scatter Plots
 * Axes and Annotations
-<b>Due</b>: P9.
+<b>Due</b>: P9
 
 =
 Notebooks
@@ -280,7 +281,7 @@ HTML
 * Tables
 * Generating
 * Parsing
-<b>Due</b>: P10.
+<b>Due</b>: P10
 
 =
 Approximation
@@ -299,16 +300,17 @@ Markov Chains
 * Simple Modeling
 * Inference
 * Prediction
-<b>Due</b>: P11.
+<b>Due</b>: P11<br>
+<b>Read</b>: <a href="http://setosa.io/ev/markov-chains">http://setosa.io/ev/markov-chains</a>
 
 =
 Hypothesis Testing
 * Simulated p-values
-* <b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
+<b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
 
 =
 Slack Day
 
 =
 Review
-<b>Due</b>: P12.
+<b>Due</b>: P12
