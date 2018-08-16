@@ -10,6 +10,7 @@ Machine Org
 * CPU/Memory/Devices
 * Storage
 * Network
+<a href="materials/lec-01.pdf">Link to Slides</a>
 
 =
 The Terminal
