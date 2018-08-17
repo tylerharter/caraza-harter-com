@@ -20,6 +20,7 @@ Program I/O
 * Pipes and redirects
 * PowerShell and bash
 * Scripts
+<a href="materials/lec-02.pdf">Link to Slides</a>
 
 =
 Memory
