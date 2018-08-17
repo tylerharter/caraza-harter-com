@@ -13,10 +13,12 @@ Machine Org
 <a href="materials/lec-01.pdf">Link to Slides</a>
 
 =
-The Terminal
-* Shells: Powershell and Bash
-* Programs+Arguments
-* Pipes+Redirects
+Program I/O
+* File I/O
+* Terminals and shells
+* Arguments, stdin, and stdout
+* Pipes and redirects
+* PowerShell and bash
 * Scripts
 
 =
