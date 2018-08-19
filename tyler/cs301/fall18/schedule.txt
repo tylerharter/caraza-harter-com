@@ -23,11 +23,11 @@ Program I/O
 <a href="materials/lec-02.pdf">Link to Slides</a>
 
 =
-Memory
-* Bits+Bytes
-* Numbers
-* Text
-* Addresses
+Bits and Memory
+* Bits+bytes
+* Memory organization
+* Representing information as bits
+<a href="materials/lec-03.pdf">Link to Slides</a>
 
 =
 Computation
