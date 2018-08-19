@@ -1,9 +1,12 @@
-import boto3, zipfile, os
+import boto3, zipfile, os, sys
 
-client = boto3.client('lambda')
+session = boto3.Session(profile_name='default', region_name='us-east-2')
+client = session.client('lambda')
 
 def main():
-    fname = 'cs301'
+    fname = 'cs301-test'
+    if len(sys.argv) == 2 and sys.argv[1] == 'prod':
+        fname = 'cs301'
     print(client.get_function(FunctionName=fname))
 
     tmp = 'tmp.zip'
