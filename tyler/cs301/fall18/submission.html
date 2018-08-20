@@ -88,6 +88,10 @@
                 <a class="dropdown-item" href="http://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
 	      </div>
 	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
 	  </ul>
 	</div>
       </nav>
@@ -106,7 +110,6 @@
     <div class="col col-12">
       <div id="signin"></div> <!-- common.js will render this -->
       <span id="useremail"></span>
-      <button type="button" class="btn btn-primary" onclick="common.googleSignOut()" id="signout">Logoff</button>
     </div>
   </div>
 </div>
