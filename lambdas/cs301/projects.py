@@ -171,7 +171,7 @@ def project_list_submissions(user, event):
     project_id = event['project_id']
     if not project_id in PROJECT_IDS:
         return (500, 'invalid project id')
-    paths = s3_all_keys('projects/'+project_id)
+    paths = s3_all_keys('projects/'+project_id+'/')
     submissions = []
     for path in paths:
         parts = path.split('/')
@@ -179,7 +179,8 @@ def project_list_submissions(user, event):
             parts[2] != 'users' or parts[4] != 'curr.json'):
             continue
         submitter_id = parts[3]
-        submission = {'project_id':project_id, 'submitter_id':submitter_id, 'info': {}}
+        submission = {'project_id':project_id, 'submitter_id':submitter_id, 'info': {},
+                      'path': path}
         for field in ['cs_login', 'ta']:
             submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
         submissions.append(submission)
