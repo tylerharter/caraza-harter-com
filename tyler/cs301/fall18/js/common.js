@@ -60,6 +60,7 @@ var common = {};
     authExpiresTimestamp = Date.now()/1000 + googleAuth.expires_in
 
     $("#signin").hide()
+    $("#signout").text(googleProfile.getEmail() + " Logout")
     $("#signout").show()
     $("#useremail").text(googleProfile.getEmail() + " ")
 
