@@ -10,7 +10,12 @@ var clicker = {};
       $(".admin_content").show()
     }
 
-    common.signinCallback = clicker.clickerRefreshQuestion
+    common.signinCallback = clickerSignin
+  }
+
+  function clickerSignin() {
+    $("#signin-row").hide()
+    clicker.clickerRefreshQuestion()
   }
 
   clicker.clickerSubmit = function(answer) {
