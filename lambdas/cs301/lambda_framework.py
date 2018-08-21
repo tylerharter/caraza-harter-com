@@ -5,7 +5,7 @@ ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
-GRADER_EMAILS = ['pivotlibre@gmail.com']
+GRADER_EMAILS = ['pivotlibre@gmail.com', 'szou28@wisc.edu']
 
 s3_cache = None # client
 
