@@ -5,21 +5,18 @@
 No Class
 
 =
-Machine Org
+Introduction
 * Class Overview
-* CPU/Memory/Devices
-* Storage
-* Network
+* Hardware
+* Software
 <a href="materials/lec-01.pdf">Link to Slides</a>
 
 =
-Program I/O
-* File I/O
-* Terminals and shells
-* Arguments, stdin, and stdout
-* Pipes and redirects
-* PowerShell and bash
-* Scripts
+The Terminal
+* Terminal Emulatation
+* Shells
+* Navigation
+* Program Execution
 <a href="materials/lec-02.pdf">Link to Slides</a>
 
 =
@@ -31,9 +28,9 @@ Bits and Memory
 
 =
 Computation
-* Registers
-* Instructions
 * Pseudocode
+* State
+* Flow of Execution
 
 <b>Due</b>: P0 (ungraded)
 
@@ -93,15 +90,17 @@ Conditions
 
 =
 Iteration
-
 * Reassignment
 * While Loop
 * Infinite Iteration
-* Break/Continue
 
 <b>Read</b>: Downey Ch 7<br>
 <b>Due</b>: P2
 
+=
+Advanced Iteration
+* Break
+* Continue
 
 =
 Strings
@@ -115,13 +114,6 @@ Strings
 
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9
-
-=
-Simple Graphics
-* Lines
-* Squares
-* Circles
-* Text
 
 =
 Slack Day
@@ -145,10 +137,12 @@ Lists
 <b>Read</b>: Downey Ch 10 (pgs 107-111)<br>
 
 =
-CSV, tables
+CSV Tables
+* Headers
+* Sorting
+* Aggregation
+* Escaping
 <b>Due</b>: P4
-
-TODO
 
 =
 Recursion
@@ -163,40 +157,38 @@ Recursion
 
 =
 Generators
-* Execution Flow
 * "yield" Syntax
-* Saving Memory
-
-=
-Functional Prog. w/ Lists
-* Anonymous Functions (lambdas)
-* Map, Filter, Sum, Max, Min
-* Sorting
-* List Comprehensions
+* Execution Flow
 
 <b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
 <b>Due</b>: P5
 
 =
 Objects
-* object, namedtuple, recordclass
-* references
-* deep/shallow copy
+* namedtuple and recordclass
+* Mutability
+* References
+* Python Tutor
 
 <b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc)<br>
 
 =
 Dictionaries
-* Dictionary Comprehensions
 * TODO
-
-<b>Read</b>: Downey Ch 11<br>
 
 =
 JSON
 * Deserialization
 * Serialization
 * Pretty Printing
+
+=
+Copying
+* References
+* Shallow Copy
+* Deep Copy
+
+<b>Read</b>: Downey Ch 11<br>
 
 <b>Read</b>: TODO<br>
 <b>Due</b>: P6
