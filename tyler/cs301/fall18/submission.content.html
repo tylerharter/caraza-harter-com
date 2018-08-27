@@ -9,22 +9,29 @@
     <div class="col col-12">
       <div id="signin"></div> <!-- common.js will render this -->
       <span id="useremail"></span>
+      <p>
+        Note: if you want your submission to be graded, you must use
+        your <b>&lt;netid&gt@wisc.edu</b> email to sign in (this will
+        redirect to wisc.edu to accept your password).
+      </p>
     </div>
   </div>
 </div>
 
-<h2 class="my-3">Step 2: Link with CS Account (1st time only)</h2>
+<div style="display:none;" id="step1b">
+  <h2 class="my-3">Step 1b: Link with CS Account (1st time only)</h2>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12">
-      Please enter your instructor-provided link code: <input type="text" id="link_code">
-      <button type="button" id="link_button" class="btn btn-dark" onclick="submission.linkAccounts()">Confirm</button>
+  <div class="alert alert-dark">
+    <div class="row">
+      <div class="col col-12">
+        Please enter your instructor-provided link code: <input type="text" id="link_code">
+        <button type="button" id="link_button" class="btn btn-dark" onclick="submission.linkAccounts()">Confirm</button>
+      </div>
     </div>
   </div>
 </div>
 
-<h2 class="my-3">Step 3: Choose which Project</h2>
+<h2 class="my-3">Step 2: Choose which Project</h2>
 
 <div class="alert alert-dark">
   <div class="row justify-content-md-center">
@@ -48,7 +55,7 @@
   </div>
 </div>
 
-<h2 class="my-3">Step 4: Upload Your Code (.py or .zip)</h2>
+<h2 class="my-3">Step 3: Upload Your Code (.py or .zip)</h2>
 
 <div class="alert alert-dark">
   <div class="row justify-content-md-center">
@@ -64,7 +71,7 @@
   </div>
 </div>
 
-<h2 class="my-3">Step 5: Verify Your Submission</h2>
+<h2 class="my-3">Step 4: Verify Your Submission</h2>
 
 <div class="alert alert-dark">
   <div class="row my-3">

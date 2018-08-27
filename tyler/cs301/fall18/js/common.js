@@ -92,6 +92,13 @@ var common = {};
     return googleProfile.getId()
   }
 
+  common.getEmail = function() {
+    if (googleProfile == null) {
+      return null
+    }
+    return googleProfile.getEmail()
+  }
+
   common.getUrlParameter = function(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
