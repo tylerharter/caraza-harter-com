@@ -47,11 +47,11 @@ def roster_attach_user_raw(user_id, net_id):
 
     path1 = 'users/google_to_net_id/%s.txt' % user_id
     if s3_path_exists(path1):
-        return (500, 'google account already linked to cs login')
+        return (500, 'google account already linked to NetID')
 
     path2 = 'users/net_id_to_google/%s.txt' % net_id
     if s3_path_exists(path2):
-        return (500, 'cs login already linked to google account')
+        return (500, 'NetID already linked to google account')
 
     # if only one of these succeeds, it will require manual cleanup in S3
     s3().put_object(Bucket=BUCKET,
@@ -64,7 +64,7 @@ def roster_attach_user_raw(user_id, net_id):
                     Body=bytes(user_id, 'utf-8'),
                     ContentType='text/json',
     )
-    return (200, 'google account linked to cs login')
+    return (200, 'google account linked to NetID')
 
 @route
 @user
@@ -110,10 +110,10 @@ def get_net_id(user, event):
         response = s3().get_object(Bucket=BUCKET, Key='users/net_id_to_google/%s.txt' % net_id)
         user_id_check = response['Body'].read().decode('utf-8')
         if user_id != user_id_check:
-            return (500, 'google/cs linkage mismatch, please contact your instructor for help (1)')
+            return (500, 'google/NetID linkage mismatch, please contact your instructor for help (1)')
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "NoSuchKey":
-            return (500, 'google/cs linkage mismatch, please contact your instructor for help (2)')
+            return (500, 'google/NetID linkage mismatch, please contact your instructor for help (2)')
         # some unexpected error
         raise e
 
@@ -123,7 +123,7 @@ def get_net_id(user, event):
 @admin
 def roster_merge_google_ids(user, event):
     '''
-    Look at individual files that link cs logins to google IDs and add
+    Look at individual files that link NetIDs to google IDs and add
     that information to the main roster file for fast lookup.
     '''
     suffix = '.txt'

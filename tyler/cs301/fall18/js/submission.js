@@ -125,7 +125,7 @@ var submission = {};
       "fn": "get_net_id",
     }
     common.callLambda(data, function(data) {
-      if (data.body.net_id = null) {
+      if (data.body.net_id == null) {
         $("#link_code").val("linked to " + data.body.net_id)
         $("#link_code").prop("disabled", true)
         $("#link_button").prop("disabled", true)
