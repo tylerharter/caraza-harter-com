@@ -2,6 +2,8 @@ import json, random
 
 from lambda_framework import *
 
+NET_ID_EMAIL_SUFFIX = '@wisc.edu'
+
 # returns a string containing json
 def get_roster_raw():
     response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
@@ -41,6 +43,8 @@ def roster_gen_link_codes(user, event):
     return (200, {'roster': body})
 
 def roster_attach_user_raw(user_id, net_id):
+    net_id = net_id.lower()
+
     path1 = 'users/google_to_net_id/%s.txt' % user_id
     if s3_path_exists(path1):
         return (500, 'google account already linked to cs login')
@@ -67,6 +71,8 @@ def roster_attach_user_raw(user_id, net_id):
 def roster_attach_user(user, event):
     user_id = user['sub']
     code = event['link_code']
+
+    # otherwise, look for link code in the roster
     roster = json.loads(get_roster_raw())
     for student in roster:
         net_id = student.get('net_id', None)
@@ -87,7 +93,15 @@ def get_net_id(user, event):
     except botocore.exceptions.ClientError as e:
         # not linked yet
         if e.response['Error']['Code'] == "NoSuchKey":
+            # if student signed in with a net ID, we can link now
+            if user['email'].lower().endswith(NET_ID_EMAIL_SUFFIX):
+                net_id = user['email'][:-len(NET_ID_EMAIL_SUFFIX)]
+                code, r = roster_attach_user_raw(user_id, net_id)
+                if code != 200:
+                    return (code, r)
+                return (200, {"net_id": net_id})
             return (200, {"net_id": None})
+
         # some unexpected error
         raise e
 

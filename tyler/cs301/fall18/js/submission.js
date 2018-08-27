@@ -17,7 +17,7 @@ var submission = {};
       $("#code_viewer").html("")
     })
 
-    common.signinCallback = submission.lookupCSLogin
+    common.signinCallback = submission.lookupNetId
   }
 
   submission.uploadCode = function() {
@@ -112,11 +112,11 @@ var submission = {};
       "link_code": $("#link_code").val()
     }
     common.callLambda(data, function(data) {
-      submission.lookupCSLogin()
+      submission.lookupNetId()
     })
   }
 
-  submission.lookupCSLogin = function() {
+  submission.lookupNetId = function() {
     var data = {
       "fn": "get_net_id",
     }
