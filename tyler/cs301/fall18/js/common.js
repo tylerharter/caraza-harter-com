@@ -48,7 +48,8 @@ var common = {};
       'height': 50,
       'longtitle': true,
       'theme': 'dark',
-      'onsuccess': common.googleSignIn
+      'onsuccess': common.googleSignIn,
+      'prompt': 'select_account'
     });
   }
 
