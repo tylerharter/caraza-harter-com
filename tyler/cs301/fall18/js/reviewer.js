@@ -28,8 +28,8 @@ var reviewer = {};
         var submission = submissions[i]
         var display = submission.submitter_id
         var category = 'Misc'
-        if (submission.info.cs_login != null) {
-          display = submission.info.cs_login
+        if (submission.info.net_id != null) {
+          display = submission.info.net_id
           category = 'Students'
         }
         if (submission.info.ta != null) {

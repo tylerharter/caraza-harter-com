@@ -181,7 +181,7 @@ def project_list_submissions(user, event):
         submitter_id = parts[3]
         submission = {'project_id':project_id, 'submitter_id':submitter_id, 'info': {},
                       'path': path}
-        for field in ['cs_login', 'ta']:
+        for field in ['net_id', 'ta']:
             submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
         submissions.append(submission)
     return (200, {'submissions':submissions})
