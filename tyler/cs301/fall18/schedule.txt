@@ -68,11 +68,16 @@ Using Functions
 =
 Creating Functions
 
-* Parameters
-* Scope: Local vs. Global
-* Stack Diagrams
-* Functions Type
+* Positional Params
+* Keyword Params
+* Functions as Variables
 * TODO: diff materials about return values
+
+=
+Function Scope
+
+* Local vs. Global
+* Stack Diagrams
 
 <b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61)
 
@@ -86,7 +91,8 @@ Conditions
 * Modular arithmetic
 
 <b>Read</b>: Downey Ch 5 (pgs 47-51, 54-60)<br>
-<b>Optional</b>: Downey Ch 4
+<b>Optional</b>: Downey Ch 4<br>
+<b>Due</b>: P2
 
 =
 Iteration
@@ -95,7 +101,6 @@ Iteration
 * Infinite Iteration
 
 <b>Read</b>: Downey Ch 7<br>
-<b>Due</b>: P2
 
 =
 Advanced Iteration
@@ -113,14 +118,11 @@ Strings
 * String formatting
 
 <b>Read</b>: Downey Ch 8<br>
-<b>Optional</b>: Downey Ch 9
-
-=
-Slack Day
+<b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P3
 
 =
-Exam 1
+Slack Day
 
 ################################################################################
 # PART 2
@@ -161,7 +163,29 @@ Generators
 * Execution Flow
 
 <b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
+
+=
+Dictionaries 1
+* Syntax
+* Lookup
+* Insert
+* Pop
+
+<b>Read</b>: Downey Ch 11 (pgs 125-130)<br>
 <b>Due</b>: P5
+
+=
+Dictionaries 2
+* Nesting
+* dicts with lists
+* defaultdict
+<b>Read</b>: Downey Ch 11 (pgs 131-138)<br>
+
+=
+JSON
+* Deserialization
+* Serialization
+* Pretty Printing
 
 =
 Objects
@@ -170,17 +194,8 @@ Objects
 * References
 * Python Tutor
 
-<b>Read</b>: Downey Ch 10 (pgs 114-123) and TODO (namedtuple, etc)<br>
-
-=
-Dictionaries
-* TODO
-
-=
-JSON
-* Deserialization
-* Serialization
-* Pretty Printing
+<b>Read</b>: Downey Ch 10 (pgs 114-123) and Ch 12<br>
+<b>Due</b>: P6
 
 =
 Copying
@@ -191,7 +206,6 @@ Copying
 <b>Read</b>: Downey Ch 11<br>
 
 <b>Read</b>: TODO<br>
-<b>Due</b>: P6
 
 =
 Files and Directories
@@ -201,6 +215,7 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
+<b>Due</b>: P7
 
 =
 Database 1
@@ -208,7 +223,6 @@ Database 1
 * queries
 * where
 * sqlite
-<b>Due</b>: P7
 
 =
 Database 2
@@ -220,13 +234,10 @@ Database 2
 Database 3
 * sqlite3 library
 * accessing DBs in Python
-
-=
-Slack Day
 <b>Due</b>: P8
 
 =
-Exam 2
+Slack Day
 
 ################################################################################
 # PART 3
