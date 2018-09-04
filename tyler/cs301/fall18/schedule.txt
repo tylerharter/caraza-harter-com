@@ -36,16 +36,15 @@ Computation
 
 =
 Programming
-
 * Syntax+Parsing
 * Values+Types
 * Calculation+Operators
+* Boolean Logic
+* Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1
 
 =
 Vars and Exprs
-
-* Interactive vs. Script Mode, print
 * Naming Rules
 * Assignment
 * Types of errors
@@ -119,7 +118,7 @@ Strings
 
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
-<b>Due</b>: P3
+<b>No Project Due</b>
 
 =
 Slack Day
@@ -144,7 +143,7 @@ CSV Tables
 * Sorting
 * Aggregation
 * Escaping
-<b>Due</b>: P4
+<b>Due</b>: P3
 
 =
 Recursion
@@ -172,7 +171,7 @@ Dictionaries 1
 * Pop
 
 <b>Read</b>: Downey Ch 11 (pgs 125-130)<br>
-<b>Due</b>: P5
+<b>Due</b>: P4
 
 =
 Dictionaries 2
@@ -195,7 +194,7 @@ Objects
 * Python Tutor
 
 <b>Read</b>: Downey Ch 10 (pgs 114-123) and Ch 12<br>
-<b>Due</b>: P6
+<b>Due</b>: P5
 
 =
 Copying
@@ -215,7 +214,7 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
-<b>Due</b>: P7
+<b>Due</b>: P6
 
 =
 Database 1
@@ -234,7 +233,7 @@ Database 2
 Database 3
 * sqlite3 library
 * accessing DBs in Python
-<b>Due</b>: P8
+<b>No Project Due</b>
 
 =
 Slack Day
@@ -250,45 +249,44 @@ Numpy
 * Matrix Multiplication
 
 =
-Plotting
+Plotting 1
 * matplotlib
 * Line, Bar, and Scatter Plots
 * Axes and Annotations
-<b>Due</b>: P9
+<b>Due</b>: P7
 
 =
-Notebooks
-* iPython
+Plotting 2
 * Interactive Plotting
+* iPython
 
 =
-Tracing 1
-* Trace Collection
-* Wrappers with *args and **kwargs
-* Decorators
-
-=
-Tracing 2
+Plotting 3
 * Date/Time Types
-* Plotting Timeseries Data
+* Plotting time-series data
+
+=
+Web 1
+* requests Module
+* Downloading Pages
+* RPCs
 <b>No Project Due</b>
 
 =
 Thanksgiving Break
 
 =
-Web Content
-* urllib Module
-* Downloading Pages
-* RPCs
+Web 2
+* HTML
+* tags
+* attributes
 
 =
-HTML
-* General Syntax
-* Tables
-* Generating
-* Parsing
-<b>Due</b>: P10
+Web 3
+* Generating HTML
+* Parsing HTML
+* beautifulsoup
+<b>Due</b>: P8
 
 =
 Approximation
@@ -307,7 +305,7 @@ Markov Chains
 * Simple Modeling
 * Inference
 * Prediction
-<b>Due</b>: P11<br>
+<b>Due</b>: P9<br>
 <b>Read</b>: <a href="http://setosa.io/ev/markov-chains">http://setosa.io/ev/markov-chains</a>
 
 =
@@ -320,4 +318,4 @@ Slack Day
 
 =
 Review
-<b>Due</b>: P12
+<b>Due</b>: P10
