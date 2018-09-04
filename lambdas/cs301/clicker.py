@@ -4,7 +4,7 @@ from collections import defaultdict as ddict
 from lambda_framework import *
 
 @route
-@admin
+@instructor
 def put_question(user, event):
     question_id = '%.2f' % time.time()
     question = {'id': question_id,
@@ -75,7 +75,7 @@ def answer(user, event):
         return (500, 'answer too long')
 
 @route
-@admin
+@instructor
 def get_answer_counts(user, event):
     question = get_question_raw()
     if question == None:

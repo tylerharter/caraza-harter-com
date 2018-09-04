@@ -5,6 +5,7 @@ ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
+INSTRUCTOR_EMAILS = ['tylerharter@gmail.com', 'adalbert.gerald@gmail.com']
 GRADER_EMAILS = ['pivotlibre@gmail.com', 'szou28@wisc.edu', 'adalbert.gerald@gmail.com']
 
 s3_cache = None # client
@@ -49,6 +50,10 @@ def admin(fn):
     EXTRA_AUTH[fn.__name__].append(admin_check)
     return fn
 
+def instructor(fn):
+    EXTRA_AUTH[fn.__name__].append(instructor_check)
+    return fn
+
 # decorator: user must authenticate and have a valid email
 def user(fn):
     EXTRA_AUTH[fn.__name__].append(user_check)
@@ -69,6 +74,11 @@ def admin_check(user):
     user_check(user)
     if user['email'] != ADMIN_EMAIL:
         raise Exception('admin permissions required')
+
+def instructor_check(user):
+    user_check(user)
+    if not user['email'] in INSTRUCTOR_EMAILS:
+        raise Exception('instructor permissions required')
 
 def grader_check(user):
     user_check(user)
