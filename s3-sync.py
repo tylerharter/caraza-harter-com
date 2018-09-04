@@ -54,7 +54,7 @@ class Syncer:
         if not self.dry:
             s3.delete_object(Bucket=self.bucket, Key=s3_path)
 
-    def sync_path(self, local_path, ttl=600):
+    def sync_path(self, local_path, ttl=3600):
         s3_path = self.get_s3_path(local_path)
         if s3_path.startswith('..'):
             print('SKIP ' + local_path)
@@ -108,7 +108,7 @@ def main():
         for path in paths:
             # use short cache timeout for these since we're debugging
             print('sync %s' % path)
-            syncer.sync_path(path, ttl=600)
+            syncer.sync_path(path, ttl=3600)
 
 if __name__ == '__main__':
     main()
