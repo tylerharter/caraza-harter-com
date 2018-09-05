@@ -146,7 +146,7 @@ def schedule3():
         
         f.write('<div class="row">\n')
         for cell in row:
-            f.write('<div class="col-md-4 my-3">\n')
+            f.write('<div class="col-md-6 my-3">\n')
             f.write(cell)
             f.write('</div>\n')
         f.write('</div>\n')
