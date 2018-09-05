@@ -1,0 +1,33 @@
+################################################################################
+# PART 1
+################################################################################
+
+No Class
+
+=
+Introduction + Terminal
+
+=
+How computers work?
+
+=
+Basics of Programming
+
+=
+Variables, Expressions and Functions
+
+=
+Creating Functions
+
+=
+Function Scope and Conditions
+
+=
+More Conditions and Iteration
+
+=
+Advanced Iteration
+
+=
+Strings
+
