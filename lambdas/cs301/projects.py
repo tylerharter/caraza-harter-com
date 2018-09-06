@@ -29,7 +29,7 @@ def project_path(user_id, project_id, submission_id=None):
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
-def parse_project_payload(submission_id, filename, payload):
+def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
     entries.  There will be one entry if it's a .py, and potentially
     many if it is a .zip'''
@@ -75,12 +75,60 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
     response = s3().get_object(Bucket=BUCKET, Key=path)
     row = json.loads(str(response['Body'].read(), 'utf-8'))
 
-    project = parse_project_payload(row['submission_id'], row['filename'], row['payload'])
-    return project
+    project_files = extract_project_files(row['submission_id'],
+                                          row['filename'], row['payload'])
+    return project_files
 
 @route
 def project_list(user, event):
     return (200, PROJECT_IDS)
+
+def get_code_analysis(project_files):
+    pf = project_files
+    comments = []
+    analysis = {'comments': comments, 'partner': None, 'errors': False}
+    error_count = len(pf['errors'])
+
+    # comment on errors
+    if error_count > 0:
+        comments.append('there were %d errors processing your submission' % error_count)
+        analysis['errors'] = True
+
+    # comment on number of source files
+    code_file_count = len([fn for fn in pf['files'].keys() if fn.endswith('.py')])
+    comments.append('there were %d .py files submitted' % code_file_count)
+
+    # extract partner
+    partners = set()
+    for filename in pf['files'].keys():
+        if not filename.endswith('.py'):
+            continue
+        code = pf['files'][filename]
+        for line in code.split('\n'):
+            line = line.strip().lower()
+            if not line.startswith('#'):
+                continue
+            parts = list(map(str.strip, line[1:].split(':')))
+            if len(parts) == 2 and parts[0] == 'partner-login':
+                partners.add(parts[1])
+    if len(partners) == 0:
+        comments.append('no partner identified in the comments in your code')
+    elif len(partners) >= 2:
+        comments.append('you can only have one partner, but multiple given: %s' %
+                        (', '.join(list(partners))))
+
+        analysis['errors'] = True
+    else:
+        partner = list(partners)[0]
+        net_ids = get_roster_net_ids()
+        if not partner in net_ids:
+            comments.append('partner NetID %s not on the roster' % partner)
+            analysis['errors'] = True
+        else:
+            comments.append('partner: ' + partner)
+            analysis['partner'] = partner
+
+    return analysis
 
 @route
 @user
@@ -94,25 +142,29 @@ def project_upload(user, event):
         return (500, 'file is too large')
 
     submission_id = '%.2f' % time.time()
-    row = {'project_id': project_id,
-           'submission_id': submission_id,
-           'filename': event['filename'],
-           'payload': event['payload']}
 
+    # try to fetch the formatted contents of the project so user can
+    # preview without doing an S3 read
+    project_files = extract_project_files(submission_id,
+                                          event['filename'],
+                                          event['payload'])
+    rc,cr = get_code_review_raw(user, user_id, project_id,
+                                force_new=True, project_files=project_files)
+    if rc != 200:
+        cr = None
+
+    # save project submission to S3 bucket
+    submission = {'project_id': project_id,
+                  'submission_id': submission_id,
+                  'filename': event['filename'],
+                  'payload': event['payload'],
+                  'partner_netid': cr['analysis']['partner']}
     for path in [project_path(user_id, project_id),
                  project_path(user_id, project_id, submission_id)]:
         s3().put_object(Bucket=BUCKET,
                         Key=path,
-                        Body=bytes(json.dumps(row), 'utf-8'),
-                        ContentType='text/json',
-        )
-
-    # try to fetch the formatted contents of the project so user can
-    # preview without doing an S3 read
-    project = parse_project_payload(submission_id, event['filename'], event['payload'])
-    rc,cr = get_code_review_raw(user, user_id, project_id, force_new=True, project=project)
-    if rc != 200:
-        cr = None
+                        Body=bytes(json.dumps(submission), 'utf-8'),
+                        ContentType='text/json')
 
     result = {'message': 'project submitted', 'code_review': cr}
     return (200, result)
@@ -122,7 +174,8 @@ def project_upload(user, event):
 def get_partner(user, event):
     return (500, 'not implemented yet')
 
-def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=None):
+def get_code_review_raw(user, submitter_user_id, project_id,
+                        force_new, project_files=None):
     user_id = user['sub']
     if submitter_user_id == None:
         submitter_user_id = user_id # assume self
@@ -146,24 +199,30 @@ def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=
 
     # step 2: get associated code
     try:
-        if project == None:
-            project = load_project_from_s3(submitter_user_id, project_id, submission_id=cr['submission_id'])
+        if project_files == None:
+            project_files = load_project_from_s3(submitter_user_id, project_id,
+                                                 submission_id=cr['submission_id'])
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "NoSuchKey":
             return (500, 'no project submission found')
         return (500, str(e.response))
 
-    cr['submission_id'] = project['submission_id'] # resolve curr to actual ID
-    cr['project'] = project
+    cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
+    cr['project'] = project_files
     cr['is_grader'] = is_grader(user)
     if cr['highlights'] == None:
-        cr['highlights'] = {k:[] for k in project['files'].keys()} # start with none
-
+        # start with a clean slate (i.e., not highlights on any files)
+        cr['highlights'] = {k:[] for k in project_files['files'].keys()}
+    cr['analysis'] = get_code_analysis(project_files)
+        
     return (200, cr)
 
 @route
 @user
 def get_code_review(user, event):
+    '''Viewing a "code review" is the only way students view code.  Even
+    previewing a submission is just viewing an empty code review with
+    no highlights.'''
     force_new = event.get('force_new', False)
     return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
                                project_id=event['project_id'],

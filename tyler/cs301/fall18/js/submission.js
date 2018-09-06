@@ -41,6 +41,9 @@ var submission = {};
       cr = data.body.code_review
       if (cr) {
         refreshPreview()
+        if ("analysis" in cr && cr.analysis.errors) {
+          common.popError("there were problems with your submission (check in preview)")
+        }
       }
     })
   };
@@ -50,8 +53,18 @@ var submission = {};
       $("#code_viewer").html("no files found")
       return
     }
-    
+
     var html = ''
+
+    if ("analysis" in cr) {
+      html += '<ul>'
+      for (var i in cr.analysis.comments) {
+        var comment = cr.analysis.comments[i]
+        html += '<li>' + comment
+      }
+      html += '</ul>'
+    }
+
     for (var filename in cr.project.files) {
       var code = cr.project.files[filename]
 
