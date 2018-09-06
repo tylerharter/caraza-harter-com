@@ -6,7 +6,19 @@ EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
 INSTRUCTOR_EMAILS = ['tylerharter@gmail.com', 'adalbert.gerald@gmail.com']
-GRADER_EMAILS = ['pivotlibre@gmail.com', 'szou28@wisc.edu', 'adalbert.gerald@gmail.com']
+GRADER_EMAILS = [
+    'tylerharter@gmail.com',
+    'adalbert.gerald@gmail.com',
+    'arebello@wisc.edu'
+    'bdeffinger@wisc.edu',
+    'gramakrishn2@wisc.edu',
+    'mitali.rawat@wisc.edu',
+    'bathija@wisc.edu',
+    'snambiar@wisc.edu',
+    'stanwar@wisc.edu',
+    'uramesh2@wisc.edu',
+    'szou28@wisc.edu',
+]
 
 s3_cache = None # client
 
