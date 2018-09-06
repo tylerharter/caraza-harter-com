@@ -31,3 +31,68 @@ Advanced Iteration
 =
 Strings
 
+################################################################################
+# PART 2
+################################################################################
+
+=
+Lists
+
+=
+Advanced Lists
+
+=
+Tuples
+
+=
+Advanced Tuples
+
+=
+Dictionaries
+
+=
+Advanced Dictionaries
+
+=
+Generators
+
+=
+Functional Programming
+
+=
+File Handling
+
+=
+Exceptions
+
+
+################################################################################
+# PART 3
+################################################################################
+
+=
+Numpy
+
+=
+More Numpy
+
+=
+Python for web
+
+=
+More python for web
+
+=
+Matplotlib
+
+=
+More Matplotlib
+
+=
+Databases
+
+=
+More Databases
+
+=
+Review
