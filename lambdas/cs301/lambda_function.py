@@ -17,6 +17,7 @@ def lambda_handler(event, context):
 
     # invoke
     fn = ROUTES.get(event['fn'], None)
+    print('invoke ' + event['fn'])
 
     if fn == None:
         return error('no route for '+event['fn'])

@@ -7,10 +7,9 @@ from roster import *
 
 PROJECT_IDS = [
     'p0', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
-    'p7', 'p8', 'p9', 'p10', 'p11', 'p12',
+    'p7', 'p8', 'p9', 'p10'
 ]
 MAX_SIZE_KB = 40
-
 
 def normalize_py_bytes(b):
     '''take a binary string, and force to be an ascii string with UNIX newlines'''
@@ -30,12 +29,13 @@ def project_path(user_id, project_id, submission_id=None):
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
-def parse_project_payload(filename, payload):
+def parse_project_payload(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
     entries.  There will be one entry if it's a .py, and potentially
     many if it is a .zip'''
 
-    result = {'root':filename,
+    result = {'submission_id':submission_id,
+              'root':filename,
               'files': {},
               'errors': []}
 
@@ -71,12 +71,12 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
     plaintext code files inside zip packages.
     '''
     path = project_path(user_id, project_id, submission_id)
+    print('try to open '+path)
     response = s3().get_object(Bucket=BUCKET, Key=path)
     row = json.loads(str(response['Body'].read(), 'utf-8'))
 
-    result = parse_project_payload(row['filename'], row['payload'])n
-    result['submission_id'] = row['submission_id']
-    return result
+    project = parse_project_payload(row['submission_id'], row['filename'], row['payload'])
+    return project
 
 @route
 def project_list(user, event):
@@ -109,8 +109,8 @@ def project_upload(user, event):
 
     # try to fetch the formatted contents of the project so user can
     # preview without doing an S3 read
-    rc,cr = get_code_review_raw(user, user_id, project_id,
-                                force_new=True, project=row)
+    project = parse_project_payload(submission_id, event['filename'], event['payload'])
+    rc,cr = get_code_review_raw(user, user_id, project_id, force_new=True, project=project)
     if rc != 200:
         cr = None
 
@@ -131,7 +131,7 @@ def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=
         if not is_grader(user):
             return (500, 'not authorized to view that submission')
 
-    # step 1: get CR
+    # step 1: try to get CR unless we're forced to get a clean one on the latest submission
     cr = None
     if not force_new:
         try:
@@ -140,7 +140,7 @@ def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=
         except:
             pass
 
-    # create a new empty CR
+    # create a new empty CR if necessary
     if cr == None:
         cr = {'submission_id':None, 'ready':False, 'highlights':None}
 
@@ -164,7 +164,10 @@ def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=
 @route
 @user
 def get_code_review(user, event):
-    return get_code_review_raw(user, event['submitter_id'], event['submitter_id'], event.get('force_new', False))
+    force_new = event.get('force_new', False)
+    return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
+                               project_id=event['project_id'],
+                               force_new=force_new)
 
 @route
 @grader
