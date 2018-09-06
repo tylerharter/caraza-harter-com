@@ -30,27 +30,23 @@ def project_path(user_id, project_id, submission_id=None):
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
-def load_project(user_id, project_id, submission_id=None):
-    '''
-    Fetch project in human readable format, extracting content from
-    plaintext code files inside zip packages.
-    '''
-    path = project_path(user_id, project_id, submission_id)
-    response = s3().get_object(Bucket=BUCKET, Key=path)
-    row = json.loads(str(response['Body'].read(), 'utf-8'))
-    result = {'submission_id':row['submission_id'],
-              'root':row['filename'],
+def parse_project_payload(filename, payload):
+    '''take a b64 payload, and extract all the files to different dict
+    entries.  There will be one entry if it's a .py, and potentially
+    many if it is a .zip'''
+
+    result = {'root':filename,
               'files': {},
               'errors': []}
 
-    binary_bytes = base64.b64decode(row['payload'])
-    if row['filename'].endswith('.py'):
+    binary_bytes = base64.b64decode(payload)
+    if filename.endswith('.py'):
         try:
             code = normalize_py_bytes(binary_bytes)
         except Exception as e:
             result['errors'].append(str(e))
             code = 'could not read\n'
-        result['files'][row['filename']] = code
+        result['files'][filename] = code
     else:
         try:
             z = zipfile.ZipFile(io.BytesIO(binary_bytes), 'r')
@@ -66,7 +62,20 @@ def load_project(user_id, project_id, submission_id=None):
                     result['files'][filename] = '...not code...'
 
         except Exception as e:
-            row['errors'].append(str(e))
+            result['errors'].append(str(e))
+    return result
+
+def load_project_from_s3(user_id, project_id, submission_id=None):
+    '''
+    Fetch project in human readable format, extracting content from
+    plaintext code files inside zip packages.
+    '''
+    path = project_path(user_id, project_id, submission_id)
+    response = s3().get_object(Bucket=BUCKET, Key=path)
+    row = json.loads(str(response['Body'].read(), 'utf-8'))
+
+    result = parse_project_payload(row['filename'], row['payload'])n
+    result['submission_id'] = row['submission_id']
     return result
 
 @route
@@ -97,21 +106,26 @@ def project_upload(user, event):
                         Body=bytes(json.dumps(row), 'utf-8'),
                         ContentType='text/json',
         )
-    return (200, {'message': 'project submitted'})
+
+    # try to fetch the formatted contents of the project so user can
+    # preview without doing an S3 read
+    rc,cr = get_code_review_raw(user, user_id, project_id,
+                                force_new=True, project=row)
+    if rc != 200:
+        cr = None
+
+    result = {'message': 'project submitted', 'code_review': cr}
+    return (200, result)
 
 @route
 @user
 def get_partner(user, event):
     return (500, 'not implemented yet')
 
-@route
-@user
-def get_code_review(user, event):
+def get_code_review_raw(user, submitter_user_id, project_id, force_new, project=None):
     user_id = user['sub']
-    submitter_user_id = event['submitter_id']
     if submitter_user_id == None:
         submitter_user_id = user_id # assume self
-    project_id = event['project_id']
     if user_id != submitter_user_id:
         # only graders can view the code of other users
         if not is_grader(user):
@@ -119,7 +133,7 @@ def get_code_review(user, event):
 
     # step 1: get CR
     cr = None
-    if not event.get('force_new', False):
+    if not force_new:
         try:
             response = s3().get_object(Bucket=BUCKET, Key=code_review_path(submitter_user_id, project_id))
             cr = json.loads(str(response['Body'].read(), 'utf-8'))
@@ -132,7 +146,8 @@ def get_code_review(user, event):
 
     # step 2: get associated code
     try:
-        project = load_project(submitter_user_id, project_id, submission_id=cr['submission_id'])
+        if project == None:
+            project = load_project_from_s3(submitter_user_id, project_id, submission_id=cr['submission_id'])
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "NoSuchKey":
             return (500, 'no project submission found')
@@ -145,6 +160,11 @@ def get_code_review(user, event):
         cr['highlights'] = {k:[] for k in project['files'].keys()} # start with none
 
     return (200, cr)
+
+@route
+@user
+def get_code_review(user, event):
+    return get_code_review_raw(user, event['submitter_id'], event['submitter_id'], event.get('force_new', False))
 
 @route
 @grader
