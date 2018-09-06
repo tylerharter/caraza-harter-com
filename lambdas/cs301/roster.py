@@ -9,6 +9,13 @@ def get_roster_raw():
     response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
     return response['Body'].read().decode('utf-8')
 
+def get_roster_net_ids():
+    ids = []
+    for row in json.loads(get_roster_raw()):
+        if 'net_id' in row:
+            ids.append(row['net_id'])
+    return ids
+
 # takes a dict to convert to json
 def put_roster_raw(roster_dict):
     body = json.dumps(roster_dict, indent=2)
