@@ -36,6 +36,12 @@ var submission = {};
     common.callLambda(data, function(data) {
       console.log("project uploaded")
       common.popThankYou()
+
+      // try to preview right after a submission
+      cr = data.body.code_review
+      if (cr) {
+        refreshPreview()
+      }
     })
   };
 
