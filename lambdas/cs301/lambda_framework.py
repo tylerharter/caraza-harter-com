@@ -12,7 +12,7 @@ GRADER_EMAILS = [
     'arebello@wisc.edu',
     'bdeffinger@wisc.edu',
     'gramakrishn2@wisc.edu',
-    'mitali.rawat@wisc.edu',
+    'mrawat2@wisc.edu',
     'bathija@wisc.edu',
     'snambiar@wisc.edu',
     'stanwar@wisc.edu',
