@@ -9,7 +9,7 @@ INSTRUCTOR_EMAILS = ['tylerharter@gmail.com', 'adalbert.gerald@gmail.com']
 GRADER_EMAILS = [
     'tylerharter@gmail.com',
     'adalbert.gerald@gmail.com',
-    'arebello@wisc.edu'
+    'arebello@wisc.edu',
     'bdeffinger@wisc.edu',
     'gramakrishn2@wisc.edu',
     'mitali.rawat@wisc.edu',
