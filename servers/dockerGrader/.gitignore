@@ -1,0 +1,4 @@
+testServer.log
+__pycache__
+venv
+*.pyc
