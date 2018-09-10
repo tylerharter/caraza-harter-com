@@ -20,18 +20,19 @@ The Terminal
 <a href="materials/lec-02.pdf">Link to Slides</a>
 
 =
-Bits and Memory
-* Bits+bytes
-* Memory organization
-* Representing information as bits
-<a href="materials/lec-03.pdf">Link to Slides</a>
-
-=
 Computation
 * Pseudocode
 * State
 * Flow of Execution
+<a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
+<b>No Slides</b>
 
+=
+Bits and Memory
+* Bits+bytes
+* Memory organization
+* Representing information as bits
+<a href="materials/lec-04.pdf">Link to Slides</a><br>
 <b>Due</b>: P0 (ungraded)
 
 =
