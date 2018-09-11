@@ -1,0 +1,93 @@
+Lecture:
+
+review (s)
+ - flow of execution
+ - state
+
+you need to install two things, interpreter and editor! (s)
+
+what is an interpreter? (s)
+ - you (when doing worksheets)
+ - why called interpreter?
+   code -> brain       -> move hand
+   code -> interpreter -> 010011110101
+ - needs to be Python 3!
+
+what is an editor? (s)
+ - compare to browsers
+ - features: integrated terminal, highlighting
+ - talk about notebooks
+
+do we have Anaconda Python? (d)
+open terminal, run python
+exit()
+
+do we have PyCharm? (d)
+download files from project
+ - "Save Link As"
+ - open in PyCharm (no project)
+ - talk about nice colorization
+
+terminal in PyCharm (d)
+ - pwd, ls, cat
+ - it's the same!!!
+
+python in terminal
+ - type ls, look it's broken!  Go back, it works
+ - try broken command in and out
+ - use it as a calculator
+
+math operators
+ - 1 + 1
+ - plus is an "operator", the ones are "operands".  Binary operator (because two).
+   an "expression" is the whole thing!
+ - 1 - 1
+ - add extra space, beginning, end, middle
+ - multiply 1*1
+ - (1)(1)         # error!
+ - divide 1/1     # why
+
+number types
+ - type()
+ - ignore "class"
+ - type of float, type of int
+ - type(1.0)
+ - type(3/2)
+ - type(3//2)
+
+more math operators
+ - % (modulo, think of it as the remainder)
+ - unary operators: +, -
+ - exponents: 10 ** 3, 16 ** (1/2), 2 ** -1
+ - -5 ** 2
+ - woah, why is it negative?!  Let's talk about operator precedence
+
+operator precedence (s)
+
+string stuff
+
+comparison operators
+
+boolean logic (s)
+
+running files
+ - run test.py
+ - let's run a new program
+ - why no output?
+ - interactive vs. script mode
+ - print statement (show without parens too)
+
+================================================================================
+
+
+Syntax+Parsing
+Values+Types
+Calculation+Operators
+Boolean Logic
+Interactive vs. Script Mode, print
+
+
+
+
+slides:
+programs: interpreter + editor
