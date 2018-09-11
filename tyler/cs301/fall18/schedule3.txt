@@ -11,7 +11,7 @@ Introduction + Terminal
 * What is programming?
 * Terminal basics
 * Course Overview
-<a href="https://docs.google.com/presentation/d/1FThMMp0DG3NATEpaa5R0Hsj3UXhKRIQvf0OhIka7HrI/edit?usp=sharing">Link to Slides</a><br/>
+<a href="https://docs.google.com/presentation/d/1FThMMp0DG3NATEpaa5R0Hsj3UXhKRIQvf0OhIka7HrI/edit?usp=sharing">Link to Slides</a><br>
 <a href="materials3/lec-01-commands.pdf">Terminal basics</a>
 
 =
@@ -21,7 +21,8 @@ How computers work?
 * Pseudocode
 * State
 * Flow of execution
-<a href="materials3/lec-02-commands.pdf">Shell Commands</a><br/>
+<a href="materials3/lec-02-commands.pdf">Shell Commands</a><br>
+<a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
 <b>Due (Wed)</b>: P0 (ungraded) 
 
 =
