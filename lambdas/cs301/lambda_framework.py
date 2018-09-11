@@ -37,9 +37,9 @@ def s3_all_keys(Prefix):
         keys.extend(contents)
         if not 'NextContinuationToken' in ls:
             break
-        ls = s3.list_objects_v2(Bucket='caraza-harter-cs301', Prefix=Prefix,
-                                ContinuationToken=ls['NextContinuationToken'],
-                                MaxKeys=10000)
+        ls = s3().list_objects_v2(Bucket='caraza-harter-cs301', Prefix=Prefix,
+                                  ContinuationToken=ls['NextContinuationToken'],
+                                  MaxKeys=10000)
     return keys
 
 def s3_path_exists(path):
