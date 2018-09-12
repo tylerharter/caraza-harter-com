@@ -1,0 +1,134 @@
+You need to install two things to get started programming, an
+interpreter and editor! (s)
+
+what is an interpreter? (s)
+ - you (when doing worksheets)
+ - why called interpreter?
+   code -> brain       -> move hand
+   code -> interpreter -> 010011110101
+ - needs to be Python 3!
+
+what is an editor? (s)
+ - compare to browsers
+ - features: integrated terminal, highlighting
+ - talk about notebooks
+
+do we have Anaconda Python? (d)
+open terminal, run python
+exit()
+
+do we have PyCharm? (d)
+download files from project
+ - "Save Link As"
+ - open in PyCharm (no project)
+ - talk about nice colorization
+
+terminal in PyCharm (d)
+ - pwd, ls, cat
+ - it's the same!!!
+
+python in terminal
+ - type ls, look it's broken!  Go back, it works
+ - try broken command in and out
+ - use it as a calculator
+
+math operators
+ - 1 + 1
+ - plus is an "operator", the ones are "operands".  Binary operator (because two).
+   an "expression" is the whole thing!
+ - 1 - 1
+ - add extra space, beginning, end, middle
+ -  1*1
+ - (1)(1)   # error!
+ - 1/0
+ - 1/1     # why
+ - 1/100000 # scientific notation
+ - 1.1 / 100
+ - 1.2 / 100
+ - 1.3 / 100 # woah!  what happened?
+
+number types (integer and float)
+ - type(1)
+ - ignore "class"
+ - type of float, type of int
+ - type(1.0)
+ - type(3/2)
+ - type(3//2)
+
+more math operators
+ - % # modulo, think of it as the remainder
+ - unary operators: +, -
+ - exponents:
+ - 10 ** 3
+ - 16 ** (1/2)
+ - 2 ** -1
+ - -5 ** 2
+ - woah, why is it negative?!  Let's talk about operator precedence
+
+operator precedence (s)
+
+how to fix?
+ - -5 ** 2
+ - 9 ** 1/2
+
+string stuff
+ - hello world
+ - "hello world"
+ - type("hello world")
+ - 'hello world'
+ - 'she said "hello"'
+ - 'hello' + 'ada' + 'lovelace'
+ - 'x' * 'y'
+ - 'HA' * 100
+
+comparison operators (d)
+ - 5 > 3
+ - -3 > -5
+ - 'A' < 'B'
+ - 'a' < 'B'
+ - 3 <= 4
+ - 4 <= 4
+ - 5 <= 4
+ - 1 == 2
+ - 1 != 2
+ - 2 == 2
+ - 2 == 2.0
+ - type(2) == type(2.0)
+ - type(5 > 3)
+ - type(5 < 3)
+ - type(True)
+ - type(False)
+ - type(false)
+
+boolean logic (d)
+ - three operators: and, or, not
+ - not False
+ - not True
+ - True or False
+ - True and False
+ - True and True
+ - not True or True
+ - not (True or True)
+
+boolean logic (s)
+
+boolean logic with comparisons
+ - 10 < 1 or 10 > 5
+ - 10 < 1 and 10 > 5
+ - 1==1 or 2==2 and 3==4
+ - (1==1 or 2==2) and 3==4
+
+truthy and falsy
+ - True == False
+ - True == True
+ - True == 'True'
+ - True == 1
+ - True == 2
+ - False == 0
+
+running files
+ - run test.py
+ - let's run a new program
+ - why no output?
+ - interactive vs. script mode
+ - print statement (show without parens too)
