@@ -1,4 +1,5 @@
-import json, urllib, boto3, botocore, base64, time, traceback, random, string
+import json, urllib, boto3, botocore, base64, datetime, time
+import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
 
@@ -9,6 +10,24 @@ PROJECT_IDS = [
     'p0', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
     'p7', 'p8', 'p9', 'p10'
 ]
+
+# central time is 5-6 hours behind UTC time, so to be safe, we'll
+# always have the project due at 7am on a Thu
+DUE_DATE_FORMAT = "%m/%d/%y %H:%M"
+PROJECT_DUE_UTC = {
+    'p0': datetime.datetime.strptime("09/13/18 7:00", DUE_DATE_FORMAT),
+    'p1': datetime.datetime.strptime("09/20/18 7:00", DUE_DATE_FORMAT),
+    'p2': datetime.datetime.strptime("09/27/18 7:00", DUE_DATE_FORMAT),
+    'p3': datetime.datetime.strptime("10/04/18 7:00", DUE_DATE_FORMAT),
+    'p4': datetime.datetime.strptime("10/11/18 7:00", DUE_DATE_FORMAT),
+    'p5': datetime.datetime.strptime("10/18/18 7:00", DUE_DATE_FORMAT),
+    'p6': datetime.datetime.strptime("10/25/18 7:00", DUE_DATE_FORMAT),
+    'p7': datetime.datetime.strptime("11/01/18 7:00", DUE_DATE_FORMAT),
+    'p8': datetime.datetime.strptime("11/08/18 7:00", DUE_DATE_FORMAT),
+    'p9': datetime.datetime.strptime("11/15/18 7:00", DUE_DATE_FORMAT),
+    'p10': datetime.datetime.strptime("12/13/18 7:00", DUE_DATE_FORMAT),
+}
+
 MAX_SIZE_KB = 40
 
 def normalize_py_bytes(b):
@@ -143,6 +162,16 @@ def project_upload(user, event):
 
     submission_id = '%.2f' % time.time()
 
+    # compute late days (may be negative if it was early).  Negative
+    # is only for our own information, though (it doesn't somehow
+    # replenish the student's supply)
+    late_days = 0
+    utc_due = PROJECT_DUE_UTC.get(project_id, None)
+    utc_now = datetime.datetime.utcnow()
+    if utc_due != None:
+        late_seconds = (utc_now - utc_due).total_seconds()
+        late_days = late_seconds / 60 / 60 / 24
+
     # try to fetch the formatted contents of the project so user can
     # preview without doing an S3 read
     project_files = extract_project_files(submission_id,
@@ -156,6 +185,9 @@ def project_upload(user, event):
     # save project submission to S3 bucket
     submission = {'project_id': project_id,
                   'submission_id': submission_id,
+                  'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
+                  'submit_time_utc': utc_now.strftime("%Y-%m-%d %H:%M:%S") if utc_now else None,
+                  'late_days': late_days,
                   'filename': event['filename'],
                   'payload': event['payload'],
                   'partner_netid': cr['analysis']['partner']}
