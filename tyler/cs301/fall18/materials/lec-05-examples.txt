@@ -34,7 +34,7 @@ type("hello world")
 'x' * 'y'
 'HA' * 100
 
-# comparison operators (d)
+# comparison operators
 5 > 3
 -3 > -5
 'A' < 'B'
@@ -53,7 +53,7 @@ type(True)
 type(False)
 type(false)
 
-# boolean logic (d)
+# boolean logic
 not False
 not True
 True or False
@@ -61,8 +61,6 @@ True and False
 True and True
 not True or True
 not (True or True)
-
-# boolean logic (s)
 
 # boolean logic with comparisons
 10 < 1 or 10 > 5
