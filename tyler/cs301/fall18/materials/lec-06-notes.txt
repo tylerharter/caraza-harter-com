@@ -1,8 +1,10 @@
-# expression overview(s)
+# expression and assignment overview(s)
  - variable: like a box in the worksheets
  - expression: combination of values, variables, and operands (been using these)
 
-# basic assignment (d)
+# DO IN INTERACTIVE MODE
+
+# basic assignment
 x = 2
 print(x)
 x
@@ -20,36 +22,23 @@ x ^ 2            # semantic ERROR! (runs but gives wrong output, assuming I want
 
 # types of errors(s)
 
-# sometimes write backwards temporarily to do algebra without paper
-
-# forwards
-interest_percent = 10
-yearly_mult = 1 + interest_percent / 100
-years = 5
-start = 100
-final = start * yearly_mult**years
-
-# backwards
-(final/start) ** (1/years) = yearly_mult
-(yearly_mult - 1) * 100 = interest_percent
-
 ========================================
 
 # string operations
-first = 'tyler'
-last = 'caraza-harter'
-name = first + last
-first * last
-first - last
-first / last
-'HA ' * 10
+first = 'Alice'
+last = 'Anderson'
+player1 = first + last
+
+# does player1 change if we change first now?
+
+# show an example with two players, and bars showing the magnitude of their scores
 
 # boolean operations
 valid = 0 < x < 100
 print('you may continue: ' + valid)
 print('you may continue: ' + str(valid))
 
-# assignment vs equality (d)
+# assignment vs equality
 x
 y
 y > x
@@ -60,7 +49,19 @@ x == y
 x = 2
 x == y
 
+# numerical examples
+
+ - average of several numbers
+ - is_even
+ - is_prime (for 1 to 10): is_prime = n%2 != 0 and n%3 != 0 and n%5 != 0
+
 ========================================
+
+# naming sensitivity
+val = 1
+Val = 2
+VAL = 3
+_val = 4
 
 # naming rules
 n = 1
@@ -75,7 +76,28 @@ _test = 1
 
 ========================================
 
-# state diagrams, PythonTutor
+# DO IN SCRIPT MODE
+
+# quantitative examples
+
+# absolute value
+a = ((x) ** 2) ** (0.5) # where is the output?!  Remind about print...
+
+# compute final money (forwards).  Give an example of comments here
+
+interest_percent = 10
+yearly_mult = 1 + interest_percent / 100
+years = 5
+start = 100
+final = start * yearly_mult**years
+
+# compute necessary interest rate (backwords).  Talk about how we sometimes use comments to ignore code
+(final/start) ** (1/years) = yearly_mult
+(yearly_mult - 1) * 100 = interest_percent
+
+========================================
+
+# state diagrams, PythonTutor (note!  Downey uses arrows, often with good reason, rather than boxes)
  - do trivial example
  - example of a comment
    - notice the red arrow  (flow of execution)
@@ -91,12 +113,7 @@ _test = 1
 
 ========================================
 
-# absolute value
-a = ((x) ** 2) ** (0.5)
-
-# volume of sphere given radius:
- - volume = 4/3 * PI * radius^3 (in book)
- - how to work backwards?
+# more math examples
 
 # quadratic formula
  - positive only
@@ -110,23 +127,27 @@ a = ((x) ** 2) ** (0.5)
  - negative
  - make it imaginary, talk about that
 
+# volume of sphere given radius:
+ - volume = 4/3 * PI * radius^3 (in book)
+ - how to work backwards?
+
 ========================================
 
-# visualize bars with characters (d)
+# visualize bars with characters
  - linear growth
  - exponential growth
 
-# boxes (d)
+# boxes
  - '\n' is newline
  - print('hello', end='')
  - print('hello', end='\n\n')
- - solid box
- - checkered box
- - checkered box with border
+ 1. solid box
+ 2. checkered box
+ 3. checkered box with border
 
 ========================================
 
-# PythonTutor input(d)
+# ADVANCED!  PythonTutor input (probably skip this)
  - give example of input("prompt")
  - example of cast
  - in PythonTutor and in terminal
