@@ -42,6 +42,7 @@ Programming
 * Calculation+Operators
 * Boolean Logic
 * Interactive vs. Script Mode, print
+<a href="materials/lec-05.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 1
 
 =
@@ -50,7 +51,7 @@ Vars and Exprs
 * Assignment
 * Types of errors
 * Comments
-
+<a href="materials/lec-06.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 2
 
 =
