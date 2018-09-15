@@ -63,6 +63,7 @@ Using Functions
 * Importing Modules
 * Math Module
 
+<a href="materials/lec-07.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 3 (pgs 21-23)<br>
 <b>Due</b>: P1
 
