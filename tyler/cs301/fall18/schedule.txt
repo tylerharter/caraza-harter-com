@@ -72,8 +72,11 @@ Creating Functions
 
 * Positional Params
 * Keyword Params
-* Functions as Variables
-* TODO: diff materials about return values
+* Return Values
+
+<b>Read</b>: Downey Ch 3 (pgs 23-26 and 29)<br>
+<b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a><br>
+# NOTE: Ch 6 (pg 61) covers return values, but only with an example that assumes conditionals are known
 
 =
 Function Scope
@@ -81,7 +84,7 @@ Function Scope
 * Local vs. Global
 * Stack Diagrams
 
-<b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61)
+<b>Read</b>: Downey Ch 3 (pgs 26-34)
 
 =
 Conditions
