@@ -32,7 +32,7 @@ instead of direction to the screen?
 
 ==================================================
 
-# isclose
+# is_close
  - do relative closeness first (write is_close_to_1() first)
  - use abs (example of function using a function)
  - example of taking two arguments
@@ -58,10 +58,19 @@ try calling it with positional arguments or keyword arguments
 
 ==================================================
 
+# visualize bars
+
+def print_bar(name, amount, max_name=10):
+  spaces = len(name) - 10
+  print(name + ':' + ' '*spaces + amount*'$')
+
+==================================================
+
 # definition vs invocation:
  - watch in PythonTutor
  - talk about the arrow...
- - definition time vs invocation time:
+ - definition time vs invocation time
+ - what does it mean when the arrow points to a function?  Depends...
 
 def print_it():
     print(x)
@@ -95,6 +104,7 @@ do several layers of functions calling each other
 ==================================================
 
 # multiple return values
+ - give an example of pass
  - do quadratic formula example
  - return positive and negative example
 
@@ -103,3 +113,16 @@ do several layers of functions calling each other
 # variables pointing to functions
  - g = f, g(x)  (see in PythonTutor)
  - call5 example
+
+==================================================
+
+# another battleship example
+
+def ship1(x, y):
+  pass
+
+def ship2(x, y):
+  pass
+
+def is_hit(x, y):
+  return is_hit(x, y) or is_hit(x, y)
