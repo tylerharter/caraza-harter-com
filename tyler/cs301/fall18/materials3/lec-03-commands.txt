@@ -1,0 +1,183 @@
+(CS301) Adalberts-MacBook-Air:CS301 gerald$ pwd
+/Users/gerald/PycharmProjects/CS301
+(CS301) Adalberts-MacBook-Air:CS301 gerald$ python
+Python 3.7.0 (default, Jun 28 2018, 07:39:16) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+(CS301) Adalberts-MacBook-Air:CS301 gerald$ python test.py
+Your Python version: Python 3.7.0
+
+RESULTS:
+  Problem 1: PASS
+  Problem 2: expected (4) but found (0)
+  Problem 3: PASS
+  Problem 4: fewer output lines than expected
+  Problem 5: fewer output lines than expected
+  Problem 6: fewer output lines than expected
+  Problem 7: fewer output lines than expected
+  Problem 8: fewer output lines than expected
+  Problem 9: fewer output lines than expected
+  Problem 10: expected (7) but found (34)
+  Problem 11: expected (!!!!!!!!!!) but found (!!!)
+  Problem 12: expected (30) but found (3333333333)
+  Problem 13: expected (27), got (9)
+  Problem 14: expected about $15,424
+  Problem 15: expected (False) but found (True)
+  Problem 16: expected (True) but found (False)
+  Problem 17: expected (True) but found (False)
+  Problem 18: expected (True) but found (False)
+  Problem 19: expected (True) but found (False)
+  Problem 20: expected about 37.69
+Score: 10%
+(CS301) Adalberts-MacBook-Air:CS301 gerald$ python
+Python 3.7.0 (default, Jun 28 2018, 07:39:16) 
+[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 1 + 1
+2
+>>> 1+1
+2
+>>>  1+1
+  File "<stdin>", line 1
+    1+1
+    ^
+IndentationError: unexpected indent
+>>> 1 - 1
+0
+>>> 1 * 1
+1
+>>> (1)(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not callable
+>>> 1 / 0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ZeroDivisionError: division by zero
+>>> 1 / 1
+1.0
+>>> 1/100
+0.01
+>>> 1/1000
+0.001
+>>> 1/10000
+0.0001
+>>> 1/100000
+1e-05
+>>> 0.00001
+1e-05
+>>> 1.23/100
+0.0123
+>>> 1.23/1000
+0.00123
+>>> 1.23/10000
+0.000123
+>>> 1.23/100000
+1.2299999999999999e-05
+>>> 1/3
+0.3333333333333333
+>>> type(100)
+<class 'int'>
+>>> type(3.14)
+<class 'float'>
+>>> type(3/2)
+<class 'float'>
+>>> 3/2
+1.5
+>>> 3 // 2
+1
+>>> 1 / 3
+0.3333333333333333
+>>> 1 // 3
+0
+>>> type(3 / 2)
+<class 'float'>
+>>> type(3 // 2)
+<class 'int'>
+>>> 10 % 3
+1
+>>> 10 % 2
+0
+>>> 2 ** 3
+8
+>>> 10 ** 5
+100000
+>>> 16 ** 1/2
+8.0
+>>> 16 ** (1/2)
+4.0
+>>> -5 ** 2
+-25
+>>> (-5) ** 2
+25
+>>> +3
+3
+>>> -3
+-3
+>>> 3 + +4
+7
+>>> 3 + -4
+-1
+>>> 'This is a string'
+'This is a string'
+>>> "This is a string"
+'This is a string'
+>>> type('hello')
+<class 'str'>
+>>> 'hello"
+  File "<stdin>", line 1
+    'hello"
+          ^
+SyntaxError: EOL while scanning string literal
+>>> 'she said "hello"'
+'she said "hello"'
+>>> 
+>>> 'hello' * 'world'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'str'
+>>> 
+>>> 
+>>> 'hello' + 'world'
+'helloworld'
+>>> 'hello' + 'world' + 'hi'
+'helloworldhi'
+>>> 'hello ' + 'world ' + 'hi'
+'hello world hi'
+>>> 
+>>> 5 > 3
+True
+>>> 5 < 3
+False
+>>> 3 <= 4
+True
+>>> 4 <= 4
+True
+>>> 1 == 1
+True
+>>> 1 == 2
+False
+>>> 1 != 2
+True
+>>> type(2) == type(2.0)
+False
+>>> type(True)
+<class 'bool'>
+>>> not True
+False
+>>> not False
+True
+>>> 10 < 1
+False
+>>> 10 < 1 or 10 > 5
+True
+>>> 10 < 1 and 10 > 5
+False
+>>> 1 == 1 or 2 == 2
+True
+>>> 1 == 1 or 2 == 2 and 3 == 4
+True
+>>> (1 == 1 or 2 == 2) and 3 == 4
+False
+
