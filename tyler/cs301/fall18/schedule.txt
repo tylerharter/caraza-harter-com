@@ -42,6 +42,7 @@ Programming
 * Calculation+Operators
 * Boolean Logic
 * Interactive vs. Script Mode, print
+<a href="materials/lec-05.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 1
 
 =
@@ -50,7 +51,7 @@ Vars and Exprs
 * Assignment
 * Types of errors
 * Comments
-
+<a href="materials/lec-06.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 2
 
 =
@@ -62,6 +63,7 @@ Using Functions
 * Importing Modules
 * Math Module
 
+<a href="materials/lec-07.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 3 (pgs 21-23)<br>
 <b>Due</b>: P1
 
@@ -70,8 +72,11 @@ Creating Functions
 
 * Positional Params
 * Keyword Params
-* Functions as Variables
-* TODO: diff materials about return values
+* Return Values
+
+<b>Read</b>: Downey Ch 3 (pgs 23-26 and 29)<br>
+<b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a><br>
+# NOTE: Ch 6 (pg 61) covers return values, but only with an example that assumes conditionals are known
 
 =
 Function Scope
@@ -79,7 +84,7 @@ Function Scope
 * Local vs. Global
 * Stack Diagrams
 
-<b>Read</b>: Downey Ch 3 (pgs 23-30) and Ch 6 (pg 61)
+<b>Read</b>: Downey Ch 3 (pgs 26-34)
 
 =
 Conditions

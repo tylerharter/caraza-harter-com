@@ -1,0 +1,204 @@
+game: guess that function!
+
+from project import *
+
+x = 0
+y = f(x)
+y
+
+make them choose x values, show them y, and make them guess about f
+
+mention regression...
+
+==================================================
+
+# refer back to worksheet on functions(s)
+ - two lectures
+ - using functions (main code)
+ - creating functions (move code)
+
+# functions we have used
+
+'hi'
+print('hi') # why do we need this?
+type('hi')  # review types
+type(1)
+type(1.0)
+type(1 == 1.0)
+
+type(1 == 1.0)      # in interactive mode, this goes to output
+type(1 == 1.0)      # in script mode, this is lost
+t = type(1 == 1.0)  # in both modes, save it to a variable
+print(t)
+print(type(1 == 1.0)) # compose them into one step
+
+==================================================
+
+# input()
+
+echo.py
+ - just input()
+ - what is the return value of print()?
+   Talk about NoneType, x==None, "fruitful" functions...
+ - functions (a) do something and/or (b) give you something!
+
+hello.py
+ - input(prompt)
+
+add.py
+ - show we get concat when we wanted addition (same symbol, different meanings for different operands)
+ - give casting examples:
+   first, add.py casts input with int()
+   second, do it with float
+
+==================================================
+
+# casting examples
+ - float -> int
+ - x - int(x)
+ - "the number is " + str(x)
+
+==================================================
+
+# multiple arguments, named arguments, optional arguments (battleship)
+
+print()
+print(1, 2, 3)
+print(1, 2, 3, sep=',')
+print(1, 2, 3, sep=',', end='.')
+print(1, 2, 3, sep=',', end='.\n')
+print(1, 2, 3, end='.\n', sep=',')
+print(sep=',', 1, 2, 3, end='.\n')
+
+battleship.py
+ - show a map, with an ! on it based on user coordinates
+ - give example of x=x1 and y=y1 or x=x2 and y=y2 or ... (boolean logic!!!)
+ - exercise for you: ship area... (x, y, width, height)
+
+==================================================
+
+# using modules
+
+talk about what about what a module is (bunch of functions)
+
+cat.py and dog.py are here: /Users/trh/git_co/cs301-projects/fall18/lec-07
+
+They contain these functions:
+
+----------------------------------------
+def speak():
+"""this makes the dog print 'bark'"""
+    print('bark')
+
+def give_treat():
+    print('wags tails')
+----------------------------------------
+def speak():
+    """this makes the cat print 'meow'"""
+        print('meow')
+----------------------------------------
+
+# let's try it!  (star means everything)
+
+speak()
+from dog import *
+speak()
+from cat import *
+speak()
+
+# how to get back to dog speaking?
+
+import dog
+import cat
+dog.speak()
+cat.speak()
+
+# talk about attribute operator (the dot)
+ - Easy to confuse with a decimal point!
+ - it's high precedence!  https://docs.python.org/3/reference/expressions.html#operator-precedence
+
+==================================================
+
+# dynamic inspection
+
+1. inspect a module
+
+type(dog)
+dir(dog)
+
+talk about double underscore and private
+
+type(dog.speak)
+dog.speak()
+
+2. inspect a function's documentation
+
+dog.speak.__doc__
+dog.give_treat.__doc__
+dog.give_treat()
+
+3. inspect, say, a number
+
+dir(3.14)
+
+==================================================
+
+We're going to provide "project" module for your projects!
+
+==================================================
+
+# math module
+
+dir(math)
+
+search for "python 3 math module"
+
+documentation:
+ - https://docs.python.org/3/library/math.html
+ - print(math.sqrt.__doc__)
+
+examples:
+ - how many bits necessary
+
+==================================================
+
+Python MOTW
+
+==================================================
+
+# built in module
+
+dir(__builtins__)
+
+https://docs.python.org/3/library/functions.html
+
+min, max, abs, input, type, print
+
+round.__doc__
+
+round(123.456)
+round(123.456, 2)
+round(123.456, -1)
+
+==================================================
+
+examples:
+
+ 1. spread of 5 input numbers
+ 2. given two points in polar coordinates, compute distance between them
+ 3. add commas to numbers that are powers of ten
+
+For example 3:
+{
+import math
+
+number = int(input("enter a number that is a power of 10: "))
+zeros = round(math.log(number, 10))
+
+triples = zeros // 3
+extra_zeros = zeros % 3
+
+print("there are " + str(zeros) + " zeros")
+
+print("1" + "0"*extra_zeros + ",000"*triples)
+}
