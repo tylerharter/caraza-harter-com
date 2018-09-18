@@ -23,7 +23,7 @@ How computers work?
 * Flow of execution
 <a href="materials3/lec-02-commands.pdf">Shell Commands</a><br>
 <a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
-<b>Due (Wed)</b>: P0 (ungraded) 
+<b>Due (Wed)</b>: Project 0 (ungraded) 
 
 =
 Basics of Programming
@@ -39,36 +39,39 @@ Basics of Programming
 <b>Read</b>: <a href="http://greenteapress.com/thinkpython2/thinkpython2.pdf">Think Python</a> (Chapter 1)
 
 =
-Variables, Expressions and Functions
+Variables
 * Operator precedence
 * Assignment operator
 * Variables
 * Naming variables
 * Bugs (errors)
-* Functions
 <b>Read</b>: Think Python (Chapter 2)<br>
-<b>Due (Wed)</b>: P1
+<b>Homework</b> (not graded): <a href="https://docs.google.com/document/d/1fcLbx5lrJ5SbHQv5HWrrkfme9K_c1QxE1H-PvUj2j-Q/edit?usp=sharing">Homework 1</a><br>
+<b>Expressions</b> (for practice): <a href="materials3/expressions.py" download>expressions.py</a><br>
+<b>Due (Wed)</b>: Project 1
 
 =
-Creating Functions
+Functions
 * Why functions?
 * Writing your own functions
 * Parameters and arguments
 * Return values
 * Scope of variables
-<b>Read</b>: Think Python (Chapter 3)
+<b>Read</b>: Think Python (Chapter 3)<br>
+<b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a>
 
 =
-Function Scope and Conditions
+Conditions
+<b>Due (Wed)</b>: Project 2
 
 =
-More Conditions and Iteration
-
-=
-Advanced Iteration
+Iteration
 
 =
 Strings
+
+=
+Review?
 <b>MIDTERM EXAM 1</b>
 
 ################################################################################
