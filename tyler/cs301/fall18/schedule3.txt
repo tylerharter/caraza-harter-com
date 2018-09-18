@@ -33,6 +33,7 @@ Basics of Programming
 * Logical operators
 * Values and types
 * Boolean logic
+* Interactive vs. script mode
 <a href="materials3/lec-03-commands.txt">Operators</a><br>
 <a href="materials3/lec-03-notes.pdf">Link to Notes</a><br>
 <b>Read</b>: <a href="http://greenteapress.com/thinkpython2/thinkpython2.pdf">Think Python</a> (Chapter 1)
@@ -43,13 +44,18 @@ Variables, Expressions and Functions
 * Assignment operator
 * Variables
 * Naming variables
-* Bugs
+* Bugs (errors)
 * Functions
-<b>Read</b>: Think Python (Chapter 2)
+<b>Read</b>: Think Python (Chapter 2)<br>
 <b>Due (Wed)</b>: P1
 
 =
 Creating Functions
+* Why functions?
+* Writing your own functions
+* Parameters and arguments
+* Return values
+* Scope of variables
 <b>Read</b>: Think Python (Chapter 3)
 
 =
