@@ -46,7 +46,6 @@ Variables
 * Naming variables
 * Bugs (errors)
 <a href="materials3/lec-04-notes.pdf">Link to Notes</a><br>
-<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/thinkpython2.pdf">Think Python</a> (Chapter 1)
 <b>Read</b>: Think Python (Chapter 2)<br>
 <b>Homework</b> (not graded): <a href="https://docs.google.com/document/d/1fcLbx5lrJ5SbHQv5HWrrkfme9K_c1QxE1H-PvUj2j-Q/edit?usp=sharing">Homework 1</a><br>
 <b>Expressions</b> (for practice): <a href="materials3/expressions.py" download>expressions.py</a><br>
