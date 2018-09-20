@@ -54,16 +54,26 @@ Variables
 =
 Functions
 * Why functions?
+* In-built functions (e.g., input())
+* Math functions (e.g., factorial())
 * Writing your own functions
 * Parameters and arguments
 * Return values
-* Scope of variables
+<a href="https://docs.google.com/document/d/1iVC8R9wvszax6axQbBOoJUMYK3_K4tDxXf_5XhbhUmw/edit?usp=sharing">Notes on Functions</a><br>
+<a href="materials3/code/functions">Code snippets on Functions</a><br>
 <b>Read</b>: Think Python (Chapter 3)<br>
 <b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a>
 
 =
-Conditions
-<b>Due (Wed)</b>: Project 2
+More Functions & Conditions
+* Control flow during a function call
+* Scope of variables in a function
+* Stack diagrams
+* Simple conditionals
+* Chained conditionals
+* Nested conditionals
+<b>Read</b>: Think Python (Chapter 3.6 - 3.12 and Chapter 5.1 - 5.7)<br>
+<font color="red"><b>Due (Wed)</b>: Project 2</font>
 
 =
 Iteration
@@ -73,7 +83,7 @@ Strings
 
 =
 Review?
-<b>MIDTERM EXAM 1</b>
+<b><font color="red">MIDTERM EXAM 1</font></b>
 
 ################################################################################
 # PART 2
