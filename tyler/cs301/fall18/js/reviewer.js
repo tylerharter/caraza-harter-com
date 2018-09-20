@@ -50,7 +50,7 @@ var reviewer = {};
       // display links
       var body = $("#submissions")
 
-      $('<h1 my=4>',{
+      $('<h1>',{
           text: 'Sumbissions: ' + submissions.length
       }).appendTo(body)
 
