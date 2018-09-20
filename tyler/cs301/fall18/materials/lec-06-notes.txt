@@ -49,7 +49,7 @@ x == y
 x = 2
 x == y
 
-# numerical examples
+# numerical examples (NOTE: this example was incorrect!!!)
 
  - average of several numbers
  - is_even

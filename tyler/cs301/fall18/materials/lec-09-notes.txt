@@ -11,7 +11,7 @@ situation.
 
 ==================================================
 
-Frames
+frames (s)
  - a frame is a groups of variables
  - every time a function is invoked, a frame is created for it
  - stack diagrams
