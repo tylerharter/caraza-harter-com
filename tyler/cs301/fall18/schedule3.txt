@@ -60,7 +60,11 @@ Functions
 * Parameters and arguments
 * Return values
 <a href="https://docs.google.com/document/d/1iVC8R9wvszax6axQbBOoJUMYK3_K4tDxXf_5XhbhUmw/edit?usp=sharing">Notes on Functions</a><br>
-<a href="materials3/code/functions">Code snippets on Functions</a><br>
+<b>Code Snippets</b>: <a href="materials3/code/functions/quadratic_roots.py">quadratic_roots.py</a>, 
+<a href="materials3/code/functions/quadratic_roots_input.py">quadratic_roots_input.py</a>, 
+<a href="materials3/code/functions/inbuilt_functions.py">inbuilt_functions.py</a>, 
+<a href="materials3/code/functions/math_functions.py">math_functions.py</a>, 
+<a href="materials3/code/functions/write_functions.py">write_functions.py</a><br>
 <b>Read</b>: Think Python (Chapter 3)<br>
 <b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a>
 
