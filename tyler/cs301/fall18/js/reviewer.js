@@ -41,17 +41,26 @@ var reviewer = {};
         }
 
         submissions[i].display = display
+        if (submissions[i].has_review) {
+          submissions[i].display += ' [REVIEWED]'
+        }
         categories[category].push(submission)
       }
 
       // display links
       var body = $("#submissions")
+
+      $('<h1>',{
+          text: 'Sumbissions: ' + submissions.length
+      }).appendTo(body)
+
       for (var category in categories) {
+        var student_count = categories[category].length
         $('<h3>',{
-          text:category
+          text: category + '(' + student_count + ')'
         }).appendTo(body)
 
-        for (var i=0; i<categories[category].length; i++) {
+        for (var i=0; i<student_count; i++) {
           var submission = categories[category][i]
           var url = ('code_review.html?project_id=' + submission.project_id +
                      '&submitter_id=' + submission.submitter_id)

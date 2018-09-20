@@ -159,6 +159,21 @@ var code_review = {};
     }
 
     var html = ''
+
+    // show reviewer info
+    if ('reviewer_email' in cr && cr.reviewer_email) {
+      html += ('<p my="3">Reviewer: '+cr.reviewer_email+'</p>')
+    }
+
+    // show general comments
+    var general_comments = ''
+    if ('general_comments' in cr && cr.general_comments) {
+      general_comments = cr.general_comments
+    }
+    html += ('<h3>General Comments</h3>')
+    html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea>')
+    
+    // show files with highlights
     for (var filename in cr.project.files) {
       var code = cr.project.files[filename]
 
@@ -182,8 +197,17 @@ var code_review = {};
     $("#code_viewer").html(html)
     PR.prettyPrint()
 
-    // for selection
+    // selection event
     $(".prettyprint").mouseup(codeMouseUp)
+
+    // general comment update event
+    if (cr.is_grader) {
+      $("#general_comments").on('input', function(){
+        cr.general_comments = $("#general_comments").val()
+      })
+    } else {
+      $("#general_comments").prop( "disabled", true );
+    }
 
     // must be after pretty printing
     $("[data-toggle=popover]").popover({html:true, container:"body"})
