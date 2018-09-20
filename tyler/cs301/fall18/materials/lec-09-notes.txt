@@ -85,7 +85,7 @@ def set_x():
 
 print(x)
 
-# LESSON: functions don't execute unless they're called
+# LESSON 1: functions don't execute unless they're called
 
 ==================================================
 
@@ -97,7 +97,7 @@ def set_x():
 set_x()
 print(x)
 
-# LESSON: variables created in a function die after function returns
+# LESSON 2: variables created in a function die after function returns
 
 ==================================================
 
@@ -112,7 +112,7 @@ count()
 count()
 count()
 
-# LESSON: variables start fresh every time a function is called again
+# LESSON 3: variables start fresh every time a function is called again
 
 ==================================================
 
@@ -125,7 +125,7 @@ def main():
     x = 100
     display_x()
 
-# LESSON: you can't see the variables of other function invocations,
+# LESSON 4: you can't see the variables of other function invocations,
   even those that call you
 
 ==================================================
@@ -147,7 +147,7 @@ print('before: ' + msg)
 greeting()
 print('after: ' + msg)
 
-# LESSON: you can generally just use global variables inside a function
+# LESSON 5: you can generally just use global variables inside a function
 
 ----------------------------------------
 
@@ -163,7 +163,7 @@ print('before: ' + msg)
 greeting()
 print('after: ' + msg)
 
-# LESSON: if you do an assignment to a variable in a function, Python assumes you want it local
+# LESSON 6: if you do an assignment to a variable in a function, Python assumes you want it local
 
 ----------------------------------------
 
@@ -179,7 +179,7 @@ print('before: ' + msg)
 greeting()
 print('after: ' + msg)
 
-# LESSON: assignment to a variable should be before its use in a
+# LESSON 7: assignment to a variable should be before its use in a
 # function, even if there's a a global variable with the same name
 
 VERSION 4:
@@ -195,7 +195,7 @@ print('before: ' + msg)
 greeting()
 print('after: ' + msg)
 
-# LESSON: use a global declaration to prevent Python from creating a
+# LESSON 8: use a global declaration to prevent Python from creating a
 # local variable when you want a global variable
 
 ==================================================
@@ -211,19 +211,20 @@ print('before: ' + val)
 f(val)
 print('after: ' + val)
 
-# LESSON: in Python, arguments are "passed by value", meaning changes
+# LESSON 9: in Python, arguments are "passed by value", meaning changes
 # to a parameter inside the function don't change the argument outside
 
 ==================================================
+
+x = 'A'
 
 def f(x):
     x = 'B'
     print('inside: ' + x)
 
-x = 'A'
 print('before: ' + x)
 f(x)
 print('after: ' + x)
 
-# LESSON: it's irrelevant whether the argument (outside) and parameter
+# LESSON 10: it's irrelevant whether the argument (outside) and parameter
 # (inside) have the same variable name
