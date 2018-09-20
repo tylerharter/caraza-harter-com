@@ -227,7 +227,13 @@ def get_code_review_raw(user, submitter_user_id, project_id,
 
     # create a new empty CR if necessary
     if cr == None:
-        cr = {'submission_id':None, 'ready':False, 'highlights':None}
+        cr = {
+            'submission_id': None,       # which submission is this associated with?
+            'highlights': None,          # list of highlight ranges with comments
+            'general_comments': '',      # comments about whole submission
+            'points_deducted': 0,        # TAs can take additional points off
+            'reviewer_email': None,      # who left the code review
+        }
 
     # step 2: get associated code
     try:
@@ -239,14 +245,16 @@ def get_code_review_raw(user, submitter_user_id, project_id,
             return (500, 'no project submission found')
         return (500, str(e.response))
 
+    # additional code-review fields are populated with data about the
+    # actual project
     cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
-    cr['project'] = project_files
     cr['is_grader'] = is_grader(user)
+    cr['project'] = project_files
     if cr['highlights'] == None:
         # start with a clean slate (i.e., not highlights on any files)
         cr['highlights'] = {k:[] for k in project_files['files'].keys()}
     cr['analysis'] = get_code_analysis(project_files)
-        
+
     return (200, cr)
 
 @route
@@ -264,6 +272,7 @@ def get_code_review(user, event):
 @grader
 def put_code_review(user, event):
     cr = event['cr']
+    cr['reviewer_email'] = user['email']
     submitter_user_id = event['submitter_id']
     project_id = event['project_id']
     path = code_review_path(submitter_user_id, project_id)
@@ -275,27 +284,48 @@ def put_code_review(user, event):
 
     return (200, 'uploaded review')
 
-@route
-@grader
-def project_list_submissions(user, event):
-    # get partial roster indexed by google IDs
-    roster = json.loads(get_roster_raw())
+def project_list_submissions_raw(roster, project_id):
     roster = {student['user_id']: student for student in roster if 'user_id' in student}
 
-    project_id = event['project_id']
     if not project_id in PROJECT_IDS:
         return (500, 'invalid project id')
     paths = s3_all_keys('projects/'+project_id+'/')
+
+    # set of submitter_id's of user that have received code reviews
+    reviewed = set()
+    
     submissions = []
     for path in paths:
         parts = path.split('/')
-        if (len(parts) != 5 or parts[0] != 'projects' or
-            parts[2] != 'users' or parts[4] != 'curr.json'):
+        if (len(parts) != 5 or parts[0] != 'projects' or parts[2] != 'users'):
             continue
+
         submitter_id = parts[3]
-        submission = {'project_id':project_id, 'submitter_id':submitter_id, 'info': {},
-                      'path': path}
-        for field in ['net_id', 'ta']:
-            submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
-        submissions.append(submission)
+        filename = parts[4]
+
+        if filename == 'cr.json':
+            reviewed.add(submitter_id)
+        elif filename == 'curr.json':
+            submission = {
+                'project_id':project_id,
+                'submitter_id':submitter_id,
+                'info': {},
+                'path': path
+            }
+
+            # supplement with info from roster
+            for field in ['net_id', 'ta']:
+                submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
+            submissions.append(submission)
+
+    # augment submissions with info about reviews
+    for submission in submissions:
+        submission['has_review'] = (submission['submitter_id'] in reviewed)
+
     return (200, {'submissions':submissions})
+
+@route
+@grader
+def project_list_submissions(user, event):
+    roster = json.loads(get_roster_raw())
+    return project_list_submissions_raw(roster, event['project_id'])

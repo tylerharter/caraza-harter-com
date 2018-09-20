@@ -108,7 +108,7 @@ def main():
         for path in paths:
             # use short cache timeout for these since we're debugging
             print('sync %s' % path)
-            syncer.sync_path(path, ttl=3600)
+            syncer.sync_path(path, ttl=3)
 
 if __name__ == '__main__':
     main()

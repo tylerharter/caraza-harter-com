@@ -1,6 +1,7 @@
 import json, random
 
 from lambda_framework import *
+import roster
 
 NET_ID_EMAIL_SUFFIX = '@wisc.edu'
 
@@ -151,3 +152,13 @@ def roster_merge_google_ids(user, event):
             student['user_id'] = user_id
     body = put_roster_raw(roster)
     return (200, {'roster':body})
+
+@route
+@admin
+def rebalance_ta_to_student_assignments(user, event):
+    # TODO: implement rebalancing of students across TAs
+    pass
+    #roster = json.loads(get_roster_raw())
+    #submissions = project_list_submissions_raw(roster, project_id)
+    #body = put_roster_raw(roster)
+    #return (200, {'roster':body})
