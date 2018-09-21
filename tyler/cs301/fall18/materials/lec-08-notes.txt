@@ -32,17 +32,17 @@ instead of direction to the screen?
 
 ==================================================
 
+def greeting():
+    print("hello")
+print("world") # tabbed or not?
+greeting()
+
 # is_close
  - do relative closeness first (write is_close_to_1() first)
  - use abs (example of function using a function)
  - example of taking two arguments
  - give example of a multiline function, with tolerance as local variable (hardcoded)
    - show that indentation matters!
-
-def greeting():
-    print("hello")
-print("world") # tabbed or not?
-greeting()
 
  - give example of relative tolerance as third parameter
  - default arguments
@@ -107,6 +107,14 @@ do several layers of functions calling each other
  - give an example of pass
  - do quadratic formula example
  - return positive and negative example
+
+==================================================
+
+# interpolation example
+ - given points x1,y1,x2,y2, estimate new y for x
+ - slope function
+ - estimate function
+ - error functions
 
 ==================================================
 
