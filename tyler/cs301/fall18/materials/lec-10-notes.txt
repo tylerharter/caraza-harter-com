@@ -1,0 +1,70 @@
+random:
+  mental models:
+    - flow of execution
+      - nesting
+      - exceptions to next line: function, conditional, loop
+    - state
+      - global/local
+      - argument -> parameter
+    - expression evaluation
+
+==================================================
+
+PythonTutor
+
+refer to pseudocode worksheet, problem 4
+ - do in Python
+ - how do we know where to skip to? [skip past the tabbed-in section]
+
+==================================================
+
+refer to pseudocode worksheet, problem 5
+ - do in Python
+ - introduce else
+ - introduce elif (else if)
+
+==================================================
+
+# do absolute, in various forms
+
+def absolute_v1(x):
+    return (x ** 2) ** (0.5)
+
+def absolute_v2(x):
+    if x < 0:
+       x = -x
+    return x
+
+def absolute_v3(x):
+    if x < 0:
+       return -x
+    else:
+       return x
+
+def absolute_v4(x):
+    if x < 0:
+       return -x
+    return x
+
+# which version do people prefer?
+
+==================================================
+
+improve battleship game:
+ - functions for ships
+ - print 'Hit' or 'Miss'
+ - print '1' or '0' on map for hit or miss
+ - do bounds checking (try twice)
+
+==================================================
+
+addition tester game:
+ - show an addition, prompt for an answer
+ - print grade based on score
+ - give second chance for half points if only off by one (nesting)
+
+==================================================
+
+create worksheet with drawing blocks?
+
+
