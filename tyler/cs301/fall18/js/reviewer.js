@@ -64,6 +64,7 @@ var reviewer = {};
           var submission = categories[category][i]
           var url = ('code_review.html?project_id=' + submission.project_id +
                      '&submitter_id=' + submission.submitter_id)
+
           $('<a>',{
             text:submission.display,
             href:url,
