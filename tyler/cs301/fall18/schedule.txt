@@ -99,6 +99,8 @@ Conditions
 * True and "Truthy"
 * Modular arithmetic
 
+<a href="materials/lec-10.pdf">Link to Slides</a><br>
+<a href="materials/lec-10-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: Downey Ch 5 (pgs 47-51, 54-60)<br>
 <b>Optional</b>: Downey Ch 4<br>
 <b>Due</b>: P2
@@ -117,6 +119,10 @@ Advanced Iteration
 * Continue
 
 =
+Review Day
+<b>Due</b>: P3
+
+=
 Strings
 
 * Indexing/Slicing
@@ -128,10 +134,6 @@ Strings
 
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
-<b>Due</b>: P3
-
-=
-Slack Day
 
 ################################################################################
 # PART 2
