@@ -59,7 +59,11 @@ file read loops:
  - assume these three: open_file(), get_next(), has_next()
  - average
  - maximum
- - make a version that takes user input instead, until a 'q'
+
+==================================================
+
+input loops
+ - make a version of above program that takes user input instead, until a 'q'
 
 ==================================================
 
