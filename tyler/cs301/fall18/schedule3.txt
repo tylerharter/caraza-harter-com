@@ -81,6 +81,10 @@ More Functions & Conditions
 
 =
 Iteration
+* Why loops?
+* while loop
+* break statement
+<b>Read</b>: Think Python (Chapter 7)<br>
 
 =
 Strings
