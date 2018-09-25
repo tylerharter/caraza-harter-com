@@ -60,6 +60,7 @@ Functions
 * Parameters and arguments
 * Return values
 <a href="https://docs.google.com/document/d/1iVC8R9wvszax6axQbBOoJUMYK3_K4tDxXf_5XhbhUmw/edit?usp=sharing">Notes on Functions</a><br>
+<a href="materials3/lec-05-notes.pdf">Link to Notes</a><br>
 <b>Code Snippets</b>: <a href="materials3/code/functions/quadratic_roots.py">quadratic_roots.py</a>, 
 <a href="materials3/code/functions/quadratic_roots_input.py">quadratic_roots_input.py</a>, 
 <a href="materials3/code/functions/inbuilt_functions.py">inbuilt_functions.py</a>, 
@@ -69,22 +70,26 @@ Functions
 <b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a>
 
 =
-More Functions & Conditions
+More Functions
 * Control flow during a function call
 * Scope of variables in a function
-* Stack diagrams
-* Simple conditionals
-* Chained conditionals
-* Nested conditionals
-<b>Read</b>: Think Python (Chapter 3.6 - 3.12 and Chapter 5.1 - 5.7)<br>
+* Stack diagrams(Frames)
+<a href="materials3/lec-06-slides.pdf">Link to Slides</a><br>
+<a href="materials3/lec-06-notes.pdf">Link to Notes</a><br>
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-06-functions">More Functions</a><br> 
+<b>Read</b>: Think Python (Chapter 3.6 - 3.12)<br>
 <font color="red"><b>Due (Wed)</b>: Project 2</font>
 
 =
-Iteration
-* Why loops?
-* while loop
-* break statement
-<b>Read</b>: Think Python (Chapter 7)<br>
+Conditionals and Iteration
+* Simple conditionals
+* Chained conditionals
+* Nested conditionals
+* Loops
+* While loop
+* Break statement
+<a href="materials3/lec-07-slides.pdf">Link to Slides</a><br>
+<b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
 
 =
 Strings

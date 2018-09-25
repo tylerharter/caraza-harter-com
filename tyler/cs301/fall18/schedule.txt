@@ -112,6 +112,7 @@ Iteration
 * While Loop
 * Infinite Iteration
 
+<a href="materials/lec-11.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 7<br>
 
 =

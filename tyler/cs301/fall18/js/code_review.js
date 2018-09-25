@@ -24,19 +24,20 @@ var code_review = {};
     });
   }
 
-  // keep going up the DOM until we find the immediate child of a lang-py element
-  function findPyCodeChild(node) {
-    while(node.parentElement != null) {
-      var classes = node.parentElement.classList
+  function nodeHasClass(node, cls) {
+    var classes = node.classList
+    return (classes != undefined && classes.contains(cls))
+  }
+  
+  function findSelectionFileName(node) {
+    while(node != null) {
+      var classes = node.classList
       if (classes != undefined && classes.contains("lang-py")) {
-        break
+        return node.getAttribute("data-filename")
       }
       node = node.parentElement
     }
-    if (node.parentElement == null) {
-      return null
-    }
-    return node
+    return null
   }
 
   function plainTextOffset(node) {
@@ -51,33 +52,48 @@ var code_review = {};
     return offset
   }
 
+  // get a plain text offset of selectionNode within an ancestor
+  // element in the DOM marked with class rootClass
+  function getAbsoluteOffset(selectionNode, selectionOffset, rootClass) {
+    var node = selectionNode
+    var offset = selectionOffset
+    
+    if (node == null) {
+      return null
+    }
+
+    while(!nodeHasClass(node, rootClass) && node.parentElement != null) {
+      offset += plainTextOffset(node)
+      node = node.parentElement
+    }
+
+    if (!nodeHasClass(node, rootClass)) {
+      // we never found the root element
+      return null
+    }
+
+    return offset
+  }
+
   // this considers adding a higlight
   function codeMouseUp() {
     if (cr == null || !cr.is_grader) {
       // students don't need to highlight
       return
     }
-    
+
     var s = window.getSelection()
-    if (s.anchorNode == null || s.focusNode == null) {
-      // these nodes are null when one clicks on a hyperlink
-    }
-    var node1 = findPyCodeChild(s.anchorNode)
-    var node2 = findPyCodeChild(s.focusNode)
-    if (node1 == null || node2 == null) {
+    var filename = findSelectionFileName(s.anchorNode)
+    if (filename == null) {
       return
     }
 
-    console.log(node1, node2)
-    if (plainTextOffset(node1) > plainTextOffset(node2)) {
-      var tmp = node1
-      node1 = node2
-      node2 = tmp
-    }
-
-    var filename = node1.parentElement.getAttribute("data-filename")
-    var offset = plainTextOffset(node1)
-    var length = plainTextOffset(node2)+node2.textContent.length - offset
+    var offset1 = getAbsoluteOffset(s.anchorNode, s.anchorOffset, "lang-py")
+    var offset2 = getAbsoluteOffset(s.focusNode, s.focusOffset, "lang-py")
+    console.log(offset1)
+    console.log(offset2)
+    var offset = Math.min(offset1, offset2)
+    var length = Math.max(offset1, offset2) - offset + 1
 
     for(var i=0; i<cr.highlights[filename].length; i++) {
       var highlight = cr.highlights[filename][i]
@@ -130,17 +146,16 @@ var code_review = {};
     }
     console.log("could not find highlight")
   }
+
+  function escapeForHTML(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
   
-  function addCodeReviewLink(code, filename, offset, length) {
-    var c = code.slice(0, offset)
+  function getCodeReviewSpan(filename, offset, length) {
     var span_id = ('highlight_'+offset+'_'+length)
-    c += ('<span id="'+span_id+'" data-highlight-filename="'+filename+'" '+
-          'data-highlight-offset="'+offset+'" data-highlight-length="'+length+'" '+
-          'class="code-review-link" data-toggle="popover" data-placement="right" title="Comment">')
-    c += code.slice(offset, offset+length)
-    c += '</span>'
-    c += code.slice(offset+length)
-    return c
+    return ('<span id="'+span_id+'" data-highlight-filename="'+filename+'" '+
+            'data-highlight-offset="'+offset+'" data-highlight-length="'+length+'" '+
+            'class="code-review-link" data-toggle="popover" data-placement="right" title="Comment">')
   }
 
   code_review.refreshCR = function() {
@@ -173,8 +188,16 @@ var code_review = {};
     html += ('<h3>General Comments</h3>')
     html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea>')
     
-    // show files with highlights
+    // create a box for each code file
     for (var filename in cr.project.files) {
+      html += ('<h3>'+filename+'</h3>')
+      html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'"></pre>')
+    }
+    $("#code_viewer").html(html)
+
+    // populate each box with the code and highlights
+    for (var filename in cr.project.files) {
+      var preElement = $("pre[data-filename='"+filename+"'].lang-py")
       var code = cr.project.files[filename]
 
       // sort highlights from last to first.  Otherwise, injecting
@@ -182,22 +205,30 @@ var code_review = {};
       // move where later injections should go.
       cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
 
+      var htmlCode = ''
+
       // add all highlights
       for(var i=0; i<cr.highlights[filename].length; i++) {
         var highlight = cr.highlights[filename][i]
-        code = addCodeReviewLink(code, filename, highlight.offset, highlight.length)
+        var cut
+
+        // move tail from code to htmlCode
+        cut = highlight.offset + highlight.length
+        htmlCode = escapeForHTML(code.slice(cut)) + htmlCode
+        code = code.slice(0, cut)
+
+        // move highlight from code to htmlCode
+        cut = highlight.offset
+        var span = getCodeReviewSpan(filename, highlight.offset, highlight.length)
+        htmlCode = span + escapeForHTML(code.slice(cut)) + '</span>' + htmlCode
+        code = code.slice(0, cut)
       }
-
-      html += ('<h3>'+filename+'</h3>')
-      html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'">' +
-               code +
-               '</pre>')
+      htmlCode = escapeForHTML(code) + htmlCode
     }
+    preElement.html(htmlCode)
 
-    $("#code_viewer").html(html)
+    // add syntax coloring and watch for events
     PR.prettyPrint()
-
-    // selection event
     $(".prettyprint").mouseup(codeMouseUp)
 
     // general comment update event
