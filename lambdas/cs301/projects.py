@@ -206,6 +206,29 @@ def project_upload(user, event):
 def get_partner(user, event):
     return (500, 'not implemented yet')
 
+def get_project_test_result(submitter_user_id, project_id):
+    # get net ID
+    path = 'users/google_to_net_id/%s.txt' % submitter_user_id
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        net_id = response['Body'].read().decode('utf-8')
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise e
+
+    # get test result file (if any)
+    result_path = 'ta/grading/{project_id}/{net_id}.json'
+    result_path = result_path.format(project_id=project_id, net_id=net_id)
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=result_path)
+        result = json.loads(response['Body'].read().decode('utf-8'))
+        return result
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise e
+
 def get_code_review_raw(user, submitter_user_id, project_id,
                         force_new, project_files=None):
     user_id = user['sub']
@@ -245,15 +268,18 @@ def get_code_review_raw(user, submitter_user_id, project_id,
             return (500, 'no project submission found')
         return (500, str(e.response))
 
-    # additional code-review fields are populated with data about the
-    # actual project
-    cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
-    cr['is_grader'] = is_grader(user)
-    cr['project'] = project_files
+    # highlights
     if cr['highlights'] == None:
         # start with a clean slate (i.e., not highlights on any files)
         cr['highlights'] = {k:[] for k in project_files['files'].keys()}
+
+    # these extra fields are auto-populated each time a CR is
+    # requested, regardless of what might be saved in cr.json
+    cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
+    cr['is_grader'] = is_grader(user)
+    cr['project'] = project_files
     cr['analysis'] = get_code_analysis(project_files)
+    cr['test_result'] = get_project_test_result(submitter_user_id, project_id)
 
     return (200, cr)
 
