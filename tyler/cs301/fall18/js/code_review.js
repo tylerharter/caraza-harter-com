@@ -175,9 +175,35 @@ var code_review = {};
 
     var html = ''
 
-    // show reviewer info
+    // show reviewer info, and grading info (if ready)
     if ('reviewer_email' in cr && cr.reviewer_email) {
       html += ('<p my="3">Reviewer: '+cr.reviewer_email+'</p>')
+
+      // do we have a test score?
+      if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
+        var test_score = cr.test_result.score
+        var ta_deduction = 0
+        if ('points_deducted' in cr) {
+          ta_deduction = cr.points_deducted
+        }
+        var final_score = (test_score - ta_deduction)
+        html += ('<ul>')
+        html += ('<li>Base score: ' + test_score + ' (from tests)')
+        html += ('<li>Less ' + ta_deduction + ' points (TA deduction)')
+        html += ('<li>Final score: <b>' + final_score + '</b>')
+        html += ('<li>Note: this final score does not consider whether this project was ' +
+                 'submitted late.  If it was, and you did not have late days left, ' +
+                 'you may not receive all these points.')
+        if (final_score != 100) {
+          html += ('<li>' + "Not the score you were expecting?  Don't panic.  " +
+                   "Reach out to your reviewer to understand what went wrong.  " +
+                   "Please copy the URL of this page to the email you send them.  " +
+                   "If something trivial (e.g., wrong file name or missing comment " +
+                   "about your partner) caused you to get zero, we'll be reasonable and " +
+                   "help you fix it.")
+        }
+        html += ('</ul>')
+      }
     }
 
     // show general comments
