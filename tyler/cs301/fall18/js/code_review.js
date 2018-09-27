@@ -175,6 +175,27 @@ var code_review = {};
 
     var html = ''
 
+    // check deductions
+    var ta_deduction = 0
+    if ('points_deducted' in cr) {
+      ta_deduction = cr.points_deducted
+    }
+    $("#ta_point_deduction").val(ta_deduction)
+    $("#ta_point_deduction").on('input', function(){
+      var deduction = NaN
+      var deduction_str = $("#ta_point_deduction").val()
+      if (/^\d+$/.test(deduction_str)) {
+        deduction = parseInt(deduction_str)
+      }
+
+      if (deduction != NaN && deduction >= 0 && deduction <= 100) {
+        cr.points_deducted = deduction
+        $("#ta_point_deduction").removeClass('is-invalid')
+      } else {
+        $("#ta_point_deduction").addClass('is-invalid')
+      }
+    })
+
     // show reviewer info, and grading info (if ready)
     if ('reviewer_email' in cr && cr.reviewer_email) {
       html += ('<p my="3">Reviewer: '+cr.reviewer_email+'</p>')
@@ -182,10 +203,6 @@ var code_review = {};
       // do we have a test score?
       if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
         var test_score = cr.test_result.score
-        var ta_deduction = 0
-        if ('points_deducted' in cr) {
-          ta_deduction = cr.points_deducted
-        }
         var final_score = (test_score - ta_deduction)
         html += ('<ul>')
         html += ('<li>Base score: ' + test_score + ' (from tests)')
@@ -351,6 +368,7 @@ var code_review = {};
     common.callLambda(data, function(data) {
       cr_dirty = false
       common.popThankYou()
+      code_review.refreshCR()
     })
   }
 
