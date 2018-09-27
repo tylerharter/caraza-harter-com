@@ -88,6 +88,7 @@ Conditionals and Iteration
 * Loops
 * While loop
 * Break statement
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-07-conditionals-loops">Conditionals & Loops</a><br> 
 <a href="materials3/lec-07-slides.pdf">Link to Slides</a><br>
 <b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
 
