@@ -119,6 +119,7 @@ Iteration
 Advanced Iteration
 * Break
 * Continue
+<a href="materials/lec-12.pdf">Link to Slides</a><br>
 
 =
 Review Day
