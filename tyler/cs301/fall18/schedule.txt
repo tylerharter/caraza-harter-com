@@ -120,6 +120,7 @@ Advanced Iteration
 * Break
 * Continue
 <a href="materials/lec-12.pdf">Link to Slides</a><br>
+<a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br>
 
 =
 Review Day
