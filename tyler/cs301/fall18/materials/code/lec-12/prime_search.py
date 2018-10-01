@@ -14,6 +14,7 @@ while i <= end:
     if is_prime(i):
         print('it is prime!')
         found_prime = True
+        break
     i += 1
 
 if found_prime:
