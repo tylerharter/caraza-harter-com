@@ -102,6 +102,7 @@ Advanced Conditionals and Loops
 * continue statement
 * Nested loops
 <b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
+<font color="red"><b>Due (Wed)</b>: Project 3</font>
 
 =
 Strings and Review?
@@ -114,7 +115,6 @@ Strings and Review?
 
 =
 Lists
-<font color="red"><b>Due (Wed)</b>: Project 3</font>
 =
 Advanced Lists
 
