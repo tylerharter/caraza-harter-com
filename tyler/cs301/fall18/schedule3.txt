@@ -87,18 +87,26 @@ Conditionals and Iteration
 * Nested conditionals
 * Loops
 * While loop
-* Break statement
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-07-conditionals-loops">Conditionals & Loops</a><br> 
 <a href="materials3/lec-07-notes.pdf">Link to Notes</a><br>
 <a href="materials3/lec-07-slides.pdf">Link to Slides</a><br>
 <b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
 
 =
-Strings
+Advanced Conditionals and Loops
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-08-loops">Advanced conditionals + Loops</a><br> 
+* Multiple elifs
+* Nested if-else
+* More on while loop
+* break statement
+* continue statement
+* Nested loops
+<b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
 
 =
-Review?
-<b><font color="red">MIDTERM EXAM 1</font></b>
+Strings and Review?
+<b><font color="red">MIDTERM EXAM 1</font></b><br>
+<b>Read</b>: Think Python (Chapter 8)<br>
 
 ################################################################################
 # PART 2
