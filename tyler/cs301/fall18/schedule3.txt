@@ -94,18 +94,19 @@ Conditionals and Iteration
 
 =
 Advanced Conditionals and Loops
-<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-08-loops">Advanced conditionals + Loops</a><br> 
 * Multiple elifs
 * Nested if-else
 * More on while loop
 * break statement
 * continue statement
 * Nested loops
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-08-loops">Advanced conditionals + Loops</a><br> 
 <b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
 <font color="red"><b>Due (Wed)</b>: Project 3</font>
 
 =
 Strings and Review?
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-09-strings">Strings</a><br> 
 <b><font color="red">MIDTERM EXAM 1</font></b><br>
 <b>Read</b>: Think Python (Chapter 8)<br>
 
