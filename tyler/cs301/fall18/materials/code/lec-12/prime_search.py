@@ -17,7 +17,7 @@ while i <= end:
         break
     i += 1
 
-if found_prime:
+if found_prime == True:
     print('YES')
 else:
     print('NO')
