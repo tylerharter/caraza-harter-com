@@ -136,6 +136,8 @@ Strings
 * Comparison
 * String formatting
 
+<a href="materials/lec-13.pdf">Link to Slides</a><br>
+<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
 
