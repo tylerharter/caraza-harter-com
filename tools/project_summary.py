@@ -1,4 +1,4 @@
-import os, sys, json
+import os, sys, json, math
 
 def try_read_json(path):
     if not os.path.exists(path):
@@ -28,6 +28,14 @@ class Snapshot:
         path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/curr.json'
         return try_read_json(path)
 
+    def project_code_review(self, project_id, net_id):
+        """get code review for project"""
+        google_id = self.net_id_to_google_id(net_id)
+        if not google_id:
+            return {}
+        path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/cr.json'
+        return try_read_json(path)
+    
     def test_result(self, project_id, net_id):
         """get auto grade for submission"""
         path = self.dirname+'/ta/grading/'+project_id+'/'+net_id+'.json'
@@ -36,51 +44,62 @@ class Snapshot:
     def submission_details(self, project_id, net_id):
         return {
             'submission': self.project_submission(project_id, net_id),
+            'cr':         self.project_code_review(project_id, net_id),
             'test':       self.test_result(project_id, net_id),
-            'cr':         None
         }
 
-    def project_csv(self, project_id):
+    def project_json(self, project_id, out_path):
         net_ids = set(student['net_id'] for student in self.roster)
         rows = {}
 
-        def add_row(net_id, score, submitter):
+        def add_row(net_id, filename, test_score, ta_deduction, late_days, submitter):
+            score = max(test_score - ta_deduction, 0)
+            
             # many students could specify the same student as their partner.
             # we tally this up to identify this problem
             submissions = 1
+
             row = {
+                'project': project_id,
                 'net_id': net_id,
-                TEST_SCORE,
-                TA_DEDUCTION,
-                LATE_DAYS,
-                'score': score,
                 'primary': submitter,
-                'partner': '',
+                'partner': None,
+                'filename': filename,
                 'submissions': 1,
+                'test_score': test_score,
+                'ta_deduction': ta_deduction,
+                'score': score,
+                'late_days': late_days,
             }
             rows[net_id] = row
 
         # PASS 1: students who were primary submitter
         for student in self.roster:
             details = self.submission_details(project_id, student['net_id'])
-            score = details.get('test', {}).get('score', None)
+            test_score = details.get('test', {}).get('score', None)
+            ta_deduction = details.get('cr', {}).get('points_deducted', 0)
+            late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+            filename = details.get('submission', {}).get('filename', None)
             net_id = student['net_id']
-            if score == None:
+            if test_score == None:
                 continue
 
-            add_row(net_id, score, submitter=True)
+            add_row(net_id, filename, test_score, ta_deduction, late_days, submitter=True)
 
         # PASS 2: students with a partner who submitted
         for student in self.roster:
             details = self.submission_details(project_id, student['net_id'])
-            score = details.get('test', {}).get('score', None)
+            test_score = details.get('test', {}).get('score', None)
+            ta_deduction = details.get('cr', {}).get('points_deducted', 0)
+            late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+            filename = details.get('submission', {}).get('filename', None)
             net_id = details.get('submission', {}).get('partner_netid', None)
-            if score == None or net_id == None or not net_id in net_ids:
+            if test_score == None or net_id == None or not net_id in net_ids:
                 continue
             if net_id in rows:
                 rows[net_id]['submissions'] += 1
 
-            add_row(net_id, score, submitter=False)
+            add_row(net_id, filename, test_score, ta_deduction, late_days, submitter=False)
 
             # associate students with each other
             rows[net_id]['partner'] = student['net_id']
@@ -90,10 +109,13 @@ class Snapshot:
         for student in self.roster:
             net_id = student['net_id']
             if not net_id in rows:
-                add_row(net_id, 0, submitter=False)
+                add_row(net_id, None, 0, 0, late_days, submitter=False)
 
-        for row in rows.values():
-            print(row)
+        output = ('[\n' +
+                  ',\n'.join([json.dumps(row) for row in rows.values()]) +
+                  ']\n')
+        with open(out_path, 'w') as f:
+            f.write(output)
 
 def main():
     if len(sys.argv) < 3:
@@ -101,8 +123,11 @@ def main():
         sys.exit(1)
     snap_dir = sys.argv[1]
     snap = Snapshot(snap_dir)
+
+    if not os.path.exists('./grades'):
+        os.makedirs('./grades')
     for project_id in sys.argv[2:]:
-        snap.project_csv(project_id)
+        snap.project_json(project_id, 'grades/'+project_id+'.json')
 
 if __name__ == '__main__':
     main()
