@@ -153,6 +153,7 @@ Lists
 * Mutable vs. Immutable
 * List Methods
 
+<a href="materials/lec-14.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10 (pgs 107-111)<br>
 
 =
