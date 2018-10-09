@@ -58,6 +58,7 @@ var common = {};
     console.log("log on by " + googleProfile.getEmail() + " (" + googleProfile.getId() + ")");
     googleAuth = googleUser.getAuthResponse()
     console.log("token " + googleAuth.id_token + " expires in " + googleAuth.expires_in + " seconds");
+    common.googleToken = googleAuth.id_token;
     authExpiresTimestamp = Date.now()/1000 + googleAuth.expires_in
 
     $("#signin").hide()
