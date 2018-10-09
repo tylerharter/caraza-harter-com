@@ -102,12 +102,19 @@ Advanced Conditionals and Loops
 * Nested loops
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-08-loops">Advanced conditionals + Loops</a><br> 
 <b>Read</b>: Think Python (Chapters 5.1 - 5.7, 6.1 - 6.4, and 7)<br>
-<font color="red"><b>Due (Wed)</b>: Project 3</font>
+<b>Due (Wed)</b>: Project 3
 
 =
-Strings and Review?
+Strings
+* String basics
+* Indexing
+* len() function
+* for loop
+* String methods
+* Searching
+* Slicing
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-09-strings">Strings</a><br> 
-<b><font color="red">MIDTERM EXAM 1</font></b><br>
+<b>MIDTERM EXAM 1</b><br>
 <b>Read</b>: Think Python (Chapter 8)<br>
 
 ################################################################################
@@ -116,33 +123,42 @@ Strings and Review?
 
 =
 Lists
-=
-Advanced Lists
+* Strings Review
+* Sequences
+* Indexing and Slicing
+* Mutable vs Immutable
+* List methods
+<b>Read</b>: Think Python (Chapter 10)<br>
+<font color="red"><b>Due (Wed)</b>: Project 4</font>
 
 =
-Tuples
+CSV Files
 
-=
-Advanced Tuples
 
 =
 Dictionaries
 
 =
-Advanced Dictionaries
-
-=
-Generators
-
-=
-Functional Programming
+JSON Files
 
 =
 File Handling
 
 =
 Exceptions
-<b>MIDTERM EXAM 2</b>
+
+=
+Objects
+
+=
+Generators
+
+=
+Pandas
+
+=
+More Pandas
+<font color="red"><b>MIDTERM EXAM 2</b></font>
 
 
 ################################################################################
