@@ -1,10 +1,12 @@
-def add_nums(items):
-    total = 0
-    for x in items:
-        total += x
-    return total
+def add_nums(nums):
+    print("nums is", nums)
+    tot = 0
+    for x in nums:
+        print(x)
+        tot += x
+    return tot
 
-
-print(add_nums([1, 10, 20])) # correct, 1 argument
-
-
+L = [1, 2, 3]
+print("L is", L)
+total = add_nums(L)
+print("TOTAL:", total)
