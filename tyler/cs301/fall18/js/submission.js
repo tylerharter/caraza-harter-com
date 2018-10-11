@@ -59,7 +59,7 @@ var submission = {};
       console.log("project submission withdrawn")
 
       // clear preview
-      $("#code_viewer").html("submissionwithdrawn")
+      $("#code_viewer").html("<h2>submission withdrawn</h2>")
     })
   };
   
