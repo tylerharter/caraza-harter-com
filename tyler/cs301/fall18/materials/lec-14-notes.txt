@@ -71,7 +71,7 @@ Do this in PythonTutor:
 
 def set_first(items, value):
     value = value +  1  # change value
-        items[0] = value    # change items
+    items[0] = value    # change items
 
 l = [3, 2, 1]
 x = 100

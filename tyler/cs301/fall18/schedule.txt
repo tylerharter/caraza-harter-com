@@ -154,33 +154,21 @@ Lists
 * List Methods
 
 <a href="materials/lec-14.pdf">Link to Slides</a><br>
-<b>Read</b>: Downey Ch 10 (pgs 107-111)<br>
+<b>Read</b>: Downey Ch 10<br>
 
 =
 CSV Tables
+* Comparison with Spreadsheets
+* Format
 * Headers
-* Sorting
-* Aggregation
-* Escaping
+* Lists of lists
+<a href="materials/lec-15.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <b>Due</b>: P4
 
 =
-Recursion
-
-* Base/Resursive Cases
-* Lists of Lists
-* Web Crawling
-* More Stack Diagrams
-* Stack Overflow
-
-<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
-
-=
-Generators
-* "yield" Syntax
-* Execution Flow
-
-<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
+List Practice
+* Coding Demos
 
 =
 Dictionaries 1
@@ -206,6 +194,17 @@ JSON
 * Pretty Printing
 
 =
+Recursion
+
+* Base/Resursive Cases
+* Lists of Lists
+* Web Crawling
+* More Stack Diagrams
+* Stack Overflow
+
+<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
+
+=
 Objects
 * namedtuple and recordclass
 * Mutability
@@ -226,7 +225,11 @@ Copying
 <b>Read</b>: TODO<br>
 
 =
-Files and Directories
+Generators
+* "yield" Syntax
+* Execution Flow
+
+#<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
 
 =
 Error Handling
@@ -234,6 +237,34 @@ Error Handling
 * Throwing Exceptions
 * Asserts
 <b>Due</b>: P7
+
+=
+Files and Directories
+* Reading
+* Writing
+* Listing children
+
+=
+Pandas 1
+* iPython
+* dataframe
+* series
+* reading CSVs
+* element-wise operations
+
+=
+Review Day
+<b>Due</b>: P8
+
+=
+Pandas 2
+* reindexing
+* pivot tables
+* merging
+
+################################################################################
+# PART 3
+################################################################################
 
 =
 Database 1
@@ -247,32 +278,18 @@ Database 2
 * group by
 * aggregates
 * inserts
+<b>Due</b>: P9
 
 =
 Database 3
 * sqlite3 library
-* accessing DBs in Python
-<b>Due</b>: P8
-
-=
-Slack Day
-
-################################################################################
-# PART 3
-################################################################################
-
-=
-Numpy
-* Arrays
-* Element-Wise Operations
-* Matrix Multiplication
+* querying from Pandas
 
 =
 Plotting 1
 * matplotlib
 * Line, Bar, and Scatter Plots
 * Axes and Annotations
-<b>Due</b>: P9
 
 =
 Plotting 2
@@ -285,14 +302,29 @@ Plotting 3
 * Plotting time-series data
 
 =
+Numpy
+* Arrays
+* Matrix Multiplication
+* Equation Solving
+* Least Squares Fitting
+
+=
+Simulation
+* Randomness
+* Seeding
+* Distributions
+* Monte Carlo
+
+=
+Thanksgiving Break
+* No Class
+
+=
 Web 1
 * requests Module
 * Downloading Pages
 * RPCs
 <b>No Project Due</b>
-
-=
-Thanksgiving Break
 
 =
 Web 2
@@ -308,32 +340,9 @@ Web 3
 <b>No Project Due</b>
 
 =
-Approximation
-* Derivatives
-* Integrals
-
-=
-Simulation
-* Randomness
-* Seeding
-* Distributions
-* Monte Carlo
-
-=
-Markov Chains
-* Simple Modeling
-* Inference
-* Prediction
-<b>Read</b>: <a href="http://setosa.io/ev/markov-chains">http://setosa.io/ev/markov-chains</a><br>
-<b>No Project Due</b>
-
-=
 Hypothesis Testing
 * Simulated p-values
 <b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
-
-=
-Slack Day
 
 =
 Review
