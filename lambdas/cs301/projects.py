@@ -212,6 +212,7 @@ def project_withdraw(user, event):
     path = project_path(user_id, project_id)
     s3().delete_object(Bucket=BUCKET, Key=path)
     result = {'message': 'project submission withdrawn'}
+    return (200, result)
 
 @route
 @user

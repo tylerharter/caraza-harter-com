@@ -57,10 +57,9 @@ var submission = {};
     }
     common.callLambda(data, function(data) {
       console.log("project submission withdrawn")
-      common.popThankYou()
 
       // clear preview
-      $("#code_viewer").val("no submission")
+      $("#code_viewer").html("submissionwithdrawn")
     })
   };
   
