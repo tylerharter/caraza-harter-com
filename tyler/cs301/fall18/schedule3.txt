@@ -129,14 +129,17 @@ Lists
 * Sequences
 * Indexing and Slicing
 * Mutable vs Immutable
-* List methods
 <b>Read</b>: Think Python (Chapter 10)<br>
+<a href="materials3/lec-10-notes.pdf">Link to Notes</a><br>
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-10-lists">Lists</a><br> 
 <font color="red"><b>Due (Wed)</b>: Project 4</font>
 
 =
-CSV Files
-
+Lists and CSV Files
+* List methods
+* Split and Join
+* CSV files
+<b>Read</b>: Think Python (Chapter 10) and <a href="http://automatetheboringstuff.com/chapter14/">AutomateTheBoringStuff</a> (Chapter 14 - upto but not including Writer Objects)<br>
 
 =
 Dictionaries
