@@ -175,6 +175,12 @@ var code_review = {};
 
     var html = ''
 
+    if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
+      $("#auto_test_score").val(cr.test_result.score)
+    } else {
+      $("#auto_test_score").val("not ready")
+    }
+
     // check deductions
     var ta_deduction = 0
     if ('points_deducted' in cr) {
