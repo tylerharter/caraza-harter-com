@@ -169,6 +169,8 @@ CSV Tables
 =
 List Practice
 * Coding Demos
+<a href="materials/lec-16-worksheet.pdf">Link to Worksheet</a><br>
+<b>No Slides</b>
 
 =
 Dictionaries 1
