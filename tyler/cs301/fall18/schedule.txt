@@ -180,7 +180,6 @@ Dictionaries 1
 * Pop
 
 <b>Read</b>: Downey Ch 11 (pgs 125-130)<br>
-<b>Due</b>: P5
 
 =
 Dictionaries 2
@@ -188,6 +187,7 @@ Dictionaries 2
 * dicts with lists
 * defaultdict
 <b>Read</b>: Downey Ch 11 (pgs 131-138)<br>
+<b>Due</b>: P5
 
 =
 JSON
