@@ -1,4 +1,4 @@
-import csv
+import csv, sys
 
 # copied from https://automatetheboringstuff.com/chapter14/
 def process_csv(filename):
@@ -7,8 +7,8 @@ def process_csv(filename):
     exampleData = list(exampleReader)
     return exampleData
 
-def main():
-    rows = process_csv('hurricanes_short.csv')
-    print(rows)
-
-main()
+rows = process_csv("restaurants.csv")
+target = "subway"
+for row in rows:
+    if row[0].lower() == target.lower():
+        print("X={}, Y={}".format(row[1], row[2]))
