@@ -1,0 +1,4 @@
+More dictionary operations
+ - len, in, for loop
+ - d.keys(), d.values() # use list(...)
+ - get, pop        # with defaults
