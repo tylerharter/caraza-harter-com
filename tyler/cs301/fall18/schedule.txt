@@ -178,7 +178,7 @@ Dictionaries 1
 * Lookup
 * Insert
 * Pop
-
+<a href="materials/lec-17.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
 
 =
