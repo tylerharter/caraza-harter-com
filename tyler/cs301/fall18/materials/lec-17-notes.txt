@@ -33,15 +33,12 @@ dictionary operations
  - {}, {"key": "value"}
  - d[key]          # lookup
  - d[key] = value  # set/update
- - get, pop        # with defaults
- - len, in, for loop
- - d.keys(), d.values()
 
 ========================================
 
 Examples:
- - per_year.py example (want holes in the data)
  - score.py example (want string labels instead of int labels)
+ - per_year.py example (want holes in the data)
  - wc.py example (talk about binning/bucketing)
  - translate.py (English to Spanish)
  - cache.py (remember result for is_prime)

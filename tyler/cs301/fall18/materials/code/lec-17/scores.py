@@ -3,7 +3,7 @@ bob = 0
 
 def main():
     global alice, bob
-    
+
     while True:
         cmd = input('enter a cmd (type "help" for descriptions): ')
         cmd = cmd.strip().lower().split(' ')
