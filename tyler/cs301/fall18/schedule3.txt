@@ -144,10 +144,22 @@ Lists and CSV Files
 
 =
 Dictionaries
-<b>Read</b>: Think Python (Chapter 11.1 - 11.3)
+* Syntax
+* Key-Value pairs
+* Lookup
+* Insert
+* When is a dictionary useful?
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-12-dicts">Dictionaries</a><br> 
+<b>Read</b>: Think Python (Chapter 11.1 - 11.3) <br>
 
 =
-JSON Files
+Dictionaries + JSON Files
+* Delete a Key-Value pair
+* Nesting
+* dicts with lists
+* defaultdict
+* Dealing with JSON
+<b>Read</b>: Think Python (Chapter 11.5 and 11.7) and <a href="http://automatetheboringstuff.com/chapter14/">AutomateTheBoringStuff</a> (from "JSON and APIs" until "Writing JSON with the dumps() Function" (included))<br>
 
 =
 File Handling
