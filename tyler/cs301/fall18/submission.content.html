@@ -73,7 +73,7 @@
 
 <h2 class="my-3">Step 4: Verify Your Submission</h2>
 
-<div class="alert alert-dark">
+<div class="container alert alert-dark">
   <div class="row my-3">
     <div class="col col-12 px-1">
       <button type="button" class="btn btn-dark" onclick="submission.viewCode()">Preview</button>
@@ -82,6 +82,16 @@
   </div>
 
   <div class="row">
+    <div class="col col-md-auto px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.withdrawSubmission()">Withdraw</button>
+    </div>
+    <div class="col">
+      You should withdraw your submission if you started working with a partner who submitted on behalf of both of you.
+      If you work with a partner, only one of you should submit.
+    </div>
+  </div>
+
+  <div class="row my-4">
     <div class="col col-12" id="code_viewer">
 
     </div>

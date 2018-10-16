@@ -169,6 +169,8 @@ CSV Tables
 =
 List Practice
 * Coding Demos
+<a href="materials/lec-16-worksheet.pdf">Link to Worksheet</a><br>
+<b>No Slides</b>
 
 =
 Dictionaries 1
@@ -176,16 +178,16 @@ Dictionaries 1
 * Lookup
 * Insert
 * Pop
-
-<b>Read</b>: Downey Ch 11 (pgs 125-130)<br>
-<b>Due</b>: P5
+<a href="materials/lec-17.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
 
 =
 Dictionaries 2
 * Nesting
 * dicts with lists
 * defaultdict
-<b>Read</b>: Downey Ch 11 (pgs 131-138)<br>
+<b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
+<b>Due</b>: P5
 
 =
 JSON

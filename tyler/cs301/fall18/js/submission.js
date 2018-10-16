@@ -48,6 +48,21 @@ var submission = {};
     })
   };
 
+  submission.withdrawSubmission = function() {
+    var project_id = $("#project_id").val()
+
+    var data = {
+      "fn": "project_withdraw",
+      "project_id": project_id,
+    }
+    common.callLambda(data, function(data) {
+      console.log("project submission withdrawn")
+
+      // clear preview
+      $("#code_viewer").html("<h2>submission withdrawn</h2>")
+    })
+  };
+  
   function refreshPreview() {
     if (Object.keys(cr.project.files).length == 0) {
       $("#code_viewer").html("no files found")

@@ -5,6 +5,24 @@ var reviewer = {};
 (function() {
   function init() {
     $("#project_id").change(reviewer.refresh_submissions)
+
+    var btn = document.querySelector('button#copyGoogleToken');
+    btn.hidden = false;
+    btn.addEventListener('click', reviewer.copy_google_token_to_clipboard);
+  }
+
+  reviewer.copy_google_token_to_clipboard = function() {
+      var textarea = document.createElement('textarea');
+      textarea.value = common.googleToken;
+
+      // hide the textarea and copy to clipboard
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'absolute';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
   }
 
   reviewer.refresh_submissions = function() {

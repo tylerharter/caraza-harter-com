@@ -203,6 +203,19 @@ def project_upload(user, event):
 
 @route
 @user
+def project_withdraw(user, event):
+    user_id = user['sub']
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+
+    path = project_path(user_id, project_id)
+    s3().delete_object(Bucket=BUCKET, Key=path)
+    result = {'message': 'project submission withdrawn'}
+    return (200, result)
+
+@route
+@user
 def get_partner(user, event):
     return (500, 'not implemented yet')
 

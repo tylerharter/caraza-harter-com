@@ -8,7 +8,8 @@ def process_csv(filename):
     return exampleData
 
 def main():
-    rows = process_csv('hurricanes_short.csv')
-    print(rows)
+    rows = process_csv('tornados.csv')
+    print('There are {} rows'.format(len(rows)))
 
-main()
+if __name__ == '__main__':
+    main()
