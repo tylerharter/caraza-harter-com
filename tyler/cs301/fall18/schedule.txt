@@ -186,6 +186,7 @@ Dictionaries 2
 * Nesting
 * dicts with lists
 * defaultdict
+<a href="materials/lec-18.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
 <b>Due</b>: P5
 
