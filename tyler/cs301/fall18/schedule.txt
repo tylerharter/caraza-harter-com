@@ -195,17 +195,7 @@ JSON
 * Deserialization
 * Serialization
 * Pretty Printing
-
-=
-Recursion
-
-* Base/Resursive Cases
-* Lists of Lists
-* Web Crawling
-* More Stack Diagrams
-* Stack Overflow
-
-<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
+<a href="materials/lec-19.pdf">Link to Slides</a><br>
 
 =
 Objects
@@ -213,19 +203,25 @@ Objects
 * Mutability
 * References
 * Python Tutor
-
 <b>Read</b>: Downey Ch 10 (pgs 114-123) and Ch 12<br>
-<b>Due</b>: P6
 
 =
 Copying
 * References
 * Shallow Copy
 * Deep Copy
-
-<b>Read</b>: Downey Ch 11<br>
-
+<b>Due</b>: P6<br>
 <b>Read</b>: TODO<br>
+
+=
+Recursion
+* Base/Resursive Cases
+* Lists of Lists
+* Web Crawling
+* More Stack Diagrams
+* Stack Overflow
+
+<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
 
 =
 Generators
