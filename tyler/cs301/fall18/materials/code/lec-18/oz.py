@@ -7,6 +7,14 @@ def read_book():
     with open('pg420.txt') as f:
         return f.read()
 
+def clean_text(text):
+    letters = []
+    for c in text:
+        c = c.upper()
+        if c == ' ' or ('A' <= c <= 'Z'):
+            letters.append(c)
+    return "".join(letters)
+
 def main():
     text1 = "AAAAABBCCC"
     text2 = ('A good glass in the bishop\'s hostel in the devil\'s seat ' +
@@ -15,17 +23,31 @@ def main():
              'shoot from the left eye of the death\'s-head ' +
              'a bee line from the tree through the shot fifty feet out.')
     text3 = read_book()
-    tab = get_table(text1)
 
-    print("After A:")
-    print_table(tab['A'])
-
-    print("After B:")
-    print_table(tab['B'])
+    text = clean_text(text3)
+    tab = get_table(text)
+    print_random_text(tab)
 
 def print_table(t):
     for key in t:
         print(key + ": " + str(t[key] * 100) + '%')
+
+def print_random_text(tab):
+    s = ''
+
+    # step 1: generate first character
+    all_letters = list(tab.keys())
+    first = random.choice(all_letters)
+    s += first
+
+    # step 2: generate more characters
+    for i in range(100):
+        prev = s[-1]
+        next_table = tab[prev]
+        next = rand_character(next_table)
+        s += next
+
+    print(s)
 
 def rand_character(t):
     x = random.random()
@@ -55,7 +77,6 @@ def get_table(text):
         if not letter2 in counts[letter1]:
             counts[letter1][letter2] = 0
         counts[letter1][letter2] += 1
-
     probs = {}
     for letter1 in counts:
         probs[letter1] = {}

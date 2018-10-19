@@ -16,18 +16,29 @@ def main():
     year_idx = header.index("year")
 
     # key: year
-    # val: how many were there in that year
-    counts = {}
+    # val: list of tornados in that year
+    buckets = {}
 
     for tornado in rows:
         year = tornado[year_idx]
-        if year in counts:
-            counts[year] = counts[year] + 1
+        if year in buckets:
+            buckets[year].append(tornado)
         else:
-            counts[year] = 1
+            buckets[year] = [tornado]
 
-    print(counts)
+    for year in buckets:
+        tornados = buckets[year]
+        print(year, median(tornados))
 
+def median(bucket):
+    speeds = []
+    for row in bucket:
+        speeds.append(int(row[-1]))
+    speeds.sort()
+    if len(speeds) % 2 == 1:
+        return speeds[len(speeds) // 2]
+    else:
+        return (speeds[len(speeds) // 2 - 1] + speeds[len(speeds) // 2]) / 2
 
 if __name__ == '__main__':
     main()
