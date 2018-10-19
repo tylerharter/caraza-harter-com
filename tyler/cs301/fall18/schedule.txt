@@ -195,6 +195,7 @@ JSON
 * Deserialization
 * Serialization
 * Pretty Printing
+<a href="materials/lec-19-worksheet.pdf">Link to Worksheet</a><br>
 <a href="materials/lec-19.pdf">Link to Slides</a><br>
 
 =
