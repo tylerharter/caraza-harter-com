@@ -1,0 +1,75 @@
+========================================
+PART 1: new types
+========================================
+
+tuples and lists
+ - mutability
+ - key to a dict
+
+========================================
+
+namedtuples
+ - from collections import namedtuple
+ - user-defined types
+   - type(list()), type(list)
+ - immutable
+
+========================================
+
+recordclass
+ - want a mutable alternative to namedtuples
+ - pip
+
+========================================
+PART 2: REFERENCES
+========================================
+
+ - motivation:
+   - save memory
+   - propagate changes (people, and team1, team2)
+
+========================================
+
+Gotcha: modifying arguments
+
+def test(items, x):
+  # modify x
+  x *= 100
+  print("in test", items, x)
+
+def test(items, x):
+  # modify items
+  items = items + [x]
+  print("in test", items, x)
+
+def test(items, x):
+  # modify list that items refers to
+  items.append(x)
+  print("in test", items, x)
+
+========================================
+
+worksheet (and Python Tutor):
+
+def first(items):
+    return items[0]
+
+def smallest(items):
+    items.sort()
+    return items[0]
+
+========================================
+
+Gotch: string interning
+ - "is" vs "=="
+ - undefined behavior
+
+n = 2
+a = 'ha' * n
+b = 'ha' * n
+print(a == b)
+print(a is b)
+
+========================================
+
+References worksheet
