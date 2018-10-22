@@ -197,6 +197,7 @@ JSON
 * Pretty Printing
 <a href="materials/lec-19-worksheet.pdf">Link to Worksheet</a><br>
 <a href="materials/lec-19.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
 
 =
 Objects
@@ -204,6 +205,7 @@ Objects
 * Mutability
 * References
 * Python Tutor
+<a href="materials/lec-20.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 
 =
@@ -212,7 +214,6 @@ Copying
 * Shallow Copy
 * Deep Copy
 <b>Due</b>: P6<br>
-<b>Read</b>: TODO<br>
 
 =
 Recursion
@@ -221,7 +222,6 @@ Recursion
 * Web Crawling
 * More Stack Diagrams
 * Stack Overflow
-
 <b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
 
 =
