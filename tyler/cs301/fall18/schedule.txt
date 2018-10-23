@@ -298,6 +298,10 @@ Plotting 2
 * iPython
 
 =
+Thanksgiving Break
+* No Class
+
+=
 Plotting 3
 * Date/Time Types
 * Plotting time-series data
@@ -315,10 +319,6 @@ Simulation
 * Seeding
 * Distributions
 * Monte Carlo
-
-=
-Thanksgiving Break
-* No Class
 
 =
 Web 1
