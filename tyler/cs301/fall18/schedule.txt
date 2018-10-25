@@ -222,10 +222,10 @@ Copying
 Recursion
 * Base/Resursive Cases
 * Lists of Lists
-* Web Crawling
 * More Stack Diagrams
 * Stack Overflow
-<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
+<a href="materials/lec-22.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 
 =
 Generators
