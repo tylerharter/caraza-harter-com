@@ -1,0 +1,22 @@
+<h1 class="mt-5" id="code_review_title">Submissions</h1>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <div id="signin"></div> <!-- common.js will render this -->
+      <span id="useremail"></span>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-dark">
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      Project <input id="projectid" size="4"> Net ID: <input id="netid" size="10"> Extension (days): <input id="days" size="4">
+      <button type="button" id="link_button" class="btn btn-dark" onclick="ta_deadline.getExtension()">Get</button>
+      <button type="button" id="link_button" class="btn btn-dark" onclick="ta_deadline.setExtension()">Save</button>
+    </div>
+  </div>
+</div>
+
+<br>

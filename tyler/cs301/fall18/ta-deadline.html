@@ -107,9 +107,6 @@
     <div class="col col-12">
       <div id="signin"></div> <!-- common.js will render this -->
       <span id="useremail"></span>
-      <button id="copyGoogleToken" type="button" class="btn btn-secondary btn-sm float-right" hidden>
-          Copy Token
-      </button> <!-- reviewer.js will register and show this -->
     </div>
   </div>
 </div>
@@ -117,40 +114,9 @@
 <div class="alert alert-dark">
   <div class="row my-3">
     <div class="col col-12 px-1">
-      Other Tools:
-      <ul>
-        <li><a href="ta-deadline.html">Deadline Extensions</a>
-      </ul>
-  </div>
-</div>
-
-<div class="alert alert-dark">
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      Project: <select id="project_id">
-        <option value=""></option>
-        <option value="p0">Project 0</option>
-        <option value="p1">Project 1</option>
-        <option value="p2">Project 2</option>
-        <option value="p3">Project 3</option>
-        <option value="p4">Project 4</option>
-        <option value="p5">Project 5</option>
-        <option value="p6">Project 6</option>
-        <option value="p7">Project 7</option>
-        <option value="p8">Project 8</option>
-        <option value="p9">Project 9</option>
-        <option value="p10">Project 10</option>
-        <option value="p11">Project 11</option>
-        <option value="p12">Project 12</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12" id="submissions">
-      
+      Project <input id="projectid" size="4"> Net ID: <input id="netid" size="10"> Extension (days): <input id="days" size="4">
+      <button type="button" id="link_button" class="btn btn-dark" onclick="ta_deadline.getExtension()">Get</button>
+      <button type="button" id="link_button" class="btn btn-dark" onclick="ta_deadline.setExtension()">Save</button>
     </div>
   </div>
 </div>
@@ -209,7 +175,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/reviewer.js"></script>
+    <script src="js/ta-deadline.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

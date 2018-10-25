@@ -48,6 +48,9 @@ def project_path(user_id, project_id, submission_id=None):
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
+def extension_path(user_id, project_id):
+    return 'projects/%s/users/%s/extension.json' % (project_id, user_id)
+
 def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
     entries.  There will be one entry if it's a .py, and potentially
@@ -368,3 +371,42 @@ def project_list_submissions_raw(roster, project_id):
 def project_list_submissions(user, event):
     roster = json.loads(get_roster_raw())
     return project_list_submissions_raw(roster, event['project_id'])
+
+@route
+@grader
+def project_get_extension(user, event):
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
+    student_user_id = net_id_to_google_id(event['net_id'])
+    if student_user_id == None:
+        return (500, 'could not find google ID for net ID')
+    path = extension_path(student_user_id, project_id)
+
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        row = json.loads(str(response['Body'].read(), 'utf-8'))
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            row = {'days': 0, 'error': None}
+        else:
+            raise e
+    return (200, row)
+
+@route
+@grader
+def project_set_extension(user, event):
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
+    student_user_id = net_id_to_google_id(event['net_id'])
+    days = int(event['days'])
+    if student_user_id == None:
+        return (500, 'could not find google ID for net ID')
+    path = extension_path(student_user_id, project_id)
+
+    row = {'days': days, 'approver': user['email']}
+    response = s3().put_object(Bucket=BUCKET, Key=path,
+                               Body=bytes(json.dumps(row), 'utf-8'),
+                               ContentType='text/json')
+    return (200, 'success')

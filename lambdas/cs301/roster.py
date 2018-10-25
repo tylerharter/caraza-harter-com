@@ -89,6 +89,15 @@ def roster_attach_user(user, event):
             return roster_attach_user_raw(user_id, net_id)
     return (500, 'could not find student entry for that one-time link code')
 
+def net_id_to_google_id(net_id):
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key='users/net_id_to_google/%s.txt' % net_id)
+        return response['Body'].read().decode('utf-8')
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise e
+
 @route
 @user
 def get_net_id(user, event):
