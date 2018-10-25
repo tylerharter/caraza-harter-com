@@ -197,6 +197,7 @@ File Handling
 
 =
 Pandas
+<b>Due (Wed)</b>: Project 8
 
 =
 More Pandas
@@ -209,6 +210,7 @@ More Pandas
 
 =
 Numpy
+<b>Due (Wed)</b>: Project 9
 
 =
 More Numpy
