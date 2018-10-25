@@ -1,0 +1,21 @@
+{
+  "name": "Mike Swift",
+  "age": 37,
+  "isAlive": true,
+  "phone": [
+    {
+      "type": "office",
+      "number": "608-123-4567"
+    },
+    {
+      "type": "home",
+      "number": "608-987-6543"
+    }
+  ],
+  "address": {
+    "streetAddress": "1210 West Dayton Street",
+    "city": "Madison",
+    "state": "WI",
+    "zip": "53706"
+  }
+}
