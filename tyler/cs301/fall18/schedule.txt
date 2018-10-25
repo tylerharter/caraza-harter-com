@@ -213,6 +213,8 @@ Copying
 * References
 * Shallow Copy
 * Deep Copy
+<a href="materials/lec-21-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-21.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Due</b>: P6<br>
 
@@ -298,6 +300,10 @@ Plotting 2
 * iPython
 
 =
+Thanksgiving Break
+* No Class
+
+=
 Plotting 3
 * Date/Time Types
 * Plotting time-series data
@@ -315,10 +321,6 @@ Simulation
 * Seeding
 * Distributions
 * Monte Carlo
-
-=
-Thanksgiving Break
-* No Class
 
 =
 Web 1
