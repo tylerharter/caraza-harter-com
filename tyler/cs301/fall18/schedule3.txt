@@ -188,14 +188,14 @@ Objects, References, and Copying
 * Deep Copy
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">AutomateTheBoringStuff Chapter 4</a> ("References" through the end)<br>
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-15-objects">Objects, References, Copying</a><br> 
-<b>Read</b>: Think Python Chapter 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
+<b>Lecture Notes: </b><a href="materials3/lec-15-notes.pdf">Objects, References, Copying</a><br>
 
 =
-Generators and Exceptions
+Recursion and Generators
 <font color="red"><b>Due (Wed)</b>: Project 7</font>
 
 =
-File Handling
+File Handling and Exceptions
 
 =
 Pandas
@@ -237,3 +237,4 @@ More Databases
 
 =
 Review
+<b>Due (Wed)</b>: Project 10 (Final Project)
