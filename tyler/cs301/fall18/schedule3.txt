@@ -187,6 +187,8 @@ Objects, References, and Copying
 * Shallow Copy
 * Deep Copy
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">AutomateTheBoringStuff Chapter 4</a> ("References" through the end)<br>
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-15-objects">Objects, References, Copying</a><br> 
+<b>Read</b>: Think Python Chapter 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 
 =
 Generators and Exceptions
