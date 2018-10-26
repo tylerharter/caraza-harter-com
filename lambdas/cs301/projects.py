@@ -30,6 +30,7 @@ PROJECT_DUE_UTC = {
 
 MAX_SIZE_KB = 40
 
+
 def normalize_py_bytes(b):
     '''take a binary string, and force to be an ascii string with UNIX newlines'''
     code = str(b, 'utf-8') # assume a .py is utf-8
@@ -39,17 +40,21 @@ def normalize_py_bytes(b):
     code = code.replace("\r\n", "\n")
     return code
 
+
 def project_path(user_id, project_id, submission_id=None):
     '''Get location where submission should be saved'''
     path = 'projects/%s/users/%s/' % (project_id, user_id)
     path += (submission_id if submission_id != None else 'curr.json')
     return path
 
+
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
+
 def extension_path(user_id, project_id):
     return 'projects/%s/users/%s/extension.json' % (project_id, user_id)
+
 
 def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
@@ -87,6 +92,7 @@ def extract_project_files(submission_id, filename, payload):
             result['errors'].append(str(e))
     return result
 
+
 def load_project_from_s3(user_id, project_id, submission_id=None):
     '''
     Fetch project in human readable format, extracting content from
@@ -101,9 +107,6 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
                                           row['filename'], row['payload'])
     return project_files
 
-@route
-def project_list(user, event):
-    return (200, PROJECT_IDS)
 
 def get_code_analysis(project_files):
     pf = project_files
@@ -152,75 +155,6 @@ def get_code_analysis(project_files):
 
     return analysis
 
-@route
-@user
-def project_upload(user, event):
-    user_id = user['sub']
-    project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-
-    if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
-        return (500, 'file is too large')
-
-    submission_id = '%.2f' % time.time()
-
-    # compute late days (may be negative if it was early).  Negative
-    # is only for our own information, though (it doesn't somehow
-    # replenish the student's supply)
-    late_days = 0
-    utc_due = PROJECT_DUE_UTC.get(project_id, None)
-    utc_now = datetime.datetime.utcnow()
-    if utc_due != None:
-        late_seconds = (utc_now - utc_due).total_seconds()
-        late_days = late_seconds / 60 / 60 / 24
-
-    # try to fetch the formatted contents of the project so user can
-    # preview without doing an S3 read
-    project_files = extract_project_files(submission_id,
-                                          event['filename'],
-                                          event['payload'])
-    rc,cr = get_code_review_raw(user, user_id, project_id,
-                                force_new=True, project_files=project_files)
-    if rc != 200:
-        cr = None
-
-    # save project submission to S3 bucket
-    submission = {'project_id': project_id,
-                  'submission_id': submission_id,
-                  'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
-                  'submit_time_utc': utc_now.strftime("%Y-%m-%d %H:%M:%S") if utc_now else None,
-                  'late_days': late_days,
-                  'filename': event['filename'],
-                  'payload': event['payload'],
-                  'partner_netid': cr['analysis']['partner']}
-    for path in [project_path(user_id, project_id),
-                 project_path(user_id, project_id, submission_id)]:
-        s3().put_object(Bucket=BUCKET,
-                        Key=path,
-                        Body=bytes(json.dumps(submission), 'utf-8'),
-                        ContentType='text/json')
-
-    result = {'message': 'project submitted', 'code_review': cr}
-    return (200, result)
-
-@route
-@user
-def project_withdraw(user, event):
-    user_id = user['sub']
-    project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-
-    path = project_path(user_id, project_id)
-    s3().delete_object(Bucket=BUCKET, Key=path)
-    result = {'message': 'project submission withdrawn'}
-    return (200, result)
-
-@route
-@user
-def get_partner(user, event):
-    return (500, 'not implemented yet')
 
 def get_project_test_result(submitter_user_id, project_id):
     # get net ID
@@ -244,6 +178,7 @@ def get_project_test_result(submitter_user_id, project_id):
         if e.response['Error']['Code'] == "NoSuchKey":
             return None
         raise e
+
 
 def get_code_review_raw(user, submitter_user_id, project_id,
                         force_new, project_files=None):
@@ -299,33 +234,6 @@ def get_code_review_raw(user, submitter_user_id, project_id,
 
     return (200, cr)
 
-@route
-@user
-def get_code_review(user, event):
-    '''Viewing a "code review" is the only way students view code.  Even
-    previewing a submission is just viewing an empty code review with
-    no highlights.'''
-    force_new = event.get('force_new', False)
-    return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
-                               project_id=event['project_id'],
-                               force_new=force_new)
-
-@route
-@grader
-def put_code_review(user, event):
-    cr = event['cr']
-    cr['reviewer_email'] = user['email']
-    submitter_user_id = event['submitter_id']
-    project_id = event['project_id']
-    path = code_review_path(submitter_user_id, project_id)
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(cr), 'utf-8'),
-                    ContentType='text/json',
-    )
-
-    return (200, 'uploaded review')
-
 def project_list_submissions_raw(roster, project_id):
     roster = {student['user_id']: student for student in roster if 'user_id' in student}
 
@@ -366,11 +274,113 @@ def project_list_submissions_raw(roster, project_id):
 
     return (200, {'submissions':submissions})
 
+
+@route
+def project_list(user, event):
+    return (200, PROJECT_IDS)
+
+
+@route
+@user
+def project_upload(user, event):
+    user_id = user['sub']
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+
+    if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
+        return (500, 'file is too large')
+
+    submission_id = '%.2f' % time.time()
+
+    # compute late days (may be negative if it was early).  Negative
+    # is only for our own information, though (it doesn't somehow
+    # replenish the student's supply)
+    late_days = 0
+    utc_due = PROJECT_DUE_UTC.get(project_id, None)
+    utc_now = datetime.datetime.utcnow()
+    if utc_due != None:
+        late_seconds = (utc_now - utc_due).total_seconds()
+        late_days = late_seconds / 60 / 60 / 24
+
+    # try to fetch the formatted contents of the project so user can
+    # preview without doing an S3 read
+    project_files = extract_project_files(submission_id,
+                                          event['filename'],
+                                          event['payload'])
+    rc,cr = get_code_review_raw(user, user_id, project_id,
+                                force_new=True, project_files=project_files)
+    if rc != 200:
+        cr = None
+
+    # save project submission to S3 bucket
+    submission = {'project_id': project_id,
+                  'submission_id': submission_id,
+                  'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
+                  'submit_time_utc': utc_now.strftime("%Y-%m-%d %H:%M:%S") if utc_now else None,
+                  'late_days': late_days,
+                  'filename': event['filename'],
+                  'payload': event['payload'],
+                  'partner_netid': cr['analysis']['partner']}
+    for path in [project_path(user_id, project_id),
+                 project_path(user_id, project_id, submission_id)]:
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(submission), 'utf-8'),
+                        ContentType='text/json')
+
+    result = {'message': 'project submitted', 'code_review': cr}
+    return (200, result)
+
+
+@route
+@user
+def project_withdraw(user, event):
+    user_id = user['sub']
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+
+    path = project_path(user_id, project_id)
+    s3().delete_object(Bucket=BUCKET, Key=path)
+    result = {'message': 'project submission withdrawn'}
+    return (200, result)
+
+
+@route
+@user
+def get_code_review(user, event):
+    '''Viewing a "code review" is the only way students view code.  Even
+    previewing a submission is just viewing an empty code review with
+    no highlights.'''
+    force_new = event.get('force_new', False)
+    return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
+                               project_id=event['project_id'],
+                               force_new=force_new)
+
+
+@route
+@grader
+def put_code_review(user, event):
+    cr = event['cr']
+    cr['reviewer_email'] = user['email']
+    submitter_user_id = event['submitter_id']
+    project_id = event['project_id']
+    path = code_review_path(submitter_user_id, project_id)
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json',
+    )
+    return (200, 'uploaded review')
+
+
 @route
 @grader
 def project_list_submissions(user, event):
     roster = json.loads(get_roster_raw())
     return project_list_submissions_raw(roster, event['project_id'])
+
 
 @route
 @grader
@@ -392,6 +402,7 @@ def project_get_extension(user, event):
         else:
             raise e
     return (200, row)
+
 
 @route
 @grader
