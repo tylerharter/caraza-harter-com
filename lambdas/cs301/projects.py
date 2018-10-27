@@ -30,16 +30,9 @@ PROJECT_DUE_UTC = {
 
 MAX_SIZE_KB = 40
 
-
-def normalize_py_bytes(b):
-    '''take a binary string, and force to be an ascii string with UNIX newlines'''
-    code = str(b, 'utf-8') # assume a .py is utf-8
-    # force to ascii
-    code = str(bytes(code, 'ascii', 'replace'), 'ascii')
-    # normalize windows line endings to UNIX
-    code = code.replace("\r\n", "\n")
-    return code
-
+########################################
+# lookup S3 paths for various objects
+########################################
 
 def project_path(user_id, project_id, submission_id=None):
     '''Get location where submission should be saved'''
@@ -54,6 +47,24 @@ def code_review_path(user_id, project_id):
 
 def extension_path(user_id, project_id):
     return 'projects/%s/users/%s/extension.json' % (project_id, user_id)
+
+
+def partner_path(user_id, project_id):
+    return 'projects/%s/users/%s/partner.json' % (project_id, user_id)
+
+
+########################################
+# other helpers
+########################################
+
+def normalize_py_bytes(b):
+    '''take a binary string, and force to be an ascii string with UNIX newlines'''
+    code = str(b, 'utf-8') # assume a .py is utf-8
+    # force to ascii
+    code = str(bytes(code, 'ascii', 'replace'), 'ascii')
+    # normalize windows line endings to UNIX
+    code = code.replace("\r\n", "\n")
+    return code
 
 
 def extract_project_files(submission_id, filename, payload):
@@ -182,13 +193,12 @@ def get_project_test_result(submitter_user_id, project_id):
 
 def get_code_review_raw(user, submitter_user_id, project_id,
                         force_new, project_files=None):
-    user_id = user['sub']
-    if submitter_user_id == None:
-        submitter_user_id = user_id # assume self
-    if user_id != submitter_user_id:
-        # only graders can view the code of other users
-        if not is_grader(user):
-            return (500, 'not authorized to view that submission')
+    """get code review blob from S3 or from project_files.
+
+    Sometimes a
+    code upload calls this, so we have project_files without needing
+    to look to S3.  If force_new is True, or there is no code review
+    available, a new one is created"""
 
     # step 1: try to get CR unless we're forced to get a clean one on the latest submission
     cr = None
@@ -209,7 +219,7 @@ def get_code_review_raw(user, submitter_user_id, project_id,
             'reviewer_email': None,      # who left the code review
         }
 
-    # step 2: get associated code
+    # step 2: get associated code (if we don't have it)
     try:
         if project_files == None:
             project_files = load_project_from_s3(submitter_user_id, project_id,
@@ -233,6 +243,19 @@ def get_code_review_raw(user, submitter_user_id, project_id,
     cr['test_result'] = get_project_test_result(submitter_user_id, project_id)
 
     return (200, cr)
+
+
+def lookup_partner_netid(user_id, project_id):
+    path = partner_path(user_id, project_id)
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        row = json.loads(str(response['Body'].read(), 'utf-8'))
+        return row.get('netid', None)
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise(e)
+
 
 def project_list_submissions_raw(roster, project_id):
     roster = {student['user_id']: student for student in roster if 'user_id' in student}
@@ -275,8 +298,13 @@ def project_list_submissions_raw(roster, project_id):
     return (200, {'submissions':submissions})
 
 
+########################################
+# route endpoints
+########################################
+
 @route
 def project_list(user, event):
+    # no special permissions necessary
     return (200, PROJECT_IDS)
 
 
@@ -312,6 +340,14 @@ def project_upload(user, event):
                                 force_new=True, project_files=project_files)
     if rc != 200:
         cr = None
+
+    # save partner permissions
+    path = partner_path(user_id, project_id)
+    partner = {'netid': cr.get('analysis', {}).get('partner', None)}
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(partner), 'utf-8'),
+                    ContentType='text/json')
 
     # save project submission to S3 bucket
     submission = {'project_id': project_id,
@@ -353,9 +389,27 @@ def get_code_review(user, event):
     '''Viewing a "code review" is the only way students view code.  Even
     previewing a submission is just viewing an empty code review with
     no highlights.'''
+
+    user_id = user['sub']
+    user_netid = google_to_net_id(user_id)
+    submitter_user_id=event['submitter_id']
+    project_id = event['project_id']
+    partner_netid = lookup_partner_netid(submitter_user_id, project_id)
     force_new = event.get('force_new', False)
-    return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
-                               project_id=event['project_id'],
+
+    # three people should be able to view the code review:
+    # 1. submitter
+    # 2. project partner
+    # 3. grader
+
+    if not (user_id == submitter_user_id or
+            (user_netid != None and user_netid == partner_netid) or
+            is_grader(user)):
+        return (500, 'not authorized to view that submission')
+
+    return get_code_review_raw(user=user,
+                               submitter_user_id=submitter_user_id,
+                               project_id=project_id,
                                force_new=force_new)
 
 
@@ -388,7 +442,7 @@ def project_get_extension(user, event):
     project_id = event['project_id']
     if not project_id in PROJECT_IDS:
         return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
-    student_user_id = net_id_to_google_id(event['net_id'])
+    student_user_id = net_id_to_google(event['net_id'])
     if student_user_id == None:
         return (500, 'could not find google ID for net ID')
     path = extension_path(student_user_id, project_id)
@@ -410,7 +464,7 @@ def project_set_extension(user, event):
     project_id = event['project_id']
     if not project_id in PROJECT_IDS:
         return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
-    student_user_id = net_id_to_google_id(event['net_id'])
+    student_user_id = net_id_to_google(event['net_id'])
     days = int(event['days'])
     if student_user_id == None:
         return (500, 'could not find google ID for net ID')

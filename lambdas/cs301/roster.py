@@ -1,14 +1,15 @@
 import json, random
 
 from lambda_framework import *
-import roster
 
 NET_ID_EMAIL_SUFFIX = '@wisc.edu'
+
 
 # returns a string containing json
 def get_roster_raw():
     response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
     return response['Body'].read().decode('utf-8')
+
 
 def get_roster_net_ids():
     ids = []
@@ -16,6 +17,7 @@ def get_roster_net_ids():
         if 'net_id' in row:
             ids.append(row['net_id'])
     return ids
+
 
 # takes a dict to convert to json
 def put_roster_raw(roster_dict):
@@ -27,28 +29,6 @@ def put_roster_raw(roster_dict):
     )
     return body
 
-@route
-@admin
-def get_roster(user, event):
-    return (200, {'roster': get_roster_raw()})
-
-@route
-@admin
-def put_roster(user, event):
-    put_roster_raw(json.loads(event['roster']))
-    return (200, 'roster uploaded')
-
-@route
-@admin
-def roster_gen_link_codes(user, event):
-    roster = json.loads(get_roster_raw())
-    for student in roster:
-        code = student.get('link_code', None)
-        if code == None or event.get('overwrite_existing', False):
-            code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(32))
-        student['link_code'] = code
-    body = put_roster_raw(roster)
-    return (200, {'roster': body})
 
 def roster_attach_user_raw(user_id, net_id):
     net_id = net_id.lower()
@@ -74,6 +54,50 @@ def roster_attach_user_raw(user_id, net_id):
     )
     return (200, 'google account linked to NetID')
 
+
+def net_id_to_google(net_id):
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key='users/net_id_to_google/%s.txt' % net_id)
+        return response['Body'].read().decode('utf-8')
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise e
+
+
+def google_to_net_id(google_id):
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key='users/google_to_net_id/%s.txt' % google_id)
+        return response['Body'].read().decode('utf-8')
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise e
+
+
+@route
+@admin
+def get_roster(user, event):
+    return (200, {'roster': get_roster_raw()})
+
+@route
+@admin
+def put_roster(user, event):
+    put_roster_raw(json.loads(event['roster']))
+    return (200, 'roster uploaded')
+
+@route
+@admin
+def roster_gen_link_codes(user, event):
+    roster = json.loads(get_roster_raw())
+    for student in roster:
+        code = student.get('link_code', None)
+        if code == None or event.get('overwrite_existing', False):
+            code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(32))
+        student['link_code'] = code
+    body = put_roster_raw(roster)
+    return (200, {'roster': body})
+
 @route
 @user
 def roster_attach_user(user, event):
@@ -88,15 +112,6 @@ def roster_attach_user(user, event):
         if net_id != None and code2 != None and code == code2:
             return roster_attach_user_raw(user_id, net_id)
     return (500, 'could not find student entry for that one-time link code')
-
-def net_id_to_google_id(net_id):
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key='users/net_id_to_google/%s.txt' % net_id)
-        return response['Body'].read().decode('utf-8')
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            return None
-        raise e
 
 @route
 @user
