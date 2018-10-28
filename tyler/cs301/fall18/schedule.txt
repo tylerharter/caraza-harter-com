@@ -228,9 +228,9 @@ Recursion
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 
 =
-Generators
-* "yield" Syntax
-* Execution Flow
+Advanced Functions
+* iterators and generators
+* references to functions
 
 #<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
 
