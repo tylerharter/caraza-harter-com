@@ -231,8 +231,7 @@ Recursion
 Advanced Functions
 * iterators and generators
 * references to functions
-
-#<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
+<a href="materials/lec-23.pdf">Link to Slides</a><br>
 
 =
 Error Handling
