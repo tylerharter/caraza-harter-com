@@ -198,7 +198,7 @@ Recursion
 * Stack Overflow
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-16-recursion">Recursion</a><br>
 <b>Lecture Notes: </b><a href="materials3/lec-16-notes.pdf">Recursion</a><br>
-<b>Read</b>: ThinkPython Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
+<b>Read</b>: ThinkPython Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
 <font color="red"><b>Due (Wed)</b>: Project 7</font>
 
 =
@@ -207,9 +207,8 @@ Advanced functions, Files, and Exceptions
 * References to functions
 * Reading and writing files
 * Handling exceptions
-<b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a><br>
-<b>Read</b>: ThinkPython Ch 14.1 - 14.5 
-<b>Read</b>: <a hrefhttps://automatetheboringstuff.com/chapter10/">Think Python Ch 10</a> (beginning through "Assertions")<br>
+<b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a>, ThinkPython Ch 14.1 - 14.5,  
+<a hrefhttps://automatetheboringstuff.com/chapter11/">AutomateTheBoringStuff Ch 11</a> (beginning through "Assertions")<br>
 
 =
 Pandas 1
