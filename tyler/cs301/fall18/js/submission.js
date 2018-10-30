@@ -101,7 +101,7 @@ var submission = {};
     var data = {
       "fn": "get_code_review",
       "project_id": project_id,
-      "submitter_id": null,
+      "submitter_id": common.getGoogleUserId(), // submitted by self
       "force_new": true
     }
     common.callLambda(data, function(data) {

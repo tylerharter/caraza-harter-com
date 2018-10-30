@@ -30,6 +30,33 @@ PROJECT_DUE_UTC = {
 
 MAX_SIZE_KB = 40
 
+########################################
+# lookup S3 paths for various objects
+########################################
+
+def project_path(user_id, project_id, submission_id=None):
+    '''Get location where submission should be saved'''
+    path = 'projects/%s/users/%s/' % (project_id, user_id)
+    path += (submission_id if submission_id != None else 'curr.json')
+    return path
+
+
+def code_review_path(user_id, project_id):
+    return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
+
+
+def extension_path(user_id, project_id):
+    return 'projects/%s/users/%s/extension.json' % (project_id, user_id)
+
+
+def partner_path(user_id, project_id):
+    return 'projects/%s/users/%s/partner.json' % (project_id, user_id)
+
+
+########################################
+# other helpers
+########################################
+
 def normalize_py_bytes(b):
     '''take a binary string, and force to be an ascii string with UNIX newlines'''
     code = str(b, 'utf-8') # assume a .py is utf-8
@@ -39,14 +66,6 @@ def normalize_py_bytes(b):
     code = code.replace("\r\n", "\n")
     return code
 
-def project_path(user_id, project_id, submission_id=None):
-    '''Get location where submission should be saved'''
-    path = 'projects/%s/users/%s/' % (project_id, user_id)
-    path += (submission_id if submission_id != None else 'curr.json')
-    return path
-
-def code_review_path(user_id, project_id):
-    return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
 def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
@@ -84,6 +103,7 @@ def extract_project_files(submission_id, filename, payload):
             result['errors'].append(str(e))
     return result
 
+
 def load_project_from_s3(user_id, project_id, submission_id=None):
     '''
     Fetch project in human readable format, extracting content from
@@ -98,9 +118,6 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
                                           row['filename'], row['payload'])
     return project_files
 
-@route
-def project_list(user, event):
-    return (200, PROJECT_IDS)
 
 def get_code_analysis(project_files):
     pf = project_files
@@ -149,75 +166,6 @@ def get_code_analysis(project_files):
 
     return analysis
 
-@route
-@user
-def project_upload(user, event):
-    user_id = user['sub']
-    project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-
-    if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
-        return (500, 'file is too large')
-
-    submission_id = '%.2f' % time.time()
-
-    # compute late days (may be negative if it was early).  Negative
-    # is only for our own information, though (it doesn't somehow
-    # replenish the student's supply)
-    late_days = 0
-    utc_due = PROJECT_DUE_UTC.get(project_id, None)
-    utc_now = datetime.datetime.utcnow()
-    if utc_due != None:
-        late_seconds = (utc_now - utc_due).total_seconds()
-        late_days = late_seconds / 60 / 60 / 24
-
-    # try to fetch the formatted contents of the project so user can
-    # preview without doing an S3 read
-    project_files = extract_project_files(submission_id,
-                                          event['filename'],
-                                          event['payload'])
-    rc,cr = get_code_review_raw(user, user_id, project_id,
-                                force_new=True, project_files=project_files)
-    if rc != 200:
-        cr = None
-
-    # save project submission to S3 bucket
-    submission = {'project_id': project_id,
-                  'submission_id': submission_id,
-                  'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
-                  'submit_time_utc': utc_now.strftime("%Y-%m-%d %H:%M:%S") if utc_now else None,
-                  'late_days': late_days,
-                  'filename': event['filename'],
-                  'payload': event['payload'],
-                  'partner_netid': cr['analysis']['partner']}
-    for path in [project_path(user_id, project_id),
-                 project_path(user_id, project_id, submission_id)]:
-        s3().put_object(Bucket=BUCKET,
-                        Key=path,
-                        Body=bytes(json.dumps(submission), 'utf-8'),
-                        ContentType='text/json')
-
-    result = {'message': 'project submitted', 'code_review': cr}
-    return (200, result)
-
-@route
-@user
-def project_withdraw(user, event):
-    user_id = user['sub']
-    project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-
-    path = project_path(user_id, project_id)
-    s3().delete_object(Bucket=BUCKET, Key=path)
-    result = {'message': 'project submission withdrawn'}
-    return (200, result)
-
-@route
-@user
-def get_partner(user, event):
-    return (500, 'not implemented yet')
 
 def get_project_test_result(submitter_user_id, project_id):
     # get net ID
@@ -242,15 +190,15 @@ def get_project_test_result(submitter_user_id, project_id):
             return None
         raise e
 
+
 def get_code_review_raw(user, submitter_user_id, project_id,
                         force_new, project_files=None):
-    user_id = user['sub']
-    if submitter_user_id == None:
-        submitter_user_id = user_id # assume self
-    if user_id != submitter_user_id:
-        # only graders can view the code of other users
-        if not is_grader(user):
-            return (500, 'not authorized to view that submission')
+    """get code review blob from S3 or from project_files.
+
+    Sometimes a
+    code upload calls this, so we have project_files without needing
+    to look to S3.  If force_new is True, or there is no code review
+    available, a new one is created"""
 
     # step 1: try to get CR unless we're forced to get a clean one on the latest submission
     cr = None
@@ -271,7 +219,7 @@ def get_code_review_raw(user, submitter_user_id, project_id,
             'reviewer_email': None,      # who left the code review
         }
 
-    # step 2: get associated code
+    # step 2: get associated code (if we don't have it)
     try:
         if project_files == None:
             project_files = load_project_from_s3(submitter_user_id, project_id,
@@ -296,32 +244,18 @@ def get_code_review_raw(user, submitter_user_id, project_id,
 
     return (200, cr)
 
-@route
-@user
-def get_code_review(user, event):
-    '''Viewing a "code review" is the only way students view code.  Even
-    previewing a submission is just viewing an empty code review with
-    no highlights.'''
-    force_new = event.get('force_new', False)
-    return get_code_review_raw(user=user, submitter_user_id=event['submitter_id'],
-                               project_id=event['project_id'],
-                               force_new=force_new)
 
-@route
-@grader
-def put_code_review(user, event):
-    cr = event['cr']
-    cr['reviewer_email'] = user['email']
-    submitter_user_id = event['submitter_id']
-    project_id = event['project_id']
-    path = code_review_path(submitter_user_id, project_id)
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(cr), 'utf-8'),
-                    ContentType='text/json',
-    )
+def lookup_partner_netid(user_id, project_id):
+    path = partner_path(user_id, project_id)
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        row = json.loads(str(response['Body'].read(), 'utf-8'))
+        return row.get('netid', None)
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            return None
+        raise(e)
 
-    return (200, 'uploaded review')
 
 def project_list_submissions_raw(roster, project_id):
     roster = {student['user_id']: student for student in roster if 'user_id' in student}
@@ -363,8 +297,181 @@ def project_list_submissions_raw(roster, project_id):
 
     return (200, {'submissions':submissions})
 
+
+########################################
+# route endpoints
+########################################
+
+@route
+def project_list(user, event):
+    # no special permissions necessary
+    return (200, PROJECT_IDS)
+
+
+@route
+@user
+def project_upload(user, event):
+    user_id = user['sub']
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+
+    if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
+        return (500, 'file is too large')
+
+    submission_id = '%.2f' % time.time()
+
+    # compute late days (may be negative if it was early).  Negative
+    # is only for our own information, though (it doesn't somehow
+    # replenish the student's supply)
+    late_days = 0
+    utc_due = PROJECT_DUE_UTC.get(project_id, None)
+    utc_now = datetime.datetime.utcnow()
+    if utc_due != None:
+        late_seconds = (utc_now - utc_due).total_seconds()
+        late_days = late_seconds / 60 / 60 / 24
+
+    # try to fetch the formatted contents of the project so user can
+    # preview without doing an S3 read
+    project_files = extract_project_files(submission_id,
+                                          event['filename'],
+                                          event['payload'])
+    rc,cr = get_code_review_raw(user, user_id, project_id,
+                                force_new=True, project_files=project_files)
+    if rc != 200:
+        cr = None
+
+    # save partner permissions
+    path = partner_path(user_id, project_id)
+    partner = {'netid': cr.get('analysis', {}).get('partner', None)}
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(partner), 'utf-8'),
+                    ContentType='text/json')
+
+    # save project submission to S3 bucket
+    submission = {'project_id': project_id,
+                  'submission_id': submission_id,
+                  'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
+                  'submit_time_utc': utc_now.strftime("%Y-%m-%d %H:%M:%S") if utc_now else None,
+                  'late_days': late_days,
+                  'filename': event['filename'],
+                  'payload': event['payload'],
+                  'partner_netid': cr['analysis']['partner']}
+    for path in [project_path(user_id, project_id),
+                 project_path(user_id, project_id, submission_id)]:
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(submission), 'utf-8'),
+                        ContentType='text/json')
+
+    result = {'message': 'project submitted', 'code_review': cr}
+    return (200, result)
+
+
+@route
+@user
+def project_withdraw(user, event):
+    user_id = user['sub']
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+
+    path = project_path(user_id, project_id)
+    s3().delete_object(Bucket=BUCKET, Key=path)
+    result = {'message': 'project submission withdrawn'}
+    return (200, result)
+
+
+@route
+@user
+def get_code_review(user, event):
+    '''Viewing a "code review" is the only way students view code.  Even
+    previewing a submission is just viewing an empty code review with
+    no highlights.'''
+
+    user_id = user['sub']
+    user_netid = google_to_net_id(user_id)
+    submitter_user_id=event['submitter_id']
+    project_id = event['project_id']
+    partner_netid = lookup_partner_netid(submitter_user_id, project_id)
+    force_new = event.get('force_new', False)
+
+    # three people should be able to view the code review:
+    # 1. submitter
+    # 2. project partner
+    # 3. grader
+
+    if not (user_id == submitter_user_id or
+            (user_netid != None and user_netid == partner_netid) or
+            is_grader(user)):
+        return (500, 'not authorized to view that submission')
+
+    return get_code_review_raw(user=user,
+                               submitter_user_id=submitter_user_id,
+                               project_id=project_id,
+                               force_new=force_new)
+
+
+@route
+@grader
+def put_code_review(user, event):
+    cr = event['cr']
+    cr['reviewer_email'] = user['email']
+    submitter_user_id = event['submitter_id']
+    project_id = event['project_id']
+    path = code_review_path(submitter_user_id, project_id)
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json',
+    )
+    return (200, 'uploaded review')
+
+
 @route
 @grader
 def project_list_submissions(user, event):
     roster = json.loads(get_roster_raw())
     return project_list_submissions_raw(roster, event['project_id'])
+
+
+@route
+@grader
+def project_get_extension(user, event):
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
+    student_user_id = net_id_to_google(event['net_id'])
+    if student_user_id == None:
+        return (500, 'could not find google ID for net ID')
+    path = extension_path(student_user_id, project_id)
+
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        row = json.loads(str(response['Body'].read(), 'utf-8'))
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            row = {'days': 0, 'error': None}
+        else:
+            raise e
+    return (200, row)
+
+
+@route
+@grader
+def project_set_extension(user, event):
+    project_id = event['project_id']
+    if not project_id in PROJECT_IDS:
+        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
+    student_user_id = net_id_to_google(event['net_id'])
+    days = int(event['days'])
+    if student_user_id == None:
+        return (500, 'could not find google ID for net ID')
+    path = extension_path(student_user_id, project_id)
+
+    row = {'days': days, 'approver': user['email']}
+    response = s3().put_object(Bucket=BUCKET, Key=path,
+                               Body=bytes(json.dumps(row), 'utf-8'),
+                               ContentType='text/json')
+    return (200, 'success')

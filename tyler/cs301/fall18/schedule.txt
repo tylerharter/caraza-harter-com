@@ -222,23 +222,23 @@ Copying
 Recursion
 * Base/Resursive Cases
 * Lists of Lists
-* Web Crawling
 * More Stack Diagrams
 * Stack Overflow
-<b>Read</b>: Downey Ch 5 (pgs 51-54), Ch 6
+<a href="materials/lec-22.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 
 =
-Generators
-* "yield" Syntax
-* Execution Flow
-
-#<b>Read</b>: Downey Ch 10 (pgs 111-112) and Ch 19 (pgs 224-225)<br>
+Advanced Functions
+* iterators and generators
+* references to functions
+<a href="materials/lec-23.pdf">Link to Slides</a><br>
 
 =
 Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 <b>Due</b>: P7
 
 =

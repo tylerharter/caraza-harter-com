@@ -188,23 +188,34 @@ Objects, References, and Copying
 * Deep Copy
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">AutomateTheBoringStuff Chapter 4</a> ("References" through the end)<br>
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-15-objects">Objects, References, Copying</a><br> 
-<b>Read</b>: Think Python Chapter 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
+<b>Lecture Notes: </b><a href="materials3/lec-15-notes.pdf">Objects, References, Copying</a><br>
 
 =
-Recursion & Advanced Functions
+Recursion
+* Base/Resursive Cases
+* Lists of Lists
+* More Stack Diagrams
+* Stack Overflow
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-16-recursion">Recursion</a><br>
-<b>Read</b>: ThinkPython Ch 5 (pgs 51-54), Ch 6
+<b>Lecture Notes: </b><a href="materials3/lec-16-notes.pdf">Recursion</a><br>
+<b>Read</b>: ThinkPython Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 <font color="red"><b>Due (Wed)</b>: Project 7</font>
 
 =
-File Handling
+Advanced functions, Files, and Exceptions
+* Iterators and generators
+* References to functions
+* Reading and writing files
+* Handling exceptions
+<b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a><br>
+<b>Read</b>: ThinkPython Ch 14.1 - 14.5 
+<b>Read</b>: <a hrefhttps://automatetheboringstuff.com/chapter10/">Think Python Ch 10</a> (beginning through "Assertions")<br>
 
 =
-Pandas
-<b>Due (Wed)</b>: Project 8
+Pandas 1
 
 =
-More Pandas
+Pandas 2
 <font color="red"><b>MIDTERM EXAM 2</b></font>
 
 
@@ -213,29 +224,32 @@ More Pandas
 ################################################################################
 
 =
-Numpy
+Web 1
+<b>Due (Wed)</b>: Project 8
+
+=
+Web 2
+
+=
+Databases 1
 <b>Due (Wed)</b>: Project 9
 
 =
-More Numpy
-
-=
-Python for web
-
-=
+Databases 2
 More python for web
 
 =
-Matplotlib
+Plotting 1
 
 =
-More Matplotlib
+Plotting 2
 
 =
-Databases
+TBD
 
 =
-More Databases
+TBD
 
 =
 Review
+<b>Due (Wed)</b>: Project 10 (Final Project)
