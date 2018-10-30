@@ -238,6 +238,7 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
+<a href="materials/lec-24.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 <b>Due</b>: P7
 
