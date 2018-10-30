@@ -191,7 +191,9 @@ Objects, References, and Copying
 <b>Read</b>: Think Python Chapter 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 
 =
-Generators and Exceptions
+Recursion & Advanced Functions
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-16-recursion">Recursion</a><br>
+<b>Read</b>: ThinkPython Ch 5 (pgs 51-54), Ch 6
 <font color="red"><b>Due (Wed)</b>: Project 7</font>
 
 =
