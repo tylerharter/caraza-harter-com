@@ -238,6 +238,7 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
+<a href="materials/lec-24.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 <b>Due</b>: P7
 
@@ -246,6 +247,7 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
+<b>Read</b>: Downey Ch 14
 
 =
 Pandas 1
@@ -257,7 +259,6 @@ Pandas 1
 
 =
 Review Day
-<b>Due</b>: P8
 
 =
 Pandas 2
@@ -268,6 +269,25 @@ Pandas 2
 ################################################################################
 # PART 3
 ################################################################################
+
+=
+Web 1
+* requests Module
+* Downloading Pages
+* RPCs
+
+=
+Web 2
+* HTML
+* tags
+* attributes
+<b>Due</b>: P8
+
+=
+Web 3
+* Generating HTML
+* Parsing HTML
+* beautifulsoup
 
 =
 Database 1
@@ -284,6 +304,10 @@ Database 2
 <b>Due</b>: P9
 
 =
+Thanksgiving Break
+* No Class
+
+=
 Database 3
 * sqlite3 library
 * querying from Pandas
@@ -298,10 +322,6 @@ Plotting 1
 Plotting 2
 * Interactive Plotting
 * iPython
-
-=
-Thanksgiving Break
-* No Class
 
 =
 Plotting 3
@@ -321,26 +341,6 @@ Simulation
 * Seeding
 * Distributions
 * Monte Carlo
-
-=
-Web 1
-* requests Module
-* Downloading Pages
-* RPCs
-<b>No Project Due</b>
-
-=
-Web 2
-* HTML
-* tags
-* attributes
-
-=
-Web 3
-* Generating HTML
-* Parsing HTML
-* beautifulsoup
-<b>No Project Due</b>
 
 =
 Hypothesis Testing
