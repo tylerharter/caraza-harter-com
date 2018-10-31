@@ -23,8 +23,8 @@ PROJECT_DUE_UTC = {
     'p5': datetime.datetime.strptime("10/18/18 7:00", DUE_DATE_FORMAT),
     'p6': datetime.datetime.strptime("10/25/18 7:00", DUE_DATE_FORMAT),
     'p7': datetime.datetime.strptime("11/01/18 7:00", DUE_DATE_FORMAT),
-    'p8': datetime.datetime.strptime("11/08/18 7:00", DUE_DATE_FORMAT),
-    'p9': datetime.datetime.strptime("11/15/18 7:00", DUE_DATE_FORMAT),
+    'p8': datetime.datetime.strptime("11/15/18 7:00", DUE_DATE_FORMAT),
+    'p9': datetime.datetime.strptime("11/22/18 7:00", DUE_DATE_FORMAT),
     'p10': datetime.datetime.strptime("12/13/18 7:00", DUE_DATE_FORMAT),
 }
 
