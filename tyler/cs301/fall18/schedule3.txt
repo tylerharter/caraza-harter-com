@@ -209,6 +209,7 @@ Advanced functions, Files, and Exceptions
 * Handling exceptions
 <b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a>, ThinkPython Ch 14,  
 <a href="https://automatetheboringstuff.com/chapter10/">AutomateTheBoringStuff Ch 10</a> (beginning through "Assertions")<br>
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-17-afuncs">Adv funcs</a><br>
 
 =
 Pandas 1
