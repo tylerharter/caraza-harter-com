@@ -248,6 +248,7 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
+<a href="materials/lec-25.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 14
 
 =
