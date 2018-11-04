@@ -1,12 +1,15 @@
-import os, sys, json, math
+import os, sys, json, math, datetime, boto3
 from collections import defaultdict as ddict
+
+BUCKET = 'caraza-harter-cs301'
+s3 = boto3.client('s3')
 
 TEST_NET_IDS = None
 #TEST_NET_IDS = ['tharter']
 
 LATE_DAY_ALLOCATION = 10
 
-def gen_html(prows):
+def gen_html(prows, include_intro=True):
     cum_late = 0
 
     intro = """<p>
@@ -39,7 +42,11 @@ def gen_html(prows):
     <p>Your project summary (through P6) is below:</p>
     """
 
-    html = intro.split('\n')
+    if include_intro:
+        html = intro.split('\n')
+    else:
+        html = ['<h1>']
+
     for p in prows:
         html.append('<h2>' + p['project'].upper() + '</h2>')
         html.append('<ul>')
@@ -75,15 +82,26 @@ def main():
     # status by net_id
     net_ids = TEST_NET_IDS if TEST_NET_IDS != None else projects.keys()
     emails = []
+    now = datetime.datetime.now()
 
     for net_id in net_ids:
         prows = projects[net_id]
         prows.sort(key=lambda row: int(row['project'][1:]))
         html = gen_html(prows)
+
+        # distribute as email
         email = {'to':net_id+'@wisc.edu',
                  'subject': 'CS 301: Project Summary',
                  'message':html, 'html':True}
         emails.append(email)
+
+        # generate status page in S3
+        path = 'projects/summary/users/%s.json' % prows[0]['user_id']
+        html_summary = gen_html(prows, include_intro=False)
+        s3.put_object(Bucket=BUCKET,
+                      Key=path,
+                      Body=bytes(json.dumps({'when': str(now), 'html_summary': html_summary}), 'utf-8'),
+                      ContentType='text/json')
 
     # dump email file
     with open('project_emails.json', 'w') as f:
