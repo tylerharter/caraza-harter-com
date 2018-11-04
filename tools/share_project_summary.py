@@ -2,7 +2,7 @@ import os, sys, json, math
 from collections import defaultdict as ddict
 
 TEST_NET_IDS = None
-TEST_NET_IDS = ['tharter']
+#TEST_NET_IDS = ['tharter']
 
 LATE_DAY_ALLOCATION = 10
 
@@ -14,8 +14,8 @@ def gen_html(prows):
     </p>
 
     <p>We're going to start sending status emails (like this one) so
-    you can see links to all your feedback in one place and a summary
-    of late days in one place.</p>
+    you can see links to all your feedback and a summary of late days
+    in one place.</p>
 
     <p>Most feedback comments we leave you are tips for how to write
     better code or simpler ways to do what you're trying to do.  So we

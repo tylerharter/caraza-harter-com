@@ -43,6 +43,15 @@ class Snapshot:
         return try_read_json(path)
 
 
+    def project_extension(self, project_id, net_id):
+        """get submission extension details"""
+        google_id = self.net_id_to_google_id(net_id)
+        if not google_id:
+            return {}
+        path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/extension.json'
+        return try_read_json(path)
+
+
     def project_code_review(self, project_id, net_id):
         """get code review for project"""
         google_id = self.net_id_to_google_id(net_id)
@@ -61,6 +70,7 @@ class Snapshot:
     def submission_details(self, project_id, net_id):
         return {
             'submission': self.project_submission(project_id, net_id),
+            'extension':  self.project_extension(project_id, net_id),
             'cr':         self.project_code_review(project_id, net_id),
             'test':       self.test_result(project_id, net_id),
         }
@@ -115,7 +125,11 @@ class Snapshot:
             details = self.submission_details(project_id, student['net_id'])
             test_score = details.get('test', {}).get('score', None)
             ta_deduction = details.get('cr', {}).get('points_deducted', 0)
-            late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+
+            late_days = details.get('submission', {}).get('late_days', 0)
+            late_days -= details.get('extension', {}).get('days', 0)
+            late_days = max(math.ceil(late_days), 0)
+
             comment_count = self.get_comment_count(details.get('cr', {}))
             filename = details.get('submission', {}).get('filename', None)
             net_id = student['net_id']
@@ -130,7 +144,11 @@ class Snapshot:
             details = self.submission_details(project_id, student['net_id'])
             test_score = details.get('test', {}).get('score', None)
             ta_deduction = details.get('cr', {}).get('points_deducted', 0)
-            late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+
+            late_days = details.get('submission', {}).get('late_days', 0)
+            late_days -= details.get('extension', {}).get('days', 0)
+            late_days = max(math.ceil(late_days), 0)
+
             comment_count = self.get_comment_count(details.get('cr', {}))
             filename = details.get('submission', {}).get('filename', None)
             net_id = details.get('submission', {}).get('partner_netid', None)
