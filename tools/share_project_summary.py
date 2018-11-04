@@ -2,14 +2,44 @@ import os, sys, json, math
 from collections import defaultdict as ddict
 
 TEST_NET_IDS = None
-#TEST_NET_IDS = ['tharter']
+TEST_NET_IDS = ['tharter']
 
 LATE_DAY_ALLOCATION = 10
 
 def gen_html(prows):
-    html = []
     cum_late = 0
 
+    intro = """<p>
+    Dear Student,
+    </p>
+
+    <p>We're going to start sending status emails (like this one) so
+    you can see links to all your feedback in one place and a summary
+    of late days in one place.</p>
+
+    <p>Most feedback comments we leave you are tips for how to write
+    better code or simpler ways to do what you're trying to do.  So we
+    strongly encourage you to read all TA comments, even if you scored
+    100.  It will likely save you time in the future.</p>
+
+    <p>We have also fixed code review permissions for partners so both
+    parties can view a code review directly (the primary submitter no
+    longer needs to share feedback with the partner).</p>
+
+    <p>Finally, we've been a bit disorganized about recording
+    extensions when students need to resubmit because they forgot to
+    list their partner (or for other trivial reasons).  This is
+    because I (Tyler) didn't provide TAs with good way to record
+    extensions until recently, so everybody kept their own notes.  If
+    you had an extension from a TA but you still see late days used
+    below, please email me (tylerharter@gmail.com).  Be sure to tell
+    me the following: (1) which project, (2) which TA granted the
+    extension, and (3) how long the extension was.</p>
+
+    <p>Your project summary (through P6) is below:</p>
+    """
+
+    html = intro.split('\n')
     for p in prows:
         html.append('<h2>' + p['project'].upper() + '</h2>')
         html.append('<ul>')
@@ -54,8 +84,6 @@ def main():
                  'subject': 'CS 301: Project Summary',
                  'message':html, 'html':True}
         emails.append(email)
-
-        print(html)
 
     # dump email file
     with open('project_emails.json', 'w') as f:
