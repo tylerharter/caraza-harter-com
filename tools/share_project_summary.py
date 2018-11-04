@@ -2,16 +2,30 @@ import os, sys, json, math
 from collections import defaultdict as ddict
 
 TEST_NET_IDS = None
-TEST_NET_IDS = ['tharter']
+#TEST_NET_IDS = ['tharter']
+
+LATE_DAY_ALLOCATION = 10
 
 def gen_html(prows):
     html = []
+    cum_late = 0
+
     for p in prows:
         html.append('<h2>' + p['project'].upper() + '</h2>')
         html.append('<ul>')
-        html.append('<li>Feedback: <a href="{}">{} reviewer comments</a>'.format(p['code_review_url'], 'X'))
+        line = '<li>Feedback: <a href="{}">{} reviewer comments</a>'
+        html.append(line.format(p['code_review_url'], p['comment_count']))
         html.append('<li>Score: ' + str(p['score']))
         html.append('<li>Days Late: ' + str(p['late_days']))
+
+        # handle late days
+        cum_late += p['late_days']
+        if (cum_late > LATE_DAY_ALLOCATION and p['late_days'] > 0):
+            print('dropping projects because late!')
+            html.append("<li>WARNING: late days exhausted ({} used to this point). ".format(cum_late) +
+                        "This won't be counted. "+
+                        "Please email your instructor to discuss.")
+
         html.append('</ul>')
     return '\n'.join(html)
 
@@ -45,7 +59,7 @@ def main():
 
     # dump email file
     with open('project_emails.json', 'w') as f:
-        json.dump(emails, f)
+        json.dump(emails, f, indent=2, sort_keys=True)
 
 if __name__ == '__main__':
     main()

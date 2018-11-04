@@ -12,7 +12,8 @@ class Snapshot:
         self.dirname = dirname
         with open(dirname + '/users/roster.json') as f:
             roster = json.loads(f.read())
-            self.roster = [row for row in roster if 'net_id' in row]
+            self.roster = [row for row in roster
+                           if row.get('enrolled', False)]
 
 
     def net_id_to_google_id(self, net_id):
@@ -83,10 +84,12 @@ class Snapshot:
             score = max(test_score - ta_deduction, 0)
 
             # TODO: in spring semester of 2018, start counting late days for first three projects
+            # we decided not to count these late this semester because there were too many
+            # resubmissions
             if project_id in ('p1','p2','p3'):
                 late_days = 0
             assert(datetime.datetime.now().year == 2018)
-            
+
             # many students could specify the same student as their partner.
             # we tally this up to identify this problem
             submissions = 1
@@ -94,6 +97,7 @@ class Snapshot:
             row = {
                 'project': project_id,
                 'net_id': net_id,
+                'user_id': self.net_id_to_google_id(net_id),
                 'primary': submitter,
                 'partner': None, # set later
                 'filename': filename,
