@@ -41,6 +41,11 @@ def project_path(user_id, project_id, submission_id=None):
     return path
 
 
+def project_summary_path(user_id):
+    '''Get location where summary of projects should be saved'''
+    return 'projects/summary/users/%s.json' % (project_id, user_id)
+
+
 def code_review_path(user_id, project_id):
     return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
 
@@ -417,9 +422,11 @@ def get_code_review(user, event):
 @grader
 def put_code_review(user, event):
     cr = event['cr']
-    cr['reviewer_email'] = user['email']
-    submitter_user_id = event['submitter_id']
     project_id = event['project_id']
+    cr['reviewer_email'] = user['email']
+    if not project_id in PROJECT_IDS:
+        return (500, 'not a valid project')
+    submitter_user_id = event['submitter_id']
     path = code_review_path(submitter_user_id, project_id)
     s3().put_object(Bucket=BUCKET,
                     Key=path,
@@ -475,3 +482,33 @@ def project_set_extension(user, event):
                                Body=bytes(json.dumps(row), 'utf-8'),
                                ContentType='text/json')
     return (200, 'success')
+
+
+@route
+@grader
+def project_get_summary(user, event):
+    user_id = user['sub']
+
+    # get google id of student, directly, or from net_id
+    student_google_id = event.get('google_id', None)
+    if student_google_id == None:
+        student_net_id = event.get('net_id', None)
+        if student_net_id == None:
+            return (500, 'must provide google_id or net_id')
+        student_google_id = net_id_to_google(student_net_id)
+
+    # two people should be able to view the project summary:
+    # 1. student
+    # 3. grader
+    if not (user_id == student_google_id or is_grader(user)):
+        return (500, 'not authorized to view this content')
+
+    path = project_summary_path(student_google_id)
+    try:
+        response = s3().get_object(Bucket=BUCKET, Key=path)
+        row = json.loads(str(response['Body'].read(), 'utf-8'))
+        return (200, row)
+    except botocore.exceptions.ClientError as e:
+        if e.response['Error']['Code'] == "NoSuchKey":
+            raise Exception("no status snapshot available")
+        raise e

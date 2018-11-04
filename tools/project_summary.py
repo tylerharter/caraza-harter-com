@@ -1,10 +1,11 @@
-import os, sys, json, math
+import os, sys, json, math, datetime
 
 def try_read_json(path):
     if not os.path.exists(path):
         return {}
     with open(path) as f:
         return json.loads(f.read())
+
 
 class Snapshot:
     def __init__(self, dirname):
@@ -13,12 +14,24 @@ class Snapshot:
             roster = json.loads(f.read())
             self.roster = [row for row in roster if 'net_id' in row]
 
+
     def net_id_to_google_id(self, net_id):
         path = self.dirname+'/users/net_id_to_google/%s.txt' % net_id
         if not os.path.exists(path):
-            return {}
+            return None
         with open(path) as f:
             return f.read()
+
+
+    def code_review_url(self, submitter_net_id, project_id):
+        submitter_user_id = self.net_id_to_google_id(submitter_net_id)
+        if submitter_user_id == None:
+            return None
+        url = 'https://tyler.caraza-harter.com/cs301/fall18/code_review.html?'
+        url += 'project_id=' + project_id
+        url += '&submitter_id=' + submitter_user_id
+        return url
+
 
     def project_submission(self, project_id, net_id):
         """get submission code and metadata"""
@@ -28,6 +41,7 @@ class Snapshot:
         path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/curr.json'
         return try_read_json(path)
 
+
     def project_code_review(self, project_id, net_id):
         """get code review for project"""
         google_id = self.net_id_to_google_id(net_id)
@@ -36,10 +50,12 @@ class Snapshot:
         path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/cr.json'
         return try_read_json(path)
     
+
     def test_result(self, project_id, net_id):
         """get auto grade for submission"""
         path = self.dirname+'/ta/grading/'+project_id+'/'+net_id+'.json'
         return try_read_json(path)
+
 
     def submission_details(self, project_id, net_id):
         return {
@@ -48,12 +64,18 @@ class Snapshot:
             'test':       self.test_result(project_id, net_id),
         }
 
+
     def project_json(self, project_id, out_path):
         net_ids = set(student['net_id'] for student in self.roster)
         rows = {}
 
         def add_row(net_id, filename, test_score, ta_deduction, late_days, submitter):
             score = max(test_score - ta_deduction, 0)
+
+            # TODO: in spring semester of 2018, start counting late days for first three projects
+            if project_id in ('p1','p2','p3'):
+                late_days = 0
+            assert(datetime.datetime.now().year == 2018)
             
             # many students could specify the same student as their partner.
             # we tally this up to identify this problem
@@ -63,7 +85,7 @@ class Snapshot:
                 'project': project_id,
                 'net_id': net_id,
                 'primary': submitter,
-                'partner': None,
+                'partner': None, # set later
                 'filename': filename,
                 'submissions': 1,
                 'test_score': test_score,
@@ -111,11 +133,20 @@ class Snapshot:
             if not net_id in rows:
                 add_row(net_id, None, 0, 0, late_days, submitter=False)
 
+        # add code review URLs for every row
+        for row in rows.values():
+            if row["primary"] or row["filename"] == None:
+                url = self.code_review_url(row['net_id'], row['project'])
+            else:
+                url = self.code_review_url(row['partner'], row['project'])
+            row['code_review_url'] = url
+
         output = ('[\n' +
                   ',\n'.join([json.dumps(row) for row in rows.values()]) +
                   ']\n')
         with open(out_path, 'w') as f:
             f.write(output)
+
 
 def main():
     if len(sys.argv) < 3:
@@ -128,6 +159,7 @@ def main():
         os.makedirs('./grades')
     for project_id in sys.argv[2:]:
         snap.project_json(project_id, 'grades/'+project_id+'.json')
+
 
 if __name__ == '__main__':
     main()

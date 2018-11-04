@@ -35,7 +35,7 @@ def download_chunk(paths):
     try:
         for path in paths:
             print('File {}'.format(path))
-            local = 'psnapshot/' + path
+            local = 'snapshot/' + path
             if os.path.exists(local):
                 continue
             response = s3.get_object(Bucket=BUCKET, Key=path)
