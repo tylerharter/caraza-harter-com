@@ -65,11 +65,21 @@ class Snapshot:
         }
 
 
+    def get_comment_count(self, cr):
+        count = 0
+        if not cr.get('general_comments', '') in (None, ''):
+            count += 1
+        highlights = cr.get('highlights', {})
+        for filename in highlights:
+            count += len(highlights[filename])
+        return count
+
+
     def project_json(self, project_id, out_path):
         net_ids = set(student['net_id'] for student in self.roster)
         rows = {}
 
-        def add_row(net_id, filename, test_score, ta_deduction, late_days, submitter):
+        def add_row(net_id, filename, test_score, ta_deduction, late_days, comment_count, submitter):
             score = max(test_score - ta_deduction, 0)
 
             # TODO: in spring semester of 2018, start counting late days for first three projects
@@ -92,6 +102,7 @@ class Snapshot:
                 'ta_deduction': ta_deduction,
                 'score': score,
                 'late_days': late_days,
+                'comment_count': comment_count
             }
             rows[net_id] = row
 
@@ -101,12 +112,14 @@ class Snapshot:
             test_score = details.get('test', {}).get('score', None)
             ta_deduction = details.get('cr', {}).get('points_deducted', 0)
             late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+            comment_count = self.get_comment_count(details.get('cr', {}))
             filename = details.get('submission', {}).get('filename', None)
             net_id = student['net_id']
             if test_score == None:
                 continue
 
-            add_row(net_id, filename, test_score, ta_deduction, late_days, submitter=True)
+            add_row(net_id, filename, test_score, ta_deduction,
+                    late_days, comment_count, submitter=True)
 
         # PASS 2: students with a partner who submitted
         for student in self.roster:
@@ -114,6 +127,7 @@ class Snapshot:
             test_score = details.get('test', {}).get('score', None)
             ta_deduction = details.get('cr', {}).get('points_deducted', 0)
             late_days = max(math.ceil(details.get('submission', {}).get('late_days', 0)), 0)
+            comment_count = self.get_comment_count(details.get('cr', {}))
             filename = details.get('submission', {}).get('filename', None)
             net_id = details.get('submission', {}).get('partner_netid', None)
             if test_score == None or net_id == None or not net_id in net_ids:
@@ -121,7 +135,8 @@ class Snapshot:
             if net_id in rows:
                 rows[net_id]['submissions'] += 1
 
-            add_row(net_id, filename, test_score, ta_deduction, late_days, submitter=False)
+            add_row(net_id, filename, test_score, ta_deduction,
+                    late_days, comment_count, submitter=False)
 
             # associate students with each other
             rows[net_id]['partner'] = student['net_id']
@@ -131,7 +146,8 @@ class Snapshot:
         for student in self.roster:
             net_id = student['net_id']
             if not net_id in rows:
-                add_row(net_id, None, 0, 0, late_days, submitter=False)
+                add_row(net_id, None, 0, 0,
+                        late_days, 0, submitter=False)
 
         # add code review URLs for every row
         for row in rows.values():
