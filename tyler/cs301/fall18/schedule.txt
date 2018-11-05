@@ -258,15 +258,15 @@ Pandas 1
 * series
 * reading CSVs
 * element-wise operations
+<b>Reading</b>: <a href="materials/readings/lec-26/pandas-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/readings/lec-26/pandas-intro.ipynb">Notebook</a>)<br>
 
 =
 Review Day
 
 =
 Pandas 2
-* reindexing
-* pivot tables
-* merging
+* practice
 
 ################################################################################
 # PART 3
