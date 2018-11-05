@@ -96,12 +96,14 @@ def main():
         emails.append(email)
 
         # generate status page in S3
-        path = 'projects/summary/users/%s.json' % prows[0]['user_id']
-        html_summary = gen_html(prows, include_intro=False)
-        s3.put_object(Bucket=BUCKET,
-                      Key=path,
-                      Body=bytes(json.dumps({'when': str(now), 'html_summary': html_summary}), 'utf-8'),
-                      ContentType='text/json')
+        user_id = prows[0]['user_id']
+        if user_id != None:
+            path = 'projects/summary/users/%s.json' % user_id
+            html_summary = gen_html(prows, include_intro=False)
+            s3.put_object(Bucket=BUCKET,
+                          Key=path,
+                          Body=bytes(json.dumps({'when': str(now), 'html_summary': html_summary}), 'utf-8'),
+                          ContentType='text/json')
 
     # dump email file
     with open('project_emails.json', 'w') as f:

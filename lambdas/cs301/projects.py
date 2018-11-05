@@ -43,7 +43,7 @@ def project_path(user_id, project_id, submission_id=None):
 
 def project_summary_path(user_id):
     '''Get location where summary of projects should be saved'''
-    return 'projects/summary/users/%s.json' % (project_id, user_id)
+    return 'projects/summary/users/%s.json' % user_id
 
 
 def code_review_path(user_id, project_id):
@@ -485,7 +485,7 @@ def project_set_extension(user, event):
 
 
 @route
-@grader
+@user
 def project_get_summary(user, event):
     user_id = user['sub']
 
@@ -503,10 +503,14 @@ def project_get_summary(user, event):
     if not (user_id == student_google_id or is_grader(user)):
         return (500, 'not authorized to view this content')
 
+    if student_google_id == None:
+        return (500, 'could not find google user')
+
     path = project_summary_path(student_google_id)
     try:
         response = s3().get_object(Bucket=BUCKET, Key=path)
         row = json.loads(str(response['Body'].read(), 'utf-8'))
+        row['path'] = path
         return (200, row)
     except botocore.exceptions.ClientError as e:
         if e.response['Error']['Code'] == "NoSuchKey":

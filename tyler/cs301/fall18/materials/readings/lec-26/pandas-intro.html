@@ -11777,7 +11777,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Introduction-to-Notebooks-and-Pandas">Introduction to Notebooks and Pandas<a class="anchor-link" href="#Introduction-to-Notebooks-and-Pandas">&#182;</a></h1><p><em>Tyler Caraza-Harter</em></p>
 <p>In this semester, we've learned two ways to run Python code: in interactive mode, where code runs as we type it, and script mode, where we write our code in a .py file, which we then run.</p>
-<p>Now, we'll going to learn a third way: with Notebooks.  Notebooks are a popular tool of data scientists for interleaving code with analysis results (e.g., tables and plots).  You're going to need to install Anaconda for this part of the course (if you haven't already).</p>
+<p>Now, we're going to learn a third way: with Notebooks.  Notebooks are a popular tool of data scientists for interleaving code with analysis results (e.g., tables and plots).  You're going to need to install Anaconda for this part of the course (if you haven't already).</p>
 <p>To get started, run the following in the terminal (make sure to use the "cd" command to move to a directory where you want to do your work, such as your documents directory):</p>
 
 <pre><code>ipython notebook</code></pre>
@@ -11793,7 +11793,7 @@ div#notebook {
 [I 10:36:31.808 NotebookApp] The Jupyter Notebook is running at:
 [I 10:36:31.808 NotebookApp] http://localhost:8888/?token=1254607604289711443154541</code></pre>
 <p>Also, your web browser should pop up a new page that says Jupyter in the top left.  Jupyter Notebooks are an interactive tool for doing data science in Julia, Python, and R (we'll only be working with Python).</p>
-<p>Click the "New" button, then choose "Python 3".  A new document should open, with a box labeled "In [  ]" in which you can start typing.  From here, you can write documentation and Python code, summarize data, and display plots.  In fact, this document your reading now is itself a Python Notebook, and it will include a mix of documentation and code.</p>
+<p>Click the "New" button, then choose "Python 3".  A new document should open, with a box labeled "In [  ]" in which you can start typing.  From here, you can write documentation and Python code, summarize data, and display plots.  In fact, this document you're reading now is itself a Python Notebook, and it will include a mix of documentation and code.</p>
 
 </div>
 </div>
@@ -11937,7 +11937,7 @@ For example:</p>
 
 <pre><code>&gt;&gt;&gt; print(x)
 &gt;&gt;&gt; x = 3</code></pre>
-<p>Similarly, if you try to assign x in a later cell and print it in an earlier cell, it should (and usually does) fail.  One one catch is that notebooks don't force you to execute each cell in order.  You could do something like this:</p>
+<p>Similarly, if you try to assign x in a later cell and print it in an earlier cell, it should (and usually does) fail.  One catch is that notebooks don't force you to execute each cell in order.  You could do something like this:</p>
 <p>EARLIER CELL:
 print("hi")</p>
 <p>LATER CELL:
@@ -11946,7 +11946,7 @@ x = 3</p>
 <p>Modify EARLIER cell:</p>
 <p>EARLIER CELL:
 print(x)</p>
-<p>Run just the EARLIER cell.  Surprisingly, (and deceptively), this works, because you ran the cells out of order.  However, you share you notebook with somebody else, it will fail for them because they might try rerunning everything from scratch, in order.</p>
+<p>Run just the EARLIER cell.  Surprisingly, (and deceptively), this works, because you ran the cells out of order.  However, when you share your notebook with somebody else, it will fail for them because they might try rerunning everything from scratch, in order.</p>
 <p><strong>Important</strong>: to make sure you don't make this common blunder, be sure to occasionally re-run all your code from the start by clicking "Kernel" from the notebook menu and selecting "Restart &amp; Run All".</p>
 
 </div>
@@ -11979,7 +11979,7 @@ print(x)</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The "as pd" expression may be new for you.  This just gives the pandas module a new name in our code, so we can type things like <code>pd.some_function()</code> to call a function named <code>some_function</code> rather than type out <code>pandas.some_function</code>.  You could also have just used <code>import pandas</code> or even given it another name with an import like <code>import pandas as silly_bear</code>, but we recommend you import as "pd", because most pandas users do so by convention.</p>
-<p>We'll also be using to new data types (Series and DataFrame) from Pandas very often, so let's import these directly so we don't even need to prefix their use with "pd.".</p>
+<p>We'll also be using two new data types (Series and DataFrame) from Pandas very often, so let's import these directly so we don't even need to prefix their use with "pd.".</p>
 
 </div>
 </div>
@@ -13017,7 +13017,7 @@ dtype: int64</pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Series-Indexing-and-Slicing">Series Indexing and Slicing<a class="anchor-link" href="#Series-Indexing-and-Slicing">&#182;</a></h2><p>We will often one to extract one or more values from a Series.  Like lists, Series support indexing and slicing.</p>
+<h2 id="Series-Indexing-and-Slicing">Series Indexing and Slicing<a class="anchor-link" href="#Series-Indexing-and-Slicing">&#182;</a></h2><p>We will often want to extract one or more values from a Series.  Like lists, Series support indexing and slicing.</p>
 
 </div>
 </div>
@@ -14497,7 +14497,7 @@ Name: score, dtype: float64</pre>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># lookup is done for columns by default (df[x] looks up column named x)</span>
-<span class="c1"># we can also lookup a row, but we need to use df.loc[y].</span>
+<span class="c1"># we can also lookup a row, but we need to use df.loc[y].  (&quot;loc&quot; stands for location)</span>
 <span class="c1"># for example, let&#39;s get Bob&#39;s row:</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
@@ -14654,7 +14654,7 @@ Name: 1, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># movies is a DataFrame</span>
@@ -14689,7 +14689,7 @@ Name: 1, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># it&#39;s large, but we can preview the first few with DataFrame.head()</span>
@@ -14706,7 +14706,7 @@ Name: 1, dtype: object</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+<div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -14814,7 +14814,7 @@ Name: 1, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can pull out Runtime minutes if we like</span>
@@ -14834,7 +14834,7 @@ Name: 1, dtype: object</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[78]:</div>
+<div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -14861,10 +14861,10 @@ Name: Runtime, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># what is the median runtime, in hours?</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># what is the mean runtime, in hours?</span>
 <span class="n">runtime</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="mi">60</span>
 </pre></div>
 
@@ -14878,7 +14878,7 @@ Name: Runtime, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -14895,7 +14895,7 @@ Name: Runtime, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># what if we want stats about movies from 2016?</span>
@@ -14913,7 +14913,7 @@ Name: Runtime, dtype: int64</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[81]:</div>
+<div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -14951,7 +14951,7 @@ Name: Year, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">movies_2016</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">]</span>
@@ -14980,7 +14980,7 @@ Name: Year, dtype: bool</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[86]:</div>
+<div class="prompt output_prompt">Out[71]:</div>
 
 
 
@@ -15148,7 +15148,7 @@ Name: Year, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># let&#39;s get some general stats about movies from 2016</span>
@@ -15165,7 +15165,7 @@ Name: Year, dtype: bool</pre>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[87]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 
