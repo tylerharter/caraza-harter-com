@@ -202,20 +202,25 @@ Recursion
 <font color="red"><b>Due (Wed)</b>: Project 7</font>
 
 =
-Advanced functions, Files, and Exceptions
+Advanced functions
 * Iterators and generators
 * References to functions
-* Reading and writing files
-* Handling exceptions
-<b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a>, ThinkPython Ch 14,  
-<a href="https://automatetheboringstuff.com/chapter10/">AutomateTheBoringStuff Ch 10</a> (beginning through "Assertions")<br>
+<b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a>, 
+
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-17-afuncs">Adv funcs</a><br>
 
 =
-Pandas 1
-
+Exceptions and Files
+* Handling exceptions
+* Reading and writing files
+<b>Read</b>:<a href="https://automatetheboringstuff.com/chapter10/">AutomateTheBoringStuff Ch 10</a> (beginning through "Assertions") and ThinkPython Ch 14<br>
 =
-Pandas 2
+Pandas
+* iPython
+* dataframe
+* series
+* reading CSVs
+* element-wise operations
 <font color="red"><b>MIDTERM EXAM 2</b></font>
 
 
