@@ -214,6 +214,7 @@ Exceptions and Files
 * Reading and writing files
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">AutomateTheBoringStuff Ch 10</a> (beginning through "Assertions") and ThinkPython Ch 14<br>
 <b>Lecture Slides: </b><a href="materials/lec-24.pdf">Exceptions</a> and <a href="materials/lec-25.pdf">Files</a><br>
+<b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-18-exceptions">Exceptions and Files</a><br>
 
 =
 Pandas
