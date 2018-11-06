@@ -1,0 +1,47 @@
+open => returns a file object
+ - path (review relative paths)
+ - mode (just 'r' and 'w')
+ - encoding
+
+f.close() when you're done
+
+========================================
+
+reading files:
+ - read method
+ - a file object is a generator
+
+========================================
+
+writing files
+ - write method
+ - watch for newline!
+
+========================================
+
+CSVs and JSON
+
+========================================
+
+os helpers:
+ - os.listdir
+ - os.mkdir
+ - os.path.exists
+ - os.path.isdir
+ - os.path.isfile
+ - os.path.join
+
+========================================
+
+Exceptions
+ - permission denied: open('/test', 'w')
+ - doesn't exist: open('bad.txt')
+ - is a dir: open('/home')
+
+========================================
+
+DEMOS
+ - keep track of points in dict (JSON)
+ - save user input to history
+ - recursively search for filename
+ - recursively search for data in files
