@@ -199,7 +199,7 @@ Recursion
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-16-recursion">Recursion</a><br>
 <b>Lecture Notes: </b><a href="materials3/lec-16-notes.pdf">Recursion</a><br>
 <b>Read</b>: ThinkPython Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
-<font color="red"><b>Due (Wed)</b>: Project 7</font>
+<b>Due (Wed)</b>: Project 7
 
 =
 Advanced functions
@@ -207,6 +207,7 @@ Advanced functions
 * References to functions
 <b>Read</b>: <a href="materials/lec-23.pdf">Advanced Functions</a><br>
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-17-afuncs">Adv funcs</a><br>
+<b>Lecture Notes: </b><a href="materials3/lec-17-notes.pdf">Advanced Functions</a><br>
 
 =
 Exceptions and Files
@@ -214,17 +215,17 @@ Exceptions and Files
 * Reading and writing files
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">AutomateTheBoringStuff Ch 10</a> (beginning through "Assertions") and ThinkPython Ch 14<br>
 <b>Lecture Slides: </b><a href="materials/lec-24.pdf">Exceptions</a> and <a href="materials/lec-25.pdf">Files</a><br>
+<b>Lecture Notes: </b><a href="materials3/lec-18-notes.pdf">Exceptions and Files</a><br>
 <b>Code Snippets</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall18/materials3/code/lec-18-exceptions">Exceptions and Files</a><br>
 
 =
 Pandas
-* iPython
-* dataframe
+* iPython notebooks
 * series
-* reading CSVs
 * element-wise operations
 <b>Reading</b>: <a href="materials/readings/lec-26/pandas-intro.html">CS 301 Notes</a>
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/readings/lec-26/pandas-intro.ipynb">Notebook</a>)<br>
+<b>Lecture Notes: </b><a href="materials3/lec-19-notes.pdf">Pandas</a><br>
 
 <font color="red"><b>MIDTERM EXAM 2</b></font>
 
@@ -234,11 +235,16 @@ Pandas
 ################################################################################
 
 =
-Web 1
-<b>Due (Wed)</b>: Project 8
+More pandas and Web intro?
+* Data Frames
+* Reading CSVs
+* Processing CSVs in Pandas
+* requests module
+* Downloading pages
+<font color="red"><b>Due (Wed)</b>: Project 8</font>
 
 =
-Web 2
+More Web Stuff
 
 =
 Databases 1
