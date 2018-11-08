@@ -267,6 +267,7 @@ Review Day
 =
 Pandas 2
 * practice
+<a href="materials/lec-27-worksheet.pdf">Link to Worksheet</a><br>
 
 ################################################################################
 # PART 3

@@ -12,8 +12,7 @@ class Snapshot:
         self.dirname = dirname
         with open(dirname + '/users/roster.json') as f:
             roster = json.loads(f.read())
-            self.roster = [row for row in roster
-                           if row.get('enrolled', False)]
+            self.roster = [row for row in roster]
 
 
     def net_id_to_google_id(self, net_id):
@@ -88,6 +87,9 @@ class Snapshot:
 
     def project_json(self, project_id, out_path):
         net_ids = set(student['net_id'] for student in self.roster)
+
+        # key: net_id
+        # val: submission details
         rows = {}
 
         def add_row(net_id, filename, test_score, ta_deduction, late_days, comment_count, submitter):
@@ -179,6 +181,16 @@ class Snapshot:
                 url = self.code_review_url(row['partner'], row['project'])
             row['code_review_url'] = url
 
+        # filter out students who have dropped.
+        # we do this last because students who dropped may have a partner still enrolled
+        enrolled_net_ids = set(student['net_id'] for student
+                               in self.roster
+                               if student.get('enrolled', True))
+        to_drop = net_ids - enrolled_net_ids
+        for net_id in to_drop:
+            rows.pop(net_id)
+
+        # save output
         output = ('[\n' +
                   ',\n'.join([json.dumps(row) for row in rows.values()]) +
                   ']\n')
