@@ -275,9 +275,11 @@ Pandas 2
 
 =
 Web 1
-* requests Module
-* Downloading Pages
-* RPCs
+* Servers/Clients
+* URLs
+* HTTP: GET and POST
+* requests module
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
 
 =
 Web 2
