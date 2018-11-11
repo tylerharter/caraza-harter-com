@@ -279,6 +279,7 @@ Web 1
 * URLs
 * HTTP: GET and POST
 * requests module
+<a href="materials/lec-28.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
 
 =
