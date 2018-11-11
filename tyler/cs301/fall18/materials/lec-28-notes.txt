@@ -11,10 +11,10 @@ HTTP
  - https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
  - URL
  - GET/POST/ETC
- - HEADERS (content-type)
  - status codes
 
 GET (with requests)
+ - note about robots.txt file
  - pip install requests (already with Anaconda)
  - r = requests.get(URL)
  - r.status_code
