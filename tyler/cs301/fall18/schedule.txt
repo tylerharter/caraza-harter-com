@@ -284,14 +284,12 @@ Web 1
 
 =
 Web 2
-* HTML
-* tags
-* attributes
+* Intro to HTML
+* Generating HTML
 <b>Due</b>: P8
 
 =
 Web 3
-* Generating HTML
 * Parsing HTML
 * beautifulsoup
 
