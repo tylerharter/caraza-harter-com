@@ -117,11 +117,16 @@ class Snapshot:
                 'test_score': test_score,
                 'ta_deduction': ta_deduction,
                 'score': score,
+                'override': False, # did instructor manually set score to something else?
                 'late_days': late_days,
                 'comment_count': comment_count
             }
             rows[net_id] = row
 
+        # we three passes to find a grade for every enrolled student
+        # (1) find direct submissions, (2) find submissions by a
+        # partner, (3) give a 0.
+            
         # PASS 1: students who were primary submitter
         for student in self.roster:
             details = self.submission_details(project_id, student['net_id'])
@@ -173,7 +178,20 @@ class Snapshot:
                 add_row(net_id, None, 0, 0,
                         late_days, 0, submitter=False)
 
-        # add code review URLs for every row
+        # after giving every student a grade with the three passes, we
+        # record instructor overrides and add code review links.
+
+        # supplement 1: manual instructor overrides
+        path = '/Users/trh/git_co/cs301/f18/grades/overrides.json'
+        assert(os.path.exists(path))
+        with open(path) as f:
+            overrides = json.load(f)
+        for override in overrides:
+            if override['project'] == project_id:
+                rows[override['net_id']]['score'] = override['score']
+                rows[override['net_id']]['override'] = True
+
+        # supplement 2: add code review URLs for every row
         for row in rows.values():
             if row["primary"] or row["filename"] == None:
                 url = self.code_review_url(row['net_id'], row['project'])
