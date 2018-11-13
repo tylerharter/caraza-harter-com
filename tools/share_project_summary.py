@@ -16,30 +16,15 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>We're going to start sending status emails (like this one) so
-    you can see links to all your feedback and a summary of late days
-    in one place.</p>
+    <p>This is your project summary through P7.  After the last
+    update, we handled many corrections.  They were almost all related
+    to partner names not being indicated in the comments or us
+    forgetting to record extensions properly.  If you've reached out
+    about something that you still don't see fixed, we apologize.
+    Please follow up with us again (feel free to directly email
+    tylerharter@gmail.com).</p>
 
-    <p>Most feedback comments we leave you are tips for how to write
-    better code or simpler ways to do what you're trying to do.  So we
-    strongly encourage you to read all TA comments, even if you scored
-    100.  It will likely save you time in the future.</p>
-
-    <p>We have also fixed code review permissions for partners so both
-    parties can view a code review directly (the primary submitter no
-    longer needs to share feedback with the partner).</p>
-
-    <p>Finally, we've been a bit disorganized about recording
-    extensions when students need to resubmit because they forgot to
-    list their partner (or for other trivial reasons).  This is
-    because I (Tyler) didn't provide TAs with good way to record
-    extensions until recently, so everybody kept their own notes.  If
-    you had an extension from a TA but you still see late days used
-    below, please email me (tylerharter@gmail.com).  Be sure to tell
-    me the following: (1) which project, (2) which TA granted the
-    extension, and (3) how long the extension was.</p>
-
-    <p>Your project summary (through P6) is below:</p>
+    <p>Here is your project summary:</p>
     """
 
     if include_intro:
@@ -53,6 +38,8 @@ def gen_html(prows, include_intro=True):
         line = '<li>Feedback: <a href="{}">{} reviewer comments</a>'
         html.append(line.format(p['code_review_url'], p['comment_count']))
         html.append('<li>Score: ' + str(p['score']))
+        if p['override']:
+            html[-1] += ' [override]'
         html.append('<li>Days Late: ' + str(p['late_days']))
 
         # handle late days
