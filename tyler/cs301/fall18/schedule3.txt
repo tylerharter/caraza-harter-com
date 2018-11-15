@@ -226,7 +226,8 @@ Pandas
 <b>Reading</b>: <a href="materials/readings/lec-26/pandas-intro.html">CS 301 Notes</a>
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/readings/lec-26/pandas-intro.ipynb">Notebook</a>)<br>
 <b>Lecture Notes: </b><a href="materials3/lec-19-notes.pdf">Pandas</a><br>
-
+<b>Ipython Notebook: </b><a href="materials3/lec-19-notebook.html">Notebook.html</a>
+(<a href="materials3/lec-19-notebook.ipnb">Notebook.ipnb</a>)<br>
 <font color="red"><b>MIDTERM EXAM 2</b></font>
 
 
@@ -235,36 +236,46 @@ Pandas
 ################################################################################
 
 =
-More pandas and Web intro?
+More pandas
 * Data Frames
 * Reading CSVs
 * Processing CSVs in Pandas
-* requests module
-* Downloading pages
 <font color="red"><b>Due (Wed)</b>: Project 8</font>
+<b>Ipython Notebook: </b><a href="materials3/lec-20-notebook.html">Notebook.html</a>
+(<a href="materials3/lec-20-notebook.ipnb">Notebook.ipnb</a>)<br>
 
 =
-More Web Stuff
+Web
+* Servers/Clients
+* URLs
+* HTTP: GET and POST
+* requests module
+* Intro to HTML
+* Generating HTML
+<b>Lecture Slides: </b><a href="materials/lec-28.pdf">Requests</a><br>
+<b>Lecture Slides: </b><a href="materials/lec-29.pdf">HTML</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
+
 
 =
-Databases 1
+More Web
 <b>Due (Wed)</b>: Project 9
 
 =
-Databases 2
-More python for web
+<b>NO CLASS</b>
+Happy Thanksgiving! :)
 
 =
-Plotting 1
+Databases
 
 =
-Plotting 2
+More Databases
 
 =
-TBD
+Plotting
 
 =
-TBD
+More Plotting
 
 =
 Review
