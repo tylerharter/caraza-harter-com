@@ -56,6 +56,10 @@ def roster_attach_user_raw(user_id, net_id):
 
 
 def net_id_to_google(net_id):
+    net_id = net_id.lower()
+    suffix = '@wisc.edu'
+    if net_id.endswith(suffix):
+        net_id = net_id[:-len(suffix)]
     try:
         response = s3().get_object(Bucket=BUCKET, Key='users/net_id_to_google/%s.txt' % net_id)
         return response['Body'].read().decode('utf-8')

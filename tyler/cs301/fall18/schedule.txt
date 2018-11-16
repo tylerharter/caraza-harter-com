@@ -291,8 +291,10 @@ Web 2
 
 =
 Web 3
+* Document Object Model
 * Parsing HTML
 * beautifulsoup
+<a href="materials/lec-30.pdf">Link to Slides</a><br>
 
 =
 Database 1
