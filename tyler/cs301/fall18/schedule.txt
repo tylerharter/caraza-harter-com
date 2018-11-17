@@ -301,13 +301,12 @@ Database 1
 * schemas/types
 * queries
 * where
-* sqlite
+* SQLite
+* Querying from Pandas
 
 =
 Database 2
-* group by
-* aggregates
-* inserts
+* Worksheets
 <b>Due</b>: P9
 
 =
@@ -316,8 +315,9 @@ Thanksgiving Break
 
 =
 Database 3
-* sqlite3 library
-* querying from Pandas
+* inserts
+* group by
+* aggregates
 
 =
 Plotting 1
