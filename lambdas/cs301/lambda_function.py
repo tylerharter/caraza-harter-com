@@ -15,23 +15,35 @@ def lambda_handler(event, context):
     if user != None:
         save_user_info(user)
 
-    # invoke
+    # try to invoke the function
     fn = ROUTES.get(event['fn'], None)
-    print('invoke ' + event['fn'])
+    if fn != None:
+        try:
+            # if a check fails, it will raise an exception
+            for checker in EXTRA_AUTH[event['fn']]:
+                checker(user)
 
-    if fn == None:
-        return error('no route for '+event['fn'])
+            code, data = fn(user, event)
+            result = {
+                "isBase64Encoded": False,
+                "statusCode": code,
+                "headers": {},
+                "body": data
+            }
+        except Exception as e:
+            result = error('Exception: '+str(e) + ' '+traceback.format_exc())
+    else:
+        result = error('no route for '+event['fn'])
+
+    # try to log the event
     try:
-        for checker in EXTRA_AUTH[event['fn']]:
-            checker(user)
-        code, data = fn(user, event)
+        record = {
+            'request': event,
+            'response': result
+        }
+        firehose().put_record(DeliveryStreamName=FIREHOSE,
+                              Record = {'Data': json.dumps(record)})
     except Exception as e:
-        return error('Exception: '+str(e) + ' '+traceback.format_exc())
+        result = error('Firehose Error: '+str(e) + ' '+traceback.format_exc())
 
-    # result
-    return {
-        "isBase64Encoded": False,
-        "statusCode": code,
-        "headers": {},
-        "body": data
-    }
+    return result

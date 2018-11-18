@@ -4,6 +4,7 @@ from collections import defaultdict as ddict
 ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
+FIREHOSE = 'cs301-trace'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
 INSTRUCTOR_EMAILS = ['tylerharter@gmail.com', 'adalbert.gerald@gmail.com']
 GRADER_EMAILS = [
@@ -21,13 +22,20 @@ GRADER_EMAILS = [
 ]
 
 s3_cache = None # client
-
 def s3():
     # cache S3 client
     global s3_cache
     if s3_cache == None:
         s3_cache = boto3.client('s3')
     return s3_cache
+
+firehose_cache = None # client
+def firehose():
+    # cache firehose client
+    global firehose_cache
+    if firehose_cache == None:
+        firehose_cache = boto3.client('firehose')
+    return firehose_cache
 
 def s3_all_keys(Prefix):
     ls = s3().list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
