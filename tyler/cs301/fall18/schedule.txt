@@ -303,6 +303,7 @@ Database 1
 * where
 * SQLite
 * Querying from Pandas
+<a href="materials/lec-31.pdf">Link to Slides</a><br>
 
 =
 Database 2

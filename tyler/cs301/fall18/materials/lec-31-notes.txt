@@ -10,8 +10,9 @@ DBs vs. simple files:
    (in contrast to JSON)
 
 Advantages of DBs:
- - query language (SQL)
+ - more structure
  - sharing (tricky with just files)
+ - query language (SQL)
  - performance (example)
 
 Show table with two fields:
@@ -27,14 +28,15 @@ Popular SQL Databases:
  - SQL Server
  - Oracle Database
  - MySQL
- - PostgresSQL
+ - PostgreSQL
  - SQLite
 
 SQLite
- - comes with Anaconda
  - easy to use
- - several billion deployments
+ - sqlite3 module built into Python
+ - sqlite3 tool comes with Anaconda
  - public domain
+ - several billion deployments
 
 https://www.sqlite.org/mostdeployed.html
  - Every Android device
@@ -115,6 +117,12 @@ for row in cursor:
     print(row) # each row is a tuple
 
 conn.close()
+
+========================================
+
+pandas with sqlite3
+
+read_sql
 
 ========================================
 
