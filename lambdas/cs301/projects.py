@@ -113,15 +113,15 @@ def extract_project_files(submission_id, filename, payload):
             # out cell
             outbox = 'out-%d' % (i + 1000)
             outputs = cell.get('outputs', [])
+            output = '%d outputs' % len(outputs)
             if len(outputs) == 1:
                 data = outputs[0].get("data", {})
                 output = "".join(data.get("text/plain", ["no output"]))
                 if "text/html" in data:
                     output = "".join(data["text/html"])
-            else:
-                output = '%d outputs' % len(outputs)
-            result['files'][outbox] = output
-            add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
+            if len(outputs) >= 1:
+                result['files'][outbox] = output
+                add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
     else:
         # format 3: a zip of .py files
         try:
