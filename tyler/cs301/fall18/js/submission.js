@@ -126,7 +126,7 @@ var submission = {};
       filename = null
       payload = null
 
-      if (file.name.endsWith('.zip') || file.name.endsWith('.py')) {
+      if (file.name.endsWith('.zip') || file.name.endsWith('.py') || file.name.endsWith('.ipynb')) {
         if (reader.result.length <= max_file_kb*1024) {
           filename = file.name
           payload = b64contents

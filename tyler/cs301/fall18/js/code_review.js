@@ -158,6 +158,15 @@ var code_review = {};
             'class="code-review-link" data-toggle="popover" data-placement="right" title="Comment">')
   }
 
+  function fileConf(filename) {
+    if ('files_meta' in cr.project && filename in cr.project.files_meta) {
+      return cr.project.files_meta[filename]
+    }
+
+    // default
+    return {display_name:filename, order:0, content_type:"python"}
+  }
+  
   code_review.refreshCR = function() {
     if (cr.is_grader) {
       $(".grader_content").show()
@@ -236,16 +245,23 @@ var code_review = {};
     }
     html += ('<h3>General Comments</h3>')
     html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea>')
-    
+
     // create a box for each code file
     for (var filename in cr.project.files) {
-      html += ('<h3>'+filename+'</h3>')
+      html += ('<h3>'+fileConf(filename).display_name+'</h3>')
+      html += ('<div class=html_code data-filename="'+filename+'">')
       html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'"></pre>')
+      html += ('</div>')
     }
     $("#code_viewer").html(html)
 
     // populate each box with the code and highlights
     for (var filename in cr.project.files) {
+      if (fileConf(filename).content_type == "html") {
+        var element = $("div[data-filename='"+filename+"'].html_code")
+        element.html(cr.project.files[filename])
+      }
+
       var preElement = $("pre[data-filename='"+filename+"'].lang-py")
       var code = cr.project.files[filename]
 
@@ -273,8 +289,8 @@ var code_review = {};
         code = code.slice(0, cut)
       }
       htmlCode = escapeForHTML(code) + htmlCode
+      preElement.html(htmlCode)
     }
-    preElement.html(htmlCode)
 
     // add syntax coloring and watch for events
     PR.prettyPrint()

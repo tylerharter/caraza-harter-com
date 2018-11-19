@@ -79,18 +79,51 @@ def extract_project_files(submission_id, filename, payload):
 
     result = {'submission_id':submission_id,
               'root':filename,
-              'files': {},
+              'files': {},      # these may be whole .py files, or cells in a ipynb
+              'files_meta': {},
               'errors': []}
 
+    def add_file_meta(key, display_name, order, content_type):
+        meta = {'display_name':display_name, 'order':order, 'content_type':content_type}
+        result['files_meta'][key] = meta
+    
     binary_bytes = base64.b64decode(payload)
     if filename.endswith('.py'):
+        # format 1: a single .py file
         try:
             code = normalize_py_bytes(binary_bytes)
         except Exception as e:
             result['errors'].append(str(e))
             code = 'could not read\n'
         result['files'][filename] = code
+    elif filename.endswith('.ipynb'):
+        # format 2: a single python notebook
+        nb = json.loads(str(binary_bytes, 'utf-8'))
+        cells = nb.get('cells', [])
+        for i,cell in enumerate(cells):
+            exec_count = cell.get('execution_count', None)
+            if exec_count == None:
+                exec_count = ' '
+
+            # in cell
+            inbox = 'in-%d' % (i + 1000)
+            result['files'][inbox] = ''.join(cell['source'])
+            add_file_meta(inbox, 'In [%s]'%str(exec_count), order=i, content_type='python')
+
+            # out cell
+            outbox = 'out-%d' % (i + 1000)
+            outputs = cell.get('outputs', [])
+            if len(outputs) == 1:
+                data = outputs[0].get("data", {})
+                output = "".join(data.get("text/plain", ["no output"]))
+                if "text/html" in data:
+                    output = "".join(data["text/html"])
+            else:
+                output = '%d outputs' % len(outputs)
+            result['files'][outbox] = output
+            add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
     else:
+        # format 3: a zip of .py files
         try:
             z = zipfile.ZipFile(io.BytesIO(binary_bytes), 'r')
             for filename in z.namelist():

@@ -42,7 +42,7 @@ def lambda_handler(event, context):
             'response': result
         }
         firehose().put_record(DeliveryStreamName=FIREHOSE,
-                              Record = {'Data': json.dumps(record)})
+                              Record = {'Data': json.dumps(record) + "\n"})
     except Exception as e:
         result = error('Firehose Error: '+str(e) + ' '+traceback.format_exc())
 
