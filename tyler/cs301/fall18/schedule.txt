@@ -308,6 +308,7 @@ Database 1
 =
 Database 2
 * Worksheets
+<a href="materials/lec-32-worksheet.pdf">Link to Worksheet</a><br>
 <b>Due</b>: P9
 
 =
