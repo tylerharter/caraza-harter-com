@@ -19,6 +19,7 @@ GRADER_EMAILS = [
     'stanwar@wisc.edu',
     'uramesh2@wisc.edu',
     'szou28@wisc.edu',
+    'deppeler@wisc.edu',
 ]
 
 s3_cache = None # client
