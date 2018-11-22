@@ -1,6 +1,6 @@
 {
-  "Capital": "Caracas",
-  "Country": "Venezuela",
+  "capital": "Caracas",
+  "country": "Venezuela",
   "latitude": 10.483333333333333,
   "longitude": -66.866667
 }

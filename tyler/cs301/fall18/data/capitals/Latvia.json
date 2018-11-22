@@ -1,6 +1,6 @@
 {
-  "Capital": "Riga",
-  "Country": "Latvia",
+  "capital": "Riga",
+  "country": "Latvia",
   "latitude": 56.95,
   "longitude": 24.1
 }

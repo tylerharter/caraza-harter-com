@@ -1,6 +1,6 @@
 {
-  "Capital": "Valletta",
-  "Country": "Malta",
+  "capital": "Valletta",
+  "country": "Malta",
   "latitude": 35.88333333333333,
   "longitude": 14.5
 }

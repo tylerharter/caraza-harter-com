@@ -1,6 +1,6 @@
 {
-  "Capital": "Washington D.C.",
-  "Country": "United States",
+  "capital": "Washington D.C.",
+  "country": "United States",
   "latitude": 38.883333,
   "longitude": -77.0
 }

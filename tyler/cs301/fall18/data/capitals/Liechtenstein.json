@@ -1,6 +1,6 @@
 {
-  "Capital": "Vaduz",
-  "Country": "Liechtenstein",
+  "capital": "Vaduz",
+  "country": "Liechtenstein",
   "latitude": 47.13333333333333,
   "longitude": 9.516667
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Bogota",
-  "Country": "Colombia",
+  "capital": "Bogota",
+  "country": "Colombia",
   "latitude": 4.6,
   "longitude": -74.083333
 }

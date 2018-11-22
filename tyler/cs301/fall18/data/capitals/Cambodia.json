@@ -1,6 +1,6 @@
 {
-  "Capital": "Phnom Penh",
-  "Country": "Cambodia",
+  "capital": "Phnom Penh",
+  "country": "Cambodia",
   "latitude": 11.55,
   "longitude": 104.91666699999999
 }

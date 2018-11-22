@@ -1,6 +1,6 @@
 {
-  "Capital": "Warsaw",
-  "Country": "Poland",
+  "capital": "Warsaw",
+  "country": "Poland",
   "latitude": 52.25,
   "longitude": 21.0
 }

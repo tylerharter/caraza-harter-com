@@ -1,6 +1,6 @@
 {
-  "Capital": "Colombo",
-  "Country": "Sri Lanka",
+  "capital": "Colombo",
+  "country": "Sri Lanka",
   "latitude": 6.916666666666668,
   "longitude": 79.833333
 }

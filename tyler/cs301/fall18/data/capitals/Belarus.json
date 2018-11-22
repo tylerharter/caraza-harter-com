@@ -1,6 +1,6 @@
 {
-  "Capital": "Minsk",
-  "Country": "Belarus",
+  "capital": "Minsk",
+  "country": "Belarus",
   "latitude": 53.9,
   "longitude": 27.566667
 }

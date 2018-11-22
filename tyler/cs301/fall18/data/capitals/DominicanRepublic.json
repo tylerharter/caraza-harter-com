@@ -1,6 +1,6 @@
 {
-  "Capital": "Santo Domingo",
-  "Country": "Dominican Republic",
+  "capital": "Santo Domingo",
+  "country": "Dominican Republic",
   "latitude": 18.466666666666665,
   "longitude": -69.9
 }

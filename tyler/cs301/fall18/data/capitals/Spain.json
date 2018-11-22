@@ -1,6 +1,6 @@
 {
-  "Capital": "Madrid",
-  "Country": "Spain",
+  "capital": "Madrid",
+  "country": "Spain",
   "latitude": 40.4,
   "longitude": -3.683333
 }

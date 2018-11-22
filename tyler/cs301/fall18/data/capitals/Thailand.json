@@ -1,6 +1,6 @@
 {
-  "Capital": "Bangkok",
-  "Country": "Thailand",
+  "capital": "Bangkok",
+  "country": "Thailand",
   "latitude": 13.75,
   "longitude": 100.516667
 }

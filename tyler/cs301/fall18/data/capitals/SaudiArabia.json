@@ -1,6 +1,6 @@
 {
-  "Capital": "Riyadh",
-  "Country": "Saudi Arabia",
+  "capital": "Riyadh",
+  "country": "Saudi Arabia",
   "latitude": 24.65,
   "longitude": 46.7
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Ankara",
-  "Country": "Turkey",
+  "capital": "Ankara",
+  "country": "Turkey",
   "latitude": 39.93333333333333,
   "longitude": 32.866667
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Sofia",
-  "Country": "Bulgaria",
+  "capital": "Sofia",
+  "country": "Bulgaria",
   "latitude": 42.68333333333333,
   "longitude": 23.316667000000002
 }

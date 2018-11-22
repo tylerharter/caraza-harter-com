@@ -1,6 +1,6 @@
 {
-  "Capital": "Paris",
-  "Country": "France",
+  "capital": "Paris",
+  "country": "France",
   "latitude": 48.86666666666667,
   "longitude": 2.333333
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Kigali",
-  "Country": "Rwanda",
+  "capital": "Kigali",
+  "country": "Rwanda",
   "latitude": -1.95,
   "longitude": 30.05
 }

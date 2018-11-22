@@ -1,6 +1,6 @@
 {
-  "Capital": "Algiers",
-  "Country": "Algeria",
+  "capital": "Algiers",
+  "country": "Algeria",
   "latitude": 36.75,
   "longitude": 3.05
 }

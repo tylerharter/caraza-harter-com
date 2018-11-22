@@ -1,6 +1,6 @@
 {
-  "Capital": "Baghdad",
-  "Country": "Iraq",
+  "capital": "Baghdad",
+  "country": "Iraq",
   "latitude": 33.333333333333336,
   "longitude": 44.4
 }

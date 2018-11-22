@@ -1,6 +1,6 @@
 {
-  "Capital": "Havana",
-  "Country": "Cuba",
+  "capital": "Havana",
+  "country": "Cuba",
   "latitude": 23.11666666666667,
   "longitude": -82.35
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "London",
-  "Country": "United Kingdom",
+  "capital": "London",
+  "country": "United Kingdom",
   "latitude": 51.5,
   "longitude": -0.083333
 }

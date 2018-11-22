@@ -1,6 +1,6 @@
 {
-  "Capital": "Gaborone",
-  "Country": "Botswana",
+  "capital": "Gaborone",
+  "country": "Botswana",
   "latitude": -24.63333333333333,
   "longitude": 25.9
 }

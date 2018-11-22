@@ -1,6 +1,6 @@
 {
-  "Capital": "Tegucigalpa",
-  "Country": "Honduras",
+  "capital": "Tegucigalpa",
+  "country": "Honduras",
   "latitude": 14.1,
   "longitude": -87.216667
 }

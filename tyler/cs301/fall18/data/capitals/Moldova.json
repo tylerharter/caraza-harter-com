@@ -1,6 +1,6 @@
 {
-  "Capital": "Chisinau",
-  "Country": "Moldova",
+  "capital": "Chisinau",
+  "country": "Moldova",
   "latitude": 47.0,
   "longitude": 28.85
 }

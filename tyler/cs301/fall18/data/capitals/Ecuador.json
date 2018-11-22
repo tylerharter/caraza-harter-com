@@ -1,6 +1,6 @@
 {
-  "Capital": "Quito",
-  "Country": "Ecuador",
+  "capital": "Quito",
+  "country": "Ecuador",
   "latitude": -0.21666666666666667,
   "longitude": -78.5
 }

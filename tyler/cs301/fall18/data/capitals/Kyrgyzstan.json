@@ -1,6 +1,6 @@
 {
-  "Capital": "Bishkek",
-  "Country": "Kyrgyzstan",
+  "capital": "Bishkek",
+  "country": "Kyrgyzstan",
   "latitude": 42.86666666666667,
   "longitude": 74.6
 }

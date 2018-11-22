@@ -1,6 +1,6 @@
 {
-  "Capital": "Vilnius",
-  "Country": "Lithuania",
+  "capital": "Vilnius",
+  "country": "Lithuania",
   "latitude": 54.68333333333333,
   "longitude": 25.316667000000002
 }

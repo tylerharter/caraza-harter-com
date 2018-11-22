@@ -1,6 +1,6 @@
 {
-  "Capital": "Papeete",
-  "Country": "French Polynesia",
+  "capital": "Papeete",
+  "country": "French Polynesia",
   "latitude": -17.533333333333335,
   "longitude": -149.566667
 }

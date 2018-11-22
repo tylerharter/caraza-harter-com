@@ -1,6 +1,6 @@
 {
-  "Capital": "Montevideo",
-  "Country": "Uruguay",
+  "capital": "Montevideo",
+  "country": "Uruguay",
   "latitude": -34.85,
   "longitude": -56.166667000000004
 }

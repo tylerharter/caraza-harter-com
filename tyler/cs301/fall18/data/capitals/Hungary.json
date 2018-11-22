@@ -1,6 +1,6 @@
 {
-  "Capital": "Budapest",
-  "Country": "Hungary",
+  "capital": "Budapest",
+  "country": "Hungary",
   "latitude": 47.5,
   "longitude": 19.083333
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Damascus",
-  "Country": "Syria",
+  "capital": "Damascus",
+  "country": "Syria",
   "latitude": 33.5,
   "longitude": 36.3
 }

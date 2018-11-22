@@ -1,6 +1,6 @@
 {
-  "Capital": "Bamako",
-  "Country": "Mali",
+  "capital": "Bamako",
+  "country": "Mali",
   "latitude": 12.65,
   "longitude": -8.0
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Yerevan",
-  "Country": "Armenia",
+  "capital": "Yerevan",
+  "country": "Armenia",
   "latitude": 40.16666666666666,
   "longitude": 44.5
 }

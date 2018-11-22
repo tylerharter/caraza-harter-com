@@ -1,6 +1,6 @@
 {
-  "Capital": "New Delhi",
-  "Country": "India",
+  "capital": "New Delhi",
+  "country": "India",
   "latitude": 28.6,
   "longitude": 77.2
 }

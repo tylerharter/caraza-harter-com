@@ -1,6 +1,6 @@
 {
-  "Capital": "Ouagadougou",
-  "Country": "Burkina Faso",
+  "capital": "Ouagadougou",
+  "country": "Burkina Faso",
   "latitude": 12.366666666666667,
   "longitude": -1.516667
 }

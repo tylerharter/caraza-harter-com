@@ -1,6 +1,6 @@
 {
-  "Capital": "Tehran",
-  "Country": "Iran",
+  "capital": "Tehran",
+  "country": "Iran",
   "latitude": 35.7,
   "longitude": 51.416667
 }

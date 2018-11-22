@@ -1,6 +1,6 @@
 {
-  "Capital": "Wellington",
-  "Country": "New Zealand",
+  "capital": "Wellington",
+  "country": "New Zealand",
   "latitude": -41.3,
   "longitude": 174.783333
 }

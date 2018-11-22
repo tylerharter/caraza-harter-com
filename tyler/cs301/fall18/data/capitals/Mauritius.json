@@ -1,6 +1,6 @@
 {
-  "Capital": "Port Louis",
-  "Country": "Mauritius",
+  "capital": "Port Louis",
+  "country": "Mauritius",
   "latitude": -20.15,
   "longitude": 57.483332999999995
 }

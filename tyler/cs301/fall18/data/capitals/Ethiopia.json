@@ -1,6 +1,6 @@
 {
-  "Capital": "Addis Ababa",
-  "Country": "Ethiopia",
+  "capital": "Addis Ababa",
+  "country": "Ethiopia",
   "latitude": 9.033333333333333,
   "longitude": 38.7
 }

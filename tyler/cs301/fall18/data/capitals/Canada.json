@@ -1,6 +1,6 @@
 {
-  "Capital": "Ottawa",
-  "Country": "Canada",
+  "capital": "Ottawa",
+  "country": "Canada",
   "latitude": 45.41666666666666,
   "longitude": -75.7
 }

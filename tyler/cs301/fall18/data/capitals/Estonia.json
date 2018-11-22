@@ -1,6 +1,6 @@
 {
-  "Capital": "Tallinn",
-  "Country": "Estonia",
+  "capital": "Tallinn",
+  "country": "Estonia",
   "latitude": 59.43333333333333,
   "longitude": 24.716667
 }

@@ -1,6 +1,6 @@
 {
-  "Capital": "Amman",
-  "Country": "Jordan",
+  "capital": "Amman",
+  "country": "Jordan",
   "latitude": 31.95,
   "longitude": 35.933333000000005
 }

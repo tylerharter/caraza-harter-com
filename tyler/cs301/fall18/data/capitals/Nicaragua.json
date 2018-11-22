@@ -1,6 +1,6 @@
 {
-  "Capital": "Managua",
-  "Country": "Nicaragua",
+  "capital": "Managua",
+  "country": "Nicaragua",
   "latitude": 12.133333333333333,
   "longitude": -86.25
 }

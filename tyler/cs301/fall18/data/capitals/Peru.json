@@ -1,6 +1,6 @@
 {
-  "Capital": "Lima",
-  "Country": "Peru",
+  "capital": "Lima",
+  "country": "Peru",
   "latitude": -12.05,
   "longitude": -77.05
 }

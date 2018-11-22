@@ -1,6 +1,6 @@
 {
-  "Capital": "Rome",
-  "Country": "Italy",
+  "capital": "Rome",
+  "country": "Italy",
   "latitude": 41.9,
   "longitude": 12.483333
 }

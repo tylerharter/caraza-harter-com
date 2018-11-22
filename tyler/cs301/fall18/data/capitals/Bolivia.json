@@ -1,6 +1,6 @@
 {
-  "Capital": "La Paz",
-  "Country": "Bolivia",
+  "capital": "La Paz",
+  "country": "Bolivia",
   "latitude": -16.5,
   "longitude": -68.15
 }

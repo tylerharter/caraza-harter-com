@@ -1,6 +1,6 @@
 {
-  "Capital": "Tashkent",
-  "Country": "Uzbekistan",
+  "capital": "Tashkent",
+  "country": "Uzbekistan",
   "latitude": 41.31666666666667,
   "longitude": 69.25
 }

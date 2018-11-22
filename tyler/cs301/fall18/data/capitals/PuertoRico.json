@@ -1,6 +1,6 @@
 {
-  "Capital": "San Juan",
-  "Country": "Puerto Rico",
+  "capital": "San Juan",
+  "country": "Puerto Rico",
   "latitude": 18.466666666666665,
   "longitude": -66.116667
 }
