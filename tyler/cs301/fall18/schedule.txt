@@ -319,6 +319,7 @@ Thanksgiving Break
 Database 3
 * aggregates
 * group by
+<a href="materials/lec-33.pdf">Link to Slides</a><br>
 
 =
 Plotting 1
