@@ -317,9 +317,8 @@ Thanksgiving Break
 
 =
 Database 3
-* inserts
-* group by
 * aggregates
+* group by
 
 =
 Plotting 1
