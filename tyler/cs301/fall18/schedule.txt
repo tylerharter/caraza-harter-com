@@ -323,9 +323,12 @@ Database 3
 
 =
 Plotting 1
-* matplotlib
-* Line, Bar, and Scatter Plots
-* Axes and Annotations
+* pie charts
+* scatter plots
+* plot design
+* AxesSublot
+<b>Reading</b>: <a href="materials/code/lec-34/matplotlib-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-34/matplotlib-intro.ipynb">Notebook</a>)<br>
 
 =
 Plotting 2
