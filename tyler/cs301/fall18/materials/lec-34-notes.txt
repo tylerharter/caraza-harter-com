@@ -1,0 +1,41 @@
+========================================
+PART 1
+========================================
+
+matplotlib, similar to matplot
+
+matplotlib integrates with iPython
+
+%matplotlib inline
+
+Pandas DataFrames and Series integrate with matplotlib
+
+pie plots
+ - >1, <1
+ - size
+
+axes objects
+
+scatter plots
+ - x, y, s, c
+
+========================================
+PART 2
+========================================
+
+line plot
+
+bar, barh
+
+axes
+ - ticks
+ - custom range
+ - log scale
+
+legends
+
+========================================
+PART 3
+========================================
+
+datetime

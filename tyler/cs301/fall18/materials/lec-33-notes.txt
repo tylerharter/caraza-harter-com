@@ -1,0 +1,14 @@
+two functions:
+ - group(rows, column)
+ - average(rows, column)
+
+df.iterrows()
+
+
+========================================
+
+MOTIVATION
+
+consider some questions
+
+pd.read_sql("select * from movies", c)
