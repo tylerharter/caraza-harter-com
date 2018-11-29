@@ -268,16 +268,22 @@ NO CLASS - Happy Thanksgiving! :)
 
 =
 Databases
-* schemas/types
+* tables
+* SQLite
 * queries
 * where
-* SQLite
-* Querying from Pandas
+* order by
+* limit
 <b>Lecture Slides: </b><a href="materials/lec-31.pdf">Databases</a><br>
 
 =
 More Databases
-
+* Querying from Python
+* Querying from Pandas
+* aggregates
+* group by
+* having
+<a href="materials/lec-33.pdf">Link to Slides</a><br>
 
 =
 Plotting
