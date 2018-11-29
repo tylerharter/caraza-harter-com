@@ -283,7 +283,7 @@ More Databases
 * aggregates
 * group by
 * having
-<a href="materials/lec-33.pdf">Link to Slides</a><br>
+<b>Lecture Slides: </b><a href="materials/lec-33.pdf">Advanced Databases</a><br>
 
 =
 Plotting
