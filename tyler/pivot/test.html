@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script>
+    <script>     
       window.fbAsyncInit = function() {
       FB.init({
       appId      : '2043509389028793',
@@ -20,10 +20,22 @@
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+
+      function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+      console.log(response.authResponse.accessToken);
+      }
+      });
+      }
     </script>
   </head>
 
   <body>
     Hello.
+    <fb:login-button
+       scope="public_profile,email"
+       onlogin="checkLoginState();">
+    </fb:login-button>
   </body>
 </html>

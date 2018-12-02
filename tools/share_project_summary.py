@@ -16,13 +16,16 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>This is your project summary through P7.  After the last
-    update, we handled many corrections.  They were almost all related
-    to partner names not being indicated in the comments or us
-    forgetting to record extensions properly.  If you've reached out
-    about something that you still don't see fixed, we apologize.
-    Please follow up with us again (feel free to directly email
-    tylerharter@gmail.com).</p>
+    <p>This is your project summary through P9.  Please check this
+    carefully as we're approaching the end of the semester.  If you
+    see something late that you don't think should be late, please
+    email the reviewer for the project in question and ask them to
+    record an extension if appropriate (e.g., if you were asked to
+    resubmit after making some changes).</p>
+
+    <p>If you are getting 0's because you are genuinely out of late
+    days, please email your instructor (Tyler or Gerald) to discuss
+    soon.</p>
 
     <p>Here is your project summary:</p>
     """

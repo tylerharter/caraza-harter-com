@@ -29,6 +29,7 @@ def main():
 
     with open('out.html', 'w') as f:
         f.write(html.format(body=body))
+    print('summary in out.html')
 
 if __name__ == '__main__':
     main()
