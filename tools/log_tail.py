@@ -27,7 +27,7 @@ def main():
     prefix = 'logs/kinesis%d/%02d/%02d' % (now.year, now.month, now.day)
     paths = s3_all_keys(prefix)
     paths.sort()
-    for path in paths:
+    for path in paths[-10:]:
         response = s3.get_object(Bucket=BUCKET, Key=path)
         g = gzip.GzipFile(fileobj=response['Body'])
         print(g.read())

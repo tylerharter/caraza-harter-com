@@ -37,7 +37,7 @@ def lambda_handler(event, context):
 
     # try to log the event
     try:
-        record = log_record(event, result)
+        record = log_record(event, result, user)
         firehose().put_record(DeliveryStreamName=FIREHOSE,
                               Record = {'Data': json.dumps(record) + "\n"})
     except Exception as e:
@@ -46,10 +46,11 @@ def lambda_handler(event, context):
     return result
 
 
-def log_record(event, response):
+def log_record(event, response, user):
     record = {
         'request': copy.deepcopy(event),
-        'response': copy.deepcopy(response)
+        'response': copy.deepcopy(response),
+        'user_id': user.get('sub', None) if not user is None else None
     }
 
     # we don't want traces to be too lange.
