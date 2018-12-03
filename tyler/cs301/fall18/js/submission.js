@@ -3,7 +3,7 @@
 var submission = {};
 
 (function() {
-  var max_file_kb = 40 // 40KB
+  var max_file_kb = 1024 // 1MB
   // for upload package
   var filename = null
   var payload = null
