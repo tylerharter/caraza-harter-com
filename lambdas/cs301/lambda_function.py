@@ -7,6 +7,8 @@ from projects import *
 from roster import *
 
 def lambda_handler(event, context):
+    ts0 = datetime.datetime.utcnow().timestamp()
+
     # identify user
     try:
         user = get_user(event)
@@ -36,8 +38,9 @@ def lambda_handler(event, context):
         result = error('no route for '+event['fn'])
 
     # try to log the event
+    ts1 = datetime.datetime.utcnow().timestamp()
     try:
-        record = log_record(event, result, user)
+        record = log_record(event, result, user, ts0, ts1)
         firehose().put_record(DeliveryStreamName=FIREHOSE,
                               Record = {'Data': json.dumps(record) + "\n"})
     except Exception as e:
@@ -46,11 +49,13 @@ def lambda_handler(event, context):
     return result
 
 
-def log_record(event, response, user):
+def log_record(event, response, user, ts0, ts1):
     record = {
         'request': copy.deepcopy(event),
         'response': copy.deepcopy(response),
-        'user_id': user.get('sub', None) if not user is None else None
+        'user_id': user.get('sub', None) if not user is None else None,
+        'ts0': ts0,
+        'ts1': ts1,
     }
 
     # we don't want traces to be too lange.
