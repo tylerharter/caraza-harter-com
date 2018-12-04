@@ -346,6 +346,10 @@ Plotting 3
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-36/axes.ipynb">Notebook</a>)<br>
 
 =
+Plotting
+* Catchup
+
+=
 Numpy
 * Arrays
 * Matrix Multiplication
@@ -362,8 +366,5 @@ Simulation
 =
 Hypothesis Testing
 * Simulated p-values
-<b>Watch:</b> <a href="https://www.khanacademy.org/math/ap-statistics/tests-significance-ap/idea-significance-tests/v/estimating-p-value-from-simulation">Video</a>
-
-=
-Review
 <b>Due</b>: P10 (final project)
+
