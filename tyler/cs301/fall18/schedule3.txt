@@ -275,6 +275,7 @@ Databases
 * order by
 * limit
 <b>Lecture Slides: </b><a href="materials/lec-31.pdf">Databases</a><br>
+<b>Bus database:</b><a href="materials/code/lec-31/bus.db"></a>
 
 =
 More Databases
@@ -284,9 +285,16 @@ More Databases
 * group by
 * having
 <b>Lecture Slides: </b><a href="materials/lec-33.pdf">Advanced Databases</a><br>
+<b>Movies database:</b><a href="materials/code/lec-33/movies.db"></a>
 
 =
 Plotting
+* pie charts
+* scatter plots
+* plot design
+* AxesSublot
+<b>Reading</b>: <a href="materials/code/lec-34/matplotlib-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-34/matplotlib-intro.ipynb">Notebook</a>)<br>
 
 =
 More Plotting
