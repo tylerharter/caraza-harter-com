@@ -298,6 +298,10 @@ Plotting
 
 =
 More Plotting
+* line plots
+* bar plots
+<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-35/line-and-bar.ipynb">Notebook</a>)<br>
 
 =
 Review?
