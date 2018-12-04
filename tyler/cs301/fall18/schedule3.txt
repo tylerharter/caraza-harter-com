@@ -275,7 +275,7 @@ Databases
 * order by
 * limit
 <b>Lecture Slides: </b><a href="materials/lec-31.pdf">Databases</a><br>
-<b>Bus database:</b><a href="materials/code/lec-31/bus.db"></a>
+<b>Bus database:</b><a href="materials/code/lec-31/bus.db">bus.db</a>
 
 =
 More Databases
@@ -285,7 +285,7 @@ More Databases
 * group by
 * having
 <b>Lecture Slides: </b><a href="materials/lec-33.pdf">Advanced Databases</a><br>
-<b>Movies database:</b><a href="materials/code/lec-33/movies.db"></a>
+<b>Movies database:</b><a href="materials/code/lec-33/movies.db">movies.db</a>
 
 =
 Plotting
