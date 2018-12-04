@@ -28,7 +28,7 @@ PROJECT_DUE_UTC = {
     'p10': datetime.datetime.strptime("12/13/18 7:00", DUE_DATE_FORMAT),
 }
 
-MAX_SIZE_KB = 40
+MAX_SIZE_KB = 1024
 
 ########################################
 # lookup S3 paths for various objects

@@ -332,13 +332,18 @@ Plotting 1
 
 =
 Plotting 2
-* Interactive Plotting
-* iPython
+* line plots
+* bar plots
+<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-35/line-and-bar.ipynb">Notebook</a>)<br>
 
 =
 Plotting 3
-* Date/Time Types
-* Plotting time-series data
+* axes
+* adjacent plots
+* design decisions
+<b>Reading</b>: <a href="materials/code/lec-36/axes.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-36/axes.ipynb">Notebook</a>)<br>
 
 =
 Numpy

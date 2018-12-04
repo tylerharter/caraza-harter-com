@@ -1,6 +1,9 @@
 email_announcement.py:
     send emails from a JSON file
 
+email_grep.py:
+    search emails in JSON file for a pattern, and summarize matches in HTML file
+
 get_google_id.py
     translate net_id to google id
 
@@ -20,7 +23,7 @@ project_summary.py
       - feed into notebook to update Canvas
       - generate stats emails and blobs for students
 
-upload_project_summary.py
+share_project_summary.py
     uses ./grades/* files to send student emails
     and populate progress snapshot
 
@@ -36,3 +39,12 @@ fetch_projects.py:
 
 ta.py
     test TA permissions
+
+========================================
+
+Common workflow:
+1. download all from S3 with s3_backup.py
+2. compute grades with project_summary.py
+3. generate status emails with upload_project_summary.py
+4. see how many people are out of time with email_grep.py
+5. send emails with email_announcement.py
