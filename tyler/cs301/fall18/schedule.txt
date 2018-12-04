@@ -350,11 +350,10 @@ Plotting
 * Catchup
 
 =
-Numpy
-* Arrays
-* Matrix Multiplication
-* Equation Solving
-* Least Squares Fitting
+Regression
+* numpy
+* least-squares method
+* fitline
 
 =
 Simulation
