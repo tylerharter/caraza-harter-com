@@ -352,8 +352,9 @@ Plotting
 =
 Regression
 * numpy
+* fit line
 * least-squares method
-* fitline
+<a href="materials/lec-37.pdf">Link to Slides</a><br>
 
 =
 Simulation
