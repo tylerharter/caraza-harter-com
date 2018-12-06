@@ -288,21 +288,28 @@ More Databases
 <b>Movies database:</b><a href="materials/code/lec-33/movies.db">movies.db</a>
 
 =
-Plotting
+Plotting 1
 * pie charts
 * scatter plots
 * plot design
-* AxesSublot
-<b>Reading</b>: <a href="materials/code/lec-34/matplotlib-intro.html">CS 301 Notes</a>
+<b>Reading</b>: <a href="materials/code/lec-34/matplotlib-intro.html">Pie chart and scatter plots</a>
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-34/matplotlib-intro.ipynb">Notebook</a>)<br>
 
 =
-More Plotting
+Plotting 2
+* Axes subplot
 * line plots
 * bar plots
-<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">CS 301 Notes</a>
-(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-35/line-and-bar.ipynb">Notebook</a>)<br>
+<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">Line and bar graphs</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials3/code/plotting/line-and-bar.ipynb">Notebook</a>)<br>
+<b>Fire Hydrants CSV:</b><a href="materials3/code/plotting/Fire_Hydrants.csv">Fire_Hydrants.csv</a>
 
 =
-Review?
+Plotting 3
+* axes
+* adjacent plots
+* design decisions
+<b>Reading</b>: <a href="materials/code/lec-36/axes.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-36/axes.ipynb">Notebook</a>)<br>
+
 <font color="red"><b>Due (Wed)</b>: Project 10 (Final Project)</font>
