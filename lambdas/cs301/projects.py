@@ -128,6 +128,8 @@ def extract_project_files(submission_id, filename, payload):
             if exec_count == None:
                 exec_count = ' '
 
+            # we can't use ipython execution order as the ID, because some cells
+            # might not have been run (so they won't have an execution order)
             inbox = 'in-%d' % (i + 1000)
             outbox = 'out-%d' % (i + 1000)
 
@@ -189,12 +191,15 @@ def get_code_analysis(project_files):
 
     # comment on number of source files
     code_file_count = len([fn for fn in pf['files'].keys() if fn.endswith('.py')])
+    nb_cell_count = len([fn for fn in pf['files'].keys() if fn.startswith('in-')])
     comments.append('there were %d .py files submitted' % code_file_count)
+    comments.append('there were %d notebook cells' % nb_cell_count)
 
     # extract partner
     partners = set()
     for filename in pf['files'].keys():
-        if not filename.endswith('.py'):
+        # look in .py files and ipython notebook cells (which are innapropriately named files here)
+        if not (filename.endswith('.py') or filename.startswith('in-')):
             continue
         code = pf['files'][filename]
         for line in code.split('\n'):
