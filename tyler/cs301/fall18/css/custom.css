@@ -82,3 +82,10 @@ pre.example {
     padding: 8pt;
     border-left: 4px solid black;
 }
+
+div.nb_cell {
+    background-color: white;
+    padding: 4pt;
+    border: 2px solid red;
+    overflow: auto;
+}
