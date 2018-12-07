@@ -1,4 +1,4 @@
-import json, urllib, boto3, botocore, base64, datetime, time
+import json, urllib, boto3, botocore, base64, datetime, time, html
 import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
@@ -72,6 +72,29 @@ def normalize_py_bytes(b):
     return code
 
 
+def nb_cell_output_html(cell):
+    '''Convert all ipython cell outputs to HTML'''
+
+    outputs = cell.get('outputs', [])
+
+    parts = []
+    for output in outputs:
+        data = output.get("data", {})
+        png = data.get("image/png", None)
+        web = data.get("text/html", None)
+        plain = data.get("text/plain", None)
+        if png:
+            parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
+        elif web:
+            parts.append("".join(web))
+        elif plain:
+            parts.append(html.escape("".join(plain)))
+        else:
+            parts.append(html.escape("<" + ",".join(map(str,data.keys()))) + ">")
+
+    return '\n<br>\n'.join(parts)
+
+
 def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
     entries.  There will be one entry if it's a .py, and potentially
@@ -105,22 +128,18 @@ def extract_project_files(submission_id, filename, payload):
             if exec_count == None:
                 exec_count = ' '
 
-            # in cell
             inbox = 'in-%d' % (i + 1000)
+            outbox = 'out-%d' % (i + 1000)
+
+            # in cell
             result['files'][inbox] = ''.join(cell['source'])
+            if result['files'][inbox] == '':
+                result['files'][inbox] = '\n'
             add_file_meta(inbox, 'In [%s]'%str(exec_count), order=i, content_type='python')
 
             # out cell
-            outbox = 'out-%d' % (i + 1000)
-            outputs = cell.get('outputs', [])
-            output = '%d outputs' % len(outputs)
-            if len(outputs) == 1:
-                data = outputs[0].get("data", {})
-                output = "".join(data.get("text/plain", ["no output"]))
-                if "text/html" in data:
-                    output = "".join(data["text/html"])
-            if len(outputs) >= 1:
-                result['files'][outbox] = output
+            if len(cell.get('outputs', [])) > 0:
+                result['files'][outbox] = nb_cell_output_html(cell)
                 add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
     else:
         # format 3: a zip of .py files
