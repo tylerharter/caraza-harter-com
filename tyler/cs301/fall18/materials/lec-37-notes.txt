@@ -1,0 +1,6 @@
+regression history: Galton
+
+least-squares method, visually
+
+numpy has least squares!
+ - overview of relationship between pandas, numpy, etc
