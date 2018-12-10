@@ -357,14 +357,13 @@ Regression
 <a href="materials/lec-37.pdf">Link to Slides</a><br>
 
 =
-Simulation
-* Randomness
-* Seeding
-* Distributions
-* Monte Carlo
+Randomness
+* Debugging
+* Simulation
+* Significance
+<a href="materials/lec-38.pdf">Link to Slides</a><br>
 
 =
-Hypothesis Testing
-* Simulated p-values
+Review/Catchup
 <b>Due</b>: P10 (final project)
 
