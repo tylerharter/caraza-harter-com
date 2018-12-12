@@ -365,5 +365,6 @@ Randomness
 
 =
 Review/Catchup
-<b>Due</b>: P10 (final project)
-
+* Bring Questions
+<a href="materials/lec-39-worksheet.pdf">Link to Worksheet</a><br>
+<b>Due</b>: P10 (final project)<br>
