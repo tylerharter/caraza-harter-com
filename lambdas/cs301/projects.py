@@ -1,4 +1,4 @@
-import json, urllib, boto3, botocore, base64, datetime, time
+import json, urllib, boto3, botocore, base64, datetime, time, html
 import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
@@ -72,6 +72,29 @@ def normalize_py_bytes(b):
     return code
 
 
+def nb_cell_output_html(cell):
+    '''Convert all ipython cell outputs to HTML'''
+
+    outputs = cell.get('outputs', [])
+
+    parts = []
+    for output in outputs:
+        data = output.get("data", {})
+        png = data.get("image/png", None)
+        web = data.get("text/html", None)
+        plain = data.get("text/plain", None)
+        if png:
+            parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
+        elif web:
+            parts.append("".join(web))
+        elif plain:
+            parts.append(html.escape("".join(plain)))
+        else:
+            parts.append(html.escape("<" + ",".join(map(str,data.keys()))) + ">")
+
+    return '\n<br>\n'.join(parts)
+
+
 def extract_project_files(submission_id, filename, payload):
     '''take a b64 payload, and extract all the files to different dict
     entries.  There will be one entry if it's a .py, and potentially
@@ -105,22 +128,20 @@ def extract_project_files(submission_id, filename, payload):
             if exec_count == None:
                 exec_count = ' '
 
-            # in cell
+            # we can't use ipython execution order as the ID, because some cells
+            # might not have been run (so they won't have an execution order)
             inbox = 'in-%d' % (i + 1000)
+            outbox = 'out-%d' % (i + 1000)
+
+            # in cell
             result['files'][inbox] = ''.join(cell['source'])
+            if result['files'][inbox] == '':
+                result['files'][inbox] = '\n'
             add_file_meta(inbox, 'In [%s]'%str(exec_count), order=i, content_type='python')
 
             # out cell
-            outbox = 'out-%d' % (i + 1000)
-            outputs = cell.get('outputs', [])
-            output = '%d outputs' % len(outputs)
-            if len(outputs) == 1:
-                data = outputs[0].get("data", {})
-                output = "".join(data.get("text/plain", ["no output"]))
-                if "text/html" in data:
-                    output = "".join(data["text/html"])
-            if len(outputs) >= 1:
-                result['files'][outbox] = output
+            if len(cell.get('outputs', [])) > 0:
+                result['files'][outbox] = nb_cell_output_html(cell)
                 add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
     else:
         # format 3: a zip of .py files
@@ -170,12 +191,15 @@ def get_code_analysis(project_files):
 
     # comment on number of source files
     code_file_count = len([fn for fn in pf['files'].keys() if fn.endswith('.py')])
+    nb_cell_count = len([fn for fn in pf['files'].keys() if fn.startswith('in-')])
     comments.append('there were %d .py files submitted' % code_file_count)
+    comments.append('there were %d notebook cells' % nb_cell_count)
 
     # extract partner
     partners = set()
     for filename in pf['files'].keys():
-        if not filename.endswith('.py'):
+        # look in .py files and ipython notebook cells (which are innapropriately named files here)
+        if not (filename.endswith('.py') or filename.startswith('in-')):
             continue
         code = pf['files'][filename]
         for line in code.split('\n'):

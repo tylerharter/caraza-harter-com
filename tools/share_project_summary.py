@@ -16,16 +16,25 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>This is your project summary through P9.  Please check this
-    carefully as we're approaching the end of the semester.  If you
-    see something late that you don't think should be late, please
-    email the reviewer for the project in question and ask them to
-    record an extension if appropriate (e.g., if you were asked to
-    resubmit after making some changes).</p>
+    <p>If anything looks wrong through P9, please let me
+    (tylerharter@gmail.com) know by this <b>Wed, Dec 12th</b>.
+    Otherwise, we'll assume you agree with the below summary when we
+    compute final grades.</p>
 
-    <p>If you are getting 0's because you are genuinely out of late
-    days, please email your instructor (Tyler or Gerald) to discuss
-    soon.</p>
+    <p>There are MANY students with zeros due to improperly formatted
+    Net IDs (directions here:
+    https://tyler.caraza-harter.com/cs301/fall18/projects.html) as
+    well as MANY zeros due to resubmissions where an extension wasn't
+    recorded (you need to ask your reviewer to submit a deadline
+    override if you were given permission to submit a fix).  There are
+    also a few cases where people submitted as the wrong project
+    (e.g., submitting P9 as P8), leading to getting zeros on both
+    projects.</p>
+
+    <p>I really don't want anybody to lose points over anything silly
+    (like the above examples), but the semester is almost over, so now
+    is the time to clear anything up.  So please don't wait to speak
+    up.</p>
 
     <p>Here is your project summary:</p>
     """

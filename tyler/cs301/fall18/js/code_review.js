@@ -248,7 +248,7 @@ var code_review = {};
 
     // create a box for each code file
     for (var filename in cr.project.files) {
-      html += ('<h3>'+fileConf(filename).display_name+'</h3>')
+      html += ('<h4 class="mt-3">'+fileConf(filename).display_name+'</h4>')
       html += ('<div class=html_code data-filename="'+filename+'">')
       html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'"></pre>')
       html += ('</div>')
@@ -259,7 +259,9 @@ var code_review = {};
     for (var filename in cr.project.files) {
       if (fileConf(filename).content_type == "html") {
         var element = $("div[data-filename='"+filename+"'].html_code")
-        element.html(cr.project.files[filename])
+        element.html('<div class="nb_cell">' +
+                     cr.project.files[filename] + 
+                     '</div>')
       }
 
       var preElement = $("pre[data-filename='"+filename+"'].lang-py")
