@@ -159,13 +159,15 @@ class Snapshot:
             comment_count = self.get_comment_count(details.get('cr', {}))
             filename = details.get('submission', {}).get('filename', None)
             net_id = details.get('submission', {}).get('partner_netid', None)
+
             if test_score == None or net_id == None or not net_id in net_ids:
                 continue
+
             if net_id in rows:
                 rows[net_id]['submissions'] += 1
-
-            add_row(net_id, filename, test_score, ta_deduction,
-                    late_days, comment_count, submitter=False)
+            else:
+                add_row(net_id, filename, test_score, ta_deduction,
+                        late_days, comment_count, submitter=False)
 
             # associate students with each other
             rows[net_id]['partner'] = student['net_id']
