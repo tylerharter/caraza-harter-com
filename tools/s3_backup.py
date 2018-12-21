@@ -36,8 +36,6 @@ def download_chunk(paths):
         for path in paths:
             print('File {}'.format(path))
             local = 'snapshot/' + path
-            if os.path.exists(local):
-                continue
             response = s3.get_object(Bucket=BUCKET, Key=path)
             os.makedirs(os.path.dirname(local), exist_ok=True)
             with open(local, 'wb') as f:
@@ -47,8 +45,12 @@ def download_chunk(paths):
     return None
 
 def main():
+    prefix = ""
+    if len(sys.argv) == 2:
+        prefix = sys.argv[1]
+
     print('lookup keys')
-    paths = s3_all_keys("")
+    paths = s3_all_keys(prefix)
     print('chunk keys')
     paths = chunks(paths)
 

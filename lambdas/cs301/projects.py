@@ -216,11 +216,13 @@ def get_code_analysis(project_files):
         if not (filename.endswith('.py') or filename.startswith('in-')):
             continue
         code = pf['files'][filename]
+
         for line in code.split('\n'):
             line = line.strip().lower()
             if not line.startswith('#'):
                 continue
             parts = list(map(str.strip, line[1:].split(':')))
+
             if len(parts) == 2 and parts[0] == 'partner-login':
                 partners.add(parts[1])
     if len(partners) == 0:
@@ -505,6 +507,45 @@ def put_code_review(user, event):
                     ContentType='text/json',
     )
     return (200, 'uploaded review')
+
+
+@route
+@admin
+def resync_partner_id(user, event):
+    """This is a consistency tool.  If somehow partner wasn't recorded
+    upon submission, we can try again now.  Until there is a user
+    interface, you can paste the following in the JS console:
+
+    common.callLambda({"fn":"resync_partner_id", "project_id":"????", "submitter_user_id":"????"}, function(d) {console.log(d)}, function(d) {console.log(d)})
+    """
+
+    submitter_user_id = event['submitter_user_id']
+    project_id = event['project_id']
+
+    # update partner.json
+    project_files = load_project_from_s3(submitter_user_id, project_id)
+    analysis = get_code_analysis(project_files)
+    partner = {'netid': analysis.get('partner', None)}
+    path = partner_path(submitter_user_id, project_id)
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(partner), 'utf-8'),
+                    ContentType='text/json')
+
+    # update curr.json
+    response = s3().get_object(Bucket=BUCKET, Key=project_path(submitter_user_id, project_id))
+    submission = json.loads(str(response['Body'].read(), 'utf-8'))
+
+    submission_id = '%.2f' % time.time()
+    submission['partner_netid'] = partner['netid']
+    for path in [project_path(submitter_user_id, project_id),
+                 project_path(submitter_user_id, project_id, submission_id)]:
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(submission), 'utf-8'),
+                        ContentType='text/json')
+
+    return (200, json.dumps(partner))
 
 
 @route
