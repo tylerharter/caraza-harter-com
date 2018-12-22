@@ -108,7 +108,7 @@ class Snapshot:
             # TODO: in spring semester of 2018, start counting late days for first three projects
             # we decided not to count these late this semester because there were too many
             # resubmissions
-            if project_id in ('p1','p2','p3'):
+            if project_id in ('p1', 'p2', 'p3', 'p10'):
                 late_days = 0
             assert(datetime.datetime.now().year == 2018)
 
@@ -150,10 +150,11 @@ class Snapshot:
             net_id = student['net_id']
             if test_score == None:
                 continue
-
+           
             add_row(net_id, filename, test_score, ta_deduction,
                     late_days, comment_count, submitter=True)
             rows[net_id]['submissions'] = 1
+
 
         # PASS 2: students with a partner who submitted
         for student in self.roster:
@@ -179,6 +180,7 @@ class Snapshot:
             else:
                 add_row(net_id, filename, test_score, ta_deduction,
                         late_days, comment_count, submitter=False)
+                rows[net_id]['submissions'] = 1
 
             # associate students with each other
             rows[net_id]['partner'] = student['net_id']

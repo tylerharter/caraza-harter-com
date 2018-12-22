@@ -4,8 +4,7 @@ from collections import defaultdict as ddict
 BUCKET = 'caraza-harter-cs301'
 s3 = boto3.client('s3')
 
-TEST_NET_IDS = None
-#TEST_NET_IDS = ['tharter']
+TEST_NET_IDS = []
 
 LATE_DAY_ALLOCATION = 10
 
@@ -70,7 +69,7 @@ def main():
                 projects[row['net_id']].append(row)
 
     # status by net_id
-    net_ids = TEST_NET_IDS if TEST_NET_IDS != None else projects.keys()
+    net_ids = TEST_NET_IDS if len(TEST_NET_IDS) > 0 else projects.keys()
     emails = []
     now = datetime.datetime.now()
 
