@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Tyler R. Caraza-Harter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="home.html">CS301: Data Programming</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="home.html">Home</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Schedule
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		<a class="dropdown-item" href="schedule.html">Lecture Schedule</a>
+	      </div>
+	    </li>
+
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		<a class="dropdown-item" href="resources.html">Primary Resources</a>
+                <a class="dropdown-item" href="slides.html">Slides (Sections 1+2)</a>
+                <a class="dropdown-item" href="extra.html">Related Readings</a>
+                <a class="dropdown-item" href="videos.html">Videos</a>
+                <a class="dropdown-item" href="people.html">People</a>
+                <a class="dropdown-item" href="labs.html">Lab</a>
+	      </div>
+	    </li>
+
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Projects
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="datasets.html">Datasets</a>
+		<a class="dropdown-item" href="projects.html">Specifications</a>
+		<a class="dropdown-item" href="submission.html">Submission</a>
+                <a class="dropdown-item" href="reviewer.html">TA Only</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/wisc/fall2018/cs301/home" target="_blank">Piazza (Discussion)</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/120690/grades" target="_blank">Canvas (Grades)</a>
+                <a class="dropdown-item" href="https://goo.gl/forms/2w7JujJrg9cKGtYj2" target="_blank">Feedback Form (Tyler)</a>
+                <a class="dropdown-item" href="http://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Lecture Schedule</h1>
+<div class="alert alert-primary my-5 week">Part 1: Basic Programming</div>
+<h3 class="my-3 border-bottom border-top">Week 1</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>:  (Jan 21)</h5>
+Martin Luther King, Jr. Day!<br>
+<b>No Class</b>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Introduction (Jan 23)</h5>
+<ul class="compact-ul">
+<li> Class Overview
+<li> Hardware
+<li> Software
+</ul>
+<a href="materials/lec-01.pdf">Link to Slides</a>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: The Terminal (Jan 25)</h5>
+<ul class="compact-ul">
+<li> Terminal Emulatation
+<li> Shells
+<li> Navigation
+<li> Program Execution
+</ul>
+<a href="materials/lec-02.pdf">Link to Slides</a>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 2</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Pseudocode (Jan 28)</h5>
+<ul class="compact-ul">
+<li> Flow of Execution
+<li> State
+</ul>
+<a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
+<b>No Slides</b>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Programming (Jan 30)</h5>
+<ul class="compact-ul">
+<li> Syntax+Parsing
+<li> Values+Types
+<li> Calculation+Operators
+<li> Boolean Logic
+<li> Interactive vs. Script Mode, print
+</ul>
+<a href="materials/lec-05.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 1
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Vars and Exprs (Feb 1)</h5>
+<ul class="compact-ul">
+<li> Naming Rules
+<li> Assignment
+<li> Types of errors
+<li> Comments
+</ul>
+<a href="materials/lec-06.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 2
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 3</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Using Functions (Feb 4)</h5>
+
+<ul class="compact-ul">
+<li> Functions
+<li> input, str funcs, float funcs
+<li> Arguments, Return Values
+<li> Importing Modules
+<li> Math Module
+</ul>
+
+<a href="materials/lec-07.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
+<b>Due</b>: P1
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Creating Functions (Feb 6)</h5>
+
+<ul class="compact-ul">
+<li> Positional Params
+<li> Keyword Params
+<li> Return Values
+</ul>
+
+<b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
+<b>Read</b>: <a href="materials/lec-08-extra.pdf">Creating Fruitful Functions</a><br>
+<a href="materials/lec-08.pdf">Link to Slides</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Function Scope (Feb 8)</h5>
+
+<ul class="compact-ul">
+<li> Local vs. Global
+<li> Argument Passing
+<li> Frames
+<li> Stack Diagrams
+</ul>
+
+<b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
+<a href="materials/lec-09.pdf">Link to Slides</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 4</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Conditions 1 (Feb 11)</h5>
+
+<ul class="compact-ul">
+<li> Boolean Logic
+<li> if,elif,else
+<li> Modular arithmetic
+</ul>
+
+<a href="materials/lec-10.pdf">Link to Slides</a><br>
+<a href="materials/lec-10-worksheet.pdf">Link to Worksheet</a><br>
+<b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
+and Ch 6 ("Return Values" to "Boolean Functions")<br>
+<b>Optional</b>: Downey Ch 4<br>
+<b>Due</b>: P2
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Conditions 2 (Feb 13)</h5>
+<ul class="compact-ul">
+<li> Nesting
+</ul>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Iteration 1 (Feb 15)</h5>
+<ul class="compact-ul">
+<li> Reassignment
+<li> While Loop
+<li> Infinite Iteration
+</ul>
+
+<a href="materials/lec-11.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 7<br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 5</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Iteration 2 (Feb 18)</h5>
+<ul class="compact-ul">
+<li> Break
+<li> Continue
+</ul>
+<a href="materials/lec-12.pdf">Link to Slides</a><br>
+<a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Review Day (Feb 20)</h5>
+<b>Due</b>: P3
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Strings (Feb 22)</h5>
+
+<ul class="compact-ul">
+<li> Indexing/Slicing
+<li> Sequences
+<li> For Loop, range()
+<li> Searching
+<li> Comparison
+<li> String formatting
+</ul>
+
+<a href="materials/lec-13.pdf">Link to Slides</a><br>
+<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>
+<b>Read</b>: Downey Ch 8<br>
+<b>Optional</b>: Downey Ch 9<br>
+
+
+
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 2: Data Structures</div>
+<h3 class="my-3 border-bottom border-top">Week 6</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Lists (Feb 25)</h5>
+<ul class="compact-ul">
+<li> Sequence, Like a String
+<li> Indexing, Slicing
+<li> sys.argv, dir()
+<li> Mutable vs. Immutable
+<li> List Methods
+</ul>
+
+<a href="materials/lec-14.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 10<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: CSV Tables (Feb 27)</h5>
+<ul class="compact-ul">
+<li> Comparison with Spreadsheets
+<li> Format
+<li> Headers
+<li> Lists of lists
+</ul>
+<a href="materials/lec-15.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a> (through "Reading Data from Reader Objects in a for Loop")<br>
+<b>Due</b>: P4
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: List Practice (Mar 1)</h5>
+<ul class="compact-ul">
+<li> Coding Demos
+</ul>
+<a href="materials/lec-16-worksheet.pdf">Link to Worksheet</a><br>
+<b>No Slides</b>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 7</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Dictionaries 1 (Mar 4)</h5>
+<ul class="compact-ul">
+<li> Syntax
+<li> Lookup
+<li> Insert
+<li> Pop
+</ul>
+<a href="materials/lec-17.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Dictionaries 2 (Mar 6)</h5>
+<ul class="compact-ul">
+<li> Nesting
+<li> dicts with lists
+<li> defaultdict
+</ul>
+<a href="materials/lec-18.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
+<b>Due</b>: P5
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: JSON (Mar 8)</h5>
+<ul class="compact-ul">
+<li> Deserialization
+<li> Serialization
+<li> Pretty Printing
+</ul>
+<a href="materials/lec-19-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-19.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 8</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Objects (Mar 11)</h5>
+<ul class="compact-ul">
+<li> namedtuple and recordclass
+<li> Mutability
+<li> References
+<li> Python Tutor
+</ul>
+<a href="materials/lec-20.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Copying (Mar 13)</h5>
+<ul class="compact-ul">
+<li> References
+<li> Shallow Copy
+<li> Deep Copy
+</ul>
+<a href="materials/lec-21-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-21.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
+<b>Due</b>: P6<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Recursion (Mar 15)</h5>
+<ul class="compact-ul">
+<li> Base/Resursive Cases
+<li> Lists of Lists
+<li> More Stack Diagrams
+<li> Stack Overflow
+</ul>
+<a href="materials/lec-22.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 9</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>:  (Mar 18)</h5>
+No Class -- Spring Break!<br><br><br><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>:  (Mar 20)</h5>
+No Class -- Spring Break!<br><br><br><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>:  (Mar 22)</h5>
+No Class -- Spring Break!<br><br><br><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 10</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Advanced Functions (Mar 25)</h5>
+<ul class="compact-ul">
+<li> iterators and generators
+<li> references to functions
+</ul>
+<a href="materials/lec-23.pdf">Link to Slides</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Error Handling (Mar 27)</h5>
+<ul class="compact-ul">
+<li> Catching Exceptions
+<li> Throwing Exceptions
+<li> Asserts
+</ul>
+<a href="materials/lec-24.pdf">Link to Slides</a><br>
+<a href="materials/lec-24-worksheet.pdf">Link to Worksheet</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
+<b>Due</b>: P7
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Files and Directories (Mar 29)</h5>
+<ul class="compact-ul">
+<li> Reading
+<li> Writing
+<li> Listing children
+</ul>
+<a href="materials/lec-25.pdf">Link to Slides</a><br>
+<b>Read</b>: Downey Ch 14
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 11</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Pandas 1 (Apr 1)</h5>
+<ul class="compact-ul">
+<li> iPython
+<li> dataframe
+<li> series
+<li> reading CSVs
+<li> element-wise operations
+</ul>
+<b>Reading</b>: <a href="materials/readings/lec-26/pandas-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/readings/lec-26/pandas-intro.ipynb">Notebook</a>)<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Review Day (Apr 3)</h5>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Pandas 2 (Apr 5)</h5>
+<ul class="compact-ul">
+<li> practice
+</ul>
+<a href="materials/lec-27-worksheet.pdf">Link to Worksheet</a><br>
+
+
+
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 3: Data Science</div>
+<h3 class="my-3 border-bottom border-top">Week 12</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Web 1 (Apr 8)</h5>
+<ul class="compact-ul">
+<li> Servers/Clients
+<li> URLs
+<li> HTTP: GET and POST
+<li> requests module
+</ul>
+<a href="materials/lec-28.pdf">Link to Slides</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Web 2 (Apr 10)</h5>
+<ul class="compact-ul">
+<li> Intro to HTML
+<li> Generating HTML
+</ul>
+<a href="materials/lec-29.pdf">Link to Slides</a><br>
+<b>Due</b>: P8
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Web 3 (Apr 12)</h5>
+<ul class="compact-ul">
+<li> Document Object Model
+<li> Parsing HTML
+<li> beautifulsoup
+</ul>
+<a href="materials/lec-30.pdf">Link to Slides</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 13</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Database 1 (Apr 15)</h5>
+<ul class="compact-ul">
+<li> schemas/types
+<li> queries
+<li> where
+<li> SQLite
+<li> Querying from Pandas
+</ul>
+<a href="materials/lec-31.pdf">Link to Slides</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Database 2 (Apr 17)</h5>
+<ul class="compact-ul">
+<li> Worksheets
+</ul>
+<a href="materials/lec-32-worksheet.pdf">Link to Worksheet</a><br>
+<b>Due</b>: P9
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Database 3 (Apr 19)</h5>
+<ul class="compact-ul">
+<li> aggregates
+<li> group by
+</ul>
+<a href="materials/lec-33.pdf">Link to Slides</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 14</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Plotting 1 (Apr 22)</h5>
+<ul class="compact-ul">
+<li> pie charts
+<li> scatter plots
+<li> plot design
+<li> AxesSublot
+</ul>
+<b>Reading</b>: <a href="materials/code/lec-34/matplotlib-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-34/matplotlib-intro.ipynb">Notebook</a>)<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Plotting 2 (Apr 24)</h5>
+<ul class="compact-ul">
+<li> line plots
+</ul>
+<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-35/line-and-bar.ipynb">Notebook</a>)<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Plotting 3 (Apr 26)</h5>
+<ul class="compact-ul">
+<li> bar plots
+</ul>
+<b>Reading</b>: <a href="materials/code/lec-35/line-and-bar.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-35/line-and-bar.ipynb">Notebook</a>)<br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 15</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Plotting 4 (Apr 29)</h5>
+<ul class="compact-ul">
+<li> axes
+<li> adjacent plots
+<li> design decisions
+</ul>
+<b>Reading</b>: <a href="materials/code/lec-36/axes.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall18/materials/code/lec-36/axes.ipynb">Notebook</a>)<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Randomness (May 1)</h5>
+<ul class="compact-ul">
+<li> Debugging
+<li> Simulation
+<li> Significance
+</ul>
+<a href="materials/lec-38.pdf">Link to Slides</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Review/Catchup (May 3)</h5>
+<ul class="compact-ul">
+<li> Bring Questions
+</ul>
+<a href="materials/lec-39-worksheet.pdf">Link to Worksheet</a><br>
+<b>Due</b>: P10 (final project)<br>
+
+</div>
+</div>
+<br>
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2018 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>
