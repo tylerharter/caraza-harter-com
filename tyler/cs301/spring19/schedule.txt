@@ -10,6 +10,7 @@ Introduction
 * Class Overview
 * Hardware
 * Software
+* Resources for getting help
 <a href="materials/lec-01.pdf">Link to Slides</a>
 
 =
