@@ -12,6 +12,7 @@ Introduction
 * Software
 * Resources for getting help
 <a href="materials/lec-01.pdf">Link to Slides</a>
+<b>Watch</b>: <a href="videos.html">How to Setup Python</a><br>
 
 =
 The Terminal
