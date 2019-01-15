@@ -11,7 +11,7 @@ Introduction
 * Hardware
 * Software
 * Resources for getting help
-<a href="materials/lec-01.pdf">Link to Slides</a>
+<a href="materials/lec-01.pdf">Link to Slides</a><br>
 <b>Watch</b>: <a href="videos.html">How to Setup Python</a><br>
 
 =
