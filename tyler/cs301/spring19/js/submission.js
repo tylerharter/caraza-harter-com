@@ -43,7 +43,7 @@ var submission = {};
           if (ignore_errors) {
             common.popError("your submission may not get graded (check errors in Step 4)")
           } else {
-            common.popError("your submission was not uploaded due to error (details in Step 4)")
+            common.popError("your submission was not uploaded due to errors (details in Step 4)")
           }
         }
       }
