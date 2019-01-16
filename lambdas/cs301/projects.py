@@ -191,7 +191,7 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
     return project_files
 
 
-def get_code_analysis(project_id, project_files):
+def get_code_analysis(submitter_email, project_id, project_files):
     pf = project_files
     comments = []
     analysis = {'comments': comments, 'partner': None, 'errors': False}
@@ -236,18 +236,30 @@ def get_code_analysis(project_id, project_files):
             comments.append('<b>error:</b> conflicting values specified for "%s"' % key)
             analysis['errors'] = True
 
+    # check user's Net ID matches the comment in the code
+    # (this check doesn't run if TA is fetching the CR)
+    if submitter_email != None:
+        parts = submitter_email.lower().split('@')
+        if parts[-1] != 'wisc.edu':
+            comments.append('<b>error:</b> not submitted from an @wisc.edu account')
+            analysis['errors'] = True
+        elif len(fields['submitter-netid']) == 1:
+            submitter = list(fields['submitter-netid'])[0]
+            if submitter.strip().lower() != parts[0].strip().lower():
+                comments.append('<b>error:</b> expected submitter-netid to be "%s", not "%s"' % (parts[0], submitter))
+                analysis['errors'] = True
+
     # check partner is on the roster
     if len(fields['partner-netid']) == 1:
         partner = list(fields['partner-netid'])[0]
-        net_ids = get_roster_net_ids()
-        if not partner in net_ids:
+        if partner.strip().lower() == "none":
+            comments.append('info: no partner')
+        elif not partner in get_roster_net_ids():
             comments.append('<b>error:</b> partner NetID %s not on the roster' % partner)
             analysis['errors'] = True
         else:
-            comments.append('info: partner: ' + partner)
+            comments.append('info: partner is ' + partner)
             analysis['partner'] = partner
-
-    # TODO: check that submitter-netid is correct
 
     # TODO: check that project is correct
     if len(fields['project']) == 1:
@@ -287,10 +299,16 @@ def get_code_review_raw(user, submitter_user_id, project_id,
                         force_new, project_files=None):
     """get code review blob from S3 or from project_files.
 
+    user could be either the submitter, or a TA
+
     Sometimes a
     code upload calls this, so we have project_files without needing
     to look to S3.  If force_new is True, or there is no code review
     available, a new one is created"""
+
+    submitter_email = None
+    if user['sub'] == submitter_user_id:
+        submitter_email = user['email']
 
     # step 1: try to get CR unless we're forced to get a clean one on the latest submission
     cr = None
@@ -331,7 +349,7 @@ def get_code_review_raw(user, submitter_user_id, project_id,
     cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
     cr['is_grader'] = is_grader(user)
     cr['project'] = project_files
-    cr['analysis'] = get_code_analysis(project_id, project_files)
+    cr['analysis'] = get_code_analysis(submitter_email, project_id, project_files)
     cr['test_result'] = get_project_test_result(submitter_user_id, project_id)
 
     return (200, cr)
@@ -538,7 +556,7 @@ def resync_partner_id(user, event):
 
     # update partner.json
     project_files = load_project_from_s3(submitter_user_id, project_id)
-    analysis = get_code_analysis(project_id, project_files)
+    analysis = get_code_analysis(None, project_id, project_files)
     partner = {'netid': analysis.get('partner', None)}
     path = partner_path(submitter_user_id, project_id)
     s3().put_object(Bucket=BUCKET,
