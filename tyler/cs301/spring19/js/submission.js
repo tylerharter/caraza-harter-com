@@ -83,9 +83,10 @@ var submission = {};
 
     $("#submission_status").html(html)
   }
-  
+
   submission.checkProjectStatus = function() {
     var project_id = $("#project_id").val()
+    $("#submission_status").html("")
 
     // we fetch the code as a CR, even though we don't display
     // highlights.  We also do force_new to get latest code (not
@@ -102,10 +103,13 @@ var submission = {};
     })
   };
 
-  submission.viewCodeReview = function() {
+  submission.viewCodeReview = function(latest) {
     var submitter_id = common.getGoogleUserId() // submitted by self
     var project_id = $("#project_id").val()
     var url = "code_review.html?project_id="+project_id+"&submitter_id="+submitter_id
+    if (latest) {
+      url += "&latest=1"
+    }
     window.open(url)
   };
 

@@ -69,7 +69,13 @@
 
   <div class="row my-3">
     <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview()">Check for Feedback</button>
+      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview(true)">Check Most-Recent Submission</button>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview(false)">Check for Feedback</button>
     </div>
   </div>
 

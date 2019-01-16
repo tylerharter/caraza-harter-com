@@ -11,7 +11,8 @@ var code_review = {};
     $("#code_review_title").html("Code Review (" + common.getUrlParameter('project_id').toUpperCase() + ")")
     $("#code_viewer").html("")
 
-    common.signinCallback = function() {code_review.fetchReview(false)}
+    var latest = common.getUrlParameter('latest')
+    common.signinCallback = function() {code_review.fetchReview(latest == "1")}
 
     // prompt before leaving with unsaved work
     window.addEventListener("beforeunload", function (e) {
