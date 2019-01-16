@@ -22,12 +22,14 @@ var submission = {};
 
   submission.uploadCode = function() {
     var project_id = $("#project_id").val()
+    var ignore_errors = $("#ignore_errors").prop("checked")
 
     var data = {
       "fn": "project_upload",
       "project_id": project_id,
       "filename": filename,
-      "payload": payload
+      "payload": payload,
+      "ignore_errors":  ignore_errors
     }
     common.callLambda(data, function(data) {
       console.log("project uploaded")
