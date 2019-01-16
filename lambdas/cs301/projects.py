@@ -59,8 +59,9 @@ def project_summary_path(user_id):
     return 'projects/summary/users/%s.json' % user_id
 
 
-def code_review_path(user_id, project_id):
-    return 'projects/%s/users/%s/cr.json' % (project_id, user_id)
+def code_review_path(user_id, project_id, cr_id=None):
+    name = 'cr%s.json' % ("-"+str(cr_id) if cr_id != None else "")
+    return 'projects/%s/users/%s/%s' % (project_id, user_id, name)
 
 
 def extension_path(user_id, project_id):
@@ -532,12 +533,15 @@ def put_code_review(user, event):
     if not project_id in PROJECT_IDS:
         return (500, 'not a valid project')
     submitter_user_id = event['submitter_id']
-    path = code_review_path(submitter_user_id, project_id)
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(cr), 'utf-8'),
-                    ContentType='text/json',
-    )
+
+    cr_id = '%.2f' % time.time()
+    for path in [code_review_path(submitter_user_id, project_id),
+                 code_review_path(submitter_user_id, project_id, cr_id)]:
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(cr), 'utf-8'),
+                        ContentType='text/json',
+        )
     return (200, 'uploaded review')
 
 
