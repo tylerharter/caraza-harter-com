@@ -14,12 +14,8 @@ var submission = {};
   function init() {
     $("#project_file").change(submission.openFile)
     $("#project_id").change(function() {
-      $("#code_viewer").html("")
+      $("#submission_status").html("")
     })
-
-    if (common.getUrlParameter('debug') == '1') {
-      $("#step1b").show()
-    }
 
     common.signinCallback = submission.lookupNetId
   }
@@ -59,13 +55,13 @@ var submission = {};
       console.log("project submission withdrawn")
 
       // clear preview
-      $("#code_viewer").html("<h2>submission withdrawn</h2>")
+      $("#submission_status").html("<h2>submission withdrawn</h2>")
     })
   };
   
   function refreshPreview() {
     if (Object.keys(cr.project.files).length == 0) {
-      $("#code_viewer").html("no files found")
+      $("#submission_status").html("no files found")
       return
     }
 
@@ -80,16 +76,7 @@ var submission = {};
       html += '</ul>'
     }
 
-    for (var filename in cr.project.files) {
-      var code = cr.project.files[filename]
-
-      html += ('<h3>'+filename+'</h3>')
-      html += ('<pre class="prettyprint lang-py" filename="'+filename+'">' +
-               code +
-               '</pre>')
-    }
-    $("#code_viewer").html(html)
-    PR.prettyPrint()
+    $("#submission_status").html(html)
   }
   
   submission.viewCode = function() {
@@ -144,16 +131,6 @@ var submission = {};
     reader.readAsBinaryString(file)
   }
 
-  submission.linkAccounts = function(event) {
-    var data = {
-      "fn": "roster_attach_user",
-      "link_code": $("#link_code").val()
-    }
-    common.callLambda(data, function(data) {
-      submission.lookupNetId()
-    })
-  }
-
   submission.lookupNetId = function() {
     var data = {
       "fn": "get_net_id",
@@ -164,7 +141,7 @@ var submission = {};
         $("#link_code").prop("disabled", true)
         $("#link_button").prop("disabled", true)
       } else {
-        $("#step1b").show()
+        common.popError("for your work to be counted, please logoff and sign back in with your @wisc.edu")
       }
     })
   }
