@@ -21,7 +21,7 @@ from lambda_framework import *
 from roster import *
 
 PROJECT_IDS = [
-    'p0', 'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
+    'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
     'p7', 'p8', 'p9', 'p10'
 ]
 
@@ -29,17 +29,16 @@ PROJECT_IDS = [
 # always have the project due at 7am on a Thu
 DUE_DATE_FORMAT = "%m/%d/%y %H:%M"
 PROJECT_DUE_UTC = {
-    'p0': datetime.datetime.strptime("09/13/18 7:00", DUE_DATE_FORMAT),
-    'p1': datetime.datetime.strptime("09/20/18 7:00", DUE_DATE_FORMAT),
-    'p2': datetime.datetime.strptime("09/27/18 7:00", DUE_DATE_FORMAT),
-    'p3': datetime.datetime.strptime("10/04/18 7:00", DUE_DATE_FORMAT),
-    'p4': datetime.datetime.strptime("10/11/18 7:00", DUE_DATE_FORMAT),
-    'p5': datetime.datetime.strptime("10/18/18 7:00", DUE_DATE_FORMAT),
-    'p6': datetime.datetime.strptime("10/25/18 7:00", DUE_DATE_FORMAT),
-    'p7': datetime.datetime.strptime("11/01/18 7:00", DUE_DATE_FORMAT),
-    'p8': datetime.datetime.strptime("11/15/18 7:00", DUE_DATE_FORMAT),
-    'p9': datetime.datetime.strptime("11/22/18 7:00", DUE_DATE_FORMAT),
-    'p10': datetime.datetime.strptime("12/13/18 7:00", DUE_DATE_FORMAT),
+    'p1':  datetime.datetime.strptime("01/31/19 7:00", DUE_DATE_FORMAT),
+    'p2':  datetime.datetime.strptime("02/07/19 7:00", DUE_DATE_FORMAT),
+    'p3':  datetime.datetime.strptime("02/14/19 7:00", DUE_DATE_FORMAT),
+    'p4':  datetime.datetime.strptime("02/21/19 7:00", DUE_DATE_FORMAT),
+    'p5':  datetime.datetime.strptime("02/28/19 7:00", DUE_DATE_FORMAT),
+    'p6':  datetime.datetime.strptime("03/07/19 7:00", DUE_DATE_FORMAT),
+    'p7':  datetime.datetime.strptime("03/14/19 7:00", DUE_DATE_FORMAT),
+    'p8':  datetime.datetime.strptime("04/04/19 7:00", DUE_DATE_FORMAT),
+    'p9':  datetime.datetime.strptime("04/18/19 7:00", DUE_DATE_FORMAT),
+    'p10': datetime.datetime.strptime("05/04/19 7:00", DUE_DATE_FORMAT),
 }
 
 MAX_SIZE_KB = 1024
@@ -192,7 +191,7 @@ def load_project_from_s3(user_id, project_id, submission_id=None):
     return project_files
 
 
-def get_code_analysis(project_files):
+def get_code_analysis(project_id, project_files):
     pf = project_files
     comments = []
     analysis = {'comments': comments, 'partner': None, 'errors': False}
@@ -206,11 +205,12 @@ def get_code_analysis(project_files):
     # comment on number of source files
     code_file_count = len([fn for fn in pf['files'].keys() if fn.endswith('.py')])
     nb_cell_count = len([fn for fn in pf['files'].keys() if fn.startswith('in-')])
-    comments.append('there were %d .py files submitted' % code_file_count)
-    comments.append('there were %d notebook cells' % nb_cell_count)
+    comments.append('info: there were %d .py files submitted' % code_file_count)
+    comments.append('info: there were %d notebook cells' % nb_cell_count)
 
-    # extract partner
-    partners = set()
+    # extract various fields from comments
+    fields = {'project':set(), 'submitter-netid':set(), 'partner-netid':set()}
+
     for filename in pf['files'].keys():
         # look in .py files and ipython notebook cells (which are innapropriately named files here)
         if not (filename.endswith('.py') or filename.startswith('in-')):
@@ -223,24 +223,38 @@ def get_code_analysis(project_files):
                 continue
             parts = list(map(str.strip, line[1:].split(':')))
 
-            if len(parts) == 2 and parts[0] == 'partner-login':
-                partners.add(parts[1])
-    if len(partners) == 0:
-        comments.append('no partner identified in the comments in your code')
-    elif len(partners) >= 2:
-        comments.append('you can only have one partner, but multiple given: %s' %
-                        (', '.join(list(partners))))
+            if len(parts) == 2:
+                if parts[0] in fields:
+                    fields[parts[0]].add(parts[1])
 
-        analysis['errors'] = True
-    else:
-        partner = list(partners)[0]
+    # check that we were given exactly one value for each field
+    for key in fields:
+        if len(fields[key]) == 0:
+            comments.append('<b>error:</b> no value specified for "%s"' % key)
+            analysis['errors'] = True
+        elif len(fields[key]) > 1:
+            comments.append('<b>error:</b> conflicting values specified for "%s"' % key)
+            analysis['errors'] = True
+
+    # check partner is on the roster
+    if len(fields['partner-netid']) == 1:
+        partner = list(fields['partner-netid'])[0]
         net_ids = get_roster_net_ids()
         if not partner in net_ids:
-            comments.append('partner NetID %s not on the roster' % partner)
+            comments.append('<b>error:</b> partner NetID %s not on the roster' % partner)
             analysis['errors'] = True
         else:
-            comments.append('partner: ' + partner)
+            comments.append('info: partner: ' + partner)
             analysis['partner'] = partner
+
+    # TODO: check that submitter-netid is correct
+
+    # TODO: check that project is correct
+    if len(fields['project']) == 1:
+        project = list(fields['project'])[0]
+        if project.lower().strip() != project_id.lower().strip():
+            comments.append('<b>error:</b> expected project "%s" but found "%s"' % (project_id, project))
+            analysis['errors'] = True
 
     return analysis
 
@@ -317,7 +331,7 @@ def get_code_review_raw(user, submitter_user_id, project_id,
     cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
     cr['is_grader'] = is_grader(user)
     cr['project'] = project_files
-    cr['analysis'] = get_code_analysis(project_files)
+    cr['analysis'] = get_code_analysis(project_id, project_files)
     cr['test_result'] = get_project_test_result(submitter_user_id, project_id)
 
     return (200, cr)
@@ -524,7 +538,7 @@ def resync_partner_id(user, event):
 
     # update partner.json
     project_files = load_project_from_s3(submitter_user_id, project_id)
-    analysis = get_code_analysis(project_files)
+    analysis = get_code_analysis(project_id, project_files)
     partner = {'netid': analysis.get('partner', None)}
     path = partner_path(submitter_user_id, project_id)
     s3().put_object(Bucket=BUCKET,

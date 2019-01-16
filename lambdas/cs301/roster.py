@@ -98,38 +98,13 @@ def google_to_net_id(google_id):
 def get_roster(user, event):
     return (200, {'roster': get_roster_raw()})
 
+
 @route
 @admin
 def put_roster(user, event):
     put_roster_raw(json.loads(event['roster']))
     return (200, 'roster uploaded')
 
-@route
-@admin
-def roster_gen_link_codes(user, event):
-    roster = json.loads(get_roster_raw())
-    for student in roster:
-        code = student.get('link_code', None)
-        if code == None or event.get('overwrite_existing', False):
-            code = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(32))
-        student['link_code'] = code
-    body = put_roster_raw(roster)
-    return (200, {'roster': body})
-
-@route
-@user
-def roster_attach_user(user, event):
-    user_id = user['sub']
-    code = event['link_code']
-
-    # otherwise, look for link code in the roster
-    roster = json.loads(get_roster_raw())
-    for student in roster:
-        net_id = student.get('net_id', None)
-        code2 = student.get('link_code', None)
-        if net_id != None and code2 != None and code == code2:
-            return roster_attach_user_raw(user_id, net_id)
-    return (500, 'could not find student entry for that one-time link code')
 
 @route
 @user
@@ -169,6 +144,7 @@ def get_net_id(user, event):
 
     return (200, {"net_id": net_id})
 
+
 @route
 @admin
 def roster_merge_google_ids(user, event):
@@ -194,6 +170,7 @@ def roster_merge_google_ids(user, event):
             student['user_id'] = user_id
     body = put_roster_raw(roster)
     return (200, {'roster':body})
+
 
 @route
 @admin

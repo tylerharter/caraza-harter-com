@@ -36,11 +36,14 @@ var submission = {};
       // try to preview right after a submission
       cr = data.body.code_review
       if (cr) {
-        refreshPreview()
+        refreshProjectStatus()
         if ("analysis" in cr && cr.analysis.errors) {
-          common.popError("there were problems with your submission (check in preview)")
+          common.popError("there were problems with your submission (check specifics in Step 4)")
         }
       }
+
+      $("#project_file").val(null);
+      $("#submit_button").prop('disabled', true)
     })
   };
 
@@ -59,13 +62,13 @@ var submission = {};
     })
   };
   
-  function refreshPreview() {
+  function refreshProjectStatus() {
     if (Object.keys(cr.project.files).length == 0) {
       $("#submission_status").html("no files found")
       return
     }
 
-    var html = ''
+    var html = '<h3>Submission Details</h3>'
 
     if ("analysis" in cr) {
       html += '<ul>'
@@ -74,12 +77,14 @@ var submission = {};
         html += '<li>' + comment
       }
       html += '</ul>'
+    } else {
+      html += "<p>...missing...</p>"
     }
 
     $("#submission_status").html(html)
   }
   
-  submission.viewCode = function() {
+  submission.checkProjectStatus = function() {
     var project_id = $("#project_id").val()
 
     // we fetch the code as a CR, even though we don't display
@@ -93,7 +98,7 @@ var submission = {};
     }
     common.callLambda(data, function(data) {
       cr = data.body
-      refreshPreview()
+      refreshProjectStatus()
     })
   };
 
@@ -113,7 +118,7 @@ var submission = {};
       filename = null
       payload = null
 
-      if (file.name.endsWith('.zip') || file.name.endsWith('.py') || file.name.endsWith('.ipynb')) {
+      if (file.name.endsWith('.py') || file.name.endsWith('.ipynb')) {
         if (reader.result.length <= max_file_kb*1024) {
           filename = file.name
           payload = b64contents
@@ -123,7 +128,7 @@ var submission = {};
           $("#submit_button").prop('disabled', true)
         }
       } else {
-        common.popError("only .py or .zip are accepted")
+        common.popError("only .py or .ipynb are accepted")
         $("#submit_button").prop('disabled', true)
       }
     };
