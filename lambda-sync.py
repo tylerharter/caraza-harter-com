@@ -27,7 +27,7 @@ def main():
     lambda_dirs = ['lambdas/cs301']
     for lambda_dir in lambda_dirs:
         with zipfile.ZipFile(tmp, 'w') as z:
-            for name in (n for n in os.listdir(lambda_dir) if n.endswith('.py')):
+            for name in (n for n in os.listdir(lambda_dir) if n.split('.')[-1] in ('py', 'txt')):
                 z.write(os.path.join(lambda_dir, name), '/'+name)
 
     with open(tmp, 'rb') as f:

@@ -15,26 +15,22 @@
 import json, urllib, boto3, botocore, base64, time, traceback, random, string
 from collections import defaultdict as ddict
 
+def acl_file(path):
+    users = []
+    with open(path) as f:
+        for l in f:
+            l = l.strip()
+            if l:
+                users.append(l)
+    return users
+
 ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 FIREHOSE = 'cs301-trace'
 ADMIN_EMAIL = 'tylerharter@gmail.com'
-INSTRUCTOR_EMAILS = ['tylerharter@gmail.com', 'adalbert.gerald@gmail.com']
-GRADER_EMAILS = [
-    'tylerharter@gmail.com',
-    'adalbert.gerald@gmail.com',
-    'arebello@wisc.edu',
-    'bdeffinger@wisc.edu',
-    'gramakrishn2@wisc.edu',
-    'mrawat2@wisc.edu',
-    'bathija@wisc.edu',
-    'snambiar@wisc.edu',
-    'stanwar@wisc.edu',
-    'uramesh2@wisc.edu',
-    'szou28@wisc.edu',
-    'deppeler@wisc.edu',
-]
+INSTRUCTOR_EMAILS = acl_file("instructors.txt")
+GRADER_EMAILS = acl_file("tas.txt")
 
 s3_cache = None # client
 def s3():

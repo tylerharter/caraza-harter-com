@@ -1,0 +1,101 @@
+<h1 class="mt-5">Project Submission</h1>
+
+<br>
+
+<h2 class="my-3">Step 1: Authenticate with Google</h2>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <div id="signin"></div> <!-- common.js will render this -->
+      <span id="useremail"></span>
+      <p>
+        Note: if you want your submission to be graded, you must use
+        your <b>&lt;netid&gt@wisc.edu</b> email to sign in (this will
+        redirect to wisc.edu to accept your password).
+      </p>
+    </div>
+  </div>
+</div>
+
+<div style="display:none;" id="step1b">
+  <h2 class="my-3">Step 1b: Link with CS Account (1st time only)</h2>
+
+  <div class="alert alert-dark">
+    <div class="row">
+      <div class="col col-12">
+        Please enter your instructor-provided link code: <input type="text" id="link_code">
+        <button type="button" id="link_button" class="btn btn-dark" onclick="submission.linkAccounts()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="my-3">Step 2: Choose which Project</h2>
+
+<div class="alert alert-dark">
+  <div class="row justify-content-md-center">
+    <div class="col col-12 px-1">
+      <select class="form-control" id="project_id">
+        <option value="p0">Project 0</option>
+        <option value="p1">Project 1</option>
+        <option value="p2">Project 2</option>
+        <option value="p3">Project 3</option>
+        <option value="p4">Project 4</option>
+        <option value="p5">Project 5</option>
+        <option value="p6">Project 6</option>
+        <option value="p7">Project 7</option>
+        <option value="p8">Project 8</option>
+        <option value="p9">Project 9</option>
+        <option value="p10">Project 10</option>
+        <option value="p11">Project 11</option>
+        <option value="p12">Project 12</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<h2 class="my-3">Step 3: Upload Your Code (.py or .ipynb)</h2>
+
+<div class="alert alert-dark">
+  <div class="row justify-content-md-center">
+    <div class="col col-8 px-1">
+      <div class="form-group">
+        <input type="file" class="form-control-file" id="project_file">
+      </div>
+    </div>
+    
+    <div class="col col-4 px-1">
+      <button type="button" id="submit_button" class="btn btn-dark btn-block" onclick="submission.uploadCode()" disabled>Submit</button>
+    </div>
+  </div>
+</div>
+
+<h2 class="my-3">Step 4: Verify Your Submission</h2>
+
+<div class="container alert alert-dark">
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.viewCode()">Preview</button>
+      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview()">Check Code Review</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-md-auto px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.withdrawSubmission()">Withdraw</button>
+    </div>
+    <div class="col">
+      You should withdraw your submission if you started working with a partner who submitted on behalf of both of you.
+      If you work with a partner, only one of you should submit.
+    </div>
+  </div>
+
+  <div class="row my-4">
+    <div class="col col-12" id="code_viewer">
+
+    </div>
+  </div>
+</div>
+
+<br>

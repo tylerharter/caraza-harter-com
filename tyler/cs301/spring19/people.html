@@ -90,45 +90,42 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5" id="code_review_title">Code Review</h1>
+      <h1 class="mt-5">People</h1>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12">
-      <div id="signin"></div> <!-- common.js will render this -->
-      <span id="useremail"></span>
+<p class="lead">
+  Learning programming for the first time often involves asking
+  questions in person, so we're prioritizing creating lots of office
+  hours every week.  We'll be posting times/locations soon.  Here are
+  some tips for making the most of office hours:
+
+  <ul>
+    <li>Bring your laptop so you can show us your code
+    <li>Tell us what you thought your code should do, and explain how
+      it's different than what it is doing
+    <li>Debugging is an experimentation process, so please tell us a
+    couple things you tried, and the results
+    <li>Expect us to ask you questions!  More than just trying to help
+    you solve a particular problem, we're trying to help you think
+    like a programmer.  So even if we see the answer, we might ask you
+    questions (that you will eventually learn to ask yourself) to help
+    you discover the solution on your own
+  </ul>
+</p>
+
+<div class="alert alert-dark my-4">
+  <div class="media">
+    <img src="img/tyler.jpg" height=100 class="mr-3">
+    <div class="pb-0 mb-0">
+      <h4>Tyler Caraza-Harter</h4>
+      <h6>Contact: <a href="mailto:tylerharter@gmail.com">tylerharter@gmail.com</a></h6>
+      <p>
+        Instructor for lecture sections 002 and 003.  Office: CS 7370.
+      </p>
     </div>
   </div>
 </div>
 
-<div class="alert alert-dark grader_content" style="display:none;">
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      Test Score: <input type="text" id="auto_test_score" class="form-control" disabled>
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      TA Point Deduction: <input type="text" id="ta_point_deduction" class="form-control">
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="code_review.startFresh(false)">Start Fresh (Syncs and Deletes All Comments)</button>
-      <button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Save/Publish Code Review</button>
-    </div>
-  </div>
-</div>
-
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12" id="code_viewer">
-
-    </div>
-  </div>
-</div>
+<p>More details soon...</p>
 
 <br>
 
@@ -184,7 +181,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/code_review.js"></script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

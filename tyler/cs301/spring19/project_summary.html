@@ -90,7 +90,7 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5" id="code_review_title">Code Review</h1>
+      <h1 class="mt-5" id="code_review_title">Project Summary</h1>
 
 <div class="alert alert-dark">
   <div class="row">
@@ -101,30 +101,9 @@
   </div>
 </div>
 
-<div class="alert alert-dark grader_content" style="display:none;">
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      Test Score: <input type="text" id="auto_test_score" class="form-control" disabled>
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      TA Point Deduction: <input type="text" id="ta_point_deduction" class="form-control">
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="code_review.startFresh(false)">Start Fresh (Syncs and Deletes All Comments)</button>
-      <button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Save/Publish Code Review</button>
-    </div>
-  </div>
-</div>
-
 <div class="alert alert-dark">
   <div class="row">
-    <div class="col col-12" id="code_viewer">
+    <div class="col col-12" id="summary">
 
     </div>
   </div>
@@ -184,7 +163,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/code_review.js"></script>
+    <script src="js/project_summary.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>

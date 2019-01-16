@@ -90,47 +90,36 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5" id="code_review_title">Code Review</h1>
+      <h1 class="mt-5">Projects</h1>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12">
-      <div id="signin"></div> <!-- common.js will render this -->
-      <span id="useremail"></span>
-    </div>
-  </div>
-</div>
+<h3 class="my-4">General Directions</h3>
 
-<div class="alert alert-dark grader_content" style="display:none;">
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      Test Score: <input type="text" id="auto_test_score" class="form-control" disabled>
-    </div>
-  </div>
+<p class="lead">You can upload either a .ipynb or .py file (as
+  specified) for each project with
+  the <a href="submission.html">submission tool</a>.  Only one partner
+  is should upload the project on behalf of both.
+</p>
 
-  <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
-      TA Point Deduction: <input type="text" id="ta_point_deduction" class="form-control">
-    </div>
-  </div>
+<p>Every project should have the following at the top of the code:</p>
 
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      <button type="button" class="btn btn-dark" onclick="code_review.startFresh(false)">Start Fresh (Syncs and Deletes All Comments)</button>
-      <button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Save/Publish Code Review</button>
-    </div>
-  </div>
-</div>
+<pre class="example">
+# project: PROJECT
+# submitter-netid: NETID1
+# partner-netid: NETID2
+</pre>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12" id="code_viewer">
+<p>For project 1, replace "PROJECT" with "p1"; for project 2, with
+"p2", etc.  Replace "NETID1" with the Net ID of the person doing the
+submission (your Net ID is the part before "@wisc.edu" in your student
+email address).  Relpace "NETID2" with the Net ID of the other
+partner.  If the project was done solo, replace "NETID2" with "none"</p>
 
-    </div>
-  </div>
-</div>
+<h3 class="my-4">Specific Directions</h3>
 
-<br>
+<p>
+  <b><a href="https://github.com/tylerharter/cs301-projects/tree/master/spring19/p1">P1
+  (Project 1)</a></b>: not finalized yet.
+</p>
 
 
       <script>
@@ -184,7 +173,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/code_review.js"></script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>
