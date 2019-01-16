@@ -424,6 +424,7 @@ def project_list(user, event):
 def project_upload(user, event):
     user_id = user['sub']
     project_id = event['project_id']
+    ignore_errors = event['ignore_errors'] # does user want to force a submission, despite errors
     if not project_id in PROJECT_IDS:
         return (500, 'not a valid project')
 
@@ -450,7 +451,7 @@ def project_upload(user, event):
     rc,cr = get_code_review_raw(user, user_id, project_id,
                                 force_new=True, project_files=project_files)
     if rc != 200:
-        cr = None
+        return (rc, "could not get CR")
 
     # save partner permissions
     path = partner_path(user_id, project_id)
@@ -460,7 +461,7 @@ def project_upload(user, event):
                     Body=bytes(json.dumps(partner), 'utf-8'),
                     ContentType='text/json')
 
-    # save project submission to S3 bucket
+    # JSON blob to save to S3 bucket
     submission = {'project_id': project_id,
                   'submission_id': submission_id,
                   'due_time_utc': utc_due.strftime("%Y-%m-%d %H:%M:%S") if utc_due else None,
@@ -468,15 +469,22 @@ def project_upload(user, event):
                   'late_days': late_days,
                   'filename': event['filename'],
                   'payload': event['payload'],
-                  'partner_netid': cr['analysis']['partner']}
-    for path in [project_path(user_id, project_id),
-                 project_path(user_id, project_id, submission_id)]:
+                  'partner_netid': cr['analysis']['partner'],
+                  'ignore_errors': ignore_errors}
+
+    paths = [project_path(user_id, project_id, submission_id)] # for history only
+    if ignore_errors or not cr['analysis']['errors']:
+        # we only do the main submission if there are no errors, or
+        # the student chooses to ignore errors
+        paths.append(project_path(user_id, project_id))
+
+    for path in paths:
         s3().put_object(Bucket=BUCKET,
                         Key=path,
                         Body=bytes(json.dumps(submission), 'utf-8'),
                         ContentType='text/json')
 
-    result = {'message': 'project submitted', 'code_review': cr}
+    result = {'code_review': cr}
     return (200, result)
 
 

@@ -40,7 +40,11 @@ var submission = {};
       if (cr) {
         refreshProjectStatus()
         if ("analysis" in cr && cr.analysis.errors) {
-          common.popError("there were problems with your submission (check specifics in Step 4)")
+          if (ignore_errors) {
+            common.popError("your submission may not get graded (check errors in Step 4)")
+          } else {
+            common.popError("your submission was not uploaded due to error (details in Step 4)")
+          }
         }
       }
 
