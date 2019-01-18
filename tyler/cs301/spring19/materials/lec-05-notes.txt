@@ -1,0 +1,153 @@
+# expression and assignment overview(s)
+ - variable: like a box in the worksheets
+ - expression: combination of values, variables, and operands (been using these)
+
+# DO IN INTERACTIVE MODE
+
+# basic assignment
+x = 2
+print(x)
+x
+x + 1
+x
+2 = x            # syntax ERROR!
+
+# need to assign before using
+print(y)         # runtime ERROR! (NameError is an example of a runtime error)
+y = 3
+print(y)
+x * y
+x ^ 2            # semantic ERROR! (runs but gives wrong output, assuming I wanted an exponent)
+                 # bitwise exclusive or, not necessary for us to learn in CS 301
+
+# types of errors(s)
+
+========================================
+
+# string operations
+first = 'Alice'
+last = 'Anderson'
+player1 = first + last
+
+# does player1 change if we change first now?
+
+# show an example with two players, and bars showing the magnitude of their scores
+
+# boolean operations
+valid = 0 < x < 100
+print('you may continue: ' + valid)
+print('you may continue: ' + str(valid))
+
+# assignment vs equality
+x
+y
+y > x
+y = x
+x
+y
+x == y
+x = 2
+x == y
+
+# numerical examples (NOTE: this example was incorrect!!!)
+
+ - average of several numbers
+ - is_even
+ - is_prime (for 1 to 10): is_prime = n%2 != 0 and n%3 != 0 and n%5 != 0
+
+========================================
+
+# naming sensitivity
+val = 1
+Val = 2
+VAL = 3
+_val = 4
+
+# naming rules
+n = 1
+class = 301 # keyword!
+class_301 = 'awesome'
+301class = 'awesome'
+hey! = 'nope'
+_test = 1
+ñ = 1
+
+# naming rules(s)
+
+========================================
+
+# DO IN SCRIPT MODE
+
+# quantitative examples
+
+# absolute value
+a = ((x) ** 2) ** (0.5) # where is the output?!  Remind about print...
+
+# compute final money (forwards).  Give an example of comments here
+
+interest_percent = 10
+yearly_mult = 1 + interest_percent / 100
+years = 5
+start = 100
+final = start * yearly_mult**years
+
+# compute necessary interest rate (backwords).  Talk about how we sometimes use comments to ignore code
+(final/start) ** (1/years) = yearly_mult
+(yearly_mult - 1) * 100 = interest_percent
+
+========================================
+
+# state diagrams, PythonTutor (note!  Downey uses arrows, often with good reason, rather than boxes)
+ - do trivial example
+ - example of a comment
+   - notice the red arrow  (flow of execution)
+   - notice the semi-boxes (state)
+   - we added output
+ - do example 1 from pseudocode worksheet (in Python)
+   - it's a reassignment!
+ - do example 2 from pseudocode worksheet (in Python)
+ - do example 3 from pseudocode worksheet (in Python)
+
+# syntactic sugar (*=, etc)
+ - do example 3, example 1, and example 2 again with += and *=
+
+========================================
+
+# more math examples
+
+# quadratic formula
+ - positive only
+ a = 3
+ b = 2
+ c = -1
+ numerator = -b + (b**2 - 4*a*c) ** (1/2)
+ denominator = 2 * c
+ x = numerator / denominator
+ a*(x**2) + b*(x) + c
+ - negative
+ - make it imaginary, talk about that
+
+# volume of sphere given radius:
+ - volume = 4/3 * PI * radius^3 (in book)
+ - how to work backwards?
+
+========================================
+
+# visualize bars with characters
+ - linear growth
+ - exponential growth
+
+# boxes
+ - '\n' is newline
+ - print('hello', end='')
+ - print('hello', end='\n\n')
+ 1. solid box
+ 2. checkered box
+ 3. checkered box with border
+
+========================================
+
+# ADVANCED!  PythonTutor input (probably skip this)
+ - give example of input("prompt")
+ - example of cast
+ - in PythonTutor and in terminal

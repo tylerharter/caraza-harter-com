@@ -1,0 +1,136 @@
+# f(x) = ?, y = f(?) examples, translating math to Python (s)
+ - parameter vs argument
+
+==================================================
+
+# interactive mode AFTER script mode
+python -i file.py
+
+def get_full_name(first, last):
+    print(first + " " + last)
+
+>>> result = get_full_name("allen", "downey")
+>>> print(result)
+
+return vs print
+
+why might we want to put the output of a function in a variable
+instead of direction to the screen?
+
+==================================================
+
+# difference between returning and printing
+ - syntax
+ - early return (countdown_print vs countdown_return)
+
+==================================================
+
+# one liner implementations of functions in the math module:
+ - sqrt, pow, abs
+ - same naming rules as for variables
+ - until we call them, nothing happens!
+
+==================================================
+
+def greeting():
+    print("hello")
+print("world") # tabbed or not?
+greeting()
+
+# is_close
+ - do relative closeness first (write is_close_to_1() first)
+ - use abs (example of function using a function)
+ - example of taking two arguments
+ - give example of a multiline function, with tolerance as local variable (hardcoded)
+   - show that indentation matters!
+
+ - give example of relative tolerance as third parameter
+ - default arguments
+ - show example with divide by zero
+ - try fixing with adding equality check
+   - short circuiting: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
+ - add relative tolerance
+
+def isclose(a, b):
+    return abs(a-b) < 0.001 or abs(a-b) / abs(max(a, b)) < 0.001
+
+try calling it with positional arguments or keyword arguments
+
+==================================================
+
+# visualize bars
+
+def print_bar(name, amount, max_name=10):
+  spaces = len(name) - 10
+  print(name + ':' + ' '*spaces + amount*'$')
+
+==================================================
+
+# definition vs invocation:
+ - watch in PythonTutor
+ - talk about the arrow...
+ - definition time vs invocation time
+ - what does it mean when the arrow points to a function?  Depends...
+
+def print_it():
+    print(x)
+
+x = 3
+print_it()
+
+ - function must be defined before it is invoked, but not before other definitions that mention it
+   EXAMPLE!
+ - introduce main() function
+ - what if x is local, not in the function where we need it?
+   give example, elude to next lecture
+
+==================================================
+
+# create a module
+ - module name is just file name
+ - create dog and cat modules
+ - review two types of import
+ - talk about the doc string
+
+==================================================
+
+# tracing with print
+
+do several layers of functions calling each other
+ - print("ENTER f")
+ - print("RETURN f")
+ - show onion like organization
+
+==================================================
+
+# multiple return values
+ - give an example of pass
+ - do quadratic formula example
+ - return positive and negative example
+
+==================================================
+
+# interpolation example
+ - given points x1,y1,x2,y2, estimate new y for x
+ - slope function
+ - estimate function
+ - error functions
+
+==================================================
+
+# variables pointing to functions
+ - g = f, g(x)  (see in PythonTutor)
+ - call5 example
+
+==================================================
+
+# another battleship example
+
+def ship1(x, y):
+  pass
+
+def ship2(x, y):
+  pass
+
+def is_hit(x, y):
+  return is_hit(x, y) or is_hit(x, y)

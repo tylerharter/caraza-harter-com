@@ -1,0 +1,87 @@
+==================================================
+
+ - review control flow (s)
+   - refer to worksheet
+   - we'll know everything now!
+
+ - control flow diagram (s)
+
+ - compare if to while
+
+==================================================
+
+replace "if" with "while"
+ - do these in PythonTutor
+
+x = 15
+
+if x > 0:
+   print(str(x) + ' is positive')
+
+while x > 0:
+   print(str(x) + ' is positive')
+
+while x > 0:
+   print(str(x) + ' is positive')
+   x -= 1
+
+==================================================
+
+# nesting -- what's the difference between these two programs
+
+print('hi')
+x = 5
+if x > 0:
+  while x != 0:
+    print(x)
+    x -= 1
+print('bye')
+
+----------------------------------------
+
+print('hi')
+x = 5
+while x != 0:
+  if x > 0:
+    print(x)
+    x -= 1
+print('bye')
+
+==================================================
+
+implement is_prime(n) function
+ - have bug where we have < vs <=
+ - bound check (>= 2)
+
+==================================================
+
+file read loops:
+ - assume these three: open_file(), get_next(), has_next()
+ - average
+ - maximum
+
+==================================================
+
+input loops
+ - make a version of above program that takes user input instead, until a 'q'
+
+==================================================
+
+exponential growth visualization
+ - call function so we can visualize anything
+ - with characters for bars
+
+==================================================
+
+battleship game:
+ - nested loop to print map (doubly nested)
+ - is_ship1(x,y)
+ - is_ship(x,y) => is_ship1() or is_ship2() or ...
+ - user input loops (battleship game)
+   - first, triply nested
+   - then, refactor to function
+ - type "quit" to exit
+
+==================================================
+
+approximate area under curve

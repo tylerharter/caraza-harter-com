@@ -1,0 +1,7 @@
+Other misc stuff skipped:
+
+ - range()
+ - iter()
+ - next()
+ - enumerate()
+ - zip()
