@@ -11,7 +11,17 @@ get-help pwd
 man pwd # manual pages
 
 #######################
-# simple math
+# keyboard shortcuts
+#######################
+
+# autocomplete, cancel, history
+get- <tab> <tab> <tab>
+control-C: kill
+up arrow key: history
+control-R:    history
+
+#######################
+# simple math (PS only)
 #######################
 
 2*3
@@ -23,33 +33,25 @@ man pwd # manual pages
 (15+15) * (2/3)
 
 #######################
-# keyboard shortcuts
-#######################
-
-# autocomplete and cancel
-get- <tab> <tab> <tab>
-control-C
-
-# don't worry if these are not very understandable yet
-
-#######################
 # running programs
 #######################
 
 notepad
-chrome
+chrome # fails!
 
 # where is it?  right-click shortcut
 cd 'C:\Program Files (x86)\Google\Chrome\Application'
-chrome.exe
-
-get-command notepad
-get-command .\chrome
-
-# mention PATH environment variables (minimal details)
+chrome
+.\chrome
 
 #######################
-# home directory
+# env variable
+#######################
+
+# show how to add this so we can open chrome anywhere
+
+#######################
+# home directory and desktop
 #######################
 
 # talk about home directory
@@ -58,21 +60,16 @@ pwd
 cd Desktop
 ls
 
-#######################
-# hidden files/extensions
-#######################
-
-# why don't the file names all look the same?
-# talk about hidden files and extensions
+# create file, show it with ls
 
 #######################
 # new directory
 #######################
 
-cd ~/examples
+cd ~\examples
 
 # does not exist, so create it
-mkdir ~/examples
+mkdir ~\examples
 
 cd ~\examples # we can get back to this by hitting the up arrow
 pwd
@@ -82,25 +79,12 @@ pwd
 #######################
 
 # observe that the same folder has the same name
-cd ~/examples  # powershell accepts slashes in either direction
+cd ~\examples  # powershell accepts slashes in either direction
 pwd
-cd L:\examples # absolute path
+cd c:\Users\test2\examples # absolute path
 pwd
-cd ../examples # relative path
+cd ..\examples # relative path
 pwd
-
-#######################
-# command arguments
-#######################
-
-# talk about arguments
-cd ..
-ls
-get-help ls
-
-# dash (argument), square brackets (optional), angle brackets (replace with something)
-ls -Path examples
-ls examples
 
 #######################
 # reading and writing files
@@ -117,13 +101,6 @@ cat file.txt
 echo line2 > file.txt
 cat file.txt
 
-# what happened to the first line?
-
-echo line1 > file.txt
-echo line2 >> file.txt
-echo line3 >> file.txt
-cat file.txt
-
 #######################
 # moving+copying
 #######################
@@ -133,65 +110,46 @@ ls
 cat file-copy.txt
 mv file-copy file-v2.txt
 ls
-rm file-v2.txt
 
 #######################
-# advanced file listing
+# challenge 1
 #######################
 
-echo hey > other.log
-echo hey > other2.log
-ls *.txt
-ls *.log
-
-mkdir sub1
-mkdir sub2
-
-ls
-
-echo hey > sub1/f1.txt
-echo hey > sub1/f2.txt
-echo hey > sub1/f3.txt
-
-echo hey > sub2/somefile
-echo hey > sub2/f1.txt
-
-ls
-ls -r
-tree
-
-clear
+echo A > a.txt
+echo B > b.txt
+echo C > a.txt
+echo D > b.txt
+cat a.txt # what does it print?
 
 #######################
-# input
+# challenge 2
 #######################
 
-# arguments
-echo this is a test
-echo "this is a test"
-
-# stdin
-read-host
-this is a test
-
-# discuss difference between arguments and stdin
+echo win > x.txt
+echo lose > y.txt
+mv y.txt z.txt
+mv x.txt y.txt
+mv z.txt x.txt
+cat x.txt # what does it print?
 
 #######################
-# pipe
+# challenge 3
 #######################
 
-# sometimes we want to use the output of one program as input to
-# another
+echo parent > person.txt
+mkdir mydir
+cd mydir
+echo child > person.txt
+cat ../person.txt # what does it print?
 
-ls | measure
-ls -r | measure
-rm file.txt
-ls -r | measure
+#######################
+# challenge 4
+#######################
 
-echo "this is a test" | measure -Word
-echo "this is a test" | measure -Character
-
-# in bash, we use "wc"
+echo data > one.txt
+cat one.txt > two.txt
+echo science > one.txt
+cat two.txt # what does it print?
 
 #######################
 # scripts
@@ -204,11 +162,4 @@ notepad test.ps1
 cat test.ps1
 test.ps1
 
-#######################
-# python
-#######################
-
-start python
-arithmetic in interactive mode
-exit
-run some scripts (if time)
+# create shortcuts directory and add a nb.ps1 that opens Jupyter notebooks
