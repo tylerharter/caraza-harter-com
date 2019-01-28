@@ -1,6 +1,8 @@
 import os, sys, json, csv
 
 def main():
+    print("canvas.csv => roster.json")
+    
     # parse roster
     with open("roster.json") as f:
         roster = json.load(f)
