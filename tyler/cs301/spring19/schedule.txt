@@ -38,6 +38,7 @@ Programming
 * Boolean Logic
 * Interactive vs. Script Mode, print
 <a href="materials/lec-04.pdf">Link to Slides</a><br>
+<a href="materials/lec-04-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: Downey Ch 1<br>
 <b>Due</b>: P1<br>
 
