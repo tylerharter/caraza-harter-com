@@ -1,6 +1,8 @@
-# expression and assignment overview(s)
- - variable: like a box in the worksheets
- - expression: combination of values, variables, and operands (been using these)
+========================================
+SLIDES: intro
+========================================
+
+DEMO 1 (short)
 
 # DO IN INTERACTIVE MODE
 
@@ -20,13 +22,17 @@ x * y
 x ^ 2            # semantic ERROR! (runs but gives wrong output, assuming I wanted an exponent)
                  # bitwise exclusive or, not necessary for us to learn in CS 301
 
-# types of errors(s)
+# let's talk briefly about these kinds of errors...
 
 ========================================
+SLIDES: types of errors
+========================================
+
+DEMO 2 (resume where left off DEMO 1)
 
 # string operations
-first = 'Alice'
-last = 'Anderson'
+first = 'Ada'
+last = 'Lovelace'
 player1 = first + last
 
 # does player1 change if we change first now?
@@ -35,8 +41,8 @@ player1 = first + last
 
 # boolean operations
 valid = 0 < x < 100
-print('you may continue: ' + valid)
-print('you may continue: ' + str(valid))
+print('you may continue: ' + valid)       # oops!
+print('you may continue: ' + str(valid))  # change type
 
 # assignment vs equality
 x
