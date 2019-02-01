@@ -1,8 +1,10 @@
+show where demos are online
+
 ========================================
 SLIDES: intro
 ========================================
 
-DEMO 1 (short)
+DEMO 1 (short, I'll show the basics of how to use some variables, then talk about different errors you might see)
 
 # DO IN INTERACTIVE MODE
 
@@ -12,6 +14,26 @@ print(x)
 x
 x + 1
 x
+x = 9
+x
+
+========================================
+
+# PythonTutor, Live Mode
+
+Convert problem 2 of pseudocode worksheet to Python code (use "i" and "o").  Introduce comments.
+
+Compare with:
+ - worksheet
+ - Downey (he uses arrows instead of boxes);
+   show "render all objects on the heap" option
+
+Talk about syntactic sugar (+= and -=)
+
+========================================
+
+# ERRORS (still in PythonTutor)
+
 2 = x            # syntax ERROR!
 
 # need to assign before using
@@ -28,23 +50,74 @@ x ^ 2            # semantic ERROR! (runs but gives wrong output, assuming I want
 SLIDES: types of errors
 ========================================
 
-DEMO 2 (resume where left off DEMO 1)
+DEMO 2 (variables containing different types)
+
+# DO IN SCRIPT MODE (will be online later)
+
+========================================
+# INTS
+
+# it it even?
+n = 5
+n % 2      # ask students what it will be (try diff n vals)
+n % 2 == 0 # what type?  what is the meaning?
+
+# what is the sum of all the odd numbers?
+a = 3
+b = 5
+c = 2
+d = 1
+
+# BAD WAY!  write code that does't break if data changes
+total = a + b + d
+
+# GOOD WAY
+total = a*(a%2) + b*(b%2) + c*(c%2) + d*(d%2) # better
+
+print(total)
+
+========================================
+# FLOATS
+
+# average
+
+x = 6
+y = 8
+z = 7
+avg = (x + y + z) / 3
+
+# how to compute compound growth (investments)
+
+start = 1000
+interest = 7
+years = 30
+
+yearly_mult = 1 + interest / 100
+final = start * yearly_mult**years
+print(final)  # make them guess how much
+
+========================================
+# STRINGS
 
 # string operations
 first = 'Ada'
 last = 'Lovelace'
 player1 = first + last
-
-# does player1 change if we change first now?
+player1
+first = 'Alice'
+player1 # does player1 change if we change first now?
 
 # show an example with two players, and bars showing the magnitude of their scores
+player2 = 'bob'
+score1 = 10
+score2 = 8
+print(player1 + ': ' + '|' * score1)
+print(player2 + ': ' + '|' * score2)
 
-# boolean operations
-valid = 0 < x < 100
-print('you may continue: ' + valid)       # oops!
-print('you may continue: ' + str(valid))  # change type
+========================================
+# BOOLS
 
-# assignment vs equality
+# assignment vs equality (in interactive mode)
 x
 y
 y > x
@@ -55,11 +128,10 @@ x == y
 x = 2
 x == y
 
-# numerical examples (NOTE: this example was incorrect!!!)
-
- - average of several numbers
- - is_even
- - is_prime (for 1 to 10): is_prime = n%2 != 0 and n%3 != 0 and n%5 != 0
+# bounds checking (in script mode)
+valid = 0 < x < 100
+print('you may continue: ' + valid)       # oops!
+print('you may continue: ' + str(valid))  # change type
 
 ========================================
 
@@ -78,51 +150,24 @@ hey! = 'nope'
 _test = 1
 ñ = 1
 
-# naming rules(s)
+========================================
+SLIDES: variable naming
+========================================
+
+DEMO 2 (other demos, as time permits...)
 
 ========================================
 
-# DO IN SCRIPT MODE
+# volume of a sphere given radius
+volume = 4/3 * PI * radius**3
 
-# quantitative examples
-
-# absolute value
-a = ((x) ** 2) ** (0.5) # where is the output?!  Remind about print...
-
-# compute final money (forwards).  Give an example of comments here
-
-interest_percent = 10
-yearly_mult = 1 + interest_percent / 100
-years = 5
-start = 100
-final = start * yearly_mult**years
-
-# compute necessary interest rate (backwords).  Talk about how we sometimes use comments to ignore code
-(final/start) ** (1/years) = yearly_mult
-(yearly_mult - 1) * 100 = interest_percent
+# radius of a sphere given volume
+volume = 4/3 * PI * radius**3
 
 ========================================
-
-# state diagrams, PythonTutor (note!  Downey uses arrows, often with good reason, rather than boxes)
- - do trivial example
- - example of a comment
-   - notice the red arrow  (flow of execution)
-   - notice the semi-boxes (state)
-   - we added output
- - do example 1 from pseudocode worksheet (in Python)
-   - it's a reassignment!
- - do example 2 from pseudocode worksheet (in Python)
- - do example 3 from pseudocode worksheet (in Python)
-
-# syntactic sugar (*=, etc)
- - do example 3, example 1, and example 2 again with += and *=
-
-========================================
-
-# more math examples
 
 # quadratic formula
- - positive only
+ - positive only (then adapt for negative)
  a = 3
  b = 2
  c = -1
@@ -133,27 +178,51 @@ final = start * yearly_mult**years
  - negative
  - make it imaginary, talk about that
 
-# volume of sphere given radius:
- - volume = 4/3 * PI * radius^3 (in book)
- - how to work backwards?
+========================================
+
+height = 6
+width = 10
+
+Draw this:
+
+##########
+##########
+##########
+##########
+##########
+##########
 
 ========================================
 
-# visualize bars with characters
- - linear growth
- - exponential growth
+Draw this:
 
-# boxes
- - '\n' is newline
- - print('hello', end='')
- - print('hello', end='\n\n')
- 1. solid box
- 2. checkered box
- 3. checkered box with border
+# # # # #
+ # # # # #
+# # # # #
+ # # # # #
+# # # # #
+ # # # # #
 
 ========================================
 
-# ADVANCED!  PythonTutor input (probably skip this)
- - give example of input("prompt")
- - example of cast
- - in PythonTutor and in terminal
+Draw this:
+
+##########
+#        #
+#        #
+#        #
+#        #
+##########
+
+========================================
+
+Draw this:
+
+##########
+#
+##########
+         #
+##########
+#
+##########
+         #
