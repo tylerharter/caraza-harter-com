@@ -424,7 +424,7 @@ def project_list(user, event):
 def project_upload(user, event):
     user_id = user['sub']
     project_id = event['project_id']
-    ignore_errors = event['ignore_errors'] # does user want to force a submission, despite errors
+    ignore_errors = event.get('ignore_errors', True) # does user want to force a submission, despite errors?
     if not project_id in PROJECT_IDS:
         return (500, 'not a valid project')
 
