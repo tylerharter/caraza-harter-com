@@ -81,7 +81,7 @@ battleship.py
    (probably save v2 and v3 for end, depending on time)
 
 ==================================================
-SLIDES: TODO overview of modules, what is "builtin"
+SLIDES: what are modules, and where do they come from
 ==================================================
 
 # using modules
