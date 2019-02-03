@@ -1,6 +1,6 @@
 game: guess that function!
 
-from project import *
+from guess import *
 
 x = 0
 y = f(x)
@@ -8,16 +8,11 @@ y
 
 make them choose x values, show them y, and make them guess about f
 
-mention regression...
-
+==================================================
+SLIDES: function overview
 ==================================================
 
-# refer back to worksheet on functions(s)
- - two lectures
- - using functions (main code)
- - creating functions (move code)
-
-# functions we have used
+# let's start with some functions we have already used
 
 'hi'
 print('hi') # why do we need this?
@@ -34,7 +29,7 @@ print(type(1 == 1.0)) # compose them into one step
 
 ==================================================
 
-# input()
+# DEMO: input
 
 echo.py
  - just input()
@@ -45,43 +40,55 @@ echo.py
 hello.py
  - input(prompt)
 
+# DEMO: type conversion (casting)
+
 add.py
  - show we get concat when we wanted addition (same symbol, different meanings for different operands)
  - give casting examples:
    first, add.py casts input with int()
    second, do it with float
 
-==================================================
-
-# casting examples
+# more casting examples
  - float -> int
  - x - int(x)
  - "the number is " + str(x)
 
 ==================================================
 
-# multiple arguments, named arguments, optional arguments (battleship)
+# DEMO: multiple arguments
 
-print()
+print(1)
 print(1, 2, 3)
-print(1, 2, 3, sep=',')
+
+# DEMO: named arguments, default arguments
+
+print(1, 2, 3, sep=',')               # positional vs. named
+print(1, 2, 3, sep=' ')               # default
 print(1, 2, 3, sep=',', end='.')
 print(1, 2, 3, sep=',', end='.\n')
 print(1, 2, 3, end='.\n', sep=',')
-print(sep=',', 1, 2, 3, end='.\n')
+print(sep=',', 1, 2, 3, end='.\n')    # positional must be first
+
+==================================================
+SLIDES: battleship demo overview
+==================================================
 
 battleship.py
- - show a map, with an ! on it based on user coordinates
+ - show a map, with 1 for hit and 0 for miss
  - give example of x=x1 and y=y1 or x=x2 and y=y2 or ... (boolean logic!!!)
- - exercise for you: ship area... (x, y, width, height)
 
+ - v1: one point, v2: actual ship, v3: multiple ships
+   (probably save v2 and v3 for end, depending on time)
+
+==================================================
+SLIDES: TODO overview of modules, what is "builtin"
 ==================================================
 
 # using modules
 
 talk about what about what a module is (bunch of functions)
 
-cat.py and dog.py are here: /Users/trh/git_co/cs301-projects/fall18/lec-07
+cat.py and dog.py are here: tyler/cs301/spring19/materials/code/lec-06/
 
 They contain these functions:
 
@@ -119,7 +126,7 @@ cat.speak()
 
 ==================================================
 
-# dynamic inspection
+# DEMO: dynamic inspection
 
 1. inspect a module
 
@@ -147,7 +154,7 @@ We're going to provide "project" module for your projects!
 
 ==================================================
 
-# math module
+# DEMO: math module
 
 dir(math)
 
@@ -157,22 +164,18 @@ documentation:
  - https://docs.python.org/3/library/math.html
  - print(math.sqrt.__doc__)
 
-examples:
- - how many bits necessary
+examples: ceil, floor, factorial, log, isclose
 
 ==================================================
 
-Python MOTW
-
-==================================================
-
-# built in module
+# DEMO: builtins
 
 dir(__builtins__)
 
 https://docs.python.org/3/library/functions.html
 
-min, max, abs, input, type, print
+input, type, print,
+min, max, abs, round
 
 round.__doc__
 
@@ -182,23 +185,9 @@ round(123.456, -1)
 
 ==================================================
 
-examples:
+BONUS DEMOS: time permitting
 
- 1. spread of 5 input numbers
- 2. given two points in polar coordinates, compute distance between them
- 3. add commas to numbers that are powers of ten
+1. make battleship better
 
-For example 3:
-{
-import math
-
-number = int(input("enter a number that is a power of 10: "))
-zeros = round(math.log(number, 10))
-
-triples = zeros // 3
-extra_zeros = zeros % 3
-
-print("there are " + str(zeros) + " zeros")
-
-print("1" + "0"*extra_zeros + ",000"*triples)
-}
+2. given two points in polar coordinates, compute distance between them
+   using sin, cos, etc.
