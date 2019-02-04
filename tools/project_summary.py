@@ -105,13 +105,6 @@ class Snapshot:
         def add_row(net_id, filename, test_score, ta_deduction, late_days, comment_count, submitter):
             score = max(test_score - ta_deduction, 0)
 
-            # TODO: in spring semester of 2018, start counting late days for first three projects
-            # we decided not to count these late this semester because there were too many
-            # resubmissions
-            if project_id in ('p1', 'p2', 'p3', 'p10'):
-                late_days = 0
-            assert(datetime.datetime.now().year == 2018)
-
             row = {
                 'project': project_id,
                 'net_id': net_id,

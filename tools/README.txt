@@ -45,6 +45,6 @@ ta.py
 Common workflow:
 1. download all from S3 with s3_backup.py
 2. compute grades with project_summary.py
-3. generate status emails with upload_project_summary.py
+3. generate status emails with share_project_summary.py
 4. see how many people are out of time with email_grep.py
 5. send emails with email_announcement.py

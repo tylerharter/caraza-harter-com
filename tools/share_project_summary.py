@@ -56,8 +56,8 @@ def gen_html(prows, include_intro=True):
     return '\n'.join(html)
 
 def main():
-    if len(sys.argv) < 3:
-        print('Usage: python project_summary.py <project_id1> [<project_id2> ...]')
+    if len(sys.argv) < 2:
+        print('Usage: python share_project_summary.py <project_id1> [<project_id2> ...]')
         sys.exit(1)
 
     projects = ddict(list)

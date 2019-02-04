@@ -2,6 +2,7 @@ import boto3, botocore, base64, json, os, sys
 from multiprocessing import Pool
 
 BUCKET = 'caraza-harter-cs301'
+SKIP = ['logs/']
 
 # return all S3 objects with the given key prefix, using as many
 # requests as necessary
@@ -12,6 +13,7 @@ def s3_all_keys(Prefix):
     ls = s3.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
     keys = []
     while True:
+        print('...list_objects...')
         contents = [obj['Key'] for obj in ls.get('Contents',[])]
         keys.extend(contents)
         if not 'NextContinuationToken' in ls:
@@ -51,6 +53,18 @@ def main():
 
     print('lookup keys')
     paths = s3_all_keys(prefix)
+
+    print('filter based on prefix')
+    paths2 = []
+    for p in paths:
+        include = True
+        for skip in SKIP:
+            if p.startswith(skip):
+                include = False
+        if include:
+            paths2.append(p)
+    paths = paths2
+    
     print('chunk keys')
     paths = chunks(paths)
 
