@@ -8,7 +8,7 @@ Ideas today:
 SLIDES: basic syntax
 ==================================================
 
-# WARMUP: one liner implementations of functions in the math module
+# WARMUP: one liner implementations of functions in the math, builtins modules
  - sqrt, abs, pow
  - same naming rules for function names as for variables
  - until we call them, nothing happens!
@@ -19,7 +19,7 @@ SLIDES: basic syntax
  3. default argument
 
 ==================================================
-SLIDES: three ways to initialize parameters (TODO)
+SLIDES: three ways to initialize parameters
 ==================================================
 
 ==================================================
@@ -46,7 +46,7 @@ why might we want to put the output of a function in a variable
 instead of direction to the screen?
 
 ==================================================
-SLIDES: data flow between caller, function, and screen (TODO)
+SLIDES: data flow between caller, function, and screen
 ==================================================
 
 # difference between returning and printing
@@ -75,15 +75,15 @@ def countdown_v3():
   3. do multiple invocations of countdown_v1
   4. do it in PythonTutor
      - talk about the arrow...
-     - definition time vs invocation time
+     - definition time vs. invocation time
      - what does it mean when the arrow points to a function?  Depends...
 
 ==================================================
-WORKSHEET: do problems 19, 20, 22
+WORKSHEET: do problems 19, [20], 22
 ==================================================
 
 ==================================================
-SLIDES: approx example (TODO)
+SLIDES: approx example
 ==================================================
 
 # approx.py
@@ -119,7 +119,7 @@ print("about zero?", is_approx_zero(x))
 
 ==================================================
 
-# tracing functions that call other functions...
+# tracing functions that call other functions (in PythonTutor)...
 
 def h():
      print("H")
@@ -137,7 +137,7 @@ f()
 # what if we swap prints and calls?
 
 ==================================================
-WORKSHEET: do problems 21
+WORKSHEET: do problem 21
 ==================================================
 
 # battleship.py: refactor
@@ -156,3 +156,8 @@ add functions for:
  - slope function
  - estimate function
  - error functions
+
+==================================================
+
+# quadratic.py
+ - mult return values?
