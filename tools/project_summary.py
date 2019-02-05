@@ -31,7 +31,7 @@ class Snapshot:
         submitter_user_id = self.net_id_to_google_id(submitter_net_id)
         if submitter_user_id == None:
             return None
-        url = 'https://tyler.caraza-harter.com/cs301/fall18/code_review.html?'
+        url = 'https://tyler.caraza-harter.com/cs301/spring19/code_review.html?'
         url += 'project_id=' + project_id
         url += '&submitter_id=' + submitter_user_id
         return url

@@ -6,7 +6,7 @@ s3 = boto3.client('s3')
 
 TEST_NET_IDS = []
 
-LATE_DAY_ALLOCATION = 10
+LATE_DAY_ALLOCATION = 5
 
 def gen_html(prows, include_intro=True):
     cum_late = 0
@@ -15,16 +15,14 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>Here is your P10 code review and summary; we'll upload to
-    canvas shortly.  The semester is almost over, so be sure to double
-    check everything!  If you have projects with a WARNING, you really
-    need to be contacting us, or you'll get zero credit for those.</p>
-
-    <p>There have been a few people to get zeros on P10 because their
-    notebook reads the country data from manually downloaded files
-    instead of from the website via the requests module, as required.
-    If you got a zero on P10, first check if that is your problem,
-    then get in touch with us about your options.</p>
+    <p>We'll occasionally send these emails so you can check the test
+    scores and TA feedback for your submissions.  We didn't do reviews
+    for P1 (since everybody was asked to paste the same code), but
+    this will be more useful in the future.  However, now is a good
+    time to check that the below link shows your submission and test
+    score (especially if you weren't the primary submitter).  Contact
+    tylerharter@gmail.com if you have any trouble accessing the
+    link.</p>
 
     <p>Here is your project summary:</p>
     """

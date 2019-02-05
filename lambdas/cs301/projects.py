@@ -234,7 +234,7 @@ def get_code_analysis(submitter_email, project_id, project_files):
             comments.append('<b>error:</b> no value specified for "%s"' % key)
             analysis['errors'] = True
         elif len(fields[key]) > 1:
-            comments.append('<b>error:</b> conflicting values specified for "%s"' % key)
+            comments.append('<b>error:</b> conflicting values specified for "%s": %s' % (key, ','.join(fields[key])))
             analysis['errors'] = True
 
     # check user's Net ID matches the comment in the code

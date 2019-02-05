@@ -1,16 +1,40 @@
-# f(x) = ?, y = f(?) examples, translating math to Python (s)
- - parameter vs argument
+Ideas today:
+ - syntax: basics, return (early return), tabbing
+ - inputs: parameters, three types of arguments
+ - outputs: return vs. print
+ - tracing: with print, with PythonTutor
 
 ==================================================
+SLIDES: basic syntax
+==================================================
 
-# interactive mode AFTER script mode
-python -i file.py
+# WARMUP: one liner implementations of functions in the math module
+ - sqrt, abs, pow
+ - same naming rules for function names as for variables
+ - until we call them, nothing happens!
 
-def get_full_name(first, last):
+# for pow, give a default argument, and show the three styles:
+ - positional argument
+ - keyword argument
+ - default argument
+
+==================================================
+SLIDES: three ways to initialize parameters (TODO)
+==================================================
+
+# name.py
+def full_name(first, last):
     print(first + " " + last)
 
->>> result = get_full_name("allen", "downey")
->>> print(result)
+>>> from name import *
+>>> full_name("allen", "downey")
+>>> name = full_name("allen", "downey")
+>>> print(full)
+
+def full_name(first, last):
+    return(first + " " + last)
+
+# do interactive again
 
 return vs print
 
@@ -18,17 +42,28 @@ why might we want to put the output of a function in a variable
 instead of direction to the screen?
 
 ==================================================
-
-# difference between returning and printing
- - syntax
- - early return (countdown_print vs countdown_return)
-
+SLIDES: data flow between caller, function, and screen (TODO)
 ==================================================
 
-# one liner implementations of functions in the math module:
- - sqrt, pow, abs
- - same naming rules as for variables
- - until we call them, nothing happens!
+# difference between returning and printing
+ - syntax: don't need parens
+ - early return (countdown_print vs countdown_return)
+
+def countdown_v1():
+    print(3)
+    print(2)
+    print(1)
+
+def countdown_v2():
+    return 3
+    return 2
+    return 1
+
+def countdown_v3():
+    rv = "3"
+    rv += "\n" + "2"
+    rv += "\n" + "1"
+    return rv
 
 ==================================================
 
