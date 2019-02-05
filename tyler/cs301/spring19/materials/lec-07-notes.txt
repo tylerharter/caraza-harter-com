@@ -14,12 +14,16 @@ SLIDES: basic syntax
  - until we call them, nothing happens!
 
 # for pow, give a default argument, and show the three styles:
- - positional argument
- - keyword argument
- - default argument
+ 1. positional argument
+ 2. keyword argument
+ 3. default argument
 
 ==================================================
 SLIDES: three ways to initialize parameters (TODO)
+==================================================
+
+==================================================
+WORKSHEET: do a few problems...
 ==================================================
 
 # name.py
@@ -36,7 +40,7 @@ def full_name(first, last):
 
 # do interactive again
 
-return vs print
+return vs. print
 
 why might we want to put the output of a function in a variable
 instead of direction to the screen?
@@ -46,8 +50,8 @@ SLIDES: data flow between caller, function, and screen (TODO)
 ==================================================
 
 # difference between returning and printing
- - syntax: don't need parens
- - early return (countdown_print vs countdown_return)
+ - syntax:    don't need parens
+ - semantics: early return
 
 def countdown_v1():
     print(3)
@@ -65,107 +69,90 @@ def countdown_v3():
     rv += "\n" + "1"
     return rv
 
-==================================================
-
-def greeting():
-    print("hello")
-print("world") # tabbed or not?
-greeting()
-
-# is_close
- - do relative closeness first (write is_close_to_1() first)
- - use abs (example of function using a function)
- - example of taking two arguments
- - give example of a multiline function, with tolerance as local variable (hardcoded)
-   - show that indentation matters!
-
- - give example of relative tolerance as third parameter
- - default arguments
- - show example with divide by zero
- - try fixing with adding equality check
-   - short circuiting: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
- - add relative tolerance
-
-def isclose(a, b):
-    return abs(a-b) < 0.001 or abs(a-b) / abs(max(a, b)) < 0.001
-
-try calling it with positional arguments or keyword arguments
+# more details (countdown_v1 only):
+  1. what if we change the indents?
+  2. add some prints to distinguish declaration from invocation
+  3. do multiple invocations of countdown_v1
+  4. do it in PythonTutor
+     - talk about the arrow...
+     - definition time vs invocation time
+     - what does it mean when the arrow points to a function?  Depends...
 
 ==================================================
-
-# visualize bars
-
-def print_bar(name, amount, max_name=10):
-  spaces = len(name) - 10
-  print(name + ':' + ' '*spaces + amount*'$')
-
+WORKSHEET: do problems 19, 20, 22
 ==================================================
 
-# definition vs invocation:
- - watch in PythonTutor
- - talk about the arrow...
- - definition time vs invocation time
- - what does it mean when the arrow points to a function?  Depends...
+==================================================
+SLIDES: approx example (TODO)
+==================================================
 
-def print_it():
-    print(x)
+# approx.py
 
-x = 3
-print_it()
+import math
 
- - function must be defined before it is invoked, but not before other definitions that mention it
-   EXAMPLE!
- - introduce main() function
- - what if x is local, not in the function where we need it?
-   give example, elude to next lecture
+def diff(v1, v2):
+     return abs(v1 - v2)
+
+def is_close(a, b):
+     # version 1:
+     return diff(a, b) / max(abs(a), abs(b)) < 0.001
+
+     # version 2:
+     return diff(a, b) < 0.000001 or diff(a, b) / max(abs(a), abs(b)) < 0.001
+
+def is_approx_pi(x):
+    return is_close(x, math.pi)
+
+def is_approx_zero(x):
+    return is_close(x, 0)
+
+x = input("enter x: ")
+print("about pi?", is_approx_pi(x))
+print("about zero?", is_approx_zero(x))
+
+# LESSONS:
+ - refactoring (start by copy/paste for is_approx_pi)
+ - interpreting traceback (debug divide by zero)
+ - shortcircuiting (try flipping the OR)
+ - purpose of main function
+ - add default arguments for abs rel tolerance
 
 ==================================================
 
-# create a module
- - module name is just file name
- - create dog and cat modules
- - review two types of import
- - talk about the doc string
+# tracing functions that call other functions...
+
+def h():
+     print("H")
+
+def g():
+     print("G")
+     h()
+
+def f():
+     print("F")
+     g()
+
+f()
+
+# what if we swap prints and calls?
+
+==================================================
+WORKSHEET: do problems 21
+==================================================
+
+# battleship.py: refactor
+
+add functions for:
+ - ship1_hit, etc
+ - is_hit
+ - draw_block
+ - draw_map
+ - play_round (can play multiple, keep score)
 
 ==================================================
 
-# tracing with print
-
-do several layers of functions calling each other
- - print("ENTER f")
- - print("RETURN f")
- - show onion like organization
-
-==================================================
-
-# multiple return values
- - give an example of pass
- - do quadratic formula example
- - return positive and negative example
-
-==================================================
-
-# interpolation example
+# interpolation.py
  - given points x1,y1,x2,y2, estimate new y for x
  - slope function
  - estimate function
  - error functions
-
-==================================================
-
-# variables pointing to functions
- - g = f, g(x)  (see in PythonTutor)
- - call5 example
-
-==================================================
-
-# another battleship example
-
-def ship1(x, y):
-  pass
-
-def ship2(x, y):
-  pass
-
-def is_hit(x, y):
-  return is_hit(x, y) or is_hit(x, y)
