@@ -24,17 +24,17 @@ class Swapper:
         diff = ddict(int)
         swaps = []
 
-        diff['Thu @ 9:30am'] = -1
-        diff['Thu @ 11am'] = 2
-        diff['Thu @ 1pm'] = 3
-        diff['Thu @ 2:30pm'] = 0
-        diff['Thu @ 4pm'] = 0
+        diff['Thu @ 9:30am'] = 
+        diff['Thu @ 11am'] = 
+        diff['Thu @ 1pm'] = 
+        diff['Thu @ 2:30pm'] = 
+        diff['Thu @ 4pm'] = 
         
-        diff['Fri @ 9:30am'] = -1
-        diff['Fri @ 11am'] = 1
-        diff['Fri @ 1pm'] = 1
-        diff['Fri @ 2:30pm'] = -12
-        diff['Fri @ 4pm'] = -7
+        diff['Fri @ 9:30am'] = 
+        diff['Fri @ 11am'] = 
+        diff['Fri @ 1pm'] = 
+        diff['Fri @ 2:30pm'] = 
+        diff['Fri @ 4pm'] = 
 
         random.shuffle(self.reqs)
         for req in self.reqs:
