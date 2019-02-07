@@ -41,7 +41,7 @@ class Snapshot:
         """get submission code and metadata"""
         google_id = self.net_id_to_google_id(net_id)
         if not google_id:
-            return {}
+            return None
         path = self.dirname+'/projects/'+project_id+'/users/'+google_id+'/curr.json'
         if not os.path.exists(path):
             return None
