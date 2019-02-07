@@ -1,21 +1,5 @@
 ==================================================
-
-same name, different things in different contexts(s)
- - different files, same file name
- - different functions, same function name
- - different steets, same street name
- - different students, same name (e.g., Matthew)
-
-talk about CONTEXT!  Same name means different things depending on the
-situation.
-
-==================================================
-
-frames (s)
- - a frame is a groups of variables
- - every time a function is invoked, a frame is created for it
- - stack diagrams
-
+SLIDES: naming, context, frames
 ==================================================
 
 PythonTutor, getting used to looking at frames:
@@ -73,9 +57,7 @@ def h():
 f()
 
 ==================================================
-
 LESSONS ABOUT LOCAL VARIABLES
-
 ==================================================
 
 # function definition vs invocation
@@ -125,20 +107,20 @@ def main():
     x = 100
     display_x()
 
+main()
+
 # LESSON 4: you can't see the variables of other function invocations,
   even those that call you
 
 ==================================================
-
 # LESSONS ABOUT GLOBAL VARIABLES
-
 ==================================================
 
 VERSION 1:
 
 # show global frame in PythonTutor
 
-msg = 'hello' # global, because outside any function
+msg = 'hello' # global, outside any func
 
 def greeting():
     print(msg)
@@ -211,8 +193,9 @@ print('before: ' + val)
 f(val)
 print('after: ' + val)
 
-# LESSON 9: in Python, arguments are "passed by value", meaning changes
-# to a parameter inside the function don't change the argument outside
+# LESSON 9: in Python, arguments are "passed by value", meaning
+# reassignments to a parameter don't change the argument outside
+
 
 ==================================================
 
