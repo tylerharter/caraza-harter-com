@@ -167,14 +167,22 @@ var code_review = {};
     // default
     return {display_name:filename, order:0, content_type:"python"}
   }
-  
-  code_review.refreshCR = function() {
+
+  code_review.genericComment = function(comment) {
+    $("#general_comments").val(comment);
+  }
+
+  code_review.resetVisible = function () {
     if (cr.is_grader) {
       $(".grader_content").show()
     } else {
       $(".grader_content").hide()
     }
-    
+  }
+
+  code_review.refreshCR = function() {
+    code_review.resetVisible()
+
     // remove all previous highlight popovers
     $(".popover").remove()
 
@@ -245,7 +253,12 @@ var code_review = {};
       general_comments = cr.general_comments
     }
     html += ('<h3>General Comments</h3>')
-    html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea>')
+    html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea><br>')
+    html += ('<div class="grader_content" style="display:none;">')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!\')">Great job!</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!\')">Good job!</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!  Please check comments below.\')">Good job! Please check comments below.</button> ')
+    html += ('</div>')
 
     // create a box for each code file
     for (var filename in cr.project.files) {
@@ -255,6 +268,7 @@ var code_review = {};
       html += ('</div>')
     }
     $("#code_viewer").html(html)
+    code_review.resetVisible()
 
     // populate each box with the code and highlights
     for (var filename in cr.project.files) {
