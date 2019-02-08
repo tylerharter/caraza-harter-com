@@ -10,11 +10,11 @@ def f():
 
 def g():
     y = 2
-    print(x)
+    print(y)
 
 def h():
     z = 3
-    print(x)
+    print(z)
 
 f()
 g()
