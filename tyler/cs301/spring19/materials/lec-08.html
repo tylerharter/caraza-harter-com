@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+  Python Tutor: https://github.com/pgbovine/OnlinePythonTutor/
+  Copyright (C) Philip Guo (philip@pgbovine.net)
+  LICENSE: https://github.com/pgbovine/OnlinePythonTutor/blob/master/LICENSE.txt
+-->
+
+<head>
+  <title>CS 301 - Function Scope</title>
+
+  <script type="text/javascript" src="../js/pytutor-embed.bundle.js" charset="utf-8"></script>
+
+</head>
+
+<body style="background-color: white;">
+
+  <!-- create divs where you'll put each visualizer -->
+  <div id="firstDiv"></div>
+  <hr/>
+  <div id="secondDiv"></div>
+  <hr/>
+  <div id="thirdDiv"></div>
+  <hr/>
+  <div id="fourthDiv"></div>
+  <hr/>
+  <div id="fifthDiv"></div>
+
+  <script type="text/javascript">
+
+// here's an example trace:
+var trace = {
+"code": "x = [1,2,3]\ny = x\n",
+"trace": [
+{
+"line": 1,
+"event": "step_line",
+"func_name": "<module>",
+      "globals": {},
+      "ordered_globals": [],
+      "stack_to_render": [],
+      "heap": {},
+      "stdout": ""
+      },
+      {
+      "line": 2,
+      "event": "step_line",
+      "func_name": "<module>",
+        "globals": {
+        "x": [
+        "REF",
+        1
+        ]
+        },
+        "ordered_globals": [
+        "x"
+        ],
+        "stack_to_render": [],
+        "heap": {
+        "1": [
+        "LIST",
+        1,
+        2,
+        3
+        ]
+        },
+        "stdout": ""
+        },
+        {
+        "line": 2,
+        "event": "return",
+        "func_name": "<module>",
+          "globals": {
+          "x": [
+          "REF",
+          1
+          ],
+          "y": [
+          "REF",
+          1
+          ]
+          },
+          "ordered_globals": [
+          "x",
+          "y"
+          ],
+          "stack_to_render": [],
+          "heap": {
+          "1": [
+          "LIST",
+          1,
+          2,
+          3
+          ]
+          },
+          "stdout": ""
+          }
+          ]
+          }
+          
+
+// call addVisualizerToPage with the trace, the id of each div, and the
+// third parameter saying which step (startingInstruction) to visualize.
+// remember hideCode: true to show ONLY the visualization itself and not
+// the code.
+addVisualizerToPage(trace, 'firstDiv',  {startingInstruction: 1, hideCode: false});
+addVisualizerToPage(trace, 'secondDiv', {startingInstruction: 2, hideCode: false});
+addVisualizerToPage(trace, 'thirdDiv',  {startingInstruction: 3, hideCode: false});
+addVisualizerToPage(trace, 'fourthDiv', {startingInstruction: 4, hideCode: false});
+addVisualizerToPage(trace, 'fifthDiv',  {startingInstruction: 5, hideCode: false});
+
+  </script>
+</body>
+</html>
