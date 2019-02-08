@@ -3698,9 +3698,9 @@ var NavigationController = /** @class */ (function () {
                      <div id="executionSliderFooter"/>\
                      <div id="vcrControls">\
                        <button id="jmpFirstInstr", type="button">&lt;&lt; First</button>\
-                       <button id="jmpStepBack", type="button", style="height:60px;width:120px">&lt; Back</button>\
+                       <button id="jmpStepBack", type="button", style="height:60px">&lt; Back</button>\
                        <span id="curInstr">Step ? of ?</span>\
-                       <button id="jmpStepFwd", type="button", style="height:60px;width:120px">Forward &gt;</button>\
+                       <button id="jmpStepFwd", type="button", style="height:60px">Forward &gt;</button>\
                        <button id="jmpLastInstr", type="button">Last &gt;&gt;</button>\
                      </div>\
                      <div id="rawUserInputDiv">\
