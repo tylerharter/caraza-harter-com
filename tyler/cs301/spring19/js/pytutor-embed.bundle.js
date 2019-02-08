@@ -902,7 +902,6 @@ var ExecutionVisualizer = /** @class */ (function () {
             }
             // add an extra label to link back to the main site, so that viewers
             // on the embedded page know that they're seeing an OPT visualization
-            base.append('<div style="font-size: 8pt; margin-bottom: 10px;"><a href="http://pythontutor.com" target="_blank" style="color: #3D58A2;">Python Tutor</a> by <a href="https://twitter.com/pgbovine" target="_blank" style="color: #3D58A2;">Philip Guo</a>. Support with a <a href="http://pgbovine.net/support.htm" target="_blank">small donation</a>.</div>');
             base.find('#codeFooterDocs').hide(); // cut out extraneous docs
         }
         else {
@@ -3699,9 +3698,9 @@ var NavigationController = /** @class */ (function () {
                      <div id="executionSliderFooter"/>\
                      <div id="vcrControls">\
                        <button id="jmpFirstInstr", type="button">&lt;&lt; First</button>\
-                       <button id="jmpStepBack", type="button">&lt; Back</button>\
+                       <button id="jmpStepBack", type="button", style="height:60px;width:120px">&lt; Back</button>\
                        <span id="curInstr">Step ? of ?</span>\
-                       <button id="jmpStepFwd", type="button">Forward &gt;</button>\
+                       <button id="jmpStepFwd", type="button", style="height:60px;width:120px">Forward &gt;</button>\
                        <button id="jmpLastInstr", type="button">Last &gt;&gt;</button>\
                      </div>\
                      <div id="rawUserInputDiv">\
