@@ -170,6 +170,7 @@ var code_review = {};
 
   code_review.genericComment = function(comment) {
     $("#general_comments").val(comment);
+    cr.general_comments = comment;
   }
 
   code_review.resetVisible = function () {
