@@ -672,3 +672,12 @@ def project_get_summary(user, event):
         if e.response['Error']['Code'] == "NoSuchKey":
             raise Exception("no status snapshot available")
         raise e
+
+
+@route
+@user
+def test(user, event):
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup('<table></table><table></table><table></table>', 'html.parser')
+    tables = soup.find_all('table')
+    return (200, 'tables: ' + str(len(tables)))

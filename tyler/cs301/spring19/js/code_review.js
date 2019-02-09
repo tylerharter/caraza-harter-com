@@ -272,41 +272,43 @@ var code_review = {};
 
     // populate each box with the code and highlights
     for (var filename in cr.project.files) {
+      // populate either the outer div with HTML content or the inner
+      // pre (depending on the type of content
       if (fileConf(filename).content_type == "html") {
         var element = $("div[data-filename='"+filename+"'].html_code")
         element.html('<div class="nb_cell">' +
                      cr.project.files[filename] + 
                      '</div>')
+      } else {
+        var preElement = $("pre[data-filename='"+filename+"'].lang-py")
+        var code = cr.project.files[filename]
+
+        // sort highlights from last to first.  Otherwise, injecting
+        // HTML at specific offsets gets messed up, as early injections
+        // move where later injections should go.
+        cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
+
+        var htmlCode = ''
+
+        // add all highlights
+        for(var i=0; i<cr.highlights[filename].length; i++) {
+          var highlight = cr.highlights[filename][i]
+          var cut
+
+          // move tail from code to htmlCode
+          cut = highlight.offset + highlight.length
+          htmlCode = escapeForHTML(code.slice(cut)) + htmlCode
+          code = code.slice(0, cut)
+
+          // move highlight from code to htmlCode
+          cut = highlight.offset
+          var span = getCodeReviewSpan(filename, highlight.offset, highlight.length)
+          htmlCode = span + escapeForHTML(code.slice(cut)) + '</span>' + htmlCode
+          code = code.slice(0, cut)
+        }
+        htmlCode = escapeForHTML(code) + htmlCode
+        preElement.html(htmlCode)
       }
-
-      var preElement = $("pre[data-filename='"+filename+"'].lang-py")
-      var code = cr.project.files[filename]
-
-      // sort highlights from last to first.  Otherwise, injecting
-      // HTML at specific offsets gets messed up, as early injections
-      // move where later injections should go.
-      cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
-
-      var htmlCode = ''
-
-      // add all highlights
-      for(var i=0; i<cr.highlights[filename].length; i++) {
-        var highlight = cr.highlights[filename][i]
-        var cut
-
-        // move tail from code to htmlCode
-        cut = highlight.offset + highlight.length
-        htmlCode = escapeForHTML(code.slice(cut)) + htmlCode
-        code = code.slice(0, cut)
-
-        // move highlight from code to htmlCode
-        cut = highlight.offset
-        var span = getCodeReviewSpan(filename, highlight.offset, highlight.length)
-        htmlCode = span + escapeForHTML(code.slice(cut)) + '</span>' + htmlCode
-        code = code.slice(0, cut)
-      }
-      htmlCode = escapeForHTML(code) + htmlCode
-      preElement.html(htmlCode)
     }
 
     // add syntax coloring and watch for events
