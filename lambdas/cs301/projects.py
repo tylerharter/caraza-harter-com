@@ -16,6 +16,7 @@ import json, urllib, boto3, botocore, base64, datetime, time, html
 import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
+from bs4 import BeautifulSoup
 
 from lambda_framework import *
 from roster import *
@@ -86,6 +87,36 @@ def normalize_py_bytes(b):
     return code
 
 
+def sanitize_html(page):
+    '''safely transcribe HTML tables, and escape all else to make sure we never get potentially dangerous JS code'''
+    soup = BeautifulSoup(page, 'html.parser')
+    tables = soup.find_all('table')
+    if len(tables) != 1:
+        return html.escape(page)
+
+    # there is one table, let's sanitize it
+    t = tables[0]
+    cells = {}
+    for row, tr in enumerate(t.find_all("tr")):
+        for col, td in enumerate(tr.find_all(["td", "th"])):
+            cells[row,col] = td.get_text()
+
+    rows, cols = max(cells)
+    page = '<table border="1" cellspacing="0">\n' 
+    for row in range(rows+1):
+        page += "\t<tr>\n"
+        for col in range(cols+1):
+            tag = 'th' if (row==0 or col==0) else 'td'
+            page += "\t\t<%s>\n" % tag
+            page += "\t\t\t"
+            page += html.escape(cells.get((row,col), ""))
+            page += "\n"
+            page += "\t\t</%s>\n" % tag
+        page += "\t</tr>\n"
+    page += "</table>\n"
+    return page
+
+
 def nb_cell_output_html(cell):
     '''Convert all ipython cell outputs to HTML'''
 
@@ -100,7 +131,7 @@ def nb_cell_output_html(cell):
         if png:
             parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
         elif web:
-            parts.append("".join(web))
+            parts.append(sanitize_html("".join(web)))
         elif plain:
             parts.append(html.escape("".join(plain)))
         else:
@@ -672,12 +703,3 @@ def project_get_summary(user, event):
         if e.response['Error']['Code'] == "NoSuchKey":
             raise Exception("no status snapshot available")
         raise e
-
-
-@route
-@user
-def test(user, event):
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup('<table></table><table></table><table></table>', 'html.parser')
-    tables = soup.find_all('table')
-    return (200, 'tables: ' + str(len(tables)))
