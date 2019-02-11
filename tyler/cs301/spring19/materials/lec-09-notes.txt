@@ -1,97 +1,58 @@
-Overview of where we are:
-  mental models:
-    - flow of execution
-      - exceptions to next line: function, conditional, loop
-      - nesting
-    - state
-      - global/local
-      - argument -> parameter
-    - expression evaluation
-
+==================================================
+SLIDES: control flow diagrams, if and else syntax
 ==================================================
 
-Review tabbing for functions: what code is in a "block"? (s)
-
-Show control flow picture (s)
-
-General syntax for if (s)
-
-if inside a function (s)
- - look for colons in Python
- - starting on a line after a colon, draw a box around lines until the
-   tabbed-in part finishes
-
+==================================================
+WORKSHEET: problem 1
 ==================================================
 
-PythonTutor
+DEMO 1: absolute in various forms (in PythonTutor)
 
-refer to pseudocode worksheet, problem 4 {
-    1. If the value in “X” is negative, continue to step 2, otherwise skip to step 3
-    2. Multiply the value in “X” by -1, and put the result back in “X”
-    3. Copy the value in “X” to the “abs” box
-}
- - in Python: "continue to indented code" or "skip past indented code"
- - do in Python
- - how do we know where to skip to? [skip past the tabbed-in section]
-
-==================================================
-
-worksheet with drawing blocks (w)
- - problem 1
- - problem 2
-
-==================================================
-
-# do absolute, in various forms
-
-def absolute_A(x):
+def absolute_a(x):
     return (x ** 2) ** (0.5)
 
-def absolute_B(x):
+def absolute_b(x):
     if x < 0:
        x = -x
     return x
 
-def absolute_C(x):
+def absolute_c(x):
     if x < 0:
        return -x
     else:
        return x
 
-def absolute_D(x):
+def absolute_d(x):
     if x < 0:
        return -x
     return x
 
-# which version do people prefer?
+STYLE: which version do people prefer?
 
 ==================================================
 
-Example 1: addition tester game
- - show an addition, prompt for an answer
- - print grade based on score
- - give second chance for half points if only off by one (nesting)
+DEMO: piecewise function
+ - introduce elif (first implement without this)
 
 ==================================================
-
-Example 2: dates
- - function that takes a number and prints 1st, 2nd, 3rd, etc
- - function that takes a month number and prints Jan, Feb, etc
-   - with bounds checking
-   - with assert
- - function that uses other two to print a date
- - function that compares two dates
- - function to sanitize year, 80 -> 1980, 15 -> 2015
-
+WORKSHEET: problem 2
 ==================================================
 
-Example 3: improve battleship game:
- - functions for ships
- - print 'Hit' or 'Miss'
- - print '1' or '0' on map for hit or miss
- - do bounds checking (try twice)
+DEMO: stoplight
+ - introduce use of else to handle cases not implemented yet
+
+DEMO: date printer
+ - do bounds checking
+ - have students think about outputs that are incorrect
+   (tricky because we have 11th ends in "th" but 21st ends in "st")
+
+DEMO: addition tester
+ - introduce random
+ - do copy/paste instead of loop
+
+DEMO: battleship:
+ - various improvements
 
 ==================================================
-
-worksheet with drawing blocks (w)
- - problem 3
+WORKSHEET: problem 3
+==================================================
