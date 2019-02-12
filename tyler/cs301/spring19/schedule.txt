@@ -108,6 +108,8 @@ Conditionals 2
 * Refactoring
 * Nesting
 <b>Due</b>: P3<br>
+<a href="materials/lec-10.pdf">Link to Slides</a><br>
+<a href="materials/lec-10.html">Interactive Exercises</a><br>
 
 =
 Iteration 1
