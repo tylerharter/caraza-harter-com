@@ -15,14 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>We'll occasionally send these emails so you can check the test
-    scores and TA feedback for your submissions.  We didn't do reviews
-    for P1 (since everybody was asked to paste the same code), but
-    this will be more useful in the future.  However, now is a good
-    time to check that the below link shows your submission and test
-    score (especially if you weren't the primary submitter).  Contact
-    tylerharter@gmail.com if you have any trouble accessing the
-    link.</p>
+    <p>P2 feedback is ready for you to review.  Due to a bug (Tyler's mistake), some general comments at the top of your code reviews didn't get recorded, so my apologies if you don't have one of those.  It will fixed for P3.</p>
 
     <p>Here is your project summary:</p>
     """

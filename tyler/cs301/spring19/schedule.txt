@@ -90,7 +90,7 @@ Function Scope
 <a href="materials/lec-08.html">Interactive Exercises</a><br>
 
 =
-Conditions 1
+Conditionals 1
 
 * Boolean Logic
 * if,elif,else
@@ -104,7 +104,8 @@ and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
 
 =
-Conditions 2
+Conditionals 2
+* Refactoring
 * Nesting
 <b>Due</b>: P3<br>
 

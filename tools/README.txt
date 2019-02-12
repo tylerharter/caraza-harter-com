@@ -40,9 +40,23 @@ fetch_projects.py:
 ta.py
     test TA permissions
 
+canvas_to_roster.py
+    - create roster.json from canvas.csv
+    - one time only (use update_enrolled.py to update later)
+
+update_enrolled.py
+    - use a canvas.csv
+    - to update a roster.json
+    - set enrolled to True/False
+
+rebalance_tas.py
+    - update TA assignments in roster.json
+    - balance TAs across sections by weight
+    - also make sure it is balanced according to the submission for a particular assignment
+
 ========================================
 
-Common workflow:
+Emailing summary workflow:
 1. download all from S3 with s3_backup.py
 2. compute grades with project_summary.py
 3. generate status emails with share_project_summary.py
