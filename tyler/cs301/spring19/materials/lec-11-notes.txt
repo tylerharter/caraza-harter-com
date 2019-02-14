@@ -1,19 +1,10 @@
 ==================================================
-
- - review control flow (s)
-   - refer to worksheet
-   - we'll know everything now!
-
- - control flow diagram (s)
-
- - compare if to while
-
+SLIDES: introduce syntax and logic
 ==================================================
 
-replace "if" with "while"
- - do these in PythonTutor
+PythonTutor: replace "if" with "while"
 
-x = 15
+x = 5
 
 if x > 0:
    print(str(x) + ' is positive')
@@ -27,61 +18,20 @@ while x > 0:
 
 ==================================================
 
-# nesting -- what's the difference between these two programs
+talk about common counting patters:
 
-print('hi')
-x = 5
-if x > 0:
-  while x != 0:
-    print(x)
-    x -= 1
-print('bye')
+i = ???
+while i < ???:     # (or i > ...)
+    DO SOMETHING
+    i += ???
 
-----------------------------------------
-
-print('hi')
-x = 5
-while x != 0:
-  if x > 0:
-    print(x)
-    x -= 1
-print('bye')
+give some challenge questions
 
 ==================================================
 
-implement is_prime(n) function
- - have bug where we have < vs <=
- - bound check (>= 2)
-
-==================================================
-
-file read loops:
- - assume these three: open_file(), get_next(), has_next()
- - average
- - maximum
-
-==================================================
-
-input loops
- - make a version of above program that takes user input instead, until a 'q'
-
-==================================================
-
-exponential growth visualization
- - call function so we can visualize anything
- - with characters for bars
-
-==================================================
-
-battleship game:
- - nested loop to print map (doubly nested)
- - is_ship1(x,y)
- - is_ship(x,y) => is_ship1() or is_ship2() or ...
- - user input loops (battleship game)
-   - first, triply nested
-   - then, refactor to function
- - type "quit" to exit
-
-==================================================
-
-approximate area under curve
+DEMOS:
+ - maximum of function
+ - countdown timer (for fun, make it beep using beeper.py -- only works on Mac)
+ - area under curve
+ - prime finder
+ - battleship map
