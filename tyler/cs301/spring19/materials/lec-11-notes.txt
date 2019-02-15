@@ -29,6 +29,16 @@ give some challenge questions
 
 ==================================================
 
+i = 0
+while i < 8:
+    if i % 2 == 0:
+        print("even")
+    else:
+        print("odd")
+        i += 1 # yikes!
+
+==================================================
+
 DEMOS:
  - maximum of function
  - countdown timer (for fun, make it beep using beeper.py -- only works on Mac)
