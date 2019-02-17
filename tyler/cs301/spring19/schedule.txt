@@ -126,6 +126,8 @@ Iteration 2
 * Continue
 <a href="materials/lec-12.pdf">Link to Slides</a><br>
 <a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-12.html">Interactive Exercises</a><br>
+<b>Read (Optional)</b>: Sweigart Ch 2<br>
 
 =
 Strings
