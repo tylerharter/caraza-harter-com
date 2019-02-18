@@ -124,18 +124,25 @@ def nb_cell_output_html(cell):
 
     parts = []
     for output in outputs:
-        data = output.get("data", {})
-        png = data.get("image/png", None)
-        web = data.get("text/html", None)
-        plain = data.get("text/plain", None)
-        if png:
-            parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
-        elif web:
-            parts.append(sanitize_html("".join(web)))
-        elif plain:
-            parts.append(html.escape("".join(plain)))
+        output_type = output.get("output_type", "unknown")
+        if output_type == "execute_result":
+            data = output.get("data", {})
+            png = data.get("image/png", None)
+            web = data.get("text/html", None)
+            plain = data.get("text/plain", None)
+            if png:
+                parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
+            elif web:
+                parts.append(sanitize_html("".join(web)))
+            elif plain:
+                parts.append(html.escape("".join(plain)))
+            else:
+                parts.append(html.escape(str(output)))
+        elif output_type == "stream":
+            text = "".join(output.get("text", []))
+            parts.append("<pre>" + html.escape(text) + "</pre>")
         else:
-            parts.append(html.escape("<" + ",".join(map(str,data.keys()))) + ">")
+            parts.append(html.escape(str(output)))
 
     return '\n<br>\n'.join(parts)
 
