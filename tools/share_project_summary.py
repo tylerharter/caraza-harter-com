@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>P2 feedback is ready for you to review.  Due to a bug (Tyler's mistake), some general comments at the top of your code reviews didn't get recorded, so my apologies if you don't have one of those.  It will fixed for P3.</p>
+    <p>P3 feedback is ready for you to review.  Take a look!</p>
 
     <p>Here is your project summary:</p>
     """
