@@ -1,22 +1,21 @@
 "use strict";
 
+var status = {};
+
 (function() {
   function init() {
     common.signinCallback = function() {
-      code_review.fetchStatus()
+      var data = {
+        "fn": "roster_entry"
+      }
+
+      common.callLambda(data, function(data) {
+        console.log(data)
+        $("#section").html(data.body.section)
+        $("#exam1").html(data.body.exam1)
+      })
     }
   }
-
-  code_review.fetchStatus = function() {
-    var data = {
-      "fn": "roster_entry"
-    }
-
-    common.callLambda(data, function(data) {
-      console.log(data)
-      $("#exam1").html(html)
-    })
-  };
 
   init()
 })()

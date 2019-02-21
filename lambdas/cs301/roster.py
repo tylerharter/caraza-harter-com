@@ -166,7 +166,7 @@ def roster_entry(user, event):
     if roster[net_id]["enrolled"]:
         return (500, "not on enrolled")
 
-    return roster[net_id]
+    return (200, roster[net_id])
 
 
 @route
