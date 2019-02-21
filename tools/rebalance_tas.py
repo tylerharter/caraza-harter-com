@@ -53,7 +53,9 @@ def main():
 
     # decide who is doing what, according to their weight
     # (try to keep ta->student pairings)
+    print("rebalance submitters")
     rebalance(ta_to_submitters, weights)
+    print("rebalance others")
     rebalance(ta_to_others, weights)
 
     # read and index old roster
