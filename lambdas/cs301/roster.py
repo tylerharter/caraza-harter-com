@@ -146,6 +146,30 @@ def get_net_id(user, event):
 
 
 @route
+@user
+def roster_entry(user, event):
+    email = user['email'].lower()
+    parts = email.split("@")
+    if parts[1] != "wisc.edu":
+        return (500, 'not a wisc.edu email')
+    net_id = parts[0]
+
+    response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
+    roster = json.loads(response['Body'].read().decode('utf-8'))
+    roster = {row["net_id"]: row
+              for row in roster
+              if "net_id" in row}
+
+    if not net_id in roster:
+        return (500, "not on roster")
+
+    if roster[net_id]["enrolled"]:
+        return (500, "not on enrolled")
+
+    return roster[net_id]
+
+
+@route
 @admin
 def roster_merge_google_ids(user, event):
     '''
