@@ -163,7 +163,7 @@ def roster_entry(user, event):
     if not net_id in roster:
         return (500, "not on roster")
 
-    if roster[net_id]["enrolled"]:
+    if not roster[net_id]["enrolled"]:
         return (500, "not on enrolled")
 
     return (200, roster[net_id])
