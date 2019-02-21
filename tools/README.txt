@@ -43,6 +43,7 @@ ta.py
 canvas_to_roster.py
     - create roster.json from canvas.csv
     - one time only (use update_enrolled.py to update later)
+    - can we replace this with update_enrolled.py?
 
 update_enrolled.py
     - use a canvas.csv
@@ -53,6 +54,9 @@ rebalance_tas.py
     - update TA assignments in roster.json
     - balance TAs across sections by weight
     - also make sure it is balanced according to the submission for a particular assignment
+
+exam_to_roster.py
+    - add a field to roster.json indicating exam rooms
 
 ========================================
 
