@@ -18,7 +18,6 @@ CODING EXAMPLE: list_total function
 
 other things that work the same:
  - len
- - slicing
  - concatenation
  - in
  - multiply sequence by int
@@ -63,9 +62,7 @@ CODING EXAMPLE: profanity filter, replace "darn" with "****"
 
 BONUS TOPICS IF TIME:
  - sys.argv
- - reverse list
  - random.choice
- - pass a reference by value...
 
 Do this in PythonTutor:
 

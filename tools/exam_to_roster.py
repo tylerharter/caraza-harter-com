@@ -1,4 +1,12 @@
-import os, sys, json, csv
+import os, sys, json, csv, hashlib
+from datetime import datetime
+
+
+def md5(txt):
+    a = hashlib.md5(txt.encode())
+    b = a.hexdigest()
+    return int(b, 16)
+
 
 def get_alts():
     alts = {}
@@ -31,8 +39,16 @@ def main():
             if net_id in alts:
                 exam = alts[net_id]
             else:
-                exam = options[hash(net_id) % len(options)]
-            row['exam1'] = exam
+                exam = options[md5(net_id) % len(options)]
+
+            if row['exam1'] != exam:
+                if "Van Vleck" in row['exam1'] and "Van Vleck" in exam:
+                    # hack because dealing with Python hash() not being deterministic
+                    assert(datetime.today().year == 2019 and datetime.today().month == 2)
+                    continue
+
+                print("%s: %s => %s" % (net_id, row['exam1'], exam))
+                row['exam1'] = exam
         else:
             row['exam1'] = None
 
