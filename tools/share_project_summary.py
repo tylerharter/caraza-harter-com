@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>P3 feedback is ready for you to review.  Take a look!</p>
+    <p>P4 feedback is ready for you to review.  Take a look!  Due to confusion in the spec, we're going to be lenient about resubmissions on this one.  So if you're failing the tests even though you did most of the work, don't panic.  Just reach out to the TA who left feedback to ask permission to make some tweaks and resubmit.</p>
 
     <p>Here is your project summary:</p>
     """
