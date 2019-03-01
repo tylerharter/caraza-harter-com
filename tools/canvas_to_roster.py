@@ -24,6 +24,7 @@ def main():
         net_id = email.split("@")[0]
 
         if net_id in roster_dict:
+            roster_dict[net_id]["name"] = row["Student"]
             roster_dict[net_id]["enrolled"] = True
             roster_dict.pop(net_id)
         else:
