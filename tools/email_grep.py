@@ -8,24 +8,26 @@ def main():
     with open(sys.argv[1]) as f:
         emails = json.load(f)
 
-    emails = [e for e in emails if e['message'].find(sys.argv[2]) >= 0]
     print('%d emails match' % len(emails))
 
     body = ""
+    count = 0
     for i, email in enumerate(emails):
-        if not email['message'].find(sys.argv[2]) >= 0:
+        if email['message'].find(sys.argv[2]) == -1 and email['to'].find(sys.argv[2]) == -1:
             continue
         if i > 0:
             body += "<hr>\n"
         body += '<b>TO: </b> ' + email['to'] + '<br>'
         body += '<b>SUBJECT: </b> ' + email['subject'] + '<br>'
         body += email['message']
-
+        count += 1
     html = """<html>
   <body>
     {body}
   </body>
 </html>"""
+
+    print(count, "matches")
 
     with open('out.html', 'w') as f:
         f.write(html.format(body=body))
