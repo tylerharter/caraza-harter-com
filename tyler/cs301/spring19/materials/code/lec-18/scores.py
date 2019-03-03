@@ -1,35 +1,46 @@
-# key: player's name
-# val: player's score
-scores = {}
+alice = 0
+bob = 0
 
 def main():
-    global scores
+    global alice
+    global bob
 
     while True:
         cmd = input('enter a cmd (type "help" for descriptions): ')
         cmd = cmd.strip().lower().split(' ')
+        
         if cmd[0] == 'q':
             break
+        
         elif cmd[0] == 'help':
             print_help()
+            
         elif cmd[0] == 'set':
-            # TODO: sanity checking
             name = cmd[1]
             score = int(cmd[2])
-            scores[name] = score
+            if name == "alice":
+                alice = score
+            elif name == "bob":
+                bob = score
+            else:
+                print("Oops!  can only have Alice and Bob.")
+                
         elif cmd[0] == 'get':
-            # TODO: sanity checking
             name = cmd[1]
-            print(scores[name])
-        elif cmd[0] == 'high':
-            scores_list = []
-            for x in scores:
-                scores_list.append(scores[x])
-            best = max(scores_list)
-            print('max:', best)
+            if name == "alice":
+                print(alice)
+            elif name == "bob":
+                print(bob)
+            else:
+                print("Oops!  can only have Alice and Bob.")
 
-            # TODO: loop over players again,
-            # print those who tied for the max
+        elif cmd[0] == 'high':
+            if alice == bob:
+                print("tie")
+            elif alice > bob:
+                print("alice")
+            else:
+                print("bob")
 
     print('exiting')
 
