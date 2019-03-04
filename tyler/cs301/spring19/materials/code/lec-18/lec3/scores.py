@@ -1,10 +1,11 @@
-alice = 0
-bob = 0
+#alice = 0
+#bob = 0
+
+scores = {"alice": 0, "bob": 0}
+# instead of alice variable
+# scores["alice"]
 
 def main():
-    global alice
-    global bob
-
     while True:
         cmd = input('enter a cmd (type "help" for descriptions): ')
         cmd = cmd.strip().lower().split(' ')
@@ -18,29 +19,22 @@ def main():
         elif cmd[0] == 'set':
             name = cmd[1]
             score = int(cmd[2])
-            if name == "alice":
-                alice = score
-            elif name == "bob":
-                bob = score
-            else:
-                print("Oops!  can only have Alice and Bob.")
+            scores[name] = score
+            print(scores)
                 
         elif cmd[0] == 'get':
             name = cmd[1]
-            if name == "alice":
-                print(alice)
-            elif name == "bob":
-                print(bob)
+            if name in scores:
+                print(scores[name])
             else:
-                print("Oops!  can only have Alice and Bob.")
+                print("not found")
 
         elif cmd[0] == 'high':
-            if alice == bob:
-                print("tie")
-            elif alice > bob:
-                print("alice")
-            else:
-                print("bob")
+            best_key = None
+            for key in scores:
+                if best_key == None or scores[key] > scores[best_key]:
+                    best_key = key
+            print("winner", best_key)
 
     print('exiting')
 
