@@ -8,8 +8,6 @@ def main():
     with open(sys.argv[1]) as f:
         emails = json.load(f)
 
-    print('%d emails match' % len(emails))
-
     body = ""
     count = 0
     for i, email in enumerate(emails):
