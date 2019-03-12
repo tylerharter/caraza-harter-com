@@ -7,7 +7,7 @@ EMBEDDING = """
 <div id="DIV"></div>
 <script type="text/javascript">
   var trace = TRACE;
-  addVisualizerToPage(trace, 'DIV',  {startingInstruction: 0, hideCode: false, lang: "py3"});
+  addVisualizerToPage(trace, 'DIV',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
 </script>
 """
 
