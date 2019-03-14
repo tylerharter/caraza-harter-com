@@ -237,6 +237,7 @@ Recursion
 * More Stack Diagrams
 * Stack Overflow
 <a href="materials/lec-23.pdf">Link to Slides</a><br>
+<a href="materials/lec-23.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 
 =
