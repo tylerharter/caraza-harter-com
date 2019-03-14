@@ -8,7 +8,7 @@ def get_work(buckets, weights, key):
 
 
 def rebalance(buckets, weights):
-    keys = set(buckets.keys()) | set(weights.keys())
+    keys = set(weights.keys())
     most = None
     least = None
     while True:
