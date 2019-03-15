@@ -11,8 +11,17 @@
 
 <div class="alert alert-dark grader_content" style="display:none;">
   <div class="row my-3">
-    <div class="col col-12 px-1 mb-3">
+    <div class="col col-12 px-1 mb-1">
       Test Score: <input type="text" id="auto_test_score" class="form-control" disabled>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <div class="col col-4 px-1">
+        <button id="show_test_details" type="button" class="btn btn-dark" onclick="code_review.toggleTestDetails()">Show Test Details</button>
+      </div>    
+      <pre id="test_blob" style="display:none;background-color:white;border:black 1px solid;"></pre>
     </div>
   </div>
 

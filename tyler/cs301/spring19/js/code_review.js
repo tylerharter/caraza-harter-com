@@ -196,6 +196,7 @@ var code_review = {};
 
     if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
       $("#auto_test_score").val(cr.test_result.score)
+      $("#test_blob").text(JSON.stringify(cr.test_result, null, 2))
     } else {
       $("#auto_test_score").val("not ready")
     }
@@ -373,6 +374,11 @@ var code_review = {};
         })
       })
     })
+  }
+
+  code_review.toggleTestDetails = function() {
+    $("#show_test_details").hide()
+    $("#test_blob").show()
   }
 
   code_review.fetchReview = function(force_new) {
