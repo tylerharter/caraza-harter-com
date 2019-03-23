@@ -257,6 +257,7 @@ Advanced Functions
 * iterators and generators
 * references to functions
 <a href="materials/lec-24.pdf">Link to Slides</a><br>
+<a href="materials/lec-24.html">Interactive Exercises</a><br>
 
 =
 Error Handling
