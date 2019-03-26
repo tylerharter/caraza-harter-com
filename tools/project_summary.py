@@ -148,6 +148,8 @@ class Snapshot:
                     late_days, comment_count, submitter=True)
             rows[net_id]['submissions'] = 1
 
+            rows[net_id]['pass'] = 1 # debug
+
 
         # PASS 2: students with a partner who submitted
         for student in self.roster:
@@ -178,14 +180,18 @@ class Snapshot:
             # associate students with each other
             rows[net_id]['partner'] = student['net_id']
             rows[student['net_id']]['partner'] = net_id
+            
+            rows[net_id]['pass'] = 2 # debug
 
         # PASS 3: students who did not submit
         for student in self.roster:
             net_id = student['net_id']
             if not net_id in rows:
                 add_row(net_id, None, 0, 0,
-                        late_days, 0, submitter=False)
+                        0, 0, submitter=False)
                 rows[net_id]['submissions'] = 0
+                
+                rows[net_id]['pass'] = 3 # debug
 
         # after giving every student a grade with the three passes, we
         # record instructor overrides and add code review links.
