@@ -9,13 +9,13 @@ def slice_size(radius, slice_count):
 
 def main():
     for i in range(10):
-        # grab input                                                                                                                                                                                                                                                           
+        # grab input
         args = input("Enter pizza diameter(inches), slice count): ")
         args = args.split(',')
         radius = float(args[0].strip()) / 2
         slices = int(args[1].strip())
 
-        # pizza analysis                                                                                                                                                                                                                                                       
+        # pizza analysis
         size = slice_size(radius, slices)
         print('PIZZA: radius={}, slices={}, slice square inches={}'
               .format(radius, slices, size))

@@ -1,14 +1,5 @@
 ========================================
 
-OUTLINE:
-
-assertions
-catching exceptions
-catching exceptions of a type
-raising exceptions
-
-========================================
-
 bad inputs:
 1 field (only)
 3+ fields
