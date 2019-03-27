@@ -10,7 +10,7 @@ def md5(txt):
 
 def get_alts():
     alts = {}
-    with open('exam1alt.csv') as f:
+    with open('exam2alt.csv') as f:
         r = csv.DictReader(f)
         for row in r:
             for k,v in row.items():
@@ -23,10 +23,10 @@ def main():
 
     # section => rooms
     exams = {
-        1: ['Monday, Feb 25 @ 7:15-9:15pm in Science Hall 180'],
-        2: ['Monday, Feb 25 @ 7:15-9:15pm in Social Science 6210'],
-        3: ['Monday, Feb 25 @ 7:15-9:15pm in Van Vleck B102',
-            'Monday, Feb 25 @ 7:15-9:15pm in Van Vleck B130'],
+        1: ['Monday, Apr 1 @ 7:15-9:15pm in Science Hall 180'],
+        2: ['Monday, Apr 1 @ 7:15-9:15pm in Social Science 6210'],
+        3: ['Monday, Apr 1 @ 7:15-9:15pm in Van Vleck B102',
+            'Monday, Apr 1 @ 7:15-9:15pm in Van Vleck B130'],
     }
 
     with open('roster.json') as f:
@@ -41,16 +41,11 @@ def main():
             else:
                 exam = options[md5(net_id) % len(options)]
 
-            if row['exam1'] != exam:
-                if "Van Vleck" in row['exam1'] and "Van Vleck" in exam:
-                    # hack because dealing with Python hash() not being deterministic
-                    assert(datetime.today().year == 2019 and datetime.today().month == 2)
-                    continue
-
-                print("%s: %s => %s" % (net_id, row['exam1'], exam))
-                row['exam1'] = exam
+            if row.get('exam2', None) != exam:
+                print("%s: %s => %s" % (net_id, row.get('exam2', "none"), exam))
+                row['exam2'] = exam
         else:
-            row['exam1'] = None
+            row['exam2'] = None
 
     with open('roster.json', 'w') as f:
         json.dump(roster, f, sort_keys=True, indent=2)
