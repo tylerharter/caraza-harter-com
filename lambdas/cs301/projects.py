@@ -125,7 +125,7 @@ def nb_cell_output_html(cell):
     parts = []
     for output in outputs:
         output_type = output.get("output_type", "unknown")
-        if output_type == "execute_result":
+        if output_type in ("execute_result", "display_data"):
             data = output.get("data", {})
             png = data.get("image/png", None)
             web = data.get("text/html", None)
@@ -137,12 +137,12 @@ def nb_cell_output_html(cell):
             elif plain:
                 parts.append(html.escape("".join(plain)))
             else:
-                parts.append(html.escape(str(output)))
+                parts.append("RAW-1: " + html.escape(str(output)))
         elif output_type == "stream":
             text = "".join(output.get("text", []))
             parts.append("<pre>" + html.escape(text) + "</pre>")
         else:
-            parts.append(html.escape(str(output)))
+            parts.append("RAW-2: " + html.escape(str(output)))
 
     return '\n<br>\n'.join(parts)
 
