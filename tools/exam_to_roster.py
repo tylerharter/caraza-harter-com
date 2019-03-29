@@ -14,12 +14,19 @@ def get_alts():
         r = csv.DictReader(f)
         for row in r:
             for k,v in row.items():
-                alts[v.split('@')[0].lower().strip()] = k
+                net_id = v.split('@')[0].lower().strip()
+                if not net_id:
+                    continue
+                if net_id in alts:
+                    print("Duplicate!", net_id)
+                alts[net_id] = k
     return alts
 
 
 def main():
     alts = get_alts()
+    print(alts)
+    print(alts["rachisholm"])
 
     # section => rooms
     exams = {
