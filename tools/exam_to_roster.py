@@ -25,8 +25,6 @@ def get_alts():
 
 def main():
     alts = get_alts()
-    print(alts)
-    print(alts["rachisholm"])
 
     # section => rooms
     exams = {

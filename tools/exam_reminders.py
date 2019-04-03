@@ -12,7 +12,7 @@ def main():
     for row in rows:
         if not row["enrolled"]:
             continue
-        msg = 'Dear student, this is a friendly reminder that you have an exam coming up soon.  Details: {}.  Happy studying!'.format(row[sys.argv[2]])
+        msg = 'Dear student, this is a friendly reminder with the details for your upcoming exam.  Details: {}.  Please make sure you go to the right room (we have some different sections take the exam at the same time next to each other, so it\'s easy to end up in the wrong room).  Good luck!'.format(row[sys.argv[2]])
         emails.append({
             'to':row['net_id']+'@wisc.edu',
             'subject': 'CS 301: Exam Time/Location Reminder',
