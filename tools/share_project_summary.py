@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>P7 is ready.  Be sure to checkout your feedback!</p>
+    <p>P8 is ready.  Be sure to checkout your feedback (click on all the yellow highlights in the notebook)!</p>
 
     <p>Here is your project summary:</p>
     """
