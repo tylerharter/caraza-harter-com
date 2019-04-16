@@ -1,0 +1,9 @@
+capitals_data\capitals_Brazil_Peru.json
+capitals_data\capitals_ElSalvador_SaintHelena.json
+capitals_data\capitals_Ghana_Belize.json
+capitals_data\capitals_Palau_Nigeria.json
+capitals_data\capitals_Portugal_Somalia.json
+capitals_data\capitals_Seychelles_Cuba.json
+capitals_data\capitals_Slovenia_Estonia.json
+capitals_data\capitals_Tanzania_Swaziland.json
+capitals_data\capitals_Vanuatu_Tajikistan.json
