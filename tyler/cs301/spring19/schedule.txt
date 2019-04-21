@@ -355,6 +355,8 @@ Plotting 1
 * scatter plots
 * plot design
 * AxesSublot
+<b>Reading</b>: <a href="materials/code/lec-36/matplotlib-intro.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-36/matplotlib-intro.ipynb">Notebook</a>)<br>
 
 =
 Plotting 2
