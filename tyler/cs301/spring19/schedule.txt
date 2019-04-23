@@ -361,10 +361,13 @@ Plotting 1
 =
 Plotting 2
 * line plots
+<b>Reading</b>: <a href="materials/code/lec-37/line-and-bar.html">CS 301 Notes</a>
+(<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-37/line-and-bar.ipynb">Notebook</a>)<br>
 
 =
 Plotting 3
 * bar plots
+<b>Reading</b>: same as for "Plotting 2"
 
 =
 Plotting 4
