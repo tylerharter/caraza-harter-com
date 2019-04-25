@@ -19,7 +19,7 @@ def gen_html(prows, include_intro=True):
 
     <p>Many of you got zeros for using paths that only work on your
     computer.  For example, if your code includes a path like
-    "c:\Users\ada\CS301\P9\sample_data\1.csv", that won't work because
+    "c:\\Users\\ada\\CS301\\P9\\sample_data\\1.csv", that won't work because
     (a) we don't have a file at that location on our tester computer,
     and (b) we're running on Linux, so slashes need to be forward.
     Instead, a relative path (e.g., "sample_data/1.csv"), constructed
