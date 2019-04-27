@@ -246,9 +246,11 @@ var code_review = {};
 
     // SECTION: test results
     html += ('<h3>Tests</h3>')
+    var test_blob = ""
     if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
       $("#auto_test_score").val(cr.test_result.score)
-      html += ('<textarea cols=80 rows=6 id="test_blob">'+JSON.stringify(cr.test_result, null, 2)+'</textarea><br>')
+      html += ('<textarea cols=80 rows=6 id="test_blob"></textarea><br>')
+      test_blob = JSON.stringify(cr.test_result, null, 2)
     } else {
       html += ('<p>not ready</p>')
     }
@@ -278,6 +280,7 @@ var code_review = {};
 
     // LOAD HTML to PAGE
     $("#code_viewer").html(html)
+    $("#test_blob").val(test_blob)
     code_review.resetVisible()
 
     // populate each box with the code and highlights
