@@ -194,13 +194,6 @@ var code_review = {};
 
     var html = ''
 
-    if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
-      $("#auto_test_score").val(cr.test_result.score)
-      $("#test_blob").text(JSON.stringify(cr.test_result, null, 2))
-    } else {
-      $("#auto_test_score").val("not ready")
-    }
-
     // check deductions
     var ta_deduction = 0
     if ('points_deducted' in cr) {
@@ -222,45 +215,58 @@ var code_review = {};
       }
     })
 
-    // show reviewer info, and grading info (if ready)
-    if ('reviewer_email' in cr && cr.reviewer_email) {
-      html += ('<p my="3">Reviewer: '+cr.reviewer_email+'</p>')
+    // SECTION: grades (tests - ta deduction, only shown when both are ready)
+    html += ('<h3>Grades</h3>')
+    if ('reviewer_email' in cr && cr.reviewer_email &&
+        'test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
 
-      // do we have a test score?
-      if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
-        var test_score = cr.test_result.score
-        var final_score = (test_score - ta_deduction)
-        html += ('<ul>')
-        html += ('<li>Base score: ' + test_score + ' (from tests)')
-        html += ('<li>Less ' + ta_deduction + ' points (TA deduction)')
-        html += ('<li>Final score: <b>' + final_score + '</b>')
-        html += ('<li>Note: this final score does not consider whether this project was ' +
-                 'submitted late.  If it was, and you did not have late days left, ' +
-                 'you may not receive all these points.')
-        if (final_score != 100) {
-          html += ('<li>' + "Not the score you were expecting?  Don't panic.  " +
-                   "Reach out to your reviewer to understand what went wrong.  " +
-                   "Please copy the URL of this page to the email you send them.  " +
-                   "If something trivial (e.g., wrong file name or missing comment " +
-                   "about your partner) caused you to get zero, we'll be reasonable and " +
-                   "help you fix it.")
-        }
-        html += ('</ul>')
+      var test_score = cr.test_result.score
+      var final_score = (test_score - ta_deduction)
+
+      html += ('<ul>')
+      html += ('<li>Base score: ' + test_score + ' (from tests)')
+      html += ('<li>Less ' + ta_deduction + ' points (TA deduction)')
+      html += ('<li>Final score: <b>' + final_score + '</b>')
+      html += ('<li>Reviewer Contact Email: ' + cr.reviewer_email)
+      html += ('<li>Note: this final score does not consider whether this project was ' +
+               'submitted late.  If it was, and you did not have late days left, ' +
+               'you may not receive all these points.')
+      if (final_score != 100) {
+        html += ('<li>' + "Not the score you were expecting?  Don't panic.  " +
+                 "Reach out to your reviewer to understand what went wrong.  " +
+                 "Please copy the URL of this page to the email you send them.  " +
+                 "If something trivial (e.g., wrong file name or missing comment " +
+                 "about your partner) caused you to get zero, we'll be reasonable and " +
+                 "help you fix it.")
       }
+      html += ('</ul>')
+    } else {
+      html += ('<p>not ready</p>')
     }
 
-    // show general comments
+    // SECTION: test results
+    html += ('<h3>Tests</h3>')
+    if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
+      $("#auto_test_score").val(cr.test_result.score)
+      html += ('<textarea cols=80 rows=6 id="test_blob">'+JSON.stringify(cr.test_result, null, 2)+'</textarea><br>')
+    } else {
+      html += ('<p>not ready</p>')
+    }
+
+    // SECTION: TA comments
+    html += ('<h3>General Comments</h3>')
     var general_comments = ''
     if ('general_comments' in cr && cr.general_comments) {
       general_comments = cr.general_comments
     }
-    html += ('<h3>General Comments</h3>')
     html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea><br>')
     html += ('<div class="grader_content" style="display:none;">')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!\')">Great job!</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!\')">Good job!</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!  Please check comments below.\')">Good job! Please check comments below.</button> ')
     html += ('</div>')
+
+    // SECTION: cells/files
 
     // create a box for each code file
     for (var filename in cr.project.files) {
@@ -269,6 +275,8 @@ var code_review = {};
       html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'"></pre>')
       html += ('</div>')
     }
+
+    // LOAD HTML to PAGE
     $("#code_viewer").html(html)
     code_review.resetVisible()
 
