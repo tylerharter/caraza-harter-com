@@ -275,7 +275,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
 
     // SECTION: TA comments
-    html += ('<h3>General Reviever Comments</h3>')
+    html += ('<h3>General Reviewer Comments</h3>')
     var general_comments = ''
     if ('general_comments' in cr && cr.general_comments) {
       general_comments = cr.general_comments
@@ -296,15 +296,13 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
         html += ('<li>Mark each comment we left you as useful (thumbs up) or not useful (thumbs down)')
         html += ('<li>Write a sentence or two about what you think could most be improved in your code if you were to do this project again (either based on our feedback or your own self critique)')
         html += ('<li>Click "Submit Response" to share your thoughts with us (counts for participation)')
-        html += ('<ol>')
-        html += ('<textarea cols=80 rows=6 id="cr_response"></textarea><br>')
-        html += ('<button type="button" class="btn btn-dark")">Submit Response</button>')
+        html += ('</ol>')
+        html += ('<textarea cols=80 rows=6 id="cr_student_response"></textarea><br>')
+        html += ('<button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()")">Submit Response</button>')
       }
     }
 
     // SECTION: cells/files
-
-    // create a box for each code file
     for (var filename in cr.project.files) {
       html += ('<h4 class="mt-3">'+fileConf(filename).display_name+'</h4>')
       html += ('<div class=html_code data-filename="'+filename+'">')
@@ -358,20 +356,25 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       }
     }
 
-    // add syntax coloring and watch for events
+    // syntax highlighting
     PR.prettyPrint()
+
+    // event listening on stuff we just created
     $(".prettyprint").mouseup(codeMouseUp)
 
-    // general comment update event
     if (cr.is_grader) {
-      $("#general_comments").on('input', function(){
+      $("#general_comments").on('input', function() {
         cr.general_comments = $("#general_comments").val()
       })
     } else {
       $("#general_comments").prop("disabled", true);
+
+      $("#cr_student_response").on('input', function() {
+        cr.student_response = $("#cr_student_response").val()
+        cr_dirty = true
+      })
     }
 
-    // must be after pretty printing
     $("[data-toggle=popover]").popover({html:true, container:"body"})
     $("[data-toggle=popover]").each(function() {
       var highlight_element = $(this)
