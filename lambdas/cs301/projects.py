@@ -48,6 +48,11 @@ MAX_SIZE_KB = 1024
 # lookup S3 paths for various objects
 ########################################
 
+def project_dir(user_id, project_id):
+    '''Get location where submission should be saved'''
+    return 'projects/%s/users/%s/' % (project_id, user_id)
+
+
 def project_path(user_id, project_id, submission_id=None):
     '''Get location where submission should be saved'''
     path = 'projects/%s/users/%s/' % (project_id, user_id)
@@ -589,6 +594,29 @@ def put_code_review(user, event):
                         ContentType='text/json',
         )
     return (200, 'uploaded review')
+
+
+@route
+@user
+def rate_code_review(user, event):
+    user_id = user['sub']
+    user_netid = google_to_net_id(user_id)
+    cr = event['cr']
+    submitter_user_id=event['submitter_id']
+    project_id = event['project_id']
+    partner_netid = lookup_partner_netid(submitter_user_id, project_id)
+
+    if not (user_id == submitter_user_id or user_netid == partner_netid):
+        return (500, 'not authorized to rate that CR')
+
+    path = project_dir(submitter_user_id, project_id) + '/rating-%s-%s.json'
+    path = path % (user_netid, '%.2f' % time.time())
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json',
+    )
+    return (200, 'rating recorded')
 
 
 @route

@@ -2,6 +2,10 @@
 
 var code_review = {};
 
+var thumb_up_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" d="m112.37 4.544s-6.518-0.448-8.766 6.069-2.02 16.407-2.02 16.407-7.191 14.834-15.058 20.678-20.677 12.585-20.677 12.585-2.696 2.248-4.046 5.395c-1.349 3.146-7.416 20.902-7.416 20.902s-4.496 11.014-11.463 18.43c-6.968 7.417-10.339 8.991-14.16 10.114-3.82 1.123-5.169 2.248-5.169 2.248l7.192 76.866s15.732-7.866 21.576-6.743 15.059 1.123 22.026 4.72c6.967 3.597 43.377 4.943 62.481-2.697s23.6-3.371 27.87-13.935-6.745-11.014-7.418-14.834 11.238-3.371 12.812-11.912c0.529-2.873-3.438-9.617-10.113-14.384-3.147-2.248 13.26 0.674 11.687-14.609-0.734-7.144-2.698-8.765-9.44-10.563-6.741-1.798 11.014-4.495 10.114-15.284-0.611-7.336-10.548-14.668-26.071-15.732-16.406-1.123-24.947-0.898-24.947-0.898l-17.081-1.124s11.463-18.654 15.732-25.397c4.27-6.742 9.663-21.801 9.214-24.947-0.44-3.158-1.12-23.162-16.85-21.364z" fill="#222222"/></svg>'
+
+var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-width="9" stroke-miterlimit="10" d="m112.37 194.98s-6.518 0.448-8.766-6.069-2.023-16.406-2.023-16.406-7.191-14.834-15.058-20.678-20.678-12.586-20.678-12.586-2.696-2.248-4.046-5.395c-1.349-3.146-7.416-20.902-7.416-20.902s-4.496-11.014-11.463-18.43c-6.968-7.417-10.339-8.991-14.16-10.114-3.82-1.123-5.169-2.248-5.169-2.248l7.192-76.866s15.732 7.866 21.576 6.743 15.059-1.123 22.026-4.72c6.967-3.597 43.377-4.943 62.481 2.697s23.6 3.371 27.87 13.935-6.745 11.014-7.418 14.834 11.238 3.371 12.812 11.912c0.529 2.873-3.438 9.617-10.113 14.384-3.147 2.248 13.26-0.674 11.687 14.609-0.734 7.144-2.698 8.765-9.44 10.563-6.741 1.798 11.014 4.495 10.114 15.284-0.611 7.336-10.548 14.668-26.071 15.732-16.406 1.123-24.947 0.898-24.947 0.898l-17.081 1.124s11.463 18.654 15.732 25.397c4.27 6.742 9.663 21.801 9.214 24.947-0.43 3.16-1.11 23.16-16.84 21.36z" fill="#222222"/></svg>'
+
 (function() {
   // code review object
   var cr = null
@@ -136,6 +140,18 @@ var code_review = {};
     console.log("could not find highlight")
   }
 
+  function setHighlightRating(filename, offset, length, rating) {
+    for(var i=0; i<cr.highlights[filename].length; i++) {
+      var highlight = cr.highlights[filename][i]
+      if (highlight.offset == offset && highlight.length == length) {
+        highlight.rating = rating
+        cr_dirty = true
+        return
+      }
+    }
+    console.log("could not find highlight")
+  }
+
   function deleteHighlight(filename, offset, length) {
     for(var i=0; i<cr.highlights[filename].length; i++) {
       var highlight = cr.highlights[filename][i]
@@ -217,9 +233,12 @@ var code_review = {};
 
     // SECTION: grades (tests - ta deduction, only shown when both are ready)
     html += ('<h3>Grades</h3>')
-    if ('reviewer_email' in cr && cr.reviewer_email &&
-        'test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
-
+    
+    var grades_are_ready = ('reviewer_email' in cr && cr.reviewer_email &&
+                            'test_result' in cr && cr.test_result != null &&
+                            'score' in cr.test_result)
+    
+    if (grades_are_ready) {
       var test_score = cr.test_result.score
       var final_score = (test_score - ta_deduction)
 
@@ -245,7 +264,7 @@ var code_review = {};
     }
 
     // SECTION: test results
-    html += ('<h3>Tests</h3>')
+    html += ('<h3>Test Results</h3>')
     var test_blob = ""
     if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
       $("#auto_test_score").val(cr.test_result.score)
@@ -256,7 +275,7 @@ var code_review = {};
     }
 
     // SECTION: TA comments
-    html += ('<h3>General Comments</h3>')
+    html += ('<h3>General Reviever Comments</h3>')
     var general_comments = ''
     if ('general_comments' in cr && cr.general_comments) {
       general_comments = cr.general_comments
@@ -267,6 +286,21 @@ var code_review = {};
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!\')">Good job!</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!  Please check comments below.\')">Good job! Please check comments below.</button> ')
     html += ('</div>')
+
+    // SECTION: rating the CR
+    if (common.getUrlParameter("ratings") == "1") {
+      if (grades_are_ready && !cr.is_grader) {
+        html += ('<h3>Was Our Feedback Useful?</h3>')
+        html += ('<ol>')
+        html += ('<li>Click any yellow highlights below to view our feedback on specific lines of code')
+        html += ('<li>Mark each comment we left you as useful (thumbs up) or not useful (thumbs down)')
+        html += ('<li>Write a sentence or two about what you think could most be improved in your code if you were to do this project again (either based on our feedback or your own self critique)')
+        html += ('<li>Click "Submit Response" to share your thoughts with us (counts for participation)')
+        html += ('<ol>')
+        html += ('<textarea cols=80 rows=6 id="cr_response"></textarea><br>')
+        html += ('<button type="button" class="btn btn-dark")">Submit Response</button>')
+      }
+    }
 
     // SECTION: cells/files
 
@@ -334,7 +368,7 @@ var code_review = {};
         cr.general_comments = $("#general_comments").val()
       })
     } else {
-      $("#general_comments").prop( "disabled", true );
+      $("#general_comments").prop("disabled", true);
     }
 
     // must be after pretty printing
@@ -345,16 +379,26 @@ var code_review = {};
       var offset = $(this).attr('data-highlight-offset')
       var length = $(this).attr('data-highlight-length')
       var filename = $(this).attr('data-highlight-filename')
-      var readonly = cr.is_grader ? "" : "readonly"
-      html = ('<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40" '+readonly+'></textarea>' +
-              '<br>' +
-              '<button type="button" data-highlight-id="'+highlight_id+'" data-highlight-button="ok" class="btn btn-dark">OK</button>'
-             )
+      var text_opts = cr.is_grader ? "" : "readonly"
+      html = '<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40" '+text_opts+'></textarea><br>'
+
+      // everybody buttons: Cancel, Delete
+      html += ('<button type="button" data-highlight-id="' + highlight_id +
+               '" data-highlight-button="ok" class="btn btn-dark">OK</button> ')
+
       if (cr.is_grader) {
-        html += (' <button type="button" data-highlight-id="' + highlight_id +
-                 '"data-highlight-button="cancel" class="btn btn-dark">Cancel</button>')
-        html += (' <button type="button" data-highlight-id="' + highlight_id +
-                 '"data-highlight-button="delete" class="btn btn-dark">Delete</button>')
+        // grader buttons: Cancel, Delete
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '"data-highlight-button="cancel" class="btn btn-dark">Cancel</button> ')
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '"data-highlight-button="delete" class="btn btn-dark">Delete</button> ')
+      } else {
+        // student buttons: thumbs up, thumbs down
+        var extra = 'class="btn btn-dark" style="width:50px;height:50px"'
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '" data-highlight-button="down" '+extra+'>' + thumb_down_img + '</button> ')
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '" data-highlight-button="up" '+extra+'>' + thumb_up_img + '</button> ')
       }
       $(this).attr("data-content", html)
 
@@ -362,6 +406,8 @@ var code_review = {};
       $(this).on('shown.bs.popover', function () {
         var txt = $("textarea[data-highlight-id="+highlight_id+"]")
         var ok_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=ok]")
+        var down_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=down]")
+        var up_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=up]")
         var delete_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=delete]")
         var cancel_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=cancel]")
 
@@ -372,6 +418,16 @@ var code_review = {};
             setHighlightComment(filename, offset, length, txt.val())
           }
           highlight_element.popover('hide')
+        })
+
+        up_btn.click(function() {
+          highlight_element.popover('hide')
+          setHighlightRating(filename, offset, length, "good")
+        })
+
+        down_btn.click(function() {
+          highlight_element.popover('hide')
+          setHighlightRating(filename, offset, length, "bad")
         })
 
         cancel_btn.click(function() {
@@ -385,11 +441,6 @@ var code_review = {};
         })
       })
     })
-  }
-
-  code_review.toggleTestDetails = function() {
-    $("#show_test_details").hide()
-    $("#test_blob").show()
   }
 
   code_review.fetchReview = function(force_new) {
@@ -422,6 +473,24 @@ var code_review = {};
       "project_id": common.getUrlParameter('project_id'),
       "submitter_id": common.getUrlParameter('submitter_id'),
       "cr": new_cr
+    }
+
+    common.callLambda(data, function(data) {
+      cr_dirty = false
+      common.popThankYou()
+      code_review.refreshCR()
+    })
+  }
+
+  code_review.rateCodeReview = function() {
+    var rated_cr = Object.assign({}, cr) // shallow copy
+    rated_cr.project = null // no reason to upload the code again
+
+    var data = {
+      "fn": "rate_code_review",
+      "project_id": common.getUrlParameter('project_id'),
+      "submitter_id": common.getUrlParameter('submitter_id'),
+      "cr": rated_cr
     }
 
     common.callLambda(data, function(data) {
