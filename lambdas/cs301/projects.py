@@ -609,7 +609,7 @@ def rate_code_review(user, event):
     if not (user_id == submitter_user_id or user_netid == partner_netid):
         return (500, 'not authorized to rate that CR')
 
-    path = project_dir(submitter_user_id, project_id) + '/rating-%s-%s.json'
+    path = project_dir(submitter_user_id, project_id) + 'rating-%s-%s.json'
     path = path % (user_netid, '%.2f' % time.time())
     s3().put_object(Bucket=BUCKET,
                     Key=path,

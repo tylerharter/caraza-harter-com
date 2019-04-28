@@ -288,18 +288,16 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     html += ('</div>')
 
     // SECTION: rating the CR
-    if (common.getUrlParameter("ratings") == "1") {
-      if (grades_are_ready && !cr.is_grader) {
-        html += ('<h3>Was Our Feedback Useful?</h3>')
-        html += ('<ol>')
-        html += ('<li>Click any yellow highlights below to view our feedback on specific lines of code')
-        html += ('<li>Mark each comment we left you as useful (thumbs up) or not useful (thumbs down)')
-        html += ('<li>Write a sentence or two about what you think could most be improved in your code if you were to do this project again (either based on our feedback or your own self critique)')
-        html += ('<li>Click "Submit Response" to share your thoughts with us (counts for participation)')
-        html += ('</ol>')
-        html += ('<textarea cols=80 rows=6 id="cr_student_response"></textarea><br>')
-        html += ('<button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()")">Submit Response</button>')
-      }
+    if (grades_are_ready && !cr.is_grader) {
+      html += ('<h3>Was Our Feedback Useful?</h3>')
+      html += ('<ol>')
+      html += ('<li>Click any yellow highlights below to view our feedback on specific lines of code')
+      html += ('<li>Mark each comment we left you as useful (thumbs up) or not useful (thumbs down)')
+      html += ('<li>Write a sentence or two about what you think could most be improved in your code if you were to do this project again (either based on our feedback or your own self critique)')
+      html += ('<li>Click "Submit Response" to share your thoughts with us (counts for participation)')
+      html += ('</ol>')
+      html += ('<textarea cols=80 rows=6 id="cr_student_response"></textarea><br>')
+      html += ('<button type="button" class="btn btn-dark" onclick="code_review.rateCodeReview()")">Submit Response</button>')
     }
 
     // SECTION: cells/files
@@ -397,13 +395,11 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
                  '"data-highlight-button="delete" class="btn btn-dark">Delete</button> ')
       } else {
         // student buttons: thumbs up, thumbs down
-        if (common.getUrlParameter("ratings") == "1") {
-          var extra = 'class="btn btn-dark" style="width:50px;height:50px"'
-          html += ('<button type="button" data-highlight-id="' + highlight_id +
-                   '" data-highlight-button="down" '+extra+'>' + thumb_down_img + '</button> ')
-          html += ('<button type="button" data-highlight-id="' + highlight_id +
-                   '" data-highlight-button="up" '+extra+'>' + thumb_up_img + '</button> ')
-        }
+        var extra = 'class="btn btn-dark" style="width:50px;height:50px"'
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '" data-highlight-button="down" '+extra+'>' + thumb_down_img + '</button> ')
+        html += ('<button type="button" data-highlight-id="' + highlight_id +
+                 '" data-highlight-button="up" '+extra+'>' + thumb_up_img + '</button> ')
       }
       $(this).attr("data-content", html)
 
