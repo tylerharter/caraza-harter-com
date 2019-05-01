@@ -15,18 +15,9 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>P9 is ready.  Be sure to checkout your feedback (click on all the yellow highlights in the notebook).</p>
+    <p>We've regraded many of the P9 submissions (if you still aren't getting what you expect, please reach out to your reviewer).</p>
 
-    <p>Many of you got zeros for using paths that only work on your
-    computer.  For example, if your code includes a path like
-    "c:\\Users\\ada\\CS301\\P9\\sample_data\\1.csv", that won't work because
-    (a) we don't have a file at that location on our tester computer,
-    and (b) we're running on Linux, so slashes need to be forward.
-    Instead, a relative path (e.g., "sample_data/1.csv"), constructed
-    with os.path.join would work on any computer.</p>
-
-    <p>If you lost points due to the path issue, please fix your code,
-    then work with your reviewer to resubmit</p>
+    <p>We're also showing a P10 "test preview", based on whatever you've currently submitted.  Of course, we'll re-run test.py after the Fri deadline, and TAs may deduct points then.  This just to give you an early indication if there's a fundamental problem in your notebook that will cause issues when we run the tests on our system.</p>
 
     <p>Here is your project summary:</p>
     """
