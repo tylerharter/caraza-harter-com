@@ -1,4 +1,4 @@
-import os, sys, json, csv, hashlib, copy
+import os, sys, json, csv, hashlib
 from datetime import datetime
 
 
@@ -10,7 +10,7 @@ def md5(txt):
 
 def get_alts():
     alts = {}
-    with open('exam3alt.csv') as f:
+    with open('exam2alt.csv') as f:
         r = csv.DictReader(f)
         for row in r:
             for k,v in row.items():
@@ -24,61 +24,33 @@ def get_alts():
 
 
 def main():
-    exam_name = "final"
-    
-    # open-seats is half the room capicity (to support every-other seating)
-    venue1 = {'name': 'Wednesday, May 8th @ 7:45am in Psych 113', 'open-seats': 999}
-    venue2 = {'name': 'Wednesday, May 8th @ 7:45am in Soc Sci 6210', 'open-seats': 230}
-    venue3 = {'name': 'Wednesday, May 8th @ 7:45am in Van Vleck B102', 'open-seats': 163}
+    alts = get_alts()
 
-    # section => venue
+    # section => rooms
     exams = {
-        1: [venue1],
-        2: [venue2],
-        3: [venue2, venue3],
+        1: ['Monday, Apr 1 @ 7:15-9:15pm in Science Hall 180'],
+        2: ['Monday, Apr 1 @ 7:15-9:15pm in Social Science 6210'],
+        3: ['Monday, Apr 1 @ 7:15-9:15pm in Van Vleck B102',
+            'Monday, Apr 1 @ 7:15-9:15pm in Van Vleck B130'],
     }
 
     with open('roster.json') as f:
         roster = json.load(f)
-    orig = copy.deepcopy(roster)
 
-    # get view of enrolled students in an arbitrary (but sorted) order
-    enrolled = [row for row in roster if row['enrolled']]
-    enrolled.sort(key=lambda row: md5(row['net_id']))
-
-    # STEP 1: assign based on section and remaining seats
-    for section in [1, 2, 3]:
-        for row in enrolled:
-            if row['section'] != section:
-                continue
+    for row in roster:
+        if row['enrolled']:
+            options = exams[row['section']]
             net_id = row['net_id']
-            venues = exams[row['section']]
-            chosen = None
-            for v in venues:
-                if v["open-seats"] > 0:
-                    chosen = v
-                    break
-            assert(chosen)
-            row[exam_name] = chosen["name"]
-            chosen["open-seats"] -= 1
+            if net_id in alts:
+                exam = alts[net_id]
+            else:
+                exam = options[md5(net_id) % len(options)]
 
-    # STEP 2: record overrides
-    alts = get_alts()
-    for row in enrolled:
-        net_id = row['net_id']
-        if net_id in alts:
-            row[exam_name] = alts[net_id]
-
-    # diff orig and roster
-    for before, after in zip(orig, roster):
-        if before != after:
-            print(before["net_id"])
-            for k in set(before.keys())|set(after.keys()):
-                v1 = before.get(k,None)
-                v2 = after.get(k, None)
-                if v1 != v2:
-                    print("  %s => %s" % (str(v1), str(v2)))
-
+            if row.get('exam2', None) != exam:
+                print("%s: %s => %s" % (net_id, row.get('exam2', "none"), exam))
+                row['exam2'] = exam
+        else:
+            row['exam2'] = None
 
     with open('roster.json', 'w') as f:
         json.dump(roster, f, sort_keys=True, indent=2)
