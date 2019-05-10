@@ -11,6 +11,9 @@ def main():
     body = ""
     count = 0
     for i, email in enumerate(emails):
+        if not "message" in email:
+            print(email)
+            assert(0)
         if email['message'].find(sys.argv[2]) == -1 and email['to'].find(sys.argv[2]) == -1:
             continue
         if i > 0:

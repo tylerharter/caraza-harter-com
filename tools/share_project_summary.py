@@ -15,11 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>We've regraded many of the P9 submissions (if you still aren't getting what you expect, please reach out to your reviewer).</p>
-
-    <p>We're also showing a P10 "test preview", based on whatever you've currently submitted.  Of course, we'll re-run test.py after the Fri deadline, and TAs may deduct points then.  This just to give you an early indication if there's a fundamental problem in your notebook that will cause issues when we run the tests on our system.</p>
-
-    <p>Here is your project summary:</p>
+    <p>P10 testing and reviewing is complete.  We'll be sending directions soon about what to do if anything seems wrong.  Here is your project summary:</p>
     """
 
     if include_intro:
