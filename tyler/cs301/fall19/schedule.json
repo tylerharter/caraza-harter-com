@@ -1,8 +1,8 @@
 {
     "events":{},
     "sections":{
-	"1": ["Part 1: Basic Programming"],
-	"6": ["Part 2: Data Structures"],
+	"1": ["Part 1: Flow of Execution"],
+	"6": ["Part 2: State"],
 	"11": ["Part 3: Data Science"]
     }
 }

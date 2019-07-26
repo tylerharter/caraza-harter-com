@@ -2,7 +2,7 @@
 # PART 1
 ################################################################################
 
-Martin Luther King, Jr. Day!<br>
+Labor Day!<br>
 <b>No Class</b>
 
 =
@@ -112,7 +112,7 @@ Conditionals 2
 <a href="materials/lec-10.html">Interactive Exercises</a><br>
 
 =
-Iteration 1
+Iteration 1*
 * Reassignment
 * While Loop
 * Infinite Iteration
@@ -147,6 +147,7 @@ Strings
 
 =
 Review Day
+<b>Evening Exam 1!</b>
 
 ################################################################################
 # PART 2
@@ -162,7 +163,6 @@ Lists
 
 <a href="materials/lec-15.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10<br>
-<b>Evening Exam 1!</b>
 
 =
 CSV Tables
@@ -231,7 +231,7 @@ Copying
 <b>Due</b>: P7<br>
 
 =
-Recursion
+Recursive Functions
 * Base/Resursive Cases
 * Lists of Lists
 * More Stack Diagrams
@@ -241,23 +241,15 @@ Recursion
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
 
 =
-
-No Class -- Spring Break!<br><br><br><br>
-
-=
-
-No Class -- Spring Break!<br><br><br><br>
-
-=
-
-No Class -- Spring Break!<br><br><br><br>
-
-=
-Advanced Functions
-* iterators and generators
-* references to functions
+Function References
+* map
+* sort
 <a href="materials/lec-24.pdf">Link to Slides</a><br>
 <a href="materials/lec-24.html">Interactive Exercises</a><br>
+
+=
+Generator Functions
+* iterators and generators
 
 =
 Error Handling
@@ -359,7 +351,11 @@ Plotting 1
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-36/matplotlib-intro.ipynb">Notebook</a>)<br>
 
 =
-Plotting 2n
+Thanksgiving!<br>
+<b>No Class</b>
+
+=
+Plotting 2
 * line plots
 <b>Reading</b>: <a href="materials/code/lec-37/line-and-bar.html">CS 301 Notes</a>
 (<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-37/line-and-bar.ipynb">Notebook</a>)<br>

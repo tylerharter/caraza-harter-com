@@ -35,16 +35,16 @@ def format_day(day):
         else:
             out.append(line)
     return '\n'.join(out)
-                
+
 def schedule():
     with open('schedule.txt') as f:
         days = list(map(format_day, f.read().split('=\n')))
-        
+
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Lecture Schedule</h1>\n')
-    
-    start_date = date(2019, 1, 21)
-    end_date = date(2019, 5, 3)
+
+    start_date = date(2019, 9, 2)
+    end_date = date(2019, 12, 11)
     day_count = (end_date - start_date).days + 1
 
     cells = []
