@@ -122,7 +122,7 @@ var common = {};
   };
 
   common.popError = function(msg) {
-    $('#error_message').text(msg)
+    $('#error_message').html(msg.replace(/(?:\r\n|\r|\n)/g, '<br>'))
     $('#error_box').show()
   }
 

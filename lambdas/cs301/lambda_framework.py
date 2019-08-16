@@ -15,7 +15,7 @@
 import json, urllib, boto3, botocore, base64, time, traceback, random, string
 from collections import defaultdict as ddict
 
-def acl_file(path):
+def file_lines(path):
     users = []
     with open(path) as f:
         for l in f:
@@ -28,17 +28,75 @@ ROUTES = {}
 EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 FIREHOSE = 'cs301-trace'
-ADMIN_EMAIL = 'tylerharter@gmail.com'
-INSTRUCTOR_EMAILS = acl_file("instructors.txt")
-GRADER_EMAILS = acl_file("tas.txt")
 
-s3_cache = None # client
+# ACLs
+ADMIN_EMAIL = 'tylerharter@gmail.com'
+INSTRUCTOR_EMAILS = file_lines("instructors.txt")
+GRADER_EMAILS = file_lines("tas.txt")
+
+class S3:
+    def __init__(self, s3_client, key_prefix):
+        self.s3_client = s3_client
+        self.key_prefix = key_prefix
+
+    # S3 client wrappers that prepend the dir prefix
+    def list_objects_v2(self, **kwargs):
+        kwargs["Prefix"] = self.key_prefix + "/" + kwargs["Prefix"]
+        return self.s3_client.list_objects_v2(**kwargs)
+
+    def head_object(self, **kwargs):
+        kwargs["Key"] = self.key_prefix + "/" + kwargs["Key"]
+        return self.s3_client.head_object(**kwargs)
+    
+    def get_object(self, **kwargs):
+        kwargs["Key"] = self.key_prefix + "/" + kwargs["Key"]
+        return self.s3_client.get_object(**kwargs)
+
+    def put_object(self, **kwargs):
+        kwargs["Key"] = self.key_prefix + "/" + kwargs["Key"]
+        return self.s3_client.put_object(**kwargs)
+
+    def delete_object(self, **kwargs):
+        kwargs["Key"] = self.key_prefix + "/" + kwargs["Key"]
+        return self.s3_client.delete_object(**kwargs)
+
+    # convenience functions beyond what the boto client provides
+    def s3_all_keys(self, Prefix):
+        ls = self.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
+        keys = []
+        while True:
+            contents = [obj['Key'] for obj in ls.get('Contents',[])]
+            keys.extend(contents)
+            if not 'NextContinuationToken' in ls:
+                break
+            ls = s3().list_objects_v2(Bucket='caraza-harter-cs301', Prefix=Prefix,
+                                      ContinuationToken=ls['NextContinuationToken'],
+                                      MaxKeys=10000)
+        return keys
+
+    def path_exists(self, path):
+        try:
+            self.head_object(Bucket=BUCKET, Key=path)
+            return True
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == '404':
+                return False
+            raise e
+
+# generic S3 client
+boto_s3_client = None
+
+# our wrapper that does everything within a subdir (each course is a different dir)
+s3_client = None
+
+def init_s3(prefix):
+    global boto_s3_client, s3_client
+    if boto_s3_client == None:
+        boto_s3_client = boto3.client('s3')
+    s3_client = S3(boto_s3_client, prefix)
+
 def s3():
-    # cache S3 client
-    global s3_cache
-    if s3_cache == None:
-        s3_cache = boto3.client('s3')
-    return s3_cache
+    return s3_client
 
 firehose_cache = None # client
 def firehose():
@@ -47,29 +105,6 @@ def firehose():
     if firehose_cache == None:
         firehose_cache = boto3.client('firehose')
     return firehose_cache
-
-def s3_all_keys(Prefix):
-    ls = s3().list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
-    keys = []
-    while True:
-        contents = [obj['Key'] for obj in ls.get('Contents',[])]
-        keys.extend(contents)
-        if not 'NextContinuationToken' in ls:
-            break
-        ls = s3().list_objects_v2(Bucket='caraza-harter-cs301', Prefix=Prefix,
-                                  ContinuationToken=ls['NextContinuationToken'],
-                                  MaxKeys=10000)
-    return keys
-
-def s3_path_exists(path):
-    try:
-        boto3.resource('s3').Object(BUCKET, path).load()
-        return True
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "404":
-            return False
-        else:
-            raise e
 
 # decorators
 def route(fn):

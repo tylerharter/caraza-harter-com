@@ -48,11 +48,11 @@ def roster_attach_user_raw(user_id, net_id):
     net_id = net_id.lower()
 
     path1 = 'users/google_to_net_id/%s.txt' % user_id
-    if s3_path_exists(path1):
+    if s3().path_exists(path1):
         return (500, 'google account already linked to NetID')
 
     path2 = 'users/net_id_to_google/%s.txt' % net_id
-    if s3_path_exists(path2):
+    if s3().path_exists(path2):
         return (500, 'NetID already linked to google account')
 
     # if only one of these succeeds, it will require manual cleanup in S3

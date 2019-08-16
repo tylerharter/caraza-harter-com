@@ -16,11 +16,15 @@ import json, urllib, boto3, botocore, base64, time, traceback, random, string, c
 from collections import defaultdict as ddict
 
 from lambda_framework import *
-from clicker import *
 from projects import *
 from roster import *
 
 def lambda_handler(event, context):
+    course = event.get('course', 'a')
+    if not course in ('a', 'b', 'c'):
+        return error('invalid course ID: "%s"' % course)
+    init_s3(course)
+
     ts0 = datetime.datetime.utcnow().timestamp()
 
     # identify user
