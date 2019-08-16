@@ -42,7 +42,13 @@ class S3:
     # S3 client wrappers that prepend the dir prefix
     def list_objects_v2(self, **kwargs):
         kwargs["Prefix"] = self.key_prefix + "/" + kwargs["Prefix"]
-        return self.s3_client.list_objects_v2(**kwargs)
+        results = self.s3_client.list_objects_v2(**kwargs)
+        if "Contents" in results:
+            for i in range(len(results["Contents"])):
+                key = results["Contents"][i]["Key"]
+                key = key[len(self.key_prefix)+1:]
+                results["Contents"][i]["Key"] = key
+        return results
 
     def head_object(self, **kwargs):
         kwargs["Key"] = self.key_prefix + "/" + kwargs["Key"]
@@ -61,6 +67,17 @@ class S3:
         return self.s3_client.delete_object(**kwargs)
 
     # convenience functions beyond what the boto client provides
+    def read_json_follow(self, **kwargs):
+        response = s3().get_object(**kwargs)
+        result = json.loads(str(response['Body'].read(), 'utf-8'))
+
+        if 'symlink' in result:
+            kwargs['Key'] = result['symlink']
+            response = s3().get_object(**kwargs)
+            result = json.loads(str(response['Body'].read(), 'utf-8'))
+
+        return result
+    
     def s3_all_keys(self, Prefix):
         ls = self.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
         keys = []
@@ -154,12 +171,23 @@ def grader_check(user):
 def is_grader(user):
     return user['email'] in GRADER_EMAILS
 
-# TODO: cache this
+token_cache = {}
+
 def get_user(event):
+    global token_cache
+    if len(token_cache) > 1000:
+        token_cache = {}
+
     token = event['GoogleToken']
+    if token in token_cache:
+        if token_cache[token][1] - time.time() < 60*60: # hour timeout
+            return token_cache[token][0]
     req = urllib.request.Request('https://www.googleapis.com/oauth2/v3/tokeninfo?id_token='+token)
     response = urllib.request.urlopen(req)
     status = json.loads(response.read())
+    if not status["email_verified"]:
+        raise Exception("email not verified by Google")
+    token_cache[token] = (status, time.time())
     return status
 
 def error(message):
@@ -172,15 +200,8 @@ def error(message):
 
 def save_user_info(user):
     path = 'users/google/%s.json' % user['sub']
-    try:
-        boto3.resource('s3').Object(BUCKET, path).load()
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "404":
-            # does not exist yet
-            s3().put_object(Bucket=BUCKET,
-                          Key=path,
-                          Body=bytes(json.dumps(user, indent=2), 'utf-8'),
-                          ContentType='text/json',
-            )
-        else:
-            raise e
+    if not s3().path_exists(path):
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(user, indent=2), 'utf-8'),
+                        ContentType='text/json')

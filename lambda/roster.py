@@ -21,7 +21,7 @@ NET_ID_EMAIL_SUFFIX = '@wisc.edu'
 
 # returns a string containing json
 def get_roster_raw():
-    response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
+    response = s3().get_object(Bucket=BUCKET, Key='roster.json')
     return response['Body'].read().decode('utf-8')
 
 
@@ -37,7 +37,7 @@ def get_roster_net_ids():
 def put_roster_raw(roster_dict):
     body = json.dumps(roster_dict, indent=2)
     s3().put_object(Bucket=BUCKET,
-                    Key='users/roster.json',
+                    Key='roster.json',
                     Body=bytes(body, 'utf-8'),
                     ContentType='text/json',
     )
@@ -154,7 +154,7 @@ def roster_entry(user, event):
         return (500, 'not a wisc.edu email')
     net_id = parts[0]
 
-    response = s3().get_object(Bucket=BUCKET, Key='users/roster.json')
+    response = s3().get_object(Bucket=BUCKET, Key='roster.json')
     roster = json.loads(response['Body'].read().decode('utf-8'))
     roster = {row["net_id"]: row
               for row in roster
@@ -194,14 +194,3 @@ def roster_merge_google_ids(user, event):
             student['user_id'] = user_id
     body = put_roster_raw(roster)
     return (200, {'roster':body})
-
-
-@route
-@admin
-def rebalance_ta_to_student_assignments(user, event):
-    # TODO: implement rebalancing of students across TAs
-    pass
-    #roster = json.loads(get_roster_raw())
-    #submissions = project_list_submissions_raw(roster, project_id)
-    #body = put_roster_raw(roster)
-    #return (200, {'roster':body})

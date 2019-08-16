@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Copyright 2018 Tyler Caraza-Harter
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,7 +26,7 @@ def main():
     print(client.get_function(FunctionName=fname))
 
     tmp = 'tmp.zip'
-    lambda_dirs = ['lambdas/cs301']
+    lambda_dirs = ['lambda']
     for lambda_dir in lambda_dirs:
         with zipfile.ZipFile(tmp, 'w') as z:
             for name in (n for n in os.listdir(lambda_dir) if n.split('.')[-1] in ('py', 'txt')):

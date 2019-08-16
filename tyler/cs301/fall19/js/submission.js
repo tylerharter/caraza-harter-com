@@ -100,7 +100,7 @@ var submission = {};
     var data = {
       "fn": "get_code_review",
       "project_id": project_id,
-      "submitter_id": common.getGoogleUserId(), // submitted by self
+      "student_email": common.getEmail(), // submitted by self
       "force_new": true
     }
     common.callLambda(data, function(data) {
@@ -110,9 +110,9 @@ var submission = {};
   };
 
   submission.viewCodeReview = function(latest) {
-    var submitter_id = common.getGoogleUserId() // submitted by self
+    var student_email = common.getEmail() // submitted by self
     var project_id = $("#project_id").val()
-    var url = "code_review.html?project_id="+project_id+"&submitter_id="+submitter_id
+    var url = "code_review.html?project_id="+project_id+"&student_email="+student_email
     if (latest) {
       url += "&latest=1"
     }

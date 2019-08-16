@@ -48,34 +48,47 @@ MAX_SIZE_KB = 1024
 # lookup S3 paths for various objects
 ########################################
 
-def project_dir(user_id, project_id):
+safe_s3_chars = set(string.ascii_letters + string.digits + ".-_")
+
+def to_s3_key_str(s):
+    s3key = []
+    # we use *char* to escape, because star can show up in both S3
+    # paths and URL query strings
+    for c in s:
+        if c in safe_s3_chars:
+            s3key.append(c)
+        elif c == "@":
+            s3key.append('*at*')
+        else:
+            s3key.append('*%d*' % ord(c))
+    return "".join(s3key)
+
+
+def project_dir(email, project_id):
     '''Get location where submission should be saved'''
-    return 'projects/%s/users/%s/' % (project_id, user_id)
+    return 'projects/%s/users/%s/' % (project_id, to_s3_key_str(email))
 
 
-def project_path(user_id, project_id, submission_id=None):
+def submission_dir(email, project_id, submission_id):
     '''Get location where submission should be saved'''
-    path = 'projects/%s/users/%s/' % (project_id, user_id)
-    path += (submission_id if submission_id != None else 'curr.json')
-    return path
+    return '%s%s/' % (project_dir(email, project_id), submission_id)
 
 
-def project_summary_path(user_id):
+def submission_path(email, project_id, submission_id):
+    return submission_dir(email, project_id, submission_id) + "submission.json"
+
+
+def cr_path(email, project_id, submission_id):
+    return submission_dir(email, project_id, submission_id) + "cr.json"
+
+
+def project_summary_path(email):
     '''Get location where summary of projects should be saved'''
-    return 'projects/summary/users/%s.json' % user_id
+    return 'projects/summary/users/%s.json' % to_s3_key_str(email)
 
 
-def code_review_path(user_id, project_id, cr_id=None):
-    name = 'cr%s.json' % ("-"+str(cr_id) if cr_id != None else "")
-    return 'projects/%s/users/%s/%s' % (project_id, user_id, name)
-
-
-def extension_path(user_id, project_id):
-    return 'projects/%s/users/%s/extension.json' % (project_id, user_id)
-
-
-def partner_path(user_id, project_id):
-    return 'projects/%s/users/%s/partner.json' % (project_id, user_id)
+def extension_path(email, project_id):
+    return 'projects/%s/users/%s/extension.json' % (project_id, to_s3_key_str(email))
 
 
 ########################################
@@ -220,22 +233,20 @@ def extract_project_files(submission_id, filename, payload):
     return result
 
 
-def load_project_from_s3(user_id, project_id, submission_id=None):
+def load_submission_from_s3(user_email, project_id, submission_id):
     '''
     Fetch project in human readable format, extracting content from
     plaintext code files inside zip packages.
     '''
-    path = project_path(user_id, project_id, submission_id)
+    path = submission_path(user_email, project_id, submission_id)
     print('try to open '+path)
-    response = s3().get_object(Bucket=BUCKET, Key=path)
-    row = json.loads(str(response['Body'].read(), 'utf-8'))
-
+    row = s3().read_json_follow(Bucket=BUCKET, Key=path)
     project_files = extract_project_files(row['submission_id'],
                                           row['filename'], row['payload'])
     return project_files
 
 
-def get_code_analysis(submitter_email, project_id, project_files):
+def get_code_analysis(student_email, project_id, project_files):
     pf = project_files
     comments = []
     analysis = {'comments': comments, 'partner': None, 'errors': False}
@@ -282,8 +293,8 @@ def get_code_analysis(submitter_email, project_id, project_files):
 
     # check user's Net ID matches the comment in the code
     # (this check doesn't run if TA is fetching the CR)
-    if submitter_email != None:
-        parts = submitter_email.lower().split('@')
+    if student_email != None:
+        parts = student_email.lower().split('@')
         if parts[-1] != 'wisc.edu':
             comments.append('<b>error:</b> not submitted from an @wisc.edu account')
             analysis['errors'] = True
@@ -315,9 +326,9 @@ def get_code_analysis(submitter_email, project_id, project_files):
     return analysis
 
 
-def get_project_test_result(submitter_user_id, project_id):
+def get_project_test_result(student_email, project_id):
     # get net ID
-    path = 'users/google_to_net_id/%s.txt' % submitter_user_id
+    path = 'users/google_to_net_id/%s.txt' % student_email
     try:
         response = s3().get_object(Bucket=BUCKET, Key=path)
         net_id = response['Body'].read().decode('utf-8')
@@ -339,142 +350,23 @@ def get_project_test_result(submitter_user_id, project_id):
         raise e
 
 
-def get_code_review_raw(user, submitter_user_id, project_id,
-                        force_new, project_files=None):
-    """get code review blob from S3 or from project_files.
-
-    user could be either the submitter, or a TA
-
-    Sometimes a
-    code upload calls this, so we have project_files without needing
-    to look to S3.  If force_new is True, or there is no code review
-    available, a new one is created"""
-
-    submitter_email = None
-    if user['sub'] == submitter_user_id:
-        submitter_email = user['email']
-
-    # step 1: try to get CR unless we're forced to get a clean one on the latest submission
-    cr = None
-    if not force_new:
-        try:
-            response = s3().get_object(Bucket=BUCKET, Key=code_review_path(submitter_user_id, project_id))
-            cr = json.loads(str(response['Body'].read(), 'utf-8'))
-        except:
-            pass
-
-    # create a new empty CR if necessary
-    if cr == None:
-        cr = {
-            'submission_id': None,       # which submission is this associated with?
-            'highlights': None,          # list of highlight ranges with comments
-            'general_comments': '',      # comments about whole submission
-            'points_deducted': 0,        # TAs can take additional points off
-            'reviewer_email': None,      # who left the code review
-        }
-
-    # step 2: get associated code (if we don't have it)
-    try:
-        if project_files == None:
-            project_files = load_project_from_s3(submitter_user_id, project_id,
-                                                 submission_id=cr['submission_id'])
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            return (500, 'no project submission found')
-        return (500, str(e.response))
-
-    # highlights
-    if cr['highlights'] == None:
-        # start with a clean slate (i.e., not highlights on any files)
-        cr['highlights'] = {k:[] for k in project_files['files'].keys()}
-
-    # these extra fields are auto-populated each time a CR is
-    # requested, regardless of what might be saved in cr.json
-    cr['submission_id'] = project_files['submission_id'] # resolve curr to actual ID
-    cr['is_grader'] = is_grader(user)
-    cr['project'] = project_files
-    cr['analysis'] = get_code_analysis(submitter_email, project_id, project_files)
-    cr['test_result'] = get_project_test_result(submitter_user_id, project_id)
-
-    return (200, cr)
-
-
-def lookup_partner_netid(user_id, project_id):
-    path = partner_path(user_id, project_id)
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key=path)
-        row = json.loads(str(response['Body'].read(), 'utf-8'))
-        return row.get('netid', None)
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            return None
-        raise(e)
-
-
-def project_list_submissions_raw(roster, project_id):
-    roster = {student['user_id']: student for student in roster if 'user_id' in student}
-
-    if not project_id in PROJECT_IDS:
-        return (500, 'invalid project id')
-    paths = s3_all_keys('projects/'+project_id+'/')
-
-    # set of submitter_id's of user that have received code reviews
-    reviewed = set()
-    
-    submissions = []
-    for path in paths:
-        parts = path.split('/')
-        if (len(parts) != 5 or parts[0] != 'projects' or parts[2] != 'users'):
-            continue
-
-        submitter_id = parts[3]
-        filename = parts[4]
-
-        if filename == 'cr.json':
-            reviewed.add(submitter_id)
-        elif filename == 'curr.json':
-            submission = {
-                'project_id':project_id,
-                'submitter_id':submitter_id,
-                'info': {},
-                'path': path
-            }
-
-            # supplement with info from roster
-            for field in ['net_id', 'ta']:
-                submission['info'][field] = roster.get(submitter_id,{}).get(field,None)
-            submissions.append(submission)
-
-    # augment submissions with info about reviews
-    for submission in submissions:
-        submission['has_review'] = (submission['submitter_id'] in reviewed)
-
-    return (200, {'submissions':submissions})
-
-
 ########################################
 # route endpoints
 ########################################
 
 @route
-def project_list(user, event):
-    # no special permissions necessary
-    return (200, PROJECT_IDS)
-
-
-@route
 @user
 def project_upload(user, event):
-    user_id = user['sub']
+    user_email = user['email']
     project_id = event['project_id']
     ignore_errors = event.get('ignore_errors', True) # does user want to force a submission, despite errors?
-    if not project_id in PROJECT_IDS:
+    if not project_id in PROJECT_DUE_UTC:
         return (500, 'not a valid project')
 
     if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
         return (500, 'file is too large')
 
-    submission_id = '%.2f' % time.time()
+    submission_id = datetime.datetime.today().strftime('%Y-%m-%d_%H-%M-%S')
 
     # compute late days (may be negative if it was early).  Negative
     # is only for our own information, though (it doesn't somehow
@@ -491,18 +383,8 @@ def project_upload(user, event):
     project_files = extract_project_files(submission_id,
                                           event['filename'],
                                           event['payload'])
-    rc,cr = get_code_review_raw(user, user_id, project_id,
-                                force_new=True, project_files=project_files)
-    if rc != 200:
-        return (rc, "could not get CR")
 
-    # save partner permissions
-    path = partner_path(user_id, project_id)
-    partner = {'netid': cr.get('analysis', {}).get('partner', None)}
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(partner), 'utf-8'),
-                    ContentType='text/json')
+    analysis = get_code_analysis(user_email, project_id, project_files)
 
     # JSON blob to save to S3 bucket
     submission = {'project_id': project_id,
@@ -512,34 +394,126 @@ def project_upload(user, event):
                   'late_days': late_days,
                   'filename': event['filename'],
                   'payload': event['payload'],
-                  'partner_netid': cr['analysis']['partner'],
+                  'partner_netid': analysis['partner'],
                   'ignore_errors': ignore_errors}
 
-    paths = [project_path(user_id, project_id, submission_id)] # for history only
-    if ignore_errors or not cr['analysis']['errors']:
-        # we only do the main submission if there are no errors, or
-        # the student chooses to ignore errors
-        paths.append(project_path(user_id, project_id))
-
-    for path in paths:
+    if ignore_errors or not analysis['errors']:
+        path = submission_path(user_email, project_id, submission_id)
         s3().put_object(Bucket=BUCKET,
                         Key=path,
                         Body=bytes(json.dumps(submission), 'utf-8'),
                         ContentType='text/json')
 
-    result = {'code_review': cr}
+        # create symlink in partners dir
+        if submission['partner_netid']: # TODO: and user_email.endswith("@wisc.edu"):
+            partner_email = submission['partner_netid'] + "@wisc.edu"
+            link = submission_path(partner_email, project_id, submission_id)
+            s3().put_object(Bucket=BUCKET,
+                            Key=link,
+                            Body=bytes(json.dumps({"symlink": path}), 'utf-8'),
+                            ContentType='text/plain')
+
+    result = {'analysis': analysis}
     return (200, result)
 
 
 @route
 @user
-def project_withdraw(user, event):
-    user_id = user['sub']
+def get_submission(user, event):
+    '''Viewing a "code review" is the only way students view code.  Even
+    previewing a submission is just viewing an empty code review with
+    no highlights.'''
+
+    user_email = user['email']
+    student_email = event['student_email']
     project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
+
+    # two parties should be able to view the code review:
+    # 1. submitter(s)
+    # 2. grader
+
+    if not (user_email == student_email or is_grader(user)):
+        return (500, 'not authorized to view that submission')
+
+    # step 0: discover submissions
+    submissions = []
+    for path in s3().s3_all_keys(project_dir(student_email, project_id)):
+        path = path.split("/")
+        if path[-1] == 'submission.json':
+            submissions.append({"id": path[-2]})
+    result = {
+        'is_grader': is_grader(user),
+        'test_result': get_project_test_result(student_email, project_id),
+        'submissions': submissions
+    }
+
+    if len(submissions) > 0:
+        submissions.sort(key=lambda s: s["id"], reverse=True)
+        submission_id = event.get('submission_id', None)
+        if not submission_id:
+            submission_id = submissions[0]["id"]
+        code = load_submission_from_s3(student_email, project_id, submission_id=submission_id)
+
+        result['submission_id'] = submission_id
+        result['code'] = code
+        result['analysis'] = get_code_analysis(student_email, project_id, code)
+
+        # fill result['cr'] with saved results, or empty blob
+        try:
+            result['cr'] = s3().read_json_follow(Bucket=BUCKET, Key=cr_path(student_email, project_id, submission_id))
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "NoSuchKey":
+                result['cr'] = {
+                    'highlights': {k:[] for k in code['files'].keys()}, # list of highlight ranges with comments
+                    'general_comments': '',      # comments about whole submission
+                    'points_deducted': 0,        # TAs can take additional points off
+                    'reviewer_email': None,      # who left the code review
+                }
+            else:
+                raise e
+
+    return (200, result)
+
+
+@route
+@grader
+def put_code_review(user, event):
+    cr = event['cr']
+    cr['reviewer_email'] = user['email']
+    project_id = event['project_id']
+    if not project_id in PROJECT_DUE_UTC:
+        return (500, 'not a valid project')
+    student_email = event['student_email']
+    partner_netid = event['partner_netid']
+    submission_id = event['submission_id']
+
+    path = cr_path(student_email, project_id, submission_id)
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json')
+
+    # create symlink in partners dir
+    if partner_netid:
+        partner_email = partner_netid + "@wisc.edu"
+        link = cr_path(partner_email, project_id, submission_id)
+        s3().put_object(Bucket=BUCKET,
+                        Key=link,
+                        Body=bytes(json.dumps({"symlink": path}), 'utf-8'),
+                        ContentType='text/plain')
+
+    return (200, 'uploaded review')
+
+
+@route
+@user
+def project_withdraw(user, event):
+    user_email = user['email']
+    project_id = event['project_id']
+    if not project_id in PROJECT_DUE_UTC:
         return (500, 'not a valid project')
 
-    path = project_path(user_id, project_id)
+    path = project_path(user_email, project_id)
     s3().delete_object(Bucket=BUCKET, Key=path)
     result = {'message': 'project submission withdrawn'}
     return (200, result)
@@ -547,69 +521,18 @@ def project_withdraw(user, event):
 
 @route
 @user
-def get_code_review(user, event):
-    '''Viewing a "code review" is the only way students view code.  Even
-    previewing a submission is just viewing an empty code review with
-    no highlights.'''
-
-    user_id = user['sub']
-    user_netid = google_to_net_id(user_id)
-    submitter_user_id=event['submitter_id']
-    project_id = event['project_id']
-    partner_netid = lookup_partner_netid(submitter_user_id, project_id)
-    force_new = event.get('force_new', False)
-
-    # three people should be able to view the code review:
-    # 1. submitter
-    # 2. project partner
-    # 3. grader
-
-    if not (user_id == submitter_user_id or
-            (user_netid != None and user_netid == partner_netid) or
-            is_grader(user)):
-        return (500, 'not authorized to view that submission')
-
-    return get_code_review_raw(user=user,
-                               submitter_user_id=submitter_user_id,
-                               project_id=project_id,
-                               force_new=force_new)
-
-
-@route
-@grader
-def put_code_review(user, event):
-    cr = event['cr']
-    project_id = event['project_id']
-    cr['reviewer_email'] = user['email']
-    if not project_id in PROJECT_IDS:
-        return (500, 'not a valid project')
-    submitter_user_id = event['submitter_id']
-
-    cr_id = '%.2f' % time.time()
-    for path in [code_review_path(submitter_user_id, project_id),
-                 code_review_path(submitter_user_id, project_id, cr_id)]:
-        s3().put_object(Bucket=BUCKET,
-                        Key=path,
-                        Body=bytes(json.dumps(cr), 'utf-8'),
-                        ContentType='text/json',
-        )
-    return (200, 'uploaded review')
-
-
-@route
-@user
 def rate_code_review(user, event):
-    user_id = user['sub']
-    user_netid = google_to_net_id(user_id)
+    user_email = user['email']
+    user_netid = google_to_net_id(user_email)
     cr = event['cr']
-    submitter_user_id=event['submitter_id']
+    student_email=event['student_email']
     project_id = event['project_id']
-    partner_netid = lookup_partner_netid(submitter_user_id, project_id)
+    partner_netid = lookup_partner_netid(student_email, project_id)
 
-    if not (user_id == submitter_user_id or user_netid == partner_netid):
+    if not (user_email == student_email or user_netid == partner_netid):
         return (500, 'not authorized to rate that CR')
 
-    path = project_dir(submitter_user_id, project_id) + 'rating-%s-%s.json'
+    path = project_dir(student_email, project_id) + 'rating-%s-%s.json'
     path = path % (user_netid, '%.2f' % time.time())
     s3().put_object(Bucket=BUCKET,
                     Key=path,
@@ -620,61 +543,65 @@ def rate_code_review(user, event):
 
 
 @route
-@admin
-def resync_partner_id(user, event):
-    """This is a consistency tool.  If somehow partner wasn't recorded
-    upon submission, we can try again now.  Until there is a user
-    interface, you can paste the following in the JS console:
-
-    common.callLambda({"fn":"resync_partner_id", "project_id":"????", "submitter_user_id":"????"}, function(d) {console.log(d)}, function(d) {console.log(d)})
-    """
-
-    submitter_user_id = event['submitter_user_id']
-    project_id = event['project_id']
-
-    # update partner.json
-    project_files = load_project_from_s3(submitter_user_id, project_id)
-    analysis = get_code_analysis(None, project_id, project_files)
-    partner = {'netid': analysis.get('partner', None)}
-    path = partner_path(submitter_user_id, project_id)
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(partner), 'utf-8'),
-                    ContentType='text/json')
-
-    # update curr.json
-    response = s3().get_object(Bucket=BUCKET, Key=project_path(submitter_user_id, project_id))
-    submission = json.loads(str(response['Body'].read(), 'utf-8'))
-
-    submission_id = '%.2f' % time.time()
-    submission['partner_netid'] = partner['netid']
-    for path in [project_path(submitter_user_id, project_id),
-                 project_path(submitter_user_id, project_id, submission_id)]:
-        s3().put_object(Bucket=BUCKET,
-                        Key=path,
-                        Body=bytes(json.dumps(submission), 'utf-8'),
-                        ContentType='text/json')
-
-    return (200, json.dumps(partner))
-
-
-@route
 @grader
 def project_list_submissions(user, event):
+    # get roster indexed by wiscmail
     roster = json.loads(get_roster_raw())
-    return project_list_submissions_raw(roster, event['project_id'])
+    roster = {student['net_id']+"@wisc.edu": student for student in roster if 'net_id' in student}
+    project_id = event['project_id']
+
+    if not project_id in PROJECT_IDS:
+        return (500, 'invalid project id')
+    paths = s3().s3_all_keys('projects/'+project_id+'/')
+
+    # set of student_email's of user that have received code reviews
+    reviewed = set()
+
+    submissions = []
+    for path in paths:
+        parts = path.split('/')
+
+        # Example:
+        # projects/p2/users/tylerharter*at*gmail.com/2019-08-16_17-58-37/submission.json
+
+        if (len(parts) != 6 or parts[2] != 'users'):
+            continue
+
+        student_email = parts[3].replace("*at*", "@")
+        filename = parts[5]
+
+        if filename == 'cr.json':
+            reviewed.add(student_email)
+        elif filename == 'submission.json':
+            submission = {
+                'project_id':project_id,
+                'student_email':student_email,
+                'info': {},
+                'path': path
+            }
+
+            # supplement with info from roster
+            for field in ['net_id', 'ta']:
+                submission['info'][field] = roster.get(student_email,{}).get(field,None)
+            submissions.append(submission)
+
+    # augment submissions with info about reviews
+    for submission in submissions:
+        submission['has_review'] = (submission['student_email'] in reviewed)
+
+    return (200, {'submissions':submissions})
 
 
 @route
 @grader
 def project_get_extension(user, event):
     project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
-    student_user_id = net_id_to_google(event['net_id'])
-    if student_user_id == None:
+    if not project_id in PROJECT_DUE_UTC:
+        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
+    student_user_email = net_id_to_google(event['net_id'])
+    if student_user_email == None:
         return (500, 'could not find google ID for net ID')
-    path = extension_path(student_user_id, project_id)
+    path = extension_path(student_user_email, project_id)
 
     try:
         response = s3().get_object(Bucket=BUCKET, Key=path)
@@ -691,13 +618,13 @@ def project_get_extension(user, event):
 @grader
 def project_set_extension(user, event):
     project_id = event['project_id']
-    if not project_id in PROJECT_IDS:
-        return (500, 'please enter a valid project ID: ' + ', '.join(PROJECT_IDS))
-    student_user_id = net_id_to_google(event['net_id'])
+    if not project_id in PROJECT_DUE_UTC:
+        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
+    student_user_email = net_id_to_google(event['net_id'])
     days = int(event['days'])
-    if student_user_id == None:
+    if student_user_email == None:
         return (500, 'could not find google ID for net ID')
-    path = extension_path(student_user_id, project_id)
+    path = extension_path(student_user_email, project_id)
 
     row = {'days': days, 'approver': user['email']}
     response = s3().put_object(Bucket=BUCKET, Key=path,
@@ -709,7 +636,7 @@ def project_set_extension(user, event):
 @route
 @user
 def project_get_summary(user, event):
-    user_id = user['sub']
+    user_email = user['email']
 
     # get google id of student, directly, or from net_id
     student_google_id = event.get('google_id', None)
@@ -722,7 +649,7 @@ def project_get_summary(user, event):
     # two people should be able to view the project summary:
     # 1. student
     # 3. grader
-    if not (user_id == student_google_id or is_grader(user)):
+    if not (user_email == student_google_id or is_grader(user)):
         return (500, 'not authorized to view this content')
 
     if student_google_id == None:

@@ -8,7 +8,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
 (function() {
   // code review object
-  var cr = null
+  var sub = null
   var cr_dirty = false
 
   function init() {
@@ -16,7 +16,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     $("#code_viewer").html("")
 
     var latest = common.getUrlParameter('latest')
-    common.signinCallback = function() {code_review.fetchReview(latest == "1")}
+    common.signinCallback = function() {code_review.getSubmission()}
 
     // prompt before leaving with unsaved work
     window.addEventListener("beforeunload", function (e) {
@@ -82,7 +82,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
   // this considers adding a higlight
   function codeMouseUp() {
-    if (cr == null || !cr.is_grader) {
+    if (sub == null || !sub.is_grader) {
       // students don't need to highlight
       return
     }
@@ -100,8 +100,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var offset = Math.min(offset1, offset2)
     var length = Math.max(offset1, offset2) - offset + 1
 
-    for(var i=0; i<cr.highlights[filename].length; i++) {
-      var highlight = cr.highlights[filename][i]
+    for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+      var highlight = sub.cr.highlights[filename][i]
       if (!(offset+length <= highlight.offset || highlight.offset+highlight.length <= offset)) {
         // too close to another highlight (or overlapping)
         console.log('overlaps')
@@ -111,15 +111,15 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
     console.log('does not overlap')
 
-    cr.highlights[filename].push({offset:offset, length:length, comment:""})
+    sub.cr.highlights[filename].push({offset:offset, length:length, comment:""})
     cr_dirty = true
-    console.log(cr.highlights)
-    code_review.refreshCR()
+    console.log(sub.cr.highlights)
+    code_review.refreshPage()
   }
 
   function getHighlightComment(filename, offset, length) {
-    for(var i=0; i<cr.highlights[filename].length; i++) {
-      var highlight = cr.highlights[filename][i]
+    for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+      var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
         return highlight.comment
       }
@@ -129,8 +129,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   }
 
   function setHighlightComment(filename, offset, length, comment) {
-    for(var i=0; i<cr.highlights[filename].length; i++) {
-      var highlight = cr.highlights[filename][i]
+    for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+      var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
         highlight.comment = comment
         cr_dirty = true
@@ -141,8 +141,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   }
 
   function setHighlightRating(filename, offset, length, rating) {
-    for(var i=0; i<cr.highlights[filename].length; i++) {
-      var highlight = cr.highlights[filename][i]
+    for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+      var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
         highlight.rating = rating
         cr_dirty = true
@@ -153,10 +153,10 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   }
 
   function deleteHighlight(filename, offset, length) {
-    for(var i=0; i<cr.highlights[filename].length; i++) {
-      var highlight = cr.highlights[filename][i]
+    for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+      var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
-        cr.highlights[filename].splice(i, 1) // delete at index i
+        sub.cr.highlights[filename].splice(i, 1) // delete at index i
         cr_dirty = true
         return
       }
@@ -176,8 +176,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   }
 
   function fileConf(filename) {
-    if ('files_meta' in cr.project && filename in cr.project.files_meta) {
-      return cr.project.files_meta[filename]
+    if ('files_meta' in sub.code && filename in sub.code.files_meta) {
+      return sub.code.files_meta[filename]
     }
 
     // default
@@ -186,24 +186,29 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
   code_review.genericComment = function(comment) {
     $("#general_comments").val(comment);
-    cr.general_comments = comment;
+    sub.cr.general_comments = comment;
   }
 
   code_review.resetVisible = function () {
-    if (cr.is_grader) {
+    if (sub.is_grader) {
       $(".grader_content").show()
     } else {
       $(".grader_content").hide()
     }
   }
 
-  code_review.refreshCR = function() {
+  code_review.refreshPage = function() {
     code_review.resetVisible()
 
     // remove all previous highlight popovers
     $(".popover").remove()
 
-    if (Object.keys(cr.project.files).length == 0) {
+    if (sub.submissions.length == 0) {
+      $("#code_viewer").html("no submissions found")
+      return
+    }
+
+    if (Object.keys(sub.code.files).length == 0) {
       $("#code_viewer").html("no files found")
       return
     }
@@ -212,8 +217,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
     // check deductions
     var ta_deduction = 0
-    if ('points_deducted' in cr) {
-      ta_deduction = cr.points_deducted
+    if ('points_deducted' in sub.cr) {
+      ta_deduction = sub.cr.points_deducted
     }
     $("#ta_point_deduction").val(ta_deduction)
     $("#ta_point_deduction").on('input', function(){
@@ -224,29 +229,45 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       }
 
       if (deduction != NaN && deduction >= 0 && deduction <= 100) {
-        cr.points_deducted = deduction
+        sub.cr.points_deducted = deduction
         $("#ta_point_deduction").removeClass('is-invalid')
       } else {
         $("#ta_point_deduction").addClass('is-invalid')
       }
     })
 
+    // SECTION: VERSIONS
+    html += ('<h3>Submissions</h3>')
+    html += ('<ul>')
+    for (var i in sub.submissions) {
+      var sid = sub.submissions[i].id
+      html += ('<li>')
+      var line = ('<a href="code_review.html?project_id=' + common.getUrlParameter('project_id') +
+                  '&student_email=' + common.getUrlParameter('student_email') +
+                  '&submission_id=' + sid + '">' + sid + '</a>\n')
+      if (sid == sub.submission_id) {
+        line = "<b>"+line+"</b>"
+      }
+      html += line
+    }
+    html += ('</ul>')
+
     // SECTION: grades (tests - ta deduction, only shown when both are ready)
     html += ('<h3>Grades</h3>')
-    
-    var grades_are_ready = ('reviewer_email' in cr && cr.reviewer_email &&
-                            'test_result' in cr && cr.test_result != null &&
-                            'score' in cr.test_result)
-    
+
+    var grades_are_ready = ('reviewer_email' in sub.cr && sub.cr.reviewer_email &&
+                            'test_result' in sub && sub.test_result != null &&
+                            'score' in sub.test_result)
+
     if (grades_are_ready) {
-      var test_score = cr.test_result.score
+      var test_score = sub.test_result.score
       var final_score = (test_score - ta_deduction)
 
       html += ('<ul>')
       html += ('<li>Base score: ' + test_score + ' (from tests)')
       html += ('<li>Less ' + ta_deduction + ' points (TA deduction)')
       html += ('<li>Final score: <b>' + final_score + '</b>')
-      html += ('<li>Reviewer Contact Email: ' + cr.reviewer_email)
+      html += ('<li>Reviewer Contact Email: ' + sub.cr.reviewer_email)
       html += ('<li>Note: this final score does not consider whether this project was ' +
                'submitted late.  If it was, and you did not have late days left, ' +
                'you may not receive all these points.')
@@ -264,12 +285,12 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
 
     // SECTION: test results
-    html += ('<h3>Test Results</h3>')
+    html += ('<h3>Test Results (for latest submission when last run)</h3>')
     var test_blob = ""
-    if ('test_result' in cr && cr.test_result != null && 'score' in cr.test_result) {
-      $("#auto_test_score").val(cr.test_result.score)
+    if ('test_result' in sub && sub.test_result != null && 'score' in sub.test_result) {
+      $("#auto_test_score").val(sub.test_result.score)
       html += ('<textarea cols=80 rows=6 id="test_blob"></textarea><br>')
-      test_blob = JSON.stringify(cr.test_result, null, 2)
+      test_blob = JSON.stringify(sub.test_result, null, 2)
     } else {
       html += ('<p>not ready</p>')
     }
@@ -277,8 +298,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     // SECTION: TA comments
     html += ('<h3>General Reviewer Comments</h3>')
     var general_comments = ''
-    if ('general_comments' in cr && cr.general_comments) {
-      general_comments = cr.general_comments
+    if ('general_comments' in sub.cr && sub.cr.general_comments) {
+      general_comments = sub.cr.general_comments
     }
     html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea><br>')
     html += ('<div class="grader_content" style="display:none;">')
@@ -288,7 +309,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     html += ('</div>')
 
     // SECTION: rating the CR
-    if (grades_are_ready && !cr.is_grader) {
+    if (grades_are_ready && !sub.is_grader) {
       html += ('<h3>Was Our Feedback Useful?</h3>')
       html += ('<ol>')
       html += ('<li>Click any yellow highlights below to view our feedback on specific lines of code')
@@ -301,7 +322,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
 
     // SECTION: cells/files
-    for (var filename in cr.project.files) {
+    for (var filename in sub.code.files) {
       html += ('<h4 class="mt-3">'+fileConf(filename).display_name+'</h4>')
       html += ('<div class=html_code data-filename="'+filename+'">')
       html += ('<pre class="prettyprint lang-py" data-filename="'+filename+'"></pre>')
@@ -314,28 +335,28 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     code_review.resetVisible()
 
     // populate each box with the code and highlights
-    for (var filename in cr.project.files) {
+    for (var filename in sub.code.files) {
       // populate either the outer div with HTML content or the inner
       // pre (depending on the type of content
       if (fileConf(filename).content_type == "html") {
         var element = $("div[data-filename='"+filename+"'].html_code")
         element.html('<div class="nb_cell">' +
-                     cr.project.files[filename] + 
+                     sub.code.files[filename] + 
                      '</div>')
       } else {
         var preElement = $("pre[data-filename='"+filename+"'].lang-py")
-        var code = cr.project.files[filename]
+        var code = sub.code.files[filename]
 
         // sort highlights from last to first.  Otherwise, injecting
         // HTML at specific offsets gets messed up, as early injections
         // move where later injections should go.
-        cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
+        sub.cr.highlights[filename].sort(function(a, b){return b.offset-a.offset});
 
         var htmlCode = ''
 
         // add all highlights
-        for(var i=0; i<cr.highlights[filename].length; i++) {
-          var highlight = cr.highlights[filename][i]
+        for(var i=0; i<sub.cr.highlights[filename].length; i++) {
+          var highlight = sub.cr.highlights[filename][i]
           var cut
 
           // move tail from code to htmlCode
@@ -360,15 +381,15 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     // event listening on stuff we just created
     $(".prettyprint").mouseup(codeMouseUp)
 
-    if (cr.is_grader) {
+    if (sub.is_grader) {
       $("#general_comments").on('input', function() {
-        cr.general_comments = $("#general_comments").val()
+        sub.cr.general_comments = $("#general_comments").val()
       })
     } else {
       $("#general_comments").prop("disabled", true);
 
       $("#cr_student_response").on('input', function() {
-        cr.student_response = $("#cr_student_response").val()
+        sub.cr.student_response = $("#cr_student_response").val()
         cr_dirty = true
       })
     }
@@ -380,14 +401,14 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       var offset = $(this).attr('data-highlight-offset')
       var length = $(this).attr('data-highlight-length')
       var filename = $(this).attr('data-highlight-filename')
-      var text_opts = cr.is_grader ? "" : "readonly"
+      var text_opts = sub.is_grader ? "" : "readonly"
       html = '<textarea data-highlight-id="'+highlight_id+'" rows="5" cols="40" '+text_opts+'></textarea><br>'
 
       // everybody buttons: Cancel, Delete
       html += ('<button type="button" data-highlight-id="' + highlight_id +
                '" data-highlight-button="ok" class="btn btn-dark">OK</button> ')
 
-      if (cr.is_grader) {
+      if (sub.is_grader) {
         // grader buttons: Cancel, Delete
         html += ('<button type="button" data-highlight-id="' + highlight_id +
                  '"data-highlight-button="cancel" class="btn btn-dark">Cancel</button> ')
@@ -415,7 +436,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
         txt.val(getHighlightComment(filename, offset, length))
 
         ok_btn.click(function() {
-          if (cr.is_grader) {
+          if (sub.is_grader) {
             setHighlightComment(filename, offset, length, txt.val())
           }
           highlight_element.popover('hide')
@@ -432,57 +453,53 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
         })
 
         cancel_btn.click(function() {
-          code_review.refreshCR()
+          code_review.refreshPage()
           highlight_element.popover('hide')
         })
 
         delete_btn.click(function() {
           deleteHighlight(filename, offset, length)
-          code_review.refreshCR()
+          code_review.refreshPage()
         })
       })
     })
   }
 
-  code_review.fetchReview = function(force_new) {
+  code_review.getSubmission = function() {
     $("#code_viewer").html("")
     var project_id = $("#project_id").val()
 
     var data = {
-      "fn": "get_code_review",
+      "fn": "get_submission",
       "project_id": common.getUrlParameter('project_id'),
-      "submitter_id": common.getUrlParameter('submitter_id'),
-      "force_new": force_new
+      "student_email": common.getUrlParameter('student_email'),
+      "submission_id": common.getUrlParameter('submission_id'),
     }
 
     common.callLambda(data, function(data) {
-      cr = data.body
-      code_review.refreshCR()
+      sub = data.body
+      code_review.refreshPage()
     })
   };
 
-  code_review.startFresh = function() {
-    code_review.fetchReview(true)
-  }
-
   code_review.saveCodeReview = function() {
-    var new_cr = Object.assign({}, cr) // shallow copy
-    new_cr.project = null // no reason to upload the code again
-
     var data = {
       "fn": "put_code_review",
       "project_id": common.getUrlParameter('project_id'),
-      "submitter_id": common.getUrlParameter('submitter_id'),
-      "cr": new_cr
+      "student_email": common.getUrlParameter('student_email'),
+      "partner_netid": sub.analysis.partner,
+      "submission_id": sub.submission_id,
+      "cr": sub.cr
     }
 
     common.callLambda(data, function(data) {
       cr_dirty = false
       common.popThankYou()
-      code_review.refreshCR()
+      code_review.refreshPage()
     })
   }
 
+  // TODO
   code_review.rateCodeReview = function() {
     var rated_cr = Object.assign({}, cr) // shallow copy
     rated_cr.project = null // no reason to upload the code again
@@ -490,14 +507,14 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var data = {
       "fn": "rate_code_review",
       "project_id": common.getUrlParameter('project_id'),
-      "submitter_id": common.getUrlParameter('submitter_id'),
+      "student_email": common.getUrlParameter('student_email'),
       "cr": rated_cr
     }
 
     common.callLambda(data, function(data) {
       cr_dirty = false
       common.popThankYou()
-      code_review.refreshCR()
+      code_review.refreshPage()
     })
   }
 
