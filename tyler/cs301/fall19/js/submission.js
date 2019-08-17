@@ -8,16 +8,11 @@ var submission = {};
   var filename = null
   var payload = null
 
-  // code review object
-  var cr = null
-
   function init() {
     $("#project_file").change(submission.openFile)
     $("#project_id").change(function() {
       $("#submission_status").html("")
     })
-
-    common.signinCallback = submission.lookupNetId
   }
 
   submission.uploadCode = function() {
@@ -36,15 +31,13 @@ var submission = {};
       common.popThankYou()
 
       // try to preview right after a submission
-      cr = data.body.code_review
-      if (cr) {
-        refreshProjectStatus()
-        if ("analysis" in cr && cr.analysis.errors) {
-          if (ignore_errors) {
-            common.popError("your submission may not get graded (check errors in Step 4)")
-          } else {
-            common.popError("your submission was not uploaded due to errors (details in Step 4)")
-          }
+      var analysis = data.body.analysis
+      refreshProjectStatus(analysis)
+      if (analysis.errors) {
+        if (ignore_errors) {
+          common.popError("your submission may not get graded (check bulleted errors carefully)")
+        } else {
+          common.popError("your submission was not uploaded due to errors (check bulleted errors carefully)")
         }
       }
 
@@ -52,70 +45,24 @@ var submission = {};
       $("#submit_button").prop('disabled', true)
     })
   };
-
-  submission.withdrawSubmission = function() {
-    var project_id = $("#project_id").val()
-
-    var data = {
-      "fn": "project_withdraw",
-      "project_id": project_id,
-    }
-    common.callLambda(data, function(data) {
-      console.log("project submission withdrawn")
-
-      // clear preview
-      $("#submission_status").html("<h2>submission withdrawn</h2>")
-    })
-  };
   
-  function refreshProjectStatus() {
-    if (Object.keys(cr.project.files).length == 0) {
-      $("#submission_status").html("no files found")
-      return
-    }
+  function refreshProjectStatus(analysis) {
+    var html = '<h3>Submission Status</h3>'
 
-    var html = '<h3>Submission Details</h3>'
-
-    if ("analysis" in cr) {
-      html += '<ul>'
-      for (var i in cr.analysis.comments) {
-        var comment = cr.analysis.comments[i]
-        html += '<li>' + comment
-      }
-      html += '</ul>'
-    } else {
-      html += "<p>...missing...</p>"
+    html += '<ul>'
+    for (var i in analysis.comments) {
+      var comment = analysis.comments[i]
+      html += '<li>' + comment
     }
+    html += '</ul>'
 
     $("#submission_status").html(html)
   }
 
-  submission.checkProjectStatus = function() {
-    var project_id = $("#project_id").val()
-    $("#submission_status").html("")
-
-    // we fetch the code as a CR, even though we don't display
-    // highlights.  We also do force_new to get latest code (not
-    // previous code that may have already been reviewed).
-    var data = {
-      "fn": "get_code_review",
-      "project_id": project_id,
-      "student_email": common.getEmail(), // submitted by self
-      "force_new": true
-    }
-    common.callLambda(data, function(data) {
-      cr = data.body
-      refreshProjectStatus()
-    })
-  };
-
-  submission.viewCodeReview = function(latest) {
+  submission.viewCodeReview = function() {
     var student_email = common.getEmail() // submitted by self
     var project_id = $("#project_id").val()
     var url = "code_review.html?project_id="+project_id+"&student_email="+student_email
-    if (latest) {
-      url += "&latest=1"
-    }
     window.open(url)
   };
 
@@ -144,21 +91,6 @@ var submission = {};
     };
 
     reader.readAsBinaryString(file)
-  }
-
-  submission.lookupNetId = function() {
-    var data = {
-      "fn": "get_net_id",
-    }
-    common.callLambda(data, function(data) {
-      if (data.body.net_id != null) {
-        $("#link_code").val("linked to " + data.body.net_id)
-        $("#link_code").prop("disabled", true)
-        $("#link_button").prop("disabled", true)
-      } else {
-        common.popError("for your work to be counted, please logoff and sign back in with your @wisc.edu")
-      }
-    })
   }
 
   init()

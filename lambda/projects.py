@@ -62,6 +62,10 @@ def submission_path(email, project_id, submission_id):
     return submission_dir(email, project_id, submission_id) + "submission.json"
 
 
+def submission_link(email, project_id, submission_id):
+    return project_dir(email, project_id) + submission_id + "-link.json"
+
+
 def cr_path(email, project_id, submission_id):
     return submission_dir(email, project_id, submission_id) + "cr.json"
 
@@ -216,7 +220,11 @@ def extract_project_files(submission_id, filename, payload):
 def get_code_analysis(student_email, project_id, project_files):
     pf = project_files
     comments = []
-    analysis = {'comments': comments, 'partner': None, 'errors': False}
+    analysis = {
+        'comments': comments,
+        'partner': None,
+        'errors': False,
+    }
     error_count = len(pf['errors'])
 
     # comment on errors
@@ -230,11 +238,13 @@ def get_code_analysis(student_email, project_id, project_files):
     comments.append('info: there were %d .py files submitted' % code_file_count)
     comments.append('info: there were %d notebook cells' % nb_cell_count)
 
-    # extract various fields from comments
+    # extract these fields from comments:
+    # submitter (should be an email)
+    # partner (should be an email or "none")
+    # project (p1, p2, etc)
     fields = {'project':set(), 'submitter':set(), 'partner':set()}
-
     for filename in pf['files'].keys():
-        # look in .py files and ipython notebook cells (which are innapropriately named files here)
+        # check .py files and nb cells
         if not (filename.endswith('.py') or filename.startswith('in-')):
             continue
         code = pf['files'][filename]
@@ -261,12 +271,13 @@ def get_code_analysis(student_email, project_id, project_files):
     # check user's Net ID matches the comment in the code
     # (this check doesn't run if TA is fetching the CR)
     if student_email != None:
-        parts = student_email.lower().split('@')
-        if parts[-1] != NET_ID_EMAIL_SUFFIX:
-            comments.append('<b>error:</b> not submitted from an @wisc.edu account')
+        if not student_email.lower().endswith(NET_ID_EMAIL_SUFFIX):
+            comments.append('<b>error:</b> not submitted from an @wisc.edu account (%s)' % student_email)
             analysis['errors'] = True
         elif len(fields['submitter']) == 1:
             submitter = list(fields['submitter'])[0]
+            if not "@" in submitter:
+                submitter += NET_ID_EMAIL_SUFFIX
             if submitter != student_email:
                 comments.append('<b>error:</b> expected submitter to be "%s", not "%s"' % (student_email, submitter))
                 analysis['errors'] = True
@@ -276,14 +287,17 @@ def get_code_analysis(student_email, project_id, project_files):
         partner = list(fields['partner'])[0]
         if partner.strip().lower() == "none":
             comments.append('info: no partner')
-        elif not partner in get_roster_net_ids():
-            comments.append('<b>error:</b> partner Email %s not on the roster' % partner)
-            analysis['errors'] = True
         else:
-            comments.append('info: partner is ' + partner)
+            if not '@' in partner:
+                partner += NET_ID_EMAIL_SUFFIX
             analysis['partner'] = partner
+            if not partner in get_roster_emails():
+                comments.append('<b>error:</b> "%s" not on the roster' % partner)
+                analysis['errors'] = True
+            else:
+                comments.append('info: partner is ' + partner)
 
-    # TODO: check that project is correct
+    # check that project is correct
     if len(fields['project']) == 1:
         project = list(fields['project'])[0]
         if project.lower().strip() != project_id.lower().strip():
@@ -371,14 +385,11 @@ def project_upload(user, event):
                         Body=bytes(json.dumps(submission), 'utf-8'),
                         ContentType='text/json')
 
-        # create symlink in partners dir
-        if submission['partner_email']: # TODO: and user_email.endswith("@wisc.edu"):
-            partner_email = submission['partner_email'] + "@wisc.edu"
-            link = submission_path(partner_email, project_id, submission_id) + ".link"
-            s3().put_object(Bucket=BUCKET,
-                            Key=link,
-                            Body=bytes(json.dumps({"symlink": path}), 'utf-8'),
-                            ContentType='text/plain')
+        # create links for both partners to the submission
+        sub_dir = submission_dir(user_email, project_id, submission_id)
+        s3().s3_link(sub_dir, submission_link(user_email, project_id, submission_id))
+        if submission['partner_email'] and user_email in get_roster_emails():
+            s3().s3_link(sub_dir, submission_link(submission['partner_email'], project_id, submission_id))
 
     result = {'analysis': analysis}
     return (200, result)
@@ -398,48 +409,50 @@ def get_submission(user, event):
     # two parties should be able to view the code review:
     # 1. submitter(s)
     # 2. grader
-
     if not (user_email == student_email or is_grader(user)):
         return (500, 'not authorized to view that submission')
 
-    # step 0: discover submissions
+    # return list of ALL submissions for this project
     submissions = []
     for path in s3().s3_all_keys(project_dir(student_email, project_id)):
-        path = path.split("/")
-        if path[-1] == 'submission.json':
-            submissions.append({"id": path[-2]})
+        name = path.split("/")[-1]
+        suffix = '-link.json'
+        if name.endswith(suffix):
+            submissions.append({"id": name[:-len(suffix)]})
     result = {
         'is_grader': is_grader(user),
-        'test_result': get_project_test_result(student_email, project_id),
         'submissions': submissions
     }
 
+    # embed details for one of the submissions for this project
     if len(submissions) > 0:
         submissions.sort(key=lambda s: s["id"], reverse=True)
         submission_id = event.get('submission_id', None)
         if not submission_id:
             submission_id = submissions[0]["id"]
-        path = submission_path(user_email, project_id, submission_id)
-        row = s3().read_json_follow(Bucket=BUCKET, Key=path)
-        code = extract_project_files(row['submission_id'], row['filename'], row['payload'])
+
+        link = submission_link(user_email, project_id, submission_id)
+        sub_dir = s3().read_json(link)["symlink"]
+
+        submission = s3().read_json(sub_dir + 'submission.json')
+        code = extract_project_files(submission['submission_id'], submission['filename'], submission['payload'])
 
         result['submission_id'] = submission_id
         result['code'] = code
-        result['analysis'] = get_code_analysis(student_email, project_id, code)
+        result['analysis'] = get_code_analysis(None, project_id, code)
 
-        # fill result['cr'] with saved results, or empty blob
-        try:
-            result['cr'] = s3().read_json_follow(Bucket=BUCKET, Key=cr_path(student_email, project_id, submission_id))
-        except botocore.exceptions.ClientError as e:
-            if e.response['Error']['Code'] == "NoSuchKey":
+        # add details from test.json and cr.json, if they exist
+        test_result = s3().read_json_default(sub_dir + 'test.json')
+        if test_result:
+            result['test_result'] = test_result
+        result['cr'] = s3().read_json_default(sub_dir + 'cr.json')
+        if result['cr'] == None:
                 result['cr'] = {
                     'highlights': {k:[] for k in code['files'].keys()}, # list of highlight ranges with comments
                     'general_comments': '',      # comments about whole submission
                     'points_deducted': 0,        # TAs can take additional points off
                     'reviewer_email': None,      # who left the code review
                 }
-            else:
-                raise e
 
     return (200, result)
 

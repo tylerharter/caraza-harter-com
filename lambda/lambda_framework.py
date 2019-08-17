@@ -81,17 +81,24 @@ class S3:
         return self.s3_client.delete_object(**kwargs)
 
     # convenience functions beyond what the boto client provides
-    def read_json_follow(self, **kwargs):
-        response = s3().get_object(**kwargs)
-        result = json.loads(str(response['Body'].read(), 'utf-8'))
+    def s3_link(self, target, source):
+        self.put_object(Bucket=BUCKET,
+                        Key=source,
+                        Body=bytes(json.dumps({"symlink": target}), 'utf-8'),
+                        ContentType='text/plain')
 
-        if 'symlink' in result:
-            kwargs['Key'] = result['symlink']
-            response = s3().get_object(**kwargs)
-            result = json.loads(str(response['Body'].read(), 'utf-8'))
+    def read_json(self, path):
+        response = self.get_object(Bucket=BUCKET, Key=path)
+        return json.loads(response['Body'].read().decode('utf-8'))
 
-        return result
-    
+    def read_json_default(self, path, default=None):
+        try:
+            return self.read_json(path)
+        except botocore.exceptions.ClientError as e:
+            if e.response['Error']['Code'] == "NoSuchKey":
+                return default
+            raise e
+
     def s3_all_keys(self, Prefix):
         ls = self.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
         keys = []
@@ -214,7 +221,7 @@ def error(message):
 
 saved_users = set()
 def save_user_info(user):
-    path = 'users/google/%s.json' % user['sub']
+    path = 'users/%s.json' % user['sub']
     if path in saved_users:
         return
     if not s3().path_exists(path):

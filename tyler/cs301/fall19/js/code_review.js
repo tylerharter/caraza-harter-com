@@ -285,7 +285,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
 
     // SECTION: test results
-    html += ('<h3>Test Results (for latest submission when last run)</h3>')
+    html += ('<h3>Test Results</h3>')
     var test_blob = ""
     if ('test_result' in sub && sub.test_result != null && 'score' in sub.test_result) {
       $("#auto_test_score").val(sub.test_result.score)
@@ -303,9 +303,9 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
     html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea><br>')
     html += ('<div class="grader_content" style="display:none;">')
-    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!\')">Great job!</button> ')
-    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!\')">Good job!</button> ')
-    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job!  Please check comments below.\')">Good job! Please check comments below.</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job!  Please check comments below.</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job, please check comments below.\')">Good job, please check comments below.</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Please check comments below.\')">Please check comments below.</button> ')
     html += ('</div>')
 
     // SECTION: rating the CR

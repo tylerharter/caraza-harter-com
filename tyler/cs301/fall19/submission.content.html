@@ -22,7 +22,7 @@
 
 <div class="alert alert-dark">
   <div class="row justify-content-md-center">
-    <div class="col col-12 px-1">
+    <div class="col px-1">
       <select class="form-control" id="project_id">
         <option value="none">Select...</option>
         <option value="p1">Project 1</option>
@@ -36,6 +36,10 @@
         <option value="p9">Project 9</option>
         <option value="p10">Project 10</option>
       </select>
+    </div>
+
+    <div class="col col-md-auto px-1">
+      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview()">View Submissions</button>
     </div>
   </div>
 </div>
@@ -54,58 +58,9 @@
       <button type="button" id="submit_button" class="btn btn-dark btn-block" onclick="submission.uploadCode()" disabled>Submit</button><br>
 
       <input type="checkbox" id="ignore_errors" value=""> <b>Ignore
-      Errors</b>.  Try to fix your errors first, and only use this if
-      a deadline is looming and you want to proceed with a problematic
-      submission as a way to prove what work you've done.  Using this
-      feature when avoidable could affect your course participation
-      score.<br>
-    </div>
-  </div>
-</div>
-
-<h2 class="my-3">Step 4: Followup</h2>
-
-<div class="container alert alert-dark">
-  <div class="row my-3">
-    <div class="col col-md-auto px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.checkProjectStatus()">Check for Errors</button>
-    </div>
-    <div class="col">
-      We automatically check for errors at submission time; use this button to re-check a previous submission.
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-md-auto px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview(true)">View Current Submission</button>
-    </div>
-    <div class="col">
-      Open your last submitted code (if any) in a new window so you
-      can review it.  Reviewer comments (if any) will not be displayed
-      here.
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-md-auto px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.viewCodeReview(false)">Check for Feedback</button>
-    </div>
-    <div class="col">
-      Check for TA comments about your code.  If you've resubmitted
-      after TAs left comment, note that the comments will be shown on
-      an older version of your code.
-    </div>
-  </div>
-
-  <div class="row my-3">
-    <div class="col col-md-auto px-1">
-      <button type="button" class="btn btn-dark" onclick="submission.withdrawSubmission()">Withdraw</button>
-    </div>
-    <div class="col">
-      You should withdraw your submission if you started working with
-      a partner who submitted on behalf of both of you.  If you work
-      with a partner, there should only be one submission on behalf of
-      both of you.
+      Errors</b>.  Try to fix your errors instead of ignoring them
+      (only use this if a deadline is looming and can't figure out
+      what the issue is).<br>
     </div>
   </div>
 
