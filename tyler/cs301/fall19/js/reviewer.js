@@ -81,7 +81,8 @@ var reviewer = {};
         for (var i=0; i<student_count; i++) {
           var submission = categories[category][i]
           var url = ('code_review.html?project_id=' + submission.project_id +
-                     '&student_email=' + submission.student_email)
+                     '&student_email=' + submission.student_email +
+                     '&submission_id=' + submission.submission_id)
 
           $('<a>',{
             text:submission.display,

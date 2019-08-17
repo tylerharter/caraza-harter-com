@@ -536,42 +536,62 @@ def project_list_submissions(user, event):
         return (500, 'invalid project id')
     paths = s3().s3_all_keys('projects/'+project_id+'/')
 
-    # set of student_email's of user that have received code reviews
+    # emails of students
+    submissions = ddict(list)
+    direct_submissions = ddict(list)
     reviewed = set()
 
-    submissions = []
     for path in paths:
         parts = path.split('/')
 
         # Example:
-        # projects/p2/users/tylerharter*at*gmail.com/2019-08-16_17-58-37/submission.json
+        # projects/p2/tylerharter*at*gmail.com/2019-08-16_17-58-37/submission.json (len=5)
+        # projects/p2/tylerharter*at*gmail.com/2019-08-16_17-58-37-link.json (len=4)
 
-        if (len(parts) != 6 or parts[2] != 'users'):
-            continue
+        if len(parts) > 2:
+            email = parts[2].replace("*at*", "@")
+        
+        if len(parts) == 5 and parts[-1] == 'submission.json':
+            direct_submissions[email].append(parts[3])
 
-        student_email = parts[3].replace("*at*", "@")
-        filename = parts[5]
+        if len(parts) == 5 and parts[-1] == 'cr.json':
+            reviewed.add(parts[3])
 
-        if filename == 'cr.json':
-            reviewed.add(student_email)
-        elif filename == 'submission.json':
-            submission = {
-                'project_id':project_id,
-                'student_email':student_email,
-                'info': {},
-                'path': path
-            }
+        link_suffix = '-link.json'
+        if len(parts) == 4 and parts[-1].endswith(link_suffix):
+            submissions[email].append(parts[3][:-len(link_suffix)])
 
-            # supplement with info from roster
-            for field in ['net_id', 'ta']:
-                submission['info'][field] = roster.get(student_email,{}).get(field,None)
-            submissions.append(submission)
+    # we only want links to submissions that have been directly
+    # submitted (in contrast to submissions submitted by a partner),
+    # so we don't review the same thing twice.
+    #
+    # we're also only interested in the most recent submission
+    rows = []
+    for email in direct_submissions:
+        latest_direct = max(direct_submissions[email])
 
-    # augment submissions with info about reviews
-    for submission in submissions:
-        submission['has_review'] = (submission['student_email'] in reviewed)
+        if len(submissions[email]) == 0:
+            continue # this should only happen if lambda crashed between S3 writes
 
-    return (200, {'submissions':submissions})
+        latest = max(submissions[email])
+        if latest_direct != latest:
+            continue # this direct submission has been superceded by a partner's more-recent submission
+
+        row = {
+            'project_id': project_id,
+            'student_email': email,
+            'submission_id': latest_direct,
+            'has_review': email in reviewed,
+            'info': {},
+        }
+
+        # supplement with info from roster
+        for field in ['net_id', 'ta']:
+            row['info'][field] = roster.get(email,{}).get(field,None)
+
+        rows.append(row)
+
+    return (200, {'submissions': rows})
 
 
 @route
