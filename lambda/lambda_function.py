@@ -17,6 +17,7 @@ from collections import defaultdict as ddict
 
 from lambda_framework import *
 from projects import *
+from extensions import *
 from roster import *
 
 def lambda_handler(event, context):

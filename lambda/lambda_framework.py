@@ -15,6 +15,20 @@
 import json, urllib, boto3, botocore, base64, time, traceback, random, string
 from collections import defaultdict as ddict
 
+safe_s3_chars = set(string.ascii_letters + string.digits + ".-_")
+def to_s3_key_str(s):
+    s3key = []
+    # we use *char* to escape, because star can show up in both S3
+    # paths and URL query strings
+    for c in s:
+        if c in safe_s3_chars:
+            s3key.append(c)
+        elif c == "@":
+            s3key.append('*at*')
+        else:
+            s3key.append('*%d*' % ord(c))
+    return "".join(s3key)
+
 def file_lines(path):
     users = []
     with open(path) as f:
@@ -198,10 +212,14 @@ def error(message):
         "body": message
     }
 
+saved_users = set()
 def save_user_info(user):
     path = 'users/google/%s.json' % user['sub']
+    if path in saved_users:
+        return
     if not s3().path_exists(path):
         s3().put_object(Bucket=BUCKET,
                         Key=path,
                         Body=bytes(json.dumps(user, indent=2), 'utf-8'),
                         ContentType='text/json')
+    saved_users.add(path)

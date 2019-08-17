@@ -48,25 +48,9 @@ MAX_SIZE_KB = 1024
 # lookup S3 paths for various objects
 ########################################
 
-safe_s3_chars = set(string.ascii_letters + string.digits + ".-_")
-
-def to_s3_key_str(s):
-    s3key = []
-    # we use *char* to escape, because star can show up in both S3
-    # paths and URL query strings
-    for c in s:
-        if c in safe_s3_chars:
-            s3key.append(c)
-        elif c == "@":
-            s3key.append('*at*')
-        else:
-            s3key.append('*%d*' % ord(c))
-    return "".join(s3key)
-
-
 def project_dir(email, project_id):
     '''Get location where submission should be saved'''
-    return 'projects/%s/users/%s/' % (project_id, to_s3_key_str(email))
+    return 'projects/%s/%s/' % (to_s3_key_str(project_id), to_s3_key_str(email))
 
 
 def submission_dir(email, project_id, submission_id):
@@ -84,11 +68,7 @@ def cr_path(email, project_id, submission_id):
 
 def project_summary_path(email):
     '''Get location where summary of projects should be saved'''
-    return 'projects/summary/users/%s.json' % to_s3_key_str(email)
-
-
-def extension_path(email, project_id):
-    return 'projects/%s/users/%s/extension.json' % (project_id, to_s3_key_str(email))
+    return 'projects/summary/%s.json' % to_s3_key_str(email)
 
 
 ########################################
@@ -233,19 +213,6 @@ def extract_project_files(submission_id, filename, payload):
     return result
 
 
-def load_submission_from_s3(user_email, project_id, submission_id):
-    '''
-    Fetch project in human readable format, extracting content from
-    plaintext code files inside zip packages.
-    '''
-    path = submission_path(user_email, project_id, submission_id)
-    print('try to open '+path)
-    row = s3().read_json_follow(Bucket=BUCKET, Key=path)
-    project_files = extract_project_files(row['submission_id'],
-                                          row['filename'], row['payload'])
-    return project_files
-
-
 def get_code_analysis(student_email, project_id, project_files):
     pf = project_files
     comments = []
@@ -264,7 +231,7 @@ def get_code_analysis(student_email, project_id, project_files):
     comments.append('info: there were %d notebook cells' % nb_cell_count)
 
     # extract various fields from comments
-    fields = {'project':set(), 'submitter-netid':set(), 'partner-netid':set()}
+    fields = {'project':set(), 'submitter':set(), 'partner':set()}
 
     for filename in pf['files'].keys():
         # look in .py files and ipython notebook cells (which are innapropriately named files here)
@@ -295,22 +262,22 @@ def get_code_analysis(student_email, project_id, project_files):
     # (this check doesn't run if TA is fetching the CR)
     if student_email != None:
         parts = student_email.lower().split('@')
-        if parts[-1] != 'wisc.edu':
+        if parts[-1] != NET_ID_EMAIL_SUFFIX:
             comments.append('<b>error:</b> not submitted from an @wisc.edu account')
             analysis['errors'] = True
-        elif len(fields['submitter-netid']) == 1:
-            submitter = list(fields['submitter-netid'])[0]
-            if submitter.strip().lower() != parts[0].strip().lower():
-                comments.append('<b>error:</b> expected submitter-netid to be "%s", not "%s"' % (parts[0], submitter))
+        elif len(fields['submitter']) == 1:
+            submitter = list(fields['submitter'])[0]
+            if submitter != student_email:
+                comments.append('<b>error:</b> expected submitter to be "%s", not "%s"' % (student_email, submitter))
                 analysis['errors'] = True
 
     # check partner is on the roster
-    if len(fields['partner-netid']) == 1:
-        partner = list(fields['partner-netid'])[0]
+    if len(fields['partner']) == 1:
+        partner = list(fields['partner'])[0]
         if partner.strip().lower() == "none":
             comments.append('info: no partner')
         elif not partner in get_roster_net_ids():
-            comments.append('<b>error:</b> partner NetID %s not on the roster' % partner)
+            comments.append('<b>error:</b> partner Email %s not on the roster' % partner)
             analysis['errors'] = True
         else:
             comments.append('info: partner is ' + partner)
@@ -394,7 +361,7 @@ def project_upload(user, event):
                   'late_days': late_days,
                   'filename': event['filename'],
                   'payload': event['payload'],
-                  'partner_netid': analysis['partner'],
+                  'partner_email': analysis['partner'],
                   'ignore_errors': ignore_errors}
 
     if ignore_errors or not analysis['errors']:
@@ -405,9 +372,9 @@ def project_upload(user, event):
                         ContentType='text/json')
 
         # create symlink in partners dir
-        if submission['partner_netid']: # TODO: and user_email.endswith("@wisc.edu"):
-            partner_email = submission['partner_netid'] + "@wisc.edu"
-            link = submission_path(partner_email, project_id, submission_id)
+        if submission['partner_email']: # TODO: and user_email.endswith("@wisc.edu"):
+            partner_email = submission['partner_email'] + "@wisc.edu"
+            link = submission_path(partner_email, project_id, submission_id) + ".link"
             s3().put_object(Bucket=BUCKET,
                             Key=link,
                             Body=bytes(json.dumps({"symlink": path}), 'utf-8'),
@@ -452,7 +419,9 @@ def get_submission(user, event):
         submission_id = event.get('submission_id', None)
         if not submission_id:
             submission_id = submissions[0]["id"]
-        code = load_submission_from_s3(student_email, project_id, submission_id=submission_id)
+        path = submission_path(user_email, project_id, submission_id)
+        row = s3().read_json_follow(Bucket=BUCKET, Key=path)
+        code = extract_project_files(row['submission_id'], row['filename'], row['payload'])
 
         result['submission_id'] = submission_id
         result['code'] = code
@@ -484,7 +453,7 @@ def put_code_review(user, event):
     if not project_id in PROJECT_DUE_UTC:
         return (500, 'not a valid project')
     student_email = event['student_email']
-    partner_netid = event['partner_netid']
+    partner_email = event['partner_email']
     submission_id = event['submission_id']
 
     path = cr_path(student_email, project_id, submission_id)
@@ -494,8 +463,8 @@ def put_code_review(user, event):
                     ContentType='text/json')
 
     # create symlink in partners dir
-    if partner_netid:
-        partner_email = partner_netid + "@wisc.edu"
+    if partner_email:
+        partner_email = partner_email + "@wisc.edu"
         link = cr_path(partner_email, project_id, submission_id)
         s3().put_object(Bucket=BUCKET,
                         Key=link,
@@ -590,47 +559,6 @@ def project_list_submissions(user, event):
         submission['has_review'] = (submission['student_email'] in reviewed)
 
     return (200, {'submissions':submissions})
-
-
-@route
-@grader
-def project_get_extension(user, event):
-    project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
-        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
-    student_user_email = net_id_to_google(event['net_id'])
-    if student_user_email == None:
-        return (500, 'could not find google ID for net ID')
-    path = extension_path(student_user_email, project_id)
-
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key=path)
-        row = json.loads(str(response['Body'].read(), 'utf-8'))
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            row = {'days': 0, 'error': None}
-        else:
-            raise e
-    return (200, row)
-
-
-@route
-@grader
-def project_set_extension(user, event):
-    project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
-        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
-    student_user_email = net_id_to_google(event['net_id'])
-    days = int(event['days'])
-    if student_user_email == None:
-        return (500, 'could not find google ID for net ID')
-    path = extension_path(student_user_email, project_id)
-
-    row = {'days': days, 'approver': user['email']}
-    response = s3().put_object(Bucket=BUCKET, Key=path,
-                               Body=bytes(json.dumps(row), 'utf-8'),
-                               ContentType='text/json')
-    return (200, 'success')
 
 
 @route

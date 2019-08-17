@@ -31,6 +31,9 @@ var ta_deadline = {};
     $("#days").val("...")
     common.callLambda(data, function(data) {
       $("#days").val(data.body.days)
+      if (!data.body.on_roster) {
+        common.popError("user not on roster (yet)")
+      }
     })
   };
 
