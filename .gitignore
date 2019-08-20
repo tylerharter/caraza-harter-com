@@ -4,4 +4,10 @@ __pycache__
 .idea
 .ipynb_checkpoints
 tools/snap-*
+tools/roster.json
 .nbgrader.log
+schedule.tmp
+curr
+pivot
+tyler/cs301/bak-spring19/
+tyler/cs301/fall19/materials.bak/
