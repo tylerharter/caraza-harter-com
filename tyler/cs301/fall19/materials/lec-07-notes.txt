@@ -1,0 +1,163 @@
+Ideas today:
+ - syntax: basics, return (early return), tabbing
+ - inputs: parameters, three types of arguments
+ - outputs: return vs. print
+ - tracing: with print, with PythonTutor
+
+==================================================
+SLIDES: basic syntax
+==================================================
+
+# WARMUP: one liner implementations of functions in the math, builtins modules
+ - sqrt, abs, pow
+ - same naming rules for function names as for variables
+ - until we call them, nothing happens!
+
+# for pow, give a default argument, and show the three styles:
+ 1. positional argument
+ 2. keyword argument
+ 3. default argument
+
+==================================================
+SLIDES: three ways to initialize parameters
+==================================================
+
+==================================================
+WORKSHEET: do a few problems...
+==================================================
+
+# name.py
+def full_name(first, last):
+    print(first + " " + last)
+
+>>> from name import *
+>>> full_name("allen", "downey")
+>>> name = full_name("allen", "downey")
+>>> print(full)
+
+def full_name(first, last):
+    return(first + " " + last)
+
+# do interactive again
+
+return vs. print
+
+why might we want to put the output of a function in a variable
+instead of direction to the screen?
+
+==================================================
+SLIDES: data flow between caller, function, and screen
+==================================================
+
+# difference between returning and printing
+ - syntax:    don't need parens
+ - semantics: early return
+
+def countdown_v1():
+    print(3)
+    print(2)
+    print(1)
+
+def countdown_v2():
+    return 3
+    return 2
+    return 1
+
+def countdown_v3():
+    rv = "3"
+    rv += "\n" + "2"
+    rv += "\n" + "1"
+    return rv
+
+# more details (countdown_v1 only):
+  1. what if we change the indents?
+  2. add some prints to distinguish declaration from invocation
+  3. do multiple invocations of countdown_v1
+  4. do it in PythonTutor
+     - talk about the arrow...
+     - definition time vs. invocation time
+     - what does it mean when the arrow points to a function?  Depends...
+
+==================================================
+WORKSHEET: do problems 19, [20], 22
+==================================================
+
+==================================================
+SLIDES: approx example
+==================================================
+
+# approx.py
+
+import math
+
+def diff(v1, v2):
+     return abs(v1 - v2)
+
+def is_close(a, b):
+     # version 1:
+     return diff(a, b) / max(abs(a), abs(b)) < 0.001
+
+     # version 2:
+     return diff(a, b) < 0.000001 or diff(a, b) / max(abs(a), abs(b)) < 0.001
+
+def is_approx_pi(x):
+    return is_close(x, math.pi)
+
+def is_approx_zero(x):
+    return is_close(x, 0)
+
+x = input("enter x: ")
+print("about pi?", is_approx_pi(x))
+print("about zero?", is_approx_zero(x))
+
+# LESSONS:
+ - refactoring (start by copy/paste for is_approx_pi)
+ - interpreting traceback (debug divide by zero)
+ - shortcircuiting (try flipping the OR)
+ - purpose of main function
+ - add default arguments for abs rel tolerance
+
+==================================================
+
+# tracing functions that call other functions (in PythonTutor)...
+
+def h():
+     print("H")
+
+def g():
+     print("G")
+     h()
+
+def f():
+     print("F")
+     g()
+
+f()
+
+# what if we swap prints and calls?
+
+==================================================
+WORKSHEET: do problem 21
+==================================================
+
+# battleship.py: refactor
+
+add functions for:
+ - ship1_hit, etc
+ - is_hit
+ - draw_block
+ - draw_map
+ - play_round (can play multiple, keep score)
+
+==================================================
+
+# interpolation.py
+ - given points x1,y1,x2,y2, estimate new y for x
+ - slope function
+ - estimate function
+ - error functions
+
+==================================================
+
+# quadratic.py
+ - mult return values?

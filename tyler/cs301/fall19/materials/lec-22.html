@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+  Python Tutor: https://github.com/pgbovine/OnlinePythonTutor/
+  Copyright (C) Philip Guo (philip@pgbovine.net)
+  LICENSE: https://github.com/pgbovine/OnlinePythonTutor/blob/master/LICENSE.txt
+-->
+
+<head>
+  <title>CS 301 - Copying</title>
+
+  <script type="text/javascript" src="../js/pytutor-embed.bundle.js" charset="utf-8"></script>
+
+</head>
+
+<body style="background-color: white;">
+
+<h1>Example 1</h1>
+
+<div id="lec-22_p1_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "x = {}\ny = x\ny[\"WI\"] = \"Madison\"\nprint(x[\"WI\"])\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 2, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1]}, "ordered_globals": ["x"], "stack_to_render": [], "heap": {"1": ["DICT"]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 1]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["DICT"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 1]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["DICT", ["WI", "Madison"]]}, "stdout": ""}, {"line": 4, "event": "return", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 1]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["DICT", ["WI", "Madison"]]}, "stdout": "Madison\n"}]};
+  addVisualizerToPage(trace, 'lec-22_p1_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+<h1>Example 2</h1>
+
+<div id="lec-22_p2_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "def foo(nums):\n    nums.append(3)\n    print(nums)\nitems = [1,2]\nnumbers = items\nfoo(numbers)\nprint(items)\nprint(numbers)", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"foo": ["REF", 1]}, "ordered_globals": ["foo"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"foo": ["REF", 1], "items": ["REF", 2]}, "ordered_globals": ["foo", "items"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null], "2": ["LIST", 1, 2]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null], "2": ["LIST", 1, 2]}, "stdout": ""}, {"line": 1, "event": "call", "func_name": "foo", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [{"func_name": "foo", "is_parent": false, "frame_id": 1, "parent_frame_id_list": [], "encoded_locals": {"nums": ["REF", 2]}, "ordered_varnames": ["nums"], "is_zombie": false, "is_highlighted": true, "unique_hash": "foo_f1"}], "heap": {"2": ["LIST", 1, 2], "1": ["FUNCTION", "foo(nums)", null]}, "stdout": ""}, {"line": 2, "event": "step_line", "func_name": "foo", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [{"func_name": "foo", "is_parent": false, "frame_id": 1, "parent_frame_id_list": [], "encoded_locals": {"nums": ["REF", 2]}, "ordered_varnames": ["nums"], "is_zombie": false, "is_highlighted": true, "unique_hash": "foo_f1"}], "heap": {"2": ["LIST", 1, 2], "1": ["FUNCTION", "foo(nums)", null]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "foo", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [{"func_name": "foo", "is_parent": false, "frame_id": 1, "parent_frame_id_list": [], "encoded_locals": {"nums": ["REF", 2]}, "ordered_varnames": ["nums"], "is_zombie": false, "is_highlighted": true, "unique_hash": "foo_f1"}], "heap": {"2": ["LIST", 1, 2, 3], "1": ["FUNCTION", "foo(nums)", null]}, "stdout": ""}, {"line": 3, "event": "return", "func_name": "foo", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [{"func_name": "foo", "is_parent": false, "frame_id": 1, "parent_frame_id_list": [], "encoded_locals": {"nums": ["REF", 2], "__return__": null}, "ordered_varnames": ["nums", "__return__"], "is_zombie": false, "is_highlighted": true, "unique_hash": "foo_f1"}], "heap": {"2": ["LIST", 1, 2, 3], "1": ["FUNCTION", "foo(nums)", null]}, "stdout": "[1, 2, 3]\n"}, {"line": 7, "event": "step_line", "func_name": "<module>", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null], "2": ["LIST", 1, 2, 3]}, "stdout": "[1, 2, 3]\n"}, {"line": 8, "event": "step_line", "func_name": "<module>", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null], "2": ["LIST", 1, 2, 3]}, "stdout": "[1, 2, 3]\n[1, 2, 3]\n"}, {"line": 8, "event": "return", "func_name": "<module>", "globals": {"foo": ["REF", 1], "items": ["REF", 2], "numbers": ["REF", 2]}, "ordered_globals": ["foo", "items", "numbers"], "stack_to_render": [], "heap": {"1": ["FUNCTION", "foo(nums)", null], "2": ["LIST", 1, 2, 3]}, "stdout": "[1, 2, 3]\n[1, 2, 3]\n[1, 2, 3]\n"}]};
+  addVisualizerToPage(trace, 'lec-22_p2_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+
+<h1>Example 3</h1>
+
+<div id="lec-22_p3_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "x = [\"aaa\", \"bbb\"]\ny = x[:]\nx.pop(0)\nprint(len(y))", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 2, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1]}, "ordered_globals": ["x"], "stack_to_render": [], "heap": {"1": ["LIST", "aaa", "bbb"]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 2]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["LIST", "aaa", "bbb"], "2": ["LIST", "aaa", "bbb"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 2]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["LIST", "bbb"], "2": ["LIST", "aaa", "bbb"]}, "stdout": ""}, {"line": 4, "event": "return", "func_name": "<module>", "globals": {"x": ["REF", 1], "y": ["REF", 2]}, "ordered_globals": ["x", "y"], "stack_to_render": [], "heap": {"1": ["LIST", "bbb"], "2": ["LIST", "aaa", "bbb"]}, "stdout": "2\n"}]};
+  addVisualizerToPage(trace, 'lec-22_p3_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+<h1>Reference Copy (0 levels)</h1>
+
+<div id="lec-22_p4_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "import copy\n\nx = [\n     {\"name\":\"A\", \"score\":88},\n     {\"name\":\"B\", \"score\":111},\n     {\"name\":\"C\", \"score\":100}\n]\n\ny = x\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 9, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2]}, "ordered_globals": ["copy", "x"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]]}, "stdout": ""}, {"line": 9, "event": "return", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2], "y": ["REF", 2]}, "ordered_globals": ["copy", "x", "y"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]]}, "stdout": ""}]};
+  addVisualizerToPage(trace, 'lec-22_p4_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+
+<h1>Shallow Copy (1 level)</h1>
+            
+<div id="lec-22_p5_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "import copy\n\nx = [\n     {\"name\":\"A\", \"score\":88},\n     {\"name\":\"B\", \"score\":111},\n     {\"name\":\"C\", \"score\":100}\n]\n\ny = copy.copy(x)\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 9, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2]}, "ordered_globals": ["copy", "x"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]]}, "stdout": ""}, {"line": 9, "event": "return", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2], "y": ["REF", 6]}, "ordered_globals": ["copy", "x", "y"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]], "6": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]]}, "stdout": ""}]};
+  addVisualizerToPage(trace, 'lec-22_p5_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+<h1>Deep Copy (all the levels)</h1>
+
+<div id="lec-22_p6_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "import copy\n\nx = [\n     {\"name\":\"A\", \"score\":88},\n     {\"name\":\"B\", \"score\":111},\n     {\"name\":\"C\", \"score\":100}\n]\n\ny = copy.deepcopy(x)\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1]}, "ordered_globals": ["copy"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"]}, "stdout": ""}, {"line": 9, "event": "step_line", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2]}, "ordered_globals": ["copy", "x"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]]}, "stdout": ""}, {"line": 9, "event": "return", "func_name": "<module>", "globals": {"copy": ["REF", 1], "x": ["REF", 2], "y": ["REF", 6]}, "ordered_globals": ["copy", "x", "y"], "stack_to_render": [], "heap": {"1": ["INSTANCE", "module"], "2": ["LIST", ["REF", 3], ["REF", 4], ["REF", 5]], "3": ["DICT", ["name", "A"], ["score", 88]], "4": ["DICT", ["name", "B"], ["score", 111]], "5": ["DICT", ["name", "C"], ["score", 100]], "6": ["LIST", ["REF", 7], ["REF", 8], ["REF", 9]], "7": ["DICT", ["name", "A"], ["score", 88]], "8": ["DICT", ["name", "B"], ["score", 111]], "9": ["DICT", ["name", "C"], ["score", 100]]}, "stdout": ""}]};
+  addVisualizerToPage(trace, 'lec-22_p6_py',  {startingInstruction: 0, hideCode: false, lang: "py3", disableHeapNesting: true});
+</script>
+
+
+
+
+</body>
+</html>

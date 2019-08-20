@@ -1,0 +1,228 @@
+show where demos are online
+
+========================================
+SLIDES: intro
+========================================
+
+DEMO 1 (short, I'll show the basics of how to use some variables, then talk about different errors you might see)
+
+# DO IN INTERACTIVE MODE
+
+# basic assignment
+x = 2
+print(x)
+x
+x + 1
+x
+x = 9
+x
+
+========================================
+
+# PythonTutor, Live Mode
+
+Convert problem 2 of pseudocode worksheet to Python code (use "i" and "o").  Introduce comments.
+
+Compare with:
+ - worksheet
+ - Downey (he uses arrows instead of boxes);
+   show "render all objects on the heap" option
+
+Talk about syntactic sugar (+= and -=)
+
+========================================
+
+# ERRORS (still in PythonTutor)
+
+2 = x            # syntax ERROR!
+
+# need to assign before using
+print(y)         # runtime ERROR! (NameError is an example of a runtime error)
+y = 3
+print(y)
+x * y
+x ^ 2            # semantic ERROR! (runs but gives wrong output, assuming I wanted an exponent)
+                 # bitwise exclusive or, not necessary for us to learn in CS 301
+
+# let's talk briefly about these kinds of errors...
+
+========================================
+SLIDES: types of errors
+========================================
+
+DEMO 2 (variables containing different types)
+
+# DO IN SCRIPT MODE (will be online later)
+
+========================================
+# INTS
+
+# it it even?
+n = 5
+n % 2      # ask students what it will be (try diff n vals)
+n % 2 == 0 # what type?  what is the meaning?
+
+# what is the sum of all the odd numbers?
+a = 3
+b = 5
+c = 2
+d = 1
+
+# BAD WAY!  write code that does't break if data changes
+total = a + b + d
+
+# GOOD WAY
+total = a*(a%2) + b*(b%2) + c*(c%2) + d*(d%2) # better
+
+print(total)
+
+========================================
+# FLOATS
+
+# average
+
+x = 6
+y = 8
+z = 7
+avg = (x + y + z) / 3
+
+# how to compute compound growth (investments)
+
+start = 1000
+interest = 7
+years = 30
+
+yearly_mult = 1 + interest / 100
+final = start * yearly_mult**years
+print(final)  # make them guess how much
+
+========================================
+# STRINGS
+
+# string operations
+first = 'Ada'
+last = 'Lovelace'
+player1 = first + last
+player1
+first = 'Alice'
+player1 # does player1 change if we change first now?
+
+# show an example with two players, and bars showing the magnitude of their scores
+player2 = 'bob'
+score1 = 10
+score2 = 8
+print(player1 + ': ' + '|' * score1)
+print(player2 + ': ' + '|' * score2)
+
+========================================
+# BOOLS
+
+# assignment vs equality (in interactive mode)
+x
+y
+y > x
+y = x
+x
+y
+x == y
+x = 2
+x == y
+
+# bounds checking (in script mode)
+valid = 0 < x < 100
+print('you may continue: ' + valid)       # oops!
+print('you may continue: ' + str(valid))  # change type
+
+========================================
+
+# naming sensitivity
+val = 1
+Val = 2
+VAL = 3
+_val = 4
+
+# naming rules
+n = 1
+class = 301 # keyword!
+class_301 = 'awesome'
+301class = 'awesome'
+hey! = 'nope'
+_test = 1
+ñ = 1
+
+========================================
+SLIDES: variable naming
+========================================
+
+DEMO 2 (other demos, as time permits...)
+
+========================================
+
+# volume of a sphere given radius
+volume = 4/3 * PI * radius**3
+
+# radius of a sphere given volume
+volume = 4/3 * PI * radius**3
+
+========================================
+
+# quadratic formula
+ - positive only (then adapt for negative)
+ a = 3
+ b = 2
+ c = -1
+ numerator = -b + (b**2 - 4*a*c) ** (1/2)
+ denominator = 2 * c
+ x = numerator / denominator
+ a*(x**2) + b*(x) + c
+ - negative
+ - make it imaginary, talk about that
+
+========================================
+
+height = 6
+width = 10
+
+Draw this:
+
+##########
+##########
+##########
+##########
+##########
+##########
+
+========================================
+
+Draw this:
+
+# # # # #
+ # # # # #
+# # # # #
+ # # # # #
+# # # # #
+ # # # # #
+
+========================================
+
+Draw this:
+
+##########
+#        #
+#        #
+#        #
+#        #
+##########
+
+========================================
+
+Draw this:
+
+##########
+#
+##########
+         #
+##########
+#
+##########
+         #

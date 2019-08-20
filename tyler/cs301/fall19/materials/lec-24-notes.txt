@@ -1,0 +1,26 @@
+PART 1: Function References
+
+Coding demos:
+ 1. show functions as aliases, and how we can reassign (f, g, h)
+
+ 2. call_n_times(f, n)
+   - arg->param is like assignment
+   - print hello x10
+   - quiz game
+
+ 3. apply_to_each(f, items)
+   - double
+   - square
+   - absolute
+   - string -> int
+   - talk about map()
+
+PART 2: Function References
+
+BONUS:
+
+List of functions (a TODO list)
+ - each function asks a question
+ - pop one at a time until finished
+
+unpacking, enumerate(), zip()

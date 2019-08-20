@@ -1,0 +1,9 @@
+Review:
+ - pipeline thinking
+ - example of WHERE, HAVING, both
+
+trees.db exercises
+
+perf demo
+
+fire.db exercises

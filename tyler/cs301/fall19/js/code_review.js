@@ -213,8 +213,6 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       return
     }
 
-    var html = ''
-
     // check deductions
     var ta_deduction = 0
     if ('points_deducted' in sub.cr) {
@@ -236,8 +234,10 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       }
     })
 
+    var html = ''
+    
     // SECTION: VERSIONS
-    html += ('<h3>Submissions</h3>')
+    html += ('<h3>Submissions (latest first)</h3>')
     html += ('<ul>')
     for (var i in sub.submissions) {
       var sid = sub.submissions[i].id

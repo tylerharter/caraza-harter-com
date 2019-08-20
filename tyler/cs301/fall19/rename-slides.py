@@ -1,6 +1,6 @@
 import os, sys, re
 
-dry = False
+dry = True
 
 with open('schedule.txt') as f:
     schedule = f.read()

@@ -1,0 +1,133 @@
+========================================
+intro (s)
+========================================
+
+DEMO 1
+
+three ways to run Python code
+
+(1) interactive mode
+ - 1+1
+ - 2+2
+ - it doesn't work if we type "ls"
+ - show how to get in and out
+
+(2) script mode
+ - 1+1
+ - 2+2
+ - open idle main.py, F5 (to run module)
+ - where is the output?
+ - need prints (will explain these later)
+
+(3) notebook mode
+ - 1+1
+ - 2+2
+ - last line is printed automatically (need prints for other lines)
+
+math operators
+ - 1 + 1
+ - plus is an "operator", the ones are "operands".  Binary operator (because two).
+   an "expression" is the whole thing!
+ - 1 - 1
+ - add extra space, beginning, end, middle
+ -  1*1
+ - (1)(1)   # error!
+ - 1/0      # talk about reading errors
+ - 1/1      # why
+ - 1/100000 # scientific notation
+ - 1.0 / 100
+ - 1.1 / 100 # woah!  what happened?
+
+number types (integer and float)
+ - type(1)
+ - ignore "class"
+ - type of float, type of int
+ - type(1.0)
+ - type(7/2)
+ - 7//2
+ - type(7//2)
+
+more math operators
+ - % # modulo, think of it as the remainder
+ - unary operators: +, -
+ - exponents:
+ - 10 ** 3
+ - 16 ** (1/2)
+ - 2 ** -1
+ - -5 ** 2
+ - woah, why is it negative?!  Let's talk about operator precedence
+
+========================================
+operator precedence (s)
+========================================
+
+DEMO 2
+
+how to fix? (d)
+ - -5 ** 2
+ - 9 ** 1/2
+
+string stuff
+ - hello world
+ - "hello world"
+ - type("hello world")
+ - 'hello world' # this is the SAME!
+ - 'she said "hello"'
+ - 'hello' + 'ada' + 'lovelace'
+ - 'x' * 'y'
+ - 'HA' * 100
+
+escaping
+ - "the dog said "roof""
+ - "the dog said \"roof\""
+ - 'the dog said "roof"'
+ - "a\tb"
+ - print("a\tb")
+
+comparison operators (d)
+ - 5 > 3
+ - -3 > -5
+ - 'A' < 'B'
+ - 'a' < 'B'
+ - 3 <= 4
+ - 4 <= 4
+ - 5 <= 4
+ - 1 == 2
+ - 1 != 2
+ - 2 == 2
+ - 2 == 2.0
+ - type(2) == type(2.0)
+ - type(5 > 3)
+ - type(5 < 3)
+ - type(True)
+ - type(False)
+ - type(false)
+
+========================================
+boolean logic (s)
+========================================
+
+DEMO 3
+
+boolean logic (d)
+ - not False
+ - not True
+ - True or False
+ - True and False
+ - True and True
+ - not True or True
+ - not (True or True)
+
+boolean logic with comparisons
+ - 10 < 1 or 10 > 5
+ - 10 < 1 and 10 > 5
+ - 1==1 or 2==2 and 3==4
+ - (1==1 or 2==2) and 3==4
+
+truthy and falsy
+ - True == False
+ - True == True
+ - True == 'True'
+ - True == 1
+ - True == 2
+ - False == 0

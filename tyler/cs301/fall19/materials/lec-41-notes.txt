@@ -1,0 +1,31 @@
+Outline
+ - show numpy random page
+
+========================================
+
+from numpy.random import choice, normal
+
+choice()
+
+normal(loc, scale, normal)
+
+
+seeds
+
+reshape w/ negatives
+
+hist
+
+alpha
+
+bins
+
+p-values examples
+ - is a coin fair?
+ - is a die fair?
+ - is the presence of a gene related to nose bleeds?
+ - is sitting in the front of the class related to higher test scores?
+
+distributions:
+ - params
+ - a few: uniform, power, normal

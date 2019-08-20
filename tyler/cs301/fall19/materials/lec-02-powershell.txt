@@ -1,0 +1,165 @@
+#######################
+# getting help
+#######################
+
+# where are we?
+get-location # windows style
+pwd          # PS being somewhat compatible with UNIX
+
+# getting help for a command
+get-help pwd
+man pwd # manual pages
+
+#######################
+# keyboard shortcuts
+#######################
+
+# autocomplete, cancel, history
+get- <tab> <tab> <tab>
+control-C: kill
+up arrow key: history
+control-R:    history
+
+#######################
+# simple math (PS only)
+#######################
+
+2*3
+2/3
+15+15 * 2/3
+
+# how do we get two thirds of 15 plus 15?
+
+(15+15) * (2/3)
+
+#######################
+# running programs
+#######################
+
+notepad
+chrome # fails!
+
+# where is it?  right-click shortcut
+cd 'C:\Program Files (x86)\Google\Chrome\Application'
+chrome
+.\chrome
+
+#######################
+# env variable
+#######################
+
+# show how to add this so we can open chrome anywhere
+
+#######################
+# home directory and desktop
+#######################
+
+# talk about home directory
+cd ~
+pwd
+cd Desktop
+ls
+
+# create file, show it with ls
+
+#######################
+# new directory
+#######################
+
+cd ~\examples
+
+# does not exist, so create it
+mkdir ~\examples
+
+cd ~\examples # we can get back to this by hitting the up arrow
+pwd
+
+#######################
+# different paths for the same file
+#######################
+
+# observe that the same folder has the same name
+cd ~\examples  # powershell accepts slashes in either direction
+pwd
+cd c:\Users\test2\examples # absolute path
+pwd
+cd ..\examples # relative path
+pwd
+
+#######################
+# reading and writing files
+#######################
+
+echo howdy
+
+echo howdy > file.txt
+ls
+cat file.txt
+notepad file.txt # and edit something
+cat file.txt
+
+echo line2 > file.txt
+cat file.txt
+
+#######################
+# moving+copying
+#######################
+
+cp file.txt file-copy.txt
+ls
+cat file-copy.txt
+mv file-copy file-v2.txt
+ls
+
+#######################
+# challenge 1
+#######################
+
+echo A > a.txt
+echo B > b.txt
+echo C > a.txt
+echo D > b.txt
+cat a.txt # what does it print?
+
+#######################
+# challenge 2
+#######################
+
+echo win > x.txt
+echo lose > y.txt
+mv y.txt z.txt
+mv x.txt y.txt
+mv z.txt x.txt
+cat x.txt # what does it print?
+
+#######################
+# challenge 3
+#######################
+
+echo parent > person.txt
+mkdir mydir
+cd mydir
+echo child > person.txt
+cat ../person.txt # what does it print?
+
+#######################
+# challenge 4
+#######################
+
+echo data > one.txt
+cat one.txt > two.txt
+echo science > one.txt
+cat two.txt # what does it print?
+
+#######################
+# scripts
+#######################
+
+echo "ls" > test.ps1
+test.ps1
+notepad test.ps1
+# add something
+cat test.ps1
+test.ps1
+
+# create shortcuts directory and add a nb.ps1 that opens Jupyter notebooks

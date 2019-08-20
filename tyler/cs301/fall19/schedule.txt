@@ -256,9 +256,9 @@ Error Handling
 * Catching Exceptions
 * Throwing Exceptions
 * Asserts
-<a href="materials/lec-25.pdf">Link to Slides</a><br>
-<a href="materials/lec-25.html">Interactive Exercises</a><br>
-<a href="materials/lec-25-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-26.pdf">Link to Slides</a><br>
+<a href="materials/lec-26.html">Interactive Exercises</a><br>
+<a href="materials/lec-26-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 
 =
@@ -266,7 +266,7 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
-<a href="materials/lec-26.pdf">Link to Slides</a><br>
+<a href="materials/lec-27.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 14
 
 =
@@ -287,7 +287,7 @@ Pandas 1
 =
 Pandas 2
 * practice
-<a href="materials/lec-29-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>
 
 ################################################################################
 # PART 3
@@ -299,21 +299,21 @@ Web 1
 * URLs
 * HTTP: GET and POST
 * requests module
-<a href="materials/lec-30.pdf">Link to Slides</a><br>
+<a href="materials/lec-31.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
 
 =
 Web 2
 * Intro to HTML
 * Generating HTML
-<a href="materials/lec-31.pdf">Link to Slides</a><br>
+<a href="materials/lec-32.pdf">Link to Slides</a><br>
 
 =
 Web 3
 * Document Object Model
 * Parsing HTML
 * beautifulsoup
-<a href="materials/lec-32.pdf">Link to Slides</a><br>
+<a href="materials/lec-33.pdf">Link to Slides</a><br>
 
 =
 Database 1
@@ -322,13 +322,13 @@ Database 1
 * where
 * SQLite
 * Querying from Pandas
-<a href="materials/lec-33.pdf">Link to Slides</a><br>
+<a href="materials/lec-34.pdf">Link to Slides</a><br>
 
 =
 Database 2
 * aggregates
 * group by
-<a href="materials/lec-34.pdf">Link to Slides</a><br>
+<a href="materials/lec-35.pdf">Link to Slides</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/lecture.ipynb">Movie Notebook</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/bus.ipynb">Bus Notebook</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/bus-answers.ipynb">Bus Answers Notebook</a><br>
@@ -337,7 +337,7 @@ Database 2
 =
 Database 3
 * Worksheets
-<a href="materials/lec-35-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-36-worksheet.pdf">Link to Worksheet</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/worksheet.ipynb">Database 3 - Worksheet Answers</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/lecture.ipynb">Database 3 - Perf Demo</a>
 
@@ -378,10 +378,10 @@ Randomness
 * Debugging
 * Simulation
 * Significance
-<a href="materials/lec-40.pdf">Link to Slides</a><br>
+<a href="materials/lec-41.pdf">Link to Slides</a><br>
 
 =
 Review/Catchup
 * Bring Questions
-<a href="materials/lec-41-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br>
 <b>Due</b>: P10<br>

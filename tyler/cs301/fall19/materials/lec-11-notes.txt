@@ -1,0 +1,47 @@
+==================================================
+SLIDES: introduce syntax and logic
+==================================================
+
+PythonTutor: replace "if" with "while"
+
+x = 5
+
+if x > 0:
+   print(str(x) + ' is positive')
+
+while x > 0:
+   print(str(x) + ' is positive')
+
+while x > 0:
+   print(str(x) + ' is positive')
+   x -= 1
+
+==================================================
+
+talk about common counting patters:
+
+i = ???
+while i < ???:     # (or i > ...)
+    DO SOMETHING
+    i += ???
+
+give some challenge questions
+
+==================================================
+
+i = 0
+while i < 8:
+    if i % 2 == 0:
+        print("even")
+    else:
+        print("odd")
+        i += 1 # yikes!
+
+==================================================
+
+DEMOS:
+ - maximum of function
+ - countdown timer (for fun, make it beep using beeper.py -- only works on Mac)
+ - area under curve
+ - prime finder
+ - battleship map
