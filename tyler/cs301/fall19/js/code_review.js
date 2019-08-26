@@ -213,27 +213,6 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       return
     }
 
-    // check deductions
-    var ta_deduction = 0
-    if ('points_deducted' in sub.cr) {
-      ta_deduction = sub.cr.points_deducted
-    }
-    $("#ta_point_deduction").val(ta_deduction)
-    $("#ta_point_deduction").on('input', function(){
-      var deduction = NaN
-      var deduction_str = $("#ta_point_deduction").val()
-      if (/^\d+$/.test(deduction_str)) {
-        deduction = parseInt(deduction_str)
-      }
-
-      if (deduction != NaN && deduction >= 0 && deduction <= 100) {
-        sub.cr.points_deducted = deduction
-        $("#ta_point_deduction").removeClass('is-invalid')
-      } else {
-        $("#ta_point_deduction").addClass('is-invalid')
-      }
-    })
-
     var html = ''
     
     // SECTION: VERSIONS
@@ -306,10 +285,13 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job!  Please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job, please check comments below.\')">Good job, please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Please check comments below.\')">Please check comments below.</button> ')
+    html += ('<br>')
+    html += ('TA Point Deduction: <input type="text" id="ta_point_deduction" class="form-control">')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Publish</button>')
     html += ('</div>')
 
-    // SECTION: rating the CR
-    if (grades_are_ready && !sub.is_grader) {
+    // SECTION: rating the CR (disabled currently)
+    if (false && grades_are_ready && !sub.is_grader) {
       html += ('<h3>Was Our Feedback Useful?</h3>')
       html += ('<ol>')
       html += ('<li>Click any yellow highlights below to view our feedback on specific lines of code')
@@ -483,6 +465,18 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   };
 
   code_review.saveCodeReview = function() {
+    var deduction_str = $("#ta_point_deduction").val()
+    if (/^\d+$/.test(deduction_str)) {
+      deduction = parseInt(deduction_str)
+    }
+
+    if (deduction != NaN && deduction >= 0 && deduction <= 100) {
+      sub.cr.points_deducted = deduction
+    } else {
+      common.popError("please use a deduction in the 0-100 range")
+      return
+    }
+
     var data = {
       "fn": "put_code_review",
       "project_id": common.getUrlParameter('project_id'),

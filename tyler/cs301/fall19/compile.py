@@ -41,7 +41,7 @@ def schedule():
         days = list(map(format_day, f.read().split('=\n')))
 
     f = open('schedule.content.html', 'w', encoding='utf-8')
-    f.write('<h1 class="mt-5">Lecture Schedule</h1>\n')
+    f.write('<h1 class="mt-5">Course Schedule</h1>\n')
 
     start_date = date(2019, 9, 2)
     end_date = date(2019, 12, 11)

@@ -431,7 +431,7 @@ def get_submission(user, event):
         if not submission_id:
             submission_id = submissions[0]["id"]
 
-        link = submission_link(user_email, project_id, submission_id)
+        link = submission_link(student_email, project_id, submission_id)
         sub_dir = s3().read_json(link)["symlink"]
 
         submission = s3().read_json(sub_dir + 'submission.json')
