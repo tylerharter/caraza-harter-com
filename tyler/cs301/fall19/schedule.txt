@@ -14,6 +14,7 @@ Introduction
 <a href="materials/lec-01.pdf">Link to Slides</a><br>
 <b>Watch</b>: <a href="videos.html">How to Setup Python</a><br>
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p1">Lab-P1</a> and <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p1">P1</a>
 
 =
 The Terminal
