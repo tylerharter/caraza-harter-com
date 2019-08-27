@@ -26,7 +26,6 @@ def get_project_due_utc():
     for k in projects:
         # central time is 5-6 hours behind UTC time, so to be safe, we'll
         # always have the project due at 7am on a Thu
-        debug("KEY:"+str(projects[k]))
         projects[k] = datetime.datetime.strptime(projects[k], "%m/%d/%y") + datetime.timedelta(days=1, hours=7)
     return projects
 
