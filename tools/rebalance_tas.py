@@ -48,8 +48,8 @@ def main():
         else:
             ta_to_others[row.get("ta", "none")].add(net_id)
 
-    weights = {"Bob":3, "Mitali":3, "Om":3, "Shruthi":3, "Ushmal":2,
-               "Ashay":3, "Chakshu":3, "Deepan":3, "Hugh":3, "Zhanpeng":3}
+    with open('tas.json') as f:
+        weights = json.loads(f)
 
     # decide who is doing what, according to their weight
     # (try to keep ta->student pairings)

@@ -19,42 +19,49 @@ from lambda_framework import *
 NET_ID_EMAIL_SUFFIX = '@wisc.edu'
 
 # returns a string containing json
-def get_roster_raw():
-    response = s3().get_object(Bucket=BUCKET, Key='roster.json')
-    return response['Body'].read().decode('utf-8')
+def get_roster_json():
+    return s3().read_cached_json('roster.json')
 
 
-# TODO: index by class
-emails = None
-emails_updated = None
+email_cache = {}
 def get_roster_emails():
-    global emails, emails_updated
-    if emails != None and time.time() - emails_updated < 300:
-        return emails
+    if s3().key_prefix in email_cache:
+        return email_cache[s3().key_prefix]
     emails = set()
-    for row in json.loads(get_roster_raw()):
+    for row in get_roster_json():
         if 'net_id' in row:
             emails.add(row['net_id'] + NET_ID_EMAIL_SUFFIX)
-    emails_updated = time.time()
+    email_cache[s3().key_prefix] = emails
     return emails
 
 
 @route
 @admin
 def get_roster(user, event):
-    return (200, {'roster': get_roster_raw()})
+    return (200, {'roster': json.dumps(get_roster_json(), indent=2, sort_keys=True)})
 
 
 @route
 @admin
 def put_roster(user, event):
-    global emails
-    emails = None
-    body = json.dumps(json.loads(event['roster']), indent=2)
-    s3().put_object(Bucket=BUCKET,
-                    Key='roster.json',
-                    Body=bytes(body, 'utf-8'),
-                    ContentType='text/json',
-    )
-
+    s3().write_cached_json("roster.json", json.loads(event['roster']))
     return (200, 'roster uploaded')
+
+
+@route
+@user
+def roster_entry(user, event):
+    email = user['email'].lower()
+    parts = email.split("@")
+    if parts[1] != "wisc.edu":
+        return (500, 'not a wisc.edu email')
+    net_id = parts[0]
+
+    for row in get_roster_json():
+        if row["net_id"] == net_id:
+            if row["enrolled"]:
+                return (200, row)
+            else:
+                return (500, "not on enrolled")                
+    else:
+        return (500, "not on roster")        

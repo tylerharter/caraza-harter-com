@@ -21,6 +21,7 @@ from extensions import *
 from roster import *
 
 def lambda_handler(event, context):
+    # TODO: we'll need to specify this in all calls from the front end...
     course = event.get('course', 'a')
     if not course in ('a', 'b', 'c'):
         return error('invalid course ID: "%s"' % course)

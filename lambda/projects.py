@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json, urllib, boto3, botocore, base64, datetime, time, html
+import json, urllib, boto3, botocore, base64, datetime, time, html, copy
 import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
@@ -21,26 +21,14 @@ from bs4 import BeautifulSoup
 from lambda_framework import *
 from roster import *
 
-PROJECT_IDS = [
-    'p1', 'p2', 'p3', 'p4', 'p5', 'p6',
-    'p7', 'p8', 'p9', 'p10'
-]
-
-# central time is 5-6 hours behind UTC time, so to be safe, we'll
-# always have the project due at 7am on a Thu
-DUE_DATE_FORMAT = "%m/%d/%y %H:%M"
-PROJECT_DUE_UTC = {
-    'p1':  datetime.datetime.strptime("09/12/19 7:00", DUE_DATE_FORMAT),
-    'p2':  datetime.datetime.strptime("02/07/19 7:00", DUE_DATE_FORMAT),
-    'p3':  datetime.datetime.strptime("02/14/19 7:00", DUE_DATE_FORMAT),
-    'p4':  datetime.datetime.strptime("02/21/19 7:00", DUE_DATE_FORMAT),
-    'p5':  datetime.datetime.strptime("02/28/19 7:00", DUE_DATE_FORMAT),
-    'p6':  datetime.datetime.strptime("03/07/19 7:00", DUE_DATE_FORMAT),
-    'p7':  datetime.datetime.strptime("03/14/19 7:00", DUE_DATE_FORMAT),
-    'p8':  datetime.datetime.strptime("04/04/19 7:00", DUE_DATE_FORMAT),
-    'p9':  datetime.datetime.strptime("04/18/19 7:00", DUE_DATE_FORMAT),
-    'p10': datetime.datetime.strptime("05/04/19 7:00", DUE_DATE_FORMAT),
-}
+def get_project_due_utc():
+    projects = copy.copy(s3().read_cached_json('config.json')['deadlines'])
+    for k in projects:
+        # central time is 5-6 hours behind UTC time, so to be safe, we'll
+        # always have the project due at 7am on a Thu
+        debug("KEY:"+str(projects[k]))
+        projects[k] = datetime.datetime.strptime(projects[k], "%m/%d/%y") + datetime.timedelta(days=1, hours=7)
+    return projects
 
 MAX_SIZE_KB = 1024
 
@@ -312,30 +300,6 @@ def get_code_analysis(student_email, project_id, project_files):
     return analysis
 
 
-def get_project_test_result(student_email, project_id):
-    # get net ID
-    path = 'users/google_to_net_id/%s.txt' % student_email
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key=path)
-        net_id = response['Body'].read().decode('utf-8')
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            return None
-        raise e
-
-    # get test result file (if any)
-    result_path = 'ta/grading/{project_id}/{net_id}.json'
-    result_path = result_path.format(project_id=project_id, net_id=net_id)
-    try:
-        response = s3().get_object(Bucket=BUCKET, Key=result_path)
-        result = json.loads(response['Body'].read().decode('utf-8'))
-        return result
-    except botocore.exceptions.ClientError as e:
-        if e.response['Error']['Code'] == "NoSuchKey":
-            return None
-        raise e
-
-
 ########################################
 # route endpoints
 ########################################
@@ -346,7 +310,7 @@ def project_upload(user, event):
     user_email = user['email']
     project_id = event['project_id']
     ignore_errors = event.get('ignore_errors', True) # does user want to force a submission, despite errors?
-    if not project_id in PROJECT_DUE_UTC:
+    if not project_id in get_project_due_utc():
         return (500, 'not a valid project')
 
     if len(base64.b64decode(event['payload'])) > MAX_SIZE_KB*1024:
@@ -358,7 +322,7 @@ def project_upload(user, event):
     # is only for our own information, though (it doesn't somehow
     # replenish the student's supply)
     late_days = 0
-    utc_due = PROJECT_DUE_UTC.get(project_id, None)
+    utc_due = get_project_due_utc().get(project_id, None)
     utc_now = datetime.datetime.utcnow()
     if utc_due != None:
         late_seconds = (utc_now - utc_due).total_seconds()
@@ -380,6 +344,7 @@ def project_upload(user, event):
                   'late_days': late_days,
                   'filename': event['filename'],
                   'payload': event['payload'],
+                  'feedback_request': event['feedback_request'],
                   'partner_email': analysis['partner'],
                   'ignore_errors': ignore_errors}
 
@@ -446,6 +411,7 @@ def get_submission(user, event):
         result['submission_id'] = submission_id
         result['code'] = code
         result['analysis'] = get_code_analysis(None, project_id, code)
+        result['feedback_request'] = sanitize_html(submission.get('feedback_request', ''))
 
         # add details from test.json and cr.json, if they exist
         test_result = s3().read_json_default(sub_dir + 'test.json')
@@ -465,55 +431,22 @@ def get_submission(user, event):
 
 @route
 @grader
-def put_code_review(user, event):
-    cr = event['cr']
-    cr['reviewer_email'] = user['email']
-    sub_dir = event['submission_dir']
-    if not sub_dir.endswith('/'):
-        return (500, 'bad sub_dir "%s"' % sub_dir)
-
-    s3().put_object(Bucket=BUCKET,
-                    Key=sub_dir + 'cr.json',
-                    Body=bytes(json.dumps(cr), 'utf-8'),
-                    ContentType='text/json')
-
-    return (200, 'uploaded review')
-
-
-@route
-@user
-def rate_comment(user, event):
-    user_email = user['email']
-    rating = {k: event['rating'].get(k, None) for k in
-              ("reviewer", "project_id", "submission_dir", "filename", "offset", "length", "comment", "useful")}
-    if not rating['project_id'] in PROJECT_DUE_UTC:
-        return (500, 'not a valid project')
-    rating_id = datetime.datetime.today().strftime('%Y-%m-%d_%H-%M-%S')
-    path = rating_dir(user_email, rating['project_id']) + rating_id + '.json'
-    s3().put_object(Bucket=BUCKET,
-                    Key=path,
-                    Body=bytes(json.dumps(rating), 'utf-8'),
-                    ContentType='text/json',
-    )
-    return (200, 'rating recorded')
-
-
-@route
-@grader
 def project_list_submissions(user, event):
     # get roster indexed by wiscmail
-    roster = json.loads(get_roster_raw())
-    roster = {student['net_id']+"@wisc.edu": student for student in roster if 'net_id' in student}
+    roster = {student['net_id']+"@wisc.edu": student for student in get_roster_json() if 'net_id' in student}
     project_id = event['project_id']
 
-    if not project_id in PROJECT_IDS:
+    if not project_id in get_project_due_utc():
         return (500, 'invalid project id')
     paths = s3().s3_all_keys('projects/'+project_id+'/')
 
-    # emails of students
+    # email => list of submission IDs
     submissions = ddict(list)
     direct_submissions = ddict(list)
+
+    # emails of students who have recevied test results or CRs on some version of their code
     reviewed = set()
+    tested = set()
 
     for path in paths:
         parts = path.split('/')
@@ -529,7 +462,10 @@ def project_list_submissions(user, event):
             direct_submissions[email].append(parts[3])
 
         if len(parts) == 5 and parts[-1] == 'cr.json':
-            reviewed.add(parts[3])
+            reviewed.add(email)
+
+        if len(parts) == 5 and parts[-1] == 'test.json':
+            tested.add(email)
 
         link_suffix = '-link.json'
         if len(parts) == 4 and parts[-1].endswith(link_suffix):
@@ -545,7 +481,8 @@ def project_list_submissions(user, event):
         latest_direct = max(direct_submissions[email])
 
         if len(submissions[email]) == 0:
-            continue # this should only happen if lambda crashed between S3 writes
+            # this should only happen if lambda crashed between S3 writes, or a submission is withdrawn
+            continue
 
         latest = max(submissions[email])
         if latest_direct != latest:
@@ -556,6 +493,7 @@ def project_list_submissions(user, event):
             'student_email': email,
             'submission_id': latest_direct,
             'has_review': email in reviewed,
+            'tested': email in tested,
             'info': {},
         }
 
@@ -565,7 +503,24 @@ def project_list_submissions(user, event):
 
         rows.append(row)
 
-    return (200, {'submissions': rows})
+    return (200, {'submissions': rows, 'reviewed': list(reviewed), 'direct': list(direct_submissions.keys())})
+
+
+@route
+@grader
+def put_code_review(user, event):
+    cr = event['cr']
+    cr['reviewer_email'] = user['email']
+    sub_dir = event['submission_dir']
+    if not sub_dir.endswith('/'):
+        return (500, 'bad sub_dir "%s"' % sub_dir)
+
+    s3().put_object(Bucket=BUCKET,
+                    Key=sub_dir + 'cr.json',
+                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    ContentType='text/json')
+
+    return (200, 'uploaded review')
 
 
 @route
@@ -600,3 +555,21 @@ def project_get_summary(user, event):
         if e.response['Error']['Code'] == "NoSuchKey":
             raise Exception("no status snapshot available")
         raise e
+
+
+@route
+@user
+def rate_comment(user, event):
+    user_email = user['email']
+    rating = {k: event['rating'].get(k, None) for k in
+              ("reviewer", "project_id", "submission_dir", "filename", "offset", "length", "comment", "useful")}
+    if not rating['project_id'] in get_project_due_utc():
+        return (500, 'not a valid project')
+    rating_id = datetime.datetime.today().strftime('%Y-%m-%d_%H-%M-%S')
+    path = rating_dir(user_email, rating['project_id']) + rating_id + '.json'
+    s3().put_object(Bucket=BUCKET,
+                    Key=path,
+                    Body=bytes(json.dumps(rating), 'utf-8'),
+                    ContentType='text/json',
+    )
+    return (200, 'rating recorded')

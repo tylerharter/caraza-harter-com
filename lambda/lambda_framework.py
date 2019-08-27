@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json, urllib, boto3, botocore, base64, time, traceback, random, string
+import json, urllib, boto3, botocore, base64, time, traceback, random, string, copy
 from collections import defaultdict as ddict
 
 safe_s3_chars = set(string.ascii_letters + string.digits + ".-_")
@@ -43,15 +43,36 @@ EXTRA_AUTH = ddict(list)
 BUCKET = 'caraza-harter-cs301'
 FIREHOSE = 'cs301-trace'
 
+# run something like this to configure ACLs:
+#
+# aws s3 cp config.json s3://caraza-harter-cs301/a/config.json
+#
+# it should be formatted like this:
+#
+# {
+#  "admin": "...",
+#  "graders": [
+#    "...",
+#    ...
+#  ],
+#  "deadlines": {
+#    "p1": "...",
+#    ...
+#  }
+#}
+
 # ACLs
-ADMIN_EMAIL = 'tylerharter@gmail.com'
-INSTRUCTOR_EMAILS = file_lines("instructors.txt")
-GRADER_EMAILS = file_lines("tas.txt")
+def get_admin_email():
+    return s3().read_cached_json('config.json')['admin']
+
+def get_grader_emails():
+    return s3().read_cached_json('config.json')['graders']
 
 class S3:
     def __init__(self, s3_client, key_prefix):
         self.s3_client = s3_client
         self.key_prefix = key_prefix
+        self.cache = {}
 
     # S3 client wrappers that prepend the dir prefix
     def list_objects_v2(self, **kwargs):
@@ -91,6 +112,20 @@ class S3:
         response = self.get_object(Bucket=BUCKET, Key=path)
         return json.loads(response['Body'].read().decode('utf-8'))
 
+    def read_cached_json(self, path):
+        if not path in self.cache:
+            self.cache[path] = self.read_json(path)
+        return self.cache[path]
+
+    def write_cached_json(self, path, data):
+        if path in self.cache and self.cache[path] == data:
+            return
+        s3().put_object(Bucket=BUCKET,
+                        Key=path,
+                        Body=bytes(json.dumps(data, indent=2), 'utf-8'),
+                        ContentType='text/json')
+        self.cache[path] = copy.copy(data)
+
     def read_json_default(self, path, default=None):
         try:
             return self.read_json(path)
@@ -126,15 +161,27 @@ boto_s3_client = None
 
 # our wrapper that does everything within a subdir (each course is a different dir)
 s3_client = None
+s3_clients = {}
 
 def init_s3(prefix):
-    global boto_s3_client, s3_client
+    global boto_s3_client, s3_client, s3_clients
     if boto_s3_client == None:
         boto_s3_client = boto3.client('s3')
-    s3_client = S3(boto_s3_client, prefix)
+    if not prefix in s3_clients:
+        s3_clients[prefix] = S3(boto_s3_client, prefix)
+    s3_client = s3_clients[prefix]
 
 def s3():
     return s3_client
+
+debug_num = 1
+def debug(s):
+    global debug_num
+    s3().put_object(Bucket=BUCKET,
+                    Key='debug/%d.txt' % debug_num,
+                    Body=bytes(s, 'utf-8'),
+                    ContentType='text/plain')
+    debug_num += 1
 
 firehose_cache = None # client
 def firehose():
@@ -152,10 +199,6 @@ def route(fn):
 # decorator: user must authenticate to the admin user
 def admin(fn):
     EXTRA_AUTH[fn.__name__].append(admin_check)
-    return fn
-
-def instructor(fn):
-    EXTRA_AUTH[fn.__name__].append(instructor_check)
     return fn
 
 # decorator: user must authenticate and have a valid email
@@ -176,21 +219,16 @@ def user_check(user):
 
 def admin_check(user):
     user_check(user)
-    if user['email'] != ADMIN_EMAIL:
+    if user['email'] != get_admin_email():
         raise Exception('admin permissions required')
-
-def instructor_check(user):
-    user_check(user)
-    if not user['email'] in INSTRUCTOR_EMAILS:
-        raise Exception('instructor permissions required')
 
 def grader_check(user):
     user_check(user)
-    if not user['email'] in GRADER_EMAILS:
+    if not user['email'] in get_grader_emails():
         raise Exception('grader permissions required')
 
 def is_grader(user):
-    return user['email'] in GRADER_EMAILS
+    return user['email'] in get_grader_emails()
 
 token_cache = {}
 
@@ -219,15 +257,6 @@ def error(message):
         "body": message
     }
 
-# TODO: index by class
-saved_users = set()
 def save_user_info(user):
     path = 'users/%s.json' % user['sub']
-    if path in saved_users:
-        return
-    if not s3().path_exists(path):
-        s3().put_object(Bucket=BUCKET,
-                        Key=path,
-                        Body=bytes(json.dumps(user, indent=2), 'utf-8'),
-                        ContentType='text/json')
-    saved_users.add(path)
+    s3().write_cached_json(path, user)

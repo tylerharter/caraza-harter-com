@@ -24,6 +24,7 @@ var submission = {};
       "project_id": project_id,
       "filename": filename,
       "payload": payload,
+      "feedback_request": $("#feedback_request").val(),
       "ignore_errors":  ignore_errors
     }
     common.callLambda(data, function(data) {

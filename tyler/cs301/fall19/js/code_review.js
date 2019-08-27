@@ -240,7 +240,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       html += ('<li>')
       var line = ('<a href="code_review.html?project_id=' + common.getUrlParameter('project_id') +
                   '&student_email=' + common.getUrlParameter('student_email') +
-                  '&submission_id=' + sid + '">' + sid + '</a>\n')
+                  '&submission_id=' + sid + '">' + sid + ' [UTC]</a>\n')
       if (sid == sub.submission_id) {
         line = "<b>"+line+"</b>"
       }
@@ -286,7 +286,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var test_blob = ""
     if ('test_result' in sub && sub.test_result != null && 'score' in sub.test_result) {
       $("#auto_test_score").val(sub.test_result.score)
-      html += ('<textarea cols=80 rows=6 id="test_blob"></textarea><br>')
+      html += ('<textarea readonly cols=80 rows=6 id="test_blob"></textarea><br>')
       test_blob = JSON.stringify(sub.test_result, null, 2)
     } else {
       html += ('<p>not ready</p>')
@@ -294,11 +294,15 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
     // SECTION: TA comments
     html += ('<h3>General Reviewer Comments</h3>')
+    if (sub.feedback_request) {
+      html += "<p><b>Requested Feedback: </b>"+sub.feedback_request+"</p>"
+    }
+
     var general_comments = ''
     if ('general_comments' in sub.cr && sub.cr.general_comments) {
       general_comments = sub.cr.general_comments
     }
-    html += ('<textarea cols=80 rows=6 id="general_comments">'+general_comments+'</textarea><br>')
+    html += ('<textarea style="width:100%" rows=6 id="general_comments">'+general_comments+'</textarea><br>')
     html += ('<div class="grader_content" style="display:none;">')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job!  Please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job, please check comments below.\')">Good job, please...</button> ')

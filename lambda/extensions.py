@@ -31,8 +31,8 @@ def extension_path(email, project_id):
 @grader
 def project_get_extension(user, event):
     project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
-        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
+    if not project_id in get_project_due_utc():
+        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(get_project_due_utc().keys())))
 
     email = event['net_id']
     if not '@' in email:
@@ -55,8 +55,8 @@ def project_get_extension(user, event):
 @grader
 def project_set_extension(user, event):
     project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
-        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(PROJECT_DUE_UTC.keys())))
+    if not project_id in get_project_due_utc():
+        return (500, 'please enter a valid project ID: ' + ', '.join(sorted(get_project_due_utc().keys())))
     
     email = event['net_id']
     if not '@' in email:

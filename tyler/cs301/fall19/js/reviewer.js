@@ -44,10 +44,9 @@ var reviewer = {};
       var categories = {}
       for (var i=0; i<submissions.length; i++) {
         var submission = submissions[i]
-        var display = submission.submitter_id
+        var display = submission.student_email
         var category = 'Misc'
         if (submission.info.net_id != null) {
-          display = submission.info.net_id
           category = 'Students'
         }
         if (submission.info.ta != null) {
@@ -59,8 +58,11 @@ var reviewer = {};
         }
 
         submissions[i].display = display
+        if (submissions[i].tested) {
+          submissions[i].display += ' | tested'
+        }
         if (submissions[i].has_review) {
-          submissions[i].display += ' [REVIEWED]'
+          submissions[i].display += ' | REVIEWED'
         }
         categories[category].push(submission)
       }
