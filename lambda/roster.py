@@ -24,6 +24,7 @@ def get_roster_raw():
     return response['Body'].read().decode('utf-8')
 
 
+# TODO: index by class
 emails = None
 emails_updated = None
 def get_roster_emails():

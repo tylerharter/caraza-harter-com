@@ -219,6 +219,7 @@ def error(message):
         "body": message
     }
 
+# TODO: index by class
 saved_users = set()
 def save_user_info(user):
     path = 'users/%s.json' % user['sub']

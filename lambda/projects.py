@@ -30,7 +30,7 @@ PROJECT_IDS = [
 # always have the project due at 7am on a Thu
 DUE_DATE_FORMAT = "%m/%d/%y %H:%M"
 PROJECT_DUE_UTC = {
-    'p1':  datetime.datetime.strptime("01/31/19 7:00", DUE_DATE_FORMAT),
+    'p1':  datetime.datetime.strptime("09/12/19 7:00", DUE_DATE_FORMAT),
     'p2':  datetime.datetime.strptime("02/07/19 7:00", DUE_DATE_FORMAT),
     'p3':  datetime.datetime.strptime("02/14/19 7:00", DUE_DATE_FORMAT),
     'p4':  datetime.datetime.strptime("02/21/19 7:00", DUE_DATE_FORMAT),
@@ -51,6 +51,11 @@ MAX_SIZE_KB = 1024
 def project_dir(email, project_id):
     '''Get location where submission should be saved'''
     return 'projects/%s/%s/' % (to_s3_key_str(project_id), to_s3_key_str(email))
+
+
+def rating_dir(email, project_id):
+    '''Get location where submission should be saved'''
+    return 'ratings/%s/%s/' % (to_s3_key_str(project_id), to_s3_key_str(email))
 
 
 def submission_dir(email, project_id, submission_id):
@@ -433,6 +438,7 @@ def get_submission(user, event):
 
         link = submission_link(student_email, project_id, submission_id)
         sub_dir = s3().read_json(link)["symlink"]
+        result['submission_dir'] = sub_dir
 
         submission = s3().read_json(sub_dir + 'submission.json')
         code = extract_project_files(submission['submission_id'], submission['filename'], submission['payload'])
@@ -447,12 +453,12 @@ def get_submission(user, event):
             result['test_result'] = test_result
         result['cr'] = s3().read_json_default(sub_dir + 'cr.json')
         if result['cr'] == None:
-                result['cr'] = {
-                    'highlights': {k:[] for k in code['files'].keys()}, # list of highlight ranges with comments
-                    'general_comments': '',      # comments about whole submission
-                    'points_deducted': 0,        # TAs can take additional points off
-                    'reviewer_email': None,      # who left the code review
-                }
+            result['cr'] = {
+                'highlights': {k:[] for k in code['files'].keys()}, # list of highlight ranges with comments
+                'general_comments': '',      # comments about whole submission
+                'points_deducted': 0,        # TAs can take additional points off
+                'reviewer_email': None,      # who left the code review
+            }
 
     return (200, result)
 
@@ -462,63 +468,31 @@ def get_submission(user, event):
 def put_code_review(user, event):
     cr = event['cr']
     cr['reviewer_email'] = user['email']
-    project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
-        return (500, 'not a valid project')
-    student_email = event['student_email']
-    partner_email = event['partner_email']
-    submission_id = event['submission_id']
+    sub_dir = event['submission_dir']
+    if not sub_dir.endswith('/'):
+        return (500, 'bad sub_dir "%s"' % sub_dir)
 
-    path = cr_path(student_email, project_id, submission_id)
     s3().put_object(Bucket=BUCKET,
-                    Key=path,
+                    Key=sub_dir + 'cr.json',
                     Body=bytes(json.dumps(cr), 'utf-8'),
                     ContentType='text/json')
-
-    # create symlink in partners dir
-    if partner_email:
-        partner_email = partner_email + "@wisc.edu"
-        link = cr_path(partner_email, project_id, submission_id)
-        s3().put_object(Bucket=BUCKET,
-                        Key=link,
-                        Body=bytes(json.dumps({"symlink": path}), 'utf-8'),
-                        ContentType='text/plain')
 
     return (200, 'uploaded review')
 
 
 @route
 @user
-def project_withdraw(user, event):
+def rate_comment(user, event):
     user_email = user['email']
-    project_id = event['project_id']
-    if not project_id in PROJECT_DUE_UTC:
+    rating = {k: event['rating'].get(k, None) for k in
+              ("reviewer", "project_id", "submission_dir", "filename", "offset", "length", "comment", "useful")}
+    if not rating['project_id'] in PROJECT_DUE_UTC:
         return (500, 'not a valid project')
-
-    path = project_path(user_email, project_id)
-    s3().delete_object(Bucket=BUCKET, Key=path)
-    result = {'message': 'project submission withdrawn'}
-    return (200, result)
-
-
-@route
-@user
-def rate_code_review(user, event):
-    user_email = user['email']
-    user_netid = google_to_net_id(user_email)
-    cr = event['cr']
-    student_email=event['student_email']
-    project_id = event['project_id']
-    partner_netid = lookup_partner_netid(student_email, project_id)
-
-    if not (user_email == student_email or user_netid == partner_netid):
-        return (500, 'not authorized to rate that CR')
-
-    path = project_dir(student_email, project_id) + 'rating-%s-%s.json'
-    path = path % (user_netid, '%.2f' % time.time())
+    rating_id = datetime.datetime.today().strftime('%Y-%m-%d_%H-%M-%S')
+    path = rating_dir(user_email, rating['project_id']) + rating_id + '.json'
     s3().put_object(Bucket=BUCKET,
                     Key=path,
-                    Body=bytes(json.dumps(cr), 'utf-8'),
+                    Body=bytes(json.dumps(rating), 'utf-8'),
                     ContentType='text/json',
     )
     return (200, 'rating recorded')

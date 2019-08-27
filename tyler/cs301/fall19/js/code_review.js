@@ -132,6 +132,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     for(var i=0; i<sub.cr.highlights[filename].length; i++) {
       var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
+        highlight.reviewer = common.getEmail()
         highlight.comment = comment
         cr_dirty = true
         return
@@ -140,12 +141,27 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     console.log("could not find highlight")
   }
 
-  function setHighlightRating(filename, offset, length, rating) {
+  function setHighlightRating(filename, offset, length, useful) {
     for(var i=0; i<sub.cr.highlights[filename].length; i++) {
       var highlight = sub.cr.highlights[filename][i]
       if (highlight.offset == offset && highlight.length == length) {
-        highlight.rating = rating
-        cr_dirty = true
+        var data = {
+          "fn": "rate_comment",
+          "rating": {
+            "reviewer": highlight.reviewer,
+            "project_id": common.getUrlParameter('project_id'),
+            "submission_dir": sub.submission_dir,
+            "filename": filename,
+            "offset": highlight.offset,
+            "length": highlight.length,
+            "comment": highlight.comment,
+            "useful": useful
+          }
+        }
+
+        common.callLambda(data, function(data) {
+          common.popThankYou()
+        })
         return
       }
     }
@@ -187,6 +203,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
   code_review.genericComment = function(comment) {
     $("#general_comments").val(comment);
     sub.cr.general_comments = comment;
+    cr_dirty = true;
   }
 
   code_review.resetVisible = function () {
@@ -237,6 +254,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var grades_are_ready = ('reviewer_email' in sub.cr && sub.cr.reviewer_email &&
                             'test_result' in sub && sub.test_result != null &&
                             'score' in sub.test_result)
+    var ta_deduction = sub.cr.points_deducted;
 
     if (grades_are_ready) {
       var test_score = sub.test_result.score
@@ -260,7 +278,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       }
       html += ('</ul>')
     } else {
-      html += ('<p>not ready</p>')
+      html += ('<p>this version of the code has not been graded</p>')
     }
 
     // SECTION: test results
@@ -285,9 +303,10 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job!  Please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job, please check comments below.\')">Good job, please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Please check comments below.\')">Please check comments below.</button> ')
-    html += ('<br>')
-    html += ('TA Point Deduction: <input type="text" id="ta_point_deduction" class="form-control">')
-    html += ('<button type="button" class="btn btn-dark" onclick="code_review.saveCodeReview()">Publish</button>')
+    html += ('</div>')
+    html += ('<div class="grader_content my-2" style="display:none;">')
+    html += ('Your Deduction: <input autocomplete="0" type="text" id="ta_point_deduction" class="form-control" style="display:inline; width:4em" value="'+ta_deduction+'"> ')
+    html += ('<button id="publish_btn" type="button" class="btn btn-dark"">PUBLISH</button>')
     html += ('</div>')
 
     // SECTION: rating the CR (disabled currently)
@@ -363,6 +382,12 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     // event listening on stuff we just created
     $(".prettyprint").mouseup(codeMouseUp)
 
+    $("#publish_btn").on("click", code_review.saveCodeReview)
+
+    $("#ta_point_deduction").on("input", function() {
+      cr_dirty = true
+    })
+
     if (sub.is_grader) {
       $("#general_comments").on('input', function() {
         sub.cr.general_comments = $("#general_comments").val()
@@ -407,6 +432,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       $(this).attr("data-content", html)
 
       // on show, register button events
+
       $(this).on('shown.bs.popover', function () {
         var txt = $("textarea[data-highlight-id="+highlight_id+"]")
         var ok_btn = $("button[data-highlight-id="+highlight_id+"][data-highlight-button=ok]")
@@ -426,12 +452,12 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
         up_btn.click(function() {
           highlight_element.popover('hide')
-          setHighlightRating(filename, offset, length, "good")
+          setHighlightRating(filename, offset, length, true)
         })
 
         down_btn.click(function() {
           highlight_element.popover('hide')
-          setHighlightRating(filename, offset, length, "bad")
+          setHighlightRating(filename, offset, length, false)
         })
 
         cancel_btn.click(function() {
@@ -464,25 +490,26 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     })
   };
 
-  code_review.saveCodeReview = function() {
+  code_review.saveCodeReview = function(event) {
     var deduction_str = $("#ta_point_deduction").val()
     if (/^\d+$/.test(deduction_str)) {
-      deduction = parseInt(deduction_str)
-    }
-
-    if (deduction != NaN && deduction >= 0 && deduction <= 100) {
-      sub.cr.points_deducted = deduction
+      var deduction = parseInt(deduction_str)
+      if (deduction != NaN && deduction >= 0 && deduction <= 100) {
+        sub.cr.points_deducted = deduction
+      } else {
+        common.popError("please enter a deduction in the 0-100 range")
+        event.preventDefault()
+        return false
+      }
     } else {
-      common.popError("please use a deduction in the 0-100 range")
-      return
+      common.popError("please enter a deduction in the 0-100 range")
+      event.preventDefault()
+      return false
     }
 
     var data = {
       "fn": "put_code_review",
-      "project_id": common.getUrlParameter('project_id'),
-      "student_email": common.getUrlParameter('student_email'),
-      "partner_netid": sub.analysis.partner,
-      "submission_id": sub.submission_id,
+      "submission_dir": sub.submission_dir,
       "cr": sub.cr
     }
 
