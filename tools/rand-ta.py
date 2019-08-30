@@ -1,8 +1,11 @@
-import os, sys, random
+#!/bin/env python3
+
+import os, sys, random, json
 
 TA = {}
-TA["old"] = ["Bob", "Mitali", "Om", "Shruthi", "Ushmal"]
-TA["new"] = ["Ashay", "Chakshu", "Deepan", "Hugh", "Zhanpeng"]
+TA["old"] = []
+with open("tas.json") as f:
+    TA["new"] = [row["name"] for row in json.load(f)]
 TA["all"] = TA["old"] + TA["new"]
 
 def main():
