@@ -66,12 +66,12 @@ ls
 # new directory
 #######################
 
-cd ~\examples
+cd examples # doesn't exist
 
 # does not exist, so create it
-mkdir ~\examples
+mkdir examples
 
-cd ~\examples # we can get back to this by hitting the up arrow
+cd examples # we can get back to this by hitting the up arrow
 pwd
 
 #######################
@@ -79,9 +79,9 @@ pwd
 #######################
 
 # observe that the same folder has the same name
-cd ~\examples  # powershell accepts slashes in either direction
+cd ~\Desktop\examples  # powershell accepts slashes in either direction
 pwd
-cd c:\Users\test2\examples # absolute path
+cd c:\Users\test3\Desktop\examples # absolute path
 pwd
 cd ..\examples # relative path
 pwd
@@ -101,6 +101,9 @@ cat file.txt
 echo line2 > file.txt
 cat file.txt
 
+echo line3 >> file.txt
+cat file.txt
+
 #######################
 # moving+copying
 #######################
@@ -117,8 +120,8 @@ ls
 
 echo A > a.txt
 echo B > b.txt
-echo C > a.txt
-echo D > b.txt
+cat b.txt > a.txt
+cat a.txt > b.txt
 cat a.txt # what does it print?
 
 #######################
