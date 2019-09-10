@@ -70,6 +70,8 @@ DEMO 2
 how to fix? (d)
  - -5 ** 2
  - 9 ** 1/2
+ - 2 ** 1000000
+ - 2 ** 10000000 # kill in, noting keyboard interrupt
 
 string stuff
  - hello world
