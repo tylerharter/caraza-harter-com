@@ -23,6 +23,7 @@ three ways to run Python code
  - 1+1
  - 2+2
  - last line is printed automatically (need prints for other lines)
+ - out box vs. print
 
 math operators
  - 1 + 1
@@ -32,8 +33,8 @@ math operators
  - add extra space, beginning, end, middle
  -  1*1
  - (1)(1)   # error!
- - 1/0      # talk about reading errors
  - 1/1      # why
+ - 1/0      # talk about reading errors, SHOW LINE NUMBERS, cell number!!!
  - 1/100000 # scientific notation
  - 1.0 / 100
  - 1.1 / 100 # woah!  what happened?
@@ -43,14 +44,17 @@ number types (integer and float)
  - ignore "class"
  - type of float, type of int
  - type(1.0)
- - type(7/2)
+ - type(7/2)   # does anybody get 3?  Make sure you're on Python 3!!!
  - 7//2
  - type(7//2)
+ - 7//2 leaves a remainder!!!
 
-more math operators
+more math operators (vocab: operand, operator)
  - % # modulo, think of it as the remainder
  - unary operators: +, -
+ - 3 + -4
  - exponents:
+ - 2 ^ 3 (binary exclusive OR)
  - 10 ** 3
  - 16 ** (1/2)
  - 2 ** -1
@@ -73,9 +77,10 @@ string stuff
  - type("hello world")
  - 'hello world' # this is the SAME!
  - 'she said "hello"'
- - 'hello' + 'ada' + 'lovelace'
+ - 'hello' + 'ada' + 'lovelace'   # add space in other string, or tag onto another
  - 'x' * 'y'
  - 'HA' * 100
+ - 'santa says "' + 'ho ' * 3 + '"'
 
 escaping
  - "the dog said "roof""
@@ -83,18 +88,31 @@ escaping
  - 'the dog said "roof"'
  - "a\tb"
  - print("a\tb")
+programmer vs. user representations
 
 comparison operators (d)
- - 5 > 3
+ - 5 > 3   (what kind of thing is True?)
+
+========================================
+boolean logic (s)
+========================================
+
  - -3 > -5
  - 'A' < 'B'
  - 'a' < 'B'
+ - "1" < 2  (type error: what is an instance?)
  - 3 <= 4
  - 4 <= 4
  - 5 <= 4
+
+EQUALITY
+ - 1 = 2
  - 1 == 2
  - 1 != 2
  - 2 == 2
+ - 2 is 2 # don't use this for now!
+
+TYPES
  - 2 == 2.0
  - type(2) == type(2.0)
  - type(5 > 3)
@@ -102,10 +120,6 @@ comparison operators (d)
  - type(True)
  - type(False)
  - type(false)
-
-========================================
-boolean logic (s)
-========================================
 
 DEMO 3
 
@@ -131,3 +145,9 @@ truthy and falsy
  - True == 1
  - True == 2
  - False == 0
+
+========================================
+
+Talk about worksheet.  Why I don't give answers...
+
+Test yourself!
