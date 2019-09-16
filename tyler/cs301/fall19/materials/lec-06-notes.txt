@@ -27,6 +27,10 @@ t = type(1 == 1.0)  # in both modes, save it to a variable
 print(t)
 print(type(1 == 1.0)) # compose them into one step
 
+# think of operators as special syntax for function calls!
+print(3 * 2 + 4)
+print(add(mult(3, 2), 4))
+
 ==================================================
 
 # DEMO: input
