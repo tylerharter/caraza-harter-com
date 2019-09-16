@@ -31,7 +31,7 @@ print(type(1 == 1.0)) # compose them into one step
 
 # DEMO: input
 
-echo.py
+parrot.py
  - just input()
  - what is the return value of print()?
    Talk about NoneType, x==None, "fruitful" functions...
@@ -77,7 +77,7 @@ battleship.py
  - show a map, with 1 for hit and 0 for miss
  - give example of x=x1 and y=y1 or x=x2 and y=y2 or ... (boolean logic!!!)
 
- - v1: one point, v2: actual ship, v3: multiple ships
+ - v1: one point, v2: larger ship, v3: multiple ships, v4: random location
    (probably save v2 and v3 for end, depending on time)
 
 ==================================================
