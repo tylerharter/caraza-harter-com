@@ -43,7 +43,7 @@ Programming
 <b>Read</b>: Downey Ch 1<br>
 <b>Due</b>: P1<br>
 <b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p2">Lab-P2</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p2">P2</a><br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">demos from lecture</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">code</a><br>
 
 =
 Vars and Exprs
@@ -53,7 +53,7 @@ Vars and Exprs
 * Comments
 <a href="materials/lec-05.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 2<br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-05">demos from lecture</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-05">code</a><br>
 
 =
 Using Functions
@@ -66,7 +66,7 @@ Using Functions
 
 <a href="materials/lec-06.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-06">demos from lecture</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-06">code</a><br>
 
 =
 Creating Functions
@@ -82,6 +82,7 @@ Creating Functions
 <a href="materials/lec-07.html">Interactive Exercises</a><br>
 <b>Due</b>: P2<br>
 <b>Assigned</b>: Lab-P3, P3<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-07">code</a><br>
 
 =
 Function Scope
