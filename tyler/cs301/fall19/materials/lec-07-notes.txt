@@ -1,15 +1,25 @@
 Ideas today:
- - syntax: basics, return (early return), tabbing
- - inputs: parameters, three types of arguments
- - outputs: return vs. print
- - tracing: with print, with PythonTutor
+ - create functions
+ - modules
+ - input/output
 
 ==================================================
 SLIDES: basic syntax
 ==================================================
 
-# WARMUP: one liner implementations of functions in the math, builtins modules
- - sqrt, abs, pow
+abs(-3)
+sqrt(9)
+from math import sqrt
+sqrt(9)
+from math import *
+pi
+pow(2, 3)
+
+# how to implement abs, sqrt, pow?
+sqrt(x) = pow(x, 0.5)
+abs(x) = sqrt(x**2)
+
+# NOTE:
  - same naming rules for function names as for variables
  - until we call them, nothing happens!
 
@@ -26,24 +36,26 @@ SLIDES: three ways to initialize parameters
 WORKSHEET: do a few problems...
 ==================================================
 
-# name.py
-def full_name(first, last):
-    print(first + " " + last)
+==================================================
+SLIDES: where to modules come from?
+==================================================
 
->>> from name import *
->>> full_name("allen", "downey")
->>> name = full_name("allen", "downey")
->>> print(full)
+dog+cat modules
 
-def full_name(first, last):
-    return(first + " " + last)
+from dog import *
+speak_rv = speak()
+fetch_rv = fetch()
 
-# do interactive again
+print(speak_rv)
+print(fetch_rv)
 
-return vs. print
-
-why might we want to put the output of a function in a variable
-instead of direction to the screen?
+QUESTIONS:
+ - why do we need prints in a notebook?  Show None
+ - how to write a cat module?
+ - how to use functions with the same name from diff modules?
+ - how to find what's in a module?
+ - how to document a function?
+ - what's in the math module?
 
 ==================================================
 SLIDES: data flow between caller, function, and screen

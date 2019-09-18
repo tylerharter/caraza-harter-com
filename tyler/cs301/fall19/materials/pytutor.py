@@ -1,7 +1,7 @@
 import os, sys, json, subprocess
 from subprocess import check_output
 
-PYTUTOR = "/Users/trh/git_co/OnlinePythonTutor/v5-unity/generate_json_trace.py"
+PYTUTOR = "/Users/trh/g/OnlinePythonTutor/v5-unity/generate_json_trace.py"
 
 EMBEDDING = """
 <div id="DIV"></div>
