@@ -439,6 +439,9 @@ def project_list_submissions(user, event):
         return (500, 'invalid project id')
     paths = s3().s3_all_keys('projects/'+project_id+'/')
 
+    # which TA is assigned to each student for this project?
+    cr_assignments = s3().read_json_default('projects/%s-cr-assignments.json' % project_id, default={})
+
     # email => list of submission IDs
     submissions = ddict(list)
     direct_submissions = ddict(list)
@@ -496,9 +499,11 @@ def project_list_submissions(user, event):
             'info': {},
         }
 
-        # supplement with info from roster
-        for field in ['net_id', 'ta']:
-            row['info'][field] = roster.get(email,{}).get(field,None)
+        # supplement with info from roster (do we still need this?)
+        row['info']['net_id'] = roster.get(email,{}).get('net_id',None)
+
+        # supplement with info about the assigned grader
+        row['info']['ta'] = cr_assignments.get(email, None)
 
         rows.append(row)
 
