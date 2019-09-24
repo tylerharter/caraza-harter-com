@@ -1,6 +1,8 @@
 import os, sys, json, copy
 
 COURSE = 'a'
+not_reviewed = {'p1'}
+CR_URL = 'https://tyler.caraza-harter.com/cs301/fall19/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 
 def try_read_json(path, default={}):
     try:
@@ -46,15 +48,25 @@ class Grades:
         # - submission (to determine lateness)
         # - extensions (to adjust lateness)
 
+        ready = False
         if link:
-            test = try_read_json(os.path.join("snapshot", COURSE, link, "test.json"))
-        else:
-            test = {}
-        test_score = test.get("score", 0)
-        ta_deduction = 0 # TODO: pull from cr.json
-        score = test_score - ta_deduction
-        late_days = 0 # TODO: pull from deduction JSON files
-        cr_url = 'https://tyler.caraza-harter.com/cs301/fall19/code_review.html?project_id=%s&student_email=%s@wisc.edu' % (self.project, net_id)
+            sub = try_read_json(os.path.join("snapshot", COURSE, link, "submission.json"), {})
+            test = try_read_json(os.path.join("snapshot", COURSE, link, "test.json"), {})
+            cr = try_read_json(os.path.join("snapshot", COURSE, link, "cr.json"), {})
+            if sub != {} and test != {} and (cr != {} or self.project in not_reviewed):
+                test_score = test.get("score", 0)
+                ta_deduction = cr.get("points_deducted", 0)
+                late_days = max(sub.get("late_days", 0), 0)
+                # late_days -=    TODO: record extensions!
+                ready = True
+
+        if not ready:
+            test_score = 0
+            ta_deduction = 0
+            late_days = 0
+
+        score = max(test_score - ta_deduction, 0)
+        cr_url = CR_URL % (self.project, net_id)
 
         return {"project": self.project, "net_id": net_id, "test_score": test_score,
                 "ta_deduction": ta_deduction, "score": score, "late_days": late_days,
@@ -62,8 +74,10 @@ class Grades:
 
 
 def main():
-    project = 'p1'
-    Grades(project).dump(os.path.join('grades', project+'.json'))
+    if len(sys.argv) < 2:
+        print("Usage: python3 extract_grades.py p1 [p2 ...]")
+    for project in sys.argv[1:]:
+        Grades(project).dump(os.path.join('grades', project+'.json'))
 
 
 if __name__ == '__main__':

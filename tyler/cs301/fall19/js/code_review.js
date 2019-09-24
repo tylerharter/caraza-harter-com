@@ -29,6 +29,14 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     });
   }
 
+  function getStudentEmail() {
+    var email = common.getUrlParameter('student_email')
+    if (!email) {
+      email = common.getEmail()
+    }
+    return email
+  }
+
   function nodeHasClass(node, cls) {
     var classes = node.classList
     return (classes != undefined && classes.contains(cls))
@@ -239,7 +247,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       var sid = sub.submissions[i].id
       html += ('<li>')
       var line = ('<a href="code_review.html?project_id=' + common.getUrlParameter('project_id') +
-                  '&student_email=' + common.getUrlParameter('student_email') +
+                  '&student_email=' + getStudentEmail() +
                   '&submission_id=' + sid + '">' + sid + ' [UTC]</a>\n')
       if (sid == sub.submission_id) {
         line = "<b>"+line+"</b>"
@@ -484,7 +492,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var data = {
       "fn": "get_submission",
       "project_id": common.getUrlParameter('project_id'),
-      "student_email": common.getUrlParameter('student_email'),
+      "student_email": getStudentEmail(),
       "submission_id": common.getUrlParameter('submission_id'),
     }
 
@@ -532,7 +540,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     var data = {
       "fn": "rate_code_review",
       "project_id": common.getUrlParameter('project_id'),
-      "student_email": common.getUrlParameter('student_email'),
+      "student_email": getStudentEmail(),
       "cr": rated_cr
     }
 
