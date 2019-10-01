@@ -20,7 +20,7 @@ class Grades:
             net_ids = {row['net_id'] for row in json.load(f) if row['enrolled']}
 
         self.extensions = self.get_extensions()
-        self.grade_rows = [self.get_grade_row(nid) for nid in net_ids]
+        self.grade_rows = [self.get_student_grade(nid) for nid in net_ids]
 
 
     # returns dict
@@ -64,15 +64,25 @@ class Grades:
         return []
 
 
-    def get_grade_row(self, net_id):
-        links = self.get_proj_links(net_id)
-        if len(links) > 0:
-            link = max(links)
+    def get_student_grade(self, net_id):
+        grade = self.get_submission_grade(net_id, None)
+        links = sorted(self.get_proj_links(net_id))
+        for link in links:
             with open(link) as f:
                 submission_dir = json.load(f)['symlink']
+            grade2 = self.get_submission_grade(net_id, submission_dir)
+            # only take a later submission over a prior one if the
+            # score is better, because the earlier one will incur
+            # fewer late days
+            if grade2["score"] > grade["score"]:
+                grade = grade2
         else:
             submission_dir = None
 
+        return grade
+
+
+    def get_submission_grade(self, net_id, submission_dir):
         # we need to check four files:
         # - tests
         # - CR
