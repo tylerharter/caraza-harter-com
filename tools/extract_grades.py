@@ -1,4 +1,5 @@
 import os, sys, json, copy
+from collections import defaultdict as ddict
 
 COURSE = 'a'
 not_reviewed = {'p1'}
@@ -18,7 +19,30 @@ class Grades:
         with open('roster.json') as f:
             net_ids = {row['net_id'] for row in json.load(f) if row['enrolled']}
 
+        self.extensions = self.get_extensions()
         self.grade_rows = [self.get_grade_row(nid) for nid in net_ids]
+
+
+    # returns dict
+    # key: submission file path
+    # val: days extended
+    def get_extensions(self):
+        extensions = ddict(int)
+        
+        dirname = 'snapshot/%s/extensions/%s/' % (COURSE, self.project)
+        for name in os.listdir(dirname):
+            if not name.endswith(".json"):
+                continue
+            path = os.path.join(dirname, name)
+            with open(path) as f:
+                days = json.load(f)["days"]
+            net_id = name.split("*at*")[0]
+            links = self.get_proj_links(net_id)
+            for link in links:
+                with open(link) as f:
+                    sub = json.load(f)['symlink']
+                    extensions[sub] = max(extensions[sub], days)
+        return extensions
 
 
     def dump(self, path):
@@ -32,15 +56,22 @@ class Grades:
             f.write(']\n')
 
 
-    def get_grade_row(self, net_id):
+    def get_proj_links(self, net_id):
         dirname = 'snapshot/%s/projects/%s/%s*at*wisc.edu' % (COURSE, self.project, net_id)
         link = None
         if os.path.exists(dirname):
-            links = [p for p in os.listdir(dirname) if p.endswith('-link.json')]
-            if len(links) > 0:
-                link = max(links)
-                with open(os.path.join(dirname, link)) as f:
-                    link = json.load(f)['symlink']
+            return [os.path.join(dirname, p) for p in os.listdir(dirname) if p.endswith('-link.json')]
+        return []
+
+
+    def get_grade_row(self, net_id):
+        links = self.get_proj_links(net_id)
+        if len(links) > 0:
+            link = max(links)
+            with open(link) as f:
+                submission_dir = json.load(f)['symlink']
+        else:
+            submission_dir = None
 
         # we need to check four files:
         # - tests
@@ -49,15 +80,14 @@ class Grades:
         # - extensions (to adjust lateness)
 
         ready = False
-        if link:
-            sub = try_read_json(os.path.join("snapshot", COURSE, link, "submission.json"), {})
-            test = try_read_json(os.path.join("snapshot", COURSE, link, "test.json"), {})
-            cr = try_read_json(os.path.join("snapshot", COURSE, link, "cr.json"), {})
+        if submission_dir:
+            sub = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "submission.json"), {})
+            test = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "test.json"), {})
+            cr = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "cr.json"), {})
             if sub != {} and test != {} and (cr != {} or self.project in not_reviewed):
                 test_score = test.get("score", 0)
                 ta_deduction = cr.get("points_deducted", 0)
-                late_days = max(sub.get("late_days", 0), 0)
-                # late_days -=    TODO: record extensions!
+                late_days = max(sub.get("late_days", 0) - self.extensions[submission_dir], 0)
                 ready = True
 
         if not ready:
