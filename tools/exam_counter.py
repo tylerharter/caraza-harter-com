@@ -4,7 +4,7 @@ def main():
     counts = {}
     with open("roster.json") as f:
         for row in json.load(f):
-            exam = row.get("final")
+            exam = row.get("exam1")
             counts[exam] = counts.get(exam, 0) + 1
     print(json.dumps(counts, indent=2))
 
