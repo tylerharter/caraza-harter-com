@@ -176,6 +176,7 @@ Lists
 
 <a href="materials/lec-15.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-15">code</a><br>
 
 =
 CSV Tables

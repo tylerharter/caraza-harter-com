@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json, urllib, boto3, botocore, base64, datetime, time, html, copy
+import json, urllib, boto3, botocore, base64, datetime, time, html, copy, re
 import traceback, random, string
 import zipfile, io
 from collections import defaultdict as ddict
@@ -153,7 +153,7 @@ def extract_project_files(submission_id, filename, payload):
               'errors': []}
 
     def add_file_meta(key, display_name, order, content_type):
-        meta = {'display_name':display_name, 'order':order, 'content_type':content_type}
+        meta = {'key': key, 'display_name':display_name, 'order':order, 'content_type':content_type}
         result['files_meta'][key] = meta
     
     binary_bytes = base64.b64decode(payload)
@@ -207,6 +207,20 @@ def extract_project_files(submission_id, filename, payload):
         except Exception as e:
             result['errors'].append(str(e))
     return result
+
+
+def has_restart_and_run_all(project_files):
+    expected_exec_count = 1
+    metas = sorted(project_files["files_meta"]), key=lambda row: row["order"].values())
+    for meta in metas:
+        m = re.match(r'In [(\d+])')
+        if not m:
+            return False
+        exec_count = int(m.group(1))
+        if expected_exec_count != exec_count:
+            return False
+        expected_exec_count += 1
+    return True
 
 
 def get_code_analysis(student_email, project_id, project_files):
