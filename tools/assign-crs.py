@@ -6,7 +6,7 @@ from collections import defaultdict as ddict
 # aws s3 cp p2-cr-assignments.json s3://caraza-harter-cs301/a/projects/p2-cr-assignments.json
 
 COURSE = 'a'
-PROJECT = 'p4'
+PROJECT = 'p5'
 
 # we want submissions that are the latest for a student
 def get_submission_emails():
@@ -39,6 +39,9 @@ def main():
     # put people who actually submitted first so we balance better
     students = sorted(submitters) + sorted(others)
 
+    print(len(submitters), " submitters")
+    print(len(others), " others")
+    
     tas = []
     with open("tas.json") as f:
         for row in json.load(f):
