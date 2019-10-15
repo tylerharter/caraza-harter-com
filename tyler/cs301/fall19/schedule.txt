@@ -217,7 +217,7 @@ Dictionaries 2
 <a href="materials/lec-19.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
 <b>Due</b>: P6<br>
-<b>Assigned</b>: Lab-P7, P7<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p7">Lab-P7</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p7">P7</a><br>
 
 =
 JSON
