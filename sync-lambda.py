@@ -21,8 +21,11 @@ client = session.client('lambda')
 
 def main():
     fname = 'cs301-test'
-    if len(sys.argv) == 2 and sys.argv[1] == 'prod':
-        fname = 'cs301'
+    if len(sys.argv) == 2:
+        if sys.argv[1] == 'prod':
+            fname = 'cs301'
+        elif sys.argv[1] == 'pytutor':
+            fname = 'cs301-pytutor'
     print(client.get_function(FunctionName=fname))
 
     tmp = 'tmp.zip'
