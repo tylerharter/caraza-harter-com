@@ -1,4 +1,4 @@
-import os, sys, json, copy
+import os, sys, json, copy, math
 from collections import defaultdict as ddict
 
 COURSE = 'a'
@@ -97,20 +97,24 @@ class Grades:
             if sub != {} and test != {} and (cr != {} or self.project in not_reviewed):
                 test_score = test.get("score", 0)
                 ta_deduction = cr.get("points_deducted", 0)
-                late_days = max(sub.get("late_days", 0) - self.extensions[submission_dir], 0)
+                late_days = math.ceil(max(sub.get("late_days", 0) - self.extensions[submission_dir], 0))
+                comment_count = 0
+                for comments in cr.get("highlights", {}).values():
+                    comment_count += len(comments)
                 ready = True
 
         if not ready:
             test_score = 0
             ta_deduction = 0
             late_days = 0
+            comment_count = 0
 
         score = max(test_score - ta_deduction, 0)
         cr_url = CR_URL % (self.project, net_id)
 
         return {"project": self.project, "net_id": net_id, "test_score": test_score,
                 "ta_deduction": ta_deduction, "score": score, "late_days": late_days,
-                "code_review_url": cr_url}
+                "comment_count": comment_count, "code_review_url": cr_url}
 
 
 def main():

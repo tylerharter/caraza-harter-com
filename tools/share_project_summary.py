@@ -6,7 +6,7 @@ s3 = boto3.client('s3')
 
 TEST_NET_IDS = []
 
-LATE_DAY_ALLOCATION = 5
+LATE_DAY_ALLOCATION = 7
 
 def gen_html(prows, include_intro=True):
     cum_late = 0
@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>P10 testing and reviewing is complete.  We'll be sending directions soon about what to do if anything seems wrong.  Here is your project summary:</p>
+    <p>Here is your project summary, as of Oct 21:</p>
     """
 
     if include_intro:
@@ -29,7 +29,7 @@ def gen_html(prows, include_intro=True):
         line = '<li>Feedback: <a href="{}">{} reviewer comments</a>'
         html.append(line.format(p['code_review_url'], p['comment_count']))
         html.append('<li>Score: ' + str(p['score']))
-        if p['override']:
+        if p.get('override', False):
             html[-1] += ' [override]'
         html.append('<li>Days Late: ' + str(p['late_days']))
 
@@ -72,16 +72,6 @@ def main():
                  'subject': 'CS 301: Project Summary',
                  'message':html, 'html':True}
         emails.append(email)
-
-        # generate status page in S3
-        user_id = prows[0]['user_id']
-        if user_id != None:
-            path = 'projects/summary/users/%s.json' % user_id
-            html_summary = gen_html(prows, include_intro=False)
-            s3.put_object(Bucket=BUCKET,
-                          Key=path,
-                          Body=bytes(json.dumps({'when': str(now), 'html_summary': html_summary}), 'utf-8'),
-                          ContentType='text/json')
 
     # dump email file
     with open('project_emails.json', 'w') as f:
