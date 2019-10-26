@@ -261,6 +261,7 @@ Recursive Functions
 <a href="materials/lec-23.pdf">Link to Slides</a><br>
 <a href="materials/lec-23.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-23">code</a><br>
 
 =
 Function References
