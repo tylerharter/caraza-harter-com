@@ -20,6 +20,7 @@ from projects import *
 from extensions import *
 from roster import *
 from messages import *
+from pytutor import *
 
 def lambda_handler(event, context):
     # TODO: we'll need to specify this in all calls from the front end...

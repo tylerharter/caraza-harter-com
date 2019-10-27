@@ -26,6 +26,9 @@ def main():
             fname = 'cs301'
         elif sys.argv[1] == 'pytutor':
             fname = 'cs301-pytutor'
+        else:
+            print("unknown lamdda: " + sys.argv[1])
+            return
     print(client.get_function(FunctionName=fname))
 
     tmp = 'tmp.zip'
