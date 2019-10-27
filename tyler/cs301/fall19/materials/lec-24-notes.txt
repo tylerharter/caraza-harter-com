@@ -15,6 +15,10 @@ Coding demos:
    - string -> int
    - talk about map()
 
+ 4. pipeline
+
+ 5. sorting examples...
+
 PART 2: Function References
 
 BONUS:
