@@ -1,12 +1,16 @@
 import os, sys, json
 
 def main():
-    counts = {}
-    with open("roster.json") as f:
-        for row in json.load(f):
-            exam = row.get("exam1")
-            counts[exam] = counts.get(exam, 0) + 1
-    print(json.dumps(counts, indent=2))
+    for exam in ["exam1", "exam2"]:
+        print("="*40)
+        print(exam)
+        print("="*40)
+        counts = {}
+        with open("roster.json") as f:
+            for row in json.load(f):
+                place = row.get(exam)
+                counts[place] = counts.get(place, 0) + 1
+        print(json.dumps(counts, indent=2))
 
 if __name__ == '__main__':
      main()

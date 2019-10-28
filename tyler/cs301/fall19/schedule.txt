@@ -269,6 +269,7 @@ Function References
 * sort
 <a href="materials/lec-24.pdf">Link to Slides</a><br>
 <a href="materials/lec-24.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-24">code</a><br>
 
 =
 Generator Functions
