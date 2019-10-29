@@ -1,0 +1,178 @@
+################################################################################
+# PART 1
+################################################################################
+
+Martin Luther King Day!<br>
+<b>No Class</b>
+
+=
+Intro + Environment
+* modules, sys.path, venv
+* lab: https://docs.python.org/3/tutorial/venv.html
+* requirements.txt
+* editors
+=
+Testing 1
+* regression testing
+* correctness and perf
+* git commits
+* time.time(), check_output
+=
+Testing 2
+* more git (actually using it)
+* using pandas to compute+plot stddev range
+=
+Scalability 1
+* measurement-driven
+* complexity theory: big-O, worst-case, const factors
+=
+Scalability 2
+* worksheet
+=
+OOP 1: Classes
+* attributes, methods, constructors
+=
+OOP 2: Py Data Model
+* special data methods
+=
+OOP 3: Polymorphism
+* inheritance, mention MRO
+* duck typing
+* performance of different implementations:
+   hash table vs. naive lookup structure
+=
+OOP 4: Practice
+* worksheets?  Demos?
+=
+Trees 1
+* review recursion
+* build, print trees
+<b>Due:</b> P1<br>
+=
+Trees 2
+* trees as a lookup structure
+* point lookup vs. range query
+=
+Graphs 1
+* directed vs. non-directed
+* dense numpy implementation
+* sparse implementation via classes
+* build from data
+* introduce graphviz, visualize
+=
+Graphs 2
+* DFS and BFS search
+* time vs. memory complexity
+=
+Graphs 3
+* Markov chains
+* log probability of sequence
+=
+Regex 1
+* extract more features of 
+* https://docs.python.org/3/howto/regex.html
+* https://regex101.com/
+=
+Regex 2
+* worksheet
+<b>Due:</b> P2<br>
+=
+Web 1: Flask
+* review from CS 220
+* RPC, POST
+* decorators
+=
+Web 2: Tracing
+* wrappers based on *args and **kwargs
+=
+Web 3: Selenium
+* simulating users
+* advanced web scraping
+=
+Web 4: Markov chains
+* construct from traces
+* visualize
+=
+Web 4: A/B testing
+* data collection
+* significance
+=
+Review/Exam
+<b>Due:</b> P3<br>
+=
+Visualization 1
+* custom designs
+* drawing polygons, etc
+=
+Spring Break!
+<b>No Class</b>
+=
+Spring Break!
+<b>No Class</b>
+=
+Spring Break!
+<b>No Class</b>
+=
+Visualization 2
+* plotting variation
+* bar and whiskers
+* CDFs
+=
+Visualization 3
+* geographic maps
+=
+Visualization 4
+* animations
+=
+Linear Algebra 1
+* matrix multiplication basics
+* numpy
+=
+Linear Algebra 2
+* equation solving
+<b>Due:</b> P4<br>
+=
+Linear Algebra 3
+* fit lines
+* loss function
+* multiple linear regression
+=
+Linear Algebra 4
+* transforming non-linear data
+#https://www.khanacademy.org/math/ap-statistics/inference-slope-linear-regression/transformations-for-linearity/v/transforming-nonlinear-data
+=
+Linear Algebra 5
+* principal component analysis
+* TSNE (visualization)
+=
+Parallelism 1
+* multiprocessing pools
+* parallel map
+=
+Parallelism 2
+* pytorch/dask/tensorflow?
+=
+Parallelism 3
+* pytorch/dask/tensorflow?
+<b>Due:</b> P5<br>
+=
+Classification 1
+* TODO
+=
+Classification 2
+* TODO
+=
+Classification 3
+* TODO
+=
+Clustering 1
+* k-means
+=
+Clustering 2
+* hierarchical
+=
+Clustering 3
+* visualization
+<b>Due:</b> P6<br>
+=
+Review For Final
