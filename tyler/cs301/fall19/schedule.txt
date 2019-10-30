@@ -276,6 +276,7 @@ Generator Functions
 * iterators and generators
 <b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p8b">Lab-P8b</a>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-25">code</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-25">code</a><br>
 
 =
 Error Handling
