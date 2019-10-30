@@ -274,7 +274,7 @@ Function References
 =
 Generator Functions
 * iterators and generators
-<b>Assigned</b>: Lab-P8b<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p8b">Lab-P8b</a>
 
 =
 Error Handling
