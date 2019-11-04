@@ -23,6 +23,7 @@ def read_json(path):
         return json.load(f)
 
 def upload():
+    # import here so that app works even if boto3 isn't installed
     import boto3
     from botocore.exceptions import EndpointConnectionError
     s3 = boto3.Session(**read_json("scanner.cred")).client("s3")
