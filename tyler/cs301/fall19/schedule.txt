@@ -301,7 +301,7 @@ Files and Directories
 Review Day
 <b>Evening Exam 2!</b><br>
 <b>Due</b>: P8<br>
-<b>Assigned</b>: Lab-P9a, P9<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p9a">Lab-P9a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p9">P9</a><br>
 
 =
 Pandas 1
