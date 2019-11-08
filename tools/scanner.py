@@ -92,6 +92,8 @@ def scanner(exam, direction):
     while True:
         who = input("Swipe (or type Campus ID or NetID): ").strip()
         m = re.match('s(\d{10})\dZ', who)
+        if m == None:
+            m = re.match('\;(\d{10})\d\?', who)
         if m:
             who = m.group(1)
         if who in student_lookup:
