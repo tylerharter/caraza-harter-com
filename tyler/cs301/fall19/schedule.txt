@@ -317,6 +317,7 @@ Pandas 1
 Pandas 2
 * practice
 <a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-30">code</a><br>
 
 ################################################################################
 # PART 3
