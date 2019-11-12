@@ -225,21 +225,6 @@
     "region": "C.W. OF IND. STATES"
   },
   {
-    "area": 322460,
-    "birth-rate": 35.11,
-    "coastline": 0.16,
-    "continent": "Africa",
-    "country": "Cote d'Ivoire",
-    "death-rate": 14.84,
-    "gdp-per-capita": 1400.0,
-    "infant-mortality": 90.83,
-    "literacy": "50,9",
-    "net-migration": -0.07,
-    "phones": "14,6",
-    "population": 17654843,
-    "region": "SUB-SAHARAN AFRICA"
-  },
-  {
     "area": 61,
     "birth-rate": 10.02,
     "coastline": 0.0,
