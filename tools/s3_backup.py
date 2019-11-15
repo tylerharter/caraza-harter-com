@@ -69,7 +69,7 @@ def main():
     paths = chunks(paths)
 
     print('parallel map')
-    with Pool(20) as p:
+    with Pool(1) as p:
         errors = p.map(download_chunk, paths)
 
     errors = [e for e in errors if e != None]

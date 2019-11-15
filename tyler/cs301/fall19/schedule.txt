@@ -339,6 +339,7 @@ Web 2
 * Intro to HTML
 * Generating HTML
 <a href="materials/lec-32.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-32">code</a><br>
 
 =
 Web 3
