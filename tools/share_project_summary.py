@@ -6,7 +6,7 @@ s3 = boto3.client('s3')
 
 TEST_NET_IDS = []
 
-LATE_DAY_ALLOCATION = 7
+LATE_DAY_ALLOCATION = 9
 
 def gen_html(prows, include_intro=True):
     cum_late = 0
@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>Here is your project summary, as of Oct 28:</p>
+    <p>Here is your project summary, as of Nov 15:</p>
     """
 
     if include_intro:
