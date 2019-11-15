@@ -47,12 +47,20 @@ def download_chunk(paths):
     return None
 
 def main():
+    keys_path = "s3_backup_keys.json"
+    
     prefix = ""
     if len(sys.argv) == 2:
         prefix = sys.argv[1]
 
     print('lookup keys')
-    paths = s3_all_keys(prefix)
+    if os.path.exists(keys_path):
+        with open(keys_path) as f:
+            paths = json.load(f)
+    else:
+        paths = s3_all_keys(prefix)
+        with open(keys_path, "w") as f:
+            json.dump(paths, f)
 
     print('filter based on prefix')
     paths2 = []
@@ -69,7 +77,7 @@ def main():
     paths = chunks(paths)
 
     print('parallel map')
-    with Pool(1) as p:
+    with Pool(32) as p:
         errors = p.map(download_chunk, paths)
 
     errors = [e for e in errors if e != None]
@@ -79,6 +87,8 @@ def main():
         print('ERRORS:')
         for e in errors:
             print(e)
+
+    os.remove(keys_path)
 
 if __name__ == '__main__':
     main()
