@@ -15,7 +15,7 @@ def gen_html(prows, include_intro=True):
     Dear Student,
     </p>
 
-    <p>Here is your project summary, as of Nov 15:</p>
+    <p>Here is your project summary, as of Nov 16:</p>
     """
 
     if include_intro:
