@@ -358,7 +358,7 @@ Database 1
 * Querying from Pandas
 <a href="materials/lec-34.pdf">Link to Slides</a><br>
 <b>Due</b>: P9<br>
-<b>Assigned</b>: P10, Lab-P10a<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10a">Lab-P10a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p10">P10</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-34">code</a><br>
 
 =
@@ -398,7 +398,7 @@ Plotting 2
 Plotting 3
 * bar plots
 <b>Reading</b>: same as for "Plotting 2"<br>
-<b>Assigned</b>: Lab-P10b<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10b">Lab-P10b</a>
 
 =
 Plotting 4
