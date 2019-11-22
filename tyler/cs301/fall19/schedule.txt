@@ -365,7 +365,7 @@ Database 1
 Database 2
 * aggregates
 * group by
-<b>No Slides</b>
+<b>No Slides</b><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>
 
 =
