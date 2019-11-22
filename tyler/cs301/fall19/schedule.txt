@@ -365,10 +365,8 @@ Database 1
 Database 2
 * aggregates
 * group by
-<a href="materials/lec-35.pdf">Link to Slides</a><br>
-<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/lecture.ipynb">Movie Notebook</a><br>
-<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/bus.ipynb">Bus Notebook</a><br>
-<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-34/bus-answers.ipynb">Bus Answers Notebook</a><br>
+<b>No Slides</b>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>
 
 =
 Database 3
