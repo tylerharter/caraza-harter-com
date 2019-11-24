@@ -369,19 +369,18 @@ Database 2
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>
 
 =
+Plotting 1
+* bar+scatter plots
+* plot design
+* AxesSublot
+<b>Reading</b>: Matplotlib Intro (<a href="readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
+
+=
 Database 3
 * Worksheets
 <a href="materials/lec-36-worksheet.pdf">Link to Worksheet</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/worksheet.ipynb">Database 3 - Worksheet Answers</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/lecture.ipynb">Database 3 - Perf Demo</a>
-
-=
-Plotting 1
-* pie charts
-* scatter plots
-* plot design
-* AxesSublot
-<b>Reading</b>: TBD<br>
 
 =
 Thanksgiving!<br>
