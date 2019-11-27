@@ -379,9 +379,8 @@ Plotting 1
 =
 Database 3
 * Worksheets
-<a href="materials/lec-36-worksheet.pdf">Link to Worksheet</a><br>
-<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/worksheet.ipynb">Database 3 - Worksheet Answers</a><br>
-<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/spring19/materials/code/lec-35/lecture.ipynb">Database 3 - Perf Demo</a>
+<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>
+<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br>
 
 =
 Thanksgiving!<br>
