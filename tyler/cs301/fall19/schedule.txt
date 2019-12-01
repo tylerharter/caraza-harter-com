@@ -389,7 +389,7 @@ Thanksgiving!<br>
 =
 Plotting 2
 * line plots
-<b>Reading</b>: TBD<br>
+<b>Reading</b>: Line and Advanced Bar Plots (<a href="readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 
 =
 Plotting 3
