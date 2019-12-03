@@ -402,7 +402,7 @@ Plotting 4
 * axes
 * adjacent plots
 * design decisions
-<b>Reading</b>: TBD<br>
+<b>Reading</b>: Axes and Plot Design (<a href="readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 
 =
 Randomness
