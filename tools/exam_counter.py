@@ -1,7 +1,7 @@
 import os, sys, json
 
 def main():
-    for exam in ["exam1", "exam2"]:
+    for exam in ["exam1", "exam2", "final"]:
         print("="*40)
         print(exam)
         print("="*40)
