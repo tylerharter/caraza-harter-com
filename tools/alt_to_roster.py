@@ -33,8 +33,11 @@ def main():
             if email in alts:
                 if row[exam] != alts[email]:
                     print("BEFORE", row)
-                    row[exam] = alts[email]
-                    print("AFTER", row)
+                row[exam] = alts.pop(email)
+
+    if len(alts):
+        print("UNMATCHED:")
+        print(", ".join(list(alts.keys())))
 
     with open('roster.json', 'w') as f:
         json.dump(roster, f, sort_keys=True, indent=2)
