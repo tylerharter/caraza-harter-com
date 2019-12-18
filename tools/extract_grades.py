@@ -28,7 +28,7 @@ class Grades:
     # val: days extended
     def get_extensions(self):
         extensions = ddict(int)
-        
+
         dirname = 'snapshot/%s/extensions/%s/' % (COURSE, self.project)
         for name in os.listdir(dirname):
             if not name.endswith(".json"):
@@ -65,19 +65,23 @@ class Grades:
 
 
     def get_student_grade(self, net_id):
-        grade = self.get_submission_grade(net_id, None)
+        grade = None
         links = sorted(self.get_proj_links(net_id))
-        for link in links:
+        for i, link in enumerate(links):
             with open(link) as f:
                 submission_dir = json.load(f)['symlink']
             grade2 = self.get_submission_grade(net_id, submission_dir)
+            grade2["latest_submission"] = (i == len(links) - 1)
             # only take a later submission over a prior one if the
             # score is better, because the earlier one will incur
             # fewer late days
-            if grade2["score"] > grade["score"]:
+            if grade == None or grade2["score"] > grade["score"]:
                 grade = grade2
         else:
             submission_dir = None
+
+        if grade == None:
+            grade = self.get_submission_grade(net_id, None)
 
         return grade
 
@@ -114,7 +118,7 @@ class Grades:
 
         return {"project": self.project, "net_id": net_id, "test_score": test_score,
                 "ta_deduction": ta_deduction, "score": score, "late_days": late_days,
-                "comment_count": comment_count, "code_review_url": cr_url}
+                "comment_count": comment_count, "ready": ready, "code_review_url": cr_url}
 
 
 def main():

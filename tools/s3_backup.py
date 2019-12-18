@@ -61,6 +61,8 @@ def main():
         paths = s3_all_keys(prefix)
         with open(keys_path, "w") as f:
             json.dump(paths, f)
+        print("Downloaded file list, please run again to fetch files")
+        return
 
     print('filter based on prefix')
     paths2 = []
