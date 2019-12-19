@@ -96,7 +96,6 @@ def scanner(exam, direction):
             m = re.match('\;(\d{10})\d\?', who)
         if m:
             who = m.group(1)
-        print(student_lookup)
         if who in student_lookup:
             location = student_lookup[who]
             if location != None:

@@ -19,7 +19,7 @@ def main():
         days = 999
     html = []
 
-    temp = pd.read_csv("~/g/cs301/f19/grades/canvas-v25.csv")
+    temp = pd.read_csv("~/g/cs301/f19/grades/canvas-v27.csv")
     temp["email"] = temp["SIS Login ID"].str.lower()
     temp.set_index("email", inplace=True)
     canvas = pd.DataFrame()
@@ -28,6 +28,8 @@ def main():
         if m:
             canvas[m.group(1).lower()] = 100.0 * temp[col] / temp[col].iloc[0]
 
+    summaries = {}
+            
     with open(path) as f:
         for row in csv.DictReader(f):
             email = row["Email Address"]
@@ -46,11 +48,19 @@ def main():
             if not re.match(r'\d+(\.\d+)?', expected) or float(expected) > actual:
                 html.append('<a href="%s">%s %s (expected=%s, actual=%d)</a><br>'
                             % (url, proj, email.replace("*at*", "@"), expected, actual))
+
+                url = 'https://tyler.caraza-harter.com/cs301/fall19/messages.html?topic=projects&student_email={}'
+                summaries[email] = ('<a href="%s">%s</a><br>' % (url, email.replace("*at*", "@")))
             print(url)
 
+    print("issues:", len(html))
+
+    html = ["<h1>Issues</h1>"] + sorted(html)
+    html.extend(["<h1>People</h1>"] + sorted(summaries.values()))
+
     with open("issues.html", "w") as f:
-        f.write("\n".join(sorted(html)))
-    print("lines:", len(html))
+        f.write("\n".join(html))
+    print("people:", len(summaries))
 
 if __name__ == '__main__':
     main()
