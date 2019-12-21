@@ -49,7 +49,7 @@ def main():
                 html.append('<a href="%s">%s %s (expected=%s, actual=%d)</a><br>'
                             % (url, proj, email.replace("*at*", "@"), expected, actual))
 
-                url = 'https://tyler.caraza-harter.com/cs301/fall19/messages.html?topic=projects&student_email={}'
+                url = 'https://tyler.caraza-harter.com/cs301/fall19/messages.html?topic=projects&student_email=%s' % email
                 summaries[email] = ('<a href="%s">%s</a><br>' % (url, email.replace("*at*", "@")))
             print(url)
 
