@@ -142,6 +142,7 @@ var common = {};
       return
     }
 
+    data["course"] = "b" // CS 320
     data["GoogleToken"] = googleAuth.id_token
     outstandingCalls += 1
     console.log("outstanding calls=%d", outstandingCalls)

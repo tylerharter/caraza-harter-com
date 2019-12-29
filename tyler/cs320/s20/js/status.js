@@ -14,9 +14,6 @@ var status = {};
         $("#section").html(data.body.section)
         $("#ta_name").html(data.body.ta_name)
         $("#ta_email").html(data.body.ta_email)
-        $("#exam1").html(data.body.exam1)
-        $("#exam2").html(data.body.exam2)
-        $("#final").html(data.body.final)
       })
     }
   }
