@@ -3,6 +3,7 @@ from multiprocessing import Pool
 
 BUCKET = 'caraza-harter-cs301'
 SKIP = ['logs/']
+SKIP = [] # TODO
 
 # return all S3 objects with the given key prefix, using as many
 # requests as necessary

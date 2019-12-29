@@ -1,7 +1,7 @@
 import os, sys, gzip, json
 
 def event_iter():
-    for root, _, files in os.walk("snapshot/logs/kinesis2018"):
+    for root, _, files in os.walk("snapshot/logs/kinesis2019/12"):
         for name in files:
             path = os.path.join(root, name)
             with gzip.GzipFile(path) as f:

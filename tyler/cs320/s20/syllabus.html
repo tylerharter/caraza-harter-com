@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Tyler R. Caraza-Harter</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="schedule.html">Data Programming II</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="submission.html">Projects</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="status.html">Who is my TA?</a>
+                <a class="dropdown-item" href="https://piazza.com/class/k4qcx66z8wy2lh?cid=7">Office Hours</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/k4qcx66z8wy2lh" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/191755" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="surveys.html">Class Surveys</a>
+                <a class="dropdown-item" href="http://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
+                <a class="dropdown-item" href="reviewer.html">TA Only</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Syllabus</h1>
+
+<p>Welcome to your Data Programming II!
+
+  <h3 class="mt-3">Additions To Syllabus Made During Semester</h3>
+
+<p>None yet...
+  
+  <h3 class="mt-3">Readings</h3>
+
+<p>We'll assign readings from three main sources this semester (all free).  Stay on top of them!</p>
+
+<ul>
+  <li><i>Think Python 2nd Edition</i> by Allen B. Downey: <a href="https://greenteapress.com/wp/think-python-2e/">Read Online</a>
+  <li><i>Automate the Boring Stuff with Python</i> by Al Sweigart: <a href="https://automatetheboringstuff.com/">Read Online</a>
+  <li>Course Notes (we'll sometimes write these ourselves)
+</ul>
+
+<h3>Getting Help</h3>
+
+There are a few ways to get help:
+<ul>
+  <li>Check for walk-in office hours (instructor and TA): go to "Resources" menu and click "Office Hours"
+  <li>Find your TA's name and email <a href="status.html">here</a>
+  <li>Email me at tharter@wisc.edu to schedule an appointment outside of office hour time
+</ul>
+
+<p>Unfortunately, we won't have peer mentors this first semester,
+because there's nobody who has previously taken the course that we
+could hire.  If you like helping people and do reasonable well in CS
+320, please consider applying (at the end of the semester) to be a
+peer mentor for this course in future semesters.  It pays $13/hour.
+
+  <h3>Online Communication</h3>
+
+<p>Besides email (described above), there are four ways we'll
+  communicate outside of class.
+
+<p><b>1. Piazza:</b> You can ask questions (and see the other
+  questions) <a href="https://piazza.com/class/jzkcu4am8lmc3">here</a>.  <span class="text-danger">Do
+    not post code snippets that are &gt;5 lines long, that's considered
+    cheating.</span>
+
+<p><b>2. Canvas:</b> We'll make announcements on Canvas and
+  periodically upload grades there (detailed feedback will only be on
+  this site, however)
+
+<p><b>3. Class Forms:</b> We have <a href="surveys.html">various
+    forms</a> for us to leave (optionally anonymous) feedback and report
+  exam conflicts.
+
+<p><b>4. Code Review:</b> You will upload projects
+  using <a href="submission.html">this tool</a>.  Via the same tool, TAs
+  will leave comments on your code.  <span class="text-danger">Even
+    projects scoring 100% often have a lot of room for improvement, so
+    please take these seriously</span>.  When submitting, you can ask for
+  specific kinds of feedback, based on what coding skills you're most
+  interested in developing.
+
+  <h3>Lab</h3>
+
+<p>Each week, we'll post a lab document with exercises you can work on
+  to solidify what we've covered in class.  Sometimes we'll also
+  introduce topics we didn't have time for in lecture.  The emphasis
+  will usually be on preparing for the project,
+  so <span class="text-danger">make sure you work through the weekly lab
+    before asking us for help on the project</span>.
+
+<p>Lab exercises are ungraded, and you're free to do them from home.
+  However, we encourage you to do them during your scheduled lab time.
+  This gives you an opportunity meet other 32 students and to get help
+  from the TAs and mentors running the lab.  You can also use this time
+  to ask questions about the projects or other course material if you
+  like.
+
+<p>We encourage you to work on your own laptops, but the labs have
+  some Windows desktops you can use if you prefer.  In order to sign
+  onto the lab machines, you'll need
+  to <a href="https://csl.cs.wisc.edu/account_management/computer-sciences-account-activation">activate
+    your CS account</a>.</p>
+
+<h3>Grading</h3>
+
+<p>Grading is based six projects, each worth 10% of your grade, and
+two exams, each worth 20% of your grade.
+
+<p>At the end of the semester, we'll look at the distribution of
+  scores and set a curve, with thresholds for each letter grade.  When
+  setting the curve, we'll guarantee the following:
+
+  <ul>
+    <li>at least 95% guarantees an <b>A</b>
+    <li>at least 85% guarantees a <b>B</b> (or better)
+    <li>at least 70% guarantees a <b>C</b> (or better)
+    <li>at least 60% guarantees a <b>D</b> (or better)
+  </ul>
+
+  <h3>Exams</h3>
+
+<p>Exams are closed-book and closed-laptop.  The exams will be
+  multiple-choice scantron (use a #2 pencil).  They are cumulative.
+
+<p>You will be allowed one 8.5-by-11 inch notesheet (may be printed or
+  written on both sides), which you must turn in with your exam.
+
+<p>We'll schedule a McBurney exam with 1.5x time accomodations.  Feel
+  free to email us if you need other accomodations. More information
+  about McBurney is <a href="mcburney.html">here</a>.
+  
+<p>Exam Times:
+  <ul>
+    <li><b>Midterm:</b> TBD
+    <li><b>Final:</b> TBD
+  </ul>
+
+<p>Find your location <a href="status.html">here</a>.  Report any exam
+  conflicts at least 10 days in
+  advance <a href="surveys.html">here</a>.
+
+  <h3>Projects</h3>
+
+<p><b>Late Policy:</b> You will have 7 late days, which you can use
+  across projects at your own discretion.  You may use all your late
+  days on the same project, if you like.  Using late days on a project
+  does not defer the deadline for subsequent projects, so be careful
+  not to let work pile up.  You <b>may not</b> use late days on the
+  last project.  Late days are automatically applied if a project is
+  turned in late.  After late days are exhausted, anything late will
+  receive zero credit by default.  Please talk to me if you're falling
+  this far behind.
+
+<p><b>Partners:</b> You may work alone, or with one project partner of
+  your choosing.  You can partner with different people for different
+  projects if you like.  You may also partner with people in a
+  different section of CS 320.  You and your partner should program in
+  pairs (two people sitting in front of a screen at the same time).
+  Take turns driving (i.e., writing code) and giving advice.  The
+  point of partners is to learn from your peers, not to do half the
+  work.  Some exam questions will be specifically written to find
+  cases where a one partner does the work and the other partner does
+  not understand what is going on.
+
+<p><b>Submission:</b> You will upload either a .py file or a .ipynb
+  (as specified) file for each project with
+  the <a href="submission.html">submission tool</a>.  Only one partner
+  should upload the project on behalf of both people.  If you have any
+  issues using the tool, make sure you're using the latest version of
+  Chrome, because that is the only browser I support (and if that
+  doesn't work, I'll help you troubleshoot).
+
+<p><b>Code Review:</b> A TA will give you detailed comments on
+  specific parts of your assignment.  This feedback process is called
+  a "code review", and is a common requirement in industry before a
+  programmer is allowed to add her code changes to the main codebase.
+  Read your code reviews carefully; even if you receive 100% on your
+  work, we'll often give you tips to save effort in the future.
+
+<p><b>Project Grading:</b> Grades will be based on automatic tests
+  that we run.  We'll share the tests with you before the due date, so
+  you should rarely be surprised by your grade.  Here are the cases
+  where you might get a different final grade than what you see when
+  you run the tests:
+
+  <ol>
+    <li><b>Configuration Issues:</b> There are ways to write code that
+      will only work on certain computers (e.g., Windows but not on a
+      Mac).  We'll talk about these cases in class and teach you to
+      write code that should be able to run anywhere.  If you make a
+      mistake that makes the tests fail for us even though you passed
+      them yourself, we'll let you resubmit a corrected version (in a
+      timely fashion).  You should also check with us before using any
+      pip packages that we may not support.
+    <li><b>Randomness:</b> There are some bugs in code that don't
+      causes problems every time, resulting in tests sometimes failing
+      and sometimes passing.  As in the "Configuration Issues" case,
+      we'll work with you to let you fix the issue.
+    <li><b>Cheating:</b> obviously if you cheated (e.g., copied
+      another student's code), the tests are irrelevant, and you have
+      much bigger things to worry about than your grade on a particular
+      assignment.
+    <li><b>Faking:</b> sometimes, we will specify that you solve a
+      problem in a specific way (so that you learn a particular skill).
+      If, upon inspection of your code, we see you solved the problem in
+      a way that doesn't meet the project specification, you'll lose
+      points on that project (even if our automatic tests already
+      tentatively gave you a better score).  Or, if your code is written
+      specifically to defeat the tests, you'll lose points
+      (see <a href="https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal">this
+        wikipedia article</a> for an example of a defeat device in the
+      real world).  For example, suppose your program is supposed to
+      take the length of a square's side as input and then output the
+      area of a square, and we have a test that verifies your program
+      outputs 100 when we input 10.  If you submit a program that always
+      outputs 100 (regardless of the input) because you know we only
+      test with 10, you'll lose points.
+    <li><b>Being a bad partner:</b> if your partner complains that you
+      didn't do any work (or that you did all the work, refusing to let
+      your partner write any code), you may lose points (we'll meet with
+      you first to hear your side, of course).
+  </ol>
+
+<p>Project grading is <b>results-oriented</b>.  That means it doesn't
+  matter how much effort you put it; it only matters how well your code
+  works.  This means it is essential that your code runs.  If we can't
+  run your code for a project, you'll get a zero on that project,
+  because the tests will fail.  We'll never fix the code for you, and
+  we'll never manually give a better grade for code that "looks" almost
+  correct.
+
+  <h3>Cheating</h3>
+
+<p>Yeah, of course you shouldn't cheat, but what is cheating?  The
+  most common form of academic misconduct in these classes involves
+  copying/sharing code for programming projects.  Here's an overview
+  of what you can and cannot do:
+
+<p><b>Acceptable</b>
+  <ul>
+    <li>any collaboration with your project partner
+    <li>talking about code (without looking at it or reading it aloud) with anybody
+    <li>sharing pseudocode/diagrams with anybody
+    <li>pointing friends to online resources (Piazza, Stackoverflow, etc.)
+    <li>doing worksheets with friends
+    <li>copying code examples from online examples that is NOT specific to your project (if project solutions are leaked online, you may not use that).  If you copy code, you must cite it in your code with a comment (think of it like citing a quote in a essay -- without the cite, you're plagarizing).
+  </ul>
+
+<p><b>NOT Acceptable</b>
+  <ul>
+    <li>looking at somebody else's project code and typing it line-by-line
+    <li>copying/pasting code to/from a non-partner (with or without citation)
+    <li>emailing your code to another student
+    <li>taking pictures of project solutions
+    <li>accessing project code from previous semesters
+  </ul>
+
+<p>One action that students wonder about is whether it's acceptable to
+  LOOK at another student's code.  While this is not strictly
+  forbidden, it's often dangerous.  Many students find it difficult to
+  look without ultimately copying.  What's somewhat safer is when a
+  student who has completed a problem looks at the code of a student
+  still working on the problem.  In this case, the more-advanced
+  student can often provide useful advice and debugging tips that help
+  the less-advanced student without causing the less-advanced student
+  to copy code.  Just make sure the more-advanced student isn't
+  telling the less-advanced student exactly what to type, line by
+  line.  The more advanced student shouldn't be looking back at their
+  own code either during this.
+
+<p><b>Similarity Detection:</b> of course, with &gt;100 students, it's
+  hard for a human TA to notice similar code across two submissions.
+  Thus, we use automated tools to looks for similarities across
+  submissions.  Such similarity detection is an active area of computer
+  science research, and the result is tools that detect code copying
+  even when students methodically rename all variables and shuffle the
+  order of their code.  We take cheating detection seriously to make the
+  course fair to students who put in the honest effort.
+
+<p><b>Citing Code:</b> you can copy small snippets of code from
+  stackoverflow (and other online references) if you cite them.  For
+  example, suppose I need to write some code that gets the median number
+  from a list of numbers.  I might search for "how to get the median of
+  a list in python" and find a solution
+  at <a href="https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python">https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python</a>.
+
+<p>I could (legitimately) post code from that page in my code, as long as
+  it has a comment as follows:
+
+  <pre class="example">
+    # copied from https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python
+    def median(lst):
+    sortedLst = sorted(lst)
+    lstLen = len(lst)
+    index = (lstLen - 1) // 2
+
+    if (lstLen % 2):
+    return sortedLst[index]
+    else:
+    return (sortedLst[index] + sortedLst[index + 1])/2.0
+  </pre>
+
+<p>In contrast, copying from a nearly complete project (that
+  accomplishes what you're trying to do for your project) is not OK.
+  When in doubt, ask us!  The best way to stay out of trouble is to be
+  completely transparent about what you're doing.
+
+  <h3>Recommendation Letters</h3>
+
+<p>Earning a recommendation letter is much harder than earning an A in
+this course.  I'll want to see you doing something complex and
+interesting beyond the assingments.  Most grad schools require
+recommenders to fill long forms rating students on various abilities,
+as below.  Make sure that if you're asking me, I would be able to fill
+such a form without needing to put "I don't know" as my answer to most
+  questions.
+
+  <img src="imgs/rec-letters.png">
+  
+  <br><br>
+
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2020 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>

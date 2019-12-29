@@ -19,7 +19,7 @@ def main():
         days = 999
     html = []
 
-    temp = pd.read_csv("~/g/cs301/f19/grades/canvas-v27.csv")
+    temp = pd.read_csv("~/g/cs301/f19/grades/canvas-v35.csv")
     temp["email"] = temp["SIS Login ID"].str.lower()
     temp.set_index("email", inplace=True)
     canvas = pd.DataFrame()
@@ -33,25 +33,31 @@ def main():
     with open(path) as f:
         for row in csv.DictReader(f):
             email = row["Email Address"]
+            partner = row["If you have a partner who was also affected, you can fill their wiscmail (netid@wisc.edu) address here so they don't need to submit a separate form."]
             proj = row["Which Project?"].lower()
             expected = row['What score (out of 100) do you think you should get?']
             actual = canvas.loc[email, proj]
+
+            partner = partner.strip().lower()
+            if partner:
+                if not partner.endswith("@wisc.edu"):
+                    partner += "@wisc.edu"
+                partner_actual = canvas.loc[partner, proj]
+                assert actual == partner_actual
+
             s3_path = '%s/extensions/%s/%s.json' % (COURSE, proj, email.replace("@", "*at*"))
             body = {"approver":"script", "days":days}
             body = bytes(json.dumps(body), 'utf-8')
-            s3.put_object(Bucket=BUCKET, Key=s3_path, Body=body, ContentType='text/plain')
-            print(s3_path)
+            #s3.put_object(Bucket=BUCKET, Key=s3_path, Body=body, ContentType='text/plain')
 
             url = 'https://tyler.caraza-harter.com/cs301/fall19/code_review.html?project_id={}&student_email={}'
             url = url.format(proj, email)
-
-            if not re.match(r'\d+(\.\d+)?', expected) or float(expected) > actual:
+            if float(expected) > actual:
                 html.append('<a href="%s">%s %s (expected=%s, actual=%d)</a><br>'
                             % (url, proj, email.replace("*at*", "@"), expected, actual))
 
                 url = 'https://tyler.caraza-harter.com/cs301/fall19/messages.html?topic=projects&student_email=%s' % email
                 summaries[email] = ('<a href="%s">%s</a><br>' % (url, email.replace("*at*", "@")))
-            print(url)
 
     print("issues:", len(html))
 
