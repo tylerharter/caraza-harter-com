@@ -5,28 +5,29 @@
 Martin Luther King Day!<br>
 <b>No Class</b>
 
+# LAB 1: AWS + Vagrant setup
+
 =
-Intro + Environment
-* modules, sys.path, venv
-* lab: https://docs.python.org/3/tutorial/venv.html
-* requirements.txt
-* editors
+Reproducibility 1
+* Course Overview
+* Hardware, OS, Interpreters
 =
-Testing 1
+Reproducibility 2
+* versioning
+* git
+
+# LAB 2: git practice
+
+=
+Quantifying Perf 1
+* time
+* subprocess
 * regression testing
-* correctness and perf
-* git commits
-* time.time(), check_output
 =
-Testing 2
-* more git (actually using it)
-* using pandas to compute+plot stddev range
-=
-Scalability 1
-* measurement-driven
+Quantifying Perf 2
 * complexity theory: big-O, worst-case, const factors
 =
-Scalability 2
+Quantifying Perf 3
 * worksheet
 =
 OOP 1: Classes
