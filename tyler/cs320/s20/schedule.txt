@@ -11,6 +11,9 @@ Martin Luther King Day!<br>
 Reproducibility 1
 * Course Overview
 * Hardware, OS, Interpreters
+<a href="materials/lec-01.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+
 =
 Reproducibility 2
 * versioning

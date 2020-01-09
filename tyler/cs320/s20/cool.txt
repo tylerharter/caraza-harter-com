@@ -1,0 +1,4 @@
+- walk through AWS
+- implement enumerate (enumerate_pairs)
+- HTML in notebook
+- sys.path

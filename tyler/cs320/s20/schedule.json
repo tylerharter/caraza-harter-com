@@ -1,0 +1,8 @@
+{
+    "events":{},
+    "sections":{
+      "1": ["Part 1: Quantifying and Improving Performance"],
+      "6": ["Part 2: Tracing and Evaluating Data Applications"],
+      "11": ["Part 3: Pre-Machine Learning"]
+    }
+}
