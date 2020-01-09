@@ -40,7 +40,12 @@ code {
 
 .week {
     font-size: 16pt;
-    text-align: center;
+    text-align: left;
+    color: white;
+    background-color: black;
+    border: 0px;
+    border-left: 6px solid red;
+    border-right: 6px solid red;
 }
 
 .compact-ul {
@@ -88,4 +93,8 @@ div.nb_cell {
     padding: 4pt;
     border: 2px solid red;
     overflow: auto;
+}
+
+.bg-custom {
+    background-color: #D50000;
 }
