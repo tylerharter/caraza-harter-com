@@ -1,0 +1,44 @@
+a list is an example of a data structure
+
+What is a data structure?  [wikipedia]
+
+a data structure is a collection of data values,
+the relationships among them,
+and the functions or operations that can be applied to the data
+
+========================================
+
+Motivation for data structures
+ - don't want to repeat code to perform more computation
+ - don't want to create more variables to hold more data
+
+========================================
+
+talk about mappings
+ - assign labels to values
+ - label could be an "index", or a "key"
+ - motivation for an alternative to lists:
+   - what if we don't want consecutive ints?
+   - what if we want floats or strings as labels?
+
+========================================
+
+introducing the dictionary
+ - a mapping (like a list), but label (called a "key" instead of an "index" can be arbitrary)
+ - naming: lookup word (key) in dictionary to get a definition (value)
+
+========================================
+
+dictionary operations
+ - {}, {"key": "value"}
+ - d[key]          # lookup
+ - d[key] = value  # set/update
+
+========================================
+
+Examples:
+ - score.py example (want string labels instead of int labels)
+ - per_year.py example (want holes in the data)
+ - wc.py example (talk about binning/bucketing)
+ - translate.py (English to Spanish)
+ - cache.py (remember result for is_prime)

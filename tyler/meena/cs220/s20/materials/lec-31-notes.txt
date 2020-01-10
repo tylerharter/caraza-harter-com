@@ -1,0 +1,34 @@
+motivation
+ - lots of online datasets
+ - for download
+ - available via RPC
+
+client/server
+ - IP address, port number, domain name
+ - request/response
+
+HTTP
+ - https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+ - URL
+ - GET/POST/ETC
+ - status codes
+
+GET (with requests)
+ - note about robots.txt file
+ - pip install requests (already with Anaconda)
+ - r = requests.get(URL)
+ - r.status_code
+ - r.raise_for_status()
+ - r.text
+ - r.json()
+
+DEMO 1: web scraping
+
+POST (with requests)
+ - remote procedure calls
+ - r = requests.post(URL, data={})
+ - http://18.216.110.65
+
+DEMO 2: online chat
+ - read_messages
+ - send_message

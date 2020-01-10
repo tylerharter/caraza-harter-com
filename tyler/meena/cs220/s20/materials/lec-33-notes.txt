@@ -1,0 +1,35 @@
+Introduce DOM (Document Object Model)
+
+an element contains:
+  text
+  attributes
+  other elements (called children)
+
+========================================
+
+pip install beautifulsoup4
+
+========================================
+
+different applications use HTML differently
+
+========================================
+
+from bs4 import BeautifulSoup
+page = BeautifulSoup(html, 'html.parser')
+page is an element
+
+element.prettify()
+
+element.find_all('p') # or other tag
+element.find()
+
+e.get_text()
+e.children()
+e.attrs
+
+========================================
+
+robots.txt
+
+========================================

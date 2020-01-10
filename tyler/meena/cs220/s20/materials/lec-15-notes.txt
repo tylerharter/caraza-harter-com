@@ -1,0 +1,79 @@
+========================================
+
+a list is a sequence(s)
+s = "abcd"
+l = [22, 11, 33, 44]
+
+talk about syntax
+ - create a list
+ - indexing [100, 200, 300][1]
+ - for loop
+
+for loop works for this too
+
+CODING EXAMPLE: list_total function
+ - tell them about sum, min, and max after
+
+========================================
+
+other things that work the same:
+ - len
+ - concatenation
+ - in
+ - multiply sequence by int
+
+========================================
+
+DIFF 1: flexible item types
+
+l = [True, False, 3, "hey", [1, 2]]
+for item in l:
+  print(type(l))
+
+talk about this: l[-1][-1]
+
+========================================
+
+DIFF 2: mutability
+
+you can't change a string (immutable)
+you can change a list (mutable)
+
+s[i] = ... (ERROR!)
+
+ways to change a list:
+ - l[i] = ...
+ - append
+ - pop
+ - sort
+
+CODING EXAMPLE: calculate median
+
+========================================
+
+between lists and strings
+ - l = list(s)
+ - split
+ - join
+
+CODING EXAMPLE: profanity filter, replace "darn" with "****"
+
+========================================
+
+BONUS TOPICS IF TIME:
+ - sys.argv
+ - random.choice
+
+Do this in PythonTutor:
+
+def set_first(items, value):
+    value = value +  1  # change value
+    items[0] = value    # change items
+
+l = [3, 2, 1]
+x = 100
+set_first(l, x)
+print(x)  # value is not changed
+print(l)  # l is changed
+
+========================================
