@@ -19,7 +19,7 @@ var common = {};
 
 (function() {
   common.signinCallback = null
-  var lambdaUrl = "https://1y4o8v9snh.execute-api.us-east-2.amazonaws.com/default/cs301"
+  var lambdaUrl = "https://i1r1wjv6i0.execute-api.us-east-2.amazonaws.com/default/cs301"
   var lambdaTestUrl = "https://5dthhwkgxl.execute-api.us-east-2.amazonaws.com/default/cs301"
   var lambdaPytutorUrl = "https://rx46bs1jm4.execute-api.us-east-2.amazonaws.com/default/cs301"
   var outstandingCalls = 0
