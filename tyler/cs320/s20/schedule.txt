@@ -3,9 +3,8 @@
 ################################################################################
 
 Martin Luther King Day!<br>
-<b>No Class</b>
-
-# LAB 1: AWS + Vagrant setup
+<b>No Class</b><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab1/README.md">WEEKLY LAB: Cloud Setup</a><br>
 
 =
 Reproducibility 1

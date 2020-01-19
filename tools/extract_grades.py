@@ -30,6 +30,8 @@ class Grades:
         extensions = ddict(int)
 
         dirname = 'snapshot/%s/extensions/%s/' % (COURSE, self.project)
+        if not os.path.exists(dirname):
+            return extensions
         for name in os.listdir(dirname):
             if not name.endswith(".json"):
                 continue
