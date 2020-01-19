@@ -38,11 +38,9 @@ OOP 1: Classes
 OOP 2: Py Data Model
 * special data methods
 =
-OOP 3: Polymorphism
-* inheritance, mention MRO
-* duck typing
-* performance of different implementations:
-   hash table vs. naive lookup structure
+OOP 3: Inheritance
+* method resolution order
+
 =
 OOP 4: Practice
 * worksheets?  Demos?
@@ -153,28 +151,28 @@ Parallelism 1
 * parallel map
 =
 Parallelism 2
-* pytorch/dask/tensorflow?
+* pytorch
 =
 Parallelism 3
-* pytorch/dask/tensorflow?
+* pytorch
 <b>Due:</b> P5<br>
 =
-Classification 1
+Supervised Learning 1
 * TODO
 =
-Classification 2
+Supervised Learning 2
 * TODO
 =
-Classification 3
+Supervised Learning 3
 * TODO
 =
-Clustering 1
+Unsupervised Learning 1
 * k-means
 =
-Clustering 2
+Unsupervised Learning 2
 * hierarchical
 =
-Clustering 3
+Unsupervised Learning 3
 * visualization
 <b>Due:</b> P6<br>
 =
