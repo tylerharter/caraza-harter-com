@@ -17,6 +17,8 @@ Reproducibility 1
 Reproducibility 2
 * versioning
 * git
+<a href="materials/lec-02.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
 
 # LAB 2: git practice
 
