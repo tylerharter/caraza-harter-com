@@ -18,6 +18,7 @@ Reproducibility 2
 * versioning
 * git
 <a href="materials/lec-02.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+Noland132+1.24.2020+09.54.47AM/1_sv9nj3ue">VIDEO</a><br>
 <b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
 
 # LAB 2: git practice
