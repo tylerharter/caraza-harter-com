@@ -28,9 +28,12 @@ Quantifying Perf 1
 * time
 * subprocess
 * regression testing
+
 =
 Quantifying Perf 2
 * complexity theory: big-O, worst-case, const factors
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p1">P1</a><br>
+
 =
 Quantifying Perf 3
 * worksheet
