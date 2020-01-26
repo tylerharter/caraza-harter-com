@@ -25,13 +25,14 @@ Reproducibility 2
 
 =
 Quantifying Perf 1
+* check_output
 * time
-* subprocess
-* regression testing
+<b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
 
 =
 Quantifying Perf 2
 * complexity theory: big-O, worst-case, const factors
+<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p1">P1</a><br>
 
 =
