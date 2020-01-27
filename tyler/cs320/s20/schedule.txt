@@ -25,6 +25,7 @@ Reproducibility 2
 Quantifying Perf 1
 * check_output
 * time
+<a href="lectures/lec3-morning.ipynb">LECTURE NB</a>
 <b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab2/README.md">WEEKLY LAB: Git Practice</a><br>
 
