@@ -21,13 +21,12 @@ Reproducibility 2
 <a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+Noland132+1.24.2020+09.54.47AM/1_sv9nj3ue">VIDEO</a><br>
 <b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
 
-# LAB 2: git practice
-
 =
 Quantifying Perf 1
 * check_output
 * time
 <b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab2/README.md">WEEKLY LAB: Git Practice</a><br>
 
 =
 Quantifying Perf 2
