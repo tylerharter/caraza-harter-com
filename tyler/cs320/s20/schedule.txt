@@ -32,6 +32,7 @@ Quantifying Perf 1
 =
 Quantifying Perf 2
 * complexity theory: big-O, worst-case, const factors
+<a href="materials/lec-04.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p1">P1</a><br>
 
