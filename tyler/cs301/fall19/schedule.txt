@@ -2,7 +2,7 @@
 # PART 1
 ################################################################################
 
-MLK Day!<br>
+Labor Day!<br>
 <b>No Class</b>
 
 =
@@ -264,16 +264,6 @@ Recursive Functions
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-23">code</a><br>
 
 =
-Spring Break!
-<b>No Class</b>
-=
-Spring Break!
-<b>No Class</b>
-=
-Spring Break!
-<b>No Class</b>
-=
-
 Function References
 * map
 * sort
@@ -391,6 +381,10 @@ Database 3
 * Worksheets
 <a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>
 <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br>
+
+=
+Thanksgiving!<br>
+<b>No Class</b>
 
 =
 Plotting 2
