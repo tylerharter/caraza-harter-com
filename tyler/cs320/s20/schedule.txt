@@ -54,6 +54,7 @@ OOP 1: Classes
 * attributes
 * methods
 * constructors
+<a href="materials/lec-06.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
 <b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
 
