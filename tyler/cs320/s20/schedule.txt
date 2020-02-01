@@ -47,6 +47,7 @@ Quantifying Perf 3
 <a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
 <a href="lectures/lec5-examples.ipynb">NOTEBOOK</a><br>
 <a href="materials/lec-05.html">EXAMPLES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+1.31.2020+2.25.11PM/0_65ioa21k">VIDEO</a><br>
 =
 
 OOP 1: Classes
@@ -54,6 +55,7 @@ OOP 1: Classes
 * methods
 * constructors
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
+<b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
 
 =
 OOP 2: Py Data Model
