@@ -50,13 +50,20 @@ Quantifying Perf 3
 =
 
 OOP 1: Classes
-* attributes, methods, constructors
+* attributes
+* methods
+* constructors
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
+
 =
 OOP 2: Py Data Model
-* special data methods
+* special methods
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+
 =
 OOP 3: Inheritance
 * method resolution order
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 
 =
 OOP 4: Practice
