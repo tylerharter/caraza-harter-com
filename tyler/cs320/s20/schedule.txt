@@ -48,8 +48,8 @@ Quantifying Perf 3
 <a href="lectures/lec5-examples.ipynb">NOTEBOOK</a><br>
 <a href="materials/lec-05.html">EXAMPLES</a><br>
 <a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+1.31.2020+2.25.11PM/0_65ioa21k">VIDEO</a><br>
-=
 
+=
 OOP 1: Classes
 * attributes
 * methods
