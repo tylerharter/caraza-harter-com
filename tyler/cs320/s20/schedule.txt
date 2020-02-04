@@ -54,9 +54,11 @@ OOP 1: Classes
 * attributes
 * methods
 * constructors
+<a href="lectures/lec6-classes.ipynb">NOTEBOOK</a><br>
 <a href="materials/lec-06.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
 <b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab3/README.md">WEEKLY LAB: Complexity</a><br>
 
 =
 OOP 2: Py Data Model
