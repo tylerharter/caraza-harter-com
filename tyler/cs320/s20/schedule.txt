@@ -67,6 +67,7 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 * __eq__, __lt__
 * __len__, __getitem__
 * __enter__, __exit__
+<a href="materials/lec-07.pdf">SLIDES</a><br>
 <a href="lectures/lec7-tests.txt">TEST CASES</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
 <b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
