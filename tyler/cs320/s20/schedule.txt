@@ -56,6 +56,7 @@ OOP 1: Classes
 * constructors
 <a href="lectures/lec6-classes.ipynb">NOTEBOOK</a><br>
 <a href="materials/lec-06.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.3.2020+2.25.08PM/1_9fehf8zg">VIDEO</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
 <b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab3/README.md">WEEKLY LAB: Complexity</a><br>
