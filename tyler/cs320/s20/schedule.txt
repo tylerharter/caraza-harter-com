@@ -62,9 +62,14 @@ OOP 1: Classes
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab3/README.md">WEEKLY LAB: Complexity</a><br>
 
 =
-OOP 2: Py Data Model
-* special methods
+OOP 2: <span style="font-size:90%">Special Methods</span>
+* __str__, __repr__, _repr_html_
+* __eq__, __lt__
+* __len__, __getitem__
+* __enter__, __exit__
+<a href="lectures/lec7-tests.txt">TEST CASES</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+<b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
 
 =
 OOP 3: Inheritance
