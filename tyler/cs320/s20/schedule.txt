@@ -77,6 +77,9 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 =
 OOP 3: Inheritance
 * method resolution order
+* overriding methods
+* calling overridden methods
+<a href="materials/lec-08.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 
 =
