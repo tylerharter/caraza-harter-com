@@ -84,8 +84,11 @@ OOP 3: Inheritance
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 
 =
-OOP 4: Practice
-* worksheets?  Demos?
+Review + Practice
+* Inheritance
+* Recursion
+<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+
 =
 Trees 1
 * review recursion
