@@ -17,33 +17,80 @@ Reproducibility 1
 Reproducibility 2
 * versioning
 * git
-
-# LAB 2: git practice
+<a href="materials/lec-02.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+Noland132+1.24.2020+09.54.47AM/1_sv9nj3ue">VIDEO</a><br>
+<b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
 
 =
 Quantifying Perf 1
+* check_output
 * time
-* subprocess
-* regression testing
+<a href="lectures/lec3-morning.ipynb">LECTURE NB</a><br>
+<a href="https://mediaspace.wisc.edu/media/%5BAUDIO%2C+NO+VIDEO%5D+Tyler+Caraza-Harter-+SocialScience5206+1.27.2020+2.25.14PM/0_kbpblqaf">AUDIO (NO VIDEO)</a><br>
+<b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab2/README.md">WEEKLY LAB: Git Practice</a><br>
+
 =
 Quantifying Perf 2
-* complexity theory: big-O, worst-case, const factors
+* complexity analysis
+* Big O
+<a href="lectures/lec4-big-o-start.ipynb">LECTURE NB STARTER</a><br>
+<a href="materials/lec-04.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+1.29.2020+2.25.10PM/0_9cly8bcl">VIDEO</a><br>
+<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p1">P1</a><br>
+
 =
 Quantifying Perf 3
-* worksheet
+* practice
+<a href="materials/lec-05-worksheet.key.pdf">WORKSHEET</a><br>
+<a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
+<a href="lectures/lec5-examples.ipynb">NOTEBOOK</a><br>
+<a href="materials/lec-05.html">EXAMPLES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+1.31.2020+2.25.11PM/0_65ioa21k">VIDEO</a><br>
+
 =
 OOP 1: Classes
-* attributes, methods, constructors
+* attributes
+* methods
+* constructors
+<a href="lectures/lec6-classes.ipynb">NOTEBOOK</a><br>
+<a href="materials/lec-06.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.3.2020+2.25.08PM/1_9fehf8zg">VIDEO</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
+<b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab3/README.md">WEEKLY LAB: Complexity</a><br>
+
 =
-OOP 2: Py Data Model
-* special data methods
+OOP 2: <span style="font-size:90%">Special Methods</span>
+* __str__, __repr__, _repr_html_
+* __eq__, __lt__
+* __len__, __getitem__
+* __enter__, __exit__
+<a href="lectures/lec7-special-methods.ipynb">NOTEBOOK</a><br>
+<a href="materials/lec-07.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.5.2020+2.25.18PM/0_z0m46x2n">VIDEO</a><br>
+<a href="lectures/lec7-tests.txt">TEST CASES</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+<b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
+
 =
 OOP 3: Inheritance
 * method resolution order
+* overriding methods
+* calling overridden methods
+<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
+<a href="lectures/lec8-inheritance-examples.ipynb">NOTEBOOK</a><br>
+<a href="materials/lec-08.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.7.2020+2.25.11PM/0_2sqk0ukr">VIDEO</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 
 =
-OOP 4: Practice
-* worksheets?  Demos?
+Review + Practice
+* Inheritance
+* Recursion
+<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+
 =
 Trees 1
 * review recursion

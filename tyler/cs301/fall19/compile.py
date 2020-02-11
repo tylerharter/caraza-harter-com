@@ -43,8 +43,8 @@ def schedule():
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Course Schedule</h1>\n')
 
-    start_date = date(2020, 1, 20)
-    end_date = date(2020, 5, 1)
+    start_date = date(2019, 9, 2)
+    end_date = date(2019, 12, 11)
     day_count = (end_date - start_date).days + 1
 
     cells = []

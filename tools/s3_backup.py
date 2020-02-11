@@ -7,7 +7,7 @@ SKIP = ['logs/']
 # return all S3 objects with the given key prefix, using as many
 # requests as necessary
 def s3_all_keys(Prefix):
-    session = boto3.Session(profile_name='cs301ta')
+    session = boto3.Session(profile_name='cs301taBAD')
     s3 = session.client('s3')
 
     ls = s3.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)

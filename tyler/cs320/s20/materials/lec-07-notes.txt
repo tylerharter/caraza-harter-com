@@ -1,0 +1,23 @@
+__init__: constructor to initialize attributes
+
+String Representation: Dog Example
+__str__: how it looks to non-programmers
+__repr__: how it looks to programmers (suggestion: print code snippet that could create the object)
+_repr_html_: 
+
+Comparison+Sorting: Dog Example
+__eq__
+__lt__
+
+Sequences: Range Example
+__len__
+__getitem__
+IndexError
+NotImplementedYet
+
+Series:
+__setitem__
+
+Context Managers: DoubleFont Example
+__enter__
+__exit__
