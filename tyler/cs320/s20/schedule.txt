@@ -90,6 +90,7 @@ Review + Practice
 * Inheritance
 * Recursion
 <a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab4/README.md">WEEKLY LAB: Linked Lists and Zips</a><br>
 
 =
 Trees 1
