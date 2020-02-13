@@ -127,6 +127,7 @@ Regex 1
 Regex 2
 * worksheet
 <b>Due:</b> P2<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p2">P2</a><br>
 =
 Web 1: Flask
 * review from CS 220
