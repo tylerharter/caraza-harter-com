@@ -97,7 +97,7 @@ Review + Practice
 Trees 1
 * review recursion
 * build, print trees
-NO VIDEO(<br>
+NO VIDEO :(<br>
 <b>Read</b>: <a href="reading/lec-10-graphs.html">HTML</a><br>
 <b>Due:</b> P1<br>
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p2">P2</a><br>
@@ -107,6 +107,7 @@ Trees 2
 * search trees, balance
 * point lookup vs. range query
 <b>Read</b>: <a href="reading/lec-11-search-trees.html">HTML</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.14.2020+2.25.12PM/0_4gi67c53">VIDEO</a><br>
 
 =
 Graphs 1
