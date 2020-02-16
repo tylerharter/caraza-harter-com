@@ -1,0 +1,10 @@
+1. implementing graphs [SLIDES]
+2. example: BST (talk about balancing!)
+3. using BST to create a dict
+4. general graph search (DFS)
+5. strftime documentation
+
+Lab:
+ - tree practice
+ - queue, perf measures
+ - strftime
