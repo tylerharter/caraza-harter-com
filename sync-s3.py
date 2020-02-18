@@ -82,6 +82,8 @@ class Syncer:
             ContentType = mimetypes.guess_type(local_path)[0]
             if ContentType == None:
                 ContentType = 'string'
+            if local_path.endswith(".ipynb"):
+                ContentType = "application/octet-stream"
             if not self.dry:
                 s3.put_object(Bucket=self.bucket,
                               Key=s3_path,
