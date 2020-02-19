@@ -95,6 +95,7 @@ Function Scope
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
 <a href="materials/lec_08_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-08.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-08">code</a><br>
 
 =
 Conditionals 1
@@ -109,6 +110,7 @@ Conditionals 1
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-09">code</a><br>
 
 =
 Conditionals 2
@@ -118,6 +120,7 @@ Conditionals 2
 <a href="materials/lec-10.html">Interactive Exercises</a><br>
 <b>Due</b>: P3<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p4">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p4">P4</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-10">code</a><br>
 
 =
 Iteration 1
@@ -127,8 +130,7 @@ Iteration 1
 
 <a href="materials/lec_11_S20.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 7<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-11">code</a><br>-->
-<!--<a href="https://www.youtube.com/watch?v=jOIcp9r03Yw&feature=youtu.be">WATCH ONLINE</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-11">code</a><br>
 
 =
 Iteration 2
@@ -138,7 +140,7 @@ Iteration 2
 <a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br>
 <a href="materials/lec-12.html">Interactive Exercises</a><br>
 <b>Read (Optional)</b>: Sweigart Ch 2<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-12">code</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-12">code</a><br>
 
 =
 Strings
@@ -150,13 +152,13 @@ Strings
 * Comparison
 * String formatting
 
-<!--<a href="materials/lec-13.pdf">Link to Slides</a><br>-->
-<!--<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec_13_S20.pdf">Link to Slides</a><br>
+<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
-<!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p5">P5</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-13">code</a><br>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p5">P5</a><br>
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-13">code</a><br>-->
 
 =
 Review Day
@@ -176,7 +178,7 @@ Lists
 
 <!--<a href="materials/lec-15.pdf">Link to Slides</a><br>-->
 <b>Read</b>: Downey Ch 10<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-15">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-15">code</a><br>-->
 
 =
 CSV Tables
@@ -188,13 +190,13 @@ CSV Tables
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <b>Due</b>: P5<br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p6">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p6">P6</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-16">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-16">code</a><br>-->
 
 =
 List Practice
 * Coding Demos
 <!--<a href="materials/lec-17-worksheet.pdf">Link to Worksheet</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-16">code (w/ Wed code)</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-16">code (w/ Wed code)</a><br>-->
 <b>No Slides</b>
 
 =
@@ -206,7 +208,7 @@ Dictionaries 1
 <!--<a href="materials/lec-18.pdf">Link to Slides</a><br>-->
 <!--<a href="materials/lec-18.html">Interactive Exercises</a><br>-->
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-18">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-18">code</a><br>-->
 
 =
 Dictionaries 2
@@ -218,7 +220,7 @@ Dictionaries 2
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
 <b>Due</b>: P6<br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p7">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p7">P7</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-19">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-19">code</a><br>-->
 
 =
 JSON
@@ -228,7 +230,7 @@ JSON
 <!--<a href="materials/lec-20-worksheet.pdf">Link to Worksheet</a><br>-->
 <!--<a href="materials/lec-20.pdf">Link to Slides</a><br>-->
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-20">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-20">code</a><br>-->
 
 =
 Objects
@@ -261,7 +263,7 @@ Recursive Functions
 <!--<a href="materials/lec-23.pdf">Link to Slides</a><br>-->
 <!--<a href="materials/lec-23.html">Interactive Exercises</a><br>-->
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-23">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-23">code</a><br>-->
 
 =
 Spring Break!
@@ -279,13 +281,13 @@ Function References
 * sort
 <!--<a href="materials/lec-24.pdf">Link to Slides</a><br>-->
 <!--<a href="materials/lec-24.html">Interactive Exercises</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-24">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>-->
 
 =
 Generator Functions
 * iterators and generators
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8b">Lab-P8b</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-25">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-25">code</a><br>-->
 
 =
 Error Handling
@@ -296,7 +298,7 @@ Error Handling
 <!--<a href="materials/lec-26.html">Interactive Exercises</a><br>-->
 <!--<a href="materials/lec-26-worksheet.pdf">Link to Worksheet</a><br>-->
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-26">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-26">code</a><br>-->
 
 =
 Files and Directories
@@ -305,7 +307,7 @@ Files and Directories
 * Listing children
 <!--<a href="materials/lec-27.pdf">Link to Slides</a><br>-->
 <b>Read</b>: Downey Ch 14
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-27">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-27">code</a><br>-->
 
 =
 Review Day
@@ -321,13 +323,13 @@ Pandas 1
 * reading CSVs
 * element-wise operations
 <b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-29">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-29">code</a><br>-->
 
 =
 Pandas 2
 * practice
 <!--<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-30">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-30">code</a><br>-->
 
 ################################################################################
 # PART 3
@@ -342,14 +344,14 @@ Web 1
 <!--<a href="materials/lec-31.pdf">Link to Slides</a><br>-->
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9b">Lab-P9b</a>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-31">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-31">code</a><br>-->
 
 =
 Web 2
 * Intro to HTML
 * Generating HTML
 <!--<a href="materials/lec-32.pdf">Link to Slides</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-32">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-32">code</a><br>-->
 
 =
 Web 3
@@ -357,7 +359,7 @@ Web 3
 * Parsing HTML
 * beautifulsoup
 <!--<a href="materials/lec-33.pdf">Link to Slides</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-33">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-33">code</a><br>-->
 
 =
 Database 1
@@ -369,14 +371,14 @@ Database 1
 <!--<a href="materials/lec-34.pdf">Link to Slides</a><br>-->
 <b>Due</b>: P9<br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10a">Lab-P10a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p10">P10</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-34">code</a><br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-34">code</a><br>-->
 
 =
 Database 2
 * aggregates
 * group by
 <b>No Slides</b><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>-->
 
 =
 Plotting 1
@@ -384,26 +386,26 @@ Plotting 1
 * plot design
 * AxesSublot
 <b>Reading</b>: Matplotlib Intro (<a href="readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-36">code</a>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-36">code</a>-->
 
 =
 Database 3
 * Worksheets
 <!--<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>-->
-<!--<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br>-->
+<!--<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-37">Database 3 - Worksheet Answers</a><br>-->
 
 =
 Plotting 2
 * line plots
 <b>Reading</b>: Line and Advanced Bar Plots (<a href="readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-38">code</a>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-38">code</a>-->
 
 =
 Plotting 3
 * bar plots
 <b>Reading</b>: same as for "Plotting 2"<br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10b">Lab-P10b</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-39">code</a>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-39">code</a>-->
 
 =
 Plotting 4
@@ -411,7 +413,7 @@ Plotting 4
 * adjacent plots
 * design decisions
 <b>Reading</b>: Axes and Plot Design (<a href="readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-40">code</a>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-40">code</a>-->
 
 =
 Randomness
@@ -419,7 +421,7 @@ Randomness
 * Simulation
 * Significance
 <!--<a href="materials/lec-41.pdf">Link to Slides</a><br>-->
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-41">code</a>-->
+<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-41">code</a>-->
 
 =
 Review/Catchup
