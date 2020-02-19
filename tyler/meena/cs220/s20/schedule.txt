@@ -95,6 +95,7 @@ Function Scope
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
 <a href="materials/lec_08_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-08.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/lectureDemo_code/lec-08">code</a><br>
 
 =
 Conditionals 1
@@ -109,6 +110,7 @@ Conditionals 1
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/lectureDemo_code/lec-09">code</a><br>
 
 =
 Conditionals 2
@@ -118,6 +120,7 @@ Conditionals 2
 <a href="materials/lec-10.html">Interactive Exercises</a><br>
 <b>Due</b>: P3<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p4">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p4">P4</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/lectureDemo_code/lec-10">code</a><br>
 
 =
 Iteration 1
@@ -149,8 +152,8 @@ Strings
 * Comparison
 * String formatting
 
-<!--<a href="materials/lec-13.pdf">Link to Slides</a><br>-->
-<!--<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec_13_S20.pdf">Link to Slides</a><br>
+<a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
