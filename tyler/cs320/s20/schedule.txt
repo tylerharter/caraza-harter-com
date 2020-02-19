@@ -126,6 +126,7 @@ Graphs 3
 Graphs 4
 * DFS vs. BFS
 * time vs. memory complexity
+<a href="materials/lec-13.pdf">SLIDES</a><br>
 <a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
 <b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
 
