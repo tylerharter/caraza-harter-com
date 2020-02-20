@@ -22,7 +22,7 @@ The Terminal
 * Shells
 * Navigation
 * Program Execution
-<a href="materials/lec_02_S20.pdf">Link to Slides</a>
+<a href="materials/lec_02_S20.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lec_02_terminal_commands.txt">terminal commands</a><br>
 
 =
