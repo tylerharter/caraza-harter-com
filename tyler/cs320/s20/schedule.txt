@@ -128,6 +128,8 @@ Graphs 4
 * time vs. memory complexity
 <a href="materials/lec-13.pdf">SLIDES</a><br>
 <a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
+<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
+<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
 <b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
 
 =
