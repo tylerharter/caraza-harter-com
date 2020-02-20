@@ -75,6 +75,8 @@ cat file.txt
 # moving+copying
 #######################
 
+pushd . #pushes the current directory into stack
+popd #removes the topmost directory from the stack
 cp file.txt file-copy.txt
 ls
 cat file-copy.txt
