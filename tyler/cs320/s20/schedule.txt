@@ -137,6 +137,7 @@ Graphs 5
 * dense graphs
 * Markov chains
 * log likelihood
+<a href="materials/lec-14.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="reading/lec-14-dense-graphs.html">HTML</a><br>
 
 =
