@@ -131,6 +131,7 @@ Graphs 4
 <a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
 <a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
 <b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.19.2020+2.25.08PM/0_ip5rkhh1">VIDEO</a><br>
 
 =
 Graphs 5
@@ -139,6 +140,7 @@ Graphs 5
 * log likelihood
 <a href="materials/lec-14.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="reading/lec-14-dense-graphs.html">HTML</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.21.2020+2.25.13PM/1_vlijnlix">VIDEO</a><br>
 
 =
 Regex 1
