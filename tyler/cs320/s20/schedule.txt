@@ -126,12 +126,19 @@ Graphs 3
 Graphs 4
 * DFS vs. BFS
 * time vs. memory complexity
+<a href="materials/lec-13.pdf">SLIDES</a><br>
+<a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
+<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
+<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
 <b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
 
 =
 Graphs 5
+* dense graphs
 * Markov chains
-* log probability of sequence
+* log likelihood
+<a href="materials/lec-14.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="reading/lec-14-dense-graphs.html">HTML</a><br>
 
 =
 Regex 1
