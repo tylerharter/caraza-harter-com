@@ -134,8 +134,10 @@ Graphs 4
 
 =
 Graphs 5
+* dense graphs
 * Markov chains
-* log probability of sequence
+* log likelihood
+<b>Read</b>: <a href="reading/lec-14-dense-graphs.html">HTML</a><br>
 
 =
 Regex 1
