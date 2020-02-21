@@ -22,7 +22,8 @@ The Terminal
 * Shells
 * Navigation
 * Program Execution
-<a href="materials/lec_02_S20.pdf">Link to Slides</a>
+<a href="materials/lec_02_S20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lec_02_terminal_commands.txt">terminal commands</a><br>
 
 =
 Pseudocode
@@ -158,7 +159,7 @@ Strings
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p5">P5</a><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-13">code</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-13">code</a><br>
 
 =
 Review Day
