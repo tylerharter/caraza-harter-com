@@ -155,13 +155,14 @@ Regex 1
 =
 Regex 2
 * worksheet
-<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p2">P2</a><br>
 
 =
 Web 1: Flask
 * review from CS 220
 * RPC, POST
 * decorators
+<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p2">P2</a><br>
+
 =
 Web 2: Tracing
 * wrappers based on *args and **kwargs
@@ -179,11 +180,11 @@ Web 4: A/B testing
 * significance
 =
 Review/Exam
-<b>Due:</b> P3<br>
 =
 Visualization 1
 * custom designs
 * drawing polygons, etc
+<b>Due:</b> P3<br>
 =
 Spring Break!
 <b>No Class</b>
