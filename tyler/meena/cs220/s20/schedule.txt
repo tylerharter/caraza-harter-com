@@ -179,7 +179,7 @@ Lists
 
 <a href="materials/lec_15_S20.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-15">code</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-15">code</a><br>
 
 =
 CSV Tables
