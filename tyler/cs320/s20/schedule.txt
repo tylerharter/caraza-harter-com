@@ -144,9 +144,13 @@ Graphs 5
 
 =
 Regex 1
-* extract more features of 
-* https://docs.python.org/3/howto/regex.html
-* https://regex101.com/
+* character classes
+* repetition
+* anchoring
+* findall, sub, groups
+<a href="materials/lec-15.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/08/text_intro.html">DS100 Ch</a><br>
+
 =
 Regex 2
 * worksheet
