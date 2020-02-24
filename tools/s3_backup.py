@@ -7,7 +7,7 @@ SKIP = ['logs/']
 # return all S3 objects with the given key prefix, using as many
 # requests as necessary
 def s3_all_keys(Prefix):
-    session = boto3.Session(profile_name='cs301taBAD')
+    session = boto3.Session(profile_name='cs301ta')
     s3 = session.client('s3')
 
     ls = s3.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
@@ -39,8 +39,8 @@ def download_chunk(paths):
             print('File {}'.format(path))
             local = 'snapshot/' + path
             response = s3.get_object(Bucket=BUCKET, Key=path)
-            os.makedirs(os.path.dirname(local), exist_ok=True)
-            with open(local, 'wb') as f:
+            os.makedirs(os.path.dirname(local.replace("*","__")), exist_ok=True)
+            with open(local.replace("*","__"), 'wb') as f:
                 f.write(response['Body'].read())
     except Exception as e:
         return e
