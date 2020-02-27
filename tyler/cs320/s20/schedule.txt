@@ -155,8 +155,9 @@ Regex 1
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab6/student-search-examples.ipynb">STUDENT EXAMPLES</a><br>
 
 =
-Regex 2
-* worksheet
+Catchup
+* regex
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p3">P3</a><br>
 
 =
 Web 1: Flask
@@ -186,7 +187,7 @@ Review/Exam
 Visualization 1
 * custom designs
 * drawing polygons, etc
-<b>Due:</b> P3<br>
+<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p3">P3</a><br>
 =
 Spring Break!
 <b>No Class</b>
