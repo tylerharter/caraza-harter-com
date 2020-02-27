@@ -153,11 +153,13 @@ Regex 1
 <b>Read</b>: <a href="https://www.textbook.ds100.org/ch/08/text_intro.html">DS100 Ch 8</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab6/README.md">WEEKLY LAB: DFS vs. BFS</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab6/student-search-examples.ipynb">STUDENT EXAMPLES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.24.2020+2.25.06PM/0_m93n0ypg">VIDEO</a><br>
 
 =
 Catchup
 * regex
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p3">P3</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.26.2020+2.25.37PM/0_nza231xr">VIDEO</a><br>
 
 =
 Web 1: Flask
