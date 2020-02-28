@@ -169,6 +169,7 @@ Web 1: Flask
 <b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p2">P2</a><br>
 <a href="materials/lec-17-examples.ipynb">DECORATOR EXAMPLES</a><br>
 <a href="materials/lec-17.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+2.28.2020+2.25.10PM/0_zza6r8g4">VIDEO</a><br>
 
 =
 Web 2: Tracing
