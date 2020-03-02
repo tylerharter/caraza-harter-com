@@ -206,10 +206,10 @@ Dictionaries 1
 * Lookup
 * Insert
 * Pop
-<!--<a href="materials/lec-18.pdf">Link to Slides</a><br>-->
-<!--<a href="materials/lec-18.html">Interactive Exercises</a><br>-->
+<a href="materials/lec_18_S20.pdf">Link to Slides</a><br>
+<a href="materials/lec-18.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-18">code</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-18">code</a><br>
 
 =
 Dictionaries 2
