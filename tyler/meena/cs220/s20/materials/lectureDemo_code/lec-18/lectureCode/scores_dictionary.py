@@ -24,10 +24,10 @@ def main():
                     winners.append(key)
                     
             if len(winners) == 1:
-                print("the only winner is", winners[0])
+                print("The only winner is: ", winners[0])
             else:
                 tie_str = ", ".join(winners)
-                print("tie for win between", tie_str)
+                print("Tie for win between: ", tie_str)
 
         
         elif cmd[0] == 'help':
