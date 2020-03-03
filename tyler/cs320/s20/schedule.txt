@@ -177,6 +177,7 @@ Web 2: Tracing
 <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
 <a href="materials/lec-18.pdf">SLIDES</a><br>
 <a href="materials/lec-18.html">Interactive Exercises</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab7/README.md">WEEKLY LAB: Web and Regex</a><br>
 
 =
 Web 3: Selenium
