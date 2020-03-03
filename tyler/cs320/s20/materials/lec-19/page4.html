@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      var lines = [];
+
+      function main() {
+        fetch('full_hurricanes.csv')
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            lines = data.split("\n");
+          })
+      }
+
+      function search() {
+        if (document.getElementById("year").value.length != 4) {
+          alert("enter YYYY");
+          return;
+        }
+
+        tbl = document.getElementById("hurricanes");
+        tbl.innerHTML = "";
+        for (i=0; i<lines.length; i++) {
+          var tr = document.createElement("tr");
+          if (i == 0 || lines[i].includes(document.getElementById("year").value)) {
+            tr.innerHTML = "<td>"+lines[i].replace(/,/g, "</td><td>")+"</td>";
+            tbl.appendChild(tr);
+          }
+        }
+      }
+      </script>
+  </head>
+
+  <body onload="main()">
+    <h1>Give Me a Year</h1>
+
+    Year: <input id="year"/>
+    <button id="more" onclick="search()">Search</button>
+
+    <h3>Table...</h3>
+    <table id="hurricanes" border=1></table>
+
+  </body>
+</html>

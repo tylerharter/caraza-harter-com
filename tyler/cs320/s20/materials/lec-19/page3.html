@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      var lines = [];
+
+      function login() {
+        if (document.getElementById("password").value != "fido") {
+          alert("sorry, password != 'fido'")
+          return;
+        }
+
+        fetch('hurricanes.csv')
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            lines = data.split("\n");
+            show();
+          })
+        }
+
+      function show() {
+        tbl = document.getElementById("hurricanes");
+        tbl.innerHTML = "";
+        for (i=0; i<lines.length; i++) {
+          var tr = document.createElement("tr");
+          tr.innerHTML = "<td>"+lines[i].replace(/,/g, "</td><td>")+"</td>";
+          tbl.appendChild(tr);
+        }
+      }
+      </script>
+  </head>
+  <body>
+    <h1>Sign In to View Table</h1>
+
+    Password: <input id="password"/>
+    <button id="more" onclick="login()">Login</button>
+
+    <h3>Table...</h3>
+    <table id="hurricanes" border=1></table>
+
+  </body>
+</html>
