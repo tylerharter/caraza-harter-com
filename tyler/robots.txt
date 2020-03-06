@@ -1,0 +1,3 @@
+# have fun...
+User-Agent: *
+Disallow: /cs320/s20/lectures/lec-20/calendar/months/
