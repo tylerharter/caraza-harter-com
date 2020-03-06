@@ -192,9 +192,11 @@ Web 3: Selenium
 
 =
 Web 4: Recursive Crawl
+* BFS for webpages
 * robots.txt
 * HTTP 429
 <b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
+<a href="lectures/lec-20/practice.html">Practice</a><br>
 
 =
 Web 4: A/B testing
