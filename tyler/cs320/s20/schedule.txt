@@ -203,6 +203,8 @@ Web 4: Recursive Crawl
 Web 4: A/B testing
 * data collection
 * significance
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab8/README.md">WEEKLY LAB: Exam Prep</a><br>
+
 =
 Review/Exam
 =
