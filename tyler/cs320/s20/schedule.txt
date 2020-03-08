@@ -192,7 +192,7 @@ Web 3: Selenium
 Web 4: Catchup
 <a href="lectures/lec-19/morning.ipynb">MORNING NB</a><br>
 <a href="lectures/lec-19/afternoon.ipynb">AFTERNOON NB</a><br>
-<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+3.4.2020+2.25.16PM/0_qpxh62vv">VIDEO</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+3.6.2020+2.25.10PM/0_rhrftd0f">VIDEO</a><br>
 
 =
 Web 5: Recursive Crawl
