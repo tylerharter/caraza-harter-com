@@ -186,31 +186,31 @@ Web 3: Selenium
 <b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
 <a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-19/scrape.html">TRICKY PAGES</a><br>
 <a href="materials/lec-19.pdf">SLIDES</a><br>
+<a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+3.4.2020+2.25.16PM/0_qpxh62vv">VIDEO</a><br>
+
+=
+Web 4: Catchup
 <a href="lectures/lec-19/morning.ipynb">MORNING NB</a><br>
 <a href="lectures/lec-19/afternoon.ipynb">AFTERNOON NB</a><br>
 <a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-+SocialScience5206+3.4.2020+2.25.16PM/0_qpxh62vv">VIDEO</a><br>
 
 =
-Web 4: Recursive Crawl
+Web 5: Recursive Crawl
 * BFS for webpages
 * robots.txt
 * HTTP 429
 <b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
-<a href="lectures/lec-20/practice.html">PRACTICE</a><br>
-<a href="materials/lec-19.pdf">SLIDES</a><br>
-
-=
-Web 4: A/B testing
-* data collection
-* significance
+<a href="lectures/lec-20/practice.html">CRAWL PRACTICE</a><br>
+<a href="materials/lec-20.pdf">SLIDES</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/lab8/README.md">WEEKLY LAB: Exam Prep</a><br>
 
 =
 Review/Exam
 =
-Visualization 1
-* custom designs
-* drawing polygons, etc
+Web 5: A/B testing
+* data collection
+* significance
+
 <b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p3">P3</a><br>
 =
 Spring Break!
@@ -222,15 +222,16 @@ Spring Break!
 Spring Break!
 <b>No Class</b>
 =
-Visualization 2
+Visualization 1
+* drawing custom lines/polygons
 * plotting variation
 * bar and whiskers
 * CDFs
 =
-Visualization 3
+Visualization 2
 * geographic maps
 =
-Visualization 4
+Visualization 3
 * animations
 =
 Linear Algebra 1
