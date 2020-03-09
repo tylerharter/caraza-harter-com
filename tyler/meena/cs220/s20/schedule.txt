@@ -231,7 +231,7 @@ JSON
 <a href="materials/lec-20-worksheet.pdf">Link to Worksheet</a><br>
 <a href="materials/lec_20_S20.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-20">code</a><br>-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-20">code</a><br>
 
 =
 Objects
@@ -239,8 +239,8 @@ Objects
 * Mutability
 * References
 * Python Tutor
-<!--<a href="materials/lec-21.pdf">Link to Slides</a><br>-->
-<!--<a href="materials/lec-21.html">Interactive Exercises</a><br>-->
+<a href="materials/lec_21_S20.pdf">Link to Slides</a><br>
+<a href="materials/lec-21.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 
 =

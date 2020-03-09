@@ -76,7 +76,7 @@ var submission = {};
       filename = null
       payload = null
 
-      if (file.name.endsWith('.py') || file.name.endsWith('.ipynb')) {
+      if (file.name.endsWith('.py') || file.name.endsWith('.ipynb') || file.name.endsWith('.zip')) {
         if (reader.result.length <= max_file_kb*1024) {
           filename = file.name
           payload = b64contents
@@ -86,7 +86,7 @@ var submission = {};
           $("#submit_button").prop('disabled', true)
         }
       } else {
-        common.popError("only .py or .ipynb are accepted")
+        common.popError("only .py, .ipynb, and .zip are accepted")
         $("#submit_button").prop('disabled', true)
       }
     };

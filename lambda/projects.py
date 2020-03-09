@@ -191,12 +191,21 @@ def extract_project_files(submission_id, filename, payload):
                 add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
     else:
         # format 3: a zip of .py files
+        # TODO: what if the .zip contains a .ipynb?
         try:
             z = zipfile.ZipFile(io.BytesIO(binary_bytes), 'r')
             for filename in z.namelist():
-                if filename.endswith('.py'):
+                if filename.endswith(('.py', '.html', '.csv')):
                     try:
                         code = normalize_py_bytes(z.read(filename))
+
+                        if filename.endswith(".csv"):
+                            lines = code.split("\n")
+                            line_count = len(lines)
+                            if line_count > 30:
+                                lines = lines[:10] + lines[-10:]
+                                lines.insert(10, "\n...%d more lines [HIDDEN]...\n" % (line_count-20))
+                            code = "\n".join(lines)
                     except Exception as e:
                         code = 'could not read\n'
                         result['errors'].append(str(e))
