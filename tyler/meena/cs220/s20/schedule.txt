@@ -239,8 +239,8 @@ Objects
 * Mutability
 * References
 * Python Tutor
-<!--<a href="materials/lec-21.pdf">Link to Slides</a><br>-->
-<!--<a href="materials/lec-21.html">Interactive Exercises</a><br>-->
+<a href="materials/lec_21_S20.pdf">Link to Slides</a><br>
+<a href="materials/lec-21.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 
 =
