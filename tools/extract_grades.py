@@ -38,7 +38,7 @@ class Grades:
             path = os.path.join(dirname, name)
             with open(path) as f:
                 days = json.load(f)["days"]
-            net_id = name.split("*at*")[0]
+            net_id = name.split("__at__")[0]
             links = self.get_proj_links(net_id)
             for link in links:
                 with open(link) as f:
