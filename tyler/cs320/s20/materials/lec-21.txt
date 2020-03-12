@@ -1,0 +1,98 @@
+A/B Tests
+
+LinkedIn: https://www.youtube.com/watch?v=RpWoIlsdesg
+Statford: https://www.youtube.com/watch?v=AJX4W3MwKzU
+Stats 101: Michael Sussman A/B Testing: https://www.youtube.com/watch?v=Auu9AnCozWQ
+Ron Kahavi: 12 years A/B Testing: https://www.youtube.com/watch?v=qtboCGd_hTA
+
+7 Rules of Thumb (http://bit.ly/expRulesOfThumb)
+http://robotics.stanford.edu/~ronnyk/2014%20experimentersRulesOfThumb.pdf
+
+Fisher's Combined Probability Test:
+https://en.wikipedia.org/wiki/Fisher%27s_method
+
+FB study: https://techcrunch.com/2014/06/29/ethics-in-a-data-driven-world/
+
+========================================
+
+Ron Kohavi @ Microsoft
+
+KDD: knowledge discovery and data mining
+
+"Stop debating, it's easier to get the data" ~ Ron Kohavi.  Also,
+breakthroughs (that save hundreds of millions of dollars) are often
+trivial changes that take days to implement.  Somebody did it over the
+weekend because nobody wanted to do it.
+
+Overview:
+
+Goals: (1) choose best design, (2) debug implementations, (3) learn
+
+Treatment
+ - font, icons, wording, slowdown, time of day emails are sent, changes supposedly "invisible" to the user
+ - A=control, B=treatment
+ - what goes into it? OFAT vs. multiple parts, interactions
+ - what to try: climbing
+ - people come up with experiments.  Experiments are changes, and take time to code!  An investment.
+ - ramp up treatment slowly: new version may break things!
+ - ask designers to build multiple designs, knowing at least one will be thrown away!  Don't get attached to your work.
+ - what if treatment crashes server, taking control down with it?!
+
+Metrics
+ - click-through rate (CTR), hover, buy, unsubscribe, money spent
+ - delayed effects are hard!!!  (look at hyperlink underlining)
+ - at Bing: success rate: click not followed by "back" within 30 seconds
+ - Rule of thumb: "if you make something bigger, more people will click on it" (but we spend screen real estate).  What if there are a bunch of ads?
+ - whole page click-through-rate
+ - CTR/pixel
+ - example: change means fewer click, but higher quality
+ - OEC: Overal Experiment Criterion (weight factors -- more emails means more short-term money, but also unsubscribes)
+   - Bing: 4 metrics to decide whether to ship, 1000s to debug
+ - important to decide OEC before doing experiment!
+ - decide before how to clean data, and be consistent (e.g., half of Bing traffic is bots -- how to filter out!)
+ - causation
+ - is it just novel? Flipped experiment (10% keep running old version)
+
+Talk about p-values
+ - show how to write code
+ - incidence matrix
+
+How to test your A/B testing platform?  Run an A/A test, make sure it
+only finds one is better 5% of the time!
+
+Champion/Challenger Model
+ - version B is new code, probably more buggy
+ - no significance either way means A wins
+ - unless effort is to simplify
+
+Identifying Users
+ - signed in
+ - IP, cookies, cookie churn
+
+Concurrent experiments at Microsoft:
+ - Bing runs ~300 experiments per week.  Overlap.  Warnings if experiments are interacting!
+ - Global hold out (10% never in any experiment, to make sure experiment platform isn't hurting things)
+ - everybody is currently seeing a unique version of Bing
+
+====================
+
+A/B test vs. purchase correlations
+ - we can show causality from the correlation!
+
+Topics:
+ - cookies, cookie churn (vs. IP)
+ - control (A), treatment (B)
+ - A/B/n: multiple treatments
+ - MVT: multivarible designs
+ - instrumentation, hover, scroll (thousands of metrics)
+
+1-2 week experiments (do flipped experiment, 10% use old version to see if keeps working)
+
+OFAT: one factor at a time
+Hill climbing, what if factors overlap?  How to jump past ridge?
+
+Scurvey experiment, vitamin C, treatment is limes
+
+How do we build a theory of whether A or B is better?
+
+"HiPPO" => "Highest Paid Person's Opnion"
