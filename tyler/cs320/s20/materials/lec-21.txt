@@ -40,7 +40,7 @@ Treatment
 
 Metrics
  - click-through rate (CTR), hover, buy, unsubscribe, money spent
- - delayed effects are hard!!!  (look at hyperlink underlining)
+ - delayed effects are hard!!!
  - at Bing: success rate: click not followed by "back" within 30 seconds
  - Rule of thumb: "if you make something bigger, more people will click on it" (but we spend screen real estate).  What if there are a bunch of ads?
  - whole page click-through-rate
@@ -73,6 +73,33 @@ Concurrent experiments at Microsoft:
  - Bing runs ~300 experiments per week.  Overlap.  Warnings if experiments are interacting!
  - Global hold out (10% never in any experiment, to make sure experiment platform isn't hurting things)
  - everybody is currently seeing a unique version of Bing
+
+====================
+
+Part 1: splitting traffic
+ - by user, by request
+ - identifying users: sign in, IP address, cookies
+ - slow ramp up
+ - what if version A breaks version B
+
+Part 2: treatments/design
+ - "Stop debating, it's easier to get the data" ~ Ron Kohavi
+ - hill climbing, jumping ridges
+ - learning vs. finding best
+ - culture: trying different version requires writing code
+   - some experiments cheaper in terms of developer time than others
+   - designers need to make multiple versions
+   - don't get attached to your work
+
+Part 3: metrics
+ - OEC: Overall Experiment Criterion (weight factors -- more emails means more short-term money, but also unsubscribes)
+   - Bing: 4 metrics to decide whether to ship, 1000s to debug
+ - CTR, subscribe, unsubscribe, hover, buy
+ - cost: CTR per pixel
+
+Part 4: compare
+
+Part 5: outcomes
 
 ====================
 
