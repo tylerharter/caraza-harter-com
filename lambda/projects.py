@@ -207,8 +207,7 @@ def extract_project_files(submission_id, filename, payload):
                                 lines.insert(10, "\n...%d more lines [HIDDEN]...\n" % (line_count-20))
                             code = "\n".join(lines)
                     except Exception as e:
-                        code = 'could not read\n'
-                        result['errors'].append(str(e))
+                        code = 'could not read\n' # not everything in a zip should be readable, so this is fine
                     result['files'][filename] = code
                 else:
                     result['files'][filename] = '...not code...'
