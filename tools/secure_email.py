@@ -1,7 +1,7 @@
 import os, sys, json, math, datetime, boto3
 from collections import defaultdict as ddict
 
-COURSE = 'a'
+COURSE = 'b'
 BUCKET = 'caraza-harter-cs301'
 s3 = boto3.client('s3')
 
