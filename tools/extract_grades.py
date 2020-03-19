@@ -1,8 +1,9 @@
 import os, sys, json, copy, math
+from datetime import datetime
 from collections import defaultdict as ddict
 
-COURSE = 'a'
-not_reviewed = {'p1'}
+COURSE = 'b'
+not_reviewed = {}
 CR_URL = 'https://tyler.caraza-harter.com/cs301/fall19/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 
 def try_read_json(path, default={}):
@@ -21,6 +22,11 @@ class Grades:
 
         self.extensions = self.get_extensions()
         self.grade_rows = [self.get_student_grade(nid) for nid in net_ids]
+
+        with open("config.json") as f:
+            deadlines = json.load(f)["deadlines"]
+        deadlines = {k: datetime.strptime(v, "%m/%d/%y") for k, v in deadlines.items()}
+        print(deadlines)
 
 
     # returns dict
@@ -115,12 +121,15 @@ class Grades:
             late_days = 0
             comment_count = 0
 
+        submit_date = sub.get("submit_time_utc", "")
+
         score = max(test_score - ta_deduction, 0)
         cr_url = CR_URL % (self.project, net_id)
 
         return {"project": self.project, "net_id": net_id, "test_score": test_score,
                 "ta_deduction": ta_deduction, "score": score, "late_days": late_days,
-                "comment_count": comment_count, "ready": ready, "code_review_url": cr_url}
+                "comment_count": comment_count, "ready": ready, "code_review_url": cr_url,
+                "submit_date": submit_date}
 
 
 def main():

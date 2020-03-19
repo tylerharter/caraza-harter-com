@@ -229,12 +229,16 @@ Spring Break!
 <b>No Class</b>
 =
 Visualization 1
+* wrapup web scraping
+* matplotlib coordinate systems
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar23">LECTURE</a>
+
+=
+Visualization 2
 * drawing custom lines/polygons
 * plotting variation
 * bar and whiskers
 * CDFs
-=
-Visualization 2
 * geographic maps
 =
 Visualization 3

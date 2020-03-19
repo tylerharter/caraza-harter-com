@@ -39,8 +39,8 @@ def download_chunk(paths):
             print('File {}'.format(path))
             local = 'snapshot/' + path
             response = s3.get_object(Bucket=BUCKET, Key=path)
-            os.makedirs(os.path.dirname(local.replace("*","__")), exist_ok=True)
-            with open(local.replace("*","__"), 'wb') as f:
+            os.makedirs(os.path.dirname(local), exist_ok=True)
+            with open(local, 'wb') as f:
                 f.write(response['Body'].read())
     except Exception as e:
         return e
