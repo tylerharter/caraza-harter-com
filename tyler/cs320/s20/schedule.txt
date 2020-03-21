@@ -227,11 +227,13 @@ Spring Break!
 =
 Spring Break!
 <b>No Class</b>
+
 =
 Visualization 1
 * wrapup web scraping
 * matplotlib coordinate systems
-<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar23">LECTURE</a>
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar23">LECTURE</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab9/README.md">WEEKLY LAB: .zips and geo maps</a><br>
 
 =
 Visualization 2
@@ -240,7 +242,7 @@ Visualization 2
 * bar and whiskers
 * CDFs
 * geographic maps
-<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar25">LECTURE</a>
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar25">LECTURE</a><br>
 
 =
 Visualization 3
