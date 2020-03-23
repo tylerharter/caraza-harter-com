@@ -276,15 +276,12 @@ Spring Break!
 Spring Break!
 <b>No Class</b>
 =
-
-=
 Function References
 * map
 * sort
 <a href="materials/lec_24_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-24.html">Interactive Exercises</a><br>
 <b>Lecture</b>: <a href="https://www.youtube.com/watch?v=jUvFlNG3wEc&t=24s">video</a><br> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>
-=
 
 =
 Generator Functions
