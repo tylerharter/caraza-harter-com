@@ -227,30 +227,39 @@ Spring Break!
 =
 Spring Break!
 <b>No Class</b>
+
 =
 Visualization 1
 * wrapup web scraping
 * matplotlib coordinate systems
-<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar23">LECTURE</a>
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar23">LECTURE</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab9/README.md">WEEKLY LAB: .zips and geo maps</a><br>
 
 =
 Visualization 2
 * drawing custom lines/polygons
-* plotting variation
-* bar and whiskers
-* CDFs
 * geographic maps
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar25">LECTURE</a><br>
+
 =
 Visualization 3
+* shapefiles
+* shapely
+* high resolution graphics
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar27">LECTURE</a><br>
+
+=
+Visualization 4
 * animations
+
 =
 Linear Algebra 1
 * matrix multiplication basics
 * numpy
+<b>Due:</b> P4<br>
 =
 Linear Algebra 2
 * equation solving
-<b>Due:</b> P4<br>
 =
 Linear Algebra 3
 * fit lines
@@ -271,10 +280,10 @@ Parallelism 1
 =
 Parallelism 2
 * pytorch
+<b>Due:</b> P5<br>
 =
 Parallelism 3
 * pytorch
-<b>Due:</b> P5<br>
 =
 Supervised Learning 1
 * TODO
@@ -290,9 +299,7 @@ Unsupervised Learning 1
 =
 Unsupervised Learning 2
 * hierarchical
+<b>Due:</b> P6<br>
 =
 Unsupervised Learning 3
 * visualization
-<b>Due:</b> P6<br>
-=
-Review For Final
