@@ -281,7 +281,7 @@ Function References
 * sort
 <a href="materials/lec_24_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-24.html">Interactive Exercises</a><br>
-<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=QpZWIENdkrc&feature=youtu.be">video</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=QpZWIENdkrc&feature=youtu.be">youtube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Function+References+%28Mar+23%29/0_d0aae9fm">Kaltura video (same video), <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>
 
 =
 Generator Functions
