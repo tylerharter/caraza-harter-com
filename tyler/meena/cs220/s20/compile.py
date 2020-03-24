@@ -61,7 +61,7 @@ def schedule():
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
             header = '<h5><strong>%s</strong>: %s (%s)</h5>' % (curr.strftime("%a"),
                                                title,
-                                               curr.strftime("%b %-d"))
+                                               curr.strftime("%b %d"))
             cells.append('%s\n%s\n' % (header, content))
     print('%d free days, %d full days' % (free, full))
 

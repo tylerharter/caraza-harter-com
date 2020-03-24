@@ -252,6 +252,7 @@ Copying
 <a href="materials/lec_22_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-22.html">Interactive Exercises</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=6Q8dF9QRXRs&feature=youtu.be">YouTube </a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/CS+220+Lecture+22+Copying/1_nfzmq0b3">Kaltura</a><br>
 <b>Due</b>: P7<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8a">Lab-P8a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p8">P8</a><br>
 
@@ -261,10 +262,12 @@ Recursive Functions
 * Lists of Lists
 * More Stack Diagrams
 * Stack Overflow
-<!--<a href="materials/lec-23.pdf">Link to Slides</a><br>-->
+<a href="materials/lec_23_S20.pdf">Link to Slides</a><br>
+<a href="http://pythontutor.com/live.html#code=def%20pretty_print%28items,%20indent%20%3D%200%29%3A%0A%20%20%20%20for%20i%20in%20items%3A%0A%20%20%20%20%20%20%20%20if%20type%28i%29%20%3D%3D%20list%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20pretty_print%28i,indent%2B3%29%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20spaces%20%3D%20%22%20%22*indent%0A%20%20%20%20%20%20%20%20%20%20%20%20print%28spaces,%22*%22,i,%20sep%3D%22%22%29%0A%20%20%20%20%0Abullet_points%20%3D%20%5B%22A%22,%20%22B%22,%20%5B%221%22,%20%222%22,%20%5B%22i%22,%22j%22,%22k%22%5D,%20%223%22%5D,%20%22C%22%5D%0Apretty_print%28bullet_points,%200%29&cumulative=false&curInstr=54&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Interactive Exercise 1</a><br>
+<a href="http://pythontutor.com/live.html#code=def%20contains%28n,%20numbers%29%3A%0A%20%20%20%20for%20i%20in%20numbers%3A%0A%20%20%20%20%20%20%20%20%23%20print%28%22Testing%20item%3A%22,i%29%0A%20%20%20%20%20%20%20%20if%20type%28i%29%20%3D%3D%20list%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20contains%28n,%20i%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20%20%20%20%20else%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20n%20%3D%3D%20i%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20return%20True%0A%20%20%20%20return%20False%0A%0Afor%20i%20in%20range%2813%29%3A%0A%20%20%20%20print%28i,%20contains%28i,%20%5B1,2,%5B4,%5B%5B3%5D,%5B8,9%5D%5D,5,6%5D%5D%29%29&cumulative=false&curInstr=568&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">Interactive Exercise 2</a><br>
 <!--<a href="materials/lec-23.html">Interactive Exercises</a><br>-->
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-23">code</a><br>-->
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=o6kRt772HLM&feature=youtu.be">YouTube</a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/CS+220+Lecture_23+Recursion/1_6uv0ynmx">Kaltura</a><br>
 
 =
 Spring Break!
@@ -281,7 +284,7 @@ Function References
 * sort
 <a href="materials/lec_24_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-24.html">Interactive Exercises</a><br>
-<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=QpZWIENdkrc&feature=youtu.be">youtube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Function+References+%28Mar+23%29/0_d0aae9fm">Kaltura video, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=QpZWIENdkrc&feature=youtu.be">YouTube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Function+References+%28Mar+23%29/0_d0aae9fm">Kaltura video, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-24">code</a><br>
 
 =
 Generator Functions
