@@ -251,12 +251,15 @@ Visualization 3
 =
 Visualization 4
 * animations
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/mar30">LECTURE</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab10/README.md">WEEKLY LAB: Social Distancing</a><br>
 
 =
 Linear Algebra 1
 * matrix multiplication basics
 * numpy
 <b>Due:</b> P4<br>
+
 =
 Linear Algebra 2
 * equation solving
