@@ -291,7 +291,7 @@ Generator Functions
 * iterators and generators
 <a href="materials/lec_25_S20.pdf">Link to Slides</a><br>
 <a href="materials/lec-25.html">Interactive Exercises</a><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-25">code</a><br>-->
+<b>Lecture</b>: <a href="https://youtu.be/IzLVDTgSwf4">YouTube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Iterators+++Generators+%28Mar+25%29/0_hgcwg1pm">Kaltura video, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-25">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8b">Lab-P8b</a><br>
 
 =
