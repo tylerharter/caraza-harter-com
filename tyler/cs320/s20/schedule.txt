@@ -256,53 +256,69 @@ Visualization 4
 
 =
 Linear Algebra 1
-* matrix multiplication basics
-* numpy
+* machine learning overview
+* numpy arrays
+* image manipulation
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr1">LECTURE</a><br>
 <b>Due:</b> P4<br>
+<b>Read</b>: <a href="http://scipy-lectures.org/intro/numpy/index.html#numpy-creating-and-manipulating-numerical-data">Scipy Notes 1.3.1</a><br>
 
 =
 Linear Algebra 2
+* matrix multiplication basics
 * equation solving
+
 =
 Linear Algebra 3
 * fit lines
 * loss function
 * multiple linear regression
+
 =
 Linear Algebra 4
 * transforming non-linear data
 #https://www.khanacademy.org/math/ap-statistics/inference-slope-linear-regression/transformations-for-linearity/v/transforming-nonlinear-data
+
 =
 Linear Algebra 5
 * principal component analysis
 * TSNE (visualization)
+
 =
 Parallelism 1
 * multiprocessing pools
 * parallel map
+
 =
 Parallelism 2
 * pytorch
 <b>Due:</b> P5<br>
+
 =
 Parallelism 3
 * pytorch
+
 =
 Supervised Learning 1
 * TODO
+
 =
 Supervised Learning 2
 * TODO
+
 =
 Supervised Learning 3
 * TODO
+
 =
 Unsupervised Learning 1
 * k-means
+
 =
 Unsupervised Learning 2
 * hierarchical
 <b>Due:</b> P6<br>
+
 =
 Unsupervised Learning 3
 * visualization
