@@ -267,6 +267,7 @@ Linear Algebra 1
 Linear Algebra 2
 * matrix multiplication basics
 * equation solving
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr3">LECTURE</a><br>
 
 =
 Linear Algebra 3
@@ -282,7 +283,6 @@ Linear Algebra 4
 =
 Linear Algebra 5
 * principal component analysis
-* TSNE (visualization)
 
 =
 Parallelism 1
