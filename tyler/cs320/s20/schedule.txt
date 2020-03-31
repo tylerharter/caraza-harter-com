@@ -271,12 +271,16 @@ Linear Algebra 2
 
 =
 Linear Algebra 3
-* fit lines
-* loss function
-* multiple linear regression
+* linear combinations
+* column spaces
+* projection matrices
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr6">LECTURE</a><br>
 
 =
 Linear Algebra 4
+* fit lines
+* loss function
+* multiple linear regression
 * transforming non-linear data
 #https://www.khanacademy.org/math/ap-statistics/inference-slope-linear-regression/transformations-for-linearity/v/transforming-nonlinear-data
 
