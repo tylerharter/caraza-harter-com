@@ -333,7 +333,7 @@ Pandas 1
 =
 Pandas 2
 * practice
-<!--<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-30">code</a><br>-->
 
 ################################################################################
@@ -396,7 +396,7 @@ Plotting 1
 =
 Database 3
 * Worksheets
-<!--<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>
 <!--<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-37">Database 3 - Worksheet Answers</a><br>-->
 
 =
@@ -426,6 +426,7 @@ Randomness
 * Simulation
 * Significance
 <!--<a href="materials/lec-41.pdf">Link to Slides</a><br>-->
+<a href="materials/lec-42-worksheet.pdf">Link to Worksheet (review worksheet)</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-41">code</a>-->
 
 =
