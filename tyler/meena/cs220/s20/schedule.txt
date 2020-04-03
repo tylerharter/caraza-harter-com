@@ -253,7 +253,6 @@ Copying
 <a href="materials/lec-22.html">Interactive Exercises</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Lecture</b>: <a href="https://www.youtube.com/watch?v=6Q8dF9QRXRs&feature=youtu.be">YouTube </a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/CS+220+Lecture+22+Copying/1_nfzmq0b3">Kaltura</a><br>
-<b>Due</b>: P7<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8a">Lab-P8a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p8">P8</a><br>
 
 =
@@ -293,6 +292,7 @@ Generator Functions
 <a href="materials/lec-25.html">Interactive Exercises</a><br>
 <b>Lecture</b>: <a href="https://youtu.be/IzLVDTgSwf4">YouTube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Iterators+++Generators+%28Mar+25%29/0_hgcwg1pm">Kaltura video, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-25">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8b">Lab-P8b</a><br>
+<b>Due</b>: P7<br>
 
 =
 Error Handling
