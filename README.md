@@ -3,7 +3,7 @@ For www.caraza-harter.com and tyler.caraza-harter.com
 
 ## Setup
 
-The lambdas depend on a bsoup-base layer.  You can create it like this:
+The lambdas depend on a bsoup-base layer.  You can create this layer as follows:
 
 python -m venv bsoup
 source ./bsoup/bin/activate

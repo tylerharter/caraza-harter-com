@@ -253,7 +253,6 @@ Copying
 <a href="materials/lec-22.html">Interactive Exercises</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Lecture</b>: <a href="https://www.youtube.com/watch?v=6Q8dF9QRXRs&feature=youtu.be">YouTube </a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/CS+220+Lecture+22+Copying/1_nfzmq0b3">Kaltura</a><br>
-<b>Due</b>: P7<br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8a">Lab-P8a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p8">P8</a><br>
 
 =
@@ -293,6 +292,7 @@ Generator Functions
 <a href="materials/lec-25.html">Interactive Exercises</a><br>
 <b>Lecture</b>: <a href="https://youtu.be/IzLVDTgSwf4">YouTube video</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+24+-+Iterators+++Generators+%28Mar+25%29/0_hgcwg1pm">Kaltura video, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-25">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p8b">Lab-P8b</a><br>
+<b>Due</b>: P7<br>
 
 =
 Error Handling
@@ -300,26 +300,24 @@ Error Handling
 * Throwing Exceptions
 * Asserts
 <a href="materials/lec-26.pdf">Link to Slides</a><br>
-<!--<a href="materials/lec-26.html">Interactive Exercises</a><br>-->
-<!--<a href="materials/lec-26-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec-26.html">Interactive Exercises</a><br>
+<a href="materials/lec-26-worksheet.pdf">Link to Worksheet</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
-<b>Lecture</b>: <a href="https://youtu.be/0umugLEpXN0">YouTube</a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/Lecture_26/1_nd152c23">Kaltura</a><br>
-<b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lec-26">code</a><br>
+<b>Lecture</b>: <a href="https://youtu.be/0umugLEpXN0">YouTube</a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/Lecture_26/1_nd152c23">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-26">code</a><br>
 
 =
 Files and Directories
 * Reading
 * Writing
 * Listing children
-<!--<a href="materials/lec-27.pdf">Link to Slides</a><br>-->
+<a href="materials/lec_27_S20.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 14
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-27">code</a><br>-->
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=lz9NgmfTk3Y">YouTube</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+27+-+Files+%28Mar+30%29/0_jqxm5pka">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-27">code</a><br>
 
 =
 Review Day
 <b>Evening Exam 2!</b><br>
-<b>Due</b>: P8<br>
-<!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9a">Lab-P9a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p9">P9</a><br>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9a">Lab-P9a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p9">P9</a><br>
 
 =
 Pandas 1
@@ -329,12 +327,13 @@ Pandas 1
 * reading CSVs
 * element-wise operations
 <b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
+<b>Due</b>: P8<br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-29">code</a><br>-->
 
 =
 Pandas 2
 * practice
-<!--<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-30">code</a><br>-->
 
 ################################################################################
@@ -349,7 +348,7 @@ Web 1
 * requests module
 <!--<a href="materials/lec-31.pdf">Link to Slides</a><br>-->
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
-<!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9b">Lab-P9b</a>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9b">Lab-P9b</a>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-31">code</a><br>-->
 
 =
@@ -375,7 +374,6 @@ Database 1
 * SQLite
 * Querying from Pandas
 <!--<a href="materials/lec-34.pdf">Link to Slides</a><br>-->
-<b>Due</b>: P9<br>
 <!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10a">Lab-P10a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p10">P10</a><br>-->
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-34">code</a><br>-->
 
@@ -384,6 +382,7 @@ Database 2
 * aggregates
 * group by
 <b>No Slides</b><br>
+<b>Due</b>: P9<br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br>-->
 
 =
@@ -397,7 +396,7 @@ Plotting 1
 =
 Database 3
 * Worksheets
-<!--<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>-->
+<a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br>
 <!--<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-37">Database 3 - Worksheet Answers</a><br>-->
 
 =
@@ -427,6 +426,8 @@ Randomness
 * Simulation
 * Significance
 <!--<a href="materials/lec-41.pdf">Link to Slides</a><br>-->
+<b>Due</b>: P10<br>
+<a href="materials/lec-42-worksheet.pdf">Link to Worksheet (review worksheet)</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-41">code</a>-->
 
 =
