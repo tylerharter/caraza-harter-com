@@ -327,6 +327,9 @@ Pandas 1
 * reading CSVs
 * element-wise operations
 <b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
+<b>Lecture</b>: <a href="https://youtu.be/oH-Qs9nDAHY">YouTube</a> 
+(or) <a href="https://1660902-6.kaf.kaltura.com/media/Lecture_29/1_qcwbe5y6">Kaltura</a><br>
+<b>Code</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-29">main.ipynb</a><br>
 <b>Due</b>: P8<br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-29">code</a><br>-->
 
