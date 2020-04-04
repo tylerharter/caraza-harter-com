@@ -276,6 +276,7 @@ Linear Algebra 3
 * column spaces
 * projection matrices
 <a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr6">LECTURE</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab11/README.md">WEEKLY LAB: JOIN and Counting</a><br>
 
 =
 Linear Algebra 4
