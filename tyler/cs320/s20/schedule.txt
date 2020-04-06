@@ -287,20 +287,21 @@ Linear Algebra 4
 =
 Linear Algebra 5
 * fitting non-linear data
+* correlation matrices
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr10">LECTURE</a><br>
+
+=
+Linear Algebra 6
 * principal component analysis
 
 =
 Parallelism 1
 * multiprocessing pools
 * parallel map
-
-=
-Parallelism 2
-* pytorch
 <b>Due:</b> P5<br>
 
 =
-Parallelism 3
+Parallelism 2
 * pytorch
 
 =
