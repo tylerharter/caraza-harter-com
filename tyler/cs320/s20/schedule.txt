@@ -293,6 +293,7 @@ Linear Algebra 5
 =
 Linear Algebra 6
 * principal component analysis
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr13">LECTURE</a><br>
 
 =
 Parallelism 1
