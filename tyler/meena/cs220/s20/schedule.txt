@@ -351,10 +351,10 @@ Web 1
 * URLs
 * HTTP: GET and POST
 * requests module
-<!--<a href="materials/lec-31.pdf">Link to Slides</a><br>-->
+<a href="materials/lec_31_S20.pdf">Link to Slides</a><br>
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9b">Lab-P9b</a>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-31">code</a><br>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p9b">Lab-P9b</a><br>
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=vmXAOsPzgFM&feature=youtu.be">YouTube</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring+2020+LEC+27+-+Web+1+%28Mar+30%29/1_r9seywzc">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-31">code</a><br>
 
 =
 Web 2
