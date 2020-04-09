@@ -1,0 +1,37 @@
+Lecture:
+- recordings
+- which function do we prefer?
+- performance vs. complexity
+
+
+
+worst case, 
+
+Analysis of Algorithms
+
+best-avg-worst: where does element go in list?
+asymptotic, at scale
+
+CODE:
+
+N
+is_prime
+N**2
+get_primes
+
+log N
+binary search
+
+N log N
+selection sort
+merge sort
+ - merge
+ - merge sort
+
+M * N**2
+
+df.cov
+
+
+Time permitting: SSH keys
+
