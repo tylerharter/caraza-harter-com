@@ -299,6 +299,7 @@ Linear Algebra 6
 Parallelism 1
 * multiprocessing pools
 * parallel map
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr15">LECTURE</a><br>
 <b>Due:</b> P5<br>
 
 =
