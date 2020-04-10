@@ -1,0 +1,63 @@
+The goal of machine learning is "to construct a function that classifies the training data correctly, so it can generalize to unseen test data"
+~ Gilbert Strang
+
+Models vs. functions
+
+Linear models
+ - more variables
+ - just mult and add
+
+Loss functions, norms, L0, L1, L2 (MSE), Linf
+
+Optimization
+
+(1) select a model, (2) select a loss function, (3) fit the model by minimizing the loss
+~ https://www.textbook.ds100.org/ch/10/modeling_loss_functions.html
+
+numpy:
+ - scalar, vector, matrix, tensor
+
+creation:
+ np.arange(start, end, step)
+ np.random.rand(dim1, dim2)
+ np.ones
+ np.zeros
+
+plt.imshow(matrix)
+plt.colorbar()
+
+shape, indexing, slicing (doesn't create a new object!!!)
+
+dtype
+.copy()
+
+
+packages: numpy, scipy, sklearn, pytorch
+
+from numpy import dot # vs multiply
+from numpy.linalg import inv, solve
+transpose
+
+latex in Jupyter
+
+example 1: system of equations (solve it!)
+example 2: image (cluster colors)
+
+
+https://trends.google.com/trends/explore?date=all&q=numpy,pandas,scipy
+
+
+unsupervised, supervised
+regressor, classifier
+
+what do we need to know from linear algebra?
+what do we need to know from calculus?  optimization, loss function.
+parallelism
+
+numpy (linear algebra)
+pytorch (optimization, parallelism)
+
+practioner (sklearn)
+ - picking an algorithm
+ - pre-processing the data (categorical data, non-linear terms, ...)
+ - how to evaluate?
