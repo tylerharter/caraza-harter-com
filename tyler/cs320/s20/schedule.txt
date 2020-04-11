@@ -305,6 +305,11 @@ Parallelism 1
 =
 Parallelism 2
 * pytorch
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr17">LECTURE</a><br>
+
+=
+Optimization
+* TODO
 
 =
 Supervised Learning 1
@@ -312,10 +317,6 @@ Supervised Learning 1
 
 =
 Supervised Learning 2
-* TODO
-
-=
-Supervised Learning 3
 * TODO
 
 =
