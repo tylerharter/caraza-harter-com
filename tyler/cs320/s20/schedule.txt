@@ -316,6 +316,7 @@ Parallelism 2
 =
 Optimization
 * TODO
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Proposal Due</a><br>
 
 =
 Supervised Learning 1
@@ -324,10 +325,12 @@ Supervised Learning 1
 =
 Supervised Learning 2
 * TODO
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Plot to Peers</a><br>
 
 =
 Unsupervised Learning 1
 * k-means
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Peer Feedback</a><br>
 
 =
 Unsupervised Learning 2
