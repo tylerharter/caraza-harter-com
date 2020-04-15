@@ -379,7 +379,7 @@ Database 1
 * SQLite
 * Querying from Pandas
 <!--<a href="materials/lec-34.pdf">Link to Slides</a><br>-->
-<!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10a">Lab-P10a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p10">P10</a><br>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10a">Lab-P10a</a>, <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/p10">P10</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-34">code</a><br>-->
 
 =
@@ -414,7 +414,7 @@ Plotting 2
 Plotting 3
 * bar plots
 <b>Reading</b>: same as for "Plotting 2"<br>
-<!--<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10b">Lab-P10b</a><br>-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-projects/tree/master/spring20/lab-p10b">Lab-P10b</a><br>
 <!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-39">code</a>-->
 
 =
