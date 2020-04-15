@@ -305,6 +305,7 @@ Parallelism 1
 <a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr15">LECTURE</a><br>
 <a href="materials/lec-32.pdf">SLIDES</a><br>
 <b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p5">P5</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p6">P6</a><br>
 
 =
 Parallelism 2
@@ -331,7 +332,7 @@ Unsupervised Learning 1
 =
 Unsupervised Learning 2
 * hierarchical
-<b>Due:</b> P6<br>
+<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p6">P6</a><br>
 
 =
 Unsupervised Learning 3
