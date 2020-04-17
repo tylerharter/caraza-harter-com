@@ -317,6 +317,8 @@ Parallelism 2
 Optimization
 * TODO
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Proposal Due</a><br>
+<a href="materials/lec-34.pdf">SLIDES</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr20">LECTURE</a><br>
 
 =
 Supervised Learning 1
