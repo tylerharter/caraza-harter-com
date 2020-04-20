@@ -323,7 +323,10 @@ Optimization
 
 =
 Supervised Learning 1
-* TODO
+* classification
+* train+test split
+* sklearn Pipeline
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr22">LECTURE</a><br>
 
 =
 Supervised Learning 2
