@@ -402,7 +402,7 @@ Plotting 1
 * plot design
 * AxesSublot
 <b>Reading</b>: Matplotlib Intro (<a href="readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/readings">.ipynb and data</a>)<br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-36">code</a>
+<b>Lecture</b>: <a href="https://youtu.be/YbaZmEASOPE">YouTube</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring2020+Plotting+1+%28Apr+20%29/1_yae04jb2">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-36">code</a><br>
 
 =
 Database 3
