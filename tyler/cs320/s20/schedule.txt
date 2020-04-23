@@ -331,19 +331,23 @@ Supervised Learning 1
 
 =
 Supervised Learning 2
-* TODO
+* confusion matrices
+* precision and recall
+* multi-class logistic regression
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr24">LECTURE</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Plot to Peers</a><br>
+
+=
+Supervised Learning 3
+* one-hot encoding
+* decision trees
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Peer Feedback</a><br>
 
 =
 Unsupervised Learning 1
 * k-means
-<a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Peer Feedback</a><br>
+<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p6">P6</a><br>
 
 =
 Unsupervised Learning 2
 * hierarchical
-<b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p6">P6</a><br>
-
-=
-Unsupervised Learning 3
-* visualization
