@@ -422,7 +422,7 @@ Database 3
 Plotting 2
 * line plots
 <b>Reading</b>: Line and Advanced Bar Plots (<a href="readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<b>Lecture</b>: <a href="">YouTube</a> (or) <a href="">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-38">code</a><br>
+<b>Lecture</b>: <a href="https://www.youtube.com/watch?v=ZtUKEa50QkY">YouTube</a> (or) <a href="https://mediaspace.wisc.edu/media/CS220+Spring2020+LEC+38+-+Plotting+2+%28Apr+24%29/1_4kuqvyns">Kaltura</a>, <b>Code: </b> <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-38">code</a><br>
 
 =
 Plotting 3
