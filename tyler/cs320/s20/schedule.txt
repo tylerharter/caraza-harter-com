@@ -339,8 +339,8 @@ Supervised Learning 2
 
 =
 Supervised Learning 3
+* categorical inputs
 * one-hot encoding
-* decision trees
 <a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr27">LECTURE</a><br>
 <a href="https://github.com/tylerharter/cs320/blob/master/s20/final/README.md">FINAL: Peer Feedback</a><br>
 
