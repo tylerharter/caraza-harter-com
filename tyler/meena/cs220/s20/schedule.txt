@@ -445,10 +445,10 @@ Randomness
 * Debugging
 * Simulation
 * Significance
-<!--<a href="materials/lec-41.pdf">Link to Slides</a><br>-->
+<a href="materials/lec_41_S20.pdf">Link to Slides</a><br>
 <b>Due</b>: P10<br>
-<a href="materials/lec-42-worksheet.pdf">Link to Worksheet (review worksheet)</a><br>
-<!--<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-41">code</a>-->
+<b>Code: </b><a href=https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s20/materials/lectureDemo_code/lec-41">code</a><br>
+<b>Lecture</b>: <a href="https://youtu.be/zy7MvTQqeWI">YouTube</a> (or) <a href="https://1660902-6.kaf.kaltura.com/media/t/1_32rrh6ah">Kaltura</a>
 
 =
 Review/Catchup
