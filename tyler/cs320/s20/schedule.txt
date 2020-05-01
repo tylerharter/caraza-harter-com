@@ -350,7 +350,11 @@ Unsupervised Learning 1
 * k-means
 <a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/apr29">LECTURE</a><br>
 <b>Due:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s20/p6">P6</a><br>
+<a href="materials/lec-39.pdf">SLIDES</a><br>
 
 =
 Unsupervised Learning 2
-* hierarchical
+* k-means limitations
+* agglomerative clustering
+* dendograms
+<a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/may1">LECTURE</a><br>
