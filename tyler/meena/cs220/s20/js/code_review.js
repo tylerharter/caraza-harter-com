@@ -504,8 +504,9 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
 
   code_review.saveCodeReview = function(event) {
     var deduction_str = $("#ta_point_deduction").val()
-    if (/^\d+$/.test(deduction_str)) {
-      var deduction = parseInt(deduction_str)
+    //if (/^\d+$/.test(deduction_str)) {
+    if (/^\d+(\.\d+)?$/.test(deduction_str)) {
+      var deduction = parseFloat(deduction_str)
       if (deduction != NaN && deduction >= 0 && deduction <= 100) {
         sub.cr.points_deducted = deduction
       } else {
