@@ -508,7 +508,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     if (/^[+-]?\d+(\.\d+)?$/.test(deduction_str)) {
       var deduction = parseFloat(deduction_str)
       //if (deduction != NaN && deduction >= 0 && deduction <= 100) {
-      if (deduction != NaN && deduction >= -100 && deduction <= 100) {
+      if (deduction != NaN && deduction >= -200 && deduction <= 200) {
         sub.cr.points_deducted = deduction
       } else {
         common.popError("please enter a deduction in the 0-100 range")
