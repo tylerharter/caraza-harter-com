@@ -358,3 +358,4 @@ Unsupervised Learning 2
 * agglomerative clustering
 * dendograms
 <a href="https://github.com/tylerharter/cs320/tree/master/s20/lec/may1">LECTURE</a><br>
+<a href="final/examples.html">FINAL: Project Showcase</a><br>
