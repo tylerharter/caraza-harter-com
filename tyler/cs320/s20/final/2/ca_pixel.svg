@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="288pt" version="1.1" viewBox="0 0 432 288" width="432pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288 
+L 432 288 
+L 432 0 
+L 0 0 
+z
+" style="fill:#ffffff;"/>
+  </g>
+  <g id="axes_1">
+   <g clip-path="url(#p4056c0113b)">
+    <image height="168" id="image6cfa018122" transform="scale(1 -1)translate(0 -168)" width="335" x="54" xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAU8AAACoCAYAAABg+2x8AAAABHNCSVQICAgIfAhkiAAAA2hJREFUeJzt3dtt6kAUQFETpUNKQFSFqAClRXwbiLnJDvjFWp9EJCMDO5Y4mjmMwzAOvMb9vvQKYNrHx9Ir2DRXDyAQT4BAPAEC8QQIxBMgEE+A4HPpBcCkR6M0xsBYmDtPgEA8AQLxBAjEEyAQT4BAPAEC8QQIxBMgEE+AQDwBAvEECMQTIBBPgEA8AQLxBAjEEyAQT4BAPAEC8QQIxBMgEE+AQDwBAvEECMQTIBBPgEA8AQLxBAjEEyAQT4BAPAEC8QQIxBMg+Fx6AazUx4z/V4/H3z9nzvVdLtM/O53mWwer4s4TIBBPgEA8AQLxBAjEEyAQT4DgMA7DuPQidut+X3oF3fU6/bPzeb51rMGWX8dH5hz32iFXDyAQT4BAPAEC8QQIxBMgEE+AwK5K78w40s88GunZ6xgT/+XOEyAQT4BAPAEC8QQIxBMg8G37O7ABxOtMXdtH5zLdbq9ZC7PyqQIIxBMgEE+AQDwBAvEECMQTIHCG0SvNuWmEcaR98J7ZDFcPIBBPgEA8AQLxBAjEEyAQT4DArkpbYrRk/6ZeY2clrY5PI0AgngCBeAIE4gkQiCdAIJ4AgVGlLXk0rmKMaR+MJG2GTxxAIJ4AgXgCBOIJEIgnQCCeAIF4AgTiCRCIJ0AgngCBeAIE4gkQ2BhkS9ay+cfl8vvnnM/PX0cxtfHGWq4tm+EdAxCIJ0AgngCBeAIE4gkQiCdAYFRpL8rZN3U853R67u+b0/X6/eP1fKjj8fvHb7efr+knf8vZRquzgXc7wPqIJ0AgngCBeAIE4gkQiCdAcBiHYVx6Ebv1buMlWxhVmvJur9UwbPv1WgFXDyAQT4BAPAEC8QQIxBMgEE+AQDwBAvEECMQTIBBPgEA8AQLxBAjEEyAQT4BAPAEC8QQIxBMgEE+AQDwBgs+lF8CO1HOAnn2WzjueR8Ts3HkCBOIJEIgnQCCeAIF4AgS+bWd5x+P3j399TT/HN+oszJ0nQCCeAIF4AgTiCRCIJ0AgngDBYRyGcelF7JZxmr95tGGIa/t3z96Q5c24egCBeAIE4gkQiCdAIJ4AgXgCBHZVYr2MI7Fi7jwBAvEECMQTIBBPgEA8AQLxBAjEEyAQT4BAPAEC8QQIxBMgEE+AQDwBAvEECMQTIBBPgEA8AQLxBAjEEyD4B3qLSAJOucCiAAAAAElFTkSuQmCC" y="-58.98"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4056c0113b">
+   <rect height="167.4" width="334.8" x="54" y="59.58"/>
+  </clipPath>
+ </defs>
+</svg>

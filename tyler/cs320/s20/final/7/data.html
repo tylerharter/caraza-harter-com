@@ -1,0 +1,154 @@
+<html>
+    <body>
+        <h1> Hispanic/Latino Population and Crime in the U.S.</h1>
+        
+        <h2> Data </h2>
+            <h3> Crime Data </h3>
+                <p>
+                    The crime data used comes from fbi.gov, where the tables are available for download in .xlsx format. More specific descriptions of the data and the download links I used for each are below as well as an examples of how to read the data into a Juypter Notebook. 
+                </p>
+        <p>
+            <b> Crime by State </b><br />
+            Each data file in this category corresponds to a particular year, and crime numbers are sorted by crime type (columns) for each state (rows) and for different reporting areas (also rows).
+            
+            
+            Example code to view the data in a Jupyter Notebook:<br/>
+            <br/>
+            '''<br />
+            import pandas as pd <br/>
+            
+            !wget 'https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-21/table-21a.xls/output.xls' -O 'crime_demographics_2016.xlsx' <br/>
+            
+            df = pd.read_excel('crime_demographics_2016.xlsx') # read .xlsx into a pandas DataFrame <br />
+            df[:12]<br/>
+            '''<br />
+
+            <a href='statecrime2016.html'>(output table here)</a><br/>
+            <p>
+            Comments on columns in above table: <br/>
+                
+                <ul>
+                    <li> The '\n' escape characters in the header appear as a consequence of how the data was originally entered in the spreadsheets. 
+                    <li> Metropolitan Statistical Area (MSA), a crime reporting area which I use in my analysis, is defined by the FBI UCR: "Each MSA contains a principal city or urbanized area with a population of at least 50,000 inhabitants. MSAs include the principal city; the county in which the city is located; and other adjacent counties that have, as defined by the OMB, a high degree of economic and social integration with the principal city and county as measured through commuting. In the UCR Program, counties within an MSA are considered metropolitan. In addition, MSAs may cross state boundaries."
+                    <li> The Property crime column is a sum over Burglary, Larceny-theft, and Motor Vehicle theft.
+                    <li> The Violent crime column is a sum over Murder and nonnegligent manslaughter, Rape, Robbery, and Aggravated assault columns. 
+                    <li> The definitions of 'rape3' and 'rape2' are given as the revised definition (2013) and legacy definition, respectively, and are listed at the url below.
+                    <li> Violent crime in the table is defined as including "the offenses of murder and nonnegligent manslaughter, rape (revised definition), robbery, and aggravated assault. Property crime includes the offenses of burglary, larceny-theft, and motor vehicle theft."
+                </ul>
+            Most of the column names are named intuitively, but rigourous definitions and methodology information are provided in the Data Declaration on the FBI UCR website <a href='https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-3/table-3.xls/@@template-layout-view?override-view=data-declaration'>here.</a> 
+            <p/>
+            <!--<p>
+            One gripe to be had about the UCR FBI website is that there are not standardized query strings for finding such tables and data declarations for different years; over the past two decades, it seems that the format of the url pointing to the same type of table, e.g. "Table 5", is substantially different every couple of years, making hunting down this information a little tricky. 
+            </p>-->
+        
+        <p>
+            <b> Crime by Race and Ethnicity</b><br />
+             Each data file in this set corresponds to a particular year, and crime numbers are sorted by crime type (rows) and by race or ethnicity (columns).<br/>
+            
+            
+            Example code to view the data in a Jupyter Notebook:<br/>
+            <br/>
+            '''<br />
+            import pandas as pd <br/>
+            
+            !wget 'https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-21/table-21a.xls/output.xls' -O 'crime_demographics_2016.xlsx' <br/>
+            
+            df = pd.read_excel('crime_demographics_2016.xlsx', header=6, nrows=31) # read .xlsx into a pandas DataFrame <br />
+            df<br/>
+            '''<br />
+
+            <a href='crime_demographics_2016.html'>(output table here)</a><br/>
+            <p>
+            Comments on columns in above table: <br/>
+                <ul>
+                    <li> Numerals that appear in column or row names are references to footnotes where the table is posted, <a href='https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-21'>here</a>. Some of these are listed in the following bullet points.
+                    <li> (1) "Because of rounding, the percentages may not add to 100.0."
+                    <li> (2) "The ethnicity totals are representative of those agencies that provided ethnicity breakdowns. Not all agencies provide ethnicity data; therefore, the race and ethnicity totals will not equal"
+                    <li> (3) "The rape figures in this table are aggregate totals of the data submitted based on both the legacy and revised Uniform Crime Reporting definitions" 
+                    <li> (4) "Violent crimes are offenses of murder and nonnegligent manslaughter, rape, robbery, and aggravated assault. Property crimes are offenses of burglary, larceny-theft, motor vehicle theft, and arson"
+                     <li> "Hispanic or Latino - A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term 'Spanish origin' can be used in addition to 'Hispanic or Latino.' This and other definitions used by the FBI are found <a href='https://ucr.fbi.gov/leoka/2017/resource-pages/leoka_definitions_-2017'>here</a>.
+                 </ul>
+                
+        </p>
+        <p><b>Links to crime data files: </b><br /> 
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2018/crime-in-the-u.s.-2018/tables/table-5/table-5.xls/output.xls'>Crime by state (2018)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2017/crime-in-the-u.s.-2017/tables/table-5/table-5.xls/output.xls'>Crime by state (2017)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-3/table-3.xls/output.xls'>Crime by state (2016)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-5/table_5_crime_in_the_united_states_by_state_2015.xls/output.xls'>Crime by state (2015)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2014/crime-in-the-u.s.-2014/tables/table-5/table_5_crime_in_the_united_states_by_state_2014.xls/output.xls'>Crime by state (2014)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2013/crime-in-the-u.s.-2013/tables/5tabledatadecpdf/table_5_crime_in_the_united_states_by_state_2013.xls/output.xls'>Crime by state (2013)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2012/crime-in-the-u.s.-2012/tables/5tabledatadecpdf/table_5_crime_in_the_united_states_by_state_2012.xls/output.xls'>Crime by state (2012)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2011/crime-in-the-u.s.-2011/tables/table-5/output.xls'>Crime by state (2011)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2010/crime-in-the-u.s.-2010/tables/10tbl05.xls/output.xls'>Crime by state (2010)</a><br />
+<a href = 'https://www2.fbi.gov/ucr/cius2009/data/documents/09tbl05.xls'>Crime by state (2009)</a><br />
+<a href = 'https://www2.fbi.gov/ucr/cius2008/data/documents/08tbl05.xls'>Crime by state (2008)</a><br />
+<a href = 'https://www2.fbi.gov/ucr/cius2007/data/documents/07tbl05.xls'>Crime by state (2007)</a><br />
+<a href = 'https://www2.fbi.gov/ucr/cius2006/data/documents/06tbl05.xls'>Crime by state (2006)</a><br />
+<a href = 'https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-21/table-21a.xls/output.xls'>Crime demographics (2016)</a><br />
+        </p>  
+        <h3> Population and Immigration Data Data</h3>
+        <p> 
+            <b>Total Mexican Immigrants in the U.S.</b><br/>
+            This data table is from www.migrationpolicy.org and gives the number of Mexican immigrants in the U.S., the total number of immigrants in the U.S., and the Mexican immigrants as percentage of total immigrants in the U.S., from years 1850 to 2018. Note that data from 1850 - 2010 is available only by decade, while data from 2010-2018 is available by year.
+             
+            <b> Example code to view the data in a Jupyter Notebook:</b><br/>
+            <br/>
+            '''<br />
+            import pandas as pd <br/>
+            
+            !wget 'https://www.migrationpolicy.org/sites/default/files/datahub/MPI-Data-Hub_Mexican-Immigrants-US_2018.xlsx' -O 'mex_im_data.xlsx' <br/>
+            
+            df = pd.read_excel('mex_im_data.xlsx', header=7,nrows=25) # read data into pandas DataFrame <br />
+            df<br/>
+            '''<br />
+
+            <a href='mex_im_data.html'>(output table here)</a><br/>
+            <br/>
+            
+            <b>Immigrant Population by Year and State</b><br/>
+            This data table came from www.migrationpolicy.org, and shows the numbers of immigrants and percentage of immigrants in the population by state (rows) and year (columns). This data does not discriminate between immigrants of different races, ethnicities, or place of origin. The columns and rows are labeled unambiguously, although note that there are two headers rows: one for the year, and one for column categories within that year. The "unnamed" columns in the first header can be renamed for ease of use. <br/>
+            
+            <b> Example code to view the data in a Jupyter Notebook:</b><br/>
+            <br/>
+            '''<br />
+            import pandas as pd <br/>
+            
+            !wget 'https://www.migrationpolicy.org/sites/default/files/datahub/MPI-Data-Hub_Immigrants_N-Percent-US-Population%20by%20State_2018.xlsx' -O 'im_pop_data.xlsx' <br/>
+            
+            df = pd.read_excel('im_pop_data.xlsx', header=8, nrows=53) # read data into pandas DataFrame <br />
+            df<br/>
+            '''<br />
+
+            <a href='im_pop_data.html'>(output table here)</a><br/>
+            <br/>
+            <b>Hispanic and Latino Population by Year and State</b><br/>
+            This data includes total numbers of Hispanic and Latino people as well as percentages of population, sorted by state and year for 2000, 2010, 2012, 2015, 2016, and 2017. The data scraped from a table on wikipedia (link below) which was constructed using data from the U.S. Census Bureau. The  <br/>
+            
+            <b> Example code to view the data in a Jupyter Notebook. I wrote a function for scraping the table, which I have made available for download as a python script: <a href='get_wiki_data.py' download>get_wiki_data.py</a> The intended usage is shown below:</b><br/>
+            <br/>
+            '''<br />
+            import pandas as pd <br/>
+            from get_wiki_data import get_hisplat_wikidata<br/>
+            
+            df, data = get_hisplat_wikidata() # data is a list of lists <br/>
+            df <br />
+            '''<br />
+
+            <a href='wiki_hisplat_data.html'>(output table here)</a><br/>
+            
+            Comments on the data in the table above:
+            <ul>
+                <li> The numbers do not distinguish between Hispanic and Latino populations; i.e. the values count for Hispanic and Latino groups. 
+                <li> There is no information stating that this data included only legal or authorized U.S. citizens. 
+                <li> The columns with '%' signs denote percentage of the total state population, whereas those without '%' give total numbers for that state. 
+                <li> The column '%growth2000-2010' indicates the percentage growth of the Hispanic/Latino population in a given state from 2000 to 2010. Take for example the first row, i.e. Alabama: pop2010/pop2000 = 185602/75830 = 2.44, so the percentage increase is 100*(2.4476 -1 ) = 144.76%. We see that the '%growth2000-2010' column rounds this to 144.8.
+             </ul>
+            <p><b>Links to population and immigration data files: </b><br /> 
+                <a href='https://www.migrationpolicy.org/sites/default/files/datahub/MPI-Data-Hub_Immigrants_N-Percent-US-Population%20by%20State_2018.xlsx'>Immigrants-N-Percent-US-Population-by-State-2018</a><br/>
+                <a href='https://www.migrationpolicy.org/sites/default/files/datahub/MPI-Data-Hub_Mexican-Immigrants-US_2018.xlsx'>Mexican Immigrants in U.S. 1850-2018</a><br/>
+                <a href='https://en.wikipedia.org/wiki/List_of_U.S._states_by_Hispanic_and_Latino_population'>Wikipedia: List_of_U.S._states_by_Hispanic_and_Latino_population</a><br/>
+            </p>
+            
+        </p>
+    </body>
+</html>

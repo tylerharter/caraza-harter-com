@@ -1,0 +1,73 @@
+<html>
+<!--     https://www.w3schools.com/css/tryit.asp?filename=trycss_default -->
+ <head>
+<style>
+body {
+  background-color: white;
+   font-family: "Comic Sans MS";
+    font-size: 20px;
+}
+
+h1 {
+  color: Black;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+}
+</style>
+</head>
+    
+  <body>
+       <div style="width:1100px; margin:0 auto;",font-family = "Lucida Console", Courier, monospace> 
+    <h1>Data Files Used in Our Research</h1>
+      <ol type="1">
+              <li><b>The Flag Database</b></li>
+                  <ul>
+                       <li>Retrieve From <i><a href = "https://archive.ics.uci.edu/ml/datasets/Flags">https://archive.ics.uci.edu/ml/datasets/Flags</a></i></li>
+                        <li>Attribution</li>
+                          <ol type="1">
+                              <li>Name: Name of the country</li>
+                              <li>continent: 1=N.America, 2=S.America, 3=Europe, 4=Africa, 4=Asia, 6=Oceania</li>
+                              <li>religion: 0=Catholic, 1=Other Christian, 2=Muslim, 3=Buddhist, 4=Hindu, 5=Ethnic, 6=Marxist, 7=Others</li>
+                              <li>Colors</li>
+                                 <ul>
+                                     <li> colours: Number of different colours in the flag</li>
+                                     <li>red: 0 if red absent, 1 if red present in the flag</li>
+                                     <li>Same for green, blue, gold(also yellow), white, black, and orange (also brown)</li>
+                                     <li>mainhue: predominant colour in the flag (tie-breaks decided by taking the topmost hue, if that fails then the most central hue, and if that fails the leftmost hue)</li>                                                                   
+                                 </ul>
+                             
+                              <li>Symbols</li>
+                                  <ul>
+                                      <li>bars: Number of vertical bars in the flag</li>
+                                      <li>stripes: Number of horizontal stripes in the flag</li>
+                                      <li>crosses: Number of (upright) crosses</li>
+                                      <li>sunstars: Number of sun or star symbols</li>
+                                      <li>crescent: 1 if a crescent moon symbol present, else 0</li>
+                                      
+                                  </ul>
+                              
+                          </ol>
+                   </ul>
+                              <li><b>The Country Database</b></li>
+               <ul>
+                       <li>Retrieve From: <i><a herf = "https://www.cia.gov/library/publications/the-world-factbook"> https://www.cia.gov/library/publications/the-world-factbook/index.html</a></i></li>
+                        <li>Attribution</li>
+                          <ol type="1">
+                              <li>Name: Name of the country</li>
+                          <li>Agriculture: Percentage of total Gross Domestic Product that comes from agriculture production.</li>
+                              <li>coast2area: the ratio of the coastline length over the total area</li>
+                          </ul>   
+                      
+      
+                     <li><b> PNG Files of Country Flags</b></li>
+                    <ul>
+                      <li>Retrieve from: <i><a href = "https://github.com/hjnilsson/country-flags">https://github.com/hjnilsson/country-flags</a></i></li>
+                    </ul>
+
+                  </ol>
+    </div>          </ul>
+  </body>
+</html>

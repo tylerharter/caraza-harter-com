@@ -1,0 +1,226 @@
+<center><h1> Data Description </h1></center>
+
+<h2>Crime Incident Report</h2><br>
+
+This file contains information on each incident report from August 14, 2014 to the present. Columns include:
+
+<ul>
+    <li>Case Number</li>
+    <li>Date</li>
+    <li>Time</li>
+    <li>Police Code</li>
+    <li>Incident Type - More detailed description of incident</li>
+    <li>Incident - More general category of incident</li>
+    <li>Police Grid Number</li>
+    <li>Neighborhood Number</li>
+    <li>Neighborhood Name</li>
+    <li>Block</li>
+    <li>Call Disposition Code</li>
+    <li>Call Disposition</li>   
+</ul>
+<h3> Download </h3>
+In order to conduct some of the analyses in this project, the Incident column was recasted to have five categories instead of twelve. This change took a significant amount of time to occur when running the code. As a result, I have placed this updated CSV file in a repository on GitHub in order to save time running the code. 
+<br><br>To download this CSV file, use the following code snippet: (removed to preserve anonymity)<br><br>
+
+If you wish to see the original data file, use the following: "wget -O crimeincidentoriginal.csv https://information.stpaul.gov/api/views/gppb-g9cg/row
+s.csv?accessType=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+
+
+
+<h2>Traffic Stops</h2><br>
+
+This file contains information on St. Paul traffic stops from 2001 to the present. Columns include:
+
+<ul>
+    <li>Year of Stop</li>
+    <li>Date of Stop</li>
+    <li>Race of Driver</li>
+    <li>Gender of Driver</li>
+    <li>Driver Searched?</li>
+    <li>Vehicle Searched?</li>
+    <li>Citation Issued?</li>
+    <li>Age of Driver</li>
+    <li>Reason For Stop</li>
+    <li>Police Grid Number</li>
+    <li>Location of Stop By Police Grid - Originally Lat/Long, is converted into a POINT object in code.</li>  
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, use the following code snippet: "wget -O trafficstop.csv https://information.stpaul.gov/api/views/kkd6-vvns/rows.csv?accessType=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+
+
+
+<h2>Vacant Buidings</h2><br>
+
+This file contains information on the vacant buildings currently in St. Paul. Columns include:
+
+<ul>
+    <li>Address</li>
+    <li>Vacant As Of</li>
+    <li>Dwelling Type</li>
+    <li>Vacant Building Category</li>
+    <li>Ward</li>
+    <li>District</li>
+    <li>Census Tract</li>
+    <li>Map Location - Originally Lat/Long, is converted into a POINT object in code.</li>
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, use the following code snippet: "wget -O vacantbuildings.csv https://information.stpaul.gov/api/views/fgbn-288b/rows.csv?
+accessType=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+<h2>Pedestrian And Bike Crash Data</h2><br>
+
+This file contains information about different types of crashes in St. Paul from 2016 to the present. These crashes are not included in the previous Crime Incident Report file. While thirty three columns exist in this file, many of them are mostly empty. Columns important to my analyses include:
+
+<ul>
+    <li>Date/Time</li>
+    <li>Case Number</li>
+    <li>Crash Lat/Long Location - Converted to a POINT object in the code.</li>
+
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, use the following code snippet: "wget -O crash.csv https://information.stpaul.gov/api/views/bw92-5h94/rows.csv?accessType
+=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+
+
+<h2>Parks Graffiti Report</h2><br>
+
+This file contains information on graffiti incidences in St. Paul from 2013 to 2015. These incidences are included in the Crime Incident Report file. Columns include:
+
+<ul>
+    <li>Location Name</li>
+    <li>Work Performed Date</li>
+    <li>Location Address</li>
+    <li>Issue</li>
+    <li>Description</li>
+    <li>Labor Cost ($)</li>
+    <li>Material Cost ($)</li>
+    <li>Total Cost ($)</li>
+    <li>Location - Originally Lat/Long, converted to a POINT object in the code.</li>
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, use the following code snippet: "wget -O graffiti.csv https://information.stpaul.gov/api/views/gcu2-spkd/ro
+ws.csv?accessType=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+
+<h2>Liquor Licenses</h2><br>
+
+This file contains information on the liquor licenses currently issued within St. Paul. Columns include:
+
+<ul>
+    <li>License Number</li>
+    <li>Business Name</li>
+    <li>License Type</li>
+    <li>License Expiration Date</li>
+    <li>license Status</li>
+    <li>PIN</li>
+    <li>Ward</li>
+    <li>District Council</li>
+    <li>Address</li>
+    <li>Location - Originally Lat/Long, converted to a POINT object in the code.</li>
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, use the following code snippet: "wget -O liquor.csv https://information.stpaul.gov/api/views/hsci-rniw/rows
+.csv?accessType=DOWNLOAD"<br><br><br>
+
+
+
+
+
+
+
+
+<h2>Saint Paul Police Grid</h2><br>
+
+This file contains a geopandas data set containing information on the location of each grid number within the St. Paul police grid. Columns include:
+
+<ul>
+    <li>District</li>
+    <li>Grid Number</li>
+    <li>Geometry - POLYGON objects.</li>
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, click <a href = "https://information.stpaul.gov/browse?limitTo=maps&utf8=%E2%9C%93">here</a>. Click on Export --> Shapefile. <br><br><br>
+
+
+
+
+
+
+
+
+
+
+<h2>District Council</h2><br>
+
+This file contains a geopandas data set containing information on the location of each of the twelve districts that make up St. Paul. Columns include:
+
+<ul>
+    <li>District</li>
+    <li>Name 1</li>
+    <li>Name 2 - Alternate, Shorter Name</li>
+    <li>Geometry - POLYGON objects</li>
+
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, click <a href = "https://information.stpaul.gov/City-Administration/District-Council-Shapefile-Map/dq4n-yj8b">here</a>. Click on Export --> Shapefile. <br><br><br>
+
+
+
+
+
+
+
+
+<h2>Bikeways</h2><br>
+
+This file contains a geopandas data set containing information on the location of each of St. Paul's bikepaths. Columns used in my analyses include:
+
+<ul>
+    <li>Object ID</li>
+    <li>Geometry - MULTILINESTRING objects</li>
+
+
+</ul>
+<h3> Download </h3>
+
+To download this CSV file, click <a href = "https://information.stpaul.gov/City-Infrastructure/Bikeways/y69w-ap3f">here</a>. Click on Export --> Shapefile. <br><br><br>

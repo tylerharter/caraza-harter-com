@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <h1>Data</h1>
+      
+      The U.S. federal government publicly reports many federal awards (e.g., contracts, grants, and loans) on the website <a href="https://www.usaspending.gov">USAspending.gov</a>, from which my datasets are drawn. This <a href='https://fas.org/sgp/crs/misc/R44027.pdf'>Congressional Research Service report</a> on USAspending.gov provides a nice oversight of the website.
+      This project used four datasets from this service for awards made by NASA to institutes of higher education within the United States from Fiscal Year (FY) 2009 to 2019. The main two datasets are the information for primary award winners of grants or contracts along with the details of the award. The other two datasets include all of the subcontractors, their information, and subaward value for each primary award. One dataset in each category is for grants and the other is for contracts. Altogether, there are 28,344 entries each with between 79 and 263 columns. As such, the data files are too large to include in my submission. Data can be accessed through USAspending.gov's advanced search function. The exact query I used can be found <a href="https://www.usaspending.gov/#/search/03691a41322067e67783027db053d833">here</a>. The data can then be downloaded by using their data interface.
+      
+      <p>Additionally, I used the state population data from the U.S. 2010 census to calculate per capita spending. That data may be found <a href='https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html'>here</a>.</p>
+      
+<p>Due to the size of the datasets (~150 unique data fields between all of them), I will just describe the columns that I used for this project here. The exact names for each field often vary from dataset-to-dataset, so I will be using the general descriptor for each field below. Additionally, these descriptors may include several related fields wrapped. The full data dictionary may be found <a href="https://portal.max.gov/portal/assets/public/offm/DataStandardsFinal.htm">here</a>.</p>
+      
+      <h3>Award ID</h3>
+      A unique identifier for every federal award. I used this ID to link prime award and subaward information.
+      
+      <h3>Obligated Amount</h3>
+      The amount of money the federal government has obligated to spend under an award. Notably, this money may be spent over several years. Following federal budgeting practices, I assigned all spending for an award to the year the award was made.
+
+      <h3>Start Date</h3> 
+      The day the award was signed and work can begin.
+      
+      <h3>Recipient State Code</h3>
+      The common abbreviation for the state in which the recipient of the award resides (e.g., WI for Wisconsin). In general, this may be different than the state in which work was performed. However, as institutes of higher education conduct much of their work within their state, I used this field as the defining location for an award. Because subawards may be conducted in different states, I did subtract off the value of subawards from the prime award and assign that value to the state in which the subaward winner was located.
+      
+      <h3>Federal Accounts Funding This Award</h3>
+      Each prime award included the federal accounts that were funding the award. These are account numbers used by the Office of Management and Budget and the Federal Treasury that show which congressionally appropriated budget money is coming from. I used these accounts to assign spending to different mission directorates at NASA. Because this field did not include percentages for awards that were funded by multiple sources, I divided the value of awards between funding sources by the percentage of NASA's total budget each mission directorate comprised. This may have led to some errors in the data, as some mission directorates may have provided more or less of the money for an individual award than their percentage of NASA's total budget suggests. However, given the number of awards over time, these numbers may even out when averaged over all awards.
+      
+      <h3>Award Type</h3>
+      The award type is the type of contracting mechanism used for each award. Examples include cost plus contracting, grants, and fixed price contracts. 
+      
+      <h3>Award Description</h3>
+      The award description is a block of text that usually contains the abstract or statement of work for a given award. However, the quality of this field varies dramatically. Sometimes it is only the first 25 words whereas others are multiple paragraphs long.
+      
+      <h3>Business Type</h3>
+      The business type field includes standardized descriptions of the type of organization that won the prime or subaward. For this dataset, the most important descriptions included private institution of higher education and public/state institution of higher education. The dataset also included non-profit research foundations that are sponsored by universities along with businesses that universities hired to conduct an activity under an award.  
+
+  </body>
+</html>

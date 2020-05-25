@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with matplotlib (https://matplotlib.org/) -->
+<svg height="288pt" version="1.1" viewBox="0 0 432 288" width="432pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 288 
+L 432 288 
+L 432 0 
+L 0 0 
+z
+" style="fill:#ffffff;"/>
+  </g>
+  <g id="axes_1">
+   <g clip-path="url(#p7b5b28c0d1)">
+    <image height="218" id="image9bf9f6c9fb" transform="scale(1 -1)translate(0 -218)" width="320" x="61.517647" xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAUAAAADaCAYAAADXGps7AAAABHNCSVQICAgIfAhkiAAABV1JREFUeJzt3TFqHFccwOFV5N5g0DlSuDEY1KXMcQw6gsDHSZlOYHDjIucwGHwArVIbNENmmMzb2d/3lRu8M0iTHw/+b55uzufzywkg6LfRNwAwigACWQIIZAkgkCWAQJYAAlkCCGQJIJAlgECWAAJZAghkCSCQJYBAlgACWQIIZAkgkCWAQJYAAlkCCGQJIJAlgECWAAJZAghkCSCQJYBA1pvRN3BEt7e3i//N8/Pz/3AnFHn+tmMFCGQJIJAlgECWAAJZAghk3ZzP55fRN3GJtp60TX2f6Vzbls/Z3He9+/jp1c+/Pz0uvv41sQIEsgQQyBJAIEsAgSwBBLJMgSfMTdTWTOG2/C6T4+NZugtgzbM0Nek9nU6nH18+L7p+hRUgkCWAQJYAAlkCCGQJIJAlgEBWfhvMltsNprYanE77bJ3hci39Pe91sEb9kA4rQCBLAIEsAQSyBBDIEkAgK/OH0becwk2bPl58n+tzqZbuAri7f1j8XVuau/41HaNvBQhkCSCQJYBAlgACWQIIZAkgkJU5DGGPv8mw1wvse5jbBnFEl7p1Y+rnvOZ+Rx/scURWgECWAAJZAghkCSCQJYBA1lVNgUdPwY54vP21TXu3MnpqPHoXwtz1p/6fGf0zW8MKEMgSQCBLAIEsAQSyBBDIEkAg66q2wayx5pAC213aRm/3mHr+prannE7z27peM/p53YsVIJAlgECWAAJZAghkCSCQlZ8Cr3Gpx9ub9I6113R46vdcOcZ+S1aAQJYAAlkCCGQJIJAlgEDWm9E3cEQmaow0PW0+3pH0o1kBAlkCCGQJIJAlgECWAAJZAghk2QZzQA49gG1YAQJZAghkCSCQJYBAlgACWabAcX/98/cu1/nz9z92uc5IX9++n/xvH35+2/FO+K+sAIEsAQSyBBDIEkAgSwCBLAEEsmyDidhru8vS6xe2x3C5rACBLAEEsgQQyBJAIEsAgSxT4CsyetK7xhGnw0f8OfM6K0AgSwCBLAEEsgQQyBJAIMsUmIs0N2ndckJsottmBQhkCSCQJYBAlgACWQIIZAkgkGUbDIdzqVtXPvz8NvoWWMgKEMgSQCBLAIEsAQSyBBDIujmfzy+jb+Jo7u4fXv38+9Pjznfyq69v3w+9fp0p8PFYAQJZAghkCSCQJYBAlgACWQIIZNkGs8Lt7e2rnz8/P+98J7+yDWYfo7e7TD1/c0Y/m5fKChDIEkAgSwCBLAEEsgQQyMofib9movbu46fF37XHFG5uOmlCfP3mnrGlz3llamwFCGQJIJAlgECWAAJZAghkXdW7wFu+I7lmonvEdzTr0+HR7/VO2fpZWvr++hGf5TWsAIEsAQSyBBDIEkAgSwCBLAEEsq7qMIQtXwafs+ZI/C2vv6U120COuHXmaNtd1mwpmXvG1hzgMeWI212mWAECWQIIZAkgkCWAQJYAAllXdRjCnC2PBN/yGP0fXz4vvj7XY68dBUsPPag8f1aAQJYAAlkCCGQJIJAlgECWAAJZmW0wU/wdEfawxzasNc/F3f3Dq59/f3pc/F1HZAUIZAkgkCWAQJYAAlkCCGRd1ZH4a2w5nZ2zdHJ3qUfos601v3/H22/HChDIEkAgSwCBLAEEsgQQyBJAICt/GMKUrbcUTH3f1JaGysvodaMP46izAgSyBBDIEkAgSwCBLAEEskyBV/DSOSN5/rZjBQhkCSCQJYBAlgACWQIIZJkCA1lWgECWAAJZAghkCSCQJYBAlgACWQIIZAkgkCWAQJYAAlkCCGQJIJAlgECWAAJZAghkCSCQJYBAlgACWQIIZAkgkCWAQJYAAlkCCGQJIJAlgEDWvxKEdK3AP6gyAAAAAElFTkSuQmCC" y="-34"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7b5b28c0d1">
+   <rect height="217.44" width="319.764706" x="61.517647" y="34.56"/>
+  </clipPath>
+ </defs>
+</svg>

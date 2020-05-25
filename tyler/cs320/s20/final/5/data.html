@@ -1,0 +1,55 @@
+<h1> Data </h1>
+Adapted from the <a href= https://www.ncdc.noaa.gov/stormevents/ftp.jsp>NOAA Storm Events Database</a>
+
+<br>The database currently contains data from January 1950 to January 2020, as entered by NOAA's National Weather Service (NWS)
+<br>
+<br>
+<b>deaths_direct</b>  Ex: 0, 45, 23
+The number of deaths directly related to the weather event.
+
+<br><br>
+<b>deaths_indirect</b> Ex: 0, 4, 6
+The number of deaths indirectly related to the weather event
+
+<br><br>
+<b>damage_property</b>  Ex: 10.00K, 0.00K, 10.00M
+The estimated amount of damage to property incurred by the weather event.  (e.g. 10.00K = $10,000; 10.00M = $10,000,000)
+
+<br><br>
+<b>tor_f_scale</b>  Ex: EF0, EF1, EF2, EF3, EF4, EF5
+<p>
+    Enhanced Fujita Scale describes the strength of the tornado based on the amount and type of damage caused by the tornado.  The F-scale of damage will vary in the destruction area; therefore, the highest value of the F-scale is recorded for each event. 
+<br>EF0 - Light Damage (40 - 72 mph)
+<br>EF1 - Moderate Damage (73 -112 mph)
+<br>EF2 - Significant damage (113 -157 mph)
+<br>EF3 - Severe Damage (158 - 206 mph)
+<br>EF4 - Devastating Damage (207 - 260 mph)
+<br>EF5 - Incredible Damage (261 - 318 mph)
+</p>
+<br><br>
+<b>lat</b>  Ex: 31.25, 31.79, 32.76, 31.80
+The latitude where the event occurred {rounded to the hundredths in decimal degrees; includes an "-" if it's S of the Equator}
+
+<br><br>
+<b>lon</b>  Ex: -93.97, -94.18, -94.52, -95.13
+The longitude where the event occurred {rounded to the hundredths in decimal degrees; includes an "-" if it's W of the Prime Meridian}
+
+<br><br>
+<b>state</b>  Ex:  GEORGIA,  WYOMING, COLORADO
+The state name where the event occurred (no State ID's are included here; State Name is spelled out in ALL CAPS)
+
+<br>
+
+
+
+<p> 
+There are 51 columns in the full dataset. We feature the most useful in this brief documentation. If you would like to view the full documentation, you can access it 
+    <a href="storm_data_doc.pdf"> here (pdf)</a>.
+    
+<br><br>
+    Data scraped from <a href= https://www.ncdc.noaa.gov/stormevents/ftp.jsp>NOAA Storm Events Database</a> and compressed into a zip. Scrape page with wget or contact Jack or Cole for full dataset (250MB zipped).
+</p>
+    
+    
+    
+<a href="index.html"> Back </a>
