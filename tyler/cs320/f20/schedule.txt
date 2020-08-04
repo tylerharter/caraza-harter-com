@@ -1,0 +1,296 @@
+################################################################################
+# PART 1
+################################################################################
+
+=
+No Class
+
+=
+Reproducibility 1
+* Course Overview
+* Hardware, OS, Interpreters
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+WEEKLY LAB: Cloud Setup<br>
+
+=
+Reproducibility 2
+* versioning
+* git
+<b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
+
+=
+No Class
+* Labor Day
+
+=
+Quantifying Perf 1
+* check_output
+* time
+#<a href="lectures/lec3-morning.ipynb">LECTURE NB</a><br>
+<b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
+WEEKLY LAB: Git Practice<br>
+<b>Released:</b> P1 (perf measurements)
+
+=
+Quantifying Perf 2
+* complexity analysis
+* Big O
+#<a href="lectures/lec4-big-o-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
+
+=
+Quantifying Perf 3
+* practice
+<a href="materials/lec-05-worksheet.key.pdf">WORKSHEET</a><br>
+<a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
+<a href="materials/lec-05.html">EXAMPLES</a><br>
+WEEKLY LAB: Complexity<br>
+
+=
+OOP 1: Classes
+* attributes
+* methods
+* constructors
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
+<b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
+
+=
+OOP 2: <span style="font-size:90%">Special Methods</span>
+* __str__, __repr__, _repr_html_
+* __eq__, __lt__
+* __len__, __getitem__
+* __enter__, __exit__
+<a href="lectures/lec7-tests.txt">TEST CASES</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+<b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
+
+=
+OOP 3: Inheritance
+* method resolution order
+* overriding methods
+* calling overridden methods
+#<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+WEEKLY LAB: TODO<br>
+
+=
+OOP Review and Practice
+* TODO
+<b>Due:</b> P1<br>
+<b>Released:</b> P2 (trees)
+
+=
+Recursion
+* Frames
+* Trace
+<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+
+=
+Graphs and Tree Intro
+* types of graph
+* graphviz
+<b>Read</b>: <a href="reading/lec-10-graphs.html">HTML</a><br>
+WEEKLY LAB: TODO<br>
+
+=
+Trees 1
+* trees
+* binary trees
+* binary search trees (BSTs)
+<b>Read</b>: <a href="reading/lec-11-search-trees.html">HTML</a><br>
+
+=
+Trees 2
+* implementing dictionaries with BSTs
+* graph search
+#<a href="lectures/lec-12-starter.ipynb">LECTURE NB STARTER</a><br>
+#<a href="lectures/lec-12-morning.ipynb">MORNING NB</a><br>
+<b>Read</b>: <a href="reading/lec-12-dict-graph-search.html">HTML</a><br>
+
+=
+Graph Search 1
+* depth-first search
+* time vs. memory complexity
+#<a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
+#<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
+#<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
+<b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
+WEEKLY LAB: BSTs and More!<br>
+
+=
+Graph Search 2
+* breadth-first search
+<b>Due:</b> P2<br>
+<b>Released:</b> P3 (crawler)
+
+=
+Web 1: Selenium
+* advanced web scraping
+<b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-19/scrape.html">TRICKY PAGES</a><br>
+
+=
+Web 2: Recursive Crawl
+* BFS for webpages
+* robots.txt
+* HTTP 429
+<b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
+<a href="lectures/lec-20/practice.html">CRAWL PRACTICE</a><br>
+#<a href="lectures/lec-20/lecture.ipynb">LECTURE NB</a><br>
+WEEKLY LAB: DFS vs. BFS<br>
+
+=
+Web 3: Flask
+* review from CS 220
+* RPC, POST
+* decorators
+<a href="materials/lec-17-examples.ipynb">DECORATOR EXAMPLES</a><br>
+
+=
+Web 4: Tracing
+* wrappers based on *args and **kwargs
+<b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
+<a href="materials/lec-18.html">Interactive Exercises</a><br>
+WEEKLY LAB: Web and Regex<br>
+
+=
+Web 5: A/B testing
+* data collection
+* significance
+<b>Read</b>: <a href="https://techcrunch.com/2014/06/29/ethics-in-a-data-driven-world/">The Morality of A/B Testing (TechCrunch article)</a><br>
+<b>Due:</b> P3<br>
+<b>Released:</b> P4 (website)
+WEEKLY LAB: TODO<br>
+
+=
+Regex 1
+* character classes
+* repetition
+* anchoring
+#<a href="lectures/lec-15-starter.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/08/text_intro.html">DS100 Ch 8</a><br>
+<a href="https://github.com/tylerharter/cs320/blob/master/s20/lab6/student-search-examples.ipynb">STUDENT EXAMPLES</a><br>
+
+=
+Regex 2
+* findall, sub, groups
+
+=
+Compression
+* zips
+* streaming
+WEEKLY LAB: regex and zips<br>
+
+=
+Visualization 1
+* matplotlib coordinate systems
+
+=
+Visualization 2
+* drawing custom lines/polygons
+* geographic maps
+<b>Due:</b> P4<br>
+<b>Released:</b> P5 (trace analysis)
+
+=
+Visualization 3
+* shapefiles
+* shapely
+* high resolution graphics
+WEEKLY LAB: geo maps<br>
+
+=
+Visualization 4
+* animations
+WEEKLY LAB: Social Distancing<br>
+
+=
+Linear Algebra 1
+* machine learning overview
+* numpy arrays
+* image manipulation
+<b>Read</b>: <a href="http://scipy-lectures.org/intro/numpy/array_object.html">Scipy Notes 1.3.1</a><br>
+
+=
+Linear Algebra 2
+* matrix multiplication basics
+* equation solving
+
+=
+Linear Algebra 3
+* linear combinations
+* column spaces
+* projection matrices
+WEEKLY LAB: JOIN and Counting<br>
+<b>Due:</b> P5<br>
+<b>Released:</b> P6 (land matrices and regression)
+
+=
+Linear Algebra 4
+* fit lines
+* loss functions
+
+=
+Linear Algebra 5
+* fitting non-linear data
+* correlation matrices
+
+=
+Linear Algebra 6
+* principal component analysis
+WEEKLY LAB: Dot Product<br>
+
+=
+Supervised Learning 1
+* classification
+* train+test split
+WEEKLY LAB: P6 Hints
+
+=
+Supervised Learning 2
+* sklearn Pipeline
+* custom classifiers+transformers
+WEEKLY LAB: P6 Hints
+
+=
+Supervised Learning 3
+* confusion matrices
+* precision and recall
+* multi-class logistic regression
+<b>Due:</b> P6<br>
+<b>Released:</b> P7 (sklearn)
+
+=
+No Class
+* Happy Thanksgiving!
+
+=
+Supervised Learning 3
+* categorical inputs
+* one-hot encoding
+WEEKLY LAB: Decision Boundaries<br>
+
+=
+Unsupervised Learning 1
+* k-means
+
+=
+Unsupervised Learning 2
+* k-means limitations
+* agglomerative clustering
+* dendograms
+
+=
+Parallelism 1
+* multiprocessing pools
+* parallel map
+
+=
+Parallelism 2
+* pytorch
+<b>Due:</b> P7<br>
+
+=
+Optimization
+* gradient descent
+* least squares
