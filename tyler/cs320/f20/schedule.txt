@@ -28,6 +28,7 @@ Quantifying Perf 1
 * time
 #<a href="lectures/lec3-morning.ipynb">LECTURE NB</a><br>
 <b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: Git Practice<br>
 <b>Released:</b> P1 (perf measurements)
 
@@ -44,6 +45,7 @@ Quantifying Perf 3
 <a href="materials/lec-05-worksheet.key.pdf">WORKSHEET</a><br>
 <a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
 <a href="materials/lec-05.html">EXAMPLES</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: Complexity<br>
 
 =
@@ -71,6 +73,7 @@ OOP 3: Inheritance
 * calling overridden methods
 #<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: TODO<br>
 
 =
@@ -90,6 +93,7 @@ Graphs and Tree Intro
 * types of graph
 * graphviz
 <b>Read</b>: <a href="reading/lec-10-graphs.html">HTML</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: TODO<br>
 
 =
@@ -115,6 +119,7 @@ Graph Search 1
 #<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
 #<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
 <b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: BSTs and More!<br>
 
 =
@@ -137,6 +142,7 @@ Web 2: Recursive Crawl
 <b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
 <a href="lectures/lec-20/practice.html">CRAWL PRACTICE</a><br>
 #<a href="lectures/lec-20/lecture.ipynb">LECTURE NB</a><br>
+QUIZ DUE<br>
 WEEKLY LAB: DFS vs. BFS<br>
 
 =
@@ -151,7 +157,7 @@ Web 4: Tracing
 * wrappers based on *args and **kwargs
 <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
 <a href="materials/lec-18.html">Interactive Exercises</a><br>
-WEEKLY LAB: Web and Regex<br>
+
 
 =
 Web 5: A/B testing
@@ -159,8 +165,9 @@ Web 5: A/B testing
 * significance
 <b>Read</b>: <a href="https://techcrunch.com/2014/06/29/ethics-in-a-data-driven-world/">The Morality of A/B Testing (TechCrunch article)</a><br>
 <b>Due:</b> P3<br>
-<b>Released:</b> P4 (website)
-WEEKLY LAB: TODO<br>
+<b>Released:</b> P4 (website)<br>
+QUIZ DUE<br>
+WEEKLY LAB: Web<br>
 
 =
 Regex 1
@@ -179,6 +186,7 @@ Regex 2
 Compression
 * zips
 * streaming
+QUIZ DUE<br>
 WEEKLY LAB: regex and zips<br>
 
 =
@@ -197,12 +205,13 @@ Visualization 3
 * shapefiles
 * shapely
 * high resolution graphics
+QUIZ DUE<br>
 WEEKLY LAB: geo maps<br>
 
 =
 Visualization 4
 * animations
-WEEKLY LAB: Social Distancing<br>
+# TODO: remove this?  WEEKLY LAB: Social Distancing<br>
 
 =
 Linear Algebra 1
@@ -215,13 +224,14 @@ Linear Algebra 1
 Linear Algebra 2
 * matrix multiplication basics
 * equation solving
+QUIZ DUE<br>
+WEEKLY LAB: Dot Product<br>
 
 =
 Linear Algebra 3
 * linear combinations
 * column spaces
 * projection matrices
-WEEKLY LAB: JOIN and Counting<br>
 <b>Due:</b> P5<br>
 <b>Released:</b> P6 (land matrices and regression)
 
@@ -234,23 +244,24 @@ Linear Algebra 4
 Linear Algebra 5
 * fitting non-linear data
 * correlation matrices
+QUIZ DUE<br>
+WEEKLY LAB: JOIN and Counting<br>
 
 =
 Linear Algebra 6
 * principal component analysis
-WEEKLY LAB: Dot Product<br>
 
 =
 Supervised Learning 1
 * classification
 * train+test split
-WEEKLY LAB: P6 Hints
 
 =
 Supervised Learning 2
 * sklearn Pipeline
 * custom classifiers+transformers
-WEEKLY LAB: P6 Hints
+QUIZ DUE<br>
+WEEKLY LAB: TODO
 
 =
 Supervised Learning 3
@@ -268,6 +279,7 @@ No Class
 Supervised Learning 3
 * categorical inputs
 * one-hot encoding
+QUIZ DUE<br>
 WEEKLY LAB: Decision Boundaries<br>
 
 =
@@ -284,6 +296,8 @@ Unsupervised Learning 2
 Parallelism 1
 * multiprocessing pools
 * parallel map
+QUIZ DUE<br>
+WEEKLY LAB: TODO
 
 =
 Parallelism 2
