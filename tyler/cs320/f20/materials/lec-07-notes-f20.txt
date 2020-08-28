@@ -1,0 +1,106 @@
+REVIEW QUESTIONS (15 minutes)
+
+methods are functions in classes
+today is about special methods
+
+cookie cutters (many objects of the same type)
+now: how to create new types (cookie cutters)
+
+(always have name+age)
+ - which one is an attribute?
+ - is anything printed?
+ - what about after renaming to __init__?
+ - which call fails?
+ - which one is not type based dispatch?
+ - which style is preferred?
+ - instead of "dog", what is a better name for the receiver?
+
+In PyTutor:
+
+class Dog:
+    def __init__(dog, name, age):
+        print("created a dog")
+        dog.name = name
+        dog.age = age
+        
+    def speak(dog, mult):
+        print(dog.name + ": " + "bark!")
+        
+fido = Dog("Fido", 3)
+sam = Dog("Sam", 11)
+fido.speak()
+sam.speak()
+
+========================================
+
+MANY special methods
+
+First, have to do with how things look when their in an output cell or printed -- ever noticed they're different?
+
+What happens if I do s1 == s2?  Hijack == in Pandas...
+
+In 220, learned a lot about sequences.  Index, slice, loop.  What goes in the brackets?
+
+BACK TO OLD NOTEBOOK
+
+print(fido) # non-programmer
+fido # end of cell: non-programmer
+
+add __str__ => "I AM A DOG" # note: it is automatically called!!!
+ - include name+age in str.  Use .format, or format string
+
+add __repr__:
+ - snippet to create another Dog
+
+_repr_html_ => note diff name!  A Jupyter thing (not Python thing)
+ - return "<h1><i>{}</i> the dog</h1>"
+ - how do DataFrames look so nice?
+
+--------------------
+
+Rich people cloning their dog
+
+fido = Dog("Fido", 11)
+fido_v2 = Dog("Fido", 11)
+fido == fido_v2
+
+__eg__(self, other):
+  ...
+  dog's name+age (SSN in an ideal world?)
+
+List of dogs => print it (note that it uses repr, which you should use even if you have _repr_html_)
+
+If I sort: type error < (try < directly)
+
+Decide: younger dog is the lesser dog.
+
+To sort, need __lt__ to sort, at minimum
+ -- annoying: le, gt, ...
+
+========================================
+
+Ranges are sequences
+ - index, slice, len, loop, convert to list
+ - can directly create range(2,8)
+
+Change range => Range, then build Range(self, bound1, bound2=None)
+
+def __getitem__(self, lookup)
+
+r[-1] => raise NotImplementedError("neg idx not supported")
+r[100] => IndexError("idx too big!")
+
+Loop over Range()...
+ - what does the for loop do?  Start at 0, keep trying bigger numbers until IndexError
+
+list(r)
+
+r[2:]
+what is type(lookup)?
+
+if type(lookup) != int:
+  raise error...
+
+========================================
+
+context managers...

@@ -297,7 +297,7 @@ Parallelism 1
 * multiprocessing pools
 * parallel map
 QUIZ DUE<br>
-WEEKLY LAB: TODO
+NO LAB
 
 =
 Parallelism 2
