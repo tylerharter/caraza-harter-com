@@ -1,0 +1,9 @@
+1. Talk about dict guarantees: https://docs.python.org/3.6/whatsnew/3.6.html#pep-468-preserving-keyword-argument-order.  undefined behavior.
+
+2. finish DataFrame examples
+
+3. introduce iloc too.
+
+4. worksheet
+
+5. look at some old projects, Pandas-style?
