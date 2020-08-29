@@ -2,6 +2,8 @@
 # PART 1
 ################################################################################
 
+<b>No Class</b>
+
 Introduction
 * Class Overview
 * Hardware
