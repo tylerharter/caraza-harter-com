@@ -283,28 +283,26 @@ QUIZ DUE<br>
 WEEKLY LAB: Decision Boundaries<br>
 
 =
-Unsupervised Learning 1
+Unsupervised Learning
 * k-means
-
-=
-Unsupervised Learning 2
-* k-means limitations
-* agglomerative clustering
-* dendograms
 
 =
 Parallelism 1
 * multiprocessing pools
 * parallel map
-QUIZ DUE<br>
-NO LAB
 
 =
 Parallelism 2
 * pytorch
-<b>Due:</b> P7<br>
+QUIZ DUE<br>
+NO LAB
 
 =
 Optimization
 * gradient descent
 * least squares
+<b>Due:</b> P7<br>
+
+=
+No Class
+* Study Day
