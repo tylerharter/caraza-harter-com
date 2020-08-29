@@ -13,17 +13,14 @@ Introduction
 <b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p1">Lab-P1</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p1">P1</a>
 
 =
-The Terminal
+The Terminal & pseudocode
 * Terminal Emulatation
 * Shells
 * Navigation
 * Program Execution
-<a href="materials/lec-02.pdf">Link to Slides</a>
-
-=
-Pseudocode
 * Flow of Execution
 * State
+<a href="materials/lec-02.pdf">Link to Slides</a>
 <a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
 <b>No Slides</b>
 
@@ -41,6 +38,7 @@ Programming
 <b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p2">Lab-P2</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p2">P2</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">code</a><br>
 
+=
 Labor Day!<br>
 <b>No Class</b>
 
