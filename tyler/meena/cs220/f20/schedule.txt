@@ -25,6 +25,10 @@ The Terminal & pseudocode
 <b>No Slides</b>
 
 =
+Labor Day!<br>
+<b>No Class</b>
+
+=
 Programming
 * Syntax+Parsing
 * Values+Types
@@ -37,10 +41,6 @@ Programming
 <b>Due</b>: P1<br>
 <b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p2">Lab-P2</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p2">P2</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">code</a><br>
-
-=
-Labor Day!<br>
-<b>No Class</b>
 
 =
 Vars and Exprs
