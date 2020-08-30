@@ -5,7 +5,7 @@ from collections import defaultdict as ddict
 #
 # aws s3 cp p2-cr-assignments.json s3://caraza-harter-cs301/a/projects/p2-cr-assignments.json
 
-COURSE = 'a'
+COURSE = 'b'
 
 # we want submissions that are the latest for a student
 def get_submission_emails(project):
