@@ -152,6 +152,7 @@ Strings
 * Searching
 * Comparison
 * String formatting
+* Exam 1 review 
 
 <!--a href="materials/lec-13.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br-->
@@ -162,8 +163,7 @@ Strings
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-13">code</a><br-->
 
 =
-Review Day
-<b>Evening Exam 1!</b>
+Exam 1
 
 ################################################################################
 # PART 2
@@ -302,14 +302,14 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
+* Exam 2 review
 <b>Read</b>: Downey Ch 14
 <b>Due</b>: Quiz8<br>
 <!--a href="materials/lec-27.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-27">code</a><br-->
 
 =
-Review Day
-<b>Evening Exam 2!</b><br>
+Exam 2
 <b>Due</b>: P9<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p9a">Lab-P9a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p9">P9</a><br-->
 
