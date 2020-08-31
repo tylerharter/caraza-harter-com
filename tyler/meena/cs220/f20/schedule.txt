@@ -11,7 +11,7 @@ Introduction
 * Software
 * Resources for getting help
 <!--a href="materials/lec-01.pdf">Link to Slides</a><br-->
-<!--b>Read</b>: <a href="syllabus.html">Syllabus</a><br-->
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
 <!--b>Install</b>: Python on <a href="https://youtu.be/9DdOYx9EEXQ" rel="nofollow">Windows</a> or <a href="https://youtu.be/WyEpOztcy5w" rel="nofollow">Mac</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p1">Lab-P1</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p1">P1</a-->
 
@@ -25,7 +25,7 @@ The Terminal & pseudocode
 * State
 <!--a href="materials/lec-02.pdf">Link to Slides</a-->
 <!--a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br-->
-<b>No Slides</b>
+<!--b>No Slides</b-->
 
 =
 Labor Day!<br>
@@ -38,10 +38,10 @@ Programming
 * Calculation+Operators
 * Boolean Logic
 * Interactive vs. Script Mode, print
-<!--a href="materials/lec-04.pdf">Link to Slides</a><br-->
-<!--a href="materials/lec-04-worksheet.pdf">Link to Worksheet</a><br-->
 <b>Read</b>: Downey Ch 1<br>
 <b>Due</b>: P1<br>
+<!--a href="materials/lec-04.pdf">Link to Slides</a><br-->
+<!--a href="materials/lec-04-worksheet.pdf">Link to Worksheet</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p2">Lab-P2</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p2">P2</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">code</a><br-->
 
@@ -66,6 +66,7 @@ Using Functions
 
 <!--a href="materials/lec-06.pdf">Link to Slides</a><br-->
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
+<b>Due</b>: Quiz1<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-06">code</a><br-->
 
 =
@@ -76,11 +77,11 @@ Creating Functions
 * Return Values
 
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
-<!--b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br-->
+<b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br>
+<b>Due</b>: P2<br>
 <!--a href="materials/lec-07.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-07-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="materials/lec-07.html">Interactive Exercises</a><br-->
-<b>Due</b>: P2<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p3">Lab-P3</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p3">P3</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-07">code</a><br-->
 
@@ -109,14 +110,15 @@ Conditionals 1
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
+<b>Due</b>: Quiz2<br>
 
 =
 Conditionals 2
 * Refactoring
 * Nesting
+<b>Due</b>: P3<br>
 <!--a href="materials/lec-10.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-10.html">Interactive Exercises</a><br-->
-<b>Due</b>: P3<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p4">Lab-P4</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p4">P4</a><br-->
 
 =
@@ -138,6 +140,7 @@ Iteration 2
 <!--a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="materials/lec-12.html">Interactive Exercises</a><br-->
 <b>Read (Optional)</b>: Sweigart Ch 2<br>
+<b>Due</b>: Quiz3<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-12">code</a><br-->
 
 =
@@ -149,6 +152,7 @@ Strings
 * Searching
 * Comparison
 * String formatting
+* Exam 1 review 
 
 <!--a href="materials/lec-13.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br-->
@@ -159,8 +163,7 @@ Strings
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-13">code</a><br-->
 
 =
-Review Day
-<b>Evening Exam 1!</b>
+Exam 1
 
 ################################################################################
 # PART 2
@@ -176,6 +179,7 @@ Lists
 
 <!--a href="materials/lec-15.pdf">Link to Slides</a><br-->
 <b>Read</b>: Downey Ch 10<br>
+<b>Due</b>: Quiz4<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-15">code</a><br-->
 
 =
@@ -184,9 +188,9 @@ CSV Tables
 * Format
 * Headers
 * Lists of lists
-<!--a href="materials/lec-16.pdf">Link to Slides</a><br-->
-<!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a> (through "Reading Data from Reader Objects in a for Loop")<br-->
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <b>Due</b>: P5<br>
+<!--a href="materials/lec-16.pdf">Link to Slides</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p6">Lab-P6</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p6">P6</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-16">code</a><br-->
 
@@ -195,7 +199,7 @@ List Practice
 * Coding Demos
 <!--a href="materials/lec-17-worksheet.pdf">Link to Worksheet</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-16">code (w/ Wed code)</a><br-->
-<b>No Slides</b>
+<!--b>No Slides</b-->
 
 =
 Dictionaries 1
@@ -203,9 +207,10 @@ Dictionaries 1
 * Lookup
 * Insert
 * Pop
+<b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
+<b>Due</b>: Quiz5<br>
 <!--a href="materials/lec-18.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-18.html">Interactive Exercises</a><br-->
-<b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-18">code</a><br-->
 
 =
@@ -213,10 +218,10 @@ Dictionaries 2
 * Nesting
 * dicts with lists
 * defaultdict
-<!--a href="materials/lec-19.pdf">Link to Slides</a><br-->
-<!--a href="materials/lec-19.html">Interactive Exercises</a><br-->
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
 <b>Due</b>: P6<br>
+<!--a href="materials/lec-19.pdf">Link to Slides</a><br-->
+<!--a href="materials/lec-19.html">Interactive Exercises</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p7">Lab-P7</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p7">P7</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-19">code</a><br-->
 
@@ -227,7 +232,7 @@ JSON
 * Pretty Printing
 <!--a href="materials/lec-20-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="materials/lec-20.pdf">Link to Slides</a><br-->
-<!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br-->
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-20">code</a><br-->
 
 =
@@ -236,6 +241,7 @@ Objects
 * Mutability
 * References
 * Python Tutor
+<b>Due</b>: Quiz6<br>
 <!--a href="materials/lec-21.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-21.html">Interactive Exercises</a><br-->
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
@@ -245,11 +251,11 @@ Copying
 * References
 * Shallow Copy
 * Deep Copy
+<!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
+<b>Due</b>: P7<br>
 <!--a href="materials/lec-22-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="materials/lec-22.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-22.html">Interactive Exercises</a><br-->
-<!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br-->
-<b>Due</b>: P7<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p8a">Lab-P8a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p8">P8</a><br-->
 
 =
@@ -267,6 +273,7 @@ Recursive Functions
 Function References
 * map
 * sort
+<b>Due</b>: Quiz7<br>
 <!--a href="materials/lec-24.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-24.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-24">code</a><br-->
@@ -275,6 +282,7 @@ Function References
 Generator Functions
 * iterators and generators
 <b>Due</b>: P8<br>
+<!--a href="materials/lec_25_S20.pdf">Link to Slides</a><br--> 
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p8b">Lab-P8b</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-25">code</a><br-->
 
@@ -286,7 +294,7 @@ Error Handling
 <!--a href="materials/lec-26.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-26.html">Interactive Exercises</a><br-->
 <!--a href="materials/lec-26-worksheet.pdf">Link to Worksheet</a><br-->
-<!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br-->
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-26">code</a><br-->
 
 =
@@ -294,13 +302,14 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
-<!--a href="materials/lec-27.pdf">Link to Slides</a><br-->
+* Exam 2 review
 <b>Read</b>: Downey Ch 14
+<b>Due</b>: Quiz8<br>
+<!--a href="materials/lec-27.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-27">code</a><br-->
 
 =
-Review Day
-<b>Evening Exam 2!</b><br>
+Exam 2
 <b>Due</b>: P9<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p9a">Lab-P9a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p9">P9</a><br-->
 
@@ -311,12 +320,13 @@ Pandas 1
 * series
 * reading CSVs
 * element-wise operations
-<!--b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br-->
+<b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-29">code</a><br-->
 
 =
 Pandas 2
 * practice
+<b>Due</b>: Quiz 9<br>
 <!--a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-30">code</a><br-->
 
@@ -330,8 +340,9 @@ Web 1
 * URLs
 * HTTP: GET and POST
 * requests module
+<!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
+<b>Due</b>: P10<br>
 <!--a href="materials/lec-31.pdf">Link to Slides</a><br-->
-<!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p9b">Lab-P9b</a-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-31">code</a><br-->
 
@@ -347,6 +358,7 @@ Web 3
 * Document Object Model
 * Parsing HTML
 * beautifulsoup
+<b>Due</b>: Quiz 10<br>
 <!--a href="materials/lec-33.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-33">code</a><br-->
 
@@ -357,8 +369,8 @@ Database 1
 * where
 * SQLite
 * Querying from Pandas
+<b>Due</b>: P11<br>
 <!--a href="materials/lec-34.pdf">Link to Slides</a><br-->
-<b>Due</b>: P9<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10a">Lab-P10a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p10">P10</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-34">code</a><br-->
 
@@ -366,7 +378,8 @@ Database 1
 Database 2
 * aggregates
 * group by
-<b>No Slides</b><br>
+<!--a href="materials/lec_35_S20.pdf">Link to Slides</a--><br>
+<!--b>No Slides</b--><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-35">code</a> (do lecture.ipynb in class, bus.ipynb at home)<br-->
 
 =
@@ -374,14 +387,15 @@ Plotting 1
 * bar+scatter plots
 * plot design
 * AxesSublot
-<!--b>Reading</b>: Matplotlib Intro (<a href="readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br-->
+<b>Due</b>: Quiz11<br>
+<b>Reading</b>: Matplotlib Intro (<a href="readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-36">code</a-->
 
 =
 Database 3
 * Worksheets
-<b>Due</b>: P10<br>
 <!--a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br-->
+<!--a href="materials/lec_37_S20.pdf">Link to Slides</a-->  
 <!--a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br-->
 
 =
@@ -391,13 +405,14 @@ Thanksgiving!<br>
 =
 Plotting 2
 * line plots
-<!--b>Reading</b>: Line and Advanced Bar Plots (<a href="readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br-->
+<b>Reading</b>: Line and Advanced Bar Plots (<a href="readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-38">code</a-->
 
 =
 Plotting 3
 * bar plots
 <b>Reading</b>: same as for "Plotting 2"<br>
+<b>Due</b>: P12<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10b">Lab-P10b</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-39">code</a-->
 
@@ -406,7 +421,7 @@ Plotting 4
 * axes
 * adjacent plots
 * design decisions
-<!--b>Reading</b>: Axes and Plot Design (<a href="readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br-->
+<b>Reading</b>: Axes and Plot Design (<a href="readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-40">code</a-->
 
 =
@@ -414,11 +429,12 @@ Randomness
 * Debugging
 * Simulation
 * Significance
+<b>Due</b>: Quiz12<br>
 <!--a href="materials/lec-41.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-41">code</a-->
 
 =
 Review/Catchup
 * Bring Questions
+<b>Due</b>: P13<br>
 <!--a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br-->
-<b>Due</b>: P10<br>
