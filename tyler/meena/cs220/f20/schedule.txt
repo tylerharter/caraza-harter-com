@@ -66,6 +66,7 @@ Using Functions
 
 <!--a href="materials/lec-06.pdf">Link to Slides</a><br-->
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
+<b>Due</b>: Quiz1<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-06">code</a><br-->
 
 =
@@ -109,6 +110,7 @@ Conditionals 1
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
+<b>Due</b>: Quiz2<br>
 
 =
 Conditionals 2
@@ -138,6 +140,7 @@ Iteration 2
 <!--a href="materials/lec-12-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="materials/lec-12.html">Interactive Exercises</a><br-->
 <b>Read (Optional)</b>: Sweigart Ch 2<br>
+<b>Due</b>: Quiz3<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-12">code</a><br-->
 
 =
@@ -176,6 +179,7 @@ Lists
 
 <!--a href="materials/lec-15.pdf">Link to Slides</a><br-->
 <b>Read</b>: Downey Ch 10<br>
+<b>Due</b>: Quiz4<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-15">code</a><br-->
 
 =
@@ -206,6 +210,7 @@ Dictionaries 1
 <!--a href="materials/lec-18.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-18.html">Interactive Exercises</a><br-->
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
+<b>Due</b>: Quiz5<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-18">code</a><br-->
 
 =
@@ -236,6 +241,7 @@ Objects
 * Mutability
 * References
 * Python Tutor
+<b>Due</b>: Quiz6<br>
 <!--a href="materials/lec-21.pdf">Link to Slides</a><br-->
 <!--a href="materials/lec-21.html">Interactive Exercises</a><br-->
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
