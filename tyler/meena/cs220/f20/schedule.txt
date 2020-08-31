@@ -330,6 +330,7 @@ Web 1
 * URLs
 * HTTP: GET and POST
 * requests module
+<b>Due</b>: P10<br>
 <!--a href="materials/lec-31.pdf">Link to Slides</a><br-->
 <!--b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p9b">Lab-P9b</a-->
@@ -358,7 +359,7 @@ Database 1
 * SQLite
 * Querying from Pandas
 <!--a href="materials/lec-34.pdf">Link to Slides</a><br-->
-<b>Due</b>: P9<br>
+<b>Due</b>: P11<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10a">Lab-P10a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p10">P10</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-34">code</a><br-->
 
@@ -380,7 +381,6 @@ Plotting 1
 =
 Database 3
 * Worksheets
-<b>Due</b>: P10<br>
 <!--a href="materials/lec-37-worksheet.pdf">Link to Worksheet</a><br-->
 <!--a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br-->
 
@@ -398,6 +398,7 @@ Plotting 2
 Plotting 3
 * bar plots
 <b>Reading</b>: same as for "Plotting 2"<br>
+<b>Due</b>: P12<br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10b">Lab-P10b</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-39">code</a-->
 
@@ -421,4 +422,4 @@ Randomness
 Review/Catchup
 * Bring Questions
 <!--a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br-->
-<b>Due</b>: P10<br>
+<b>Due</b>: P13<br>
