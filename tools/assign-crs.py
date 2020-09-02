@@ -59,7 +59,7 @@ def main():
         json.dump(assignments, f, indent=2)
 
     print('Run this:')
-    print('aws s3 cp %s-cr-assignments.json s3://caraza-harter-cs301/a/projects/%s-cr-assignments.json' % (project, project))
+    print(f'aws s3 cp %s-cr-assignments.json s3://caraza-harter-cs301/{COURSE}/projects/%s-cr-assignments.json' % (project, project))
 
 
 if __name__ == '__main__':
