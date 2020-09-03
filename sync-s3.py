@@ -26,7 +26,7 @@ s3 = boto3.client('s3')
 class Syncer:
     def __init__(self):
         self.subdomain = 'tyler' # will be the root directory locally
-        self.bucket = self.get_web_bucket('%s.caraza-harter.com' % self.subdomain)
+        self.bucket = "caraza-harter-4dcf7c05-8564-11e8-a86d-6a00020017a0" #self.get_web_bucket('%s.caraza-harter.com' % self.subdomain)
         self.dry = False # dry run
     
     def get_web_bucket(self, search):
