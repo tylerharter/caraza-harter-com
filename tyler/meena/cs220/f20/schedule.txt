@@ -6,7 +6,7 @@
 
 =
 Introduction
-* Class OvervIEW
+* Class Overview
 * Hardware
 * Software
 * Resources for getting help
