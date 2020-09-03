@@ -46,7 +46,7 @@ class Syncer:
         return None
 
     def get_s3_path(self, local_path):
-        return os.path.relpath(local_path, self.subdomain)
+        return os.path.relpath(local_path, self.subdomain).replace("\\", "/")
 
     def get_last_commit(self):
         response = s3.get_object(Bucket=self.bucket,
