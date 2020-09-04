@@ -27,6 +27,7 @@ The Terminal & pseudocode
 * Flow of Execution
 * State
 <a href="materials/lec_02_F20.pdf">Link to Slides</a><br>
+<a href="materials/lec_02_terminal_commands.txt">Terminal commands notes</a><br>
 <a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
 <b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=jzX_aaxy6FA">1</a>, </b><a href="https://www.youtube.com/watch?v=xkxOIUFXOy4">2</a>, </b><a href="https://www.youtube.com/watch?v=zT0FJajGdSM">3</a><br> 
 <b>Mike's lecture:</b> <a href="https://youtu.be/RJ9T4_CRVtM">YouTube</a><br>
