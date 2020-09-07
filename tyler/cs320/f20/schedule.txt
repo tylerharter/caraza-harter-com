@@ -79,19 +79,20 @@ OOP 3: Inheritance
 #<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 QUIZ DUE<br>
-WEEKLY LAB: TODO<br>
+WEEKLY LAB: Zips<br>
 
 =
-OOP Review and Practice
-* TODO
+Multiple Inheritance
+* MRO rules
+* recursion
 <b>Due:</b> P1<br>
 <b>Released:</b> P2 (trees)
+<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
 
 =
 Recursion
-* Frames
-* Trace
-<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+* functions that return something
+* functions that do something
 
 =
 Graphs and Tree Intro
@@ -99,10 +100,10 @@ Graphs and Tree Intro
 * graphviz
 <b>Read</b>: <a href="reading/lec-10-graphs.html">HTML</a><br>
 QUIZ DUE<br>
-WEEKLY LAB: TODO<br>
+WEEKLY LAB: Linked Lists<br>
 
 =
-Trees 1
+Trees1
 * trees
 * binary trees
 * binary search trees (BSTs)
