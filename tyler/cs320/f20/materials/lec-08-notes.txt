@@ -1,0 +1,45 @@
+========================================
+
+REVIEW
+
+Review: which call produces an "TypeError: bark() takes 3 positional arguments but 4 were given"?  Which one is correct?  What is printed?  Three multiple choice questions.
+
+ContinuousList
+
+========================================
+
+CONTEXT MANAGERS
+
+File opens, context managers.  with.  __enter__.  __exit__.
+
+MultFont
+
+# __init__, __enter__, run body, __exit__
+with MultFont(2):
+  plt.subplots(figsize=(1,1))
+
+__exit__(self, ????) # need details about exceptions, etc
+
+========================================
+
+INHERITANCE
+
+Inheritance is about hierarchy of types.  int and float are both
+numeric types.
+
+ - method inheritance
+ - method resolution order
+ - overriding methods, constructor
+ - calling overridden methods
+ - abc's (abstract base classes)
+
+do copy paste, it's bad!  How to avoid???  Create NamedAnimal, inherit
+from it (could inherit from multiple things!!!).
+
+type(self).__name__
+
+what if I don't have __str__, what is it calling?
+
+Dog.__mro__ (special method vs. special attribute).  dog.speak: does Dog have it?  Does NamedAnimal have it?  Does object?
+
+Add another __init__ for age...

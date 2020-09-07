@@ -1,0 +1,10 @@
+GitHub: commits=>nodes
+ - if you were the person designing git, how?  lists+dicts not enough
+ - need graphs, will create from scratch with classes
+ - graphs are inherently recursive, review object oriented programming
+
+========================================
+
+REVIEW
+
+Dog inherits from Pet.  What does Pet inherit from?
