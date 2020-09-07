@@ -45,10 +45,10 @@ Programming
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
 <b>Due</b>: P1<br>
-<!--a href="materials/lec-04.pdf">Link to Slides</a><br-->
-<!--a href="materials/lec-04-worksheet.pdf">Link to Worksheet</a><br-->
+<a href="materials/"lec_03_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet</b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-03/">code</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p2">Lab-P2</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p2">P2</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-04">code</a><br-->
 
 =
 Vars and Exprs
