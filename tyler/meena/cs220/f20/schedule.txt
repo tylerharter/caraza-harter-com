@@ -37,7 +37,7 @@ Labor Day!<br>
 <b>No Class</b>
 
 =
-ProgramminG
+Programming
 * Syntax+Parsing
 * Values+Types
 * Calculation+Operators
