@@ -61,8 +61,13 @@ Vars and Exprs
 <b>Read</b>: Downey Ch 2<br>
 <a href="materials/lec_04_F20.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-04">code</a><br>
-<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eZ9-uzqFLFg">1</a>, </b><a href="https://www.youtube.com/watch?v=gs7jtfbhTxc">2</a>
-
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eZ9-uzqFLFg">1</a>, </b><a href="https://www.youtube.com/watch?v=gs7jtfbhTxc">2</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/lSc6ZtFTNoM">YouTube</a><br>
+<b>Python Tutor: </b>
+<a href="http://pythontutor.com/live.html#code=a%20%3D%203%0Ab%20%3D%204%0Ac%20%3D%205%0Ad%20%3D%206%0A%0Aa%20%3D%20a%20*%20%28a%252%29%0Ab%20%3D%20b%20*%20%28b%252%29%0Ac%20%3D%20c%20*%20%28c%252%29%0Ad%20%3D%20d%20*%20%28d%252%29%0A%0Aprint%28a%2Bb%2Bc%2Bd%29%0A%0A&cumulative=false&curInstr=9&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">1</a>, 
+<a href="http://pythontutor.com/live.html#code=start%20%3D%201000%0Ainterest%20%3D%207%0Ayears%20%3D%2030%0A%0Amultiplier%20%3D%201%20%2B%20interest/100%0A%0Amoney%20%3D%20start*multiplier%20**%20years%0Aprint%28money%29&cumulative=false&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">2</a>, 
+<a href="http://pythontutor.com/live.html#code=%23alice%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C%0A%23bob%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%0A%0Aplayer1_score%20%3D%2010%0Aplayer2_score%20%3D%208%0A%0Aplayer1%20%3D%20%22alice%22%0Aplayer2%20%3D%20%22bob%22%0A%0Aplayer1%20%2B%3D%20%22%3A%22%0Aplayer2%20%2B%3D%20%22%3A%22%0A%0Alongest_name%20%3D%207%0A%0Aplayer1%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player1%29%29%0Aplayer2%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player2%29%29%0A%0Aprint%28player1%20%2B%20%22%7C%22%20*%20player1_score%29%0Aprint%28player2%20%2B%20%22%7C%22%20*%20player2_score%29%0A%0A&cumulative=false&curInstr=11&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">3</a>, 
+<a href="http://pythontutor.com/live.html#code=x%20%3D%200.1%0A%0Avalid%20%3D%20x%3E0%20and%20x%3C100%0A%0Aprint%28%22you%20may%20continue%3A%20%22%20%2B%20str%28valid%29%29%0A&cumulative=false&curInstr=3&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">4</a><br> 
 =
 Using Functions
 
