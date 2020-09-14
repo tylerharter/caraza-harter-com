@@ -82,6 +82,7 @@ Using Functions
 <a href="materials/lec_05_F20.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-05">code</a><br>
 <b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=P8alEMUg7CU">1</a>, </b><a href="https://www.youtube.com/watch?v=Zxk2UVEDKGM">2</a>, <a href="https://www.youtube.com/watch?v=0ymIOQ-W3G0">3</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/_qcmZ3ccRwM">YouTube</a><br>
 
 =
 Creating Functions
