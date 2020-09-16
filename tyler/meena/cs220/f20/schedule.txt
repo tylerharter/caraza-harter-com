@@ -111,7 +111,7 @@ Function Scope
 * Stack Diagrams
 
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
-<a href="lec_07_F20.pdf">Link to Slides</a><br>
+<a href="materials/lec_07_F20.pdf">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec07-InteractiveExercises.html">Interactive Exercises</a><br>
 
 =
