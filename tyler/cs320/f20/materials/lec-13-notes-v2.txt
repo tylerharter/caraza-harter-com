@@ -1,0 +1,46 @@
+REVIEW (14 minutes)
+
+connected
+DAG
+directed
+acyclic
+weakly connected
+root
+leaf
+tree: exactly one root; others have exactly one parent
+ - lots of hiercharchical data in the world
+ - people don't have family trees, only bacteria do
+ - corporate hiercharchy, taxonomy
+binary tree
+
+if there's not a natural hiercharchical, we can impose one to
+improve efficiency.
+
+binary tree: max of 2 children per node
+ - move a node?  or remove it?
+
+========================================
+
+IMPLEMENT BINARY TREE
+
+Node class:
+ - general tree vs. binary tree
+ - self.left, right
+ - dump method
+
+In what order are nodes printed, after we add node D?
+Work out on paper: call graph and timeline.
+
+========================================
+
+"D" in L
+"D" in A # root
+
+def contains:
+    # 1: i have it, 2: left subtree has it, 3: right subtree has it
+
+bug first:
+if self.left.val == val:
+   return True
+
+from IPython.core.display import display
