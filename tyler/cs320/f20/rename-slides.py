@@ -45,6 +45,7 @@ def rename(paths, num1, num2):
 
 def main():
     paths = [os.path.join("materials", name) for name in os.listdir("materials")]
+    #paths += [os.path.join("reading", name) for name in os.listdir("reading")]
     nums = lec_nums(paths)
 
     if len(sys.argv) != 3:

@@ -10,7 +10,7 @@ Reproducibility 1
 * Course Overview
 * Hardware, OS, Interpreters
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
-WEEKLY LAB: Cloud Setup<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab1">WEEKLY LAB: Cloud Setup</a><br>
 <a href="materials/lec-01.pdf">SLIDES</a><br>
 
 =
@@ -30,8 +30,8 @@ Quantifying Perf 1
 * time
 #<a href="lectures/lec3-morning.ipynb">LECTURE NB</a><br>
 <b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
-QUIZ DUE<br>
-WEEKLY LAB: Git Practice<br>
+QUIZ 1 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab2">WEEKLY LAB: Git Practice</a><br>
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p1">P1 (perf measurements)</a>
 
 =
@@ -48,8 +48,8 @@ Quantifying Perf 3
 <a href="materials/lec-05-worksheet.key.pdf">WORKSHEET</a><br>
 <a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
 <a href="materials/lec-05.html">EXAMPLES</a><br>
-QUIZ DUE<br>
-WEEKLY LAB: Complexity<br>
+QUIZ 2 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">WEEKLY LAB: Complexity</a><br>
 
 =
 OOP 1: Classes
@@ -79,8 +79,8 @@ OOP 3: Inheritance
 #<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
 <b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 <a href="materials/lec-08.pdf">SLIDES</a><br>
-QUIZ DUE<br>
-WEEKLY LAB: Zips<br>
+QUIZ 3 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">WEEKLY LAB: Zips</a><br>
 
 =
 Multiple Inheritance
@@ -99,16 +99,16 @@ Recursion
 Graphs and Tree Intro
 * types of graph
 * graphviz
-<b>Read</b>: <a href="reading/lec-10-graphs.html">HTML</a><br>
-QUIZ DUE<br>
-WEEKLY LAB: Linked Lists<br>
+<b>Read</b>: <a href="reading/lec-11-graphs.html">HTML</a><br>
+QUIZ 4 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: Linked Lists</a><br>
 
 =
 Trees1
 * trees
 * binary trees
 * binary search trees (BSTs)
-<b>Read</b>: <a href="reading/lec-11-search-trees.html">HTML</a><br>
+<b>Read</b>: <a href="reading/lec-12-search-trees.html">HTML</a><br>
 
 =
 Trees 2
@@ -116,7 +116,8 @@ Trees 2
 * graph search
 #<a href="lectures/lec-12-starter.ipynb">LECTURE NB STARTER</a><br>
 #<a href="lectures/lec-12-morning.ipynb">MORNING NB</a><br>
-<b>Read</b>: <a href="reading/lec-12-dict-graph-search.html">HTML</a><br>
+<b>Read</b>: <a href="reading/lec-13-dict-graph-search.html">HTML</a><br>
+<a href="materials/lec-13.pdf">SLIDES</a><br>
 
 =
 Graph Search 1
@@ -125,8 +126,8 @@ Graph Search 1
 #<a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
 #<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
 #<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
-<b>Read</b>: <a href="reading/lec-13-bfs.html">HTML</a><br>
-QUIZ DUE<br>
+<b>Read</b>: <a href="reading/lec-14-bfs.html">HTML</a><br>
+QUIZ 5 DUE<br>
 WEEKLY LAB: BSTs and More!<br>
 
 =
@@ -139,7 +140,7 @@ Graph Search 2
 Web 1: Selenium
 * advanced web scraping
 <b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
-<a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-19/scrape.html">TRICKY PAGES</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-20/scrape.html">TRICKY PAGES</a><br>
 
 =
 Web 2: Recursive Crawl
@@ -149,7 +150,7 @@ Web 2: Recursive Crawl
 <b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
 <a href="lectures/lec-20/practice.html">CRAWL PRACTICE</a><br>
 #<a href="lectures/lec-20/lecture.ipynb">LECTURE NB</a><br>
-QUIZ DUE<br>
+QUIZ 6 DUE<br>
 WEEKLY LAB: DFS vs. BFS<br>
 
 =
@@ -157,13 +158,13 @@ Web 3: Flask
 * review from CS 220
 * RPC, POST
 * decorators
-<a href="materials/lec-17-examples.ipynb">DECORATOR EXAMPLES</a><br>
+<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
 
 =
 Web 4: Tracing
 * wrappers based on *args and **kwargs
 <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
-<a href="materials/lec-18.html">Interactive Exercises</a><br>
+<a href="materials/lec-19.html">Interactive Exercises</a><br>
 
 
 =
@@ -173,7 +174,7 @@ Web 5: A/B testing
 <b>Read</b>: <a href="https://techcrunch.com/2014/06/29/ethics-in-a-data-driven-world/">The Morality of A/B Testing (TechCrunch article)</a><br>
 <b>Due:</b> P3<br>
 <b>Released:</b> P4 (website)<br>
-QUIZ DUE<br>
+QUIZ 7 DUE<br>
 WEEKLY LAB: Web<br>
 
 =
@@ -193,7 +194,7 @@ Regex 2
 Compression
 * zips
 * streaming
-QUIZ DUE<br>
+QUIZ 8 DUE<br>
 WEEKLY LAB: regex and zips<br>
 
 =
@@ -212,7 +213,7 @@ Visualization 3
 * shapefiles
 * shapely
 * high resolution graphics
-QUIZ DUE<br>
+QUIZ 9 DUE<br>
 WEEKLY LAB: geo maps<br>
 
 =
@@ -231,7 +232,7 @@ Linear Algebra 1
 Linear Algebra 2
 * matrix multiplication basics
 * equation solving
-QUIZ DUE<br>
+QUIZ 10 DUE<br>
 WEEKLY LAB: Dot Product<br>
 
 =
@@ -251,7 +252,7 @@ Linear Algebra 4
 Linear Algebra 5
 * fitting non-linear data
 * correlation matrices
-QUIZ DUE<br>
+QUIZ 11 DUE<br>
 WEEKLY LAB: JOIN and Counting<br>
 
 =
@@ -267,7 +268,7 @@ Supervised Learning 1
 Supervised Learning 2
 * sklearn Pipeline
 * custom classifiers+transformers
-QUIZ DUE<br>
+QUIZ 12 DUE<br>
 WEEKLY LAB: TODO
 
 =
@@ -286,7 +287,7 @@ No Class
 Supervised Learning 3
 * categorical inputs
 * one-hot encoding
-QUIZ DUE<br>
+QUIZ 13 DUE<br>
 WEEKLY LAB: Decision Boundaries<br>
 
 =
@@ -301,7 +302,7 @@ Parallelism 1
 =
 Parallelism 2
 * pytorch
-QUIZ DUE<br>
+QUIZ 14 DUE<br>
 NO LAB
 
 =
