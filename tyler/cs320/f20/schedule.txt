@@ -140,7 +140,7 @@ Graph Search 2
 Web 1: Selenium
 * advanced web scraping
 <b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
-<a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-20/scrape.html">TRICKY PAGES</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/s20/materials/lec-21/scrape.html">TRICKY PAGES</a><br>
 
 =
 Web 2: Recursive Crawl
@@ -158,13 +158,13 @@ Web 3: Flask
 * review from CS 220
 * RPC, POST
 * decorators
-<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
+<a href="materials/lec-19-examples.ipynb">DECORATOR EXAMPLES</a><br>
 
 =
 Web 4: Tracing
 * wrappers based on *args and **kwargs
 <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
-<a href="materials/lec-19.html">Interactive Exercises</a><br>
+<a href="materials/lec-20.html">Interactive Exercises</a><br>
 
 
 =
