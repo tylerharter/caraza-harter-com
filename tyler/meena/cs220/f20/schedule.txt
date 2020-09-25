@@ -151,10 +151,10 @@ Iteration 1
 * While Loop
 * Infinite Iteration
 
-<!--a href="materials/lec-11.pdf">Link to Slides</a><br-->
 <b>Read</b>: Downey Ch 7<br>
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-11">code</a><br-->
-<!--a href="https://www.youtube.com/watch?v=jOIcp9r03Yw&feature=youtu.be">WATCH ONLINE</a><br-->
+<a href="materials/lec_10_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-10">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=lScBVhLYyHI">1</a>, </b><a href="https://www.youtube.com/watch?v=WNNxlV1kOJ8">2</a>, </b><a href="https://www.youtube.com/watch?v=pxkRcs7CRKU">3</a><br>
 
 =
 Iteration 2
