@@ -104,7 +104,7 @@ QUIZ 4 DUE<br>
 <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: Linked Lists</a><br>
 
 =
-Trees1
+Trees 1
 * trees
 * binary trees
 * binary search trees (BSTs)
@@ -157,13 +157,13 @@ Web 3: Flask
 * review from CS 220
 * RPC, POST
 * decorators
-<a href="materials/lec-19-examples.ipynb">DECORATOR EXAMPLES</a><br>
+<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
 
 =
 Web 4: Tracing
 * wrappers based on *args and **kwargs
 <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
-<a href="materials/lec-20.html">Interactive Exercises</a><br>
+<a href="materials/lec-19.html">Interactive Exercises</a><br>
 
 
 =
