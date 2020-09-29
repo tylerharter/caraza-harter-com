@@ -180,14 +180,15 @@ Strings
 * String formatting
 * Exam 1 review 
 
-<!--a href="materials/lec-13.pdf">Link to Slides</a><br-->
-<!--a href="materials/lec-13-worksheet.pdf">Link to Worksheet</a><br-->
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
-<!--b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p5">Lab-P5</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p5">P5</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-13">code</a><br-->
-
+<a href="materials/lec_12_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-11">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=LxV8xqdfRgg">1</a>, </b><a href="https://www.youtube.com/watch?v=w3PRy-thFRY">2</a>, </b><a href="https://www.youtube.com/watch?v=bhSNNlr3wDI">3</a><br>
+<!--b>Mike's lecture:</b> <a href="">YouTube</a><br-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p5">P5</a><br>
 =
 Exam 1
 
