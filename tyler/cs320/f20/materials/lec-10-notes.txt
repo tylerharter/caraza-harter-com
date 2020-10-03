@@ -1,0 +1,83 @@
+Read Think Complexity, Chapter 2
+
+graph
+node
+edge
+metadata
+path
+cycles
+connected
+directed
+
+DAG (directed acyclic graph)
+parent/child
+tree
+root
+
+graph vocabulary:
+ - node, edge, metadata, path, cycles, connected, directed (weakly connected), graph-DAG-tree, root
+
+what kind of graph is it?
+ - general examples
+ - git
+ - Python class hierarchy
+
+types of graphs
+graphviz
+
+examples:
+ - friends of friends
+ - metro system
+ - fast range queries (vs. point lookup)
+ - autocomplete
+
+========================================
+
+Traffic engineers send recomendations to board+commission
+
+Transportation and Planning/Policy Board
+ - bigger redesign
+
+Transportation Commission
+ - alders and resident appointees (mayor recomends people, represent various interests: bikers, pedestrians, etc)
+ - public hearing
+ - project specific, vote on things like adding bake lanes, stop spacing, etc
+
+CS 638: use data and modeling, educate (not just propose)
+
+Given how much money can we can spend?  Model of cost for building
+blocks (per stop, mile of route, etc).  Metrics for quality of the
+service: frequent better, people in walk shed, destinations reachable
+(jobs, hospitals, etc).
+
+Get vehicle miles traveled (by car)
+
+MPO (Metropolitan Planning Organization)
+ - Entire country is broken up into MPO units
+ - Ours: Madison Area Transporation Planning Org
+   - detailed trip data (cell phone based, etc)
+   - GIS data: Population, where jobs are
+
+Coverage example: Owl Creek Neighbourhood
+ - light line
+ - people without other options
+
+OpenRouteService.org
+
+https://github.com/GIScience/openrouteservice-examples/
+
+Send proposals to Metro Staff
+ - Drew Beck (good contact)
+
+Example proposal: https://madison.legistar.com/View.ashx?M=F&ID=8053863&GUID=749981C6-89C9-40BB-B488-75B56AC5BA45
+
+https://madison.legistar.com/Calendar.aspx
+
+Can we count people exiting the bus with camera on exit door???  Need
+exit data in addition to boarding data.
+
+Bus apps:
+ - Transit
+ - Bus Radar
+
+========================================

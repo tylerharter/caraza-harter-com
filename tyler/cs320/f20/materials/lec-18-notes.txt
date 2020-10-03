@@ -1,0 +1,54 @@
+review regex
+
+show P3
+
+review CS 220 web
+ - IP, port, URL
+
+python3 -m notebook|pip|http.server|flask
+python3 -m http.server
+python -m flask run
+
+new web concepts
+ - DNS, HTTP vs. HTTPS, query string, POST body, JavaScript, pages vs. files (dynamic vs. static), /=>index.html, templating, firewall
+
+web frameworks
+ - decorators
+
+Flask
+ - routes
+ - query string
+ - post body
+
+(1) Regular routes:
+
+@app.route('/')
+def home():
+
+(2) Query strings:
+
+request.args.get("key", "default")
+
+(3) POSTs
+
+@app.route('/email', methods=["POST"])
+def email():
+    email = str(request.get_data(), "utf-8")
+
+(4) Web APIs
+
+return jsonify("that's not an email address!")
+
+Examples:
+ - json-chat
+ 
+comments = []
+
+@app.route('/comments.json')
+def get_comments():
+    return jsonify(comments)
+
+@app.route('/say1')
+def comment_v1():
+    comments.append(request.args.get("m"))
+    return "thanks"
