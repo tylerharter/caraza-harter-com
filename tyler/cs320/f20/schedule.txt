@@ -114,31 +114,28 @@ Trees 1
 Trees 2
 * implementing dictionaries with BSTs
 * graph search
-#<a href="lectures/lec-12-starter.ipynb">LECTURE NB STARTER</a><br>
-#<a href="lectures/lec-12-morning.ipynb">MORNING NB</a><br>
 <b>Read</b>: <a href="reading/lec-13-dict-graph-search.html">HTML</a><br>
 <a href="materials/lec-13.pdf">SLIDES</a><br>
 
 =
 Graph Search 1
 * depth-first search
-* time vs. memory complexity
-#<a href="lectures/lec-13-starter.ipynb">LECTURE NB STARTER</a><br>
-#<a href="lectures/lec-13-morning.ipynb">MORNING NB</a><br>
-#<a href="lectures/lec-13-afternoon.ipynb">AFTERNOON NB</a><br>
+<a href="materials/lec-14.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="reading/lec-14-bfs.html">HTML</a><br>
 QUIZ 5 DUE<br>
-WEEKLY LAB: BSTs and More!<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: BSTs</a><br>
 
 =
 Graph Search 2
 * breadth-first search
+<a href="materials/lec-15.pdf">SLIDES</a><br>
 <b>Due:</b> P2<br>
 <b>Released:</b> P3 (crawler)
 
 =
 Web 1: Selenium
 * advanced web scraping
+<a href="materials/lec-16.pdf">SLIDES</a><br>
 <b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
 <a href="https://tyler.caraza-harter.com/cs320/f20/materials/lec-16/scrape.html">TRICKY PAGES</a><br>
 
