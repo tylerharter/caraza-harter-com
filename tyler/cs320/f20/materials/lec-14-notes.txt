@@ -1,0 +1,47 @@
+review slides (20 minutes)
+
+review binary search on list...
+ - complexity of lookup?
+ - complexity of search?
+
+types of graphs
+
+more constraints => easier coding (start w/ linked list)
+
+looking at code: don't assume what type based on attributes!  Need to
+look at other code...
+
+other classes: Edges and Graph
+
+========================================
+
+code from last time -- quick review (15 minutes)
+
+A
+-B
+--D
+--E
+-C
+
+manually construct tree -- is it a BST?
+
+better contains function
+
+add method
+ - don't add duplicates
+
+balance
+ - create long string of nodes -- change search order
+ - more advanced: self balancing tree
+
+========================================
+
+change code to make it serve as a dictionary
+ - find+replace val with key
+ - __getitem__
+
+def __setitem__(self, key, val):
+
+fix add method for updates
+
+at end: compare binary search to BST search...
