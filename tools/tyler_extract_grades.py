@@ -4,7 +4,7 @@ from collections import defaultdict as ddict
 
 COURSE = 'b'
 not_reviewed = {}
-CR_URL = 'https://tyler.caraza-harter.com/cs320/s20/code_review.html?project_id=%s&student_email=%s@wisc.edu'
+CR_URL = 'https://tyler.caraza-harter.com/cs320/f20/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 
 # https://stackoverflow.com/questions/4563272/convert-a-python-utc-datetime-to-a-local-datetime-using-only-python-standard-lib
 def utc_to_local(utc_dt):
@@ -120,11 +120,6 @@ class Grades:
                 late_days = math.ceil((submitted - self.deadline) / timedelta(days=1))
                 late_days -= self.extensions[submission_dir]
                 late_days = max(late_days, 0)
-                if net_id == 'yzhao322':
-                    print(late_days)
-                    print("SUBMITTED", submitted)
-                    print("DEADLINE", self.deadline)
-                    print((submitted - self.deadline) / timedelta(days=1))
                 submitted = datetime.strftime(submitted, "%Y-%m-%d %H:%M:%S")
 
             if sub != {} and test != {} and (cr != {} or self.project in not_reviewed):

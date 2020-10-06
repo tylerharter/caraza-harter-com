@@ -130,7 +130,7 @@ Graph Search 2
 * breadth-first search
 <a href="materials/lec-15.pdf">SLIDES</a><br>
 <b>Due:</b> P2<br>
-<b>Released:</b> P3 (crawler)
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p3">P3 (crawler)</a>
 
 =
 Web 1: Selenium
