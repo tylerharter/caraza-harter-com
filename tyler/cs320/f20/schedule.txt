@@ -152,7 +152,7 @@ Web 3: Flask
 * RPC, POST
 * decorators
 <a href="materials/lec-18.pdf">SLIDES</a><br>
-<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
+#<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
 
 =
 Web 4: Logging, Rate Limiting, and robots.txt
