@@ -142,9 +142,6 @@ Web 1: Selenium
 =
 Web 2: Recursive Crawl
 * BFS for webpages
-* robots.txt
-* HTTP 429
-<b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
 <a href="lectures/lec-17/practice.html">CRAWL PRACTICE</a><br>
 QUIZ 6 DUE<br>
 WEEKLY LAB: DFS vs. BFS<br>
@@ -158,11 +155,13 @@ Web 3: Flask
 <a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
 
 =
-Web 4: Tracing
-* wrappers based on *args and **kwargs
-<b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
+Web 4: Logging, Rate Limiting, and robots.txt
+* wrappers based on *args and **kwargs*
+* robots.txt
+* HTTP 429
+<b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
+# <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
 <a href="materials/lec-19.html">Interactive Exercises</a><br>
-
 
 =
 Web 5: A/B testing
