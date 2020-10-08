@@ -187,25 +187,24 @@ Regex 2
 * findall, sub, groups
 
 =
-Compression
-* zips
-* streaming
-QUIZ 8 DUE<br>
-WEEKLY LAB: regex and zips<br>
-
-=
 Visualization 1
-* matplotlib coordinate systems
+* dashboards
+QUIZ 8 DUE<br>
+WEEKLY LAB: regex<br>
 
 =
 Visualization 2
+* matplotlib coordinate systems
+
+=
+Visualization 3
 * drawing custom lines/polygons
 * geographic maps
 <b>Due:</b> P4<br>
 <b>Released:</b> P5 (trace analysis)
 
 =
-Visualization 3
+Visualization 4
 * shapefiles
 * shapely
 * high resolution graphics
@@ -213,7 +212,7 @@ QUIZ 9 DUE<br>
 WEEKLY LAB: geo maps<br>
 
 =
-Visualization 4
+Visualization 5
 * animations
 # TODO: remove this?  WEEKLY LAB: Social Distancing<br>
 
