@@ -9,8 +9,6 @@ def process_csv(filename):
     exampleFile.close()
     return exampleData
 
-rows = process_csv("restaurants.csv")
-
 def distance(x1, x2, y1, y2):
     #Distance between two points on a plane
     # ((x1 - x2) ^ 2 + (y1 - y2) ^ 2 ) ^ 0.5
@@ -19,18 +17,26 @@ def distance(x1, x2, y1, y2):
     distance = (x + y) ** 0.5
     return distance
 
+filename = "restaurants.csv"
+rows = process_csv(filename)
+
 coord = sys.argv[1]
 human_x, human_y = coord.split(",")
 human_x = int(human_x)
 human_y = int(human_y)
 
-bestRestIndex = 0
-bestDistance = distance(human_x, int(rows[0][1]), human_y, int(rows[0][2]))
-
+bestIndex = None
+bestDistance = None
 for index in range(len(rows)):
-    currDistance = distance(human_x, int(rows[index][1]), human_y, int(rows[index][1]))
-    if currDistance < bestDistance:
-        bestRestIndex = index
-        bestDistance = currDistance
+    row = rows[index]
+    restaurant = row[0]
+    x = int(row[1])
+    y = int(row[2])
 
-print(rows[bestRestIndex][0])
+    curr_distance = distance(x, human_x, y, human_y)
+    if bestDistance == None or curr_distance < bestDistance:
+        bestDistance = curr_distance
+        bestIndex = index
+
+#print(bestDistance)
+print(rows[bestIndex][0])
