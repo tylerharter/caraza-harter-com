@@ -1,34 +1,14 @@
-scores = {"alice": 0, "bob": 0}
+scores = {"bob":0, "alice":0}
 
 def main():
+    global scores
+
     while True:
-        cmd = input('cmd: ')
-        cmd = cmd.lower().strip().split(' ')
-        print("CMD", cmd)
+        cmd = input('enter a cmd (type "help" for descriptions): ')
+        cmd = cmd.strip().lower().split(' ')
 
         if cmd[0] == 'q':
             break
-
-        elif cmd[0] == 'high':
-            # PASS 1: Find the best score
-            best_key = None
-            for key in scores:
-                if best_key == None or scores[key] > scores[best_key]:
-                    best_key = key
-
-            # PASS 2: Find all players with the best score
-            winners = []
-            for key in scores:
-                val = scores[key]
-                if val == scores[best_key]:
-                    winners.append(key)
-                    
-            if len(winners) == 1:
-                print("The only winner is: ", winners[0])
-            else:
-                tie_str = ", ".join(winners)
-                print("Tie for win between: ", tie_str)
-
         
         elif cmd[0] == 'help':
             print_help()
@@ -37,11 +17,32 @@ def main():
             name = cmd[1]
             score = int(cmd[2])
             scores[name] = score
-            print("DICT:", scores)
 
         elif cmd[0] == 'get':
             name = cmd[1]
-            print(scores[name])
+            if name in scores:
+                print(scores[name])
+            else:
+                print("unknown name")
+        
+        elif cmd[0] == 'high':
+            # PASS 1: find the best score
+            best_player = None
+            for player in scores:
+                if best_player == None or scores[player] > scores[best_player]:
+                    best_player = player
+
+            # PASS 2: find all players with the best score
+            winners = []
+            for player in scores:
+                if scores[player] == scores[best_player]:
+                    winners.append(player)
+
+            if len(winners) == 1:
+                print ("Only winner is:", winners[0])
+            else:
+                tie = ", ".join(winners)
+                print("Tie for win between:", tie)
 
     print('exiting')
 
