@@ -123,7 +123,7 @@ Graph Search 1
 <a href="materials/lec-14.pdf">SLIDES</a><br>
 <b>Read</b>: <a href="reading/lec-14-bfs.html">HTML</a><br>
 QUIZ 5 DUE<br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: BSTs</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab6">WEEKLY LAB: BSTs</a><br>
 
 =
 Graph Search 2
@@ -144,7 +144,7 @@ Web 2: Recursive Crawl
 * BFS for webpages
 <a href="lectures/lec-17/practice.html">CRAWL PRACTICE</a><br>
 QUIZ 6 DUE<br>
-WEEKLY LAB: DFS vs. BFS<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab7">WEEKLY LAB: DFS vs. BFS</a><br>
 
 =
 Web 3: Flask
@@ -172,7 +172,7 @@ Web 5: A/B testing
 <b>Due:</b> P3<br>
 <b>Released:</b> P4 (website)<br>
 QUIZ 7 DUE<br>
-WEEKLY LAB: Web<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab8">WEEKLY LAB: Web</a><br>
 
 =
 Regex 1
@@ -191,30 +191,32 @@ Visualization 1
 * dashboards
 QUIZ 8 DUE<br>
 WEEKLY LAB: regex<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab9">WEEKLY LAB: Regex</a><br>
 
 =
 Visualization 2
 * matplotlib coordinate systems
+* drawing custom lines/polygons
 
 =
 Visualization 3
-* drawing custom lines/polygons
 * geographic maps
+* shapefiles
+* high resolution graphics
 <b>Due:</b> P4<br>
 <b>Released:</b> P5 (trace analysis)
 
 =
 Visualization 4
-* shapefiles
 * shapely
-* high resolution graphics
+* animations
 QUIZ 9 DUE<br>
 WEEKLY LAB: geo maps<br>
 
 =
 Visualization 5
-* animations
-# TODO: remove this?  WEEKLY LAB: Social Distancing<br>
+* big example
+* animated map of incidents scraped from Madison Fire Department
 
 =
 Linear Algebra 1
@@ -229,6 +231,7 @@ Linear Algebra 2
 * equation solving
 QUIZ 10 DUE<br>
 WEEKLY LAB: Dot Product<br>
+# TODO: remove this?  WEEKLY LAB: Social Distancing<br>
 
 =
 Linear Algebra 3
