@@ -6,7 +6,7 @@ s3 = boto3.client('s3')
 
 TEST_NET_IDS = []
 
-LATE_DAY_ALLOCATION = 9
+LATE_DAY_ALLOCATION = 7
 
 def gen_html(prows, include_intro=True):
     cum_late = 0
