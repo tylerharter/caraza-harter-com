@@ -326,6 +326,7 @@ Function References
 <a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec23-InteractiveExercises.html">Interactive Exercises</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-23">code</a><br>
 <b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assIJIg8m5o9fJWKwMU7lN8A">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/hughyyvnRi8">YouTube</a><br>
 
 =
 Generator Functions
