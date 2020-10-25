@@ -322,9 +322,9 @@ Function References
 * map
 * sort
 <b>Due</b>: Quiz7<br>
-<a href="materials/lec_24_S20.pdf">Link to Slides</a><br>
-<!--a href="materials/lec-24.html">Interactive Exercises</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-24">code</a><br-->
+<a href="materials/lec_24_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec23-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-23">code</a><br>
 
 =
 Generator Functions
