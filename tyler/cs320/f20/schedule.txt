@@ -211,7 +211,7 @@ Visualization 4
 * shapely
 * animations
 QUIZ 9 DUE<br>
-WEEKLY LAB: geo maps<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab10">WEEKLY LAB: Geo Maps</a><br>
 
 =
 Visualization 5
