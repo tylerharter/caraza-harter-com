@@ -224,7 +224,7 @@ Linear Algebra 1
 * numpy arrays
 * image manipulation
 <a href="materials/lec-28.pdf">SLIDES</a><br>
-<b>Read</b>: <a href="http://scipy-lectures.org/intro/numpy/array_object.html">Scipy Notes 1.3.1</a><br>
+<b>Read</b>: <a href="http://scipy-lectures.org/intro/numpy/array_object.html">Scipy Notes</a><br>
 
 =
 Linear Algebra 2
