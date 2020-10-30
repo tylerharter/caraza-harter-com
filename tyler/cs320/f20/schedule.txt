@@ -204,7 +204,7 @@ Visualization 3
 * shapefiles
 * high resolution graphics
 <b>Due:</b> P4<br>
-<b>Released:</b> P5 (trace analysis)
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p4">P5 (trace analysis)</a><br>
 
 =
 Visualization 4
@@ -237,12 +237,12 @@ WEEKLY LAB: Dot Product<br>
 Linear Algebra 3
 * linear combinations
 * column spaces
-* projection matrices
 <b>Due:</b> P5<br>
 <b>Released:</b> P6 (land matrices and regression)
 
 =
 Linear Algebra 4
+* projection matrices
 * fit lines
 * loss functions
 
