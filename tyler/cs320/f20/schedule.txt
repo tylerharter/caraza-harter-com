@@ -231,8 +231,7 @@ Linear Algebra 2
 * matrix multiplication basics
 * equation solving
 QUIZ 10 DUE<br>
-WEEKLY LAB: Dot Product<br>
-# TODO: remove this?  WEEKLY LAB: Social Distancing<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab11">WEEKLY LAB: Dot Product</a><br>
 
 =
 Linear Algebra 3
@@ -288,6 +287,7 @@ Supervised Learning 3
 * one-hot encoding
 QUIZ 13 DUE<br>
 WEEKLY LAB: Decision Boundaries<br>
+<a href="materials/lec-36.pdf">SLIDES</a><br>
 
 =
 Unsupervised Learning
