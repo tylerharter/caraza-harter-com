@@ -381,6 +381,7 @@ Pandas 1
 <b>Reading</b>: Pandas Intro Notebook (<a href="readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-28">code</a><br>
 <b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assJDqVvbItui1GooZEiJjI4">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/APdveJUKlGE">YouTube</a><br>
 
 =
 Pandas 2
