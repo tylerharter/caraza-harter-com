@@ -251,7 +251,7 @@ Linear Algebra 5
 * fitting non-linear data
 * correlation matrices
 QUIZ 11 DUE<br>
-WEEKLY LAB: JOIN and Counting<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab12">WEEKLY LAB: JOIN and Counting</a><br>
 
 =
 Linear Algebra 6
