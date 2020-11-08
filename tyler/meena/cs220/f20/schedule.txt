@@ -387,8 +387,8 @@ Pandas 1
 Pandas 2
 * practice
 <b>Due</b>: Quiz 9<br>
-<!--a href="materials/lec-30-worksheet.pdf">Link to Worksheet</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-30">code</a><br-->
+<b>Link to Worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-29">code</a><br>
 
 ################################################################################
 # PART 3
