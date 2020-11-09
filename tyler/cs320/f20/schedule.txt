@@ -267,7 +267,7 @@ Supervised Learning 2
 * sklearn Pipeline
 * custom classifiers+transformers
 QUIZ 12 DUE<br>
-WEEKLY LAB: TODO
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab13">WEEKLY LAB: Decision Boundaries</a><br>
 
 =
 Supervised Learning 3
@@ -282,11 +282,11 @@ No Class
 * Happy Thanksgiving!
 
 =
-Supervised Learning 3
+Supervised Learning 4
 * categorical inputs
 * one-hot encoding
 QUIZ 13 DUE<br>
-WEEKLY LAB: Decision Boundaries<br>
+WEEKLY LAB: TODO<br>
 <a href="materials/lec-36.pdf">SLIDES</a><br>
 
 =
