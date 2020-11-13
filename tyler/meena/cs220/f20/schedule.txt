@@ -413,8 +413,9 @@ Web 1
 Web 2
 * Intro to HTML
 * Generating HTML
-<!--a href="materials/lec-32.pdf">Link to Slides</a><br-->
+<a href="materials/lec_31_F20.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-31">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astDpbUW6y9Z_PJr8qlZpr2J">Playlist</a><br>
 
 =
 Web 3
