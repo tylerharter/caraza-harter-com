@@ -449,6 +449,7 @@ Database 2
 * group by
 <b>No Slides</b><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-34">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assmIZjF3uNFOo0OhgvJNu3W">Playlist</a><br>
 
 =
 Database 3
