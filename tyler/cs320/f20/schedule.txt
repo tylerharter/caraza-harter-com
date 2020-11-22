@@ -287,7 +287,7 @@ Supervised Learning 4
 * one-hot encoding
 QUIZ 13 DUE<br>
 WEEKLY LAB: TODO<br>
-<a href="materials/lec-36.pdf">SLIDES</a><br>
+<a href="materials/TODO.pdf">SLIDES</a><br>
 
 =
 Unsupervised Learning
