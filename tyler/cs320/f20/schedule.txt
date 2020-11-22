@@ -275,7 +275,7 @@ Supervised Learning 3
 * precision and recall
 * multi-class logistic regression
 <b>Due:</b> P6<br>
-<b>Released:</b> P7 (sklearn)
+<b>Released:</b> P7 (sklearn)<br>
 <a href="materials/lec-36.pdf">SLIDES</a><br>
 
 =
