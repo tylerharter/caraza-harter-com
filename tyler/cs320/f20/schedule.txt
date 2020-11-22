@@ -276,6 +276,7 @@ Supervised Learning 3
 * multi-class logistic regression
 <b>Due:</b> P6<br>
 <b>Released:</b> P7 (sklearn)
+<a href="materials/lec-36.pdf">SLIDES</a><br>
 
 =
 No Class
