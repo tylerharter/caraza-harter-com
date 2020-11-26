@@ -275,7 +275,7 @@ Supervised Learning 3
 * precision and recall
 * multi-class logistic regression
 <b>Due:</b> P6<br>
-<b>Released:</b> P7 (sklearn)<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p7">P7 (sklearn)</a><br>
 <a href="materials/lec-36.pdf">SLIDES</a><br>
 
 =
@@ -287,7 +287,7 @@ Supervised Learning 4
 * categorical inputs
 * one-hot encoding
 QUIZ 13 DUE<br>
-WEEKLY LAB: TODO<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab14">WEEKLY LAB: P7 hints</a><br>
 <a href="materials/TODO.pdf">SLIDES</a><br>
 
 =
