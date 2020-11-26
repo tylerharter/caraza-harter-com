@@ -288,7 +288,6 @@ Supervised Learning 4
 * one-hot encoding
 QUIZ 13 DUE<br>
 <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab14">WEEKLY LAB: P7 hints</a><br>
-<a href="materials/TODO.pdf">SLIDES</a><br>
 
 =
 Unsupervised Learning
@@ -298,6 +297,7 @@ Unsupervised Learning
 Parallelism 1
 * multiprocessing pools
 * parallel map
+<a href="materials/lec-39.pdf">SLIDES</a><br>
 
 =
 Parallelism 2
