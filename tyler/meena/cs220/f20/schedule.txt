@@ -499,7 +499,7 @@ Plotting 4
 * adjacent plots
 * design decisions
 <b>Reading</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-40">code</a-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-39">code</a><br>
 
 =
 Randomness
