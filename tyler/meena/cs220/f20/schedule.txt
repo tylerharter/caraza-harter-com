@@ -510,8 +510,8 @@ Randomness
 * Simulation
 * Significance
 <b>Due</b>: Quiz12<br>
-<!--a href="materials/lec-41.pdf">Link to Slides</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-41">code</a-->
+<a href="materials/lec_40_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-40">code</a><br>
 
 =
 Review/Catchup
