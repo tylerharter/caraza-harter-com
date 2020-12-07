@@ -512,6 +512,7 @@ Randomness
 <b>Due</b>: Quiz12<br>
 <a href="materials/lec_40_F20.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-40">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assQ_2BFRdX7NZrIxabb_yRR">Playlist</a><br>
 
 =
 Review/Catchup
