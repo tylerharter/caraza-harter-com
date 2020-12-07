@@ -303,13 +303,15 @@ Parallelism 1
 Parallelism 2
 * pytorch
 QUIZ 14 DUE<br>
-NO LAB
+NO LAB<br>
+<a href="materials/lec-40.pdf">SLIDES</a><br>
 
 =
 Optimization
 * gradient descent
 * least squares
 <b>Due:</b> P7<br>
+<a href="materials/lec-41.pdf">SLIDES</a><br>
 
 =
 No Class
