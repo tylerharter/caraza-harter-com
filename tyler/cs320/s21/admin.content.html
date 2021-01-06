@@ -1,0 +1,31 @@
+<h1 class="mt-5" id="code_review_title">Admin</h1>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <div id="signin"></div> <!-- common.js will render this -->
+      <span id="useremail"></span>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-dark">
+  <div class="row my-3">
+    <div class="col col-12 px-1">
+      <button type="button" class="btn btn-dark" onclick="admin.get_roster()">Get Roster</button>
+      <button id="put_roster" type="button" class="btn btn-dark" onclick="admin.put_roster()" disabled>Put Roster</button>
+      <button type="button" class="btn btn-dark" onclick="admin.gen_link_codes()">Gen Link Codes</button>
+      <button type="button" class="btn btn-dark" onclick="admin.merge_google_ids()">Merge Google IDs</button>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-dark">
+  <div class="row">
+    <div class="col col-12">
+      <textarea id="roster" style="width:100%;" rows="50"></textarea>
+    </div>
+  </div>
+</div>
+
+<br>
