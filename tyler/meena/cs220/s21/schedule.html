@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Meenakshi Syamkumar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a class="navbar-brand" href="schedule.html">Data Programming I</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="submission.html">Projects</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">How can I find help?</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="status.html">Who is my TA?</a>
+                <!--a class="dropdown-item" href="status.html">When/where is my exam?</a-->
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs220/f20/messages.html?topic=exam1">What did I get wrong on exam 1?</a>
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs220/f20/messages.html?topic=exam2">What did I get wrong on exam 2?</a>
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs220/f20/messages.html?topic=final">What did I get wrong on the final?</a>
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs220/f20/messages.html?topic=projects">How many late days have I used?</a>
+                <a class="dropdown-item" href="https://piazza.com/class/ked08stit3p2hp?cid=6">Office Hours</a>
+                <!--a class="dropdown-item" href="videos.html">Videos</a-->
+                <a class="dropdown-item" href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/old-exams" target="_blank">Old Exams</a>
+                <a class="dropdown-item" href="datasets.html">Datasets</a>
+                <!--<a class="dropdown-item" href="beyond-301.html">After CS 301</a>-->
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/ked08stit3p2hp" target="_blank">Piazza (Discussion)</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/220720" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="surveys.html">Class Surveys</a>
+                <a class="dropdown-item" href="http://pythontutor.com/visualize.html#mode=edit" target="_blank">Python Tutor</a>
+                <a class="dropdown-item" href="reviewer.html">TA Only</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h4 class="mt-5">
+      <font color="red">
+        Note: this site is still up to serve as a
+        reference for people who took the course in Fall of '20.  If
+        you're currently enrolled, please head to the site for the
+        current semester.
+      </font>
+      </h4>
+
+      <h1 class="mt-5">Course Schedule</h1>
+<div class="alert alert-primary my-5 week">Part 1: Control Flow</div>
+<h3 class="my-3 border-bottom border-top">Week 1</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>:  (Aug 31)</h5>
+<b>No Class</b>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Introduction (Sep 02)</h5>
+<ul class="compact-ul">
+<li> Class Overview
+<li> Hardware
+<li> Software
+<li> Resources for getting help
+</ul>
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<a href="materials/lec_01_F20.pdf">Link to Slides</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=zIutEL9EmbI">1</a>, </b><a href="https://www.youtube.com/watch?v=dxmJ_3uSESg">2</a>, </b><a href="https://www.youtube.com/watch?v=t6Ow1AsecI4">3</a>, </b><a href="https://www.youtube.com/watch?v=17kFmuKaFAQ">4</a><br> 
+<b>Mike's lecture:</b> <a href="https://youtu.be/oqvmbS6grCc">YouTube</a><br>
+<b>Python3 installation (YouTube)</b>: <a href="https://youtu.be/nf-XdwxVr2w">Windows</a>, <a href="https://www.youtube.com/watch?v=ohoJPMvMnTY">MAC</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p1">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p1">P1</a><br>
+<b>P1 Walkthrough:</b> <a href ="https://youtu.be/s50JKB0uKU8">Windows</a>, <a href="https://www.youtube.com/watch?v=S62ojx6l7FU">MAC</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: The Terminal & pseudocode (Sep 04)</h5>
+<ul class="compact-ul">
+<li> Terminal Emulatation
+<li> Shells
+<li> Navigation
+<li> Program Execution
+<li> Flow of Execution
+<li> State
+</ul>
+<a href="materials/lec_02_F20.pdf">Link to Slides</a><br>
+<a href="materials/lec_02_terminal_commands.txt">Terminal commands notes</a><br>
+<a href="materials/lec-02-worksheet.pdf">Link to Worksheet</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=jzX_aaxy6FA">1</a>, </b><a href="https://www.youtube.com/watch?v=xkxOIUFXOy4">2</a>, </b><a href="https://www.youtube.com/watch?v=zT0FJajGdSM">3</a><br> 
+<b>Mike's lecture:</b> <a href="https://youtu.be/RJ9T4_CRVtM">YouTube</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 2</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Labor Day!<br> (Sep 07)</h5>
+<b>No Class</b>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Programming (Sep 09)</h5>
+<ul class="compact-ul">
+<li> Syntax+Parsing
+<li> Values+Types
+<li> Calculation+Operators
+<li> Boolean Logic
+<li> Interactive vs. Script Mode, print
+</ul>
+<b>Read</b>: Downey Ch 1<br>
+<b>Due</b>: P1<br>
+<a href="materials/lec_03_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-03/">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=Po7cDTs-FVY">1</a>, </b><a href="https://www.youtube.com/watch?v=ypiMi2g4Aag">2</a>, </b><a href="https://www.youtube.com/watch?v=dho3MpOevO0">3</a>, <a href="https://www.youtube.com/watch?v=WbKwWVom-Co">4</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/2BGC56Ak-rY">YouTube</a><br> 
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p2">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p2">P2</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Vars and Exprs (Sep 11)</h5>
+<ul class="compact-ul">
+<li> Naming Rules
+<li> Assignment
+<li> Types of errors
+<li> Comments
+</ul>
+<b>Read</b>: Downey Ch 2<br>
+<a href="materials/lec_04_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-04">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eZ9-uzqFLFg">1</a>, </b><a href="https://www.youtube.com/watch?v=gs7jtfbhTxc">2</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/lSc6ZtFTNoM">YouTube</a><br>
+<b>Python Tutor: </b>
+<a href="http://pythontutor.com/live.html#code=a%20%3D%203%0Ab%20%3D%204%0Ac%20%3D%205%0Ad%20%3D%206%0A%0Aa%20%3D%20a%20*%20%28a%252%29%0Ab%20%3D%20b%20*%20%28b%252%29%0Ac%20%3D%20c%20*%20%28c%252%29%0Ad%20%3D%20d%20*%20%28d%252%29%0A%0Aprint%28a%2Bb%2Bc%2Bd%29%0A%0A&cumulative=false&curInstr=9&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">1</a>, 
+<a href="http://pythontutor.com/live.html#code=start%20%3D%201000%0Ainterest%20%3D%207%0Ayears%20%3D%2030%0A%0Amultiplier%20%3D%201%20%2B%20interest/100%0A%0Amoney%20%3D%20start*multiplier%20**%20years%0Aprint%28money%29&cumulative=false&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">2</a>, 
+<a href="http://pythontutor.com/live.html#code=%23alice%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C%0A%23bob%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%0A%0Aplayer1_score%20%3D%2010%0Aplayer2_score%20%3D%208%0A%0Aplayer1%20%3D%20%22alice%22%0Aplayer2%20%3D%20%22bob%22%0A%0Aplayer1%20%2B%3D%20%22%3A%22%0Aplayer2%20%2B%3D%20%22%3A%22%0A%0Alongest_name%20%3D%207%0A%0Aplayer1%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player1%29%29%0Aplayer2%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player2%29%29%0A%0Aprint%28player1%20%2B%20%22%7C%22%20*%20player1_score%29%0Aprint%28player2%20%2B%20%22%7C%22%20*%20player2_score%29%0A%0A&cumulative=false&curInstr=11&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">3</a>, 
+<a href="http://pythontutor.com/live.html#code=x%20%3D%200.1%0A%0Avalid%20%3D%20x%3E0%20and%20x%3C100%0A%0Aprint%28%22you%20may%20continue%3A%20%22%20%2B%20str%28valid%29%29%0A&cumulative=false&curInstr=3&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">4</a><br> 
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 3</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Using Functions (Sep 14)</h5>
+
+<ul class="compact-ul">
+<li> Functions
+<li> input, str funcs, float funcs
+<li> Arguments, Return Values
+<li> Importing Modules
+<li> Math Module
+</ul>
+
+<b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
+<b>Due</b>: Quiz1<br>
+<a href="materials/lec_05_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-05">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=P8alEMUg7CU">1</a>, </b><a href="https://www.youtube.com/watch?v=Zxk2UVEDKGM">2</a>, <a href="https://www.youtube.com/watch?v=0ymIOQ-W3G0">3</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/_qcmZ3ccRwM">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Creating Functions (Sep 16)</h5>
+
+<ul class="compact-ul">
+<li> Positional Params
+<li> Keyword Params
+<li> Return Values
+</ul>
+
+<b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
+<b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br>
+<b>Due</b>: P2<br>
+<a href="materials/lec_06_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-06-worksheet.pdf">pdf</a>, <a href="materials/lec-06-worksheet.docx">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec06-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-06">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=TjgQFkc_q0c">1</a>, </b><a href="https://www.youtube.com/watch?v=aTDF78QwKbc">2</a>, <a href="https://www.youtube.com/watch?v=J6Q-GWPvLdA">3</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/UBevSURH130">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p3">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p3">P3</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Function Scope (Sep 18)</h5>
+
+<ul class="compact-ul">
+<li> Local vs. Global
+<li> Argument Passing
+<li> Frames
+<li> Stack Diagrams
+</ul>
+
+<b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
+<a href="materials/lec_07_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec07-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eARwA4h6hFQ">1</a>, </b><a href="https://www.youtube.com/watch?v=g6fSjHnBzIo">2</a>, </b><a href="https://www.youtube.com/watch?v=_Fo1cdb9w6E">3</a>, </b><a href="https://www.youtube.com/watch?v=1f6-U_YJtpQ">4</a><br> 
+<b>Mike's lecture:</b> <a href="https://youtu.be/3rX42iH8tBs">YouTube</a><br>
+
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 4</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Conditionals 1 (Sep 21)</h5>
+
+<ul class="compact-ul">
+<li> Boolean Logic
+<li> if,elif,else
+<li> Modular arithmetic
+</ul>
+
+<b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
+and Ch 6 ("Return Values" to "Boolean Functions")<br>
+<b>Optional</b>: Downey Ch 4<br>
+<a href="materials/lec_08_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-08-worksheet.pdf">pdf</a>, <a href="materials/lec-08-worksheet.docx">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec08-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-08">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=zNwskxlAzvo">1</a>, </b><a href="https://www.youtube.com/watch?v=hGyrpaCY-gc">2</a>, </b><a href="https://www.youtube.com/watch?v=7s5U600gll4">3</a>, </b><a href="https://www.youtube.com/watch?v=W_pGurKvifA">4</a><br> 
+<b>Due</b>: Quiz2<br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Conditionals 2 (Sep 23)</h5>
+<ul class="compact-ul">
+<li> Refactoring
+<li> Nesting
+</ul>
+<b>Due</b>: P3<br>
+<a href="materials/lec_09_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec09-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-09">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=jv8A16YjFHE">1</a>, </b><a href="https://www.youtube.com/watch?v=oybLSZIpOHI">2</a>, </b><a href="https://www.youtube.com/watch?v=gRPLcDrE3sM">3</a>, </b><a href="https://www.youtube.com/watch?v=g9x2OmRdxyQ">4</a><br> 
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p4">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p4">P4</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Iteration 1 (Sep 25)</h5>
+<ul class="compact-ul">
+<li> Reassignment
+<li> While Loop
+<li> Infinite Iteration
+</ul>
+
+<b>Read</b>: Downey Ch 7<br>
+<a href="materials/lec_10_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-10">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=lScBVhLYyHI">1</a>, </b><a href="https://www.youtube.com/watch?v=WNNxlV1kOJ8">2</a>, </b><a href="https://www.youtube.com/watch?v=pxkRcs7CRKU">3</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 5</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Iteration 2 (Sep 28)</h5>
+<ul class="compact-ul">
+<li> Break
+<li> Continue
+</ul>
+<b>Read (Optional)</b>: Sweigart Ch 2<br>
+<b>Due</b>: Quiz3<br>
+<a href="materials/lec_11_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-11-worksheet.pdf">pdf</a>, <a href="materials/lec-11-worksheet.docx">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec11-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-11">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=V1FR8rZ3uC0">1</a>, </b><a href="https://www.youtube.com/watch?v=Ern5dywgw3A">2</a>, </b><a href="https://www.youtube.com/watch?v=mS9otCaNd70">3</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/Zl3r8r3l1cE">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Strings (Sep 30)</h5>
+
+<ul class="compact-ul">
+<li> Indexing/Slicing
+<li> Sequences
+<li> For Loop, range()
+<li> Searching
+<li> Comparison
+<li> String formatting
+<li> Exam 1 review 
+</ul>
+
+<b>Read</b>: Downey Ch 8<br>
+<b>Optional</b>: Downey Ch 9<br>
+<b>Due</b>: P4<br>
+<a href="materials/lec_12_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-12">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=LxV8xqdfRgg">1</a>, </b><a href="https://www.youtube.com/watch?v=w3PRy-thFRY">2</a>, </b><a href="https://www.youtube.com/watch?v=bhSNNlr3wDI">3</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/G_FcIZ6KlF8">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p5">P5</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Exam 1 (Oct 02)</h5>
+
+
+
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 2: State</div>
+<h3 class="my-3 border-bottom border-top">Week 6</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Lists (Oct 05)</h5>
+<ul class="compact-ul">
+<li> Sequence, Like a String
+<li> Indexing, Slicing
+<li> sys.argv, dir()
+<li> Mutable vs. Immutable
+<li> List Methods
+</ul>
+
+<b>Read</b>: Downey Ch 10<br>
+<a href="materials/lec_14_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-14">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvX013BG1L-ywT2Ut5tFDg9">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/Qw2pDbcpYq8">YouTube</a><br>
+<s><b>Due</b>: Quiz4</s><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: CSV Tables (Oct 07)</h5>
+<ul class="compact-ul">
+<li> Comparison with Spreadsheets
+<li> Format
+<li> Headers
+<li> Lists of lists
+</ul>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop")<br>
+<b>Due</b>: P5<br>
+<a href="materials/lec_15_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asucsJszPi6yPWScN4INiWX6">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/qZddmCFghUA">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p6">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p6">P6</a><br>
+<a href="https://youtu.be/dtnZXpUSn6M">P6 Q4 Strategy Guide</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: List Practice (Oct 09)</h5>
+<ul class="compact-ul">
+<li> Coding Demos
+</ul>
+<b>Link to Worksheet: </b><a href="materials/lec-16-worksheet.pdf">pdf</a>, <a href="materials/lec-16-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assaW3aEyhnaX4Vh_l3k4fF4">Playlist</a><br>
+<b>No Slides</b>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 7</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Dictionaries 1 (Oct 12)</h5>
+<ul class="compact-ul">
+<li> Syntax
+<li> Lookup
+<li> Insert
+<li> Pop
+</ul>
+<b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
+<b>Due</b>: Quiz5<br>
+<a href="materials/lec_17_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec17-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-17">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astqimX1esLLKXeCCBqwae9m">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/auDOVP5Aq-0">YouTube</a><br>
+
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Dictionaries 2 (Oct 14)</h5>
+<ul class="compact-ul">
+<li> Nesting
+<li> dicts with lists
+<li> defaultdict
+</ul>
+<b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
+<b>Due</b>: P6<br>
+<a href="materials/lec_18_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec18-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-18">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuGzLTKsgRHwSiFwC-8JLfN">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/ua66EUU85-k">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p7">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p7">P7</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: JSON (Oct 16)</h5>
+<ul class="compact-ul">
+<li> Deserialization
+<li> Serialization
+<li> Pretty Printing
+</ul>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
+<a href="materials/lec_19_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-19-worksheet.pdf">pdf</a>, <a href="materials/lec-19-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-19">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuDkndnA67uYgcsf6_97Hv0">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/bdcFBY2Ypbo">YouTube</a><br>
+
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 8</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Objects (Oct 19)</h5>
+<ul class="compact-ul">
+<li> namedtuple and recordclass
+<li> Mutability
+<li> References
+<li> Python Tutor
+</ul>
+<b>Due</b>: Quiz6<br>
+<b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
+<a href="materials/lec_20_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec20-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-20">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7ass_stznl3MWLdsy32790gOS">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/53JUH_TQcqM">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Copying (Oct 21)</h5>
+<ul class="compact-ul">
+<li> References
+<li> Shallow Copy
+<li> Deep Copy
+</ul>
+<!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
+<b>Due</b>: P7<br>
+<a href="materials/lec_21_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-21-worksheet.pdf">pdf</a>, <a href="materials/lec-21-worksheet.docx">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec21-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asv21qOONn2P_2PKwAKGLCCL">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/xYvBi3ViaFU">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p8">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p8">P8</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Recursive Functions (Oct 23)</h5>
+<ul class="compact-ul">
+<li> Base/Resursive Cases
+<li> Lists of Lists
+<li> More Stack Diagrams
+<li> Stack Overflow
+</ul>
+<b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
+<a href="materials/lec_22_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-22">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvjxGWG0kaBhZf0UE01qcl1">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/nZaE4szNHMg">YouTube</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 9</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Function References (Oct 26)</h5>
+<ul class="compact-ul">
+<li> map
+<li> sort
+</ul>
+<b>Due</b>: Quiz7<br>
+<a href="materials/lec_23_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec23-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-23">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assIJIg8m5o9fJWKwMU7lN8A">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/hughyyvnRi8">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Generator Functions (Oct 28)</h5>
+<ul class="compact-ul">
+<li> iterators and generators
+</ul>
+<b>Due</b>: P8<br>
+<b>Due</b>: CS 319 graduate project proposal<br>
+<a href="materials/lec_24_F20.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec24-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-24">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asu-odv39oT8-HGXwMT8oeGf">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/1lc_HK67v14">YouTube</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p9">Lab-P9</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p9">P9</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Error Handling (Oct 30)</h5>
+<ul class="compact-ul">
+<li> Catching Exceptions
+<li> Throwing Exceptions
+<li> Asserts
+</ul>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
+<a href="materials/lec_25_F20.pdf">Link to Slides</a><br>
+<b>Link to Worksheet: </b><a href="materials/lec-25-worksheet.pdf">pdf</a>, <a href="materials/lec-25-worksheet.docx">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec25-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-25">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvMbiPHYp_2X8rKqRK5lNZl">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/TrABsl_vcNo">YouTube</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 10</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Files and Directories (Nov 02)</h5>
+<ul class="compact-ul">
+<li> Reading
+<li> Writing
+<li> Listing children
+<li> Exam 2 review
+</ul>
+<b>Read</b>: Downey Ch 14
+<b>Due</b>: Quiz8<br>
+<a href="materials/lec_26_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-26">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assT2Pk1BB3-y2_FgfFMxBx3">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/ZiojSonRws8">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Exam 2 (Nov 04)</h5>
+<b>Due</b>: P9 <b>(moved to 5th November!)</b><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p10">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p10">P10</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Pandas 1 (Nov 06)</h5>
+<ul class="compact-ul">
+<li> iPython
+<li> dataframe
+<li> series
+<li> reading CSVs
+<li> element-wise operations
+</ul>
+<b>Reading</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>No Slides</b><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-28">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assJDqVvbItui1GooZEiJjI4">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/APdveJUKlGE">YouTube</a><br>
+
+
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 3: Data Science</div>
+<h3 class="my-3 border-bottom border-top">Week 11</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Pandas 2 (Nov 09)</h5>
+<ul class="compact-ul">
+<li> practice
+</ul>
+<b>Due</b>: Quiz 9<br>
+<b>No Slides</b><br>
+<b>Link to Worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-29">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvA8DxNtHK6GVzXQH7I1Gkd">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/h5wcBej9r4Q">YouTube</a><br>
+
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Web 1 (Nov 11)</h5>
+<ul class="compact-ul">
+<li> Servers/Clients
+<li> URLs
+<li> HTTP: GET and POST
+<li> requests module
+</ul>
+<!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>
+<b>Due</b>: P10<br>
+<a href="materials/lec_30_F20.pdf">Link to Slides</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p11">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p11">P11</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-30">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuMim6urFCXkM_gLKFSdBdf">Playlist</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Web 2 (Nov 13)</h5>
+<ul class="compact-ul">
+<li> Intro to HTML
+<li> Generating HTML
+</ul>
+<a href="materials/lec_31_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-31">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astDpbUW6y9Z_PJr8qlZpr2J">Playlist</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 12</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Web 3 (Nov 16)</h5>
+<ul class="compact-ul">
+<li> Document Object Model
+<li> Parsing HTML
+<li> beautifulsoup
+</ul>
+<b>Due</b>: Quiz 10<br>
+<a href="materials/lec_32_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-32">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuswbQBepdOwsM2qEhJEln0">Playlist</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Database 1 (Nov 18)</h5>
+<ul class="compact-ul">
+<li> schemas/types
+<li> queries
+<li> where
+<li> SQLite
+<li> Querying from Pandas
+</ul>
+<b>Due</b>: P11<br>
+<a href="materials/lec_33_F20.pdf">Link to Slides</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p12">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p12">P12</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-33">code</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/DFQZ99FRYik">YouTube</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astd9UYlAw49E2COVgiZLaGK">Playlist</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Database 2 (Nov 20)</h5>
+<ul class="compact-ul">
+<li> aggregates
+<li> group by
+</ul>
+<a href="materials/lec_34_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-34">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assmIZjF3uNFOo0OhgvJNu3W">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/Gc97LlYB3Bw">YouTube</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 13</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Database 3 (Nov 23)</h5>
+<ul class="compact-ul">
+<li> Worksheets
+<li> Pandas <--> SQL
+</ul>
+<b>Due</b>: Quiz11<br>
+<a href="materials/lec_35_F20.pdf">Link to Slides</a><br> 
+<b>Link to Worksheet: </b><a href="materials/lec-35-worksheet.pdf">pdf</a>, <a href="materials/lec-35-worksheet.docx">docx</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-35">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asujbiShoklA7QAg7IPUToxI">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/Tf8zBCLJxG8">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Plotting 1 (Nov 25)</h5>
+<ul class="compact-ul">
+<li> bar+scatter plots
+<li> plot design
+<li> AxesSublot
+</ul>
+<b>Reading</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<a href="materials/lec_36_F20.pdf">Link to Slides</a><br> 
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-36">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuNFzjPg3EbRJ6yvV5E1jS7">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/rPFn2_5NWAs">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Thanksgiving!<br> (Nov 27)</h5>
+<b>No Class</b>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 14</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Plotting 2 (Nov 30)</h5>
+<ul class="compact-ul">
+<li> line plots
+</ul>
+<b>Reading</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-37">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvbujLNlLve0q5kF00TS4Hy">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/lcICGhpPvL4">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Plotting 3 (Dec 02)</h5>
+<ul class="compact-ul">
+<li> bar plots
+</ul>
+<b>Reading</b>: same as for "Plotting 2"<br>
+<b>Due</b>: P12<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-38">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assbRv7gK5p2DZt2v1vufQfJ">Playlist</a><br>
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p13">P13</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri</strong>: Plotting 4 (Dec 04)</h5>
+<ul class="compact-ul">
+<li> axes
+<li> adjacent plots
+<li> design decisions
+</ul>
+<b>Reading</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-39">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astEp5BaLsyLfC7qU6LxeO69">Playlist</a><br>
+
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 15</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon</strong>: Randomness (Dec 07)</h5>
+<ul class="compact-ul">
+<li> Debugging
+<li> Simulation
+<li> Significance
+</ul>
+<b>Due</b>: Quiz12<br>
+<a href="materials/lec_40_F20.pdf">Link to Slides</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-40">code</a><br>
+<b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assQ_2BFRdX7NZrIxabb_yRR">Playlist</a><br>
+<b>Mike's lecture:</b> <a href="https://youtu.be/vkbvtaw-O7M">YouTube</a><br>
+
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed</strong>: Review/Catchup (Dec 09)</h5>
+<ul class="compact-ul">
+<li> Bring Questions
+</ul>
+<b>Due</b>: P13<br>
+<!--a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br-->
+
+</div>
+</div>
+<br>
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2020 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>

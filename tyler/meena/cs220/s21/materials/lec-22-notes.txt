@@ -1,0 +1,19 @@
+mental models:
+ - v1: variable is a box with a label, containing a value
+ - v2: variable is a reference to a value (called an object)
+
+two types of references:
+ - variable
+ - inside a data structure
+
+three types of copy:
+ - reference copy
+ - shallow copy
+ - deepcopy
+
+
+WORKSHEET:
+ - review three types
+ - draw pictures given code
+ - write code given pictures
+ - evaluate code

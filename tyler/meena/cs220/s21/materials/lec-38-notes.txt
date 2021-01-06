@@ -1,0 +1,6 @@
+Following this lecture:
+ - histogram
+ - log scales
+ - multiple Axes per figure
+ - design: bar vs line
+ - annotations

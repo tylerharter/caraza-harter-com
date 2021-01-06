@@ -1,0 +1,95 @@
+SLIDES: HyperText
+ - how to request resources? (HTTP)
+ - how to display resources? (HTML)
+
+========================================
+
+DEMO: Compare these
+ - https://tyler.caraza-harter.com/hello.txt
+ - https://tyler.caraza-harter.com/hello.html
+
+right-click, view page source
+ - browsers automatically interpret markup in HTML pages for formatting
+
+save page locally, then open
+ - https://tyler.caraza-harter.com/hello.html
+ - file:///Users/trh/scratch/html/hello.html
+
+========================================
+
+SLIDES: tags
+ - syntax
+ - open vs. close
+ - bold, italic
+ - nesting
+
+Other tags:
+ - <p>
+ - <h1>, etc
+
+One-sided tags:
+ - <br/>
+
+Tags that work together
+ - <li>
+
+========================================
+
+DEMO: list visualizer (each item goes in list)
+
+========================================
+
+SLIDES: proper HTML
+<html>
+  <head>
+    <title></title>
+  <head>
+
+  <body>
+    whatever is on the page
+  <body>
+<html>
+
+========================================
+
+SLIDES: hyperlinks
+ - <a>
+ - introduce need for attributes
+ - href
+
+========================================
+
+DEMO: dictionary visualizer (list of keys with links to pages)
+
+========================================
+
+SLIDES: images
+
+========================================
+
+SLIDES: tables
+ - table, tr, td
+
+========================================
+
+DEMO: pandas table to HTML table
+ - write as module
+
+========================================
+
+DEMO: table diff visualization
+
+========================================
+
+DEMO: find replace a word on a downloaded page with bold text
+
+========================================
+
+DEMO: flash card app
+
+========================================
+
+Learning on your own:
+ - HTML
+ - CSS
+ - JavaScript

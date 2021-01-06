@@ -1,0 +1,33 @@
+========================================
+
+More dictionary operations
+ - creation: list() and dict() vs [] and {}
+ - len, in, for loop
+ - d.keys(), d.values() # use list(...)
+ - get, pop             # with defaults
+
+========================================
+
+0. letter probability table
+
+========================================
+
+1. DICT IN DICT: letter transitions (markov chains)
+
+========================================
+
+default dictionary
+
+========================================
+
+2. LIST IN DICT: median within group (binning)
+
+========================================
+
+3. DICT IN LIST: list of rows (another table representation)
+
+each dict has "x" and "y" keys, and compute total length (dict in list)
+
+========================================
+
+Worksheet?
