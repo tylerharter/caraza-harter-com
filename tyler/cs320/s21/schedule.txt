@@ -1,0 +1,300 @@
+################################################################################
+# PART 1
+################################################################################
+
+=
+Reproducibility 1
+* Course Overview
+* Hardware, OS, Interpreters
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab1">WEEKLY LAB: Cloud Setup</a><br>
+<a href="materials/lec-01.pdf">SLIDES</a><br>
+
+=
+Reproducibility 2
+* versioning
+* git
+<b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
+<a href="materials/lec-02.pdf">SLIDES</a><br>
+
+=
+Quantifying Perf 1
+* check_output
+* time
+#<a href="lectures/lec3-morning.ipynb">LECTURE NB</a><br>
+<b>Read</b>: <a href="reading/lec3-measuring-perf.html">HTML</a>, <a href="reading/lec3-measuring-perf.ipynb">NB</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p1">P1 (perf measurements)</a>
+
+=
+Quantifying Perf 2
+* complexity analysis
+* Big O
+#<a href="lectures/lec4-big-o-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
+<a href="materials/lec-04.pdf">SLIDES</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab2">WEEKLY LAB: Git Practice</a><br>
+
+=
+Quantifying Perf 3
+* practice
+<a href="materials/lec-05-worksheet.key.pdf">WORKSHEET</a><br>
+<a href="materials/lec-05-worksheet-answers.key.pdf">ANSWERS</a><br>
+<a href="materials/lec-05.html">EXAMPLES</a><br>
+
+=
+OOP 1: Classes
+* attributes
+* methods
+* constructors
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15 + 17.1 - 17.5</a><br>
+<b>Optional</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 16</a><br>
+<a href="materials/lec-06.pdf">SLIDES</a><br>
+
+=
+OOP 2: <span style="font-size:90%">Special Methods</span>
+* __str__, __repr__, _repr_html_
+* __eq__, __lt__
+* __len__, __getitem__
+* __enter__, __exit__
+<a href="lectures/lec7-tests.txt">TEST CASES</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+<b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
+<a href="materials/lec-07.pdf">SLIDES</a><br>
+QUIZ 1 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">WEEKLY LAB: Complexity</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">WEEKLY LAB: Zips</a><br>
+
+=
+OOP 3: Inheritance
+* method resolution order
+* overriding methods
+* calling overridden methods
+#<a href="lectures/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+<a href="materials/lec-08.pdf">SLIDES</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p2">P2 (trees)</a>
+<a href="materials/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+
+=
+Multiple Inheritance
+* MRO rules
+* recursion
+<b>Due:</b> P1<br>
+
+=
+Recursion
+* functions that return something
+* functions that do something
+QUIZ 2 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: Linked Lists</a><br>
+
+=
+Graphs and Tree Intro
+* types of graph
+* graphviz
+<b>Read</b>: <a href="reading/lec-11-graphs.html">HTML</a><br>
+
+=
+Trees 1
+* trees
+* binary trees
+* binary search trees (BSTs)
+<b>Read</b>: <a href="reading/lec-12-search-trees.html">HTML</a><br>
+
+=
+Trees 2
+* implementing dictionaries with BSTs
+* graph search
+<b>Read</b>: <a href="reading/lec-13-dict-graph-search.html">HTML</a><br>
+<a href="materials/lec-13.pdf">SLIDES</a><br>
+QUIZ 3 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab6">WEEKLY LAB: BSTs</a><br>
+
+=
+Graph Search 1
+* depth-first search
+<a href="materials/lec-14.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="reading/lec-14-bfs.html">HTML</a><br>
+<b>Due:</b> P2<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p3">P3 (crawler)</a><br>
+
+=
+Graph Search 2
+* breadth-first search
+<a href="materials/lec-15.pdf">SLIDES</a><br>
+
+=
+Web 1: Selenium
+* advanced web scraping
+<a href="materials/lec-16.pdf">SLIDES</a><br>
+<b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/f20/materials/lec-16/scrape.html">TRICKY PAGES</a><br>
+QUIZ 4 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab7">WEEKLY LAB: DFS vs. BFS</a><br>
+
+=
+Web 2: Recursive Crawl
+* BFS for webpages
+<a href="lectures/lec-17/practice.html">CRAWL PRACTICE</a><br>
+
+=
+Web 3: Flask
+* review from CS 220
+* RPC, POST
+* decorators
+<a href="materials/lec-18.pdf">SLIDES</a><br>
+#<a href="materials/lec-18-examples.ipynb">DECORATOR EXAMPLES</a><br>
+
+=
+Web 4: Logging, Rate Limiting, and robots.txt
+* wrappers based on *args and **kwargs*
+* robots.txt
+* HTTP 429
+<b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
+# <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
+<a href="materials/lec-19.html">Interactive Exercises</a><br>
+QUIZ 5 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab8">WEEKLY LAB: Web</a><br>
+<b>Due:</b> P3<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p4">P4 (website)</a><br>
+
+=
+Web 5: A/B testing
+* data collection
+* significance
+<a href="materials/lec-20.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="https://techcrunch.com/2014/06/29/ethics-in-a-data-driven-world/">The Morality of A/B Testing (TechCrunch article)</a><br>
+
+=
+Regex 1
+* character classes
+* repetition
+* anchoring
+<a href="materials/lec-21.pdf">SLIDES</a><br>
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/08/text_intro.html">DS100 Ch 8</a><br>
+
+=
+Regex 2
+* findall, sub, groups
+QUIZ 6 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab9">WEEKLY LAB: Regex</a><br>
+
+=
+Visualization 1
+* dashboards
+
+=
+Visualization 2
+* matplotlib coordinate systems
+* drawing custom lines/polygons
+<b>Due:</b> P4<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p5">P5 (trace analysis)</a><br>
+
+=
+Visualization 3
+* geographic maps
+* shapefiles
+* high resolution graphics
+QUIZ 7 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab10">WEEKLY LAB: Geo Maps</a><br>
+
+=
+Visualization 4
+* shapely
+* animations
+
+=
+Visualization 5
+* big example
+* animated map of incidents scraped from Madison Fire Department
+
+=
+Regression 1
+* ML overview
+* sklearn LinearRegression
+* explained variance
+* train/test split
+QUIZ 8 DUE<br>
+
+=
+Regression 2
+* PolynomialFeatures
+* OneHot Encoding
+* Pipelines
+<b>Due:</b> P5<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p6">P6 (land matrices and regression)</a><br>
+
+=
+No Class
+
+=
+Linear Algebra 1
+* element-wise mult
+* dot product
+* broadcasting
+QUIZ 9 DUE<br>
+
+=
+Linear Algebra 2
+* equation solving
+* linear combinations
+* column spaces
+
+=
+Linear Algebra 3
+* loss functions
+* projection matrices
+* least squares
+
+=
+Classification 1
+* nearest neighbour
+* decision boundary
+* standard scaler
+QUIZ 10 DUE<br>
+
+=
+Classification 2
+* confusion matrices
+* accuracy, precision, recall
+* sklearn LogisticRegression
+* skew, multi-class
+<b>Due:</b> P6<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p7">P7 (sklearn)</a><br>
+
+=
+Clustering 1
+* agglomerative
+
+=
+Clustering 2
+* k-means
+QUIZ 11 DUE<br>
+
+=
+Decomposition
+* SVD
+* PCA
+<a href="materials/lec-36.pdf">SLIDES</a><br>
+
+=
+Parallelism 1
+* multiprocessing pools
+* parallel map
+<a href="materials/lec-39.pdf">SLIDES</a><br>
+
+=
+Parallelism 2
+* pytorch
+<a href="materials/lec-40.pdf">SLIDES</a><br>
+QUIZ 12 DUE<br>
+
+=
+Optimization
+* gradient descent
+* least squares
+<b>Due:</b> P7<br>
+<a href="materials/lec-41.pdf">SLIDES</a><br>
+
+=
+Advanced Topics
