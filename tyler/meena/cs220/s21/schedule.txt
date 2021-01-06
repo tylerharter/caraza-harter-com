@@ -361,6 +361,9 @@ Pandas 1
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assJDqVvbItui1GooZEiJjI4">Playlist</a><br-->
 
 =
+<b>No Class</b>
+
+=
 Pandas 2
 * practice
 <b>Due</b>: Quiz 9<br>
