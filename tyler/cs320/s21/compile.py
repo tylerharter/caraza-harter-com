@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import calendar, os, json
+import calendar, os, json, re
 from datetime import date, timedelta
 
 def template():
@@ -36,9 +36,20 @@ def format_day(day):
             out.append(line)
     return '\n'.join(out)
 
+def read_days():
+    days = []
+    for dirname in sorted(os.listdir("lec")):
+        if not re.match(r"\d\d\-", dirname):
+            continue
+        meta = os.path.join("lec", dirname, "meta.txt")
+        with open(meta) as f:
+            meta = format_day(f.read())
+        meta = meta.replace("SLIDES\n", f'<a href="lec/{dirname}/slides.pdf">SLIDES</a><br>')
+        days.append(meta)
+    return days
+
 def schedule():
-    with open('schedule.txt') as f:
-        days = list(map(format_day, f.read().split('=\n')))[1:]
+    days = read_days()
 
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Course Schedule</h1>\n')
