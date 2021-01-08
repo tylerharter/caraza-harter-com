@@ -67,7 +67,6 @@ def schedule():
 
     with open('schedule.json') as extra_sched:
         extra = json.loads(extra_sched.read())
-    events = extra['events'] # indexed by week
     sections = extra['sections'] # indexed by week
     
     # dump cells
@@ -90,9 +89,6 @@ def schedule():
             f.write('</div>\n')
         f.write('</div>\n')
 
-        # warnings
-        for event in events.get(str(week), []):
-            f.write('<div class="alert alert-danger my-2">%s</div>\n' % event)
     f.write('<br>')
 
     f.close()

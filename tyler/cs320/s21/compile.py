@@ -58,6 +58,11 @@ def schedule():
     end_date = date(2021, 4, 30)
     day_count = (end_date - start_date).days + 1
 
+    with open('schedule.json') as extra_sched:
+        extra = json.loads(extra_sched.read())
+    sections = extra['sections'] # indexed by week
+    holiday = extra['holiday']
+    
     cells = []
     full = 0
     free = 0
@@ -68,7 +73,13 @@ def schedule():
                 free += 1
             else:
                 full += 1
-            content = days.pop(0) if len(days)>0 else 'TBD\n...'
+
+            dname = curr.strftime("%m/%d")
+            if dname in holiday:
+                print("HERE")
+                content = "\n".join(holiday[dname]) + "\n"
+            else:
+                content = days.pop(0) if len(days)>0 else 'TBD\n...'
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
             header = '<h5><strong>[%s]</strong> %s (%s)</h5>' % (curr.strftime("%a"),
                                                title,
@@ -76,11 +87,6 @@ def schedule():
             cells.append('%s\n%s\n' % (header, content))
     print('%d free days, %d full days' % (free, full))
 
-    with open('schedule.json') as extra_sched:
-        extra = json.loads(extra_sched.read())
-    events = extra['events'] # indexed by week
-    sections = extra['sections'] # indexed by week
-    
     # dump cells
     cols = 3
     for i in range(0, len(cells), cols):
@@ -100,10 +106,6 @@ def schedule():
             f.write(cell)
             f.write('</div>\n')
         f.write('</div>\n')
-
-        # warnings
-        for event in events.get(str(week), []):
-            f.write('<div class="alert alert-danger my-2">%s</div>\n' % event)
     f.write('<br>')
 
     f.close()
