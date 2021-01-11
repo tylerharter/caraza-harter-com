@@ -1,0 +1,7 @@
+Regression 1
+* ML overview
+* sklearn LinearRegression
+* explained variance
+* train/test split
+QUIZ 8 DUE<br>
+

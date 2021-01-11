@@ -1,0 +1,11 @@
+OOP 3: Inheritance
+* method resolution order
+* overriding methods
+* calling overridden methods
+#<a href="lec/08-oop3/lec8-inheritance-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+SLIDES
+<b>Due:</b> P1<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p2">P2 (trees)</a>
+<a href="lec/08-oop3/lec-09-worksheet.key.pdf">WORKSHEET</a><br>
+

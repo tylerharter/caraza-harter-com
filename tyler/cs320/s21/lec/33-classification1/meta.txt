@@ -1,0 +1,6 @@
+Classification 1
+* nearest neighbour
+* decision boundary
+* standard scaler
+QUIZ 10 DUE<br>
+

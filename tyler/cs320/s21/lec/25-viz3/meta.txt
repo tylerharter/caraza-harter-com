@@ -1,0 +1,7 @@
+Visualization 3
+* geographic maps
+* shapefiles
+* high resolution graphics
+QUIZ 7 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab10">WEEKLY LAB: Geo Maps</a><br>
+

@@ -1,0 +1,6 @@
+Reproducibility 2
+* versioning
+* git
+<b>Read</b>: <a href="https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners">Git Tutorial</a><br>
+SLIDES
+

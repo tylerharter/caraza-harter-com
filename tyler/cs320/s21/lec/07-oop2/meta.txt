@@ -1,0 +1,13 @@
+OOP 2: <span style="font-size:90%">Special Methods</span>
+* __str__, __repr__, _repr_html_
+* __eq__, __lt__
+* __len__, __getitem__
+* __enter__, __exit__
+<a href="lec/07-oop2/lec7-tests.txt">TEST CASES</a><br>
+<b>Read</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 17.6 - 17.12</a><br>
+<b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
+SLIDES
+QUIZ 1 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">WEEKLY LAB: Complexity</a><br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">WEEKLY LAB: Zips</a><br>
+

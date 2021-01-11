@@ -1,0 +1,7 @@
+Regression 2
+* PolynomialFeatures
+* OneHot Encoding
+* Pipelines
+<b>Due:</b> P5<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p6">P6 (land matrices and regression)</a><br>
+

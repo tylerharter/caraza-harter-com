@@ -1,0 +1,4 @@
+Web 2: Recursive Crawl
+* BFS for webpages
+<a href="lec/17-crawling/practice.html">CRAWL PRACTICE</a><br>
+

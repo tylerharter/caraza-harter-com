@@ -1,0 +1,8 @@
+Trees 2
+* implementing dictionaries with BSTs
+* graph search
+<b>Read</b>: <a href="lec/13-trees2/lec-13-dict-graph-search.html">HTML</a><br>
+SLIDES
+QUIZ 3 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab6">WEEKLY LAB: BSTs</a><br>
+

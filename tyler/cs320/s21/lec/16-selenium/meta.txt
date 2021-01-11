@@ -1,0 +1,8 @@
+Web 1: Selenium
+* advanced web scraping
+SLIDES
+<b>Read</b>: Selenium with Python, <a href="https://selenium-python.readthedocs.io/getting-started.html">Ch 2</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/f20/materials/lec-16/scrape.html">TRICKY PAGES</a><br>
+QUIZ 4 DUE<br>
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab7">WEEKLY LAB: DFS vs. BFS</a><br>
+

@@ -1,0 +1,6 @@
+Linear Algebra 1
+* element-wise mult
+* dot product
+* broadcasting
+QUIZ 9 DUE<br>
+

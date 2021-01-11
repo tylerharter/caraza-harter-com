@@ -1,0 +1,5 @@
+Parallelism 2
+* pytorch
+SLIDES
+QUIZ 12 DUE<br>
+

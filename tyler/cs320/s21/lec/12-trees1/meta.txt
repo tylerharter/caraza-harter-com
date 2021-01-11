@@ -1,0 +1,6 @@
+Trees 1
+* trees
+* binary trees
+* binary search trees (BSTs)
+<b>Read</b>: <a href="lec/12-trees1/lec-12-search-trees.html">HTML</a><br>
+

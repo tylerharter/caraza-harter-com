@@ -1,0 +1,5 @@
+Linear Algebra 3
+* loss functions
+* projection matrices
+* least squares
+

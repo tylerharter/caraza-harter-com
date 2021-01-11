@@ -1,0 +1,8 @@
+Quantifying Perf 2
+* complexity analysis
+* Big O
+#<a href="lec/04-perf2/lec4-big-o-start.ipynb">LECTURE NB STARTER</a><br>
+<b>Read</b>: <a href="http://greenteapress.com/thinkpython2/html/thinkpython2022.html">Think Python Appendix B (except B.4)</a><br>
+SLIDES
+<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab2">WEEKLY LAB: Git Practice</a><br>
+
