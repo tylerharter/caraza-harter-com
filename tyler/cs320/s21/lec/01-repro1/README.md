@@ -1,4 +1,4 @@
-# Sep 2 Lecture
+# [01] Welcome and Reproducibility
 
 Note: this lecture went long (62 minutes), but I'll be sure to average <50 minutes going foward.
 
