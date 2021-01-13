@@ -16,7 +16,8 @@ exports.level = {
     "ru_RU": "Git describe",
     "ko"   : "Git describe(묘사)",
     "uk"   : "Git Describe",
-    "vi": "Git Describe(mô tả)"
+    "vi": "Git Describe(mô tả)",
+    "sl_SI": "Git Describe"
   },
   "hint": {
     "en_US": "Just commit once on bugFix when you're ready to move on",
@@ -32,7 +33,8 @@ exports.level = {
     "ru_RU": "Когда закончишь, просто сделай commit",
     "ko"   : "다음으로 넘어가고 싶으면 bugFix를 한번 커밋하면 됩니다.",
     "uk"   : "Просто зроби один коміт в bugFix коли ти будеш готовий іти далі",
-    "vi": "Đơn giản là hãy commit một lẩn ở bugFix là xong rồi"
+    "vi": "Đơn giản là hãy commit một lẩn ở bugFix là xong rồi",
+    "sl_SI": "Commitaj enkrat na bugFix, ko boš pripravljen za nadaljevanje."
   },
   "startDialog": {
     "en_US": {
@@ -74,7 +76,7 @@ exports.level = {
               "Let's look at a quick example. For this tree below:"
             ],
             "afterMarkdowns": [
-              "The command `git describe master` would output:",
+              "The command `git describe main` would output:",
               "",
               "`v1_2_gC2`",
               "",
@@ -137,7 +139,7 @@ exports.level = {
               "Regardons un petit exemple. Prenons cet arbre :"
             ],
             "afterMarkdowns": [
-              "La commande`git describe master` donne le résultat :",
+              "La commande`git describe main` donne le résultat :",
               "",
               "`v1_2_gC2`",
               "",
@@ -200,7 +202,7 @@ exports.level = {
               "讓我們來看一個例子，對於下面的 tree："
             ],
             "afterMarkdowns": [
-              "`git describe master` 會輸出：",
+              "`git describe main` 會輸出：",
               "",
               "`v1_2_gC2`",
               "",
@@ -265,7 +267,7 @@ exports.level = {
               "让我们来看一个例子，对于下面的提交树："
             ],
             "afterMarkdowns": [
-              "`git describe master` 会输出：",
+              "`git describe main` 会输出：",
               "",
               "`v1_2_gC2`",
               "",
@@ -328,7 +330,7 @@ exports.level = {
               "Veamos un ejemplo breve. Para este árbol de commits:"
             ],
             "afterMarkdowns": [
-              "El comando `git describe master` mostraría:",
+              "El comando `git describe main` mostraría:",
               "",
               "`v1_2_gC2`",
               "",
@@ -391,7 +393,7 @@ exports.level = {
               "Veamos un ejemplo breve. Para este árbol de commits:"
             ],
             "afterMarkdowns": [
-              "El comando `git describe master` mostraría:",
+              "El comando `git describe main` mostraría:",
               "",
               "`v1_2_gC2`",
               "",
@@ -454,7 +456,7 @@ exports.level = {
               "Vejamos um exemplo rápido. Para a árvore abaixo:"
             ],
             "afterMarkdowns": [
-              "O comando `git describe master` daria a saída:",
+              "O comando `git describe main` daria a saída:",
               "",
               "`v1_2_gC2`",
               "",
@@ -517,7 +519,7 @@ exports.level = {
               "Vexamos un exemplo rápido. Para a árbore de abaixo:"
             ],
             "afterMarkdowns": [
-              "O comando `git describe master` daría a saída:",
+              "O comando `git describe main` daría a saída:",
               "",
               "`v1_2_gC2`",
               "",
@@ -549,9 +551,9 @@ exports.level = {
             "markdowns": [
               "### Git Describe",
               "",
-              "Weil Tags so super als \"Anker\" im Repository dienen können bietet Git einen Befehl um zu *beschreiben* wo du dich relativ zum nächsten \"Anker\" (also Tag) befindest. Und der heißt `git describe`.",
+              "Weil Tags so super als \"Anker\" im Repository dienen können, bietet Git einen Befehl um zu *beschreiben*, wo du dich relativ zum nächsten \"Anker\" (also Tag) befindest. Und der heißt `git describe`.",
               "",
-              "Er hilft dir dabei, dir einen Überblick zu verschaffen nachdem du viele Commits im Log zurück- oder vorgegangen bist; das kann vorkommen nachdem du ein `git bisect` (eine Fehlersuche) abgeschlossen hast oder wenn du dich an den Rechner eines Kollegen setzt, der gerade aus dem Urlaub gekommen ist."
+              "Er hilft dir dabei, dir einen Überblick zu verschaffen nachdem du viele Commits im Log zurück- oder vorgegangen bist; das kann vorkommen, nachdem du ein `git bisect` (eine Fehlersuche) abgeschlossen hast oder wenn du dich an den Rechner eines Kollegen setzt, der gerade aus dem Urlaub gekommen ist."
             ]
           }
         },
@@ -563,7 +565,7 @@ exports.level = {
               "",
               "`git describe <Ref-Name>`",
               "",
-              "Dabei ist `<Ref-Name>` jeder beliebige Name, der einem Commit zugeordnet ist (Branch, Tag etc). Wenn du keinen angibst benutzt Git `HEAD`, also den aktuellen Checkout.",
+              "Dabei ist `<Ref-Name>` jeder beliebige Name, der einem Commit zugeordnet ist (Branch, Tag etc). Wenn du keinen angibst, benutzt Git `HEAD`, also den aktuellen Checkout.",
               "",
               "Die Befehlsausgabe sieht so aus:",
               "",
@@ -571,7 +573,7 @@ exports.level = {
               "",
               "`<Tag-Name>` ist dabei der nächstliegende Tag in den Vorgänger-Commits, `<Anzahl Commits>` zeigt an, wieviele Commits dieses Tag entfernt ist und `<Hash>` ist das SHA des Commits, auf den HEAD zeigt.",
               "",
-              "**Achtung**: `<Anzahl Commits>` und `<Hash>` erscheint nur, wenn HEAD nicht auf ein Tag zeigt. `git describe` verarbeitet standardmässig nur annotierte Tags. Um nicht annotierte tags zu sehen, verwende bitte`git describe --tags`."
+              "**Achtung**: `<Anzahl Commits>` und `<Hash>` erscheint nur, wenn HEAD nicht auf ein Tag zeigt. `git describe` verarbeitet standardmäßig nur annotierte Tags. Um nicht annotierte Tags zu sehen, verwende bitte `git describe --tags`."
             ]
           }
         },
@@ -582,7 +584,7 @@ exports.level = {
               "Schauen wir uns das schnell an einem Beispiel an. Für den folgenden Baum:"
             ],
             "afterMarkdowns": [
-              "Der Befehl `git describe master` würde folgendes ausgeben:",
+              "Der Befehl `git describe main` würde folgendes ausgeben:",
               "",
               "`v1_2_gC2`",
               "",
@@ -645,7 +647,7 @@ exports.level = {
               "軽い例を見てみましょう。この木においての例は以下のようになります:"
             ],
             "afterMarkdowns": [
-              "コマンド`git describe master`の結果は以下のようになります:",
+              "コマンド`git describe main`の結果は以下のようになります:",
               "",
               "`v1_2_gC2`",
               "",
@@ -677,7 +679,7 @@ exports.level = {
             "markdowns": [
               "### Git Describe",
               "",
-              "Теги являются прекрасными ориентирами в истории изменений, поэтому в git есть команда, которая показывает, как далеко текущее состоянии от ближайшего тега. И эта команда называется `git describe`",
+              "Теги являются прекрасными ориентирами в истории изменений, поэтому в git есть команда, которая показывает, как далеко текущее состояние от ближайшего тега. И эта команда называется `git describe`",
               "",
               "Git describe помогает сориентироваться после отката на много коммитов по истории изменений. Такое может случиться, когда вы сделали `git bisect` или если вы недавно вернулись из отпуска =)"
             ]
@@ -708,7 +710,7 @@ exports.level = {
               "Посмотрим на простой пример. Для дерева, показанного ниже:"
             ],
             "afterMarkdowns": [
-              "Команда `git describe master` выведет:",
+              "Команда `git describe main` выведет:",
               "",
               "`v1_2_gC2`",
               "",
@@ -732,7 +734,7 @@ exports.level = {
         }
       ]
     },
-	"ko": {
+  "ko": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -771,7 +773,7 @@ exports.level = {
               "간단한 예제를 확인해 봅시다. 아래의 트리에서:"
             ],
             "afterMarkdowns": [
-              "`git describe master` 명령은 다음을 출력합니다:",
+              "`git describe main` 명령은 다음을 출력합니다:",
               "",
               "`v1_2_gC2`",
               "",
@@ -834,7 +836,7 @@ exports.level = {
               "Розгляньмо короткий приклад. Для дерева нижче:"
             ],
             "afterMarkdowns": [
-              "Команда `git describe master` виведе:",
+              "Команда `git describe main` виведе:",
               "",
               "`v1_2_gC2`",
               "",
@@ -897,7 +899,7 @@ exports.level = {
               "Cùng xem nhanh một ví dụ trên cây lịch sử phía dưới:"
             ],
             "afterMarkdowns": [
-              "Câu lệnh `git describe master` sẽ cho kết quả:",
+              "Câu lệnh `git describe main` sẽ cho kết quả:",
               "",
               "`v1_2_gC2`",
               "",
@@ -916,6 +918,69 @@ exports.level = {
               "Từng đó thông tin là khá đủ về git describe! Hãy thử dùng `git describe` trên vài vị trí để hiểu về lệnh này.",
               "",
               "Một khi bạn đã sẵn sàng thì chỉ cần commit 1 lần là qua bài này. Bài này dễ chơi rồi nhé :P"
+            ]
+          }
+        }
+      ]
+    },
+    "sl_SI": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### Git Describe",
+              "",
+              "Ker tagi služijo kot tako odlična \"sidra\" v kodi, ima git ukaz za *opis* kje si, relativno glede na najbližje \"sidro\" (aka tag). Temu ukazu se reče `git describe`!",
+              "",
+              "Git describe se ti lahko pomaga orientirati, če si premikal veliko commitov naprej in nazaj po zgodovini; to se lahko zgodi, če si končal git bisekcijo (iskanje kot debuggiranje) ali če se usedeš za sodelavčev računalnik, ko je ravno prišel z dopusta."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Git describe izgleda takole:",
+              "",
+              "`git describe <ref>`",
+              "",
+              "Kjer je `<ref>` karkoli kar lahko git prepozna kot commit. Če ne podaš ref-a, git uporabi mesto, kjer si trenutno checkoutan (`HEAD`).",
+              "",
+              "Izpis ukaza je sledeč:",
+              "",
+              "`<tag>_<numCommits>_g<hash>`",
+              "",
+              "Kjer je `tag` najbližji prednik v zgodovini, `numCommits` je število commitov oddaljenosti tag-a in `<hash>` je hash commita, ki ga opisujemo."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Poglejmo hiter primer. Za drevo spodaj:"
+            ],
+            "afterMarkdowns": [
+              "Bi ukaz `git describe main` izpisal:",
+              "",
+              "`v1_2_gC2`",
+              "",
+              "Ukaz `git describe side` pa bi vrnil:",
+              "",
+              "`v2_1_gC4`"
+            ],
+            "command": "git tag v2 C3",
+            "beforeCommand": "git commit; go -b side HEAD~1; gc; gc; git tag v1 C0"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "To je približno vse, kar se tiče git describe-a! Poizkusi za občutek opisati nekaj lokacij v tej stopnji.",
+              "",
+              "Ko si pripravljen, samo enkrat commitaj, da zaključiš stopnjo. Tole ti častimo :P"
             ]
           }
         }

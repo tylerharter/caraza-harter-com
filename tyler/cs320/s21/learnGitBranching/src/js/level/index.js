@@ -69,6 +69,13 @@ var Level = Sandbox.extend({
 
     // if there is a multiview in the beginning, open that
     // and let it resolve our deferred
+    if (GlobalStateStore.getShouldDisableLevelInstructions()) {
+      setTimeout(function() {
+        deferred.resolve();
+      }, 100);
+      return;
+    }
+
     if (this.level.startDialog && !this.testOption('noIntroDialog')) {
       new MultiView(Object.assign(
         {},
@@ -166,6 +173,14 @@ var Level = Sandbox.extend({
 
   startOffCommand: function() {
     var method = this.options.command.get('method');
+    if (GlobalStateStore.getShouldDisableLevelInstructions()) {
+      Main.getEventBaton().trigger(
+        'commandSubmitted',
+        'hint; show goal'
+      );
+      return;
+    }
+
     if (!this.testOption('noStartCommand') && method !== 'importLevelNow') {
       Main.getEventBaton().trigger(
         'commandSubmitted',
@@ -498,7 +513,7 @@ var Level = Sandbox.extend({
       finishAnimationChain = deferred.promise;
       Main.getEventBaton().trigger(
         'commandSubmitted',
-        'echo "level solved!"'
+        'echo "level solved! type in \'levels\' to access the next level"'
       );
     } else {
       GlobalStateActions.changeIsAnimating(true);

@@ -18,7 +18,14 @@ exports.dialog = {
         '',
         'PS: Want to go straight to a sandbox next time?',
         'Try out ',
-        '[this special link](https://pcottle.github.io/learnGitBranching/?NODEMO)'
+        '[this special link](https://pcottle.github.io/learnGitBranching/?NODEMO)',
+        '',
+        'PPS: GitHub (and the industry at large) is moving to naming the default branch as `main` instead of `master` ',
+        'with [more details available here](https://github.com/github/renaming). In order to accommodate this change in ',
+        'a backwards-compatible way, these two names will be considered aliases of each other, with `main` being ',
+        'the preferred one to display. We\'ve made a best-effort attempt to update all of the level content, but ',
+        'there will be a long-tail of areas we have missed. Please submit a PR (or open an issue) if you spot any ',
+        'egregious ones, and thanks for helping move away from biased terminology.'
       ]
     }
   }],
@@ -28,7 +35,7 @@ exports.dialog = {
       markdowns: [
         '## ¡Bienvenid@ a Learn Git Branching!',
         '',
-        'Esta aplicación está diseñada para ayudar a los principantes ',
+        'Esta aplicación está diseñada para ayudar a los principiantes ',
         'a manejar los poderosos conceptos que hay detrás del trabajo ',
         'con ramas (branches) en Git. Esperamos que disfrutes la aplicación ',
         'y tal vez incluso ¡que aprendas algo! ',
@@ -78,13 +85,69 @@ exports.dialog = {
       ]
     }
   }],
+  'es_MX': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## ¡Bienvenid@ a Learn Git Branching!',
+        '',
+        'Esta aplicación está diseñada para ayudar a los principiantes',
+        'a manejar los poderosos conceptos que hay detrás del trabajo',
+        'con ramas (branches) en Git. Esperamos que disfrutes la aplicación',
+        'y tal vez incluso ¡que aprendas algo!',
+        '',
+        '# ¡Demo!',
+        '',
+        'Si no viste la demo, mirala en ésta dirección:',
+        '',
+        '[https://pcottle.github.io/learnGitBranching/?demo](https://pcottle.github.io/learnGitBranching/?demo)',
+        '',
+        '¿Harto de este mensaje? Agregale `?NODEMO` a la URL para dejar de verlo, como en éste link:',
+        '',
+        '[https://pcottle.github.io/learnGitBranching/?NODEMO](?NODEMO)'
+      ]
+    }
+  }, {
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Comandos de git',
+        '',
+        'Tienes una gran variedad de comandos de git en este sandbox. He aquí una lista de los incluidos:',
+        '',
+        ' * commit',
+        ' * branch',
+        ' * checkout',
+        ' * cherry-pick',
+        ' * reset',
+        ' * revert',
+        ' * rebase',
+        ' * merge'
+      ]
+    }
+  }, {
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## ¡Comparte!',
+        '',
+        'Comparte tus árboles con tus amigos usando `export tree` e `import tree`',
+        '',
+        '¿Tienes una buena lección que compartir? Prueba construyendo un nivel con `build level` o prueba el nivel de un amigo con `import level`',
+        '',
+        'Para ver todos los comandos disponibles, prueba `show commands`. Hay algunos muy prácticos como `undo` y `reset`',
+        '',
+        'Por ahora, arranquemos con los `levels`...'
+      ]
+    }
+  }],
   'es_ES': [{
     type: 'ModalAlert',
     options: {
       markdowns: [
         '## ¡Bienvenid@ a Learn Git Branching!',
         '',
-        'Esta aplicación está diseñada para ayudar a los principantes ',
+        'Esta aplicación está diseñada para ayudar a los principiantes ',
         'a manejar los poderosos conceptos que hay detrás del trabajo ',
         'con ramas (branches) en Git. Esperamos que disfrutes la aplicación ',
         'y tal vez incluso ¡que aprendas algo! ',
@@ -508,7 +571,7 @@ exports.dialog = {
       markdowns: [
         '## Commandes Git',
         '',
-        'Il existe une large variété de commandes git disponibles dans le mode bac à sable. Sont inclues :',
+        'Il existe une large variété de commandes git disponibles dans le mode bac à sable. Sont incluses :',
         '',
         ' * commit',
         ' * branch',
@@ -635,5 +698,87 @@ exports.dialog = {
         '[đường link đặc biệt này của chúng tôi](https://pcottle.github.io/learnGitBranching/?NODEMO)'
       ]
     }
-  }]
+  }],
+  'sl_SI': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Dobrodošel na učenju Git Branchanja',
+        '',
+        'Bi se rad naučil Git? No, prišel si na pravo mesto! ',
+        '"Learn Git Branching" je najbolj vizualen in interaktiven način učenja Git-a ',
+        'na spletu; zagrizel boš v zanimive stopnje, po korakih boš spoznaval osupljive ',
+        'funkcije in kaj pa veš, morda ti bo celo zabavno. ;)',
+        '',
+        'Za tem oknom boš videl kopico stopenj, ki so na razpolago. Če si ',
+        'začetnik, kar pogumno, začni s prvo. Če pa že poznaš Git osnove, ',
+        'se preizkusi v zahtevnejših stopnjah.',
+        '',
+        'Vidiš lahko vse ukaze, ki so na voljo, z ukazom `show commands` v terminalu.',
+        '',
+        'PS: Bi šel rad naslednjič naravnost v peskovnik?',
+        'Poizkusi s',
+        '[to posebno povezavo](https://pcottle.github.io/learnGitBranching/?NODEMO)'
+      ]
+    }
+  }],
+  'pl': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Witaj w Learn Git Branching!',
+        '',
+        'Celem tej aplikacji jest zilustrowanie rozległych i złożonych relacji pomiędzy procesami związanymi z pracą z GIT-em.',
+        'Mam nadzieję, że ci się to spodoba i może nawet się czegoś nauczysz!',
+        '"Learn Git Branching" to najbardziej wizualny i interaktywny sposób na naukę GIT-a w sieci.',
+        'Będziesz miał do czynienia z ekscytującymi poziomami wraz z pokazaniem krok po kroku potężnych funkcji, a może nawet z odrobiną zabawy po drodze.',
+        '',
+        'Jeśli jesteś początkujący, po prostu zacznij od pierwszego poziomu.',
+        'Jeśli znasz już podstawy GIT-a, wypróbuj niektóre z naszych późniejszych, bardziej wymagających poziomów.',
+        '',
+        '# Demo!',
+        '',
+        'Jeśli nie widziałeś tej demonstracji, możesz ją obejrzeć tutaj:',
+        '',
+        '[https://pcottle.github.io/learnGitBranching/?demo](https://pcottle.github.io/learnGitBranching/?demo)',
+        '',
+        'Masz dość tego okna? Dodaj `?NODEMO` do adresu URL, aby się go pozbyć, w ten sposób:',
+        '',
+        '[https://pcottle.github.io/learnGitBranching/?NODEMO](?NODEMO)'
+      ]
+    }
+  }, {
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Komendy GIT-a',
+        '',
+        'W trybie piaskownicy dostępna jest duża liczba poleceń GIT. Między innymi',
+        '',
+        ' * commit',
+        ' * branch',
+        ' * checkout',
+        ' * cherry-pick',
+        ' * reset',
+        ' * revert',
+        ' * rebase',
+        ' * merge'
+      ]
+    }
+  }, {
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Dzielenie się jest Fajne!',
+        '',
+        'Podziel się tymi drzewami GIT-a z przyjaciółmi, wpisując `export tree` oraz `import tree`.',
+        '',
+        'Czy masz coś, co warto wiedzieć o GIT-cie? Spróbuj zbudować swój poziom wpisując `build level` lub spróbuj poziomu znajomego wpisując `import level`',
+        '',
+        'Aby zobaczyć wszystkie polecenia, wpisz `show commands`. Pod spodem są "małe skarby" jak `undo`(cofnij) i `reset`',
+        '',
+        'Na razie zacznijmy od wpisania `levels`...'
+      ]
+    }
+  }],
 };

@@ -1,6 +1,7 @@
 var _ = require('underscore');
 var Q = require('q');
 var Backbone = require('backbone');
+var marked = require('marked');
 
 var Main = require('../app');
 var intl = require('../intl');
@@ -138,8 +139,8 @@ var ConfirmCancelView = ResolveRejectBase.extend({
     this.destination = options.destination;
     this.deferred = options.deferred || Q.defer();
     this.JSON = {
-      confirm: options.confirm || 'Confirm',
-      cancel: options.cancel || 'Cancel'
+      confirm: options.confirm || intl.str('confirm-button'),
+      cancel: options.cancel || intl.str('cancel-button')
     };
 
     this.render();
@@ -356,7 +357,7 @@ var ModalAlert = ContainedBase.extend({
 
   render: function() {
     var HTML = (this.JSON.markdown) ?
-      require('markdown').markdown.toHTML(this.JSON.markdown) :
+      marked(this.JSON.markdown) :
       this.template(this.JSON);
     // one more hack -- allow adding custom random HTML if specified
     if (this.options._dangerouslyInsertHTML) {

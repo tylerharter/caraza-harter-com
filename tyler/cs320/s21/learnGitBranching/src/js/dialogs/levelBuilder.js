@@ -26,13 +26,13 @@ exports.dialog = {
         '',
         'So funktioniert\'s:',
         '',
-        '  * Stelle mit Git-Befehlen die Ausganssituation her',
+        '  * Stelle mit Git-Befehlen die Ausgangssituation her',
         '  * Leg den Startpunkt mit ```define start``` fest',
         '  * Gib eine Abfolge von Git-Befehlen ein, welche die (optimale) Lösung darstellen',
         '  * Leg den Ziel-Baum mit ```define goal``` fest. Damit markierst du den Endpunkt der Lösung',
         '  * Gib einen Hinweis mittels ```define hint``` an, wenn du willst',
         '  * Änder den Namen mittels ```define name```',
-        '  * Wenn du magst, erstelle einen schönene Einführungsdialog mit ```edit dialog```',
+        '  * Wenn du magst, erstelle einen schönen Einführungsdialog mit ```edit dialog```',
         '  * Gib das Kommando ```finish``` ein um deinen Level als JSON auszugeben'
       ]
     }
@@ -91,6 +91,25 @@ exports.dialog = {
         '  * Dale un nombre con ```define name```',
         '  * Opcionalmente, definí un mensaje inicial con ```edit dialog```',
         '  * ¡Ingresá el comando ```finish``` para obtener tu nivel en formato JSON!'
+      ]
+    }
+  }],
+  'es_MX': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## ¡Bienvenido al constructor de niveles!',
+        '',
+        'Estos son los pasos principales:',
+        '',
+        '  * Preparar el entorno inicial usando comandos de Git',
+        '  * Definir el árbol inicial con ```define start```',
+        '  * Introducir la serie de comandos de git que representan la solución óptima',
+        '  * Crear el árbol objetivo con ```define goal```. El objetivo también determina la solución',
+        '  * Opcionalmente, crea pistas con ```define hint```',
+        '  * Dale un nombre con ```define name```',
+        '  * Opcionalmente, crea un mensaje inicial con ```edit dialog```',
+        '  * ¡Introduce el comando ```finish``` para obtener tu nivel en formato JSON!'
       ]
     }
   }],
@@ -266,5 +285,43 @@ exports.dialog = {
         '  * Nhập lệnh ```finish``` xuất cấp độ của bạn dưới dạng JSON!'
       ]
     }
-  }]
+  }],
+  'sl_SI': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Dobrodošel v graditelju stopenj!',
+        '',
+        'Tu so glavni koraki:',
+        '',
+        '  * Postavi začetno stanje z git ukazi',
+        '  * Določi začetno drevo z ```define start```',
+        '  * Vnesi zaporedje ukazov, ki predstavljajo (najboljšo) rešitev',
+        '  * Določi ciljno drevo z ```define goal```. Določanje cilja določi tudi rešitev',
+        '  * Opcijsko določi namig z ```define hint```',
+        '  * Uredi ime z ```define name```',
+        '  * Opcijsko določi ličen začetni dialog z ```edit dialog```',
+        '  * Vnesi ukaz ```finish``` za ustvarjanje JSON različice tvoje stopnje!'
+      ]
+    }
+  }],
+  'pl': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Witamy w kreatorze poziomów!',
+        '',
+        'Oto główne kroki:',
+        '',
+        '  * Przygotuj środowisko początkowe za pomocą poleceń GIT-a',
+        '  * Zdefiniuj drzewo początkowe za pomocą ```define start```',
+        '  * Wprowadź serię poleceń GIT-a, które tworzą (optymalne) rozwiązanie',
+        '  * Utwórz drzewo celów za pomocą ```define goal```. Określenie celu określa również rozwiązanie',
+        '  * Opcjonalnie utwórz podpowiedzi (wskazówkę) za pomocą ```define hint```',
+        '  * Nadaj nazwę za pomocą ```define name```',
+        '  * Opcjonalnie, utwórz wiadomość początkową za pomocą ```edit dialog```',
+        '  * Wpisz polecenie ```finish```, aby wyświetlić swój poziom w JSON!'
+      ]
+    }
+  }],
 };

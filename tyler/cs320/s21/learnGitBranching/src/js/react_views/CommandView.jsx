@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var PropTypes = require('prop-types');
 
 var reactUtil = require('../util/reactUtil');
-var keyMirror = require('fbjs/lib/keyMirror');
+var keyMirror = require('../util/keyMirror');
 
 var STATUSES = keyMirror({
   inqueue: null,
@@ -15,17 +15,11 @@ class CommandView extends React.Component{
 
   componentDidMount() {
     this.props.command.on('change', this.updateStateFromModel, this);
-    this.props.command.on('destroy', this.onModelDestroy, this);
     this.updateStateFromModel();
   }
 
   componentWillUnmount() {
     this.props.command.off('change', this.updateStateFromModel, this);
-    this.props.command.off('destroy', this.onModelDestroy, this);
-  }
-
-  onModelDestroy() {
-    ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
   }
 
   updateStateFromModel() {

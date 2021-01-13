@@ -10,7 +10,7 @@ body {
 }
 
 html, body {
-  font-family: Monaco, Courier, monospace;
+  font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', monospace;
   color: #eee;
 }
 
@@ -125,7 +125,7 @@ body,
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
-  justify-content	: center;
+  justify-content: center;
 }
 
 .startAlign {
@@ -258,6 +258,14 @@ body.hgMode .visBackgroundColor {
 #interfaceWrapper {
   min-width: 600px;
   min-height: 400px;
+}
+
+div.ui-draggable-handle {
+  cursor: grab;
+}
+
+div.ui-draggable-dragging div.ui-draggable-handle {
+  cursor: grabbing;
 }
 
 div.canvasTerminalHolder > div.terminal-window-holder > div.wrapper {
@@ -433,6 +441,10 @@ div.toolbar > div.controls div.box.flex1 div:hover {
 
 }
 
+div.ui-draggable div.controls div.box.flex1 div {
+  cursor: pointer;
+}
+
 div.controls div.box.flex1 div.close {
   background-color: #fb625f;
 }
@@ -553,7 +565,7 @@ p.commandLine span.prompt {
 
 #commandLineBar p.command {
   margin: 0;
-  margin-left: 12px;
+  margin-left: 20px;
 }
 
 #commandLineBar #commandTextField {
@@ -685,11 +697,12 @@ div.helperBar.show {
   -o-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
-  height: 85px;
+  min-height: 85px;
 }
 
 div.helperBar.show.BaseHelperBar {
   height: auto;
+  min-height: auto;
 }
 
 #commandLineBar,

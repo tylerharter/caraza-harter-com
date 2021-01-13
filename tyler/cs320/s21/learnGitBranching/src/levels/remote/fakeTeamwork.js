@@ -16,7 +16,8 @@ exports.level = {
     "ru_RU": "Коллективная работа",
     "uk"   : "Симуляція колективної роботи",
     "ko"   : "가짜 팀워크",
-    "vi"   : "Giả lập làm việc nhóm"
+    "vi"   : "Giả lập làm việc nhóm",
+    "sl_SI": "Lažno Ekipno Delo"
   },
   "hint": {
     "en_US": "remember you can specify the number of commits to fake",
@@ -32,7 +33,8 @@ exports.level = {
     "ru_RU": "помните, Вы можете указать количество фейковых коммитов",
     "uk"   : "пам’ятай що ти можеш вказати кількість фейкових комітів",
     "ko"   : "가장할 커밋의 갯수를 조절할 수 있습니다.",
-    "vi"   : "Nhớ rằng bạn có thể chỉ định số lượng commit để giả lập."
+    "vi"   : "Nhớ rằng bạn có thể chỉ định số lượng commit để giả lập.",
+    "sl_SI": "Spomni se, da lahko določiš število lažnih commitov."
   },
   "startDialog": {
     "en_US": {
@@ -55,7 +57,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "The default behavior of `fakeTeamwork` is to simply plop down a commit on master"
+              "The default behavior of `fakeTeamwork` is to simply plop down a commit on main."
             ],
             "afterMarkdowns": [
               "There we go -- the remote was updated with a new commit, and we haven't downloaded that commit yet because we haven't run `git fetch`."
@@ -68,10 +70,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "You can also specify the number of commits or the branch by appending them to the command"
+              "You can also specify the number of commits or the branch by appending them to the command."
             ],
             "afterMarkdowns": [
-              "With one command we simulated a teammate pushing three commits to the `foo` branch on our remote"
+              "With one command we simulated a teammate pushing three commits to the `foo` branch on our remote."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -109,7 +111,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Le comportement par défaut de `fakeTeamwork` est tout simplement de faire apparaître un commit sur le master distant :"
+              "Le comportement par défaut de `fakeTeamwork` est tout simplement de faire apparaître un commit sur le main distant :"
             ],
             "afterMarkdowns": [
               "Voilà : le dépôt distant a été mis à jour avec un nouveau commit, et nous n'avons pas encore téléchargé ce commit parce que nous n'avons pas exécuté la commande `git fetch`."
@@ -125,7 +127,7 @@ exports.level = {
               "Vous pouvez aussi spécifier le nombre de commits ou la branche en les ajoutant à la fin de la commande."
             ],
             "afterMarkdowns": [
-              "Avec une seule commande, nous avons simulé un collègue ayant pushé 3 commits sur la branche `foo` de notre dépôt distant"
+              "Avec une seule commande, nous avons simulé un collègue ayant pushé 3 commits sur la branche `foo` de notre dépôt distant."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -163,7 +165,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "El comportamiento por default de `fakeTeamwork` es simplemente crear un commit en master"
+              "El comportamiento por default de `fakeTeamwork` es simplemente crear un commit en main."
             ],
             "afterMarkdowns": [
               "Ahí está: el remoto se actualizó con un nuevo commit, y todavía no nos bajamos ese commit porque aún no hicimos `git fetch`."
@@ -176,10 +178,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "También podés especificar la cantidad de commits o la ramma agregándolos al comando"
+              "También podés especificar la cantidad de commits o la ramma agregándolos al comando."
             ],
             "afterMarkdowns": [
-              "Con un único comando simulamos que un compañero de equipo pusheó tres commits a la rama `foo` de nuestro remoto"
+              "Con un único comando simulamos que un compañero de equipo pusheó tres commits a la rama `foo` de nuestro remoto."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -217,7 +219,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "El comportamiento por default de `fakeTeamwork` es simplemente crear un commit en master"
+              "El comportamiento por default de `fakeTeamwork` es simplemente crear un commit en main."
             ],
             "afterMarkdowns": [
               "Ahí está: el remoto se actualizó con un nuevo commit, y todavía no nos bajamos ese commit porque aún no hicimos `git fetch`."
@@ -230,10 +232,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "También puedes especificar la cantidad de commits o la ramma agregándolos al comando"
+              "También puedes especificar la cantidad de commits o la ramma agregándolos al comando."
             ],
             "afterMarkdowns": [
-              "Con un único comando simulamos que un compañero de equipo pusheó tres commits a la rama `foo` de nuestro remoto"
+              "Con un único comando simulamos que un compañero de equipo pusheó tres commits a la rama `foo` de nuestro remoto."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -271,7 +273,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "O comportamento padrão do `fakeTeamwork` é simplesmente fazer aparecer um commit no master"
+              "O comportamento padrão do `fakeTeamwork` é simplesmente fazer aparecer um commit no main."
             ],
             "afterMarkdowns": [
               "Aqui vamos nos -- o repositório remoto foi atualizado com um novo commit, e ainda não baixamos esse commit porque não executamos um `git fetch`."
@@ -284,10 +286,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Você também pode especificar o número de commits ou o ramo, anexando-os ao comando"
+              "Você também pode especificar o número de commits ou o ramo, anexando-os ao comando."
             ],
             "afterMarkdowns": [
-              "Com um único comando, nós simulamos um colega enviando 3 commits para o ramo `foo` do repositório remoto"
+              "Com um único comando, nós simulamos um colega enviando 3 commits para o ramo `foo` do repositório remoto."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -325,7 +327,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "O comportamento por defecto de `fakeTeamwork` é simplemente crear un commit en master na rama remota"
+              "O comportamento por defecto de `fakeTeamwork` é simplemente crear un commit en main na rama remota."
             ],
             "afterMarkdowns": [
               "Ahí o tes: a rama remota actualizouse cun novo commit, e aínda non nos baixamos ese commit porque inda non fixemos `git fetch`."
@@ -338,10 +340,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Tamén podes especificar a cantidad de commits ou a rama agregándoos ó comando"
+              "Tamén podes especificar a cantidad de commits ou a rama agregándoos ó comando."
             ],
             "afterMarkdowns": [
-              "Cun único comando simulamos que un colega do equipo empurrou tres commits á rama `foo` do noso remoto"
+              "Cun único comando simulamos que un colega do equipo empurrou tres commits á rama `foo` do noso remoto."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -379,7 +381,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "`fakeTeamwork` 的預設行為是在送一個 commit 給 master 分支"
+              "`fakeTeamwork` 的預設行為是在送一個 commit 給 main 分支"
             ],
             "afterMarkdowns": [
               "我就說吧！remote 已經藉由一個新的 commit 而更新了，而且因為我們還沒有用 `git fetch`，所以表示我們還沒有下載該 commit。"
@@ -433,7 +435,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "`fakeTeamwork` 默认操作就是在远程仓库的 master 分支上做一次提交。"
+              "`fakeTeamwork` 默认操作就是在远程仓库的 main 分支上做一次提交。"
             ],
             "afterMarkdowns": [
               "完成了 —— 远程仓库增加了一个新提交，我们还没有下载它，因为我们还没有执行 `git fetch`。"
@@ -477,7 +479,7 @@ exports.level = {
               "",
               "Hier ist das Problem -- für einige der folgenden Level müssen wir lernen, wie man Änderungen vom entfernten Server holt.",
               "",
-              "Das heißt wir müssen im Grunde \"so tun\" also ob der Server von einem Kollegen / Freund / Mitarbeiter aktualisiert worden wäre, manchmal ein bestimmter Branch oder eine bestimmte Anzahl von Commits.",
+              "Das heißt wir müssen im Grunde \"so tun\", als ob der Server von einem Kollegen / Freund / Mitarbeiter aktualisiert worden wäre, manchmal ein bestimmter Branch oder eine bestimmte Anzahl von Commits.",
               "",
               "Um das zu tun führen wir den passend benannten Befehl `git fakeTeamwork` ein! Er ist ziemlich selbsterklärend, schauen wir uns ihn an ..."
             ]
@@ -487,10 +489,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Das normale Verhalten von `fakeTeamwork` ist es, einen Commit auf den entfernten `master` zu machen."
+              "Das normale Verhalten von `fakeTeamwork` ist es, einen Commit auf den entfernten `main` zu machen."
             ],
             "afterMarkdowns": [
-              "Da haben wir's -- der Server ist mit einem neuen Commit aktualisiert worden und wir haben ihn noch nicht lokal, weil wir nicht `git fetch` oder `git pull` ausgeführt haben."
+              "Da haben wir's -- der Server ist mit einem neuen Commit aktualisiert worden und wir haben ihn noch nicht lokal, weil wir weder `git fetch` noch `git pull` ausgeführt haben."
             ],
             "command": "git fakeTeamwork",
             "beforeCommand": "git clone"
@@ -541,7 +543,7 @@ exports.level = {
                 "type": "GitDemonstrationView",
                 "options": {
                     "beforeMarkdowns": [
-                        "Поведение команды `fakeTeamwork` по умолчанию заключается в том, чтобы просто \"инициировать\" коммит на master-е"
+                        "Поведение команды `fakeTeamwork` по умолчанию заключается в том, чтобы просто \"инициировать\" коммит на main-е"
                     ],
                     "afterMarkdowns": [
                         "Ну вот - удалённый репозиторий был изменён при помощи добавления нового коммита, и мы ещё не скачали этот коммит, потому что не запустили команду `git fetch`."
@@ -651,7 +653,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "За замовчуванням `fakeTeamwork` просто додасть коміт в гілку `master`"
+              "За замовчуванням `fakeTeamwork` просто додасть коміт в гілку `main`."
             ],
             "afterMarkdowns": [
               "Є -- до віддаленого репозиторію додався ще один коміт, проте ми ще його не звантажили, оскільки ще не виконали `git fetch`."
@@ -759,7 +761,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Hành xử mặc định của `fakeTeamwork` đơn giản là tạo ra một commit ở trên nhánh master từ xa"
+              "Hành xử mặc định của `fakeTeamwork` đơn giản là tạo ra một commit ở trên nhánh main từ xa."
             ],
             "afterMarkdowns": [
               "Đó -- kho chứa từ xa đã được cập nhật thêm một commit, và ta chưa tải commit đó xuống vì ta chưa hề chạy lệnh `git fetch`."
@@ -772,10 +774,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Bạn cũng có thể chỉ định số lượng commit bằng cách thêm con số đằng sau câu lệnh"
+              "Bạn cũng có thể chỉ định số lượng commit bằng cách thêm con số đằng sau câu lệnh."
             ],
             "afterMarkdowns": [
-              "Chỉ với một câu lệnh ta có thể giả lập tạo ra 3 commit trên nhánh `foo` từ xa của ta"
+              "Chỉ với một câu lệnh ta có thể giả lập tạo ra 3 commit trên nhánh `foo` từ xa của ta."
             ],
             "command": "git fakeTeamwork foo 3",
             "beforeCommand": "git branch foo; git clone"
@@ -788,6 +790,60 @@ exports.level = {
               "Các cấp độ tới sẽ khá là khó, nên ở cấp độ này chúng tôi sẽ yêu cầu bạn thêm một chút.",
               "",
               "Sao chép một kho chứa từ xa (sử dụng `git clone`), sau đó mô phỏng một số thay đổi trong kho chứa từ xa mà bạn vừa tạo, sau đó thực hiện một số commit trên nhánh cục bộ của riêng bạn, sau đó kéo các thay đổi từ kho chứa từ xa. Nhiều bài học trong một bài."
+            ]
+          }
+        }
+      ]
+    },
+    "sl_SI": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Simulacija sodelovanja",
+              "",
+              "Tule imamo izziv -- za nekaj naslednjih lekcij te moramo naučiti, kako potegniti dol spremembe, ki so bile narejene na oddaljenem repozitoriju.",
+              "",
+              "To pomeni, da se moramo pravzaprav \"pretvarjati\", da je oddaljen branch posodobil kak sodelavec, včasih na določenem branchu ali določeno število commitov.",
+              "",
+              "Da bi to lahko naredili, smo uvedli ukaz `git fakeTeamwork`! Poglejmo prikaz ..."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Privzeto delovanje `fakeTeamwork` je, da samo doda commit na main:"
+            ],
+            "afterMarkdowns": [
+              "Tako -- oddaljen repo je bil posodobljen z novim commitom, katerega še nismo potegnili k sebi, ker še nismo pognali ukaza `git fetch`."
+            ],
+            "command": "git fakeTeamwork",
+            "beforeCommand": "git clone"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Prav tako lahko določimo tudi število commitov ali ime brancha tako, da jih dodamo na koncu:"
+            ],
+            "afterMarkdowns": [
+              "Z enim ukazom smo simulirali sodelavca, ki je dodal tri commite na `foo` branch na našem oddaljnem repotu."
+            ],
+            "command": "git fakeTeamwork foo 3",
+            "beforeCommand": "git branch foo; git clone"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Naslednje stopnje bodo precej težke, zato od tebe v tej stopnji zahtevamo še več.",
+              "",
+              "Naredi oddaljen repo (z `git clone`), simuliraj nekaj sprememb na tem repotu, sam commitaj, nato pa potegni dol spremembe. Kot da bi bilo več lekcij v eni!"
             ]
           }
         }
