@@ -1,4 +1,4 @@
-# [01] Welcome and Reproducibility
+# [01] Reproducibility 1
 
 Note: this lecture went long (62 minutes), but I'll be sure to average <50 minutes going foward.
 
