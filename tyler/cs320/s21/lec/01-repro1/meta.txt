@@ -2,5 +2,5 @@ Reproducibility 1
 * Course Overview
 * Hardware, OS, Interpreters
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab1">WEEKLY LAB: Cloud Setup</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab1">Cloud Setup</a><br>
 SLIDES

@@ -3,5 +3,5 @@ Visualization 3
 * shapefiles
 * high resolution graphics
 QUIZ 7 DUE<br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab10">WEEKLY LAB: Geo Maps</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab10">Geo Maps</a><br>
 

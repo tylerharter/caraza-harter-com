@@ -8,6 +8,6 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 <b>Optional</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
 SLIDES
 QUIZ 1 DUE<br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">WEEKLY LAB: Complexity</a><br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">WEEKLY LAB: Zips</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">Complexity</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">Zips</a><br>
 

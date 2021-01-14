@@ -2,5 +2,5 @@ Recursion
 * functions that return something
 * functions that do something
 QUIZ 2 DUE<br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">WEEKLY LAB: Linked Lists</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab5">Linked Lists</a><br>
 

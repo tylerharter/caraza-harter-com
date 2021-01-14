@@ -6,7 +6,7 @@ Web 4: Logging, Rate Limiting, and robots.txt
 # <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
 <a href="lec/19-logging/lec-19.html">Interactive Exercises</a><br>
 QUIZ 5 DUE<br>
-<a href="https://github.com/tylerharter/cs320/tree/master/f20/lab8">WEEKLY LAB: Web</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab8">Web</a><br>
 <b>Due:</b> P3<br>
-<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p4">P4 (website)</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p4">P4 (website)</a><br>
 

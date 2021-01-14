@@ -2,6 +2,8 @@
 import calendar, os, json, re
 from datetime import date, timedelta
 
+github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs320/s21'
+
 def template():
     with open('template.html') as f:
         template = f.read()
@@ -23,7 +25,7 @@ def template():
                 f.write(full)
 
 def format_day(day):
-    lines = list(filter(lambda line: not line.startswith('#'), day.split('\n')))
+    lines = [re.sub("#.*", "\n", line) for line in day.split('\n')]
     out = []
     for i,line in enumerate(lines):
         if line.startswith('*'):
@@ -44,7 +46,17 @@ def read_days():
         meta = os.path.join("lec", dirname, "meta.txt")
         with open(meta) as f:
             meta = format_day(f.read())
-        meta = meta.replace("SLIDES\n", f'<a href="lec/{dirname}/slides.pdf">SLIDES</a><br>')
+        meta = meta.replace("SLIDES\n", "")
+        reading = os.path.join("lec", dirname, "reading.html")
+        if os.path.exists(reading):
+            meta += f'\n<b>Read</b>: <a href="{reading}">Lecture Notes</a> (<a href="{reading.replace(".html", ".ipynb")}">NB</a>)<br>'
+        reading = os.path.join("lec", dirname, "reading.md")
+        if os.path.exists(reading):
+            meta += f'\n<b>Read</b>: <a href="{github}/{reading}">Lecture Notes</a><br>'
+        slides = os.path.join("lec", dirname, "slides.pdf")
+        if os.path.exists(slides):
+            meta += f'\n<b>Lecture</b>: <a href="{slides}">Slides</a><br>'
+
         days.append(meta)
     return days
 
@@ -76,7 +88,6 @@ def schedule():
 
             dname = curr.strftime("%m/%d")
             if dname in holiday:
-                print("HERE")
                 content = "\n".join(holiday[dname]) + "\n"
             else:
                 content = days.pop(0) if len(days)>0 else 'TBD\n...'

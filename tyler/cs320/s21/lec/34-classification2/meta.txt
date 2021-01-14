@@ -4,5 +4,5 @@ Classification 2
 * sklearn LogisticRegression
 * skew, multi-class
 <b>Due:</b> P6<br>
-<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/p7">P7 (sklearn)</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p7">P7 (sklearn)</a><br>
 
