@@ -41,7 +41,7 @@ Programming
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
 <!--a href="materials/lec_03_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-03/">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=Po7cDTs-FVY">1</a>, </b><a href="https://www.youtube.com/watch?v=ypiMi2g4Aag">2</a>, </b><a href="https://www.youtube.com/watch?v=dho3MpOevO0">3</a>, <a href="https://www.youtube.com/watch?v=WbKwWVom-Co">4</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p2">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p2">P2</a><br-->
@@ -57,7 +57,7 @@ Vars and Exprs
 <!--a href="materials/lec_04_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-04">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eZ9-uzqFLFg">1</a>, </b><a href="https://www.youtube.com/watch?v=gs7jtfbhTxc">2</a><br-->
-<b>Python Tutor: </b>
+<!--b>Python Tutor: </b-->
 <!--a href="http://pythontutor.com/live.html#code=a%20%3D%203%0Ab%20%3D%204%0Ac%20%3D%205%0Ad%20%3D%206%0A%0Aa%20%3D%20a%20*%20%28a%252%29%0Ab%20%3D%20b%20*%20%28b%252%29%0Ac%20%3D%20c%20*%20%28c%252%29%0Ad%20%3D%20d%20*%20%28d%252%29%0A%0Aprint%28a%2Bb%2Bc%2Bd%29%0A%0A&cumulative=false&curInstr=9&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">1</a-->, 
 <!--a href="http://pythontutor.com/live.html#code=start%20%3D%201000%0Ainterest%20%3D%207%0Ayears%20%3D%2030%0A%0Amultiplier%20%3D%201%20%2B%20interest/100%0A%0Amoney%20%3D%20start*multiplier%20**%20years%0Aprint%28money%29&cumulative=false&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">2</a-->, 
 <!--a href="http://pythontutor.com/live.html#code=%23alice%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%7C%7C%0A%23bob%3A%20%7C%7C%7C%7C%7C%7C%7C%7C%0A%0Aplayer1_score%20%3D%2010%0Aplayer2_score%20%3D%208%0A%0Aplayer1%20%3D%20%22alice%22%0Aplayer2%20%3D%20%22bob%22%0A%0Aplayer1%20%2B%3D%20%22%3A%22%0Aplayer2%20%2B%3D%20%22%3A%22%0A%0Alongest_name%20%3D%207%0A%0Aplayer1%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player1%29%29%0Aplayer2%20%2B%3D%20%22%20%22%20*%20%28longest_name%20-%20len%28player2%29%29%0A%0Aprint%28player1%20%2B%20%22%7C%22%20*%20player1_score%29%0Aprint%28player2%20%2B%20%22%7C%22%20*%20player2_score%29%0A%0A&cumulative=false&curInstr=11&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false">3</a-->, 
@@ -87,7 +87,7 @@ Creating Functions
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
 <b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br>
 <!--a href="materials/lec_06_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-06-worksheet.pdf">pdf</a>, <a href="materials/lec-06-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-06-worksheet.pdf">pdf</a>, <a href="materials/lec-06-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec06-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-06">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=TjgQFkc_q0c">1</a>, </b><a href="https://www.youtube.com/watch?v=aTDF78QwKbc">2</a>, <a href="https://www.youtube.com/watch?v=J6Q-GWPvLdA">3</a><br-->
@@ -119,7 +119,7 @@ Conditionals 1
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
 <!--a href="materials/lec_08_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-08-worksheet.pdf">pdf</a>, <a href="materials/lec-08-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-08-worksheet.pdf">pdf</a>, <a href="materials/lec-08-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec08-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-08">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=zNwskxlAzvo">1</a>, </b><a href="https://www.youtube.com/watch?v=hGyrpaCY-gc">2</a>, </b><a href="https://www.youtube.com/watch?v=7s5U600gll4">3</a>, </b><a href="https://www.youtube.com/watch?v=W_pGurKvifA">4</a><br--> 
@@ -154,7 +154,7 @@ Iteration 2
 <b>Read (Optional)</b>: Sweigart Ch 2<br>
 <b>Due</b>: Quiz3<br>
 <!--a href="materials/lec_11_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-11-worksheet.pdf">pdf</a>, <a href="materials/lec-11-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-11-worksheet.pdf">pdf</a>, <a href="materials/lec-11-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec11-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-11">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=V1FR8rZ3uC0">1</a>, </b><a href="https://www.youtube.com/watch?v=Ern5dywgw3A">2</a>, </b><a href="https://www.youtube.com/watch?v=mS9otCaNd70">3</a><br-->
@@ -177,7 +177,7 @@ Strings
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
 <!--a href="materials/lec_12_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-12">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=LxV8xqdfRgg">1</a>, </b><a href="https://www.youtube.com/watch?v=w3PRy-thFRY">2</a>, </b><a href="https://www.youtube.com/watch?v=bhSNNlr3wDI">3</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p5">P5</a><br-->
@@ -217,7 +217,7 @@ CSV Tables
 List Practice
 * Coding Demos
 <b>Due</b>: P5<br>
-<b>Link to Worksheet: </b><a href="materials/lec-16-worksheet.pdf">pdf</a>, <a href="materials/lec-16-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-16-worksheet.pdf">pdf</a>, <a href="materials/lec-16-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assaW3aEyhnaX4Vh_l3k4fF4">Playlist</a><br-->
 <b>No Slides</b>
@@ -256,7 +256,7 @@ JSON
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
 <b>Due</b>: P6<br>
 <!--a href="materials/lec_19_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-19-worksheet.pdf">pdf</a>, <a href="materials/lec-19-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-19-worksheet.pdf">pdf</a>, <a href="materials/lec-19-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-19">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuDkndnA67uYgcsf6_97Hv0">Playlist</a><br-->
 
@@ -281,7 +281,7 @@ Copying
 * Deep Copy
 <!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <!--a href="materials/lec_21_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-21-worksheet.pdf">pdf</a>, <a href="materials/lec-21-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-21-worksheet.pdf">pdf</a>, <a href="materials/lec-21-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec21-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asv21qOONn2P_2PKwAKGLCCL">Playlist</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p8">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p8">P8</a><br-->
@@ -327,7 +327,7 @@ Error Handling
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
 <b>Due</b>: P8<br>
 <!--a href="materials/lec_25_F20.pdf">Link to Slides</a><br-->
-<b>Link to Worksheet: </b><a href="materials/lec-25-worksheet.pdf">pdf</a>, <a href="materials/lec-25-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-25-worksheet.pdf">pdf</a>, <a href="materials/lec-25-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec25-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-25">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvMbiPHYp_2X8rKqRK5lNZl">Playlist</a><br-->
@@ -369,7 +369,7 @@ Pandas 2
 * practice
 <b>Due</b>: Quiz 9<br>
 <b>No Slides</b><br>
-<b>Link to Worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-29">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvA8DxNtHK6GVzXQH7I1Gkd">Playlist</a><br-->
 
@@ -435,7 +435,7 @@ Database 3
 * Pandas <--> SQL
 <b>Due</b>: Quiz11<br>
 <!--a href="materials/lec_35_F20.pdf">Link to Slides</a><br--> 
-<b>Link to Worksheet: </b><a href="materials/lec-35-worksheet.pdf">pdf</a>, <a href="materials/lec-35-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-35-worksheet.pdf">pdf</a>, <a href="materials/lec-35-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-35">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asujbiShoklA7QAg7IPUToxI">Playlist</a><br-->
 
