@@ -40,7 +40,6 @@ Programming
 * Boolean Logic
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
-<b>Due</b>: P1<br>
 <!--a href="materials/lec_03_F20.pdf">Link to Slides</a><br-->
 <b>Link to Worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-03/">code</a><br-->
@@ -54,6 +53,7 @@ Vars and Exprs
 * Types of errors
 * Comments
 <b>Read</b>: Downey Ch 2<br>
+<b>Due</b>: P1<br>
 <!--a href="materials/lec_04_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-04">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eZ9-uzqFLFg">1</a>, </b><a href="https://www.youtube.com/watch?v=gs7jtfbhTxc">2</a><br-->
@@ -86,7 +86,6 @@ Creating Functions
 
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
 <b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br>
-<b>Due</b>: P2<br>
 <!--a href="materials/lec_06_F20.pdf">Link to Slides</a><br-->
 <b>Link to Worksheet: </b><a href="materials/lec-06-worksheet.pdf">pdf</a>, <a href="materials/lec-06-worksheet.docx">docx</a><br>
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec06-InteractiveExercises.html">Interactive Exercises</a><br-->
@@ -103,6 +102,7 @@ Function Scope
 * Stack Diagrams
 
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
+<b>Due</b>: P2<br>
 <!--a href="materials/lec_07_F20.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec07-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=eARwA4h6hFQ">1</a>, </b><a href="https://www.youtube.com/watch?v=g6fSjHnBzIo">2</a>, </b><a href="https://www.youtube.com/watch?v=_Fo1cdb9w6E">3</a>, </b><a href="https://www.youtube.com/watch?v=1f6-U_YJtpQ">4</a><br--> 
@@ -129,7 +129,6 @@ and Ch 6 ("Return Values" to "Boolean Functions")<br>
 Conditionals 2
 * Refactoring
 * Nesting
-<b>Due</b>: P3<br>
 <!--a href="materials/lec_09_F20.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec09-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-09">code</a><br-->
@@ -143,6 +142,7 @@ Iteration 1
 * Infinite Iteration
 
 <b>Read</b>: Downey Ch 7<br>
+<b>Due</b>: P3<br>
 <!--a href="materials/lec_10_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-10">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=lScBVhLYyHI">1</a>, </b><a href="https://www.youtube.com/watch?v=WNNxlV1kOJ8">2</a>, </b><a href="https://www.youtube.com/watch?v=pxkRcs7CRKU">3</a><br-->
@@ -158,6 +158,9 @@ Iteration 2
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec11-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-11">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=V1FR8rZ3uC0">1</a>, </b><a href="https://www.youtube.com/watch?v=Ern5dywgw3A">2</a>, </b><a href="https://www.youtube.com/watch?v=mS9otCaNd70">3</a><br-->
+
+=
+Exam 1
 
 =
 Strings
@@ -178,8 +181,6 @@ Strings
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-12">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=LxV8xqdfRgg">1</a>, </b><a href="https://www.youtube.com/watch?v=w3PRy-thFRY">2</a>, </b><a href="https://www.youtube.com/watch?v=bhSNNlr3wDI">3</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p5">P5</a><br-->
-=
-Exam 1
 
 ################################################################################
 # PART 2
@@ -206,7 +207,6 @@ CSV Tables
 * Headers
 * Lists of lists
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop")<br>
-<b>Due</b>: P5<br>
 <!--a href="materials/lec_15_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asucsJszPi6yPWScN4INiWX6">Playlist</a><br-->
@@ -216,6 +216,7 @@ CSV Tables
 =
 List Practice
 * Coding Demos
+<b>Due</b>: P5<br>
 <b>Link to Worksheet: </b><a href="materials/lec-16-worksheet.pdf">pdf</a>, <a href="materials/lec-16-worksheet.docx">docx</a><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assaW3aEyhnaX4Vh_l3k4fF4">Playlist</a><br-->
@@ -241,7 +242,6 @@ Dictionaries 2
 * dicts with lists
 * defaultdict
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
-<b>Due</b>: P6<br>
 <!--a href="materials/lec_18_F20.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec18-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-18">code</a><br-->
@@ -254,6 +254,7 @@ JSON
 * Serialization
 * Pretty Printing
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
+<b>Due</b>: P6<br>
 <!--a href="materials/lec_19_F20.pdf">Link to Slides</a><br-->
 <b>Link to Worksheet: </b><a href="materials/lec-19-worksheet.pdf">pdf</a>, <a href="materials/lec-19-worksheet.docx">docx</a><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-19">code</a><br-->
@@ -279,7 +280,6 @@ Copying
 * Shallow Copy
 * Deep Copy
 <!b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
-<b>Due</b>: P7<br>
 <!--a href="materials/lec_21_F20.pdf">Link to Slides</a><br-->
 <b>Link to Worksheet: </b><a href="materials/lec-21-worksheet.pdf">pdf</a>, <a href="materials/lec-21-worksheet.docx">docx</a><br>
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec21-InteractiveExercises.html">Interactive Exercises</a><br-->
@@ -293,6 +293,7 @@ Recursive Functions
 * More Stack Diagrams
 * Stack Overflow
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
+<b>Due</b>: P7<br>
 <!--a href="materials/lec_22_F20.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-22">code</a><br-->
@@ -311,7 +312,6 @@ Function References
 =
 Generator Functions
 * iterators and generators
-<b>Due</b>: P8<br>
 <b>Due</b>: CS 319 graduate project proposal<br>
 <!--a href="materials/lec_24_F20.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec24-InteractiveExercises.html">Interactive Exercises</a><br-->
@@ -325,6 +325,7 @@ Error Handling
 * Throwing Exceptions
 * Asserts
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter10/">Sweigart Ch 10</a> (beginning through "Assertions")<br>
+<b>Due</b>: P8<br>
 <!--a href="materials/lec_25_F20.pdf">Link to Slides</a><br-->
 <b>Link to Worksheet: </b><a href="materials/lec-25-worksheet.pdf">pdf</a>, <a href="materials/lec-25-worksheet.docx">docx</a><br>
 <!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec25-InteractiveExercises.html">Interactive Exercises</a><br-->
@@ -345,7 +346,6 @@ Files and Directories
 
 =
 Exam 2
-<b>Due</b>: P9 <b>(moved to 5th November!)</b><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p10">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p10">P10</a><br-->
 
 =
@@ -355,7 +355,8 @@ Pandas 1
 * series
 * reading CSVs
 * element-wise operations
-<b>Reading</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Read</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Due</b>: P9<br>
 <b>No Slides</b><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-28">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assJDqVvbItui1GooZEiJjI4">Playlist</a><br-->
@@ -443,7 +444,8 @@ Plotting 1
 * bar+scatter plots
 * plot design
 * AxesSublot
-<b>Reading</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Due</b>: P12<br>
 <!--a href="materials/lec_36_F20.pdf">Link to Slides</a><br--> 
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-36">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuNFzjPg3EbRJ6yvV5E1jS7">Playlist</a><br-->
@@ -451,15 +453,14 @@ Plotting 1
 =
 Plotting 2
 * line plots
-<b>Reading</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-37">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvbujLNlLve0q5kF00TS4Hy">Playlist</a><br-->
 
 =
 Plotting 3
 * bar plots
-<b>Reading</b>: same as for "Plotting 2"<br>
-<b>Due</b>: P12<br>
+<b>Read</b>: same as for "Plotting 2"<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-38">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assbRv7gK5p2DZt2v1vufQfJ">Playlist</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-f20-projects/tree/master/p13">P13</a><br-->
@@ -469,7 +470,8 @@ Plotting 4
 * axes
 * adjacent plots
 * design decisions
-<b>Reading</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Read</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Due</b>: P13<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-39">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astEp5BaLsyLfC7qU6LxeO69">Playlist</a><br-->
 
@@ -486,5 +488,4 @@ Randomness
 =
 Review/Catchup
 * Bring Questions
-<b>Due</b>: P13<br>
 <!--a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br-->
