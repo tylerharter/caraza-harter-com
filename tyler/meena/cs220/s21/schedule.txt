@@ -333,7 +333,7 @@ Files and Directories
 * Writing
 * Listing children
 * Exam 2 review
-<b>Read</b>: Downey Ch 14
+<b>Read</b>: Downey Ch 14<br>
 <b>Due</b>: Quiz8<br>
 <!--a href="materials/lec_26_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-26">code</a><br-->
@@ -362,7 +362,6 @@ Pandas 1
 =
 Pandas 2
 * practice
-<b>Due</b>: Quiz 9<br>
 <b>No Slides</b><br>
 <!--b>Link to worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-29">code</a><br-->
@@ -389,6 +388,7 @@ Web 1
 Web 2
 * Intro to HTML
 * Generating HTML
+<b>Due</b>: Quiz9<br>
 <!--a href="materials/lec_31_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-31">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astDpbUW6y9Z_PJr8qlZpr2J">Playlist</a><br-->
@@ -398,7 +398,6 @@ Web 3
 * Document Object Model
 * Parsing HTML
 * beautifulsoup
-<b>Due</b>: Quiz 10<br>
 <!--a href="materials/lec_32_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-32">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuswbQBepdOwsM2qEhJEln0">Playlist</a><br-->
@@ -420,6 +419,7 @@ Database 1
 Database 2
 * aggregates
 * group by
+<b>Due</b>: Quiz10<br>
 <!--a href="materials/lec_34_F20.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-34">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assmIZjF3uNFOo0OhgvJNu3W">Playlist</a><br-->
@@ -428,7 +428,6 @@ Database 2
 Database 3
 * Worksheets
 * Pandas <--> SQL
-<b>Due</b>: Quiz11<br>
 <!--a href="materials/lec_35_F20.pdf">Link to Slides</a><br--> 
 <!--b>Link to worksheet: </b><a href="materials/lec-35-worksheet.pdf">pdf</a>, <a href="materials/lec-35-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-35">code</a><br-->
@@ -449,6 +448,7 @@ Plotting 1
 Plotting 2
 * line plots
 <b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
+<b>Due</b>: Quiz11<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-37">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvbujLNlLve0q5kF00TS4Hy">Playlist</a><br-->
 
