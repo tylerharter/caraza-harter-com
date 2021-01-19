@@ -30,7 +30,7 @@ Pseudocode
 * Flow of Execution
 * State
 <!--a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br-->
-<b>No Slides</b>
+<!--b>No slides</b-->
 
 =
 Programming
@@ -215,7 +215,7 @@ List Practice
 <!--b>Link to worksheet: </b><a href="materials/lec-16-worksheet.pdf">pdf</a>, <a href="materials/lec-16-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-15">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assaW3aEyhnaX4Vh_l3k4fF4">Playlist</a><br-->
-<b>No Slides</b>
+<!--b>No slides</b-->
 
 =
 Dictionaries 1
@@ -352,7 +352,7 @@ Pandas 1
 * element-wise operations
 <b>Read</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/readings">.ipynb and data</a>)<br>
 <b>Due</b>: P9<br>
-<b>No Slides</b><br>
+<!--b>No slides</b--><br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-28">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assJDqVvbItui1GooZEiJjI4">Playlist</a><br-->
 
@@ -362,7 +362,7 @@ Pandas 1
 =
 Pandas 2
 * practice
-<b>No Slides</b><br>
+<!--b>No slides</b--><br>
 <!--b>Link to worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f20/materials/lectureDemo_code/lec-29">code</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvA8DxNtHK6GVzXQH7I1Gkd">Playlist</a><br-->
