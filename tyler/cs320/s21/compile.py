@@ -56,6 +56,16 @@ def read_days():
         slides = os.path.join("lec", dirname, "slides.pdf")
         if os.path.exists(slides):
             meta += f'\n<b>Lecture</b>: <a href="{slides}">Slides</a><br>'
+        worksheet = os.path.join("lec", dirname, "worksheet.pdf")
+        if os.path.exists(worksheet):
+            meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a>'
+            answers = os.path.join("lec", dirname, "worksheet-answers.pdf")
+            if os.path.exists(answers):
+                meta += f' (<a href="{answers}">answers</a>)'
+            meta += '<br>'
+        pt = os.path.join("lec", dirname, "pytutor.html")
+        if os.path.exists(pt):
+            meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a>'
 
         days.append(meta)
     return days
