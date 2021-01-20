@@ -1,4 +1,4 @@
-# Sep 16 Lecture
+# Complexity Worksheet
 
 ## 1. Upper Bounds
 
