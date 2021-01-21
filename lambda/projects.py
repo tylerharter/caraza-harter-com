@@ -242,7 +242,8 @@ def get_code_analysis(student_email, project_id, project_files):
     # submitter (should be an email)
     # partner (should be an email or "none")
     # project (p1, p2, etc)
-    fields = {'project':set(), 'submitter':set(), 'partner':set()}
+    # hours (estimate of how long the project took
+    fields = {'project':set(), 'submitter':set(), 'partner':set(), 'hours':set()}
     for filename in pf['files'].keys():
         # check .py files and nb cells
         if not (filename.endswith('.py') or filename.startswith('in-')):
@@ -296,6 +297,16 @@ def get_code_analysis(student_email, project_id, project_files):
                 analysis['errors'] = True
             else:
                 comments.append('info: partner is ' + partner)
+
+    # check that hours is a number
+    if len(fields['hours']) == 1:
+        hours = list(fields['hours'])[0].strip()
+        try:
+            hours_float = float(hours)
+            analysis['hours'] = hours_float
+        except ValueError:
+            comments.append('<b>hours:</b> "%s" not a number' % hours)
+            analysis['errors'] = True
 
     # check that project is correct
     if len(fields['project']) == 1:
