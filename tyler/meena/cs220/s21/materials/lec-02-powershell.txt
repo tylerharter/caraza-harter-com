@@ -1,6 +1,57 @@
-#######################
-# getting help
-#######################
+Summary of commands you should practice:
+
+pwd                       - print working directory 
+cd Documents              - change the current directory to Documents
+mkdir cs220               - make directory named cs220
+cd cs220                  - change to directory cs220 
+cd ..                     - change to the parent directory
+cd ~                      - change to the root directory
+
+echo "hello"              - sends "hello" to the screen
+echo "hello" > file1.txt  - sends "hello" to a new file called file1.txt
+cat first.txt             - sends the contents of file1.txt to the screen
+echo "you" >> file1.txt   - appends (adds) "you" to a new line in file1.txt
+echo "bye" > file1.txt     - sends "bye" to file1.txt and overrites the previous contents
+man pwd                   - open the manual file about the command pwd
+pushd .                   - stores the current working directory onto a stack of stored paths
+cd ~/dir1/dir2/dir3       - change directory to the absolute path given
+popd                      - change directory to the last stored directory, removes this path from the stack of stored paths
+
+Keypresses: 
+<up arrow key>           - pressing this key shows previous commands (can press repeatedly)
+<cntrol-c>               - pressing this key combination stops any command from completing (for instance if hanging)
+<cntrol-r>               - shows your previous history of commands
+
+
+
+########## SELF CHECK TASKS ############
+1. Open a shell on your computer.
+2. print the working directory and use ls to list the contents of this directory
+3. change directory to get to a directory where you store academic work
+4. make a directory named cs220
+5. change to this directory
+6. make a directory in this directory named practice
+7. change to this directory
+8. print the working directory
+9. use echo to write your favorite color to a file named color.txt
+10. use cat to print out this file
+11. push the current directory onto the stack of stored paths
+12. change to your root directory
+13. use cat and an absolute path to print out the contents of color.txt
+14. use popd to move back to your stored directory
+15. use ls to list the contents of this directory
+16. use the up arrow to select the command you did 4 steps ago
+
+
+
+
+
+
+
+
+
+
+
 
 # where are we?
 get-location # windows style
