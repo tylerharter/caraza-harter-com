@@ -1,4 +1,4 @@
-# Sep 16 Lecture
+# OOP 1: Intro to Object Oriented Programming
 
 ## 1. Binary Search
 
