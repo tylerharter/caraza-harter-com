@@ -8,6 +8,8 @@ Introduction
 * Software
 * Resources for getting help
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<b>Alexi's lecture:</b><a href="https://www.youtube.com/playlist?list=PLqNv0LNZgAExSoeLU1B2CU87PQtDhYpZl">YouTube</a> (1 and 3 - there is no 2.)<br>
+<b>Alexi's lecture notes:</b><a href="https://www.msyamkumar.com/cs220/f20/materials/alexi-lec-notes/CS220-S21-Lec01-03-start.ipynb">start</a> <a href="https://www.msyamkumar.com/cs220/f20/materials/alexi-lec-notes/CS220-S21-Lec01-03-end.ipynb">end</a><br>
 <!--a href="materials/lec_01_F20.pdf">Link to Slides</a><br-->
 <!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=zIutEL9EmbI">1</a>, </b><a href="https://www.youtube.com/watch?v=dxmJ_3uSESg">2</a>, </b><a href="https://www.youtube.com/watch?v=t6Ow1AsecI4">3</a>, </b><a href="https://www.youtube.com/watch?v=17kFmuKaFAQ">4</a><br--> 
 <!--b>Python3 installation (YouTube)</b>: <a href="https://youtu.be/nf-XdwxVr2w">Windows</a>, <a href="https://www.youtube.com/watch?v=ohoJPMvMnTY">MAC</a><br-->
