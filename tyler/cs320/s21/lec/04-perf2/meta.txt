@@ -2,4 +2,4 @@ Quantifying Perf 2
 * complexity analysis
 * Big O
 SLIDES
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab2">Git Practice</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab2">Git Practice</a><br>
