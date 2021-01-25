@@ -2,7 +2,7 @@
 
 ## Review
 
-**Optional:** [review problems and 10-minute explanation]
+**Optional:** [review problems and 10-minute explanation](review.md)
 
 If you're new to object-oriented programming and don't feel solid on
 the previous material yet, I recommend you watch the above before
