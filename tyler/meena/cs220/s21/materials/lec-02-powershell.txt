@@ -41,6 +41,7 @@ Keypresses:
 14. use popd to move back to your stored directory
 15. use ls to list the contents of this directory
 16. use the up arrow to select the command you did 4 steps ago
+17. open up an application from the command line
 
 
 
