@@ -9,7 +9,7 @@ cd ~                      - change to the root directory
 
 echo "hello"              - sends "hello" to the screen
 echo "hello" > file1.txt  - sends "hello" to a new file called file1.txt
-cat first.txt             - sends the contents of file1.txt to the screen
+cat file1.txt             - sends the contents of file1.txt to the screen
 echo "you" >> file1.txt   - appends (adds) "you" to a new line in file1.txt
 echo "bye" > file1.txt     - sends "bye" to file1.txt and overrites the previous contents
 man pwd                   - open the manual file about the command pwd
