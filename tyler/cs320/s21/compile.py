@@ -53,9 +53,14 @@ def read_days():
         reading = os.path.join("lec", dirname, "reading.md")
         if os.path.exists(reading):
             meta += f'\n<b>Read</b>: <a href="{github}/{reading}">Lecture Notes</a><br>'
+        outline = os.path.join("lec", dirname, "README.md")
+        print(outline)
+        if os.path.exists(outline):
+            outline = outline.replace("/README.md", "")
+            meta += f'\n<b>Watch</b>: <a href="{github}/{outline}">Videos</a><br>'
         slides = os.path.join("lec", dirname, "slides.pdf")
         if os.path.exists(slides):
-            meta += f'\n<b>Lecture</b>: <a href="{slides}">Slides</a><br>'
+            meta += f'\n<b>Slides</b>: <a href="{slides}">PDF</a><br>'
         worksheet = os.path.join("lec", dirname, "worksheet.pdf")
         if os.path.exists(worksheet):
             meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a>'
