@@ -1,5 +1,3 @@
-Multiple Inheritance
+OOP 4: Mult Inheritance
 * MRO rules
 * recursion
-
-
