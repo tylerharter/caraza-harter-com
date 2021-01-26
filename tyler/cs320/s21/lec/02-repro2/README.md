@@ -7,9 +7,12 @@ video for a discussion of the answers.
 
 **Question 1:** A running program is called a ____________
 
-**Question 2:** fruits is a large list.  Which will be faster?
+**Question 2:** fruits is a large list.  Which will be slower?
 1. ```fruits.insert(0, "pineapple") # adds to beginning of list```
 2. ```fruits.pop(-1) # removes from end of list```
+
+Note!  In the video, I show a version of the slides that says "faster"
+when I meant "slower".
 
 **Question 3:** What is an example of resource that an operating system might allocate to a process?
 
