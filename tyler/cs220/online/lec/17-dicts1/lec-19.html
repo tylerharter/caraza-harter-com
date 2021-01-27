@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+  Python Tutor: https://github.com/pgbovine/OnlinePythonTutor/
+  Copyright (C) Philip Guo (philip@pgbovine.net)
+  LICENSE: https://github.com/pgbovine/OnlinePythonTutor/blob/master/LICENSE.txt
+-->
+
+<head>
+  <title>CS 301 - Filtering Done Right</title>
+
+  <script type="text/javascript" src="../js/pytutor-embed.bundle.js" charset="utf-8"></script>
+
+</head>
+
+<body style="background-color: white;">
+
+<!--
+To auto-generate examples:
+
+python pytutor.py lec-12/p1.py lec-12/p2.py lec-12/p3.py lec-12/p4.py lec-12/p5.py lec-12/p6.py lec-12/p7.py
+  -->
+
+<h1>List Practice</h1>
+
+Let's say we want to remove all the odd numbers from a list.
+
+<h2>How NOT to do it</h2>
+
+
+<div id="lec-18_p1_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "# BAD EXAMPLE: remove odd numbers\nnums = [1,3,5,2,4,6]\nfor x in nums:\n    if x % 2 == 1:\n        nums.remove(x)\nprint(nums)\n", "trace": [{"line": 2, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1]}, "ordered_globals": ["nums"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 1}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 1}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 1}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 5}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 5}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 5}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 4}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 4}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 6}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 6}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 6}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": ""}, {"line": 6, "event": "return", "func_name": "<module>", "globals": {"nums": ["REF", 1], "x": 6}, "ordered_globals": ["nums", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 3, 2, 4, 6]}, "stdout": "[3, 2, 4, 6]\n"}]};
+  addVisualizerToPage(trace, 'lec-18_p1_py',  {startingInstruction: 0, hideCode: false, lang: "py3"});
+</script>
+
+
+<h2>How to do it</h2>
+                            
+
+<div id="lec-18_p2_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "# GOOD EXAMPLE: remove odd numbers\nnums = [1,3,5,2,4,6]\nnums2 = []\nfor x in nums:\n    if x % 2 != 1:\n        nums2.append(x)\nnums = nums2\nprint(nums)\n", "trace": [{"line": 2, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 3, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1]}, "ordered_globals": ["nums"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2]}, "ordered_globals": ["nums", "nums2"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 1}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 1}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 3}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 3}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 5}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 5}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 2}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 2}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 2}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 4}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 4}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 4}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2, 4]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2, 4]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2, 4]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2, 4, 6]}, "stdout": ""}, {"line": 7, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 1], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"1": ["LIST", 1, 3, 5, 2, 4, 6], "2": ["LIST", 2, 4, 6]}, "stdout": ""}, {"line": 8, "event": "step_line", "func_name": "<module>", "globals": {"nums": ["REF", 2], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"2": ["LIST", 2, 4, 6]}, "stdout": ""}, {"line": 8, "event": "return", "func_name": "<module>", "globals": {"nums": ["REF", 2], "nums2": ["REF", 2], "x": 6}, "ordered_globals": ["nums", "nums2", "x"], "stack_to_render": [], "heap": {"2": ["LIST", 2, 4, 6]}, "stdout": "[2, 4, 6]\n"}]};
+  addVisualizerToPage(trace, 'lec-18_p2_py',  {startingInstruction: 0, hideCode: false, lang: "py3"});
+</script>
+
+
+
+
+</body>
+</html>

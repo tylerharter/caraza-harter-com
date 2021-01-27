@@ -1,0 +1,11 @@
+Copying
+* References
+* Shallow Copy
+* Deep Copy
+<a href="lec/21-objects2/lec-23-worksheet.pdf">Link to Worksheet</a><br>
+<a href="materials/lec-23.pdf">Link to Slides</a><br>
+<a href="lec/21-objects2/lec-23.html">Interactive Exercises</a><br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
+<b>Due</b>: P7<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p8a">Lab-P8a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p8">P8</a><br>
+

@@ -1,0 +1,7 @@
+Function References
+* map
+* sort
+<a href="materials/lec-25.pdf">Link to Slides</a><br>
+<a href="lec/23-advanced-functions2/lec-25.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-24">code</a><br>
+

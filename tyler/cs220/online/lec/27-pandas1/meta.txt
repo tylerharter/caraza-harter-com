@@ -1,0 +1,9 @@
+Pandas 1
+* iPython
+* dataframe
+* series
+* reading CSVs
+* element-wise operations
+<b>Reading</b>: Pandas Intro Notebook (<a href="lec/27-pandas1/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-29">code</a><br>
+
