@@ -22,10 +22,9 @@ The Terminal
 * Shells
 * Navigation
 * Program Execution
-<!--a href="materials/lec_02_F20.pdf">Link to Slides</a><br-->
-<!--a href="materials/lec_02_terminal_commands.txt">Terminal commands notes</a><br-->
-<!--a href="materials/lec-02-worksheet.pdf">Link to Worksheet</a><br-->
-<!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/watch?v=jzX_aaxy6FA">1</a>, </b><a href="https://www.youtube.com/watch?v=xkxOIUFXOy4">2</a>, </b><a href="https://www.youtube.com/watch?v=zT0FJajGdSM">3</a><br--> 
+<a href="materials/lec_02_S21.pdf">Link to Slides</a><br>
+<a href="materials/lec_02_terminal_commands.txt">Terminal commands notes</a><br>
+<b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7ass30oeBJ8qljRNf1VgpEqr5">YouTube</a><br> 
 
 =
 Pseudocode
