@@ -1,0 +1,6 @@
+Database 3
+* Worksheets
+<a href="lec/34-database3/lec-38-worksheet.pdf">Link to Worksheet</a><br>
+<a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-37">Database 3 - Worksheet Answers</a><br>
+
+

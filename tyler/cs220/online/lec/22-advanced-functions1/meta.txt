@@ -1,0 +1,10 @@
+Recursive Functions
+* Base/Resursive Cases
+* Lists of Lists
+* More Stack Diagrams
+* Stack Overflow
+<a href="materials/lec-24.pdf">Link to Slides</a><br>
+<a href="lec/22-advanced-functions1/lec-24.html">Interactive Exercises</a><br>
+<b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-23">code</a><br>
+

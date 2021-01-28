@@ -1,0 +1,22 @@
+Strings
+
+* Indexing/Slicing
+* Sequences
+* For Loop, range()
+* Searching
+* Comparison
+* String formatting
+
+<a href="materials/lec-13.pdf">Link to Slides</a><br>
+<a href="lec/13-strings/lec-13-worksheet.pdf">Link to Worksheet</a><br>
+<b>Read</b>: Downey Ch 8<br>
+<b>Optional</b>: Downey Ch 9<br>
+<b>Due</b>: P4<br>
+<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p5">Lab-P5</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p5">P5</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-13">code</a><br>
+
+
+################################################################################
+# PART 2
+################################################################################
+
