@@ -50,6 +50,7 @@ def schedule():
     cells = []
     full = 0
     free = 0
+    first = True
     for curr in (start_date + timedelta(n) for n in range(day_count)):
         day = calendar.day_abbr[curr.weekday()]
         if day in ['Mon', 'Wed', 'Fri']:
@@ -63,6 +64,11 @@ def schedule():
                                                title,
                                                curr.strftime("%b %d"))
             cells.append('%s\n%s\n' % (header, content))
+            if first:
+                #Exception only for Spring'21 semester (no first day holiday!)
+                content = content.replace("Introduction\n", "")
+                header = header.replace("(Jan 25)", "Introduction (Jan 25)")
+                first = False
     print('%d free days, %d full days' % (free, full))
 
     with open('schedule.json') as extra_sched:
