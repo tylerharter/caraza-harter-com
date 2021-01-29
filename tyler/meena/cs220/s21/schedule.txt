@@ -32,7 +32,7 @@ The Terminal
 Pseudocode
 * Flow of Execution
 * State
-<a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
+<b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
 <b>No slides</b>
 
 =
