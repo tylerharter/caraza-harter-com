@@ -33,7 +33,7 @@ Pseudocode
 * Flow of Execution
 * State
 <b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
-<b>No slides</b>
+<b>No slides</b><br/>
 <b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asuQxlFHcUz_-WbvP6l2dbZI">YouTube</a><br>
 
 =
