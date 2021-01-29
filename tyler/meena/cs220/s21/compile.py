@@ -63,12 +63,12 @@ def schedule():
             header = '<h5><strong>%s</strong>: %s (%s)</h5>' % (curr.strftime("%a"),
                                                title,
                                                curr.strftime("%b %d"))
-            cells.append('%s\n%s\n' % (header, content))
             if first:
                 #Exception only for Spring'21 semester (no first day holiday!)
                 content = content.replace("Introduction\n", "")
                 header = header.replace("(Jan 25)", "Introduction (Jan 25)")
                 first = False
+            cells.append('%s\n%s\n' % (header, content))
     print('%d free days, %d full days' % (free, full))
 
     with open('schedule.json') as extra_sched:
