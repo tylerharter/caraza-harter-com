@@ -32,8 +32,8 @@ The Terminal
 Pseudocode
 * Flow of Execution
 * State
-<!--a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br-->
-<!--b>No slides</b-->
+<a href="materials/lec-03-worksheet.pdf">Link to Worksheet</a><br>
+<b>No slides</b>
 
 =
 Programming
