@@ -6,5 +6,4 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 <a href="lec/07-oop2/tests.txt">TEST CASES</a><br>
 <b>Optional Reading</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
 QUIZ 1 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab3">Complexity</a><br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab4">Zips</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab3">Files and Complexity</a><br>
