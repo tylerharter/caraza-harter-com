@@ -1,5 +1,4 @@
 Graphs and Tree Intro
 * types of graph
 * graphviz
-<b>Read</b>: <a href="lec/11-graphs-intro/lec-11-graphs.html">HTML</a><br>
 
