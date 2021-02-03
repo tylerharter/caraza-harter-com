@@ -1,0 +1,29 @@
+concepts:
+ - virtualization
+ - port mapping, file mapping
+ - container vs. image
+ - registry/Hub
+ - Dockerfile
+ - daemon vs. interactive
+ - layers?
+ - tags/versions
+
+commands/options:
+ - pull
+ - run
+ - ps
+ - images
+ - rm
+ - rmi
+ - build
+
+images:
+ - alpine
+ - ubuntu
+ - python
+ - nginx
+ - mysql
+
+40.122.126.192
+ssh -i docker_key.pem tyler@40.122.126.192
+
