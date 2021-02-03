@@ -1,12 +1,12 @@
-# Sep 30 Lecture
+# Trees 1
 
 ## 1. Words to Describe Graphs
 
-### Watch: [14-minute video](https://youtu.be/TeOHjYaIurY)
+### Watch: [14-minute video](https://youtu.be/XCvyeC62qpY)
 
 ## 2. Tree Recursion
 
-### Watch: [14-minute video](https://youtu.be/UeRV7Zx3GAE)
+### Watch: [14-minute video](https://youtu.be/OQf3VydwU8I)
 
 ### Practice
 
@@ -55,4 +55,4 @@ root.count_nodes()
 
 ## 3. Tree Search
 
-### Watch: [21-minute video](https://youtu.be/e5anHRCcRmw)
+### Watch: [21-minute video](https://youtu.be/VIc4BxWAp9A)
