@@ -1,7 +1,7 @@
 all: prep.html overview.html
 
 prep.html: prep.md
-	grip prep.md --export prep.html
+	python3 build.py prep.md
 
 overview.html: overview.md
-	grip overview.md --export overview.html
+	python3 build.py overview.md
