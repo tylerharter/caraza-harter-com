@@ -2,6 +2,10 @@
 #End allows you to configure what character gets printed after 
 #all arguments are printed
 
+print("hello", "world", sep="|", end = ";\n")
+print("hello", "meena", sep="^", end = "...\n")
+
+
 print("*" * 4, "#" * 6, sep="||", end="<END>")
 print("*" * 6, "#" * 8, sep="||", end="<END>")
 
