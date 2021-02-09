@@ -10,6 +10,8 @@ In this workshop, I'll answer the following questions:
 We'll also be learning the following Docker commands: `pull`,
 `images`, `run`, `ps`, `kill`, `rm`, `rmi`, `build`.
 
+The workshop will be mostly live demos, but there will also be a [few slides](workshop.pdf).
+
 # Preparation
 
 Please come with a Linux VM running on Azure, with docker installed: [DIRECTIONS HERE](prep.html).
