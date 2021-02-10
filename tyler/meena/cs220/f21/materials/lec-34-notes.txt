@@ -1,0 +1,142 @@
+SQL Databases
+
+========================================
+
+SLIDES
+
+DBs vs. simple files:
+ - CSV -> one table of strings
+ - Database -> collection of tables, with various (determined) types
+   (in contrast to JSON)
+
+Advantages of DBs:
+ - more structure
+ - sharing (tricky with just files)
+ - query language (SQL)
+ - performance (example)
+
+Show table with two fields:
+ - it's sorted by one of them
+ - count values in a range (for each field)
+ - time how long it takes
+
+========================================
+
+SLIDES
+
+Popular SQL Databases:
+ - SQL Server
+ - Oracle Database
+ - MySQL
+ - PostgreSQL
+ - SQLite
+
+SQLite
+ - easy to use
+ - sqlite3 module built into Python
+ - sqlite3 tool comes with Anaconda
+ - public domain
+ - several billion deployments
+
+https://www.sqlite.org/mostdeployed.html
+ - Every Android device
+ - Every iPhone and iOS device
+ - Every Mac
+ - Every Windows 10 machine
+ - Every Firefox, Chrome, and Safari web browser
+ - Every instance of Skype
+ - Every instance of iTunes
+ - Every Dropbox client
+ - Every TurboTax and QuickBooks
+
+========================================
+
+DEMO
+
+show webpage
+
+sqlite3 bus.db
+.tables
+select * from routes;
+select route_url from routes;
+select * from boarding;
+select * from boarding limit 10;
+.schema
+
+========================================
+
+SLIDES
+
+distinguish between SQLite commands and SQL queries
+
+show output from .schema
+
+what parts to look for?
+ - identify tables
+ - identify columns
+ - identify column types
+
+learn about queries:
+ - select, from, semicolon
+ - column names
+
+limiting and sorting
+
+where
+ - watch out, only one equal sign
+
+========================================
+
+SLIDES: cheatsheet
+
+========================================
+
+Python modules learned this semester
+ - math
+ - collections
+ - json
+ - csv
+ - sys
+ - os
+ - copy
+ - sqlite3 <- today
+ - recordclass
+ - requests
+ - bs4 (BeautifulSoup)
+ - pandas
+
+========================================
+
+sqlite3 module
+
+import sqlite3
+conn = sqlite3.connect("filename.db")
+
+cursor = conn.execute("SQL command")
+for row in cursor:
+    print(row) # each row is a tuple
+
+conn.close()
+
+========================================
+
+pandas with sqlite3
+
+read_sql
+
+========================================
+
+EXERCISE:
+
+Question: which bus route goes the farthest west?
+ - bigger latitude is north
+ - bigger longtitude is east
+ - QUERY: what bus route takes you most West?
+   select route, lon from boarding order by lon asc limit 1;
+
+========================================
+
+DEMO: query is faster than Pandas over CSV
+
+========================================
+

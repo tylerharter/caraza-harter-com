@@ -1,0 +1,18 @@
+trees = [
+    {"age": 1, "height": 1.5, "diameter": 0.8},
+    {"age": 1, "height": 1.9, "diameter": 1.2},
+    {"age": 1, "height": 1.8, "diameter": 1.4},
+    {"age": 2, "height": 1.8, "diameter": 0.9},
+    {"age": 2, "height": 2.5, "diameter": 1.5},
+    {"age": 2, "height": 3, "diameter": 1.8},
+    {"age": 2, "height": 2.9, "diameter": 1.7},
+    {"age": 3, "height": 3.2, "diameter": 2.1},
+    {"age": 3, "height": 3, "diameter": 2},
+    {"age": 3, "height": 2.4, "diameter": 2.2},
+    {"age": 2, "height": 3.1, "diameter": 2.9},
+    {"age": 4, "height": 2.5, "diameter": 3.1},
+    {"age": 4, "height": 3.9, "diameter": 3.1},
+    {"age": 4, "height": 4.9, "diameter": 2.8},
+    {"age": 4, "height": 5.2, "diameter": 3.5},
+    {"age": 4, "height": 4.8, "diameter": 4},
+]

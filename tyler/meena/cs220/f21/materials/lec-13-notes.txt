@@ -1,0 +1,12 @@
+topics:
+ - string basics:
+   - comparison (alphanumeric)
+   - functions: upper, lower, strip (rstrip, lstrip), find, startswith, endswith, format
+ - sequences (we'll see other sequences in Python)
+   - a string is a sequence of characters (in Python, a character is a sequence of strings only 1 long)
+   - indexing
+   - len
+   - slicing
+ - for loops
+   - for ... in ...
+   - for ... in range(...)

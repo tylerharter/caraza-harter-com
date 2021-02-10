@@ -1,0 +1,213 @@
+==================================================
+SLIDES: naming, context, frames
+==================================================
+
+PythonTutor, getting used to looking at frames:
+
+def f():
+    x = 1
+    print(x)
+
+def g():
+    y = 2
+    print(y)
+
+def h():
+    z = 3
+    print(z)
+
+f()
+g()
+h()
+
+==================================================
+
+def f():
+    x = 1
+    print(x)
+    g()
+
+def g():
+    y = 2
+    print(y)
+    h()
+
+def h():
+    z = 3
+    print(z)
+
+f()
+
+==================================================
+
+def f():
+    x = 1
+    print(x)
+    g()
+
+def g():
+    x = 2
+    print(x)
+    h()
+
+def h():
+    x = 3
+    print(x)
+
+f()
+
+==================================================
+LESSONS ABOUT LOCAL VARIABLES
+==================================================
+
+# function definition vs invocation
+
+def set_x():
+    x = 100
+
+print(x)
+
+# LESSON 1: functions don't execute unless they're called
+
+==================================================
+
+# variable lifetime
+
+def set_x():
+    x = 100
+
+set_x()
+print(x)
+
+# LESSON 2: variables created in a function die after function returns
+
+==================================================
+
+# function variables do not persist between calls
+
+def count():
+    x = 1
+    x += 1
+    print(x)
+
+count()
+count()
+count()
+
+# LESSON 3: variables start fresh every time a function is called again
+
+==================================================
+
+# why doesn't this work?
+
+def display_x():
+    print(x)
+
+def main():
+    x = 100
+    display_x()
+
+main()
+
+# LESSON 4: you can't see the variables of other function invocations,
+  even those that call you
+
+==================================================
+# LESSONS ABOUT GLOBAL VARIABLES
+==================================================
+
+VERSION 1:
+
+# show global frame in PythonTutor
+
+msg = 'hello' # global, outside any func
+
+def greeting():
+    print(msg)
+
+print('before: ' + msg)
+greeting()
+print('after: ' + msg)
+
+# LESSON 5: you can generally just use global variables inside a function
+
+----------------------------------------
+
+VERSION 2:
+
+msg = 'hello'
+
+def greeting():
+    msg = 'welcome!'
+    print('greeting: ' + msg)
+
+print('before: ' + msg)
+greeting()
+print('after: ' + msg)
+
+# LESSON 6: if you do an assignment to a variable in a function, Python assumes you want it local
+
+----------------------------------------
+
+VERSION 3:
+
+msg = 'hello'
+
+def greeting():
+    print('greeting: ' + msg)
+    msg = 'welcome!'
+
+print('before: ' + msg)
+greeting()
+print('after: ' + msg)
+
+# LESSON 7: assignment to a variable should be before its use in a
+# function, even if there's a a global variable with the same name
+
+VERSION 4:
+
+msg = 'hello'
+
+def greeting():
+    global msg
+    print('greeting: ' + msg)
+    msg = 'welcome!'
+
+print('before: ' + msg)
+greeting()
+print('after: ' + msg)
+
+# LESSON 8: use a global declaration to prevent Python from creating a
+# local variable when you want a global variable
+
+==================================================
+
+# LESSONS ABOUT ARGUMENT PASSING
+
+def f(x):
+    x = 'B'
+    print('inside: ' + x)
+
+val = 'A'
+print('before: ' + val)
+f(val)
+print('after: ' + val)
+
+# LESSON 9: in Python, arguments are "passed by value", meaning
+# reassignments to a parameter don't change the argument outside
+
+
+==================================================
+
+x = 'A'
+
+def f(x):
+    x = 'B'
+    print('inside: ' + x)
+
+print('before: ' + x)
+f(x)
+print('after: ' + x)
+
+# LESSON 10: it's irrelevant whether the argument (outside) and parameter
+# (inside) have the same variable name

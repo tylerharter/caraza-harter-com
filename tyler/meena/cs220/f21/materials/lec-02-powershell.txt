@@ -1,0 +1,220 @@
+Summary of commands you should practice:
+
+pwd                       - print working directory 
+cd Documents              - change the current directory to Documents
+mkdir cs220               - make directory named cs220
+cd cs220                  - change to directory cs220 
+cd ..                     - change to the parent directory
+cd ~                      - change to the root directory
+
+echo "hello"              - sends "hello" to the screen
+echo "hello" > file1.txt  - sends "hello" to a new file called file1.txt
+cat file1.txt             - sends the contents of file1.txt to the screen
+echo "you" >> file1.txt   - appends (adds) "you" to a new line in file1.txt
+echo "bye" > file1.txt     - sends "bye" to file1.txt and overrites the previous contents
+man pwd                   - open the manual file about the command pwd
+pushd .                   - stores the current working directory onto a stack of stored paths
+cd ~/dir1/dir2/dir3       - change directory to the absolute path given
+popd                      - change directory to the last stored directory, removes this path from the stack of stored paths
+
+Keypresses: 
+<up arrow key>           - pressing this key shows previous commands (can press repeatedly)
+<cntrol-c>               - pressing this key combination stops any command from completing (for instance if hanging)
+<cntrol-r>               - shows your previous history of commands
+
+
+
+########## SELF CHECK TASKS ############
+1. Open a shell on your computer.
+2. print the working directory and use ls to list the contents of this directory
+3. change directory to get to a directory where you store academic work
+4. make a directory named cs220
+5. change to this directory
+6. make a directory in this directory named practice
+7. change to this directory
+8. print the working directory
+9. use echo to write your favorite color to a file named color.txt
+10. use cat to print out this file
+11. push the current directory onto the stack of stored paths
+12. change to your root directory
+13. use cat and an absolute path to print out the contents of color.txt
+14. use popd to move back to your stored directory
+15. use ls to list the contents of this directory
+16. use the up arrow to select the command you did 4 steps ago
+17. open up an application from the command line
+
+
+
+
+
+
+
+
+
+
+
+
+# where are we?
+get-location # windows style
+pwd          # PS being somewhat compatible with UNIX
+
+# getting help for a command
+get-help pwd
+man pwd # manual pages
+
+#######################
+# keyboard shortcuts
+#######################
+
+# autocomplete, cancel, history
+get- <tab> <tab> <tab>
+control-C: kill
+up arrow key: history
+control-R:    history
+
+#######################
+# simple math (PS only)
+#######################
+
+2*3
+2/3
+15+15 * 2/3
+
+# how do we get two thirds of 15 plus 15?
+
+(15+15) * (2/3)
+
+#######################
+# running programs
+#######################
+
+notepad
+chrome # fails!
+
+# where is it?  right-click shortcut
+cd 'C:\Program Files (x86)\Google\Chrome\Application'
+chrome
+.\chrome
+
+#######################
+# env variable
+#######################
+
+# show how to add this so we can open chrome anywhere
+
+#######################
+# home directory and desktop
+#######################
+
+# talk about home directory
+cd ~
+pwd
+cd Desktop
+ls
+
+# create file, show it with ls
+
+#######################
+# new directory
+#######################
+
+cd examples # doesn't exist
+
+# does not exist, so create it
+mkdir examples
+
+cd examples # we can get back to this by hitting the up arrow
+pwd
+
+#######################
+# different paths for the same file
+#######################
+
+# observe that the same folder has the same name
+cd ~\Desktop\examples  # powershell accepts slashes in either direction
+pwd
+cd c:\Users\test3\Desktop\examples # absolute path
+pwd
+cd ..\examples # relative path
+pwd
+
+#######################
+# reading and writing files
+#######################
+
+echo howdy
+
+echo howdy > file.txt
+ls
+cat file.txt
+notepad file.txt # and edit something
+cat file.txt
+
+echo line2 > file.txt
+cat file.txt
+
+echo line3 >> file.txt
+cat file.txt
+
+#######################
+# moving+copying
+#######################
+
+cp file.txt file-copy.txt
+ls
+cat file-copy.txt
+mv file-copy file-v2.txt
+ls
+
+#######################
+# challenge 1
+#######################
+
+echo A > a.txt
+echo B > b.txt
+cat b.txt > a.txt
+cat a.txt > b.txt
+cat a.txt # what does it print?
+
+#######################
+# challenge 2
+#######################
+
+echo win > x.txt
+echo lose > y.txt
+mv y.txt z.txt
+mv x.txt y.txt
+mv z.txt x.txt
+cat x.txt # what does it print?
+
+#######################
+# challenge 3
+#######################
+
+echo parent > person.txt
+mkdir mydir
+cd mydir
+echo child > person.txt
+cat ../person.txt # what does it print?
+
+#######################
+# challenge 4
+#######################
+
+echo data > one.txt
+cat one.txt > two.txt
+echo science > one.txt
+cat two.txt # what does it print?
+
+#######################
+# scripts
+#######################
+
+echo "ls" > test.ps1
+test.ps1
+notepad test.ps1
+# add something
+cat test.ps1
+test.ps1
+
+# create shortcuts directory and add a nb.ps1 that opens Jupyter notebooks

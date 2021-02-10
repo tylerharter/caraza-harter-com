@@ -1,0 +1,58 @@
+==================================================
+SLIDES: control flow diagrams, if and else syntax
+==================================================
+
+==================================================
+WORKSHEET: problem 1
+==================================================
+
+DEMO 1: absolute in various forms (in PythonTutor)
+
+def absolute_a(x):
+    return (x ** 2) ** (0.5)
+
+def absolute_b(x):
+    if x < 0:
+       x = -x
+    return x
+
+def absolute_c(x):
+    if x < 0:
+       return -x
+    else:
+       return x
+
+def absolute_d(x):
+    if x < 0:
+       return -x
+    return x
+
+STYLE: which version do people prefer?
+
+==================================================
+
+DEMO: piecewise function
+ - introduce elif (first implement without this)
+
+==================================================
+WORKSHEET: problem 2
+==================================================
+
+DEMO: stoplight
+ - introduce use of else to handle cases not implemented yet
+
+DEMO: date printer
+ - do bounds checking
+ - have students think about outputs that are incorrect
+   (tricky because we have 11th ends in "th" but 21st ends in "st")
+
+DEMO: addition tester
+ - introduce random
+ - do copy/paste instead of loop
+
+DEMO: battleship:
+ - various improvements
+
+==================================================
+WORKSHEET: problem 3
+==================================================

@@ -1,0 +1,24 @@
+https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+
+
+https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+
+
+
+df = DataFrame({
+    "high": [26, 31, 43, 57, 68, 78, 82, 79, 72, 59, 44, 30],
+    "low": [11, 15, 25, 36, 46, 56, 61, 59, 50, 39, 28, 16]
+})
+
+
+
+df = DataFrame({
+    "month": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "high": [26, 31, 43, 57, 68, 78, 82, 79, 72, 59, 44, 30],
+    "low": [11, 15, 25, 36, 46, 56, 61, 59, 50, 39, 28, 16]
+})
+
+
+df = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data',
+                 names=['sepal-len', 'sepal-wid', 'petal-len', 'petal-wid', 'name'])
+df.head()
