@@ -59,7 +59,7 @@ Lecture 7: Creating Functions
   the colon :
   
 7.2 Write a function
-  with correct indentation
+  with a correct header and correct indentation
   with a return value (fruitful function)
   without a return value ( void function)
   with or without default arguments
@@ -98,3 +98,15 @@ Lecture 8: Function Scope
   Utilizing the “pass by value” rule for arguments
   Using Python Tutor 
   
+Lecture 9: Conditionals part 1
+9.1 Read and Write Python Conditional Statements
+  Using Conditional execution	(	if )
+  Using Alternate execution		(if/else)
+  Using Chained conditionals		(if/elif/elif/…/else)
+  Using Nested conditionals		(if…..if….else….if …else)
+  
+9.2 Identify nested code blocks (indentation layers) in a program 
+
+9.3 Convert Flowcharts or Pseudocode into Python Conditional Statements
+
+9.4 Write a program that makes choices by using conditional statements
