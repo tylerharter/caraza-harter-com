@@ -1,0 +1,100 @@
+Lecture 1: Introduction
+
+
+Lecture 2: The Terminal
+
+
+Lecture 3: Pseudocode
+
+
+Lecture 4: Programming
+
+
+Lecture 5: Variables and Expressions
+5.1 Evaluate Expressions
+ by identifying operators and operands
+ by identifying literal values and variables
+ by identifying the correct order of operations
+  
+5.2 Write assignment statements with proper syntax
+ Start with a variable name that follows proper rules for variables
+ Use a single equals sign
+ Finish with an expression
+  
+5.3 Define, give examples of, and identify 3 kinds of errors
+ Syntax error
+ Runtime error
+ Semantic error
+  
+5.4 Write Python code that computes with strings ints, floats, and Boolean types
+
+
+Lecture 6: Using Functions and Modules
+6.1 Call common functions that are built into Python:
+  convert from one type to another using int(), str(), and float()
+  accept a string from the user using input()
+  convert the result of input() to int, float, or bool, if possible
+  
+6.2 Import a module and use functions from a module:
+  Utilize 3 different kinds of syntax to import a module
+  Use the attribute operator (the ".") with module functions
+  Use functions from the math module
+  Use functions from a programmer-created module
+  
+6.3 Inspect a module to determine its functions:
+  via online documentation
+  via the help function in python
+  
+6.4 Using correct vocabulary, explain how functions work
+  Define the following functions terms: call/invoke, argument, parameter, return value
+  
+6.5 Determine the flow of control of a program that contains functions
+
+
+Lecture 7: Creating Functions
+7.1 Explain the syntax of a function header
+  the def command
+  the name of the function and ( ) 
+  an optional list of parameters
+  the colon :
+  
+7.2 Write a function
+  with correct indentation
+  with a return value (fruitful function)
+  without a return value ( void function)
+  with or without default arguments
+  with a docstring comment
+  knowing the difference in outcomes of print and return statements
+  
+7.3 Make function calls
+  by using the correct number of positional arguments
+  by utilizing default arguments
+  by utilizing keyword arguments
+  
+7.4 Use keyword arguments with the print function
+
+7.5 Determine the result of Python function calls
+  using hand-tracing
+  using Python Tutor
+  using Python Tutor Worksheets
+  
+Lecture 8: Function Scope
+8.1 Explain the rules of scope of a local variable in a function
+  When are they created?
+  When are they destroyed?
+  What parts of a program have access to them?
+  
+8.2 Explain the rules of scope of a global variable
+  Where are they stored?
+  What parts of a program have access to them?
+  How can they be mis-represented as local variables?
+  How can they be used and modified within a function?
+  
+8.3 Explain how arguments to functions are passed by value
+
+8.4 Hand-trace programs by
+  Using frame diagrams
+  Determining the value and scope of local and global variables
+  Utilizing the “pass by value” rule for arguments
+  Using Python Tutor 
+  
