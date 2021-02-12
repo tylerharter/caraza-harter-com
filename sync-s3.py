@@ -21,7 +21,7 @@ import boto3, uuid, os, io, json, mimetypes, git, sys
 # to invalidate SDN, do this:
 # aws cloudfront create-invalidation --distribution-id E2MK8CNX2PPPIY --paths "/*"
 
-s3 = boto3.Session(profile_name='meena').client('s3')
+s3 = boto3.client('s3')
 
 class Syncer:
     def __init__(self):
