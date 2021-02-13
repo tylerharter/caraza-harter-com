@@ -13120,12 +13120,33 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Search-Paths">Search Paths<a class="anchor-link" href="#Search-Paths">&#182;</a></h1><p>In the last reading, we learned about how to check whether there is a path from node A to node B.</p>
-<p>In this reading, we'll do additional things:</p>
-<ol>
-<li>return the path (a list of nodes) found instead of just True/False</li>
-<li>learn BFS, an alternative to DFS that is guaranteed to find the shortest path</li>
-</ol>
+<h1 id="Data-Structures-for-Search">Data Structures for Search<a class="anchor-link" href="#Data-Structures-for-Search">&#182;</a></h1><p>In the previous reading, we introduced breadth-first search (BFS); when searching for a path between two nodes, BFS (in contrast to DFS) finds the shortest one, if one exists at all.</p>
+<p>A key detail of the BFS strategy is a TODO list of work to be done (that is, nodes to be visited).  A loop keeps popping nodes from the front of the list (and visiting them), then adding new nodes discovered in the process to the end of the list.  The search is done when the list is empty, or a path is found.  Our prior use of lists for the TODO list was inneficient; in this reading, we'll think more broadly about TODO lists and how to use efficient alternatives to lists.</p>
+<p>A data structure to which we only append to the end and from which we only remove items from the front is called a <em>queue</em>, or sometimes FIFO (First-In First-Out) queue.  There are three patterns with special names that are worth remembering:</p>
+<p><strong>queue</strong></p>
+<ul>
+<li>add to the end</li>
+<li>remove from the front</li>
+</ul>
+<p><strong>stack</strong></p>
+<ul>
+<li>add to the end</li>
+<li>remove from the end</li>
+</ul>
+<p><strong>priority queue</strong></p>
+<ul>
+<li>add items anywhere</li>
+<li>remove smallest/largest</li>
+</ul>
+<p><strong>Fun fact:</strong> if the queue in the BFS algorithm were replaced with a stack, it wouldn't be BFS anymore; perhaps surprisingly, the resulting search algorithm would be a non-recursive DFS search.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's often a bad idea, but Python lists case be used with all three patterns:</p>
 
 </div>
 </div>
@@ -13135,7 +13156,20 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Digraph</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">]</span>
+
+<span class="c1"># queue</span>
+<span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># end</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># front</span>
+
+<span class="c1"># stack</span>
+<span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>  <span class="c1"># end</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># front</span>
+
+<span class="c1"># priority queue</span>
+<span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;H&quot;</span><span class="p">)</span>  <span class="c1"># end</span>
+<span class="n">todo</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># smallest</span>
 </pre></div>
 
     </div>
@@ -13146,7 +13180,10 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Review">Review<a class="anchor-link" href="#Review">&#182;</a></h2><p>Let's revisit the graph search from the end of the last reading (only change is addition of <code>__repr__</code>):</p>
+<p>Given your knowledge of what list operations are fast (constant time) and slow (for example, linear time or worse), which of the above patterns will be efficient?</p>
+<p>Only the stack pattern is efficient, as making changes (pops/appends) at the end of a list is fast.  The queue pattern is slow: popping from the front is an O(N) operation.  The priority queue pattern is even worse: sorting is generally an O(N log N) operation.</p>
+<p>We'll now discuss more efficient options for queues and priority queues.</p>
+<h2 id="Queue-Pattern-and-deque">Queue Pattern and <code>deque</code><a class="anchor-link" href="#Queue-Pattern-and-deque">&#182;</a></h2><p>The Python deque (double-edged queue) data structure is efficient when used as either a stack or a queue.  You can easily convert a list to a deque, and you can append to a deque as you would a list.  One minor difference: instead of <code>L.pop(0)</code>, we'll use <code>dq.popleft()</code>.</p>
 
 </div>
 </div>
@@ -13156,7 +13193,76 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">mygraph</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">deque</span>
+
+<span class="n">todo</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">])</span>
+
+<span class="c1"># queue</span>
+<span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>   <span class="c1"># end</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># front</span>
+
+<span class="n">todo</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>deque([&#39;B&#39;, &#39;A&#39;, &#39;D&#39;, &#39;C&#39;, &#39;F&#39;])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can use the deque type instead of lists to make the TODO queue for our BFS implementation more efficient.  The following shows our BFS code from last reading, with just three changes (indicated in the comments) necessary to switch from using a list to using a deque:</p>
+<ul>
+<li><code># CHANGE 1: import it</code></li>
+<li><code># CHANGE 2: deque instead of list</code></li>
+<li><code># CHANGE 3: .popleft instead of .pop(0)</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">graphviz</span> <span class="k">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Digraph</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">deque</span> <span class="c1"># CHANGE 1: import it</span>
+
+<span class="k">class</span> <span class="nc">mygraph</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">{}</span>
     
@@ -13191,256 +13297,34 @@ div#notebook {
         <span class="k">return</span> <span class="s2">&quot;node </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         
     <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">todo</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="bp">self</span><span class="p">])</span> <span class="c1"># CHANGE 2: deque instead of list</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">dst</span><span class="p">):</span>
-                <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1"># keep looping while there are unexplored nodes</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span> <span class="c1"># CHANGE 3: .popleft instead of .pop(0)</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span>
-</pre></div>
+            <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">curr</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                        <span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="c1"># NON-CHANGE 4: append is the same</span>
+                        <span class="n">child</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="n">curr</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="134pt" height="188pt"
- viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- C -->
-<g id="node3" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="71" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="71" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- B&#45;&gt;C -->
-<g id="edge1" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M92.36,-144.41C89.09,-136.22 85.06,-126.14 81.38,-116.95"/>
-<polygon fill="black" stroke="black" points="84.55,-115.45 77.59,-107.47 78.05,-118.05 84.55,-115.45"/>
-</g>
-<!-- D -->
-<g id="node4" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="98" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="98" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- C&#45;&gt;D -->
-<g id="edge2" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M77.4,-72.41C80.51,-64.34 84.33,-54.43 87.83,-45.35"/>
-<polygon fill="black" stroke="black" points="91.13,-46.55 91.46,-35.96 84.6,-44.03 91.13,-46.55"/>
-</g>
-<!-- D&#45;&gt;B -->
-<g id="edge3" class="edge">
-<title>D&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M101.65,-36.09C103.68,-46.43 105.98,-59.91 107,-72 108.34,-87.94 108.2,-92.04 107,-108 106.36,-116.48 105.16,-125.66 103.88,-133.96"/>
-<polygon fill="black" stroke="black" points="100.42,-133.45 102.25,-143.89 107.32,-134.59 100.42,-133.45"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>True
-False
-True
-False
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Getting-the-Path">Getting the Path<a class="anchor-link" href="#Getting-the-Path">&#182;</a></h2><p>Rather than just determine if there is a path, let's output what it is.  We'll modify the <code>find</code> method.  If there's a path, it should return it as a list (or tuple!) of nodes traversed.  If there is not a path, it should return None.</p>
-<p>The logic works like this: if the X node is a child of the W node, and we've found an <code>(X,Y,Z)</code> path, then <code>(W,X,Y,Z)</code> is also a valid path.  On line 11, we're using tuple concatenation to create a new tuple based on the one the child found, but with the parent added to the beginning.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
-
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-        <span class="n">path</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">path</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">path</span>
-
-    <span class="k">return</span> <span class="kc">None</span>
-
-<span class="c1"># monkey patching lets us redefine a method in</span>
-<span class="c1"># a class, without recreating the whole class</span>
-<span class="c1"># (not a recommended practice, but means we don&#39;t</span>
-<span class="c1"># need to show the complete new version of Node)</span>
-<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_v2</span>
-
-<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span>
+    
+<span class="k">def</span> <span class="nf">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">node</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">back</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="134pt" height="188pt"
- viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- C -->
-<g id="node3" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="71" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="71" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- B&#45;&gt;C -->
-<g id="edge1" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M92.36,-144.41C89.09,-136.22 85.06,-126.14 81.38,-116.95"/>
-<polygon fill="black" stroke="black" points="84.55,-115.45 77.59,-107.47 78.05,-118.05 84.55,-115.45"/>
-</g>
-<!-- D -->
-<g id="node4" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="98" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="98" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- C&#45;&gt;D -->
-<g id="edge2" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M77.4,-72.41C80.51,-64.34 84.33,-54.43 87.83,-45.35"/>
-<polygon fill="black" stroke="black" points="91.13,-46.55 91.46,-35.96 84.6,-44.03 91.13,-46.55"/>
-</g>
-<!-- D&#45;&gt;B -->
-<g id="edge3" class="edge">
-<title>D&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M101.65,-36.09C103.68,-46.43 105.98,-59.91 107,-72 108.34,-87.94 108.2,-92.04 107,-108 106.36,-116.48 105.16,-125.66 103.88,-133.96"/>
-<polygon fill="black" stroke="black" points="100.42,-133.45 102.25,-143.89 107.32,-134.59 100.42,-133.45"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -13450,8 +13334,17 @@ False
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13464,45 +13357,15 @@ False
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>None
-</pre>
-</div>
-</div>
 
-</div>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(node A, node C, node Z)</pre>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>(&#39;C&#39;, &#39;D&#39;, &#39;B&#39;)
-</pre>
-</div>
 </div>
 
 </div>
@@ -13512,7 +13375,152 @@ False
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multiple-Paths">Multiple Paths<a class="anchor-link" href="#Multiple-Paths">&#182;</a></h2><p>What if there are multiple paths?  Which will we return?</p>
+<p>Same result, but it will be faster for large graphs.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Priority-Queue-Pattern-and-heapq">Priority Queue Pattern and <code>heapq</code><a class="anchor-link" href="#Priority-Queue-Pattern-and-heapq">&#182;</a></h2><p>A<em> ("A-start") is an important AI search algorithm: <a href="https://en.wikipedia.org/wiki/A">https://en.wikipedia.org/wiki/A</a></em>_search_algorithm that we won't learn in CS 320 (take CS 540 if you're interested).</p>
+<p>Instead of using a <em>queue</em> to decide the order in which to visit nodes, a <em>priority queue</em> is used.</p>
+<p>To see why we would want this, let's look at a motivating case.  Consider this graph:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="172pt" height="260pt"
+ viewBox="0.00 0.00 172.00 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 168,-256 168,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="82" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="82" y="-230.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M70.07,-217.81C62.79,-208.55 53.34,-196.52 45.15,-186.09"/>
+<polygon fill="black" stroke="black" points="47.84,-183.86 38.91,-178.16 42.34,-188.18 47.84,-183.86"/>
+</g>
+<!-- E -->
+<g id="node4" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="82" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="82" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- A&#45;&gt;E -->
+<g id="edge6" class="edge">
+<title>A&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M82,-215.85C82,-178.83 82,-91.18 82,-46.39"/>
+<polygon fill="black" stroke="black" points="85.5,-46.23 82,-36.23 78.5,-46.23 85.5,-46.23"/>
+</g>
+<!-- D -->
+<g id="node5" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="137" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="137" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- A&#45;&gt;D -->
+<g id="edge4" class="edge">
+<title>A&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M88.42,-216.43C97.85,-192.09 115.54,-146.4 126.77,-117.4"/>
+<polygon fill="black" stroke="black" points="130.11,-118.49 130.45,-107.9 123.58,-115.96 130.11,-118.49"/>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"/>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"/>
+</g>
+<!-- C&#45;&gt;E -->
+<g id="edge3" class="edge">
+<title>C&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M38.93,-73.81C46.21,-64.55 55.66,-52.52 63.85,-42.09"/>
+<polygon fill="black" stroke="black" points="66.66,-44.18 70.09,-34.16 61.16,-39.86 66.66,-44.18"/>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M125.07,-73.81C117.79,-64.55 108.34,-52.52 100.15,-42.09"/>
+<polygon fill="black" stroke="black" points="102.84,-39.86 93.91,-34.16 97.34,-44.18 102.84,-39.86"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are three paths from A to E:</p>
+<ol>
+<li>A, B, C, E</li>
+<li>A, E</li>
+<li>A, D, E</li>
+</ol>
+<p>Which path will DFS choose?  Which will BFS choose?</p>
+<details>
+    <summary><b>ANSWER</b></summary>
+      DFS will choose (1), BFS will choose (2)
+</details><p>Now what if we're trying to navitage between to points, and some roads/edges are longer than others:</p>
 
 </div>
 </div>
@@ -13522,12 +13530,13 @@ False
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=1&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=1&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=1&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=1&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=1&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;distance=100&quot;</span><span class="p">)</span>
 <span class="n">g</span>
 </pre></div>
 
@@ -13552,69 +13561,81 @@ False
 <!-- Generated by graphviz version 2.44.1 (20200629.0846)
  -->
 <!-- Pages: 1 -->
-<svg width="90pt" height="332pt"
- viewBox="0.00 0.00 90.00 332.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 86,-328 86,4 -4,4"/>
+<svg width="254pt" height="326pt"
+ viewBox="0.00 0.00 254.00 326.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 322)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-322 250,-322 250,4 -4,4"/>
 <!-- A -->
 <g id="node1" class="node">
 <title>A</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-306" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-302.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- E -->
-<g id="node2" class="node">
-<title>E</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
-</g>
-<!-- A&#45;&gt;E -->
-<g id="edge1" class="edge">
-<title>A&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M23.75,-287.89C21.95,-277.54 19.91,-264.06 19,-252 13.01,-172.22 13.01,-151.78 19,-72 19.64,-63.52 20.84,-54.34 22.12,-46.04"/>
-<polygon fill="black" stroke="black" points="25.58,-46.55 23.75,-36.11 18.68,-45.41 25.58,-46.55"/>
+<ellipse fill="none" stroke="black" cx="108" cy="-300" rx="27" ry="18"/>
+<text text-anchor="middle" x="108" y="-296.3" font-family="Times,serif" font-size="14.00">A</text>
 </g>
 <!-- B -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>B</title>
-<ellipse fill="none" stroke="black" cx="55" cy="-234" rx="27" ry="18"/>
-<text text-anchor="middle" x="55" y="-230.3" font-family="Times,serif" font-size="14.00">B</text>
+<ellipse fill="none" stroke="black" cx="27" cy="-213" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-209.3" font-family="Times,serif" font-size="14.00">B</text>
 </g>
 <!-- A&#45;&gt;B -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>A&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M33.64,-288.41C36.91,-280.22 40.94,-270.14 44.62,-260.95"/>
-<polygon fill="black" stroke="black" points="47.95,-262.05 48.41,-251.47 41.45,-259.45 47.95,-262.05"/>
+<path fill="none" stroke="black" d="M82.73,-293.62C66.21,-288.74 45.62,-279.8 34,-264 29.23,-257.52 26.99,-249.26 26.06,-241.33"/>
+<polygon fill="black" stroke="black" points="29.55,-241.06 25.51,-231.27 22.56,-241.44 29.55,-241.06"/>
+<text text-anchor="middle" x="64" y="-252.8" font-family="Times,serif" font-size="14.00">distance=1</text>
 </g>
-<!-- C -->
+<!-- E -->
 <g id="node4" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="55" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="55" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="108" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="108" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
 </g>
-<!-- B&#45;&gt;C -->
-<g id="edge3" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M55,-215.7C55,-207.98 55,-198.71 55,-190.11"/>
-<polygon fill="black" stroke="black" points="58.5,-190.1 55,-180.1 51.5,-190.1 58.5,-190.1"/>
+<!-- A&#45;&gt;E -->
+<g id="edge6" class="edge">
+<title>A&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M107.25,-281.63C106.27,-257.97 104.61,-214.29 104,-177 103.25,-131.11 105.19,-77.73 106.62,-46.24"/>
+<polygon fill="black" stroke="black" points="110.13,-46.22 107.1,-36.07 103.13,-45.89 110.13,-46.22"/>
+<text text-anchor="middle" x="140.5" y="-155.3" font-family="Times,serif" font-size="14.00">distance=100</text>
 </g>
 <!-- D -->
 <g id="node5" class="node">
 <title>D</title>
-<ellipse fill="none" stroke="black" cx="55" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="55" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
+<ellipse fill="none" stroke="black" cx="213" cy="-159" rx="27" ry="18"/>
+<text text-anchor="middle" x="213" y="-155.3" font-family="Times,serif" font-size="14.00">D</text>
 </g>
-<!-- C&#45;&gt;D -->
+<!-- A&#45;&gt;D -->
 <g id="edge4" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M55,-143.7C55,-135.98 55,-126.71 55,-118.11"/>
-<polygon fill="black" stroke="black" points="58.5,-118.1 55,-108.1 51.5,-118.1 58.5,-118.1"/>
+<title>A&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M119.64,-283.59C137.93,-259.38 173.54,-212.24 195.1,-183.69"/>
+<polygon fill="black" stroke="black" points="198.08,-185.56 201.31,-175.48 192.49,-181.35 198.08,-185.56"/>
+<text text-anchor="middle" x="174" y="-252.8" font-family="Times,serif" font-size="14.00">distance=1</text>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-105" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-101.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M26.41,-194.91C26.24,-189.22 26.08,-182.84 26,-177 25.77,-161 25.77,-157 26,-141 26.04,-138.45 26.09,-135.79 26.15,-133.13"/>
+<polygon fill="black" stroke="black" points="29.65,-133.18 26.41,-123.09 22.65,-132.99 29.65,-133.18"/>
+<text text-anchor="middle" x="56" y="-155.3" font-family="Times,serif" font-size="14.00">distance=1</text>
+</g>
+<!-- C&#45;&gt;E -->
+<g id="edge3" class="edge">
+<title>C&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M25.51,-86.73C25.5,-76.32 27.15,-63.32 34,-54 43.44,-41.16 58.81,-32.86 73.1,-27.57"/>
+<polygon fill="black" stroke="black" points="74.34,-30.85 82.73,-24.38 72.14,-24.2 74.34,-30.85"/>
+<text text-anchor="middle" x="64" y="-57.8" font-family="Times,serif" font-size="14.00">distance=1</text>
 </g>
 <!-- D&#45;&gt;E -->
 <g id="edge5" class="edge">
 <title>D&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M48.36,-72.41C45.09,-64.22 41.06,-54.14 37.38,-44.95"/>
-<polygon fill="black" stroke="black" points="40.55,-43.45 33.59,-35.47 34.05,-46.05 40.55,-43.45"/>
+<path fill="none" stroke="black" d="M201.36,-142.59C183.07,-118.38 147.46,-71.24 125.9,-42.69"/>
+<polygon fill="black" stroke="black" points="128.51,-40.35 119.69,-34.48 122.92,-44.56 128.51,-40.35"/>
+<text text-anchor="middle" x="216" y="-101.3" font-family="Times,serif" font-size="14.00">distance=1</text>
 </g>
 </g>
 </svg>
@@ -13627,197 +13648,12 @@ False
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&#39;A&#39;, &#39;E&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Nice, it found the shortest one!  But what if we build the same graphs, but adding the edges in a different order?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span> <span class="c1"># we used to add this first, now last</span>
-<span class="n">g</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="89pt" height="332pt"
- viewBox="0.00 0.00 89.00 332.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 85,-328 85,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="54" cy="-306" rx="27" ry="18"/>
-<text text-anchor="middle" x="54" y="-302.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-234" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-230.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- A&#45;&gt;B -->
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M47.6,-288.41C44.49,-280.34 40.67,-270.43 37.17,-261.35"/>
-<polygon fill="black" stroke="black" points="40.4,-260.03 33.54,-251.96 33.87,-262.55 40.4,-260.03"/>
-</g>
-<!-- E -->
-<g id="node3" class="node">
-<title>E</title>
-<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="54" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
-</g>
-<!-- A&#45;&gt;E -->
-<g id="edge2" class="edge">
-<title>A&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M57.65,-287.91C59.68,-277.57 61.98,-264.09 63,-252 69.72,-172.28 69.72,-151.72 63,-72 62.28,-63.5 60.93,-54.31 59.49,-46.01"/>
-<polygon fill="black" stroke="black" points="62.91,-45.29 57.65,-36.09 56.03,-46.56 62.91,-45.29"/>
-</g>
-<!-- C -->
-<g id="node4" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- B&#45;&gt;C -->
-<g id="edge3" class="edge">
-<title>B&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M27,-215.7C27,-207.98 27,-198.71 27,-190.11"/>
-<polygon fill="black" stroke="black" points="30.5,-190.1 27,-180.1 23.5,-190.1 30.5,-190.1"/>
-</g>
-<!-- D -->
-<g id="node5" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- C&#45;&gt;D -->
-<g id="edge4" class="edge">
-<title>C&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"/>
-<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"/>
-</g>
-<!-- D&#45;&gt;E -->
-<g id="edge5" class="edge">
-<title>D&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M33.4,-72.41C36.51,-64.34 40.33,-54.43 43.83,-45.35"/>
-<polygon fill="black" stroke="black" points="47.13,-46.55 47.46,-35.96 40.6,-44.03 47.13,-46.55"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Yuck!  If Google Maps gave me these directions for getting from city A to E, then I might just switch to Apple Maps.</p>
-<p>The search pattern we're using is known as "depth first search", or DFS.  It explores one child completely (including all that child's descendents) before checking if the other children know a path.</p>
-<p>The alternative to DFS is BFS, or "breadth first search".  This algorithm will explore all children before exploring grandchildren, before exploring great grandchildren, etc.</p>
-<p>The algorithm for BFS is not recursive, but many find it less intuitive that recursive DFS.  The strategy is to keep a "TODO" list of all nodes that need to be visited.  The list is used as a <em>queue</em>, meaning the first nodes added to the list will be the first ones visited.  When a child is explored, we generally discover grandchildren, but rather than explore those grandchildren immediately (as in DFS), we add those grandchildren to the end of the TODO queue, to be processed eventually after the other children.</p>
+<p>Which path do you prefer?  Unless you like the scenic route, presumably A,D,E -- the one than neither BFS or DFS chooses.</p>
+<p>We need to base the order we explore nodes on distance.  Rather than popping from the front or end of <code>todo</code>, we want to pop closest first.  A priority queue is a structure that lets us do this.</p>
+<p>Python's heapq functions can accomplish this: <a href="https://docs.python.org/3/library/heapq.html">https://docs.python.org/3/library/heapq.html</a>.  It doesn't need a special structure; it can cleverly arrange items in an underlying list to do this.</p>
 <p>Let's try it:</p>
 
 </div>
@@ -13825,162 +13661,30 @@ False
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_bfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
-    <span class="c1"># the first node to explore is the starting point</span>
-    <span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">heapq</span> <span class="k">import</span> <span class="n">heappush</span><span class="p">,</span> <span class="n">heappop</span>
 
-    <span class="c1"># keep looping while there are unexplored nodes</span>
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TODO:&quot;</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
-        <span class="n">curr</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pop from beginning</span>
+<span class="n">prioq</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># regular list</span>
 
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VISITING:&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">curr</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
-                    <span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="c1"># add to end</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">prioq</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">prioq</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">prioq</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">prioq</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="c1"># nothing left to check, and we haven&#39;t already returned True</span>
-    <span class="k">return</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QUEUE:&quot;</span><span class="p">,</span> <span class="n">prioq</span><span class="p">)</span>
 
-<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_bfs</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heappop</span><span class="p">(</span><span class="n">prioq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heappop</span><span class="p">(</span><span class="n">prioq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heappop</span><span class="p">(</span><span class="n">prioq</span><span class="p">))</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
-<span class="n">g</span>
-</pre></div>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QUEUE:&quot;</span><span class="p">,</span> <span class="n">prioq</span><span class="p">)</span>
+<span class="n">heappush</span><span class="p">(</span><span class="n">prioq</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;QUEUE:&quot;</span><span class="p">,</span> <span class="n">prioq</span><span class="p">)</span>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="278pt" height="188pt"
- viewBox="0.00 0.00 278.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 274,-184 274,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="135" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="135" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- A&#45;&gt;B -->
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M126.65,-144.76C122.29,-136.28 116.85,-125.71 111.96,-116.2"/>
-<polygon fill="black" stroke="black" points="114.99,-114.44 107.3,-107.15 108.77,-117.64 114.99,-114.44"/>
-</g>
-<!-- C -->
-<g id="node3" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- A&#45;&gt;C -->
-<g id="edge2" class="edge">
-<title>A&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M143.35,-144.76C147.71,-136.28 153.15,-125.71 158.04,-116.2"/>
-<polygon fill="black" stroke="black" points="161.23,-117.64 162.7,-107.15 155.01,-114.44 161.23,-117.64"/>
-</g>
-<!-- D -->
-<g id="node4" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- B&#45;&gt;D -->
-<g id="edge3" class="edge">
-<title>B&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M84.43,-74.83C74.25,-64.94 60.48,-51.55 48.97,-40.36"/>
-<polygon fill="black" stroke="black" points="51.41,-37.85 41.8,-33.38 46.53,-42.87 51.41,-37.85"/>
-</g>
-<!-- E -->
-<g id="node5" class="node">
-<title>E</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
-</g>
-<!-- B&#45;&gt;E -->
-<g id="edge4" class="edge">
-<title>B&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M99,-71.7C99,-63.98 99,-54.71 99,-46.11"/>
-<polygon fill="black" stroke="black" points="102.5,-46.1 99,-36.1 95.5,-46.1 102.5,-46.1"/>
-</g>
-<!-- F -->
-<g id="node6" class="node">
-<title>F</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-14.3" font-family="Times,serif" font-size="14.00">F</text>
-</g>
-<!-- C&#45;&gt;F -->
-<g id="edge5" class="edge">
-<title>C&#45;&gt;F</title>
-<path fill="none" stroke="black" d="M171,-71.7C171,-63.98 171,-54.71 171,-46.11"/>
-<polygon fill="black" stroke="black" points="174.5,-46.1 171,-36.1 167.5,-46.1 174.5,-46.1"/>
-</g>
-<!-- G -->
-<g id="node7" class="node">
-<title>G</title>
-<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="243" y="-14.3" font-family="Times,serif" font-size="14.00">G</text>
-</g>
-<!-- C&#45;&gt;G -->
-<g id="edge6" class="edge">
-<title>C&#45;&gt;G</title>
-<path fill="none" stroke="black" d="M185.57,-74.83C195.75,-64.94 209.52,-51.55 221.03,-40.36"/>
-<polygon fill="black" stroke="black" points="223.47,-42.87 228.2,-33.38 218.59,-37.85 223.47,-42.87"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heappop</span><span class="p">(</span><span class="n">prioq</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">heappop</span><span class="p">(</span><span class="n">prioq</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13997,37 +13701,18 @@ False
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>TODO: [node A]
-VISITING: node A
-TODO: [node B, node C]
-VISITING: node B
-TODO: [node C, node D, node E]
-VISITING: node C
-TODO: [node D, node E, node F, node G]
-VISITING: node D
-TODO: [node E, node F, node G]
-VISITING: node E
-TODO: [node F, node G]
-VISITING: node F
-TODO: [node G]
-VISITING: node G
+<pre>QUEUE: [1, 3, 5, 4]
+1
+3
+4
+QUEUE: [5]
+QUEUE: [2, 5]
+2
+5
 </pre>
 </div>
 </div>
 
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>True</pre>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -14035,486 +13720,24 @@ VISITING: node G
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Cool!  We're searching one level at a time.  But did you notice we lost some functionality?  We aren't keeping track of how we got to the final node.  There are often multiple ways to reach a node, so we should add a <code>back</code> attribute to backtrack how we got there.</p>
+<p>See how the smallest item remaining is always what you get with <code>heappop</code>?</p>
+<p>You could logically accomplish the same by sorting the list each time before you want to do <code>.pop(0)</code>, but that would be WAY slower.</p>
+<p>With the heapq implementation of priority queue, adding and removing items has O(log N) complexity (<a href="https://en.wikipedia.org/wiki/Binary_heap#Summary_of_running_times">https://en.wikipedia.org/wiki/Binary_heap#Summary_of_running_times</a>).  In contrast, sorting before each pop would have complexity O(N log N).  Ouch!</p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">node</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">back</span>
-    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">find_bfs_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
-    <span class="c1"># the first node to explore is the starting point</span>
-    <span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="c1"># keep looping while there are unexplored nodes</span>
-    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TODO:&quot;</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
-        <span class="n">curr</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pop from beginning</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VISITING:&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">curr</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
-                    <span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-                    <span class="c1"># remember we found child via curr</span>
-                    <span class="c1"># (will help us backtrack later!)</span>
-                    <span class="n">child</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="n">curr</span>
-    
-    <span class="c1"># nothing left to check, and we haven&#39;t already returned True</span>
-    <span class="k">return</span> <span class="kc">None</span>
-
-<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_bfs_v2</span>
-
-<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
-<span class="n">g</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="278pt" height="188pt"
- viewBox="0.00 0.00 278.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 274,-184 274,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="135" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="135" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- A&#45;&gt;B -->
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M126.65,-144.76C122.29,-136.28 116.85,-125.71 111.96,-116.2"/>
-<polygon fill="black" stroke="black" points="114.99,-114.44 107.3,-107.15 108.77,-117.64 114.99,-114.44"/>
-</g>
-<!-- C -->
-<g id="node3" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- A&#45;&gt;C -->
-<g id="edge2" class="edge">
-<title>A&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M143.35,-144.76C147.71,-136.28 153.15,-125.71 158.04,-116.2"/>
-<polygon fill="black" stroke="black" points="161.23,-117.64 162.7,-107.15 155.01,-114.44 161.23,-117.64"/>
-</g>
-<!-- D -->
-<g id="node4" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- B&#45;&gt;D -->
-<g id="edge3" class="edge">
-<title>B&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M84.43,-74.83C74.25,-64.94 60.48,-51.55 48.97,-40.36"/>
-<polygon fill="black" stroke="black" points="51.41,-37.85 41.8,-33.38 46.53,-42.87 51.41,-37.85"/>
-</g>
-<!-- E -->
-<g id="node5" class="node">
-<title>E</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
-</g>
-<!-- B&#45;&gt;E -->
-<g id="edge4" class="edge">
-<title>B&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M99,-71.7C99,-63.98 99,-54.71 99,-46.11"/>
-<polygon fill="black" stroke="black" points="102.5,-46.1 99,-36.1 95.5,-46.1 102.5,-46.1"/>
-</g>
-<!-- F -->
-<g id="node6" class="node">
-<title>F</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-14.3" font-family="Times,serif" font-size="14.00">F</text>
-</g>
-<!-- C&#45;&gt;F -->
-<g id="edge5" class="edge">
-<title>C&#45;&gt;F</title>
-<path fill="none" stroke="black" d="M171,-71.7C171,-63.98 171,-54.71 171,-46.11"/>
-<polygon fill="black" stroke="black" points="174.5,-46.1 171,-36.1 167.5,-46.1 174.5,-46.1"/>
-</g>
-<!-- G -->
-<g id="node7" class="node">
-<title>G</title>
-<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="243" y="-14.3" font-family="Times,serif" font-size="14.00">G</text>
-</g>
-<!-- C&#45;&gt;G -->
-<g id="edge6" class="edge">
-<title>C&#45;&gt;G</title>
-<path fill="none" stroke="black" d="M185.57,-74.83C195.75,-64.94 209.52,-51.55 221.03,-40.36"/>
-<polygon fill="black" stroke="black" points="223.47,-42.87 228.2,-33.38 218.59,-37.85 223.47,-42.87"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>TODO: [node A]
-VISITING: node A
-TODO: [node B, node C]
-VISITING: node B
-TODO: [node C, node D, node E]
-VISITING: node C
-TODO: [node D, node E, node F, node G]
-VISITING: node D
-TODO: [node E, node F, node G]
-VISITING: node E
-TODO: [node F, node G]
-VISITING: node F
-TODO: [node G]
-VISITING: node G
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(node A, node C, node G)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's make a tougher test case, with the following:</p>
-<ol>
-<li>cycles</li>
-<li>short and long paths to the same target</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
-<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">g</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-<div class="output_svg output_subarea output_execute_result">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="293pt" height="260pt"
- viewBox="0.00 0.00 292.61 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 288.61,-256 288.61,4 -4,4"/>
-<!-- A -->
-<g id="node1" class="node">
-<title>A</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-234" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-230.3" font-family="Times,serif" font-size="14.00">A</text>
-</g>
-<!-- B -->
-<g id="node2" class="node">
-<title>B</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
-</g>
-<!-- A&#45;&gt;B -->
-<g id="edge1" class="edge">
-<title>A&#45;&gt;B</title>
-<path fill="none" stroke="black" d="M93.16,-216.41C92.3,-208.51 92.05,-198.85 92.41,-189.94"/>
-<polygon fill="black" stroke="black" points="95.9,-190.18 93.12,-179.96 88.92,-189.68 95.9,-190.18"/>
-</g>
-<!-- C -->
-<g id="node3" class="node">
-<title>C</title>
-<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"/>
-<text text-anchor="middle" x="207" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
-</g>
-<!-- A&#45;&gt;C -->
-<g id="edge2" class="edge">
-<title>A&#45;&gt;C</title>
-<path fill="none" stroke="black" d="M117.81,-220.81C135,-209.67 160.62,-193.06 179.99,-180.5"/>
-<polygon fill="black" stroke="black" points="181.92,-183.43 188.4,-175.05 178.11,-177.56 181.92,-183.43"/>
-</g>
-<!-- B&#45;&gt;A -->
-<g id="edge5" class="edge">
-<title>B&#45;&gt;A</title>
-<path fill="none" stroke="black" d="M104.88,-179.96C105.71,-187.83 105.95,-197.37 105.58,-206.19"/>
-<polygon fill="black" stroke="black" points="102.07,-206.18 104.84,-216.41 109.06,-206.69 102.07,-206.18"/>
-</g>
-<!-- D -->
-<g id="node4" class="node">
-<title>D</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
-</g>
-<!-- B&#45;&gt;D -->
-<g id="edge3" class="edge">
-<title>B&#45;&gt;D</title>
-<path fill="none" stroke="black" d="M84.43,-146.83C74.25,-136.94 60.48,-123.55 48.97,-112.36"/>
-<polygon fill="black" stroke="black" points="51.41,-109.85 41.8,-105.38 46.53,-114.87 51.41,-109.85"/>
-</g>
-<!-- E -->
-<g id="node5" class="node">
-<title>E</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">E</text>
-</g>
-<!-- B&#45;&gt;E -->
-<g id="edge4" class="edge">
-<title>B&#45;&gt;E</title>
-<path fill="none" stroke="black" d="M99,-143.7C99,-135.98 99,-126.71 99,-118.11"/>
-<polygon fill="black" stroke="black" points="102.5,-118.1 99,-108.1 95.5,-118.1 102.5,-118.1"/>
-</g>
-<!-- F -->
-<g id="node6" class="node">
-<title>F</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">F</text>
-</g>
-<!-- C&#45;&gt;F -->
-<g id="edge6" class="edge">
-<title>C&#45;&gt;F</title>
-<path fill="none" stroke="black" d="M198.65,-144.76C194.29,-136.28 188.85,-125.71 183.96,-116.2"/>
-<polygon fill="black" stroke="black" points="186.99,-114.44 179.3,-107.15 180.77,-117.64 186.99,-114.44"/>
-</g>
-<!-- G -->
-<g id="node7" class="node">
-<title>G</title>
-<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"/>
-<text text-anchor="middle" x="243" y="-86.3" font-family="Times,serif" font-size="14.00">G</text>
-</g>
-<!-- C&#45;&gt;G -->
-<g id="edge7" class="edge">
-<title>C&#45;&gt;G</title>
-<path fill="none" stroke="black" d="M215.35,-144.76C219.71,-136.28 225.15,-125.71 230.04,-116.2"/>
-<polygon fill="black" stroke="black" points="233.23,-117.64 234.7,-107.15 227.01,-114.44 233.23,-117.64"/>
-</g>
-<!-- Z -->
-<g id="node8" class="node">
-<title>Z</title>
-<ellipse fill="none" stroke="black" cx="198" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="198" y="-14.3" font-family="Times,serif" font-size="14.00">Z</text>
-</g>
-<!-- C&#45;&gt;Z -->
-<g id="edge8" class="edge">
-<title>C&#45;&gt;Z</title>
-<path fill="none" stroke="black" d="M229.1,-151.61C246.19,-143.01 268.63,-128.5 279,-108 286.22,-93.72 286.61,-86.07 279,-72 268.82,-53.17 248.71,-39.95 231.07,-31.43"/>
-<polygon fill="black" stroke="black" points="232.17,-28.08 221.61,-27.17 229.29,-34.46 232.17,-28.08"/>
-</g>
-<!-- E&#45;&gt;Z -->
-<g id="edge9" class="edge">
-<title>E&#45;&gt;Z</title>
-<path fill="none" stroke="black" d="M117.16,-76.16C132.37,-65.41 154.29,-49.91 171.47,-37.76"/>
-<polygon fill="black" stroke="black" points="173.81,-40.39 179.96,-31.76 169.77,-34.67 173.81,-40.39"/>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now there are two A-to-Z paths:</p>
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><p>There are many ways to techniques for searching through a graph for a value or a path that vary in terms of which nodes are explored first and the extra data structures needed to keep track of work to be done.  This simplest is probably recursive DFS (depth-first search); that one is also very memory efficient for graphs that branch out quickly but are not very deep.</p>
+<p>Unfortunately, DFS isn't good at finding short paths.  BFS (breadth-first search) is guaranteed to find the shorter path.  On the other hand, it tends to be harder to implement, and the data structure used to keep track of work to be done can require a lot of memory.</p>
+<p>We also learned about three patterns for keeping track of nodes to explore, and efficient data structures for each pattern:</p>
 <ul>
-<li>A,B,E,Z</li>
-<li>A,C,Z</li>
+<li>stack (can be used for non-recursive DFS) -- a regular Python list makes a good stack (deque is also a good option)</li>
+<li>queue (used for BFS) -- dequeue is efficient</li>
+<li>priority queue (used for A*, which we don't cover in CS 320) -- using heapq to add/remove items in a regular Python list is a good option</li>
 </ul>
-<p>We ought to find the second one!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>TODO: [node A]
-VISITING: node A
-TODO: [node B, node C]
-VISITING: node B
-TODO: [node C, node D, node E]
-VISITING: node C
-TODO: [node D, node E, node F, node G, node Z]
-VISITING: node D
-TODO: [node E, node F, node G, node Z]
-VISITING: node E
-TODO: [node F, node G, node Z]
-VISITING: node F
-TODO: [node G, node Z]
-VISITING: node G
-TODO: [node Z]
-VISITING: node Z
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(node A, node C, node Z)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Just what we wanted.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have lots of experience using data structures like lists and dicts to keep track of data.  But data structures can also be used to keep track work that a program needs to do.  This strategy is used by BFS and many other systems.</p>
-<p>Although more complicated to implement, BFS guarantees the shortest path will be found (in contrast to DFS).  Of course, significant memory might be required to maintain the queue of nodes to visit if the graph is large.  Depending on the shape of the graph, this memory expense may be greater or less than the memory needed for the stack frames necessarly during a recursive depth-first search.</p>
 
 </div>
 </div>
