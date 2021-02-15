@@ -110,3 +110,12 @@ Lecture 9: Conditionals part 1
 9.3 Convert Flowcharts or Pseudocode into Python Conditional Statements
 
 9.4 Write a program that makes choices by using conditional statements
+
+Lecture 10: Nested Conditionals and Refactoring
+10.1 Read and Write Nested conditional statements
+
+10.2 Define, state reasons for, and provide examples of refactoring.
+
+10.3 Solve a programming problem that uses conditional statements by breaking it down into several functions
+
+10.4 Determine whether two functions produce the same results in all cases.
