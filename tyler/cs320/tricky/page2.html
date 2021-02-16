@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      var lines = [];
+
+      function show() {
+        tbl = document.getElementById("hurricanes");
+        count = Math.min(10, lines.length);
+        for (i=0; i<count; i++) {
+          var tr = document.createElement("tr");
+          tr.innerHTML = "<td>"+lines[i].replace(/,/g, "</td><td>")+"</td>";
+          tbl.appendChild(tr);
+        }
+        lines = lines.slice(count);
+        if (lines.length == 0) {
+          document.getElementById("more").remove();
+        }
+      }
+
+      function main() {
+        fetch('hurricanes.csv')
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            lines = data.split("\n");
+            show();
+          })
+      }
+      </script>
+  </head>
+  <body onload="main()">
+    <h1>Keep clicking...</h1>
+
+    <table id="hurricanes" border=1></table>
+
+    <button id="more" onclick="show()">Show More!</button>
+  </body>
+</html>
