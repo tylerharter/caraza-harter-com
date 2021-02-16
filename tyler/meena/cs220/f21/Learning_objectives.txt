@@ -119,3 +119,18 @@ Lecture 10: Nested Conditionals and Refactoring
 10.3 Solve a programming problem that uses conditional statements by breaking it down into several functions
 
 10.4 Determine whether two functions produce the same results in all cases.
+
+
+Lecture 11: Iteration
+11.1 Implement an iterative algorithm using a while loop
+- example: printing / counting
+- example: validating user input
+- example: performing an iterative calculation
+
+11.2 Implement nested iteration using while loops
+
+11.3 Recognize common while loop errors
+- Infinite loops (when unintentional)
+- Off-by-one mistakes
+
+11.4 Determine the output of iterative algorithms
