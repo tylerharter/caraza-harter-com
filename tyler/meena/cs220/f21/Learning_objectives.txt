@@ -8,6 +8,20 @@ Lecture 3: Pseudocode
 
 
 Lecture 4: Programming
+4.1 Run Python Code
+   from the command line
+   from a Jupyter Notebook
+ 
+
+4.2 Evaluate expressions containing basic Python operators:
+   Mathematical (e.g., “+” and “-“)
+   Comparison (e.g., “==” and “>”)
+   Logical (e.g., “and” and “not”)
+
+4.3 Recognize examples of different Python data types:
+   int, float, str, bool
+
+4.4 Evaluate boolean expressions
 
 
 Lecture 5: Variables and Expressions
