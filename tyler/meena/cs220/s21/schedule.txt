@@ -191,7 +191,6 @@ Strings
 * Searching
 * Comparison
 * String formatting
-* Exam 1 review 
 
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
@@ -357,7 +356,6 @@ Files and Directories
 * Reading
 * Writing
 * Listing children
-* Exam 2 review
 <b>Read</b>: Downey Ch 14<br>
 <b>Due</b>: Quiz8<br>
 <!--a href="materials/lec_26_F20.pdf">Link to Slides</a><br-->
