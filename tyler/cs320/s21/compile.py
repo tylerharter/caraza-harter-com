@@ -64,7 +64,7 @@ def read_days():
             meta += '<br>'
         pt = os.path.join("lec", dirname, "pytutor.html")
         if os.path.exists(pt):
-            meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a>'
+            meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a><br>'
         reading = os.path.join("lec", dirname, "reading.md")
         if os.path.exists(reading):
             meta += f'\n<b>Read</b>: <a href="{github}/{reading}">Lecture Notes</a><br>'

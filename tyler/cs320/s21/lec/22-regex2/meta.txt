@@ -1,5 +1,0 @@
-Regex 2
-* findall, sub, groups
-QUIZ 6 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab9">Regex</a><br>
-

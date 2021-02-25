@@ -1,4 +1,4 @@
-Visualization 3
+Visualization 2
 * geographic maps
 * shapefiles
 * high resolution graphics
