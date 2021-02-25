@@ -1,4 +1,4 @@
-# Oct 19 Lecture
+# A/B Testing
 
 ## 1. A/B Testing (Part 1)
 
