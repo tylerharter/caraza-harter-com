@@ -2,11 +2,7 @@ Web 4: Logging, Rate Limiting, and robots.txt
 * wrappers based on *args and **kwargs*
 * robots.txt
 * HTTP 429
-<b>Read</b>: <a href="https://www.robotstxt.org/orig.html#examples">robots.txt examples</a>, <a href="https://tools.ietf.org/html/rfc6585#section-4">HTTP 429</a><br>
-# <b>Read</b>: Think Python, Ch 12.4 and 19.9<br>
-<a href="lec/19-logging/lec-19.html">Interactive Exercises</a><br>
 QUIZ 5 DUE<br>
 <b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab8">Web</a><br>
 <b>Due:</b> P3<br>
 <b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p4">P4 (website)</a><br>
-

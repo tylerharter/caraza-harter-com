@@ -4,4 +4,5 @@ Regex 1
 * anchoring
 SLIDES
 <b>Read</b>: <a href="https://www.textbook.ds100.org/ch/08/text_intro.html">DS100 Ch 8</a><br>
-
+QUIZ 6 DUE<br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/f20/lab9">Regex</a><br>
