@@ -2,10 +2,14 @@ Lecture 1: Introduction
 
 
 Lecture 2: The Terminal
+2.1 Access the Terminal(Mac) or PowerShell (Windows) application
 
+2.2 Use basic Terminal/PowerShell commands
 
 Lecture 3: Pseudocode
+3.1 Define PseudoCode and explain why it is useful
 
+3.2 Hand-trace PseudoCode algorithms
 
 Lecture 4: Programming
 4.1 Run Python Code
@@ -90,7 +94,7 @@ Lecture 7: Creating Functions
 7.5 Determine the result of Python function calls
   using hand-tracing
   using Python Tutor
-  using Python Tutor Worksheets
+  using PyTutor Interactive Worksheets
   
 Lecture 8: Function Scope
 8.1 Explain the rules of scope of a local variable in a function
@@ -148,3 +152,45 @@ Lecture 11: Iteration
 - Off-by-one mistakes
 
 11.4 Determine the output of iterative algorithms
+
+Lecture 12: Break and Continue
+12.1 Read and write Python code using break in a while loop
+
+12.2 Read and write Python code using continue in while loop
+
+12.3 Determine the effect of break and continue in nested loops
+
+12.4 Determine how many times a line of code executes in a while loop
+- if the code is inside the body of the loop
+- if the code is the while loop condition
+
+
+Lecture 13:  Exam
+
+
+Lecture 14: Strings and for loops
+14.1 Compare two strings by hand using < or > 
+
+14.2 Recognize common string methods, explain what they do, and use them in Python code
+
+14.3 Define the term sequence, name common sequence operations, and explain how a string is a sequence
+
+14.4 Read and Write code that uses a for loop 
+- to iterate over a string
+- to iterate over a sequence of numbers using the range function
+
+
+
+Lecture 15: Lists
+15.1 Create a list, store multiple types of values in a list, and use sequence operations on a list
+- access elements of a list inside of list using double indexing [] [] 
+
+15.2 Define mutability and recognize that lists are mutable but strings are not
+
+15.3 Mutate a list using list indexing, double indexing, list methods such as sort,() pop(), append() and operators such as + and *
+
+15.4 Use the join() and split() methods when working with lists and strings
+
+15.5 Write functions that process lists of numbers or strings
+
+
