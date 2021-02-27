@@ -2,15 +2,15 @@
 
 ## 1. Dashboards (Part 1)
 
-### Watch: [15-minute video](https://youtu.be/fpvmm-Q_o-g)
+### Watch: [15-minute video](https://youtu.be/D58K7wBSDg4)
 
 ## 2. CDFs (Part 2)
 
-### Watch: [12-minute video](https://youtu.be/AmemhJVHpOw)
+### Watch: [12-minute video](https://youtu.be/CQMf5fVAgUM)
 
 ## 3. Dashboard Improvements (Part 3)
 
-### Watch: [19-minute video](https://youtu.be/yHbATWIwFE8)
+### Watch: [19-minute video](https://youtu.be/SzDGEdHszLU)
 
 ### Practice: Add a Dashboard Plot
 
