@@ -25,8 +25,8 @@ human_x, human_y = coord.split(",")
 human_x = int(human_x)
 human_y = int(human_y)
 
-bestIndex = None
-bestDistance = None
+best_index = None
+best_distance = None
 for index in range(len(rows)):
     row = rows[index]
     restaurant = row[0]
@@ -34,9 +34,9 @@ for index in range(len(rows)):
     y = int(row[2])
 
     curr_distance = distance(x, human_x, y, human_y)
-    if bestDistance == None or curr_distance < bestDistance:
-        bestDistance = curr_distance
-        bestIndex = index
+    if best_distance == None or curr_distance < best_distance:
+        best_distance = curr_distance
+        best_index = index
 
-#print(bestDistance)
-print(rows[bestIndex][0])
+#print(best_distance)
+print(rows[best_index][0])

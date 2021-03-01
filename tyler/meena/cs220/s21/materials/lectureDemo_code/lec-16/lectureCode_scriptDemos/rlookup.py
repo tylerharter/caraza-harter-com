@@ -1,7 +1,7 @@
 import csv
 import sys
 
-# copied from https://automatetheboringstuff.com/chapter14/
+# copied from https://automatetheboringstuff.com/2e/chapter16/ 
 def process_csv(filename):
     exampleFile = open(filename, encoding="utf-8")
     exampleReader = csv.reader(exampleFile)
