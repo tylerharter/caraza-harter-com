@@ -1,4 +1,5 @@
-scores = {"bob":0, "alice":0}
+#KEY: player name VALUE: player score
+scores = {"bob":0, "alice"    :   0}
 
 def main():
     global scores
