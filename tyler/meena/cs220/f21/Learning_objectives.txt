@@ -194,3 +194,41 @@ Lecture 15: Lists
 15.5 Write functions that process lists of numbers or strings
 
 
+Lecture 16: CSV files
+16.1 Open an Excel file and export it to a Comma Separated Value file.
+
+16.2 Open a CSV file in TextEdit/Notepad and connect the elements of the CSV file to the rows and columns in the spreadsheet.
+
+16.3 Use pre-written Python code to read a CSV file into a list of lists.
+
+16.4 Write Python statements with double list indexing to access any element of a CSV file via a list of lists.
+
+16.5 Write code that answers questions about CSV data by writing for loops on lists of lists.
+
+16.6 Identify in code how sys.argv is used to read arguments into a command-line Python script.
+
+16.7 Use the cat command to view the contents of binary or CSV files.
+
+
+Lecture 17: Three Tricky Things with Lists
+16.1 Write functions that process CSV files (name lookup, minimum distance)
+
+16.2 Determine the error when removing from a list inside a 'for' loop, and write code to correctly avoid this problem
+
+16.3 Determine the error when modifying a list inside a 'for' loop, and write code to correctly avoid this problem
+
+16.4 Determine the error when a list sent as an argument to a function is modified by the function, and write code to avoid this.
+
+
+Lecture 18: Dictionaries
+18.1 Understand the advantages dictionaries have over lists.
+
+18.2 Use correct syntax to create a dictionary (2 ways), and to lookup, insert, update, and pop key/value pairs.
+
+18.3 Use a for loop, the in operator, and common methods when working with dictionaries.
+
+18.4 Write code that uses a dictionary
+- to store frequencies
+- to store and process information that is updated
+
+
