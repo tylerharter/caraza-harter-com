@@ -223,12 +223,24 @@ Lecture 17: Three Tricky Things with Lists
 Lecture 18: Dictionaries
 18.1 Understand the advantages dictionaries have over lists.
 
-18.2 Use correct syntax to create a dictionary (2 ways), and to lookup, insert, update, and pop key/value pairs.
+18.2 Use correct dictionary syntax 
+- to create a dictionary using either {} or dict()
+- to lookup, insert, update, and pop key/value pairs
 
 18.3 Use a for loop, the in operator, and common methods when working with dictionaries.
 
 18.4 Write code that uses a dictionary
 - to store frequencies
 - to store and process information that is updated
+
+
+Lecture 19: Dictionaries and Lists
+19.1 Handle dictionary key errors by using get, pop, and defaultdict
+
+19.2 Select the appropriate data structure for a situation (list, dictionary, set, list-dictionary combination)
+
+19.3 Use a dictionary of lists to put rows of data into "buckets"
+
+19.4 Use a list of dictionaries to represent a table of data.
 
 
