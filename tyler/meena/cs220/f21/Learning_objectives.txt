@@ -211,15 +211,27 @@ Lecture 16: CSV files
 
 16.7 Use the cat command to view the contents of binary or CSV files.
 
+Lab-P6: 
+P6.1 Write a Python function to extract a single cell from a dataset given a row number and a column name.
+
+P6.2 State the uses of and differences between using sorted() and .sort() on a list and on a string.
+
+P6.3 Using correct syntax, create a set and use basic set operations.
+
+P6.4 State the similarities and differences between a set and a list. 
+
+P6.5 Use the set() and list() commands to generate a list of the unique values in a list.
+
+
 
 Lecture 17: Three Tricky Things with Lists
-16.1 Write functions that process CSV files (name lookup, minimum distance)
+17.1 Write functions that process CSV files (name lookup, minimum distance)
 
-16.2 Determine the error when removing from a list inside a 'for' loop, and write code to correctly avoid this problem
+17.2 Determine the error when removing from a list inside a 'for' loop, and write code to correctly avoid this problem
 
-16.3 Determine the error when modifying a list inside a 'for' loop, and write code to correctly avoid this problem
+17.3 Determine the error when modifying a list inside a 'for' loop, and write code to correctly avoid this problem
 
-16.4 Determine the error when a list sent as an argument to a function is modified by the function, and write code to avoid this.
+17.4 Determine the error when a list sent as an argument to a function is modified by the function, and write code to avoid this.
 
 
 Lecture 18: Dictionaries
