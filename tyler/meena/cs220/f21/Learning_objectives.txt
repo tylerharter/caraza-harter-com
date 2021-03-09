@@ -179,6 +179,8 @@ Lecture 14: Strings and for loops
 - to iterate over a string
 - to iterate over a sequence of numbers using the range function
 
+14.5 Index and slice strings using correct syntax, including positive and negative indices
+
 
 
 Lecture 15: Lists
