@@ -24,5 +24,5 @@
 #         3.14
 #         True
 #         true
-#         'hello'
-#         "hello"
+#         'hello' -> if using echo command, type backslash in front of both quotes (escape sequence)
+#         "hello" -> if using echo command, type backslash in front of both quotes (escape sequence)   
