@@ -1,5 +1,21 @@
 # Geographic Maps
 
+## Install
+
+Before installing anything, make sure you are on version 19.0.0 or later of pip: `pip3 install --upgrade pip`
+
+You can then install geopandas and some other packages it uses like this:
+
+```
+pip3 install geopandas shapely descartes geopy
+```
+
+Finally, you'll need to install rtree with `apt` to enable some features we'll learn:
+
+```
+sudo apt install -y python3-rtree
+```
+
 ## 1. Geopandas (Part 1)
 
 ### Watch: [26-minute video](https://youtu.be/SvCvRqMVuHg)
