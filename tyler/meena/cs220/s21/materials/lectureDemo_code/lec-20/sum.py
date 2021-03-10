@@ -14,10 +14,10 @@ def read_json(path):
 #         or use jupyter notebook to create and edit the new file
 
 # STEP 3: Process numsA.json as a command line argument using sys module.
-inputFile = sys.argv[1]
+input_file = sys.argv[1]
 
 # STEP 4: Read the JSON file passed as first command line argument.
-data = read_json(inputFile)
+data = read_json(input_file)
 
 # STEP 5: Print type of data returned by function that reads JSON file.
 

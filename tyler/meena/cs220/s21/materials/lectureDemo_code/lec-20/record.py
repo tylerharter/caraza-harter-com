@@ -26,8 +26,8 @@ player_score = float(sys.argv[2])
 #         scores.
 #         KEY: player name VALUE: player scores list
 
-inputFile = "score_history.json"
-scores = read_json(inputFile)
+input_file = "score_history.json"
+scores = read_json(input_file)
 
 # STEP 5: Check if player name is a key in the scores dictionary.
 #         If not, create a new key for player name and value as empty list
@@ -52,7 +52,7 @@ print(sum(scores[player_name]) / len(scores[player_name]))
 # STEP 10: At the end of the program, write the updated scores from dict
 #         into the "scores_history.json" file
 
-write_json(inputFile, scores)
+write_json(input_file, scores)
 
 # STEP 11: That's it, now you have a program that helps you keep track 
 #          of player scores permanently.
