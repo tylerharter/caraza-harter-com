@@ -1,5 +1,12 @@
 # Dashboards
 
+## Corrections
+
+I make a couple mistakes in the following videos, but they're easy to fix if you keep these things in mind:
+
+* the correct content type for SVG images is "image/svg+xml".  In some of these videos I get "svg" and "xml" backwards.  Some browsers figure out what to do anyway, and others do not
+* When saving a fig, be sure to specify the format, like this: `fig.savefig(..., format="svg")`.  I didn't do this in all my examples, and even though it seemed to work here, for some students/browsers, it seems to cause a problem (another hypothesis is that my version of matplotlib is inferring the format based on the extension).
+
 ## 1. Dashboards (Part 1)
 
 ### Watch: [15-minute video](https://youtu.be/D58K7wBSDg4)
@@ -94,7 +101,7 @@ def cdf():
     ax.set_ylabel("Percent Less")
 
     buf = BytesIO()
-    fig.savefig(buf)
+    fig.savefig(buf, format="svg")
     return Response(buf.getvalue(), headers={"Content-Type": "image/svg+xml"})
 
 @app.route("/sorted.svg")
@@ -103,7 +110,7 @@ def sorted_values():
     pd.Series(sorted(values)).plot.line(ax=ax)
 
     buf = BytesIO()
-    fig.savefig(buf)
+    fig.savefig(buf, format="svg")
     return Response(buf.getvalue(), headers={"Content-Type": "image/svg+xml"})
 
 @app.route("/val_over_time.svg")
@@ -112,7 +119,7 @@ def over_time():
     pd.Series(values).plot.line(ax=ax)
 
     buf = BytesIO()
-    fig.savefig(buf)
+    fig.savefig(buf, format="svg")
     return Response(buf.getvalue(), headers={"Content-Type": "image/svg+xml"})
 
 if __name__ == '__main__':
