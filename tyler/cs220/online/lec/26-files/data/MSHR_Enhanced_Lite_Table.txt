@@ -1,0 +1,127 @@
+							EMSHR_LITE.TXT
+
+The Enhanced Master Station History Report (EMSHR) - Lite is a list of basic, historical information for every station in the station history 
+database.  While the EMSHR is constructed to be used by programs, the EMSHR Lite is built to be a more user-friendly visual report, and contains
+a subset of the most used fields from the full EMSHR.  
+
+Note this file is subject to change as NCEI adds more networks to its station history database and new identifiers.
+
+The file is sorted by ncdcstn_id, begin_date, end_date and its first row contains column headers as described below.
+
+This report is scheduled to be updated monthly.
+
+*** UPDATE, beginning with June 2014 report: New RELOCATION field added to end of each line.
+
+*** UPDATE, beginning with June 2016 report: New GHCNMLT, IGRA, HPD identifier fields added to end of each line.
+
+FIELD                   LENGTH   FORMAT       POSITION      DESCRIPTION
+----------------------------------------------------------------------------------------------------------------------------------------
+NCDC    		8 	 X(8) 	      001-008	    Unique identifier used by NCEI.  Subject to change, but unique to each
+                                                            station in this file.
+
+BEG_DT 		        8 	 YYYYMMDD     010-017       Beginning date of record, set to 00010101 if date is unknown.
+
+END_DT 		        8 	 YYYYMMDD     019-026	    Ending date of record, set to 99991231 if station is currently open.
+
+COOP 		        6 	 X(6) 	      028-033       NWS Cooperative network ID, assigned by NCEI, first 2 digits represent 
+                                                            state, last 4 digits are assigned numerically by alphabetical ordering of 
+                                                            the station name.
+
+WBAN 		        5 	 X(5) 	      035-039       WBAN identifier (Weather-Bureau-Army-Navy), assigned by NCEI, used for 
+                                                            digital data storage and general station identification purposes.
+
+ICAO		        4 	 X(4) 	      041-044       ICAO ID, used for geographical locations throughout the world, managed by 
+                                                            the International Civil Aviation Organization.
+
+FAA 			5        X(5)         046-050	    FAA ID, alpha-numeric, managed by USDT Federal Aviation Administration used 
+                                                            for site identification of sites vital to navigation. Commonly 
+                                                            referred to as "Call Sign".
+
+NWSLI 		        5 	 X(5) 	      052-056       NWS Location Identifer, alpha-numeric, location identifier assigned by the 
+                                                            National Weather Service for use in real-time data transmissions and forecasts.
+
+WMO	                5        X(5) 	      058-062       ID assigned by World Meteorological Organization, used for 
+                                                            international weather data exchange and station documentation.
+
+TRANS 		        10 	 X(10) 	      064-073       Holds miscellaneous IDs that do not fall into an officially sourced 
+                                                            ID category that are needed in support of NCEI data products and ingests.
+
+GHCND 		        11 	 X(11) 	      075-085       Populated if station is included in GHCN-Daily product during the time period
+                                                            indicated.
+
+STATION_NAME 		100 	 X(100)       087-186	    Name of station, upper case may contain characters, numbers or symbols.
+
+CC 	                2 	 X(2) 	      188-189       FIPS country code.
+
+CTRY_NAME 	        35 	 X(35)        191-225	    FIPS country name.
+
+ST 		        2 	 X(2) 	      227-228       USPS two character alphabetic abbreviation for each state, uppercase.
+
+COUNTY 			35 	 X(35) 	      230-264       Name of county, uppercase.
+
+CD 		        2 	 X(2) 	      266-267       Usually contains a number between 01 and 10 indicating climate 
+                                                            division as determined by master divisional reference maps. Assigned 
+                                                            by NCEI.
+
+UTC 		        3	 9(3)         269-271       Time zone, UTC offset.
+
+LAT_DEC 		9 	 9(9)         273-281       Decimal latitude, blank indicates North and "-" indicates South.
+
+LON_DEC 		10 	 9(10)        283-292       Decimal longitude, blank indicates East and "-" indicates West.
+
+LOC_PREC	        10 	 X(10) 	      294-303       Indicates precision of source lat and lon, see Reference Table below.
+
+LAT_DMS                 13       X(13)        305-317       Latitude degree, minute, etc format based on LOC_PREC precision, delimited
+                                                            by comma, with trailing N/S/E/W directional indicator.
+
+LON_DMS                 14       X(14)        319-332       Longitude degree, minute, etc format based on LOC_PREC precision, delimited
+                                                            by comma, with trailing N/S/E/W directional indicator.
+
+EL_GR_FT 		8 	 9(8) 	      334-341       Ground elevation in Feet.  For Coop network, average elevation of the ground 
+                                                            in a 20-meter(60ft) circle around the primary rain gauge. For 1st & 
+                                                            2nd Order stations, elevation of the official temperature sensor for 
+                                                            the station.
+
+EL_GR_M 		8 	 9(8) 	      343-350       Ground elevation in Meters.  For Coop network, average elevation of the ground 
+                                                            in a 20-meter(60ft) circle around the primary rain gauge. For 1st & 
+                                                            2nd Order stations, elevation of the official temperature sensor for 
+                                                            the station.
+
+EL_AP_FT 		8 	 9(8) 	      352-359       Airport: Field, Aerodrome, or Runway elevation - in Feet.
+
+EL_AP_M 		8 	 9(8) 	      361-368       Airport: Field, Aerodrome, or Runway elevation - in Meters.
+
+TYPE 		        100 	 X(100)       370-469	    Platforms station participates in (AIRSAMPLE, AIRWAYS, AL USRCRN, AMOS, 
+                                                            ASOS, AWOS, BASIC, COCORAHS, COOP, C-MAN, MILITARY, NEPP, NEXRAD, ORC2C, 
+                                                            PRE-COOP, RADAR, SURFRAD, SYNOPTIC, UPPERAIR, USCRN, USRCRN, WXSVC, 
+                                                            UNKNOWN), delimited by comma. 
+
+RELOCATION 		30 	 X(30) 	      471-500       Distance and direction of station relocation expressed as a distance 
+                                                            value (1-4 characters), space, distance units (2 character abbreviation), 
+                                                            space, and direction (1-3 character 16-point cardinal direction). Date of 
+                                                            relocation indicated by begin date of record.
+
+GHCNMLT 	        11 	 X(11) 	      502-512       Populated if station is included in GHCN-Monthly Land Temperature product 
+                                                            during the time period indicated.
+
+IGRA    	        11 	 X(11) 	      514-524       Populated if station is included in IGRA2 product during the time period indicated.
+
+HPD     	        11 	 X(11) 	      526-536       Populated if station is included in Hourly Precipitation Data (HPD) product 
+                                                            during the time period indicated.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+LAT_LON_PRECISION CODES	
+DD        Whole Degrees					
+DDMM      Degrees, Whole Minutes				
+DDMMSS    Degrees, Whole Minutes, Whole Seconds	
+DDd       Decimal Degrees, to Tenths
+DDdd      Decimal Degrees, to Hundredths
+DDddd     Decimal Degrees, to Thousandths
+DDdddd    Decimal Degrees, to Ten Thousandths
+DDddddd   Decimal Degrees, to Hundred Thousandths
+DDMMm     Degrees, Decimal Minutes to Tenths
+DDMMmm    Degrees, Decimal Minutes to Hundredths
+DDMMmmm   Degrees, Decimal Minutes to Thousandths
+DDMMSSs   Degrees, Minutes, Decimal Seconds to Tenths
+DDMMSSss  Degrees, Minutes, Decimal Seconds to Hundredths
+DDMMSSss  Degrees, Minutes, Decimal Seconds to Hundredths
