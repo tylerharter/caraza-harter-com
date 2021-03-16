@@ -317,7 +317,9 @@ Copying
 <a href="materials/lec_22_S21.pdf">Link to Slides</a><br>
 <b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf">pdf</a>, <a href="materials/lec-22-worksheet.docx">docx</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br>
-<!--b>Meena's lectures: </b><a href="">YouTube</a><br-->
+<b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asuCca0h87iEYmpTfL4iNoyX">YouTube</a><br>
+<b>Alexi's lecture:</b> <a href="https://www.youtube.com/playlist?list=PLqNv0LNZgAExSoeLU1B2CU87PQtDhYpZl">YouTube</a> <a href="https://mediaspace.wisc.edu/playlist/dedicated/1_0f2pd7qw/">Kaltura</a> (1-4)<br>
+<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/alexi-lec-notes">Alexi's lecture notes</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p8">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p8">P8</a><br-->
 
 =
@@ -328,10 +330,10 @@ Recursive Functions
 * Stack Overflow
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
 <b>Due</b>: P7<br>
-<!--a href="materials/lec_22_F20.pdf">Link to Slides</a><br-->
-<!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-22">code</a><br-->
-<!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asvjxGWG0kaBhZf0UE01qcl1">Playlist</a><br-->
+<a href="materials/lec_23_S21.pdf">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec23-InteractiveExercises.html">Interactive Exercises</a><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-23">code</a><br>
+<b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asvjxGWG0kaBhZf0UE01qcl1">YouTube</a><br>
 
 =
 Function References
