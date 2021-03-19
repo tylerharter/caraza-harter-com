@@ -211,6 +211,7 @@ Lecture 16: CSV files
 
 16.7 Use the cat command to view the contents of binary or CSV files.
 
+
 Lab-P6: 
 P6.1 Write a Python function to extract a single cell from a dataset given a row number and a column name.
 
@@ -256,5 +257,78 @@ Lecture 19: Dictionaries and Lists
 19.3 Use a dictionary of lists to put rows of data into "buckets"
 
 19.4 Use a list of dictionaries to represent a table of data.
+
+
+Lab-P7:
+P7.1
+
+P7.2
+
+P7.3
+
+
+
+Lecture 20: JSON files
+20.1 Trace a frame diagram made up of nested dictionaries and lists
+
+20.2 Interpret JSON formatted data and recognize differences between JSON and Python
+
+20.3 Deserialize data from JSON for use in Python programs (read)
+
+20.4 Serialize data into JSON for long term storage (write) 
+
+
+Lecture 21: Objects, References, and Tuples
+21.1 Explain the difference between objects vs references, and stack vs heap.
+
+21.2 Use tuples to store immutable sequences of values.
+
+21.3 Use namedtuple (immutable) and recordclass (mutable) to store user-defined data objects.
+
+21.4 Use knowledge of objects to hand-trace modifications to parameters.
+
+21.5 Evaluate Python expressions that use 'is' and '==' to compare objects.
+
+
+
+Lecture 22: Copying Objects
+22.1 Correctly predict the output of code that uses reference variable mutation and reassignment.
+
+22.2 Explain how Python uses deduplication and hand-trace code that uses deduplication.
+
+22.3 Compare and contrast the 3 levels of copying: 
+- reference copy 
+- shallow copy(copy.copy)
+- deep copy (copy.deepcopy)
+
+22.4 Write code that copies a data structure at the appropriate level for a given use case. 
+
+
+Lecture 23: Recursion
+22.1 Define recursion and identify
+- the base case
+- the recursive case
+- infinite recursion
+
+22.2 Explain why the following can be recursively defined
+- lists
+- dictionaries
+- JSON objects
+
+22.3 Trace a recursive function
+- involving numeric computation
+- involving nested data structures
+
+
+Lecture 24: Function References
+24.1 Define a function reference and trace code that uses function references.
+
+24.2 Use the map function to apply a function to every element of a list.
+
+24.3 Sort a list of tuples, a list of dictionaries, or a dictionary using a function as a key.
+
+24.4 Use a lambda expression to abstract function behavior when sorting or mapping.
+
+
 
 
