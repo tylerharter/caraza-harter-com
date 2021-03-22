@@ -330,5 +330,13 @@ Lecture 24: Function References
 24.4 Use a lambda expression to abstract function behavior when sorting or mapping.
 
 
+Lecture 25:  Iterators
+
+25.2 Use the correct vocabulary to describe iteration
+- iterable, sequence, iterator
+
+25.3 Determine if an object is iterable, or if it is an iterator
+- try to use iter() to determine if an object is iterable
+- try to use next() to determine if an object is an iterator
 
 
