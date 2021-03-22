@@ -331,7 +331,7 @@ Recursive Functions
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
 <b>Due</b>: P7<br>
 <a href="materials/lec_23_S21.pdf">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec23-InteractiveExercises.html">Interactive Exercises</a><br>
+<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-23">code</a><br>
 <b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asvjxGWG0kaBhZf0UE01qcl1">YouTube</a><br>
 <b>Alexi's lecture:</b> <a href="https://www.youtube.com/playlist?list=PLqNv0LNZgAExSoeLU1B2CU87PQtDhYpZl">YouTube</a> <a href="https://mediaspace.wisc.edu/playlist/dedicated/1_0f2pd7qw/">Kaltura</a> (1-3)<br>
