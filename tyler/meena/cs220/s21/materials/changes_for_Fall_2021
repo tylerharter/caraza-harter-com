@@ -1,0 +1,3 @@
+* Remove with usage from process_csv, read_json, write_json, and any other usages
+* Discuss removing generators topic and replacing that with lambdas, list / dict comprehensions, tuple packing / unpacking
+* 
