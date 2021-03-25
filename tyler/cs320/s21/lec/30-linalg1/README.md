@@ -1,4 +1,4 @@
-# Linear Algebra
+# Linear Algebra 1
 
 ## 1. Numpy
 

@@ -1,6 +1,5 @@
 Linear Algebra 1
-* element-wise mult
-* dot product
-* broadcasting
+* numpy arrays
+* numpy images
+* multiplication
 QUIZ 9 DUE<br>
-
