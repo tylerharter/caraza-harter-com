@@ -1,5 +1,4 @@
 Linear Algebra 2
-* equation solving
-* linear combinations
-* column spaces
-
+* fit with np.linalg.solve
+* predict with np.predict
+* column perspective
