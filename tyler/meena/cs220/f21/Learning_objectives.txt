@@ -340,3 +340,32 @@ Lecture 25:  Iterators
 - try to use next() to determine if an object is an iterator
 
 
+Lecture 26: 
+
+26.1 Explain the purpose of assert statements, try/except blocks, and raise statements.
+
+26.2 Use an assert statement to force a program to crash, and trace code that uses assert.
+
+26.3 Use try/except blocks to catch runtime errors and handle them
+- by specifying the exception(s) caught
+- by using the exception object
+
+26.4 Use the raise statement to raise an exception that may be caught in another part of the program
+
+26.5 Hand trace code that uses assert, try/except blocks and raise statements
+
+
+Lecture 27:
+
+27.1 Use built-in functions with files: open, close, read, write
+
+27.2 Use a file object's iterator properties: for loop, next, list
+
+27.3 Use these file-specific os module functions:
+-os.listdir, os.mkdir, os.path.exists, os.path.isfile, os.path.isdir, os.path.join
+
+27.4 Use try/except blocks to handle errors that may occur when using files
+
+
+
+
