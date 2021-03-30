@@ -396,7 +396,7 @@ Exam 2
 <b>Due</b>: CS319 graduate project proposal (Not applicable to CS220 students)<br>
 
 =
-Pandas 1
+Pandas 1 (Data Science topic)
 * iPython
 * dataframe
 * series
