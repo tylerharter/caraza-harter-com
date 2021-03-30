@@ -397,10 +397,7 @@ Exam 2
 
 =
 Pandas 1 (Data Science topic)
-* iPython
-* dataframe
 * series
-* reading CSVs
 * element-wise operations
 <b>Read</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
 <b>Due</b>: P9<br>
@@ -413,7 +410,8 @@ Pandas 1 (Data Science topic)
 
 =
 Pandas 2
-* practice
+* dataframe
+* reading CSVs
 <!--b>No slides</b--><br>
 <!--b>Link to worksheet: </b><a href="materials/lec-29-worksheet.pdf">pdf</a>, <a href="materials/lec-29-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-29">code</a><br-->
