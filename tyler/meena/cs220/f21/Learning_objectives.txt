@@ -367,5 +367,24 @@ Lecture 27:
 27.4 Use try/except blocks to handle errors that may occur when using files
 
 
+Lecture 28: (exam)
+
+Lecture 29:  Pandas Series
+27.1 Use correct Pandas terms when working with a Series
+- index
+- integer position
+
+27.2 Create and use Pandas Series objects
+- from a dictionary
+- from a list
+- from other Series objects
+
+27.3 Use proper Pandas Series syntax to
+- access elements
+- slice
+- perform element-wise operations using a scalar or another Series
+- concatenate two Series
+
+27.4 Use Boolean expressions and binary operators to slice a Series
 
 
