@@ -1,6 +1,7 @@
 Classification 1
-* nearest neighbour
+* LogisticRegression
+* multiclass, proba
 * decision boundary
+* regularization
 * standard scaler
 QUIZ 10 DUE<br>
-

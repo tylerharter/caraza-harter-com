@@ -1,0 +1,17 @@
+video 1: intro
+ - slides
+ - linear algebra for three styles: T/F, prob(T), multiclass
+ - with sklearn (iris example)
+
+video 2
+ - coefficient plot
+ - decision boundary
+ - polynomial features
+
+video 3
+ - custom transformer
+ - StandardScaler
+
+skip:
+ - regularization
+ - balancing
