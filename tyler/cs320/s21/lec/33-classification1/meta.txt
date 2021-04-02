@@ -1,7 +1,5 @@
 Classification 1
 * LogisticRegression
 * multiclass, proba
-* decision boundary
-* regularization
-* standard scaler
+* decision boundaries
 QUIZ 10 DUE<br>
