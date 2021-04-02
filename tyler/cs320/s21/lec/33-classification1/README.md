@@ -2,6 +2,8 @@
 
 ## 1. LogisticRegression Classifier (it's not a regressor!)
 
+### Watch: [29-minute video](https://youtu.be/Pao7GkhOCRE)
+
 ### Practice: Fit, Score, Predict
 
 Start with the following data:
@@ -99,8 +101,6 @@ test[["x1", "x2", "x3"]] @ lr.coef_.T + lr.intercept_ > 0
 
 Verify that the above calculation produces the same results as we saw
 with `lr.predict` earlier.
-
-### Watch: [29-minute video](https://youtu.be/Pao7GkhOCRE)
 
 ## 2. Decision Boundaries
 
