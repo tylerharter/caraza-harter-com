@@ -1,4 +1,3 @@
 Clustering 2
-* k-means
+* agglomerative
 QUIZ 11 DUE<br>
-
