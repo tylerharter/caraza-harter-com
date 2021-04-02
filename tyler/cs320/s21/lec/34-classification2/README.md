@@ -139,4 +139,4 @@ print(f"You got {score} of 6 correct.")
 
 ## 3. Regularization and Standardization
 
-### Watch: TODO
+### Watch: [16-minute video](https://youtu.be/Kc6Jsph1kyM)
