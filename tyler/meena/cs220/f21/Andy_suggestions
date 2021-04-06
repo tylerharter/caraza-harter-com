@@ -1,0 +1,25 @@
+Andy's Notes for fall 2021
+
+Projects:
+
+General: 
+- From P3 on, students should be encouraged to write functions that take parameters.  Specific guidance should be given for most questions.
+- Deduction rules should be shared with students when the project is published.
+
+Project 9: Some of the questions were unclear in terms of what resutls were expected.  
+In some cases, the ordering of the problems did not help students write code that could be reused.
+Q9: it was not clear that if the title started with ", the student needed to grab the next char.
+Q11: I had to remove 3 genres that had 0 entries from my list to pass the test, but they should have been in the test
+Q14: The hint was not helpful.  Students can solve most of these problems using lambda and map.
+Q15: The test.py did not accept my answer due to ordering of the list.  This should be changed. 
+
+
+
+Lectures:
+
+
+
+Office Hours:
+1.  Idea to first have all sign up for 2 office hours in the most demanding times, then have all sign up for OH in remaining times
+
+
