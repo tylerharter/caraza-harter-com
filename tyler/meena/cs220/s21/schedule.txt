@@ -417,7 +417,9 @@ Pandas 2
 <b>No slides</b><br>
 <b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf">pdf</a>, <a href="materials/lec-30-worksheet.docx">docx</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-30">code</a><br>
-<!--b>Meena's lectures: </b><a href="">YouTube</a><br-->
+<b>Meena's lectures: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asv-JRF-WeDSdcxVuSNuqHd3">YouTube</a><br>
+<b>Alexi's lecture:</b> <a href="https://www.youtube.com/playlist?list=PLqNv0LNZgAExSoeLU1B2CU87PQtDhYpZl">YouTube</a> <a href="https://mediaspace.wisc.edu/playlist/dedicated/1_0f2pd7qw/">Kaltura</a> (1-4, plus part 8 from last time)<br>
+<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/alexi-lec-notes">Alexi's lecture notes</a><br>
 
 ################################################################################
 # PART 3
@@ -431,10 +433,12 @@ Web 1
 * requests module
 <!b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter12/">Sweigart Ch 12</a><br>
 <b>Due</b>: P10<br>
-<!--a href="materials/lec_30_F20.pdf">Link to Slides</a><br-->
+<a href="materials/lec_31_S21.pdf">Link to Slides</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p11">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p11">P11</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-30">code</a><br-->
-<!--b>Meena's lectures (YouTube): </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7asuMim6urFCXkM_gLKFSdBdf">Playlist</a><br-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-31">code</a><br>
+<b>Meena's lectures</b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7astvQhsmjnYDlnMhy7d1X4yW">YouTube</a><br>
+<b>Alexi's lecture:</b> <a href="https://www.youtube.com/playlist?list=PLqNv0LNZgAExSoeLU1B2CU87PQtDhYpZl">YouTube</a> <a href="https://mediaspace.wisc.edu/playlist/dedicated/1_0f2pd7qw/">Kaltura</a> (1-4)<br>
+<a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/alexi-lec-notes">Alexi's lecture notes</a><br>
 
 =
 Web 2

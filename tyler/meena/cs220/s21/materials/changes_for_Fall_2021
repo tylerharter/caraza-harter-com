@@ -1,3 +1,7 @@
 * Remove with usage from process_csv, read_json, write_json, and any other usages
 * Discuss removing generators topic and replacing that with lambdas, list / dict comprehensions, tuple packing / unpacking
-* 
+* Change project description to clearly state that students shouldn't submit code with syntax errors. They should comment out code in that cell before submitting. Partially answered questions with syntax errors won't be graded. Running test.py is mandatory. If there are issues, please attend office hours to get those resolved. 
+* Lectures which take too much time:
+  1. Strings (pre-typed examples during demo)
+  2. Pandas 1 (consider splitting examples to a notebook based worksheet)
+  3. Pandas 2 (consider splitting examples to a notebook based worksheet)
