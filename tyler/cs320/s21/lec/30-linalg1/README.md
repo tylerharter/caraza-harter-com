@@ -28,6 +28,13 @@ half[0] += 50
 print(a[0])
 ```
 
+You'll notice it prints 50, as numpy array slicing does not create a
+copy like list slicing does.  Replace the TODO with a call to this
+function that decouples `half` from `a`:
+https://numpy.org/doc/stable/reference/generated/numpy.ndarray.copy.html.
+Use the default arguments (don't pass anything in).  It should print 0
+(instead of 50) after the change.
+
 ## 2. Numpy Images
 
 ### Watch: [18-minute video](https://youtu.be/4e_inNpHqx8)
