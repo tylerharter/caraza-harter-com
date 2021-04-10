@@ -1,3 +1,6 @@
 Clustering 2
-* agglomerative
+* hierarchical clustering
+* dendrograms
+* linkage matrices
+* AgglomerativeClustering
 QUIZ 11 DUE<br>
