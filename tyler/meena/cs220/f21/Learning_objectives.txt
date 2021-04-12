@@ -387,4 +387,33 @@ Lecture 29:  Pandas Series
 
 27.4 Use Boolean expressions and binary operators to slice a Series
 
+Lecture 30: Pandas DataFrame
+
+Lecture 31:  Requests
+
+Lecture 32:  Generating HTML
+
+32.1 Explain the purpose and use of basic HTML tags.
+- h1, h2, p, br, i, b, a
+
+32.2 Given a Python data structure, write code to produce HTML
+- from Python list to HTML unordered list
+- from Python dictionary (read from CSV) to a series of linked HTML pages
+
+
+Lecture 33:  Scraping Web Data
+33.1 Using the Document Object Model of web pages, describe the 3 things a DOM element may contain, and give examples of each
+
+33.2 Create BeautifulSoup objects from an html string and use prettify to display
+
+33.3 Use the BeautifulSoup methods 'find' and 'find_all' to find particular elements by their tag
+
+33.4 Inspect a BeautufulSoup element to determine the contents of a web page using get_text(), children, and attrs
+
+33.5 Use BeautifulSoup to scrape a live web site.
+- find particular links inside a table
+- get the web page associated with each link and write to a local html file
+- create a html page with local links to the saved files
+- read data from each local file into a Pandas DataFrame
+- compare the DataFrame contents to the actual web sites
 
