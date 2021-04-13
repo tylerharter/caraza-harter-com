@@ -4,7 +4,9 @@ Projects:
 
 General: 
 - From P3 on, students should be encouraged to write functions that take parameters.  Specific guidance should be given for most questions.
-- Deduction rules should be shared with students when the project is published.
+- Deduction rules should be shared with students when the project is published. Deduction rules should be stated in a positive fashion.
+- Tests should fail early after writing a function, not later (edge cases tested early) 
+- fewer new questions, more questions that are testing other cases (Pokemon, Tweets)
 - this statement appeared in multiple project directions and it needs to be rewritten for clarity: 
 "Think twice before creating a function without any parameters. Defining a new functions is unnecessary sometimes. The advantage of writing functions is that we can reuse the same code. If we only use this function once, there is no need to create a new function."
 
