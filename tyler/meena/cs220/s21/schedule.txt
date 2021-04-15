@@ -481,9 +481,9 @@ Database 2
 * aggregates
 * group by
 <b>Due</b>: Quiz10<br>
-<!--a href="materials/lec_34_F20.pdf">Link to Slides</a><br-->
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-34">code</a><br-->
-<!--b>Meena's lecture: </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7assmIZjF3uNFOo0OhgvJNu3W">YouTube</a><br-->
+<b>No slides</b><br>
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-35">code</a><br>
+<!--b>Meena's lecture: </b><a href="">YouTube</a><br-->
 
 =
 Database 3
