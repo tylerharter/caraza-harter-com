@@ -7,6 +7,7 @@ Web Page:
 Projects:
 
 General: 
+- consider making the code reviews to follow a Canvas rubric with positive statements rather than negative statements.
 - Resubmissions should be allowed for the first 7 programming assignments.  By that point students should know what we expect and should not be allowed to resubmit.
 - From P3 on, students should be encouraged to write functions that take parameters.  Specific guidance should be given for most questions.
 - Deduction rules should be shared with students when the project is published. Deduction rules should be stated in a positive fashion.
@@ -21,6 +22,22 @@ Q9: it was not clear that if the title started with ", the student needed to gra
 Q11: I had to remove 3 genres that had 0 entries from my list to pass the test, but they should have been in the test
 Q14: The hint was not helpful.  Students can solve most of these problems using lambda and map.
 Q15: The test.py did not accept my answer due to ordering of the list.  This should be changed. 
+
+Project 11:
+
+Lab: 
+When we give students code, we should model good commenting style.  
+In the case of lab p11 the initial plotting code could be commented so that students can understand how it works. 
+In the case of factorial, a comment would let students know the recursive pattern.
+The factorial example should have the printing debugging code already in it. 
+The string reversal algorithm needs more scaffolding.
+Why did we teach recursion in week 5 when we talking about recursion in project 11 ? 
+These practice problems do not necessarily build student understanding.
+Problem 4 could use comments.
+Change 2nd sentence:  This shorthand is called a list comprehension, and it looks like a for loop inside a list. Things to note that are different that regular for loops:
+Missing the recursive list traversal.
+
+Project:
 
 
 
