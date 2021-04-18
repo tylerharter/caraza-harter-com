@@ -1,1 +1,4 @@
-Advanced Topics
+Model Deployment
+* data collection
+* pickling models
+* deployment
