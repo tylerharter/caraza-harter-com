@@ -493,7 +493,7 @@ Database 3
 * Pandas <--> SQL
 <b>Link to worksheet: </b><a href="materials/lec-36-worksheet.pdf">pdf</a>, <a href="materials/lec-36-worksheet.docx">docx</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-36">code</a><br>
-<!--b>Meena's lecture: </b><a href="">YouTube</a><br-->
+<b>Meena's lecture: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asurDi3Cz0Hcg_iTrj0iAxeh">YouTube</a><br>
 
 =
 Plotting 1
