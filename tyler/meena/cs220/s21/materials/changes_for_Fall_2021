@@ -8,3 +8,7 @@
 * Fix database 2 lecture template file grammatical issues with questions
 * Fix formatting of pandas (may be) worksheet docx version
 * Move class forms as a separate tab in the course website
+* Re-define penalty policy for:
+  1. Skipping test.py execution for later projects
+  2. Path hard coding for later projects
+  3. Taking advantage of resubmission policy - change course syllabus
