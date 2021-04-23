@@ -417,3 +417,19 @@ Lecture 33:  Scraping Web Data
 - read data from each local file into a Pandas DataFrame
 - compare the DataFrame contents to the actual web sites
 
+
+Lecture 34:
+
+
+Lecture 35:
+
+
+Lecture 36: 
+
+Lecture 37:  Matplotlib and Bar Plots
+
+
+
+Lecture 38:  Scatter Plots and Line Plots
+38.1 Use matplotlib to make a Scatter plot, including one with subplots
+38.2 Use matplotlib to make a Line plot
