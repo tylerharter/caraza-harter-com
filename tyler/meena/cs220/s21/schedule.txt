@@ -524,7 +524,7 @@ Plotting 3
 * bar plots
 <b>Read</b>: same as for "Plotting 2"<br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-39">code</a><br>
-<!--b>Meena's lecture: </b><a href="">YouTube</a><br-->
+<b>Meena's lecture: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7asuVjaYwWojBb2woCNe9Wctg">YouTube</a><br>
 
 =
 Plotting 4
