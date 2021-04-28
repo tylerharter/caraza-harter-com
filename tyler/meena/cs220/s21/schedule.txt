@@ -535,8 +535,8 @@ Plotting 4
 * design decisions
 <b>Read</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
 <b>Due</b>: P13<br>
-<!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-39">code</a><br-->
-<!--b>Meena's lecture: </b><a href="https://www.youtube.com/playlist?list=PLXeQ4WrA7astEp5BaLsyLfC7qU6LxeO69">YouTube</a><br-->
+<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-40">code</a><br>
+<!--b>Meena's lecture: </b><a href="">YouTube</a><br-->
 
 =
 Randomness
