@@ -1,4 +1,4 @@
-# Clutering: K-Means
+# Clustering: K-Means
 
 ## 1. K-Means from Scratch
 
