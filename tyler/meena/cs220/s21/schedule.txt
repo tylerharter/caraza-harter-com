@@ -548,7 +548,7 @@ Randomness
 <b>Due</b>: Quiz12<br>
 <a href="materials/lec_41_S21.pdf">Link to Slides</a><br>
 <b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-41">code</a><br>
-<!--b>Meena's lecture: </b><a href="">YouTube</a><br-->
+<b>Meena's lecture: </b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7ass2GG-42owXM5s_ysj6YrMD">YouTube</a><br>
 
 =
 Review/Catchup
