@@ -13,9 +13,6 @@ video_html = """
 <iframe style="width: 1032px; height: 653px;" title="Lecture" src="https://canvas.wisc.edu/courses/222429/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2F1660902-6.kaf.kaltura.com%2Fbrowseandembed%2Findex%2Fmedia%2Fentryid%2F{entry_id}%2FshowDescription%2Ffalse%2FshowTitle%2Ffalse%2FshowTags%2Ffalse%2FshowDuration%2Ffalse%2FshowOwner%2Ffalse%2FshowUploadDate%2Ffalse%2FplayerSize%2F1032x653%2FplayerSkin%2F25717641%2F" width="1032" height="653" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe>
 """
 
-with open("code.css") as f:
-    css = f.read()
-
 def main():
     # find Kaltura's video IDs using manual dump from website
     with open("kaltura-listing.html") as f:
