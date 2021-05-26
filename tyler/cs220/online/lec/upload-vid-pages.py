@@ -62,7 +62,7 @@ def main():
     videos.sort(reverse=True)
     for vid in videos:
         if len(sys.argv) == 1:
-            gen_video_doc(vid)
+            upload_video_doc(vid)
         for filter_text in sys.argv[1:]:
             if filter_text in vid:
                 upload_video_doc(vid)

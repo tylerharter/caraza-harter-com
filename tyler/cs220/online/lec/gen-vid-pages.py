@@ -55,6 +55,7 @@ def gen_video_doc(mp4_path):
     html = str(check_output(["pandoc", "--highlight-style=tango", "-s",
                              md_path, "-o", html_path]), "utf-8")
     html = str(check_output(["python3", "-m", "premailer", "-f", html_path]), "utf-8")
+    html = re.sub(r'font-size:\d+\%;', "", html) # remove anything that shrinks the text
 
     # insert video into HTML
     vhtml = video_html.format(entry_id=kaltura_ids[mp4_path])
