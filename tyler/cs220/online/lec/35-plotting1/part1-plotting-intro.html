@@ -3,5 +3,47 @@
 <p style="margin:1em 0">
 <iframe style="width: 1032px; height: 653px;" title="Lecture" src="https://canvas.wisc.edu/courses/222429/external_tools/retrieve?display=borderless&amp;url=https%3A%2F%2F1660902-6.kaf.kaltura.com%2Fbrowseandembed%2Findex%2Fmedia%2Fentryid%2F1_1c68sopl%2FshowDescription%2Ffalse%2FshowTitle%2Ffalse%2FshowTags%2Ffalse%2FshowDuration%2Ffalse%2FshowOwner%2Ffalse%2FshowUploadDate%2Ffalse%2FplayerSize%2F1032x653%2FplayerSkin%2F25717641%2F" width="1032" height="653" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *; autoplay *"></iframe>
 </p>
+<h1 id="practice" style="margin-top:1.4em">Practice</h1>
+<p style="margin:1em 0">Lets create a bar plot to show the frequency that each letter appears in the sentence “The quick brown fox jumps over the lazy dog”.</p>
+<p style="margin:1em 0">First, create a pandas Series where each entry the the upper case version of a letter in the above string. You’ll want to use <code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap'>.replace(" ", "")</code> to get rid of spaces, <code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap'>.upper()</code> to make everything uppercase, and <code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap'>list(...)</code> to covert the string to a list of characters, from which a Series can be created.</p>
+<pre style="margin:1em 0; overflow:auto"><code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap; overflow:visible; padding:0'>import pandas as pd
+text = "The quick brown fox jumps over the lazy dog"
+letters = pd.Series(????)
+letters</code></pre>
+<p style="margin:1em 0">Expected:</p>
+<pre style="margin:1em 0; overflow:auto"><code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap; overflow:visible; padding:0'>0     T
+1     H
+2     E
+3     Q
+4     U
+5     I
+6     C
+7     K
+8     B
+9     R
+10    O
+11    W
+12    N
+13    F
+14    O
+15    X
+...</code></pre>
+<p style="margin:1em 0">Use this (https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.value_counts.html) on <code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap'>letters</code> to count how often each letter appears:</p>
+<div class="sourceCode" id="cb3" style="background-color:#f8f8f8; overflow:visible; margin:1em 0" bgcolor="#f8f8f8"><pre class="sourceCode python" style="margin:0; overflow:visible; background-color:transparent"><code class="sourceCode python" style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre; overflow:visible; padding:0; background-color:transparent; position:relative'><span id="cb3-1" style="{color:inherit; text-decoration:inherit; display:inline-block; line-height:1.25} :empty{height:1.2em}"><a href="#cb3-1" aria-hidden="true" tabindex="-1" style="{color:#1a1a1a} :visited{color:#1a1a1a}"></a>counts <span class="op" style="color:#ce5c00; font-weight:bold">=</span> ????</span>
+<span id="cb3-2" style="{color:inherit; text-decoration:inherit; display:inline-block; line-height:1.25} :empty{height:1.2em}"><a href="#cb3-2" aria-hidden="true" tabindex="-1" style="{color:#1a1a1a} :visited{color:#1a1a1a}"></a>counts</span></code></pre></div>
+<p style="margin:1em 0">Expected:</p>
+<pre style="margin:1em 0; overflow:auto"><code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap; overflow:visible; padding:0'>O    4
+E    3
+T    2
+R    2
+U    2
+H    2
+Q    1
+L    1
+...</code></pre>
+<p style="margin:1em 0">Create a bar plot plot from the <code style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre-wrap'>counts</code> Series:</p>
+<div class="sourceCode" id="cb5" style="background-color:#f8f8f8; overflow:visible; margin:1em 0" bgcolor="#f8f8f8"><pre class="sourceCode python" style="margin:0; overflow:visible; background-color:transparent"><code class="sourceCode python" style='font-family:Menlo, Monaco, "Lucida Console", Consolas, monospace;  margin:0; white-space:pre; overflow:visible; padding:0; background-color:transparent; position:relative'><span id="cb5-1" style="{color:inherit; text-decoration:inherit; display:inline-block; line-height:1.25} :empty{height:1.2em}"><a href="#cb5-1" aria-hidden="true" tabindex="-1" style="{color:#1a1a1a} :visited{color:#1a1a1a}"></a>ax <span class="op" style="color:#ce5c00; font-weight:bold">=</span> ????.plot.????()</span>
+<span id="cb5-2" style="{color:inherit; text-decoration:inherit; display:inline-block; line-height:1.25} :empty{height:1.2em}"><a href="#cb5-2" aria-hidden="true" tabindex="-1" style="{color:#1a1a1a} :visited{color:#1a1a1a}"></a>ax.set_xlabel(<span class="st" style="color:#4e9a06">"Letter"</span>)</span>
+<span id="cb5-3" style="{color:inherit; text-decoration:inherit; display:inline-block; line-height:1.25} :empty{height:1.2em}"><a href="#cb5-3" aria-hidden="true" tabindex="-1" style="{color:#1a1a1a} :visited{color:#1a1a1a}"></a>ax.????(<span class="st" style="color:#4e9a06">"Frequency"</span>)</span></code></pre></div>
 <h1 id="questions-about-the-lecture" style="margin-top:1.4em">Questions About the Lecture?</h1>
 <p style="margin:1em 0">Please ask below.</p>
