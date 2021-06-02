@@ -2,6 +2,7 @@
 * Deserialization
 * Serialization
 * Pretty Printing
+
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter14/">Sweigart Ch 14</a><br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-20">code</a><br>
+
 

@@ -3,5 +3,6 @@
 * Assignment
 * Types of errors
 * Comments
+
 <b>Read</b>: Downey Ch 2<br>
 

@@ -3,4 +3,5 @@
 * URLs
 * HTTP: GET and POST
 * requests module
+
 <b>Read</b>: <a href="https://automatetheboringstuff.com/chapter11/">Sweigart Ch 11</a><br>

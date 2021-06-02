@@ -3,4 +3,5 @@
 * Lookup
 * Insert
 * Pop
+
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
