@@ -1,6 +1,4 @@
-Pseudocode
+# Pseudocode
 * Flow of Execution
 * State
-<a href="lec/03-pseudocode/lec-03-worksheet.pdf">Link to Worksheet</a><br>
-<b>No Slides</b>
 

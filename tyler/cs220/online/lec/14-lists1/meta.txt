@@ -1,11 +1,8 @@
-Lists
+# Lists
 * Sequence, Like a String
 * Indexing, Slicing
 * sys.argv, dir()
 * Mutable vs. Immutable
 * List Methods
-
-<a href="lec/14-lists1/slides.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 10<br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-15">code</a><br>
 

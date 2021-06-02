@@ -1,4 +1,4 @@
-Function Scope
+# Function Scope
 
 * Local vs. Global
 * Argument Passing
@@ -6,6 +6,4 @@ Function Scope
 * Stack Diagrams
 
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
-<a href="materials/lec-08.pdf">Link to Slides</a><br>
-<a href="lec/08-functions3/lec-08.html">Interactive Exercises</a><br>
 

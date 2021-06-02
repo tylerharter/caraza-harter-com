@@ -1,7 +1,4 @@
-Plotting 1
+# Plotting 1
 * bar+scatter plots
 * plot design
 * AxesSublot
-<b>Reading</b>: Matplotlib Intro (<a href="lec/35-plotting1/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs301/fall19/readings">.ipynb and data</a>)<br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-36">code</a>
-

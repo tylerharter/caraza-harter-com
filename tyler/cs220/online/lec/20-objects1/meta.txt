@@ -1,9 +1,6 @@
-Objects
+# Objects
 * namedtuple and recordclass
 * Mutability
 * References
 * Python Tutor
-<a href="materials/lec-22.pdf">Link to Slides</a><br>
-<a href="lec/20-objects1/lec-22.html">Interactive Exercises</a><br>
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
-

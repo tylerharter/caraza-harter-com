@@ -1,6 +1,2 @@
-List Practice
+# List Practice
 * Coding Demos
-<a href="lec/16-lists3/lec-18-worksheet.pdf">Link to Worksheet</a><br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-16">code (w/ Wed code)</a><br>
-<b>No Slides</b>
-

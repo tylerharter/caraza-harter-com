@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+  Python Tutor: https://github.com/pgbovine/OnlinePythonTutor/
+  Copyright (C) Philip Guo (philip@pgbovine.net)
+  LICENSE: https://github.com/pgbovine/OnlinePythonTutor/blob/master/LICENSE.txt
+-->
+
+<head>
+  <title>CS 301 - Counting Letters</title>
+
+  <script type="text/javascript" src="../js/pytutor-embed.bundle.js" charset="utf-8"></script>
+
+</head>
+
+<body style="background-color: white;">
+
+<h1>Counting Letters</h1>
+
+
+
+<div id="lec-19_p1_py"></div>
+<script type="text/javascript">
+  var trace = {"code": "word = \"banana\"\ncounts = {}\n\nfor letter in word:\n    if letter in counts:\n        counts[letter] += 1\n    else:\n        counts[letter] = 1\n\nprint(counts)\n", "trace": [{"line": 1, "event": "step_line", "func_name": "<module>", "globals": {}, "ordered_globals": [], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 2, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana"}, "ordered_globals": ["word"], "stack_to_render": [], "heap": {}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1]}, "ordered_globals": ["word", "counts"], "stack_to_render": [], "heap": {"1": ["DICT"]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "b"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT"]}, "stdout": ""}, {"line": 8, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "b"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT"]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "b"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1]]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1]]}, "stdout": ""}, {"line": 8, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1]]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1]]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1]]}, "stdout": ""}, {"line": 8, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1]]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1], ["n", 1]]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1], ["n", 1]]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 1], ["n", 1]]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 1]]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 1]]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 1]]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "n"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 2]]}, "stdout": ""}, {"line": 5, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 2]]}, "stdout": ""}, {"line": 6, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 2], ["n", 2]]}, "stdout": ""}, {"line": 4, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 3], ["n", 2]]}, "stdout": ""}, {"line": 10, "event": "step_line", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 3], ["n", 2]]}, "stdout": ""}, {"line": 10, "event": "return", "func_name": "<module>", "globals": {"word": "banana", "counts": ["REF", 1], "letter": "a"}, "ordered_globals": ["word", "counts", "letter"], "stack_to_render": [], "heap": {"1": ["DICT", ["b", 1], ["a", 3], ["n", 2]]}, "stdout": "{'b': 1, 'a': 3, 'n': 2}\n"}]};
+  addVisualizerToPage(trace, 'lec-19_p1_py',  {startingInstruction: 0, hideCode: false, lang: "py3"});
+</script>
+
+
+
+
+
+</body>
+</html>

@@ -1,6 +1,0 @@
-Randomness
-* Debugging
-* Simulation
-* Significance
-<a href="materials/lec-42.pdf">Link to Slides</a><br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-41">code</a>

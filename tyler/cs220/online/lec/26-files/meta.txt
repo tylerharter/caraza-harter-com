@@ -1,8 +1,6 @@
-Files and Directories
+# Files and Directories
 * Reading
 * Writing
 * Listing children
-<a href="materials/lec-28.pdf">Link to Slides</a><br>
 <b>Read</b>: Downey Ch 14
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-27">code</a><br>
 

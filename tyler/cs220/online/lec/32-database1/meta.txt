@@ -1,11 +1,7 @@
-Database 1
+# Database 1
 * schemas/types
 * queries
 * where
 * SQLite
 * Querying from Pandas
-<a href="materials/lec-35.pdf">Link to Slides</a><br>
-<b>Due</b>: P9<br>
-<b>Assigned</b>: <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/lab-p10a">Lab-P10a</a>, <a href="https://github.com/tylerharter/cs301-projects/tree/master/fall19/p10">P10</a><br>
-<b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs301/fall19/materials/code/lec-34">code</a><br>
 

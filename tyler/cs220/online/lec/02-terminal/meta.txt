@@ -1,7 +1,5 @@
-The Terminal
+# The Terminal
 * Terminal Emulatation
 * Shells
 * Navigation
 * Program Execution
-<a href="materials/lec-02.pdf">Link to Slides</a>
-
