@@ -47,7 +47,7 @@ def cdelete(url):
     return r.json()
 
 def main():
-    pages = {p["title"]: p for p in cget("pages")}
+    pages = {p["title"]: p for p in cget("pages?per_page=500")}
 
     for root, _, fnames in sorted(list(os.walk("."))):
         for fname in fnames:

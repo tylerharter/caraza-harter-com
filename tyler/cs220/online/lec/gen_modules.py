@@ -67,6 +67,7 @@ def add_page(self, name, content):
                                "completion_requirement": {"type": "must_view"}}})
 
 def main():
+    pages = {p["title"]: p for p in cget("pages?per_page=500")}
     folders = cget("folders?per_page=500")
     folders = {f["full_name"]: f for f in folders}
     all_discussions = cget("discussion_topics?per_page=500")
@@ -80,9 +81,16 @@ def main():
             # create module
             modnum = int(dirname.split("/")[-1].split("-")[0])
             modname = f.readline().lstrip("#").strip()
+            page = pages[modname]
             modname = (f"{modnum}. {modname}")
             r = cpost("modules", {"module": {"name": modname}})
             mod_id = r["id"]
+
+            # add meta page to beginning of module
+            r = cpost(f"modules/{mod_id}/items",
+                      {"module_item": {"title": page["title"],
+                                       "type": "Page",
+                                       "page_url": page["url"]}})
 
             # find files for this module
             folder = folders[f"course files/lessons/{dirname}"]
@@ -117,23 +125,6 @@ def main():
                           {"module_item": {"type": "File",
                                            "content_id": f["id"]}})
 
-        break
-
-    return
-    m = Module(f"Week {week}")
-    for i, day in enumerate(days):
-        dnum = i+1
-
-        url = f"https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs320/s21/lec/{day}"
-        m.add_page(f'Watch (W{week}.{dnum})', f'<p>Watch this: <a href="{url}">{url}</a></p><br>')
-
-        if os.path.exists(os.path.join("lec", day, "reading.html")):
-            url = f"https://tyler.caraza-harter.com/cs320/s21/lec/{day}/reading.html"
-            m.add_page(f'Read (W{week}.{dnum})', f'<p>Read this: <a href="{url}">{url}</a></p><br>')
-
-        if dnum == 1:
-            url = f"https://github.com/tylerharter/cs320/tree/master/s21/lab{week}"
-            m.add_page(f'Lab (W{week})', f'<p>Do this: <a href="{url}">{url}</a></p><br>')
 
 if __name__ == '__main__':
      main()
