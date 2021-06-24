@@ -4,10 +4,20 @@ from multiprocessing import Pool
 BUCKET = 'caraza-harter-cs301'
 SKIP = ['logs/']
 
+def get_profile_name():
+    if not os.path.exists("aws_profile.txt"):
+        profile = input("What is the name of your AWS profile in the credentials file? ")
+        with open("aws_profile.txt", "w") as f:
+            f.write(profile)
+    with open("aws_profile.txt") as f:
+        profile = f.read().strip()
+    print(f"using profile {profile} from aws_profile.txt")
+    return profile
+
 # return all S3 objects with the given key prefix, using as many
 # requests as necessary
 def s3_all_keys(Prefix):
-    session = boto3.Session(profile_name='cs301ta')
+    session = boto3.Session(profile_name=get_profile_name())
     s3 = session.client('s3')
 
     ls = s3.list_objects_v2(Bucket=BUCKET, Prefix=Prefix, MaxKeys=10000)
@@ -31,7 +41,7 @@ def chunks(l):
     return c
 
 def download_chunk(paths):
-    session = boto3.Session(profile_name='cs301ta')
+    session = boto3.Session(profile_name=get_profile_name())
     s3 = session.client('s3')
 
     try:

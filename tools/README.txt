@@ -1,3 +1,12 @@
+Directions:
+
+
+
+
+
+
+========================================
+
 email_announcement.py:
     send emails from a JSON file
 
