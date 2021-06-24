@@ -1,9 +1,42 @@
 Directions:
 
+You'll need access to the subdirectory of the S3 bucket that represents your course:
+"a" directory: Meena's course
+"b" directory: Tyler's course
+"c" directory: Peyman's course
 
+The ~/.aws/credentials file should contain something like this:
 
+[yourname]
+aws_access_key_id = ????
+aws_secret_access_key = ????
 
+Main steps:
+1. update/upload roster
+2. download submissions
+3. assign CRs
+4. run auto-grader
+5. generate pN.json grade files
+6. upload grades to Canvas
 
+1. Roster:
+- export canvas grades to canvas.csv
+- run canvas_to_roster.py to update roster.json
+- run "aws s3 cp roster.json s3://caraza-harter-cs301/<COURSE_DIR>/roster.json"
+
+2. Download
+- run "python3 s3_backup.py <COURSE_DIR>" twice
+- look in "snapshot" directory
+
+3. Assign CRs
+- download S3 files (as above)
+- Create a tas.json that looks like this:
+  [{"email":"????", "name":"????", "weight":1}, ...]
+- update "COURSE" variable in assign-crs.py to match your course directory
+- run "python3 assign-crs.py p1" (or similar)
+- run "aws s3 cp p1-cr-assignments.json s3://caraza-harter-cs301/<COURSE_DIR>/projects/p1-cr-assignments.json" (or similar)
+
+4. see here: https://github.com/tylerharter/cs320/tree/master/grader
 
 ========================================
 
