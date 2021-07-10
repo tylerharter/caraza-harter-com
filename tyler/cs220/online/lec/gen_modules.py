@@ -70,7 +70,15 @@ def main():
     pages = {p["title"]: p for p in cget("pages?per_page=500")}
     folders = cget("folders?per_page=500")
     folders = {f["full_name"]: f for f in folders}
-    all_discussions = cget("discussion_topics?per_page=500")
+    all_discussions = []
+    pg = 1
+    while True:
+        tmp = cget(f"discussion_topics?per_page=500&page={pg}")
+        if tmp:
+            all_discussions.extend(tmp)
+        else:
+            break
+        pg += 1
     all_discussions.sort(key=lambda d: d["title"])
 
     for dirname in sorted(os.listdir(".")):
@@ -80,6 +88,8 @@ def main():
         with open(meta) as f:
             # create module
             modnum = int(dirname.split("/")[-1].split("-")[0])
+            if modnum not in (27,):
+                continue
             modname = f.readline().lstrip("#").strip()
             page = pages[modname]
             modname = (f"{modnum}. {modname}")
@@ -99,9 +109,10 @@ def main():
                              headers={"Authorization": "Bearer "+cred})
             r.raise_for_status()
             files = {f["filename"]: f for f in r.json()}
-            
+
             # add discussions (containing videos) to module
-            discussions = [d for d in all_discussions if d["title"].split("/")[1] == dirname]
+            discussions = [d for d in all_discussions
+                           if "/" in d["title"] and d["title"].split("/")[1] == dirname]
 
             for name in ["worksheet.pdf"]:
                 if not name in files:

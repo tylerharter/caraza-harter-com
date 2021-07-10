@@ -2,7 +2,7 @@ import os, sys, json, copy, math
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict as ddict
 
-COURSE = 'b'
+COURSE = 'c'
 not_reviewed = {}
 CR_URL = 'https://tyler.caraza-harter.com/cs320/f20/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 
@@ -22,12 +22,12 @@ class Grades:
     def __init__(self, project):
         self.project = project
 
-        with open("config.json") as f:
+        with open(f"snapshot/{COURSE}/config.json") as f:
             deadlines = json.load(f)["deadlines"]
         # end of day (add 24 hours)
         self.deadline = datetime.strptime(deadlines[project], "%m/%d/%y").astimezone(tz=timezone.utc) + timedelta(days=1)
 
-        with open('roster.json') as f:
+        with open(f"snapshot/{COURSE}/roster.json") as f:
             net_ids = {row['net_id'] for row in json.load(f) if row['enrolled']}
 
         self.extensions = self.get_extensions()
