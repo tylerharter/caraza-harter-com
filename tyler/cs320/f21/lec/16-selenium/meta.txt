@@ -1,0 +1,6 @@
+Web 1: Selenium
+* advanced web scraping
+SLIDES
+<a href="https://tyler.caraza-harter.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>
+QUIZ 4 DUE<br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab6">DFS vs. BFS</a><br>

@@ -1,0 +1,7 @@
+Regression 1
+* ML overview
+* sklearn LinearRegression
+* explained variance
+* train/test split
+QUIZ 8 DUE<br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab10">Regressions and SQL</a><br>

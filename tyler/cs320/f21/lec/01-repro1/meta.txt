@@ -1,0 +1,6 @@
+Reproducibility 1
+* Course Overview
+* Hardware, OS, Interpreters
+<b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab1">Cloud Setup</a><br>
+SLIDES

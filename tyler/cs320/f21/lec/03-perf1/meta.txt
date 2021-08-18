@@ -1,0 +1,5 @@
+Quantifying Perf 1
+* check_output
+* time
+#<a href="lec/03-perf1/lec3-morning.ipynb">LECTURE NB</a><br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p1">P1 (perf measurements)</a><br>
