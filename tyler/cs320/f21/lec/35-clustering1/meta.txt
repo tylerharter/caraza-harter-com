@@ -1,3 +1,0 @@
-Clustering 1
-* k-means
-

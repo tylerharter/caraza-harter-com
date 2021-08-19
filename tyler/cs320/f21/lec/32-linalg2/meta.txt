@@ -1,0 +1,5 @@
+Linear Algebra 2
+* more multiplication
+* fit with np.linalg.solve
+* predict with np.dot
+* column perspective

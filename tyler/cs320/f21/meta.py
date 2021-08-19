@@ -14,10 +14,14 @@ def main():
                     paths.append(os.path.join(root, name))
         paths.sort()
         metas = [{"path": p, "lines": lines(p)} for p in paths]
-        with open("metas.txt", "w") as f:
+        with open("metas.json", "w") as f:
             json.dump(metas, f, indent=2)
     else:
-        pass
+        with open("metas.json") as f:
+            metas = json.load(f)
+        for meta in metas:
+            with open(meta["path"], "w") as f:
+                f.write("\n".join(meta["lines"]) + "\n")
 
 if __name__ == '__main__':
      main()

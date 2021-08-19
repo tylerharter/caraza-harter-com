@@ -1,0 +1,7 @@
+Clustering 2
+* hierarchical clustering
+* dendrograms
+* linkage matrices
+* AgglomerativeClustering
+QUIZ 11 DUE<br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab13">Clustering Pixels</a><br>

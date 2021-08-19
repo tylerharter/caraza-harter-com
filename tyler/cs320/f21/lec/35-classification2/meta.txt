@@ -1,0 +1,6 @@
+Classification 2
+* confusion matrices
+* accuracy, precision, recall
+* regularization and standardization
+<b>Due:</b> P6<br>
+<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p7">P7 (classification)</a><br>

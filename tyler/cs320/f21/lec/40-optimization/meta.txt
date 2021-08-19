@@ -1,6 +1,0 @@
-Optimization
-* gradient descent
-* least squares
-<b>Due:</b> P7<br>
-SLIDES
-

@@ -1,4 +1,0 @@
-Model Deployment
-* data collection
-* pickling models
-* deployment

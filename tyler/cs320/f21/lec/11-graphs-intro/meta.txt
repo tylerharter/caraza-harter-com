@@ -1,4 +1,0 @@
-Graphs and Tree Intro
-* types of graph
-* graphviz
-

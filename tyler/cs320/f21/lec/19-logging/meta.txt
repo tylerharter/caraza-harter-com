@@ -1,8 +1,0 @@
-Web 4: Logging, Rate Limiting, and robots.txt
-* wrappers based on *args and **kwargs*
-* robots.txt
-* HTTP 429
-QUIZ 5 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab7">Web</a><br>
-<b>Due:</b> P3<br>
-<b>Released:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/p4">P4 (website)</a><br>

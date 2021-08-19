@@ -1,6 +1,0 @@
-Linear Algebra 1
-* numpy arrays
-* numpy images
-* multiplication
-QUIZ 9 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab11">Dot Product and Counting Cells</a><br>

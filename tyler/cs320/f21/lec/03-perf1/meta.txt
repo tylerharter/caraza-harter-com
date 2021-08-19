@@ -1,4 +1,4 @@
-Quantifying Perf 1
+Performance 1
 * check_output
 * time
 #<a href="lec/03-perf1/lec3-morning.ipynb">LECTURE NB</a><br>

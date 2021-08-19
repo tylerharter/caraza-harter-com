@@ -1,0 +1,7 @@
+Regex 1
+* character classes
+* repetition
+* anchoring
+<b>Read</b>: <a href="http://www.textbook.ds100.org/ch/12/text_intro.html">DS100 Ch 12</a><br>
+QUIZ 6 DUE<br>
+<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab8">Regex</a><br>

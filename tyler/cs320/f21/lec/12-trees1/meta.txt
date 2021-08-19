@@ -1,5 +1,0 @@
-Trees 1
-* trees
-* binary trees
-* binary search trees (BSTs)
-
