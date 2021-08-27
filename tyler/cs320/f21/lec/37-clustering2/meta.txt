@@ -3,5 +3,4 @@ Clustering 2
 * dendrograms
 * linkage matrices
 * AgglomerativeClustering
-QUIZ 11 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab13">Clustering Pixels</a><br>
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab13">Clustering Pixels</a><br>

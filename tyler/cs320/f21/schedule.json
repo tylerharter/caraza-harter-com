@@ -1,12 +1,12 @@
 {
   "sections":{
     "1": ["Part 1: Performance"],
-    "6": ["Part 2: Web and Visualization"],
+    "7": ["Part 2: Web and Visualization"],
     "11": ["Part 3: Machine Learning"]
   },
   "holiday":{
     "09/06": ["Labor Day"],
     "11/26": ["Thanksgiving Break"],
-    "11/01": ["In-Class Midterm"]
+    "11/03": ["In-Class Midterm"]
   }
 }

@@ -1,4 +1,4 @@
 Parallelism 2
 * pytorch
-QUIZ 12 DUE<br>
-<b>Lab:</b> <a href="https://github.com/tylerharter/cs320/tree/master/s21/lab14">Datasets for Final</a><br>
+<b>Lab:</b> TBD<br>
+<b>Due:</b> P7<br>

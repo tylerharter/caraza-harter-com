@@ -2,3 +2,4 @@ Decomposition
 * Singular Value Decomposition (SVD)
 * Principal Component Analysis (PCA)
 * Compressing Data
+QUIZ 11 DUE<br>

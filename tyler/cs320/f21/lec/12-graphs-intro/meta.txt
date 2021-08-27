@@ -1,4 +1,4 @@
 Graphs and Tree Intro
 * types of graph
 * graphviz
-
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab4">Linked Lists</a><br>

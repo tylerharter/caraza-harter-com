@@ -1,4 +1,6 @@
 Visualization 3
 * shapely
 * animations
-
+<b>Due:</b> P4<br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p5">P5 (trace analysis)</a><br>
+QUIZ 7 DUE<br>
