@@ -1,0 +1,4 @@
+Linear Algebra 1
+* numpy arrays
+* numpy images
+* multiplication

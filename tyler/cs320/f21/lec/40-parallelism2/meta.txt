@@ -1,0 +1,4 @@
+Parallelism 2
+* pytorch
+<b>Lab:</b> TBD<br>
+<b>Due:</b> P7<br>

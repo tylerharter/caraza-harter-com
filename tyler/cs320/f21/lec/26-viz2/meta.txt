@@ -1,0 +1,5 @@
+Visualization 2
+* geographic maps
+* shapefiles
+* high resolution graphics
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab9">Geo Maps</a><br>

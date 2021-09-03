@@ -1,0 +1,5 @@
+Classification 2
+* confusion matrices
+* accuracy, precision, recall
+* regularization and standardization
+QUIZ 10 DUE<br>

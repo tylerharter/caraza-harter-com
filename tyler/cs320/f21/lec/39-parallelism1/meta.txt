@@ -1,0 +1,4 @@
+Parallelism 1
+* multiprocessing pools
+* parallel map
+

@@ -1,0 +1,4 @@
+Web 4: Logging, Rate Limiting, and robots.txt
+* wrappers based on *args and **kwargs*
+* robots.txt
+* HTTP 429

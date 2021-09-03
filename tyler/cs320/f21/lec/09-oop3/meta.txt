@@ -1,0 +1,8 @@
+OOP 3: Inheritance
+* method resolution order
+* overriding methods
+* calling overridden methods
+<b>Due:</b> P1<br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p2">P2 (trees)</a><br>
+<b>Optional Reading</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab3">Files and Complexity</a><br>

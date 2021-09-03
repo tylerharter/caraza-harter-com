@@ -1,0 +1,3 @@
+Graph Search 1
+* depth-first search
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab5">BSTs</a><br>
