@@ -388,6 +388,10 @@ Database 1
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p12">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p12">P12</a><br-->
 
 =
+No class
+* Thanksgiving!
+
+=
 Database 2
 * aggregates
 * group by
@@ -403,16 +407,11 @@ Database 3
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-36">code</a><br-->
 
 =
-No class
-* Thanksgiving!
-
-=
 Plotting 1
 * bar+scatter plots
 * plot design
 * AxesSublot
 <b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
-<b>Due</b>: P12<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-37">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p13">P13</a><br-->
 
@@ -427,6 +426,7 @@ Plotting 2
 Plotting 3
 * bar plots
 <b>Read</b>: same as for "Plotting 2"<br>
+<b>Due</b>: P12<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-39">code</a><br-->
 
 =
@@ -435,7 +435,7 @@ Plotting 4
 * adjacent plots
 * design decisions
 <b>Read</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
-<b>Due</b>: P13<br>
+<b>Due</b>: Quiz12<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-40">code</a><br-->
 
 =
@@ -443,11 +443,11 @@ Randomness
 * Debugging
 * Simulation
 * Significance
-<b>Due</b>: Quiz12<br>
 <!--a href="materials/lec_41_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-41">code</a><br-->
 
 =
 Review/Catchup
 * Bring Questions
+<b>Due</b>: P13<br>
 <!--a href="materials/lec-42-worksheet.pdf">Link to Worksheet</a><br-->
