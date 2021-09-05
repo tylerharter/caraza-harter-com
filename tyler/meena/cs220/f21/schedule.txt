@@ -13,7 +13,7 @@ Introduction
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
 <!--a href="materials/lec_01_S21.pdf">Link to Slides</a><br-->
 <b>Python3 (Anaconda3) installation</b>: <a href="https://www.youtube.com/watch?v=fUohsnkuiKQ">Windows</a>, <a href="https://www.youtube.com/watch?v=BI4J4-3nWhQ">MAC</a><br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p1">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p1">P1</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p1">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p1">P1</a><br-->
 <b>P1 Walkthrough:</b> <a href ="https://www.youtube.com/watch?v=zkKXShIK9EQ">Windows</a>, <a href="https://www.youtube.com/watch?v=6941Uos4B9w">MAC</a><br>
 
 =
@@ -29,7 +29,7 @@ The Terminal
 Pseudocode
 * Flow of Execution
 * State
-<b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx">docx</a><br-->
 <b>No slides</b><br/>
 
 =
@@ -40,10 +40,11 @@ Programming
 * Boolean Logic
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
+<b>Due</b>: P1<br>
 <!--a href="materials/lec_04_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf">pdf</a>, <a href="materials/lec-04-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf">pdf</a>, <a href="materials/lec-04-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-04/">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p2">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p2">P2</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p2">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p2">P2</a><br-->
 
 =
 Vars and Exprs
@@ -52,7 +53,7 @@ Vars and Exprs
 * Types of errors
 * Comments
 <b>Read</b>: Downey Ch 2<br>
-<b>Due</b>: P1<br>
+<b>Due</b>: Quiz1<br>
 <!--a href="materials/lec_05_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-05">code</a><br-->
 
@@ -66,7 +67,6 @@ Using Functions
 * Math Module
 
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
-<b>Due</b>: Quiz1<br>
 <!--a href="materials/lec_06_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-06">code</a><br-->
 
@@ -79,11 +79,12 @@ Creating Functions
 
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
 <b>Read</b>: <a href="materials/lec-07-extra.pdf">Creating Fruitful Functions</a><br>
+<b>Due</b>: P2<br>
 <!--a href="materials/lec_07_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf">pdf</a>, <a href="materials/lec-07-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf">pdf</a>, <a href="materials/lec-07-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-07">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p3">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p3">P3</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p3">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p3">P3</a><br-->
 
 =
 Function Scope
@@ -94,7 +95,7 @@ Function Scope
 * Stack Diagrams
 
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
-<b>Due</b>: P2<br>
+<b>Due</b>: Quiz2<br>
 <!--a href="materials/lec_08_S21.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec08-InteractiveExercises.html">Interactive Exercises</a><br-->
 
@@ -110,19 +111,19 @@ Conditionals 1
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
 <!--a href="materials/lec_09_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf">pdf</a>, <a href="materials/lec-09-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf">pdf</a>, <a href="materials/lec-09-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec09-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-09">code</a><br-->
-<b>Due</b>: Quiz2<br>
 
 =
 Conditionals 2
 * Refactoring
 * Nesting
+<b>Due</b>: P3<br>
 <!--a href="materials/lec_10_S21.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-10">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p4">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p4">P4</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p4">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p4">P4</a><br-->
 
 =
 Iteration 1
@@ -131,7 +132,7 @@ Iteration 1
 * Infinite Iteration
 
 <b>Read</b>: Downey Ch 7<br>
-<b>Due</b>: P3<br>
+<b>Due</b>: Quiz3<br>
 <!--a href="materials/lec_11_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-11">code</a><br-->
 <b>Code review walkthrough: </b><a href="https://www.youtube.com/watch?v=fXKWTiDC9XQ">YouTube</a><br>
@@ -141,9 +142,9 @@ Iteration 2
 * Break
 * Continue
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/">Sweigart Ch 2</a><br>
-<b>Due</b>: Quiz3<br>
+<b>Due</b>: P4<br>
 <!--a href="materials/lec_12_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-12">code</a><br-->
 
@@ -159,14 +160,14 @@ Strings
 
 <b>Read</b>: Downey Ch 8<br>
 <b>Optional</b>: Downey Ch 9<br>
-<b>Due</b>: P4<br>
 <!--a href="materials/lec_14_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-14-worksheet.pdf">pdf</a>, <a href="materials/lec-14-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-14-worksheet.pdf">pdf</a>, <a href="materials/lec-14-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-14">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p5">P5</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p5">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p5">P5</a><br-->
 
 =
-Exam 1
+Exam 1 review day
+* Evening exam
 
 
 ################################################################################
@@ -195,7 +196,7 @@ CSV Tables
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <!--a href="materials/lec_16_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-16">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p6">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p6">P6</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p6">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p6">P6</a><br-->
 <!--a href="https://youtu.be/dtnZXpUSn6M">P6 Q4 Strategy Guide</a><br-->
 
 =
@@ -203,7 +204,7 @@ List Practice
 * Coding Demos
 <b>Due</b>: P5<br>
 <b>No slides</b><br>
-<b>Link to worksheet: </b><a href="materials/lec-17-worksheet.pdf">pdf</a>, <a href="materials/lec-17-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-17-worksheet.pdf">pdf</a>, <a href="materials/lec-17-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec18-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-16">code</a><br-->
 
@@ -228,7 +229,7 @@ Dictionaries 2
 <!--a href="materials/lec_19_S21.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html">Interactive Exercises</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-19">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p7">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p7">P7</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p7">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p7">P7</a><br-->
 
 =
 JSON
@@ -238,7 +239,7 @@ JSON
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a><br>
 <b>Due</b>: P6<br>
 <!--a href="materials/lec_20_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-20-worksheet.pdf">pdf</a>, <a href="materials/lec-20-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-20-worksheet.pdf">pdf</a>, <a href="materials/lec-20-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-20">code</a><br-->
 
 
@@ -261,9 +262,9 @@ Copying
 * Deep Copy
 <!b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <!--a href="materials/lec_22_S21.pdf">Link to Slides</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf">pdf</a>, <a href="materials/lec-22-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf">pdf</a>, <a href="materials/lec-22-worksheet.docx">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html">Interactive Exercises</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p8">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p8">P8</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p8">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p8">P8</a><br-->
 
 =
 Recursive Functions
@@ -294,7 +295,7 @@ Iterators
 * list comprehension
 <!--a href="materials/lec_25_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-25">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p9">Lab-P9</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p9">P9</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p9">Lab-P9</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p9">P9</a><br-->
 
 =
 Error Handling
@@ -305,7 +306,7 @@ Error Handling
 <b>Due</b>: P8<br>
 <!--a href="materials/lec_26_S21.pdf">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html">Interactive Exercises</a><br-->
-<b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf">pdf</a>, <a href="materials/lec-26-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf">pdf</a>, <a href="materials/lec-26-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-26">code</a><br-->
 
 =
@@ -319,12 +320,13 @@ Files and Directories
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-27">code</a><br-->
 
 =
-Exam 2
+Exam 2 review day
+* Evening exam
 <b>Due</b>: CS319 graduate project proposal (Not applicable to CS220 students)<br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p10">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p10">P10</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p10">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p10">P10</a><br-->
 
 =
-Pandas 1 (Data Science topic)
+Pandas 1 (DS topic)
 * series
 * element-wise operations
 <b>Read</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
@@ -337,7 +339,7 @@ Pandas 2
 * dataframe
 * reading CSVs
 <b>No slides</b><br>
-<b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf">pdf</a>, <a href="materials/lec-30-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf">pdf</a>, <a href="materials/lec-30-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-30">code</a><br-->
 
 ################################################################################
@@ -355,7 +357,7 @@ Web 1
 <!--a href="materials/lec_31_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-31">code</a><br-->
 <b>Meena's lectures</b><a href="https://youtube.com/playlist?list=PLXeQ4WrA7astvQhsmjnYDlnMhy7d1X4yW">YouTube</a><br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p11">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p11">P11</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p11">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p11">P11</a><br-->
 
 =
 Web 2
@@ -383,7 +385,7 @@ Database 1
 <b>Due</b>: P11<br>
 <!--a href="materials/lec_34_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-34">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p12">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p12">P12</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p12">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p12">P12</a><br-->
 
 =
 Database 2
@@ -397,7 +399,7 @@ Database 2
 Database 3
 * Worksheets
 * Pandas <--> SQL
-<b>Link to worksheet: </b><a href="materials/lec-36-worksheet.pdf">pdf</a>, <a href="materials/lec-36-worksheet.docx">docx</a><br>
+<!--b>Link to worksheet: </b><a href="materials/lec-36-worksheet.pdf">pdf</a>, <a href="materials/lec-36-worksheet.docx">docx</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-36">code</a><br-->
 
 =
@@ -412,7 +414,7 @@ Plotting 1
 <b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
 <b>Due</b>: P12<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-37">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p13">P13</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p13">P13</a><br-->
 
 =
 Plotting 2
