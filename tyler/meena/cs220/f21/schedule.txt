@@ -289,9 +289,11 @@ Function References
 
 =
 Iterators
-* review: recursive function, function object examples
+* review: recursive function
+* review: function object examples
 * iterators
-* list comprehension
+* list / dict comprehension
+* tuple packing / unpacking
 <b>Due</b>: P8<br>
 <!--a href="materials/lec_25_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-25">code</a><br-->
