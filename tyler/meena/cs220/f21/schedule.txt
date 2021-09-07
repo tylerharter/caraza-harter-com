@@ -366,6 +366,7 @@ Web 1
 Web 2
 * Intro to HTML
 * Generating HTML
+<b>Due</b>: Quiz10<br>
 <!--a href="materials/lec_32_S21.pdf">Link to Slides</a><br-->
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-32">code</a><br-->
 
@@ -413,7 +414,7 @@ Plotting 1
 * plot design
 * AxesSublot
 <b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
-<b>Due</b>: Quiz10<br>
+<b>Due</b>: Quiz11<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-37">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/lab-p13">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s21-projects/tree/master/p13">P13</a><br-->
 
@@ -436,7 +437,7 @@ Plotting 4
 * adjacent plots
 * design decisions
 <b>Read</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/readings">.ipynb and data</a>)<br>
-<b>Due</b>: Quiz11<br>
+<b>Due</b>: Quiz12<br>
 <!--b>Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s21/materials/lectureDemo_code/lec-40">code</a><br-->
 
 =
