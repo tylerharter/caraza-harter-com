@@ -168,7 +168,7 @@ Strings
 =
 Exam 1 review day
 * Evening exam
-<b>Due</b>: Quiz4<br>
+<b>Due</b>: Quiz4 <b>due by noon!</b><br>
 
 
 ################################################################################
