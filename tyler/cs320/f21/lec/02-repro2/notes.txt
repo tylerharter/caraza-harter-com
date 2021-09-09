@@ -1,0 +1,30 @@
+Questions from last time: https://docs.google.com/document/d/1MOvH64tCCrmpEORaI5gvgNVV4FSezJnv_M6AfjdoB98/edit?usp=sharing
+
+wrap up lec 01
+
+versioning lecture (slides)
+ - explore pandas: commits, diff, contributors, testing, tags
+
+git (demos)
+ - ssh
+ - look at commits+diffs on GitHub
+ - author, date, message, commit number (hex, sha)
+ - git --help
+ - checkout different versions, run wc.py
+ - see log from first commit, go back to main
+ - shell: echo, cat, ls -la, cntrl-R, q, arrow keys
+
+make a commit
+ - edit wc.py (emacs vs nano) -- ^ means control
+ - add README.txt
+
+branches (concept: slides)
+
+branches (demo)
+ - create multiple branches, commit to both
+ - switch back and forth, show files, git log
+ - delete a branch
+
+
+
+If time: checkout f21, talk about layout
