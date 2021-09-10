@@ -19,7 +19,8 @@ get- <tab> <tab> <tab>
 control-C: kill
 up arrow key: history
 control-R:    history
-
+history
+history | tail
 
 #######################
 # home directory and desktop
