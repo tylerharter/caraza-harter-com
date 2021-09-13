@@ -1,22 +1,21 @@
 Lecture 1: Introduction
-
+1.1 Interpret the Syllabus statements regarding assignment rules and requirements
 
 Lecture 2: The Terminal
 2.1 Access the Terminal(Mac) or PowerShell (Windows) application
-
-2.2 Use basic Terminal/PowerShell commands
+2.2 Use basic Terminal/PowerShell commands such as ls, pwd, cd, cd .., mkdir, echo, echo >, echo >>
+2.3 Navigate using absolute and relative paths
 
 Lecture 3: Pseudocode
-3.1 Define PseudoCode and explain why it is useful
-
-3.2 Hand-trace PseudoCode algorithms
+3.1 Hand-trace PseudoCode algorithms involving state and control flow
+3.2 Hand-trace PseudoCode algorithms involving lists and dictionaries
 
 Lecture 4: Programming
 4.1 Run Python Code
    from the command line
    from a Jupyter Notebook
+   from IDLE
  
-
 4.2 Evaluate expressions containing basic Python operators:
    Mathematical (e.g., “+” and “-“)
    Comparison (e.g., “==” and “>”)
