@@ -10,21 +10,19 @@ Lecture 3: Pseudocode
 3.1 Hand-trace PseudoCode algorithms involving state and control flow
 3.2 Hand-trace PseudoCode algorithms involving lists and dictionaries
 
-Lecture 4: Programming
+Lecture 4: Operators
 4.1 Run Python Code
-   from the command line
-   from a Jupyter Notebook
-   from IDLE
- 
-4.2 Evaluate expressions containing basic Python operators:
-   Mathematical (e.g., “+” and “-“)
-   Comparison (e.g., “==” and “>”)
-   Logical (e.g., “and” and “not”)
+- from the command line (interactive mode and script mode)
+- from IDLE (interactive mode and script mode)
+- from a Jupyter Notebook (combines interactive and script modes) 
 
-4.3 Recognize examples of different Python data types:
-   int, float, str, bool
+4.2 Evaluate numeric expressions containing mathematical operators 
 
-4.4 Evaluate boolean expressions
+4.3 Evaluate string expressions containing string operators and escape characters
+
+4.4 Recognize examples of different Python data types: int, float, str, bool
+
+4.4 Evaluate boolean expressions that contain the operators and, or, not
 
 
 Lecture 5: Variables and Expressions
