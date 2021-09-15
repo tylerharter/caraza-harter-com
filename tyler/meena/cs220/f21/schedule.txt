@@ -34,9 +34,9 @@ Pseudocode
 <b>No slides</b><br/>
 
 =
-Programming
-* Syntax+Parsing
-* Values+Types
+Operators
+* Syntax + Parsing
+* Values + Types
 * Calculation+Operators
 * Boolean Logic
 * Interactive vs. Script Mode, print
