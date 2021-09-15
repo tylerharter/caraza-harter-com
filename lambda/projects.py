@@ -428,6 +428,7 @@ def get_submission(user, event):
 
         result['submission_id'] = submission_id
         result['code'] = code
+        result['payload'] = submission['payload']
         result['analysis'] = get_code_analysis(None, project_id, code)
         result['feedback_request'] = sanitize_html(submission.get('feedback_request', ''))
 

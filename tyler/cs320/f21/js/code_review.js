@@ -334,6 +334,8 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       html += ('<button type="button" class="btn btn-dark" onclick="code_review.rateCodeReview()")">Submit Response</button>')
     }
 
+    html += ('<p><a href=""></a></p>')aoeu
+
     // SECTION: cells/files
     for (var filename in sub.code.files) {
       html += ('<h4 class="mt-3">'+fileConf(filename).display_name+'</h4>')
