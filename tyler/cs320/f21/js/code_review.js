@@ -334,7 +334,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       html += ('<button type="button" class="btn btn-dark" onclick="code_review.rateCodeReview()")">Submit Response</button>')
     }
 
-    html += ('<p><a href=""></a></p>')aoeu
+    html += ('<p><a href="data:text/plain;base64,' + sub.payload + '" download="' + sub.code.root + '">DOWNLOAD</a></p>')
 
     // SECTION: cells/files
     for (var filename in sub.code.files) {
