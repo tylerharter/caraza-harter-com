@@ -31,6 +31,7 @@ Pseudocode
 * Flow of Execution
 * State
 <b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx" target="_blank">docx</a><br>
+<b>Link to worksheet solutions: </b><a href="materials/worksheet_solutions/lec-03-worksheet-solution-kuemmel.pdf">Andy</a>, <a href="materials/lec-03-worksheet-solution-meena.pdf" target="_blank">Meena</a><br>
 <b>No slides</b><br/>
 
 =
