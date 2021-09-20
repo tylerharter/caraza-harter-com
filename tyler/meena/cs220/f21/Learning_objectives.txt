@@ -11,7 +11,7 @@ Lecture 3: Pseudocode
 3.2 Hand-trace PseudoCode algorithms involving lists and dictionaries
 
 Lecture 4: Operators
-4.1 Run Python Code
+4.1 Run Python Code (think this is all taught in lab-p2)
 - from the command line (interactive mode and script mode)
 - from IDLE (interactive mode and script mode)
 - from a Jupyter Notebook (combines interactive and script modes) 
