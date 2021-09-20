@@ -30,7 +30,7 @@ The Terminal
 Pseudocode
 * Flow of Execution
 * State
-<b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf">pdf</a>, <a href="materials/lec-03-worksheet.docx" target="_blank">docx</a><br>
+<b>Link to worksheet: </b><a href="materials/lec-03-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-03-worksheet.docx" target="_blank">docx</a><br>
 <b>Link to worksheet solutions: </b><a href="materials/worksheet_solutions/lec-03-worksheet-solution-kuemmel.pdf">Andy</a>, <a href="materials/worksheet_solutions/lec-03-worksheet-solution-meena.pdf" target="_blank">Meena</a><br>
 <b>No slides</b><br/>
 
@@ -44,7 +44,7 @@ Operators
 <b>Read</b>: Downey Ch 1<br>
 <b>Due</b>: P1<br>
 <a href="materials/lec_04_F21.pdf" target="_blank">Link to Slides</a><br>
-<b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf">pdf</a>, <a href="materials/lec-04-worksheet.docx" target="_blank">docx</a><br>
+<b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-04-worksheet.docx" target="_blank">docx</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-04/" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_04" target="_blank">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p2" target="_blank">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p2" target="_blank">P2</a><br>
@@ -86,7 +86,7 @@ Creating Functions
 <b>Read</b>: <a href="materials/lec-07-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
 <b>Due</b>: P2<br>
 <!--a href="materials/lec_07_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf">pdf</a>, <a href="materials/lec-07-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-07-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-07" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_07" target="_blank">code</a><br-->
@@ -117,7 +117,7 @@ Conditionals 1
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Optional</b>: Downey Ch 4<br>
 <!--a href="materials/lec_09_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf">pdf</a>, <a href="materials/lec-09-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-09-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec09-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-09" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_09" target="_blank">code</a><br-->
@@ -152,7 +152,7 @@ Iteration 2
 * Continue
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/" target="_blank">Sweigart Ch 2</a><br>
 <!--a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-12" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_12" target="_blank">code</a><br-->
@@ -171,7 +171,7 @@ Strings
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
 <!--a href="materials/lec_14_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-14-worksheet.pdf">pdf</a>, <a href="materials/lec-14-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-14-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-14-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-14" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_14" target="_blank">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p5" target="_blank">P5</a><br-->
@@ -218,7 +218,7 @@ List Practice
 * Coding Demos
 <b>Due</b>: Quiz5<br>
 <!--b>No slides</b><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-17-worksheet.pdf">pdf</a>, <a href="materials/lec-17-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-17-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-17-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec18-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-16" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_17" target="_blank">code</a><br-->
@@ -256,7 +256,7 @@ JSON
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/" target="_blank">Sweigart Ch 16</a><br>
 <b>Due</b>: Quiz6<br>
 <!--a href="materials/lec_20_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-20-worksheet.pdf">pdf</a>, <a href="materials/lec-20-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-20-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-20-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-20" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_20" target="_blank">code</a><br-->
 
@@ -281,7 +281,7 @@ Copying
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" target="_blank" through the end)<br>
 <b>Due</b>: P7<br>
 <!--a href="materials/lec_22_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf">pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p8" target="_blank">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p8" target="_blank">P8</a><br-->
 
@@ -331,7 +331,7 @@ Error Handling
 <b>Due</b>: Quiz8<br>
 <!--a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf">pdf</a>, <a href="materials/lec-26-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-26-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-26" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_26" target="_blank">code</a><br-->
 
@@ -367,7 +367,7 @@ Pandas 2
 * dataframe
 * reading CSVs
 <!--b>No slides</b><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf">pdf</a>, <a href="materials/lec-30-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-30-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-30" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_30" target="_blank">code</a><br-->
 
@@ -436,7 +436,7 @@ Database 2
 Database 3
 * Worksheets
 * Pandas <--> SQL
-<!--b>Link to worksheet: </b><a href="materials/lec-36-worksheet.pdf">pdf</a>, <a href="materials/lec-36-worksheet.docx" target="_blank">docx</a><br-->
+<!--b>Link to worksheet: </b><a href="materials/lec-36-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-36-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-36" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_36" target="_blank">code</a><br-->
 
