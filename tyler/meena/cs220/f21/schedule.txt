@@ -90,7 +90,7 @@ Creating Functions
 <b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-07-worksheet.docx" target="_blank">docx</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-07" target="_blank">code</a><br>
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_07" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_07" target="_blank">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p3" target="_blank">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p3" target="_blank">P3</a><br>
 
 =
