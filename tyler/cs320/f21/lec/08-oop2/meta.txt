@@ -3,6 +3,5 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 * __eq__, __lt__
 * __len__, __getitem__
 * __enter__, __exit__
-<a href="lec/07-oop2/tests.txt">TEST CASES</a><br>
 <b>Optional Reading</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
 <b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-09_24_21-10%3A57%3A34/1_fttsfaom">Lecture</a><br>
