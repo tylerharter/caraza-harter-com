@@ -1,4 +1,4 @@
-OOP 4: Mult Inheritance
-* MRO rules
+Catchup
+* wrapup inheritance
 * recursion
 QUIZ 2 DUE<br>
