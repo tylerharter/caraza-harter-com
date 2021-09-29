@@ -128,9 +128,9 @@ Conditionals 2
 * Refactoring
 * Nesting
 <b>Due</b>: P3<br>
-<!--a href="materials/lec_10_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-10" target="_blank">code</a><br-->
+<a href="materials/lec_10_F21.pdf" target="_blank">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-10" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_10" target="_blank">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p4" target="_blank">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p4" target="_blank">P4</a><br>
 
