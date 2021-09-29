@@ -13,7 +13,7 @@ def get_submission_emails(project):
     links = ddict(list)
     submissions = ddict(list)
 
-    for d, _, file_paths in os.walk('snapshot/%s/projects/%s' % (COURSE, project)):
+    for d, _, file_paths in os.walk('s3/%s/projects/%s' % (COURSE, project)):
         for path in file_paths:
             path = os.path.join(d, path)
             email = path.split(os.sep)[4].replace('*at*', '@')
