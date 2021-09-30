@@ -126,29 +126,30 @@ Lecture 10: Nested Conditionals and Refactoring
 10.4 Determine whether two functions produce the same results in all cases.
 
 
-Lecture 11: Iteration
+Lecture 11: Iteration 1
+
 11.1 Implement an iterative algorithm using a while loop
 - example: printing / counting
 - example: validating user input
 - example: performing an iterative calculation
 
-11.2 Implement nested iteration using while loops
+11.2 Trace iterative algorithms and determine their output
 
 11.3 Recognize common while loop errors
 - Infinite loops (when unintentional)
-- Off-by-one mistakes
+- Off-by-one mistakes in the loop control variable
 
-11.4 Determine the output of iterative algorithms
 
-Lecture 12: Break and Continue
-12.1 Read and write Python code using break in a while loop
+Lecture 12: Iteration 2
 
-12.2 Read and write Python code using continue in while loop
+12.1 Read and trace through Python code containing nested loops.
+
+12.2 Read and trace through Python code using break or continue in a while loop
 
 12.3 Determine the effect of break and continue in nested loops
 
-12.4 Determine how many times a line of code executes in a while loop
-- if the code is inside the body of the loop
+12.4 Determine how many times a line of code executes
+- inside the body of the loop
 - if the code is the while loop condition
 
 
