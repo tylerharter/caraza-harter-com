@@ -137,8 +137,8 @@ Conditionals 2
 
 =
 Iteration 1
-* Reassignment
 * While Loop
+* Loop Control Variable
 * Infinite Iteration
 
 <b>Read</b>: Downey Ch 7<br>
