@@ -53,5 +53,11 @@ var ta_deadline = {};
     })
   };
 
+  ta_deadline.viewSubmission = function() {
+    var project_id = $("#projectid").val()
+    var net_id = $("#netid").val()
+    window.location.href = `code_review.html?project_id=${project_id}&student_email=${net_id}`
+  };
+
   init()
 })()
