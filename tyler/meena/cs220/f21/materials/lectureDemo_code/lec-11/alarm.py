@@ -7,7 +7,7 @@ start = int(input("How many seconds? "))
 
 remaining = start
 while remaining >= 1:
-    print(remaining, "seconds left")
+    print(remaining)
     remaining -= 1
     time.sleep(1)
 
