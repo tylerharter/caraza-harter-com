@@ -154,10 +154,10 @@ Iteration 2
 * Break
 * Continue
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/" target="_blank">Sweigart Ch 2</a><br>
-<!--a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br-->
-<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-12" target="_blank">code</a><br-->
+<a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br>
+<b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br>
+<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-12" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_12" target="_blank">code</a><br>
 
 =
