@@ -166,7 +166,7 @@ Strings
 * Comparison
 * String methods
 * Strings are Sequences
-* Indexing/Slicing
+* Indexing & Slicing
 * For Loop, range()
 
 <b>Read</b>: Downey Ch 8<br>
@@ -190,10 +190,10 @@ Exam 1 review day
 
 =
 Lists
-* Sequence, Like a String
-* Indexing, Slicing
+* Lists are Sequences
+* Indexing & Slicing
 * sys.argv, dir()
-* Mutable vs. Immutable
+* Lists are Mutable
 * List Methods
 
 <b>Read</b>: Downey Ch 10<br>
