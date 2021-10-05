@@ -485,6 +485,15 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
         })
       })
     })
+
+    // add quick-jump links to bottom of page
+    var html = "Comments: "
+    $(".code-review-link").each(function(idx, elem) {
+      // console.log(elem.id)
+      var js = "$('#"+elem.id+"')[0].scrollIntoView({behavior: 'auto', block: 'center', inline: 'center'});"
+      html += '<button onclick="'+js+'">'+idx+'</button> '
+    })
+    $("#comment_links").html(html)
   }
 
   code_review.getSubmission = function() {
