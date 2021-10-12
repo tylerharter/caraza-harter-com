@@ -202,8 +202,8 @@ Lists
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_15" target="_blank">code</a><br>
 
 =
-CSV Tables
-* Comparison with Spreadsheets
+CSV Files
+* Comparison to Spreadsheets
 * Format
 * Headers
 * Lists of lists
@@ -211,7 +211,7 @@ CSV Tables
 <b>Due</b>: P5<br>
 <!--a href="materials/lec_16_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-16" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_16" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_16" target="_blank">code</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p6" target="_blank">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p6" target="_blank">P6</a><br-->
 <!--a href="https://youtu.be/dtnZXpUSn6M" target="_blank">P6 Q4 Strategy Guide</a><br-->
 
