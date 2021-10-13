@@ -207,7 +207,7 @@ CSV Files
 * Format
 * Headers
 * Lists of lists
-<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop" target="_blank")<br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <b>Due</b>: P5<br>
 <a href="materials/lec_16_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-16" target="_blank">code</a><br>
