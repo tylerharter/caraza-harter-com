@@ -1,5 +1,5 @@
 Web 2: Recursive Crawl
 * more tricky pages
 * BFS for webpages
-<a href="lec/17-crawling/practice.html">CRAWL PRACTICE</a><br>
+<a href="https://tyler.caraza-harter.com/cs320/crawl/practice.html">CRAWL PRACTICE</a><br>
 <b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab6">DFS vs. BFS</a><br>
