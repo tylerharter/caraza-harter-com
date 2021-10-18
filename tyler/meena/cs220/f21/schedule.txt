@@ -233,7 +233,7 @@ Dictionaries 1
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
 <a href="materials/lec_18_F21.pdf" target="_blank">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-18" target="_blank">code</a><br-->
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-18" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_18" target="_blank">code</a><br>
 
 =
