@@ -248,7 +248,7 @@ Dictionaries 2
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-19" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_19" target="_blank">code</a><br>
-<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p7" target="_blank">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p7" target="_blank">P7</a><br-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p7" target="_blank">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p7" target="_blank">P7</a><br>
 
 =
 JSON
