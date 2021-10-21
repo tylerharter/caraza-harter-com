@@ -1,5 +1,6 @@
 Web 3: Flask
-* review from CS 220
+* Internet overview
 * flask
 * decorators
 QUIZ 5 DUE<br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_20_21-10%3A55%3A36/1_vu9q8cgh">Lecture</a><br>
