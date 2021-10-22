@@ -10,8 +10,7 @@ def read_json(path):
 
 # STEP 2: Create a new "numsA.json".
 #         Add the list [1, 2, 3, 4] to "numsA.json" file.
-#         Use echo command ---> echo [1, 2, 3, 4] > numsA.json 
-#         or use jupyter notebook to create and edit the new file
+#         Use jupyter notebook to create and edit the new file
 
 # STEP 3: Process numsA.json as a command line argument using sys module.
 inputFile = sys.argv[1]
