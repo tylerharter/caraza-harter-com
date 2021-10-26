@@ -5,3 +5,4 @@ Web 5: A/B testing
 <b>Due:</b> P3<br>
 <b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p4">P4 (website)</a><br>
 <b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab7">Web</a><br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_25_21-10%3A52%3A44/1_gw1cj575">Lecture</a><br>
