@@ -311,11 +311,9 @@ Lecture 23: Recursion
 Lecture 24: Function References
 24.1 Define a function reference and trace code that uses function references.
 
-24.2 Use the map function to apply a function to every element of a list.
+24.2 Sort a list of tuples, a list of dictionaries, or a dictionary using a function as a key.
 
-24.3 Sort a list of tuples, a list of dictionaries, or a dictionary using a function as a key.
-
-24.4 Use a lambda expression to abstract function behavior when sorting or mapping.
+24.3 Use a lambda expression to abstract function behavior when sorting.
 
 
 Lecture 25:  Iterators
