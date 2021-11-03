@@ -311,11 +311,11 @@ Function References
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_24" target="_blank">code</a><br>
 
 =
-Iterators
+Iterators and comprehensions
 * review: recursive function
 * review: function object examples
 * iterators
-* list / dict comprehension
+* list / dict comprehensions
 * tuple unpacking
 <b>Read</b>: Downey Ch 19.2, 12.3<br>
 <b>Due</b>: P8<br>
