@@ -351,7 +351,7 @@ Files and Directories
 =
 Exam 2 review day
 * Evening exam
-<b>Due</b>: P9 <b>Now changed to Thursday Nov 11</b><br>
+<b>Due</b>: P9 --- <b>Now changed to Thursday Nov 11</b><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p10" target="_blank">P10</a><br-->
 
 =
