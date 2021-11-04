@@ -290,7 +290,7 @@ Copying
 
 =
 Recursive Functions
-* Base/Resursive Cases
+* Base/Recursive Cases
 * Lists of Lists
 * More Stack Diagrams
 * Stack Overflow
