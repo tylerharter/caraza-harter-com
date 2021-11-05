@@ -280,7 +280,7 @@ Copying
 * References
 * Shallow Copy
 * Deep Copy
-<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" target="_blank" through the end)<br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Due</b>: P7<br>
 <a href="materials/lec_22_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br>
@@ -330,7 +330,7 @@ Error Handling
 * Assert Statements
 * Catching Exceptions
 * Throwing Exceptions
-<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter11/">Sweigart Ch 11</a> (beginning through "Assertions" target="_blank")<br>
+<b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter11/">Sweigart Ch 11</a> (beginning through "Assertions")<br>
 <b>Due</b>: Quiz8<br>
 <a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
