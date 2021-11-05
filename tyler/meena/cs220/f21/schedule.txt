@@ -332,9 +332,9 @@ Error Handling
 * Throwing Exceptions
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter11/">Sweigart Ch 11</a> (beginning through "Assertions" target="_blank")<br>
 <b>Due</b>: Quiz8<br>
-<!--a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br-->
-<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-26-worksheet.docx" target="_blank">docx</a><br-->
+<a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br>
+<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-26-worksheet.docx" target="_blank">docx</a><br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-26" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_26" target="_blank">code</a><br>
 
