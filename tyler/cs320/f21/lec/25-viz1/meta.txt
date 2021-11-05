@@ -1,3 +1,4 @@
 Visualization 1
 * matplotlib coordinate systems
 * drawing custom lines/polygons
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_05_21-10%3A57%3A39/1_i107c3s1">Lecture</a><br>
