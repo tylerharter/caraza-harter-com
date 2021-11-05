@@ -1,1 +1,1 @@
-I just uploaded the 850 lecture code
+I only uploaded the 850 lecture code
