@@ -1,0 +1,2 @@
+Hello CS220 / CS319 students.
+Good luck with exam 2 preparation.Ooops forgot newline
