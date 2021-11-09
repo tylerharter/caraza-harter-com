@@ -66,7 +66,11 @@ def lambda_handler(event, context):
         firehose().put_record(DeliveryStreamName=FIREHOSE,
                               Record = {'Data': json.dumps(record) + "\n"})
     except Exception as e:
-        result = error('Firehose Error: '+str(e) + ' '+traceback.format_exc())
+        try:
+            firehose().put_record(DeliveryStreamName=FIREHOSE,
+                                  Record = {'Data': json.dumps({'Error': str(e), 'Traceback': traceback.format_exc()})})
+        except Exception as e2:
+            result = error('Firehose Error: '+str(e) + ' '+traceback.format_exc())
 
     return result
 
