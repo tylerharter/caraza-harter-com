@@ -1,4 +1,4 @@
 Visualization 4
 * big example
 * animated map of incidents scraped from Madison Fire Department
-
+<b>Watch</b>: <a href="https://tyler.caraza-harter.com/cs320/f21/schedule.html">Lecture</a><br>
