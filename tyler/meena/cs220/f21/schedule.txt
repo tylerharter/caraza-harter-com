@@ -359,8 +359,9 @@ Exam 2 review day
 
 =
 Pandas 1 (DS topic)
-* series
+* Series
 * element-wise operations
+* mean, median, mode, quantiles
 <b>Required Reading</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/readings" target="_blank">.ipynb and data</a>)<br>
 <!--b>Due</b>: Quiz9<br-->
 <!--b>No slides</b><br-->
