@@ -371,12 +371,12 @@ Pandas 1 (DS topic)
 
 =
 Pandas 2
-* dataframe
+* DataFrame
 * reading CSVs
 <!--b>No slides</b><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-30-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-30-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-30" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_30" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_30" target="_blank">code</a><br>
 
 ################################################################################
 # PART 3
