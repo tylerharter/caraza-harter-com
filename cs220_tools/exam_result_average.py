@@ -2,6 +2,12 @@ import os
 import sys
 import csv
 
+################################################################################
+# Copy-paste wisc email, section, exam score columns from canvas into a new file
+# called "only_exam_score.csv"
+# "only_exam_score.csv" should not have any header
+################################################################################
+
 # copied from https://automatetheboringstuff.com/2e/chapter16/
 def process_csv(filename):
     exampleFile = open(filename, encoding="utf-8")
