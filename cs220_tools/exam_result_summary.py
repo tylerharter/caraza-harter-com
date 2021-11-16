@@ -1,14 +1,21 @@
-import os, sys, json, math, datetime, boto3
-from collections import defaultdict as ddict
-
+# import os
+import sys
+import json
+# import datetime
+import boto3
+# from collections import defaultdict as ddict
 import csv
-# copied from https://automatetheboringstuff.com/2e/chapter16/
-def process_csv(filename):
-    exampleFile = open(filename, encoding="utf-8")
-    exampleReader = csv.reader(exampleFile)
-    exampleData = list(exampleReader)
-    exampleFile.close()
-    return exampleData
+
+################################################################################
+# 1. Copy exam roster csv file (one used for exam check-in tool to cs220_tools
+#    (ex: exam2_roster.csv)
+# 2. Download exam result csv file and move to cs220_tools
+#    (ex: exam1_results.csv)
+# 3. Download canvas roster and save it as canvas.csv in cs220_tools
+#
+# Sample execution:
+# python3 exam_result_summary.py exam2_roster.csv exam2_results.csv exam2 "Exam2 (1379064)" "Exam 2: Honorlock (1389618)"
+################################################################################
 
 roster_dict = {}
 backup_roster = {}
@@ -17,45 +24,14 @@ netid_roster_dict = {}
 BUCKET = 'caraza-harter-cs301'
 s3 = boto3.client('s3')
 
-TEST_NET_IDS = []
+# copied from https://automatetheboringstuff.com/2e/chapter16/
+def process_csv(filename):
+    exampleFile = open(filename, encoding="utf-8")
+    exampleReader = csv.reader(exampleFile)
+    exampleData = list(exampleReader)
+    exampleFile.close()
+    return exampleData
 
-LATE_DAY_ALLOCATION = 9
-
-def gen_html(prows, include_intro=True):
-    cum_late = 0
-
-    intro = """<p>
-    Dear Student,
-    </p>
-
-    <p>Here is your project summary, as of Mar 12 2020:</p>
-    """
-
-    if include_intro:
-        html = intro.split('\n')
-    else:
-        html = ['<h1>']
-
-    for p in prows:
-        html.append('<h2>' + p['project'].upper() + '</h2>')
-        html.append('<ul>')
-        line = '<li>Feedback: <a href="{}">{} reviewer comments</a>'
-        html.append(line.format(p['code_review_url'], p['comment_count']))
-        html.append('<li>Score: ' + str(p['score']))
-        if p.get('override', False):
-            html[-1] += ' [override]'
-        html.append('<li>Days Late: ' + str(p['late_days']))
-
-        # handle late days
-        cum_late += p['late_days']
-        if (cum_late > LATE_DAY_ALLOCATION and p['late_days'] > 0):
-            print('dropping projects because late!')
-            html.append("<li>WARNING: late days exhausted ({} used to this point). ".format(cum_late) +
-                        "This won't be counted. "+
-                        "Please email your instructor to discuss.")
-
-        html.append('</ul>')
-    return '\n'.join(html)
 
 def convert_roster_to_netid_roster():
     for student_id in roster_dict:
@@ -97,17 +73,19 @@ def read_exam_results(exam_results):
             # There will inevitably be some incorrect entries!
             if full_name in backup_roster:
                 # Print this and send these students an email :)
-                # print(backup_roster[full_name]["netid"] + "@wisc.edu")
+                print("Wrong campus ID: ", end = "")
+                print(backup_roster[full_name]["netid"] + "@wisc.edu")
                 campus_id = backup_roster[full_name]["campus id"]
                 roster_dict[campus_id] = backup_roster[full_name]
             else:
                 # Good luck with the manual finding process ;)
-                # print(lname, fname, campus_id)
-                pass
+                print("Couldn't find student: ", end = "")
+                print(lname, fname, campus_id)
+                #pass
 
         #If all mappings work, this will populate dictionary with total score
         roster_dict[campus_id]["total score"] = row[5]
-        
+
         #Marked answers from scantron
         answers = []
         for col_idx in range(7, 42):
@@ -120,7 +98,7 @@ def gen_email(exam_name):
     for student_id in roster_dict:
         email = {
             "html":True, 
-            "subject": "CS 220 - Exam 1 results", 
+            "subject": "CS 220 - " + exam_name.upper() + " results", 
             "to": roster_dict[student_id]["netid"] + "@wisc.edu"
         }
         if "total score" not in roster_dict[student_id]:
@@ -143,23 +121,26 @@ def gen_email(exam_name):
         json.dump(emails, f)
 
 
-def update_canvas_score(exam_name):
+def update_canvas_score(exam_name, exam_column, exam_honorlock_column):
     canvas_data = process_csv("canvas.csv")
     header = canvas_data[0]
     canvas_data = canvas_data[1:]
+    print(roster_dict["9077706969"])
     for row in canvas_data:
-        if row[header.index("Exam 1: HonorLock (1374208)")] != "N/A":
-            row[header.index("Exam1 (1379056)")] = row[header.index("Exam 1: HonorLock (1374208)")]
+        if row[header.index(exam_honorlock_column)] != "N/A":
+            row[header.index(exam_column)] = row[header.index(exam_honorlock_column)]
         else:
             net_id = row[header.index("SIS Login ID")].lower()
             net_id = net_id.replace("@wisc.edu", "")
             if net_id in netid_roster_dict:
                 if "total score" in netid_roster_dict[net_id]:
-                    row[header.index("Exam1 (1379056)")] = netid_roster_dict[net_id]["total score"]
+                    row[header.index(exam_column)] = netid_roster_dict[net_id]["total score"]
                 else:
-                    row[header.index("Exam1 (1379056)")] = 0
+                    row[header.index(exam_column)] = 0
             else:
-                row[header.index("Exam1 (1379056)")] = 0
+                if net_id == "JAN32":
+                    print("Couldn't find netid!")
+                row[header.index(exam_column)] = 0
 
     canvas_data.insert(0, header)
 
@@ -168,8 +149,10 @@ def update_canvas_score(exam_name):
         writer.writerows(canvas_data)
 
 def main():
-    if len(sys.argv) < 4:
-        print('Usage: python {} <exam_roster.csv> <exam_results.csv> <exam name, for ex: exam1>'.format(sys.argv[0]))
+    if len(sys.argv) < 6:
+        print("""Usage: python {} <exam_roster.csv> <exam_results.csv> <exam name, 
+        for ex: exam1> <exam column on canvas, for ex: Exam2 (1379064)>
+        <honorlock exam column on canvas, for ex: Exam 2: Honorlock (1389618)>""".format(sys.argv[0]))
         sys.exit(1)
 
     exam_roster = process_csv(sys.argv[1])
@@ -183,7 +166,9 @@ def main():
 
     convert_roster_to_netid_roster()
 
-    update_canvas_score(exam_name)
+    exam_column = sys.argv[4]
+    exam_honorlock_column = sys.argv[5]
+    update_canvas_score(exam_name, exam_column, exam_honorlock_column)
 
 if __name__ == '__main__':
     main()
