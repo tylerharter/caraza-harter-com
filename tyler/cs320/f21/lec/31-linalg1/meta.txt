@@ -2,3 +2,4 @@ Linear Algebra 1
 * numpy arrays
 * numpy images
 * multiplication
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_19_21-10%3A59%3A15/1_cinjzset">Lecture</a><br>
