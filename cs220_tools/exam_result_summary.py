@@ -1,9 +1,6 @@
-# import os
 import sys
 import json
-# import datetime
 import boto3
-# from collections import defaultdict as ddict
 import csv
 
 ################################################################################
