@@ -133,7 +133,7 @@ def gen_email(exam_name):
         if "total score" not in roster_dict[student_id]:
             #print(email["to"])
             msg = '<p>Please see canvas for your exam score and answer choices, if you took exam via canvas quiz.</p>'
-            msg += '<p>If you took an in-person exam, do not worry that you are seeing this message. It is likely that we missed retrieving your scantron - please email both Meena and Andy..</p>'
+            msg += '<p>If you took an in-person exam, do not worry that you are seeing this message. It is likely that we missed retrieving your scantron - please email both Meena and Andy.</p>'
         else:
             #print(student_id, roster_dict[student_id])
             msg = '<p>Hello, your exam score was: ' + roster_dict[student_id]["total score"]
