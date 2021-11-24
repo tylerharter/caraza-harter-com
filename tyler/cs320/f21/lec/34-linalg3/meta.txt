@@ -1,5 +1,4 @@
-Classification 1
-* LogisticRegression
-* multiclass, proba
-* decision boundaries
+Linear Algebra 3
+* column spaces
+* projection matrices
 <b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab12">Decision Boundaries</a><br>

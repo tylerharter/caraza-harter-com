@@ -1,4 +1,5 @@
 Parallelism 1
 * multiprocessing pools
 * parallel map
-
+<b>Lab:</b> TBD<br>
+<b>Due:</b> P7<br>

@@ -3,6 +3,7 @@ Linear Algebra 2
 * fit with np.linalg.solve
 * predict with np.dot
 * column perspective
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_22_21-10%3A58%3A16/1_94kj24yr">Lecture</a><br>
 <b>Due:</b> P5<br>
 <b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p6">P6 (land matrices and regression)</a><br>
 <b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab11">Dot Product and Counting Cells</a><br>
