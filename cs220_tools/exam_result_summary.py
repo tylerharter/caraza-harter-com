@@ -1,9 +1,6 @@
-# import os
 import sys
 import json
-# import datetime
 import boto3
-# from collections import defaultdict as ddict
 import csv
 
 ################################################################################
@@ -13,9 +10,20 @@ import csv
 #    (ex: exam1_results.csv)
 # 3. Download canvas roster and save it as canvas.csv in cs220_tools
 #
+# Update below section on dropping question(s) if needed
+#
 # Sample execution:
 # python3 exam_result_summary.py exam2_roster.csv exam2_results.csv exam2 "Exam2 (1379064)" "Exam 2: Honorlock (1389618)"
 ################################################################################
+
+drop_flag = False
+# KEY: exam version; VALUE: list of questions to drop / regrade
+drop_questions = {
+        "6": {"_10": "1"},
+        "7": {"_20": "1"},
+        "8": {"_10": "1"},
+        "9": {"_25": "1"},
+        }
 
 roster_dict = {}
 backup_roster = {}
@@ -43,10 +51,10 @@ def read_roster(exam_roster):
     exam_roster_header = exam_roster[0]
     exam_roster = exam_roster[1:]
     for row in exam_roster:
-        campus_id = row[0]
-        netid = row[3]
-        lname = row[4].lower().strip()
-        fname = row[5].lower().strip()
+        campus_id = row[exam_roster_header.index("id")]
+        netid = row[exam_roster_header.index("login")]
+        lname = row[exam_roster_header.index("lname")].lower().strip()
+        fname = row[exam_roster_header.index("fname")].lower().strip()
         full_name = lname + "," + fname
         roster_dict[campus_id] = {
                 "netid": netid,
@@ -64,9 +72,18 @@ def read_exam_results(exam_results):
     exam_results_header = exam_results[0]
     exam_results = exam_results[1:]
     for row in exam_results:
-        lname = row[0].lower().strip()
-        fname = row[1].lower().strip()
-        campus_id = row[3]
+        lname = row[exam_results_header.index("LastName")].lower().strip()
+        fname = row[exam_results_header.index("FirstName")].lower().strip()
+        campus_id = row[exam_results_header.index("ID")]
+        special_codes = row[exam_results_header.index("SpecialCodes")].strip()
+        print(special_codes.split(" "))
+        codes = special_codes.split(" ")
+        cleaned_codes = [code for code in codes if code != ""]
+        if len(cleaned_codes) > 1:
+            exam_version = cleaned_codes[1]
+        else:
+            exam_version = cleaned_codes[0]
+
         full_name = lname + "," + fname
         if campus_id not in roster_dict:
             # Initial check to filter out incorrect campus ID entries on the scantron
@@ -83,8 +100,20 @@ def read_exam_results(exam_results):
                 print(lname, fname, campus_id)
                 #pass
 
-        #If all mappings work, this will populate dictionary with total score
-        roster_dict[campus_id]["total score"] = row[5]
+        # Checks for questions which needs to be dropped
+        # Gives points to students who chose different answer from
+        # original answer option
+        if drop_flag:
+            drop = drop_questions[exam_version]
+            for question in drop:
+                student_answer = row[exam_results_header.index(question)]
+                if student_answer != drop[question]:
+                    roster_dict[campus_id]["total score"] = str(int(row[exam_results_header.index("TotalScore")]) + 1)
+                else:
+                    roster_dict[campus_id]["total score"] = row[exam_results_header.index("TotalScore")]
+        else:
+            #If all mappings work, this will populate dictionary with total score
+            roster_dict[campus_id]["total score"] = row[exam_results_header.index("TotalScore")]
 
         #Marked answers from scantron
         answers = []
@@ -104,7 +133,7 @@ def gen_email(exam_name):
         if "total score" not in roster_dict[student_id]:
             #print(email["to"])
             msg = '<p>Please see canvas for your exam score and answer choices, if you took exam via canvas quiz.</p>'
-            msg += '<p>If you took an in-person exam, do not worry that you are seeing this message. It is likely that we missed retrieving your scantron - please email both Meena and Andy..</p>'
+            msg += '<p>If you took an in-person exam, do not worry that you are seeing this message. It is likely that we missed retrieving your scantron - please email both Meena and Andy.</p>'
         else:
             #print(student_id, roster_dict[student_id])
             msg = '<p>Hello, your exam score was: ' + roster_dict[student_id]["total score"]
@@ -125,7 +154,6 @@ def update_canvas_score(exam_name, exam_column, exam_honorlock_column):
     canvas_data = process_csv("canvas.csv")
     header = canvas_data[0]
     canvas_data = canvas_data[1:]
-    print(roster_dict["9077706969"])
     for row in canvas_data:
         if row[header.index(exam_honorlock_column)] != "N/A":
             row[header.index(exam_column)] = row[header.index(exam_honorlock_column)]
@@ -138,8 +166,6 @@ def update_canvas_score(exam_name, exam_column, exam_honorlock_column):
                 else:
                     row[header.index(exam_column)] = 0
             else:
-                if net_id == "JAN32":
-                    print("Couldn't find netid!")
                 row[header.index(exam_column)] = 0
 
     canvas_data.insert(0, header)

@@ -405,7 +405,11 @@ Lecture 33:  Scraping Web Data
 
 
 Lecture 34:
+34.1 Explain how a database is different from a CSV file or a JSON file
 
+34.2 Use SQLite to connect to a database and pandas to query it
+
+34.3 Write basic queries on a database using SELECT, FROM, WHERE, ORDER BY, and LIMIT
 
 Lecture 35:
 
