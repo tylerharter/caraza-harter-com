@@ -1,5 +1,5 @@
 Parallelism 1
 * multiprocessing pools
 * parallel map
-<b>Lab:</b> TBD<br>
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab14">Clustering Pixels</a><br>
 <b>Due:</b> P7<br>
