@@ -456,7 +456,7 @@ Plotting 1
 * bar+scatter plots
 * plot design
 * AxesSublot
-<b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/readings" target="_blank">matplotlib-intro.ipynb and data</a>)<br>
+<b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a> or <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/readings" target="_blank">matplotlib-intro.ipynb and data</a>)<br>
 <b>Due</b>: Quiz11<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-37" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_37" target="_blank">code</a><br>
