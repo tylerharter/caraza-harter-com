@@ -464,10 +464,11 @@ Plotting 1
 
 =
 Plotting 2
+* scatter plots
 * line plots
 <b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/readings" target="_blank">.ipynb and data</a>)<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-38" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_38" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_38" target="_blank">code</a><br>
 
 =
 Plotting 3
