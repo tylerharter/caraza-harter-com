@@ -421,5 +421,27 @@ Lecture 37:  Matplotlib and Bar Plots
 
 
 Lecture 38:  Scatter Plots and Line Plots
+
 38.1 Use matplotlib to make a Scatter plot, including one with subplots
+
 38.2 Use matplotlib to make a Line plot
+
+
+Lecture 39: Simulations
+
+39.1 Use data from a DataFrame to generate random simulations
+
+39.2 Apply features of line plots and bar plots to visualize results of data investigations
+
+39.3 Clean Series data by dropping NaN values and by converting to int
+
+
+Lecture 40:  Advanced Plots
+
+40.1 Make a stacked bar plot.
+
+40.2 Set axes limits on plots.
+
+40.3 Use logarithmic scaling on x or y axis.
+
+40.4 Create subplots.
