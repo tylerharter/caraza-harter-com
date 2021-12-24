@@ -1,0 +1,35 @@
+========================================
+
+bad inputs:
+1 field (only)
+3+ fields
+string (either field)
+0 slice count
+0 diameter
+negative slice count
+negative diameter
+
+========================================
+
+negative values cause semantic errors
+ - wrong output, but no error
+
+Add two asserts in slice_size()
+
+========================================
+
+add try/catch for:
+ - parse errors
+ - analysis errors
+
+========================================
+
+print str(e)
+
+talk about different exception types: type(e)
+
+========================================
+
+catch specific types
+ - show hierarchy
+ - catch KeyboardInterrupt (if time)

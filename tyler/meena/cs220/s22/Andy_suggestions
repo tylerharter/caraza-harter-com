@@ -1,0 +1,65 @@
+Andy's Notes for fall 2021
+
+Web Page:
+- Resubmission Tool should have its own menu dropdown under Forms
+
+
+Projects:
+
+General: 
+- consider making the code reviews to follow a Canvas rubric with positive statements rather than negative statements.
+- Resubmissions should be allowed for the first 7 programming assignments.  By that point students should know what we expect and should not be allowed to resubmit.
+- From P3 on, students should be encouraged to write functions that take parameters.  Specific guidance should be given for most questions.
+- Deduction rules should be shared with students when the project is published. Deduction rules should be stated in a positive fashion.
+- Tests should fail early after writing a function, not later (edge cases tested early) 
+- fewer new questions, more questions that are testing other cases (Pokemon, Tweets)
+- this statement appeared in multiple project directions and it needs to be rewritten for clarity: 
+"Think twice before creating a function without any parameters. Defining a new functions is unnecessary sometimes. The advantage of writing functions is that we can reuse the same code. If we only use this function once, there is no need to create a new function."
+
+Project 9: Some of the questions were unclear in terms of what resutls were expected.  
+In some cases, the ordering of the problems did not help students write code that could be reused.
+Q9: it was not clear that if the title started with ", the student needed to grab the next char.
+Q11: I had to remove 3 genres that had 0 entries from my list to pass the test, but they should have been in the test
+Q14: The hint was not helpful.  Students can solve most of these problems using lambda and map.
+Q15: The test.py did not accept my answer due to ordering of the list.  This should be changed. 
+
+Project 11:
+
+Lab: 
+When we give students code, we should model good commenting style.  
+In the case of lab p11 the initial plotting code could be commented so that students can understand how it works. 
+In the case of factorial, a comment would let students know the recursive pattern.
+The factorial example should have the printing debugging code already in it. 
+The string reversal algorithm needs more scaffolding.
+Why did we teach recursion in week 5 when we talking about recursion in project 11 ? 
+These practice problems do not necessarily build student understanding.
+Problem 4 could use comments.
+Change 2nd sentence:  This shorthand is called a list comprehension, and it looks like a for loop inside a list. Things to note that are different that regular for loops:
+Missing the recursive list traversal.
+
+Project: 12
+Lab: the linting explanation needs updating and editing for clarity. 
+The image of the View menu does not explain what to do. 
+
+Project 13:
+
+In the lab, write a function that converts european decimal format into american decimal format
+
+In the project
+
+Lectures:
+
+1. Can we have a TA update the databases bus.db and movie.db , and convert Fifa.csv into a db? (used in the Database lectures)
+
+Office Hours:
+1.  Idea to first have all sign up for 2 office hours in the most demanding times, then have all sign up for OH in remaining times
+
+
+
+Lectures on Plotting:
+https://piazza.com/class/kjncdcxcnew3nk?cid=942
+Question about what does the line ax=ax mean? 
+
+
+
+

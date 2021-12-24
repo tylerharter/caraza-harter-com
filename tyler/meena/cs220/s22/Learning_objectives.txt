@@ -1,0 +1,447 @@
+Lecture 1: Introduction
+1.1 Interpret the Syllabus statements regarding assignment rules and requirements
+
+Lecture 2: The Terminal
+2.1 Access the Terminal(Mac) or PowerShell (Windows) application
+2.2 Use basic Terminal/PowerShell commands such as ls, pwd, cd, cd .., mkdir, echo, echo >, echo >>
+2.3 Navigate using absolute and relative paths
+
+Lecture 3: Pseudocode
+3.1 Hand-trace PseudoCode algorithms involving state and control flow
+3.2 Hand-trace PseudoCode algorithms involving lists and dictionaries
+
+Lecture 4: Operators
+4.1 Run Python Code (think this is all taught in lab-p2)
+- from the command line (interactive mode and script mode)
+- from IDLE (interactive mode and script mode)
+- from a Jupyter Notebook (combines interactive and script modes) 
+
+4.2 Evaluate numeric expressions containing mathematical operators 
+
+4.3 Evaluate string expressions containing string operators and escape characters
+
+4.4 Recognize examples of different Python data types: int, float, str, bool
+
+4.4 Evaluate boolean expressions that contain the operators and, or, not
+
+
+Lecture 5: Variables and Expressions
+5.1 Evaluate Expressions
+ by identifying operators and operands
+ by identifying literal values and variables
+ by identifying the correct order of operations
+  
+5.2 Write assignment statements with proper syntax
+ Start with a variable name that follows proper rules for variables
+ Use a single equals sign
+ Finish with an expression
+  
+5.3 Define, give examples of, and identify 3 kinds of errors
+ Syntax error
+ Runtime error
+ Semantic error
+  
+5.4 Write Python code that computes with strings ints, floats, and Boolean types
+
+
+Lecture 6: Using Functions and Modules
+6.1 Call common functions that are built into Python:
+  convert from one type to another using int(), str(), and float()
+  accept a string from the user using input()
+  convert the result of input() to int, float, or bool, if possible
+  
+6.2 Import a module and use functions from a module:
+  Utilize 3 different kinds of syntax to import a module
+  Use the attribute operator (the ".") with module functions
+  Use functions from the math module
+  Use functions from a programmer-created module
+  
+6.3 Inspect a module to determine its functions:
+  via online documentation
+  via the help function in python
+  
+6.4 Using correct vocabulary, explain how functions work
+  Define the following functions terms: call/invoke, argument, parameter, return value
+  
+6.5 Determine the flow of control of a program that contains functions
+
+
+Lecture 7: Creating Functions
+
+Explain how to handle namespace collisions when using import.
+
+Explain the syntax of a function header.
+  
+Write a function
+- with a correct header and indentation.
+- with a return value (fruitful function) or without (void function).
+- with default parameters.
+- knowing the difference in outcomes of print and return statements.
+  
+Make function calls using positional, default, and keyword arguments and determine the result.
+
+Use the print function keyword arguments 'sep' and 'end'.
+  
+
+Lecture 8: Function Scope
+8.1 Explain the rules of scope of a local variable in a function
+  When are they created?
+  When are they destroyed?
+  What parts of a program have access to them?
+  
+8.2 Explain the rules of scope of a global variable
+  Where are they stored?
+  What parts of a program have access to them?
+  How can they be mis-represented as local variables?
+  How can they be used and modified within a function?
+  
+8.3 Explain how arguments to functions are passed by value
+
+8.4 Hand-trace programs by
+  Using frame diagrams
+  Determining the value and scope of local and global variables
+  Utilizing the “pass by value” rule for arguments
+  Using Python Tutor 
+  
+Lecture 9: Conditionals part 1
+9.1 Read and Write Python Conditional Statements
+  Using Conditional execution	(	if )
+  Using Alternate execution		(if/else)
+  Using Chained conditionals		(if/elif/elif/…/else)
+  Using Nested conditionals		(if…..if….else….if …else)
+  
+9.2 Identify nested code blocks (indentation layers) in a program 
+
+9.3 Convert Flowcharts or Pseudocode into Python Conditional Statements
+
+9.4 Write a program that makes choices by using conditional statements
+
+Lecture 10: Nested Conditionals and Refactoring
+10.1 Read and Write Nested conditional statements
+
+10.2 Define, state reasons for, and provide examples of refactoring.
+
+10.3 Solve a programming problem that uses conditional statements by breaking it down into several functions
+
+10.4 Determine whether two functions produce the same results in all cases.
+
+
+Lecture 11: Iteration 1
+
+11.1 Implement an iterative algorithm using a while loop
+- example: printing / counting
+- example: validating user input
+- example: performing an iterative calculation
+
+11.2 Trace iterative algorithms and determine their output
+
+11.3 Recognize common while loop errors
+- Infinite loops (when unintentional)
+- Off-by-one mistakes in the loop control variable
+
+
+Lecture 12: Iteration 2
+
+12.1 Read and trace through Python code containing nested loops.
+
+12.2 Read and trace through Python code using break or continue in a while loop
+
+12.3 Determine the effect of break and continue in nested loops
+
+12.4 Determine how many times a line of code executes
+- inside the body of the loop
+- if the code is the while loop condition
+
+
+Lecture 13:  Exam
+
+
+Lecture 14: Strings and for loops
+14.1 Compare two strings by hand using < or > 
+
+14.2 Recognize common string methods, explain what they do, and use them in Python code
+
+14.3 Define the term sequence, name common sequence operations, and explain how a string is a sequence
+
+14.4 Read and Write code that uses a for loop 
+- to iterate over a string
+- to iterate over a sequence of numbers using the range function
+
+14.5 Index and slice strings using correct syntax, including positive and negative indices
+
+
+
+Lecture 15: Lists
+15.1 Create a list, store multiple types of values in a list, and use sequence operations on a list
+- access elements of a list inside of list using double indexing [] [] 
+
+15.2 Define mutability and recognize that lists are mutable but strings are not
+
+15.3 Mutate a list using list indexing, double indexing, list methods such as sort,() pop(), append() and operators such as + and *
+
+15.4 Use the join() and split() methods when working with lists and strings
+
+15.5 Write functions that process lists of numbers or strings
+
+
+Lecture 16: CSV files
+16.1 Open an Excel file and export it to a Comma Separated Value file.
+
+16.2 Open a CSV file in TextEdit/Notepad and connect the elements of the CSV file to the rows and columns in the spreadsheet.
+
+16.3 Use pre-written Python code to read a CSV file into a list of lists.
+
+16.4 Write Python statements with double list indexing to access any element of a CSV file via a list of lists.
+
+16.5 Write code that answers questions about CSV data by writing for loops on lists of lists.
+
+16.6 Identify in code how sys.argv is used to read arguments into a command-line Python script.
+
+16.7 Use the cat command to view the contents of binary or CSV files.
+
+
+Lab-P6: 
+P6.1 Write a Python function to extract a single cell from a dataset given a row number and a column name.
+
+P6.2 State the uses of and differences between using sorted() and .sort() on a list and on a string.
+
+P6.3 Using correct syntax, create a set and use basic set operations.
+
+P6.4 State the similarities and differences between a set and a list. 
+
+P6.5 Use the set() and list() commands to generate a list of the unique values in a list.
+
+
+
+Lecture 17: Three Tricky Things with Lists
+17.1 Write functions that process CSV files (name lookup, minimum distance)
+
+17.2 Determine the error when removing from a list inside a 'for' loop, and write code to correctly avoid this problem
+
+17.3 Determine the error when modifying a list inside a 'for' loop, and write code to correctly avoid this problem
+
+17.4 Determine the error when a list sent as an argument to a function is modified by the function, and write code to avoid this.
+
+
+Lecture 18: Dictionaries
+18.1 Understand the advantages dictionaries have over lists.
+
+18.2 Use correct dictionary syntax 
+- to create a dictionary using either {} or dict()
+- to lookup, insert, update, and pop key/value pairs
+
+18.3 Use a for loop, the in operator, and common methods when working with dictionaries.
+
+18.4 Write code that uses a dictionary
+- to store frequencies
+- to store and process information that is updated
+
+
+Lecture 19: Dictionaries and Lists
+19.1 Handle dictionary key errors by using get, pop, and defaultdict
+
+19.2 Select the appropriate data structure for a situation (list, dictionary, set, list-dictionary combination)
+
+19.3 Use a dictionary of lists to put rows of data into "buckets"
+
+19.4 Use a list of dictionaries to represent a table of data.
+
+
+Lab-P7:
+P7.1
+
+P7.2
+
+P7.3
+
+
+
+Lecture 20: JSON files
+20.1 Trace a frame diagram made up of nested dictionaries and lists
+
+20.2 Interpret JSON formatted data and recognize differences between JSON and Python
+
+20.3 Deserialize data from JSON for use in Python programs (read)
+
+20.4 Serialize data into JSON for long term storage (write) 
+
+
+Lecture 21: Objects, References, and Tuples
+21.1 Explain the difference between objects vs references, and stack vs heap.
+
+21.2 Use tuples to store immutable sequences of values.
+
+21.3 Use namedtuple (immutable) and recordclass (mutable) to store user-defined data objects.
+
+21.4 Use knowledge of objects to hand-trace modifications to parameters.
+
+21.5 Evaluate Python expressions that use 'is' and '==' to compare objects.
+
+
+
+Lecture 22: Copying Objects
+22.1 Correctly predict the output of code that uses reference variable mutation and reassignment.
+
+22.2 Explain how Python uses deduplication and hand-trace code that uses deduplication.
+
+22.3 Compare and contrast the 3 levels of copying: 
+- reference copy 
+- shallow copy(copy.copy)
+- deep copy (copy.deepcopy)
+
+22.4 Write code that copies a data structure at the appropriate level for a given use case. 
+
+
+Lecture 23: Recursion
+22.1 Define recursion and identify
+- the base case
+- the recursive case
+- infinite recursion
+
+22.2 Explain why the following can be recursively defined
+- lists
+- dictionaries
+- JSON objects
+
+22.3 Trace a recursive function
+- involving numeric computation
+- involving nested data structures
+
+
+Lecture 24: Function References
+24.1 Define a function reference and trace code that uses function references.
+
+24.2 Sort a list of tuples, a list of dictionaries, or a dictionary using a function as a key.
+
+24.3 Use a lambda expression to abstract function behavior when sorting.
+
+
+Lecture 25:  Iterators
+
+25.2 Use the correct vocabulary to describe iteration
+- iterable, sequence, iterator
+
+25.3 Determine if an object is iterable, or if it is an iterator
+- try to use iter() to determine if an object is iterable
+- try to use next() to determine if an object is an iterator
+
+
+Lecture 26: 
+
+26.1 Explain the purpose of assert statements, try/except blocks, and raise statements.
+
+26.2 Use an assert statement to force a program to crash, and trace code that uses assert.
+
+26.3 Use try/except blocks to catch runtime errors and handle them
+- by specifying the exception(s) caught
+- by using the exception object
+
+26.4 Use the raise statement to raise an exception that may be caught in another part of the program
+
+26.5 Hand trace code that uses assert, try/except blocks and raise statements
+
+
+Lecture 27:
+
+27.1 Use built-in functions with files: open, close, read, write
+
+27.2 Use a file object's iterator properties: for loop, next, list
+
+27.3 Use these file-specific os module functions:
+-os.listdir, os.mkdir, os.path.exists, os.path.isfile, os.path.isdir, os.path.join
+
+27.4 Use try/except blocks to handle errors that may occur when using files
+
+
+Lecture 28: (exam)
+
+Lecture 29:  Pandas Series
+27.1 Use correct Pandas terms when working with a Series
+- index
+- integer position
+
+27.2 Create and use Pandas Series objects
+- from a dictionary
+- from a list
+- from other Series objects
+
+27.3 Use proper Pandas Series syntax to
+- access elements
+- slice
+- perform element-wise operations using a scalar or another Series
+- concatenate two Series
+
+27.4 Use Boolean expressions and binary operators to slice a Series
+
+Lecture 30: Pandas DataFrame
+
+Lecture 31:  Requests
+
+Lecture 32:  Generating HTML
+
+32.1 Explain the purpose and use of basic HTML tags.
+- h1, h2, p, br, i, b, a
+
+32.2 Given a Python data structure, write code to produce HTML
+- from Python list to HTML unordered list
+- from Python dictionary (read from CSV) to a series of linked HTML pages
+
+
+Lecture 33:  Scraping Web Data
+33.1 Using the Document Object Model of web pages, describe the 3 things a DOM element may contain, and give examples of each
+
+33.2 Create BeautifulSoup objects from an html string and use prettify to display
+
+33.3 Use the BeautifulSoup methods 'find' and 'find_all' to find particular elements by their tag
+
+33.4 Inspect a BeautufulSoup element to determine the contents of a web page using get_text(), children, and attrs
+
+33.5 Use BeautifulSoup to scrape a live web site.
+- find particular links inside a table
+- get the web page associated with each link and write to a local html file
+- create a html page with local links to the saved files
+- read data from each local file into a Pandas DataFrame
+- compare the DataFrame contents to the actual web sites
+
+
+Lecture 34:
+34.1 Explain how a database is different from a CSV file or a JSON file
+
+34.2 Use SQLite to connect to a database and pandas to query it
+
+34.3 Write basic queries on a database using SELECT, FROM, WHERE, ORDER BY, and LIMIT
+
+Lecture 35:
+
+
+Lecture 36: 
+
+Lecture 37:  Matplotlib and Bar Plots
+
+
+
+Lecture 38:  Scatter Plots and Line Plots
+
+38.1 Use matplotlib to make a Scatter plot, including one with subplots
+
+38.2 Use matplotlib to make a Line plot
+
+
+Lecture 39: Simulations
+
+39.1 Use data from a DataFrame to generate random simulations
+
+39.2 Apply features of line plots and bar plots to visualize results of data investigations
+
+39.3 Clean Series data by dropping NaN values and by converting to int
+
+
+Lecture 40:  Advanced Plots
+
+40.1 Make a stacked bar plot.
+
+40.2 Set axes limits on plots.
+
+40.3 Use logarithmic scaling on x or y axis.
+
+40.4 Create subplots.
