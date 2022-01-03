@@ -1,0 +1,4 @@
+Performance 2
+* complexity analysis
+* Big O
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-09_15_21-10%3A54%3A15/1_7s5lut6z">Lecture</a><br>

@@ -1,0 +1,6 @@
+Regex 1
+* character classes
+* repetition
+* anchoring
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/13/text_regex.html">DS100 Ch 13</a><br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_29_21-10%3A57%3A11/1_4pykmgsm">Lecture</a><br>

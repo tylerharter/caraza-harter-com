@@ -1,0 +1,15 @@
+{
+  "sections":{
+    "1": ["Part 1: Performance"],
+    "6": ["Part 2: Web and Visualization"],
+    "12": ["Part 3: Machine Learning"]
+  },
+  "holiday":{
+    "01/24": ["No Class"],
+    "03/07": ["In-Class Midterm"],
+    "04/11": ["In-Class Midterm"],
+    "03/14": ["Spring Break"],
+    "03/16": ["Spring Break"],
+    "03/18": ["Spring Break"]
+  }
+}

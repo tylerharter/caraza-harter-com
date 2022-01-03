@@ -1,0 +1,6 @@
+Decomposition
+* Singular Value Decomposition (SVD)
+* Principal Component Analysis (PCA)
+* Compressing Data
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-12_10_21-10%3A53%3A45/1_ejyggmdx">Lecture</a><br>
+<b>Due:</b> P7<br>

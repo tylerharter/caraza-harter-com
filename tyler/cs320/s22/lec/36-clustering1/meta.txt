@@ -1,0 +1,4 @@
+Clustering 1
+* k-means
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab13">Decision Boundaries</a><br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-12_06_21-10%3A56%3A32/1_tey4rtzi">Lecture</a><br>

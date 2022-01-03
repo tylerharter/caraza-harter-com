@@ -1,0 +1,5 @@
+Trees 2
+* implementing sets with BSTs
+* balance, complexity
+* graph search
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_08_21-10%3A58%3A34/1_rmuke7ky">Lecture</a><br>

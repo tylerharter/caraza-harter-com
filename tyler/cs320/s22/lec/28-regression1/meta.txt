@@ -1,0 +1,7 @@
+Regression 1
+* ML overview
+* sklearn LinearRegression
+* explained variance
+* train/test split
+<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab10">Regressions and SQL</a><br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_15_21-10%3A58%3A54/1_wxaxo439">Lecture</a><br>
