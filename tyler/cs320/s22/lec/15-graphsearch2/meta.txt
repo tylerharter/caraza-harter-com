@@ -1,6 +1,4 @@
 Graph Search 2
 * breadth-first search
 <b>Due:</b> P2<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p3">P3 (crawler)</a><br>
-QUIZ 4 DUE<br>
-<b>Watch</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/cs320/f21/lec/16-graphsearch2">Lecture</a><br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p3">P3 (crawler)</a><br>

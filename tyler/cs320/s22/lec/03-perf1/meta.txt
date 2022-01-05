@@ -2,6 +2,4 @@ Performance 1
 * check_output
 * time
 #<a href="lec/03-perf1/lec3-morning.ipynb">LECTURE NB</a><br>
-<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab1">Cloud Setup</a><br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p1">P1 (perf measurements)</a><br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-09_13_21-10%3A59%3A24/1_wk2dx84s">Lecture</a><br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p1">P1 (perf measurements)</a><br>

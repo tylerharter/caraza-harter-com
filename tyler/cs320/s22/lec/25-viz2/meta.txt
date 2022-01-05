@@ -2,7 +2,5 @@ Visualization 2
 * geographic maps
 * shapefiles
 * high resolution graphics
-<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab9">Geo Maps</a><br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_08_21-10%3A57%3A32/1_gaxawnrn">Lecture</a><br>
 <b>Due:</b> P4<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p5">P5 (trace analysis)</a><br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p5">P5 (trace analysis)</a><br>

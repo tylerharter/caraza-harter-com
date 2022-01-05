@@ -2,7 +2,5 @@ Classification 1
 * LogisticRegression
 * multiclass, proba
 * decision boundaries
-QUIZ 10 DUE<br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-12_01_21-10%3A52%3A03/1_nvso2lgv">Lecture</a><br>
 <b>Due:</b> P6<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/p7">P7 (classification)</a><br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p7">P7 (classification)</a><br>

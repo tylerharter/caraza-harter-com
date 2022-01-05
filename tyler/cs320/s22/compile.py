@@ -3,6 +3,7 @@ import calendar, os, json, re
 from datetime import date, timedelta
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs320/s22'
+github2 = 'https://github.com/cs320-wisc/s22/tree/main'
 
 def template():
     with open('template.html') as f:
@@ -49,9 +50,6 @@ def read_days():
         meta = meta.replace("SLIDES\n", "")
 
         outline = os.path.join("lec", dirname, "README.md")
-        #if os.path.exists(outline):
-        #    outline = outline.replace("/README.md", "")
-        #    meta += f'\n<b>Watch</b>: <a href="{github}/{outline}">Videos</a><br>'
         slides = os.path.join("lec", dirname, "slides.pdf")
         if os.path.exists(slides):
             meta += f'\n<b>Slides</b>: <a href="{slides}">PDF</a><br>'
@@ -124,11 +122,21 @@ def schedule():
         # days
         row = cells[i:i+cols]
         f.write('<h3 class="my-3 border-bottom border-top">Week %d</h2>\n' % week)
-        
+
         f.write('<div class="row">\n')
-        for cell in row:
+        for day, cell in enumerate(row):
             f.write('<div class="col-md-4 my-3">\n')
             f.write(cell)
+
+            # week/quiz
+            if day == 0 and week in extra["labs"]:
+                f.write(f'<b>Lab</b>: <a href="{github2}/lab{week}">Week {week} Activities</a>\n')
+            if day == 1 and week in extra["quizzes"]:
+                if week > 2:
+                    f.write(f'<b>Quiz</b>: <a href="https://canvas.wisc.edu/courses/293982/quizzes">week {week-1} and before (cumulative)</a>\n')
+                else:
+                    f.write(f'<b>Quiz</b>: <a href="https://canvas.wisc.edu/courses/293982/quizzes">week {week-1}</a>\n')
+
             f.write('</div>\n')
         f.write('</div>\n')
     f.write('<br>')

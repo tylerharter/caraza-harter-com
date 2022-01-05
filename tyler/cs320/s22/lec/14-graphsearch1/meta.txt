@@ -1,4 +1,2 @@
 Graph Search 1
 * depth-first search
-<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab5">BSTs</a><br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_11_21-10%3A58%3A28/1_s4u0h3lz">Lecture</a><br>

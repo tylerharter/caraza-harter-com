@@ -1,4 +1,3 @@
 Web 1: Selenium
 * advanced web scraping
 <a href="https://tyler.caraza-harter.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_15_21-10%3A57%3A17/1_m1h82ffc">Lecture</a><br>

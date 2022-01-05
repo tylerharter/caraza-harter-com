@@ -3,5 +3,3 @@ Clustering 2
 * dendrograms
 * linkage matrices
 * AgglomerativeClustering
-QUIZ 11 DUE<br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-12_08_21-10%3A59%3A46/1_2jq2il5m">Lecture</a><br>

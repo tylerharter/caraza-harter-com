@@ -2,4 +2,3 @@ Classification 2
 * confusion matrices
 * accuracy, precision, recall
 * regularization and standardization
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-12_03_21-10%3A58%3A00/1_6ox5hv2f">Lecture</a><br>

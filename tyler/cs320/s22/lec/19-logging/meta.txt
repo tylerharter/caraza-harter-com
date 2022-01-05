@@ -2,5 +2,4 @@ Web 4: More Flask
 * query strings
 * rate limiting (HTTP 429)
 * robots.txt
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_22_21-10%3A55%3A43/1_yjzb4syt">Lecture</a><br>
 <b>Due:</b> P3<br>

@@ -2,5 +2,3 @@ Regression 2
 * PolynomialFeatures
 * OneHot Encoding
 * Pipelines
-QUIZ 8 DUE<br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-11_17_21-10%3A58%3A41/1_7pwid4wl">Lecture</a><br>

@@ -1,5 +1,3 @@
 Graphs and Tree Intro
 * types of graph
 * graphviz
-<b>Lab:</b> <a href="https://github.com/cs320-wisc/f21/tree/main/lab4">Linked Lists</a><br>
-<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-10_04_21-10%3A59%3A11/1_774cm9bc">Lecture</a><br>
