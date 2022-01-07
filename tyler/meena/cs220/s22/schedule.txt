@@ -43,6 +43,7 @@ Operators
 * Boolean Logic
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/variables/toctree.html" target="_blank">Python for Everybody, Ch. 2</a><br>
 <b>Due</b>: P1<br>
 <a href="materials/lec_04_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-04-worksheet.docx" target="_blank">docx</a><br>
@@ -58,6 +59,7 @@ Vars and Exprs
 * Types of errors
 * Comments
 <b>Read</b>: Downey Ch 2<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/debugging/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
 <b>Due</b>: Quiz1<br>
 <a href="materials/lec_05_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-05" target="_blank">code</a><br>
@@ -73,6 +75,7 @@ Using Functions
 * Math Module
 
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
 <a href="materials/lec_06_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-06" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_06" target="_blank">code</a><br>
@@ -118,7 +121,9 @@ Conditionals 1
 
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.1 - 4.5 </a><br>
 <b>Optional</b>: Downey Ch 4<br>
+
 <a href="materials/lec_09_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-09-worksheet.docx" target="_blank">docx</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec09-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
@@ -130,6 +135,7 @@ Conditionals 2
 * Refactoring
 * Nesting
 <b>Due</b>: P3<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.6 - end (skip 4.7) </a><br>
 <a href="materials/lec_10_F21.pdf" target="_blank">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-10" target="_blank">code</a><br>
