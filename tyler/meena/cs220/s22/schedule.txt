@@ -75,7 +75,7 @@ Using Functions
 * Math Module
 
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
-<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.1 - 5.4 </a><br>
 <a href="materials/lec_06_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-06" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_06" target="_blank">code</a><br>
@@ -88,6 +88,8 @@ Creating Functions
 * Return Values
 
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.5 - 5.8</a><br>
+
 <b>Read</b>: <a href="materials/lec-07-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
 <b>Due</b>: P2<br>
 <a href="materials/lec_07_F21.pdf" target="_blank">Link to Slides</a><br>
@@ -149,6 +151,7 @@ Iteration 1
 * Infinite Iteration
 
 <b>Read</b>: Downey Ch 7<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.1 - 6.3</a><br>
 <b>Due</b>: Quiz3<br>
 <a href="materials/lec_11_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-11" target="_blank">code</a><br>
@@ -160,6 +163,7 @@ Iteration 2
 * Nested Loops
 * Break
 * Continue
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.4 - 6.5</a><br>
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/" target="_blank">Sweigart Ch 2</a><br>
 <a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br>
@@ -178,6 +182,7 @@ Strings
 * For Loop, range()
 
 <b>Read</b>: Downey Ch 8<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/strings/toctree.html" target="_blank">Python for Everybody, Ch. 7</a><br>
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
 <a href="materials/lec_13_F21.pdf" target="_blank">Link to Slides</a><br>
@@ -204,6 +209,7 @@ Lists
 * List Methods
 
 <b>Read</b>: Downey Ch 10<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/lists/toctree.html" target="_blank">Python for Everybody, Ch. 9</a><br>
 <a href="materials/lec_15_F21.pdf" target="_blank">Link to Slides</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-15" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_15" target="_blank">code</a><br>
@@ -238,6 +244,7 @@ Dictionaries 1
 * Insert
 * Pop
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/dictionaries/toctree.html" target="_blank">Python for Everybody, Ch. 10</a><br>
 <a href="materials/lec_18_F21.pdf" target="_blank">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-18" target="_blank">code</a><br>
@@ -289,6 +296,7 @@ Objects
 * References
 * Python Tutor
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
+<b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/tuples/toctree.html" target="_blank">Python for Everybody, Ch. 11</a><br>
 <a href="materials/lec_21_F21.pdf" target="_blank">Link to Slides</a><br>
 <a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec21-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-21" target="_blank">code</a><br>
