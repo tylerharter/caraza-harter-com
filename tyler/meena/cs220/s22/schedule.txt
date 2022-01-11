@@ -11,7 +11,7 @@ Introduction
 * Software
 * Resources for getting help
 <b>Read</b>: <a href="syllabus.html" target="_blank">Syllabus</a><br>
-<a href="materials/lec_01_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_01_F21.pdf" target="_blank">Link to Slides</a><br-->
 <b>Python3 (Anaconda3) installation</b>: <a href="https://www.youtube.com/watch?v=fUohsnkuiKQ" target="_blank">Windows</a>, <a href="https://www.youtube.com/watch?v=BI4J4-3nWhQ" target="_blank">MAC</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p1" target="_blank">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p1" target="_blank">P1</a><br>
 <!--b>P1 Walkthrough:</b> <a href ="https://www.youtube.com/watch?v=zkKXShIK9EQ" target="_blank">Windows</a>, <a href="https://www.youtube.com/watch?v=6941Uos4B9w" target="_blank">MAC</a><br-->
@@ -35,7 +35,7 @@ Operators
 <b>Read</b>: Downey Ch 1<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/variables/toctree.html" target="_blank">Python for Everybody, Ch. 2</a><br>
 <b>Due</b>: P1<br>
-<a href="materials/lec_04_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_04_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-04-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-04-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Link to worksheet solutions: </b><a href="materials/worksheet_solutions/lec-04-worksheet_answers-kuemmel.pdf" target="_blank">Andy</a>, <a href="materials/worksheet_solutions/lec-04-worksheet-meena.pdf" target="_blank">Meena</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-04/" target="_blank">code</a><br-->
@@ -51,7 +51,7 @@ Vars and Exprs
 <b>Read</b>: Downey Ch 2<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/debugging/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
 <b>Due</b>: Quiz1<br>
-<a href="materials/lec_05_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_05_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-05" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_05" target="_blank">code</a><br-->
 
@@ -66,7 +66,7 @@ Using Functions
 
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.1 - 5.4 </a><br>
-<a href="materials/lec_06_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_06_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-06" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_06" target="_blank">code</a><br-->
 
@@ -82,9 +82,9 @@ Creating Functions
 
 <b>Read</b>: <a href="materials/lec-07-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
 <b>Due</b>: P2<br>
-<a href="materials/lec_07_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_07_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-07-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-07-worksheet.docx" target="_blank">docx</a><br-->
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-07" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_07" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p3" target="_blank">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p3" target="_blank">P3</a><br>
@@ -99,8 +99,8 @@ Function Scope
 
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
 <b>Due</b>: Quiz2<br>
-<a href="materials/lec_08_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec08-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_08_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec08-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-08" target="_blank">code</a><br-->
 
 
@@ -116,9 +116,9 @@ and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.1 - 4.5 </a><br>
 <b>Optional</b>: Downey Ch 4<br>
 
-<a href="materials/lec_09_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_09_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-09-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-09-worksheet.docx" target="_blank">docx</a><br-->
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec09-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec09-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-09" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_09" target="_blank">code</a><br-->
 
@@ -128,8 +128,8 @@ Conditionals 2
 * Nesting
 <b>Due</b>: P3<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.6 - end (skip 4.7) </a><br>
-<a href="materials/lec_10_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_10_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-10" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_10" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p4" target="_blank">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p4" target="_blank">P4</a><br>
@@ -143,7 +143,7 @@ Iteration 1
 <b>Read</b>: Downey Ch 7<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.1 - 6.3</a><br>
 <b>Due</b>: Quiz3<br>
-<a href="materials/lec_11_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_11_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-11" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_11" target="_blank">code</a><br-->
 <b>Code review walkthrough: </b><a href="https://www.youtube.com/watch?v=uhvV2AzeVew" target="_blank">YouTube</a><br>
@@ -155,9 +155,9 @@ Iteration 2
 * Continue
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.4 - 6.5</a><br>
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/" target="_blank">Sweigart Ch 2</a><br>
-<a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-12-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-12-worksheet.docx" target="_blank">docx</a><br-->
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec12-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-12" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_12" target="_blank">code</a><br-->
 
@@ -185,7 +185,7 @@ Strings
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/strings/toctree.html" target="_blank">Python for Everybody, Ch. 7</a><br>
 <b>Optional</b>: Downey Ch 9<br>
 <b>Due</b>: P4<br>
-<a href="materials/lec_13_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_13_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-13-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-13-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-13" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_13" target="_blank">code</a><br-->
@@ -205,7 +205,7 @@ Lists
 
 <b>Read</b>: Downey Ch 10<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/lists/toctree.html" target="_blank">Python for Everybody, Ch. 9</a><br>
-<a href="materials/lec_15_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_15_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-15" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_15" target="_blank">code</a><br-->
 
@@ -217,7 +217,7 @@ CSV Files
 * Lists of lists
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/">Sweigart Ch 16</a> (through "Reading Data from Reader Objects in a for Loop")<br>
 <b>Due</b>: P5<br>
-<a href="materials/lec_16_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_16_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-16" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_16" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p6" target="_blank">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p6" target="_blank">P6</a><br>
@@ -228,7 +228,7 @@ List Practice
 <b>Due</b>: Quiz5<br>
 <b>No slides</b><br>
 <!--b>Link to worksheet: </b><a href="materials/lec-17-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-17-worksheet.docx" target="_blank">docx</a><br-->
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec18-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec18-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-17" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_17" target="_blank">code</a><br-->
 
@@ -240,8 +240,8 @@ Dictionaries 1
 * Pop
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/dictionaries/toctree.html" target="_blank">Python for Everybody, Ch. 10</a><br>
-<a href="materials/lec_18_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_18_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-18" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_18" target="_blank">code</a><br-->
 
@@ -252,8 +252,8 @@ Dictionaries 2
 * list of dicts
 * dict of dicts
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
-<a href="materials/lec_19_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_19_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-19" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_19" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p7" target="_blank">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p7" target="_blank">P7</a><br>
@@ -266,7 +266,7 @@ JSON
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/" target="_blank">Sweigart Ch 16</a><br>
 <b>Due</b>: Quiz6<br>
 <b>Due</b>: P6<br>
-<a href="materials/lec_20_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_20_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-20-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-20-worksheet.docx" target="_blank">docx</a>, <a href="https://youtu.be/cNFJfF9J5xc?list=PLXeQ4WrA7asvcMAx9387BXbNrogdN7Sx-">problem 3 solution video</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-20" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_20" target="_blank">code</a><br-->
@@ -292,8 +292,8 @@ Objects
 * Python Tutor
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/tuples/toctree.html" target="_blank">Python for Everybody, Ch. 11</a><br>
-<a href="materials/lec_21_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec21-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_21_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec21-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-21" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_21" target="_blank">code</a><br-->
 
@@ -304,9 +304,9 @@ Copying
 * Deep Copy
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Due</b>: P7<br>
-<a href="materials/lec_22_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_22_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br-->
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p8" target="_blank">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p8" target="_blank">P8</a><br>
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_22" target="_blank">code</a><br-->
 
@@ -318,8 +318,8 @@ Recursive Functions
 * Stack Overflow
 <b>Read</b>: Downey Ch 5 ("Recursion" through "Infinite Recursion"), Ch 6 ("More Recursion" through end)<br>
 <b>Due</b>: Quiz7<br>
-<a href="materials/lec_23_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_23_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-fall20/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-23" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_23" target="_blank">code</a><br-->
 
@@ -328,7 +328,7 @@ Function References
 * functions as objects
 * sort
 * lambda
-<a href="materials/lec_24_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_24_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-24" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_24" target="_blank">code</a><br-->
 
@@ -341,7 +341,7 @@ Iterators and comprehensions
 * tuple unpacking
 <b>Read</b>: Downey Ch 19.2, 12.3<br>
 <b>Due</b>: P8<br>
-<a href="materials/lec_25_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_25_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-25-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-25-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Link to worksheet answers: </b><a href="materials/lec_25_worksheet_answers.pdf" target="_blank">pdf</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-25" target="_blank">code</a><br-->
@@ -357,8 +357,8 @@ Error Handling
 * Throwing Exceptions
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter11/">Sweigart Ch 11</a> (beginning through "Assertions")<br>
 <b>Due</b>: Quiz8<br>
-<a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br>
+<!--a href="materials/lec_26_F21.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec26-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-26-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-26-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-26" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_26" target="_blank">code</a><br-->
@@ -369,7 +369,7 @@ Files and Directories
 * Writing
 * os module
 <b>Read</b>: Downey Ch 14<br>
-<a href="materials/lec_27_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_27_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-27" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_27" target="_blank">code</a><br-->
 
@@ -413,7 +413,7 @@ Web 1
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter12/" target="_blank">Sweigart Ch 12</a><br>
 <b>Due</b>: P10<br>
 <b>Due</b>: CS319 Project part 1: proposal (Not applicable to CS220 students)<br>
-<a href="materials/lec_31_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_31_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-31" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_31" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p11" target="_blank">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p11" target="_blank">P11</a><br>
@@ -423,7 +423,7 @@ Web 2
 * Intro to HTML
 * Generating HTML
 <b>Due</b>: Quiz10<br>
-<a href="materials/lec_32_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_32_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-32" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_32" target="_blank">code</a><br-->
 
@@ -432,7 +432,7 @@ Web 3
 * Document Object Model
 * Parsing HTML
 * beautifulsoup
-<a href="materials/lec_33_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_33_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-33" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_33" target="_blank">code</a><br-->
 
@@ -445,7 +445,7 @@ Database 1
 * Querying from Pandas
 <b>Due</b>: P11<br>
 <b>Due</b>: CS319 Project part 2: data set (Not applicable to CS220 students)<br>
-<a href="materials/lec_34_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_34_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-34" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_34" target="_blank">code</a><br-->
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p12" target="_blank">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p12" target="_blank">P12</a><br>
@@ -514,7 +514,7 @@ Randomness
 * Debugging
 * Simulation
 * Significance
-<a href="materials/lec_41_F21.pdf" target="_blank">Link to Slides</a><br>
+<!--a href="materials/lec_41_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-41" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_41" target="_blank">code</a><br-->
 
