@@ -17,16 +17,6 @@ Introduction
 <!--b>P1 Walkthrough:</b> <a href ="https://www.youtube.com/watch?v=zkKXShIK9EQ" target="_blank">Windows</a>, <a href="https://www.youtube.com/watch?v=6941Uos4B9w" target="_blank">MAC</a><br-->
 
 =
-The Terminal
-* Terminal Emulatation
-* Shells
-* Navigation
-* Program Execution
-<a href="materials/lec_02_F21.pdf" target="_blank">Link to Slides</a><br>
-<a href="materials/lec_02_terminal_commands.txt" target="_blank">Terminal commands notes</a><br>
-<b>Demo:</b> <a href ="https://youtu.be/wn1rnOQ6C8E" target="_blank">Windows</a>, <a href="https://youtu.be/5HkI9Nb0XT8" target="_blank">MAC</a><br>
-
-=
 Pseudocode
 * Flow of Execution
 * State
@@ -173,6 +163,17 @@ Iteration 2
 
 
 =
+Iteration Practice
+* For loops
+* Count, min, max, filtering
+* Nested loop tracing
+
+=
+Exam 1 review day
+* Evening exam
+<b>Due</b>: Quiz4 <b>due by 2:29pm!</b><br>
+
+=
 Strings
 
 * Comparison
@@ -180,7 +181,6 @@ Strings
 * Strings are Sequences
 * Indexing & Slicing
 * For Loop, range()
-
 <b>Read</b>: Downey Ch 8<br>
 <b>Read</b>:<a href="https://runestone.academy/ns/books/published/py4e-int/strings/toctree.html" target="_blank">Python for Everybody, Ch. 7</a><br>
 <b>Optional</b>: Downey Ch 9<br>
@@ -190,11 +190,6 @@ Strings
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-13" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_13" target="_blank">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p5" target="_blank">P5</a><br>
-
-=
-Exam 1 review day
-* Evening exam
-<b>Due</b>: Quiz4 <b>due by 2:29pm!</b><br>
 
 
 ################################################################################
