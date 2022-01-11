@@ -383,6 +383,10 @@ Pandas 1 (DS topic)
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-29" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_29" target="_blank">code</a><br-->
 
+################################################################################
+# PART 3
+################################################################################
+
 =
 Pandas 2
 * DataFrame
@@ -392,9 +396,6 @@ Pandas 2
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-30" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_30" target="_blank">code</a><br-->
 
-################################################################################
-# PART 3
-################################################################################
 
 =
 Web 1
