@@ -13,7 +13,7 @@ Introduction
 <b>Read</b>: <a href="syllabus.html" target="_blank">Syllabus</a><br>
 <!--a href="materials/lec_01_F21.pdf" target="_blank">Link to Slides</a><br-->
 <b>Python3 (Anaconda3) installation</b>: <a href="https://www.youtube.com/watch?v=fUohsnkuiKQ" target="_blank">Windows</a>, <a href="https://www.youtube.com/watch?v=BI4J4-3nWhQ" target="_blank">MAC</a><br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p1" target="_blank">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p1" target="_blank">P1</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p1" target="_blank">Lab-P1</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p1" target="_blank">P1</a><br-->
 <!--b>P1 Walkthrough:</b> <a href ="https://www.youtube.com/watch?v=zkKXShIK9EQ" target="_blank">Windows</a>, <a href="https://www.youtube.com/watch?v=6941Uos4B9w" target="_blank">MAC</a><br-->
 
 =
@@ -52,7 +52,7 @@ Vars and Exprs
 <!--a href="materials/lec_05_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-05" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_05" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p2" target="_blank">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p2" target="_blank">P2</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p2" target="_blank">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p2" target="_blank">P2</a><br-->
 
 =
 Using Functions
@@ -98,7 +98,7 @@ Function Scope
 <!--a href="materials/lec_08_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec08-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-08" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p3" target="_blank">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p3" target="_blank">P3</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p3" target="_blank">Lab-P3</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p3" target="_blank">P3</a><br-->
 
 =
 Conditionals 1
@@ -139,7 +139,7 @@ Iteration 1
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-11" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_11" target="_blank">code</a><br-->
 <!--b>Code review walkthrough: </b><a href="https://www.youtube.com/watch?v=uhvV2AzeVew" target="_blank">YouTube</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p4" target="_blank">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p4" target="_blank">P4</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p4" target="_blank">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p4" target="_blank">P4</a><br-->
 
 =
 Iteration 2
@@ -166,7 +166,7 @@ Iteration Practice
 Exam 1 review day
 * Evening exam
 <b>Due</b>: P4<br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p5" target="_blank">P5</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p5" target="_blank">P5</a><br-->
 
 =
 Strings
@@ -213,7 +213,7 @@ CSV Files
 <!--a href="materials/lec_16_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-16" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_16" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p6" target="_blank">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p6" target="_blank">P6</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p6" target="_blank">Lab-P6</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p6" target="_blank">P6</a><br-->
 
 =
 List Practice
@@ -250,7 +250,7 @@ Dictionaries 2
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-19" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_19" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p7" target="_blank">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p7" target="_blank">P7</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p7" target="_blank">Lab-P7</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p7" target="_blank">P7</a><br-->
 
 =
 JSON
@@ -300,7 +300,7 @@ Copying
 <!--a href="materials/lec_22_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lec-22-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p8" target="_blank">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p8" target="_blank">P8</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p8" target="_blank">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p8" target="_blank">P8</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_22" target="_blank">code</a><br-->
 
 =
@@ -340,7 +340,7 @@ Iterators and comprehensions
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-25" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_25" target="_blank">code</a><br-->
 <!--b>Meena's Kaltura videos: </b><a href="https://mediaspace.wisc.edu/media/1_9cufyzyu" target="_blank">LEC001</a>, <a href="https://mediaspace.wisc.edu/media/1_hl4xna8z" target="_blank">LEC002</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p9" target="_blank">Lab-P9</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p9" target="_blank">P9</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p9" target="_blank">Lab-P9</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p9" target="_blank">P9</a><br-->
 
 
 =
@@ -370,7 +370,7 @@ Files and Directories
 Exam 2 review day
 * Evening exam
 <b>Due</b>: P9<br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p10" target="_blank">P10</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p10" target="_blank">P10</a><br-->
 
 =
 Pandas 1 (DS topic)
@@ -409,7 +409,7 @@ Web 1
 <!--a href="materials/lec_31_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-31" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_31" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p11" target="_blank">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p11" target="_blank">P11</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p11" target="_blank">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p11" target="_blank">P11</a><br-->
 
 =
 Web 2
@@ -441,7 +441,7 @@ Database 1
 <!--a href="materials/lec_34_F21.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-34" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_34" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p12" target="_blank">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p12" target="_blank">P12</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p12" target="_blank">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p12" target="_blank">P12</a><br-->
 
 =
 Database 2
@@ -473,7 +473,7 @@ Plotting 1
 <b>Due</b>: CS319 Project part 3: initial code (Not applicable to CS220 students)<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/lectureDemo_code/lec-37" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/f21/materials/andy_lec_notes/lec_37" target="_blank">code</a><br-->
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p13" target="_blank">P13</a><br>
+<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-f21-projects/tree/master/p13" target="_blank">P13</a><br-->
 
 =
 Plotting 2
