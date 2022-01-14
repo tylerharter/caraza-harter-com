@@ -130,7 +130,7 @@ def schedule():
 
             # week/quiz
             if day == 0 and week in extra["labs"]:
-                f.write(f'<b>Lab</b>: <a href="{github2}/lab{week}">Week {week} Activities</a>\n')
+                f.write(f'<b>Lab</b>: <a href="{github2}/lab{week}.md">Week {week} Activities</a>\n')
             if day == 1 and week in extra["quizzes"]:
                 if week > 2:
                     f.write(f'<b>Quiz</b>: <a href="https://canvas.wisc.edu/courses/293982/quizzes">week {week-1} and before (cumulative)</a>\n')
