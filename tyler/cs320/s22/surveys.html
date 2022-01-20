@@ -76,63 +76,47 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5" id="code_review_title">Submissions</h1>
+      <h1 class="mt-5">Class Forms</h1>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12">
-      <div id="signin"></div> <!-- common.js will render this -->
-      <span id="useremail"></span>
-      <button id="copyGoogleToken" type="button" class="btn btn-secondary btn-sm float-right" hidden>
-          Copy Token
-      </button> <!-- reviewer.js will register and show this -->
-    </div>
-  </div>
-</div>
+<p>For non-anonymous forms, we will often require you to fill in this
+  form using your "@wisc.edu" signin; this allows us to verify who you
+  are.  If you try using a different signin on one of these, you'll
+  see an error saying "You need permission: This form can only be
+  viewed by users in the owner's organization."  If Google
+  automatically signs in for you, please open the link in a "New
+  Incognito Window" in Chrome.</p>
 
-<div class="alert alert-dark">
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      Other Tools:
-      <ul>
-        <li><a href="ta-deadline.html">Deadline Extensions</a>
-      </ul>
-    </div>
-  </div>
-</div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdQiOt3Qe9ontYErmpnT24k3uUqTFyHZyCZrcW3RPHvB2Hgog/viewform?usp=sf_link"
+target="_blank">1. Who are you?</a>  To help us better understand who
+  is taking this class, please fill this out.</p>
 
-<div class="alert alert-dark">
-  <div class="row my-3">
-    <div class="col col-12 px-1">
-      Project: <select id="project_id">
-        <option value=""></option>
-        <option value="p0">Project 0</option>
-        <option value="p1">Project 1</option>
-        <option value="p2">Project 2</option>
-        <option value="p3">Project 3</option>
-        <option value="p4">Project 4</option>
-        <option value="p5">Project 5</option>
-        <option value="p6">Project 6</option>
-        <option value="p7">Project 7</option>
-        <option value="p8">Project 8</option>
-        <option value="p9">Project 9</option>
-        <option value="p10">Project 10</option>
-        <option value="p11">Project 11</option>
-        <option value="p12">Project 12</option>
-      </select>
-    </div>
-  </div>
-</div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeypRA8GVBNuA52HpGOZSHWl4vjfJtctBZaGLAfUiR5UkJ3zg/viewform?usp=sf_link"
+      target="_blank">2. Grading Issues.</a>  Fill this if there was a grading mistake or you got permission from your TA to resubmit.</p>
 
-<div class="alert alert-dark">
-  <div class="row">
-    <div class="col col-12" id="submissions">
-      
-    </div>
-  </div>
-</div>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdYiaZ4Gq5uAtAiosvCw3a4Whij5UnhsXuFp-oy8xL6sXTV9g/viewform?usp=sf_link"
+      target="_blank">3. Lab Attendance.</a>  Each group should make one submission per week.</p>
 
-<br>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScJVdu8Mb4waUOGIhgoZXHusNIsX9CDjfrAbP1No5nBy-P-JQ/viewform?usp=sf_link"
+      target="_blank">4. Lab Absence.</a>  Fill this if you need to miss a lab so you don't lose attendance points.  The first three submissions are on the honor system.  After that, you must additionally email supporting evidence to your instructor.</p>
+
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSf2tgWujj6RTdjnKXoy868K4flFw00vFWql-1jOIJT4PTzRQQ/viewform?usp=sf_link"
+target="_blank">5. Feedback Form.</a>  If you have any issues with the
+class or suggestions for improvement, please let us know sooner rather
+than later; we may be able to make changes more rapidly than you might
+imagine.  This is optionally anonymous, but it's always nice to know
+who you are (sometimes it makes sense to have followup
+conversations).</p>
+
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc2ximCFFoKm6gwExflOrwtu-QBwBkYSOZO1pbIhkWgyPHu3w/viewform?usp=sf_link">6. Thank You!</a>
+    Has a TA or mentor provided exceptional help, during office hours, lab, etc?
+    Thank them by filling out this form, and I'll pass along the
+  feedback.
+
+<p>For forms requiring authentication, make sure you sign in with your @wisc.edu, like this:
+
+<p><img src="img/signin.png"/>
+
+<br><br>
 
 
       <script>
@@ -186,7 +170,7 @@
     <!-- main js -->
     <script src="js/code-prettify/run_prettify.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/reviewer.js"></script>
+    
     <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
   </body>
 </html>
