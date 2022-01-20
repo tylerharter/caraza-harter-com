@@ -164,7 +164,8 @@ Iteration Practice
 
 =
 Exam 1 review day
-* Evening exam
+* Regular exam: 7:30 to 9:30 pm
+* McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P4<br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p5" target="_blank">P5</a><br-->
 
@@ -368,7 +369,8 @@ Files and Directories
 
 =
 Exam 2 review day
-* Evening exam
+* Regular exam: 7:30 to 9:30 pm
+* McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P9<br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p10" target="_blank">P10</a><br-->
 
