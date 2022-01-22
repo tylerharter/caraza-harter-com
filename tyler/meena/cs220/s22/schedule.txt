@@ -146,7 +146,7 @@ Iteration 2
 * Nested Loops
 * Break
 * Continue
-<b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.4 - 6.5</a><br>
+<b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.4 </a><br>
 <b>Read (Optional)</b>: <a href="https://automatetheboringstuff.com/2e/chapter2/" target="_blank">Sweigart Ch 2</a><br>
 <b>Due</b>: Quiz3<br>
 <!--a href="materials/lec_12_F21.pdf" target="_blank">Link to Slides</a><br-->
@@ -161,6 +161,7 @@ Iteration Practice
 * For loops
 * Count, min, max, filtering
 * Nested loop tracing
+<b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.5 - end </a><br>
 
 =
 Exam 1 review day
