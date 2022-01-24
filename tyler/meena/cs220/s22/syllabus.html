@@ -171,11 +171,11 @@
 </ul>
 <li>Graduate-level project - overall 20%
 <ul>
-	<li>Graduate Project part 1: proposal
-	<li>Graduate Project part 2: data set
-	<li>Graduate Project part 3: initial code
-	<li>Graduate Project part 4: final code
-	<li>TBD - after Andy's confirmation
+	<li>Graduate Project part 1: proposal: 4%
+	<li>Graduate Project part 2: data set: 4%
+	<li>Graduate Project part 3: initial code: 4%
+	<li>Graduate Project part 4: final code: 4%
+	<li>Graduate Project presentation: 4%
 </ul>
 <li>10 quizzes (Q1 to Q10): 2% each (lowest 2 scores droppped) - overall 16%
 <li>3 Exams (E1 to E3): 10% each - overall 30%</li>
@@ -183,15 +183,22 @@
 
 <h3>Graded Component Details</h3>
 
-<p><b>Communication</b> is based on your online engagement (e.g., filling out surveys, Piazza contribution). <br></p>
+<p><b>Communication</b> is based on your online engagement (e.g., filling out surveys, Piazza contribution). Corresponding assignements will be created on Canvas.<br></p>
+
+<b>Labs:</b> 
+<ul>
+	<li>You will be given a grade for each week's lab which is based on arriving on time, staying until the end of the lab, and participating in the lab activites.
+	<li>There are 13 weekly labs. 
+	<li>We will drop your three lowest lab scores, to account for any absences you may have for health, other coursework, or emergencies.
+</ul>
+
 <b>Projects:</b> 
 <ul>
 	<li>Primarily focus on your ability to write and debug code.<br>
 	<li>Please see the course schedule for project due dates. Projects are due by 11:59pm Central Time on the day stated.
 	<li><b>Partnership:</b>
 		<ul>
-			<li>You may work alone, or with one project partner of your choosing.
-			<li>We strongly encourage you to find a project partner.
+			<li>You may work alone, or with one project partner of your choosing. <b>We strongly encourage you to find a project partner.</b>
 			<li>CS220 students can partner up with any other CS220 student, no matter which lecture they are enrolled in. We strongly recommend finding a project partner in the same lab. Students are not allowed to find a different partner just for the lab.
 			<li>CS319 students are allowed to partner only with CS319 students.
 		  	<li>Project partners <b>must not</b> work on alternating projects. Project partners <b>must not</b> split the project questions and work on separate half of the project. Both of these will be considered as cheating! The point of partners is to learn from your peers, not to do half the work.
@@ -199,17 +206,12 @@
 		</ul>
 	<li><b>Submission</b>:
 		<ul>
-			<li>For every project, you will be given an auto-grader test. It is your responsibility to run auto-grader on your local laptop, prior to submitting your project.
+			<li>For every project, you will be given an auto-grader test (test.py). It is your responsibility to run auto-grader tests on your local laptop, prior to submitting your project.
 			<li>For each project you and your partner will upload a single .ipynb file  with the <a href="submission.html" target="_blank">submission tool</a>. 
 			<li><strong>Only one partner should upload the project on behalf of both partners</strong>. Uploading two projects will result in our cheating detection tool flagging your work - this is bad. 
 			<li>If you have any issues using the tool, make sure you're using the latest version of Chrome, because that is the only browser supported (and if that doesn't work, ask for help).
 			<li>After submitting your project, you need to come back to the submission page to check auto-grader test results. These will typically be available within 1-hour of your submission.
-			<li><b>IMPORTANT</b>: If your project did not clear auto-grader tests, it is your responsibility to attend office hours to figure out further details and get your project to clear auto-grader tests on time.
-		</ul>
-	<li><b>Code Review:</b>
-		<ul>
-			<li>A TA will give you detailed comments on specific parts of your assignment. This feedback process is called a "code review", and is a common requirement in industry before a programmer is allowed to add his / her code changes to the main codebase. 
-			<li>Read your code reviews carefully; even if you receive 100% on your work, we'll often give you tips to avoid losing points for future projects.
+			<li><b>IMPORTANT</b>: If your project did not clear auto-grader tests, it is your responsibility to attend office hours to figure out further details and get your project to clear auto-grader tests on time. If your code does not clear auto-grader tests, your project submission cannot be accepted, owing to very large class size.
 		</ul>
 	<li><b>Late Policy:</b>
 		<ul>
@@ -220,6 +222,30 @@
 			<li>You <strong>may not</strong> use late days on the last project.
 			<li>Late days only apply to projects. They do not apply to Quizzes.
 		</ul>
+	<li><b>Project Grading (Code Review):</b>
+		<ul>
+			<li>A TA will give you detailed comments on specific parts of your assignment. This feedback process is called a "code review", and is a common requirement in industry before a programmer is allowed to add his / her code changes to the main codebase. 
+			<li>Read your code reviews carefully; even if you receive 100% on your work, we'll often give you tips to avoid losing points for future projects.
+			<li>Grades will be based on auto-grader tests (test.py released with the project description) that we run and TA / grader evaluation of your code. Here are the cases where you might get a different final grade than what you see when you run the tests:
+				<ol>
+					<li>Configuration Issues: There are ways to write code that will only work on certain computers (e.g., Windows but not on a Mac). We'll talk about these cases in class and teach you to write code that should be able to run anywhere. If you make a mistake that makes the tests fail for us even though you passed them yourself, we'll let you resubmit a corrected version (in a timely fashion).</li>
+					<li>Randomness: There are some bugs in code that don't causes problems every time, resulting in tests sometimes failing and sometimes passing. As in the "Configuration Issues" case, we'll work with you to let you fix the issue.</li>
+					<li>Cheating: Obviously if you cheated (e.g., copied another student's code), the tests are irrelevant, and you have much bigger things to worry about than your grade on a particular assignment.</li>
+					<li>Faking: Sometimes, we will specify that you solve a problem in a specific way (so that you learn a particular skill). If, upon inspection of your code, we see you solved the problem in a way that doesn't meet the project specification, you'll lose points on that project (even if our automatic tests already tentatively gave you a better score). Or, if your code is written specifically to defeat the tests, you'll lose points (see <a href="https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal" target="_blank">this wikipedia article</a> for an example of a defeat device in the real world). For example, suppose your program is supposed to take the length of a square's side as input and then output the area of a square, and we have a test that verifies your program outputs 100 when we input 10. If you submit a program that always outputs 100 (regardless of the input) because you know we only test with 10, you'll lose points.</li>
+					<li>Being a bad partner: if your partner complains that you didn't do any work (or that you did all the work, refusing to let your partner write any code), you may lose points (we'll meet with both of you first to hear both sides, of course).</li>
+					</ol>
+		</ul>
+
+<b>Quizzes:</b> 
+<ul>
+	<li>Help you assess your understanding of course content (lecture and readings).
+	<li>Open notes, computer/internet use allowed, Python interpreter allowed.
+	<li><b>No collaboration</b> allowed.
+	<li>Quizzes will be on Canvas. The quizzes will be multiple-choice, multiple answer, multiple dropdown, matching or some other relevant canvas question style. 
+	<li>Quizzes focus on content from recent lectures. Topics will be listed in the quiz instructions.</li>
+	<li>Out of the 10 quizzes assigned, we will drop your lowest 2 quiz scores. This is meant to accommodate emergencies, technical difficulties, or other unforseen circumstances.  
+	<li>Two attempts are provided for every quiz. The highest of the two scores will be recorded.
+	<li>Quizzes must be completed before 11:59pm on the date specified. Please see the course schedule for quiz due dates.
 </ul>
 
 <b>Exams:</b>
@@ -232,23 +258,7 @@
 	<li>Please see the course schedule for midterm exam dates.
 	<li>Please see your Student Center for final exam date.
 </ul>
-<b>Quizzes:</b> 
-<ul>
-	<li>Help you assess your understanding of course content (lecture and readings).
-	<li>Open notes, computer/internet use allowed, Python interpreter allowed.
-	<li><b>No collaboration</b> allowed.
-	<li>Quizzes will be on Canvas. The quizzes will be multiple-choice, multiple answer, multiple dropdown, matching or some other relevant canvas question style. 
-	<li>Quizzes focus on content from recent lectures. Topics will be listed in the quiz instructions.</li>
-	<li>Out of the 10 quizzes assigned, we will drop your lowest 2 quiz scores. This is meant to accommodate emergencies, technical difficulties, or other unforseen circumstances.  
-	<li>Two attempts are provided for every quiz. The highest of the two scores will be recorded.
-	<li>Quizzes must be completed before 11:59pm on the date specified. Please see the course schedule for quiz due dates.
-</ul>
-<b>Labs:</b> 
-<ul>
-	<li>You will be given a grade for each week's lab which is based on arriving on time, staying until the end of the lab, and participating in the lab activites.
-	<li>There are 13 weekly labs. 
-	<li>We will drop your three lowest lab scores, to account for any absences you may have for health, other coursework, or emergencies.
-</ul>
+
 
 <h3>Letter Grades</h3>
 
@@ -320,14 +330,6 @@ During lab hours, if there are fewer questions about the lab content, TA / peer 
 
 
 
-<p><strong>Project Grading:</strong> Grades will be based on automatic tests that we run. We'll share the tests with you before the due date, so you should rarely be surprised by your grade. Here are the cases where you might get a different final grade than what you see when you run the tests:</p>
-<ol>
-<li><strong>Configuration Issues:</strong> There are ways to write code that will only work on certain computers (e.g., Windows but not on a Mac). We'll talk about these cases in class and teach you to write code that should be able to run anywhere. If you make a mistake that makes the tests fail for us even though you passed them yourself, we'll let you resubmit a corrected version (in a timely fashion).</li>
-<li><strong>Randomness:</strong> There are some bugs in code that don't causes problems every time, resulting in tests sometimes failing and sometimes passing. As in the "Configuration Issues" case, we'll work with you to let you fix the issue.</li>
-<li><strong>Cheating:</strong> Obviously if you cheated (e.g., copied another student's code), the tests are irrelevant, and you have much bigger things to worry about than your grade on a particular assignment.</li>
-<li><strong>Faking:</strong> Sometimes, we will specify that you solve a problem in a specific way (so that you learn a particular skill). If, upon inspection of your code, we see you solved the problem in a way that doesn't meet the project specification, you'll lose points on that project (even if our automatic tests already tentatively gave you a better score). Or, if your code is written specifically to defeat the tests, you'll lose points (see <a href="https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal" target="_blank">this wikipedia article</a> for an example of a defeat device in the real world). For example, suppose your program is supposed to take the length of a square's side as input and then output the area of a square, and we have a test that verifies your program outputs 100 when we input 10. If you submit a program that always outputs 100 (regardless of the input) because you know we only test with 10, you'll lose points.</li>
-<li><strong>Being a bad partner:</strong> if your partner complains that you didn't do any work (or that you did all the work, refusing to let your partner write any code), you may lose points (we'll meet with both of you first to hear both sides, of course).</li>
-</ol>
 <p>Project grading is <strong>results-oriented</strong>. That means it doesn't matter how much effort you put it; it only matters how well your code works. This means it is essential that your code runs. If we can't run your code for a project, you'll get a zero on that project, because the tests will fail. We'll never fix the code for you, and we'll never manually give a better grade for code that "looks" almost correct. You will have the opportunity to fix these issues and then request a regrade.</p>
 <p><strong>Resubmission Regrade Requests: </strong> On projects p2 through p5 only, you are allowed to resubmit your project <strong>one time</strong> to make up only those specific points deducted in the Code Review. 
 	Regrade requests must be received within one week after project scores are posted. 
