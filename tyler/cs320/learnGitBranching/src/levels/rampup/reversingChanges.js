@@ -1,25 +1,26 @@
 exports.level = {
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22master%22%7D%2C%22pushed%22%3A%7B%22target%22%3A%22C2%27%22%2C%22id%22%3A%22pushed%22%7D%2C%22local%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22local%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C2%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22pushed%22%2C%22id%22%3A%22HEAD%22%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22main%22%7D%2C%22pushed%22%3A%7B%22target%22%3A%22C2%27%22%2C%22id%22%3A%22pushed%22%7D%2C%22local%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22local%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C2%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22pushed%22%2C%22id%22%3A%22HEAD%22%7D%7D",
   "solutionCommand": "git reset HEAD~1;git checkout pushed;git revert HEAD",
   "compareOnlyBranches": true,
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\"},\"pushed\":{\"target\":\"C2\",\"id\":\"pushed\"},\"local\":{\"target\":\"C3\",\"id\":\"local\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"local\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\"},\"pushed\":{\"target\":\"C2\",\"id\":\"pushed\"},\"local\":{\"target\":\"C3\",\"id\":\"local\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"local\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Reversing Changes in Git",
     "de_DE": "Änderungen in Git rückgängig machen",
-    "ja"   : "変更を元に戻す",
+    "ja": "変更を元に戻す",
     "fr_FR": "Annuler des changements avec Git",
     "es_AR": "Revirtiendo cambios en git",
     "es_ES": "Revirtiendo cambios en git",
     "pt_BR": "Revertendo mudanças no Git",
-    "gl"   : "Revertindo cambios en git",
-    "ko"   : "Git에서 작업 되돌리기",
+    "gl": "Revertindo cambios en git",
+    "ko": "Git에서 작업 되돌리기",
     "zh_CN": "撤销变更",
     "zh_TW": "在 git 中取消修改 ",
     "ru_RU": "Отмена изменений в Git",
     "uk": "Відміна змін в Git",
     "vi": "Hoàn tác thay đổi trong Git",
     "sl_SI": "Revertanje Sprememb v Gitu",
-    "pl": "Odwracanie zmian w Gitcie",
+    "it_IT": "Annullare i cambiamenti in Git",
+    "pl": "Odwracanie zmian w Gicie",
   },
   "hint": {
     "en_US": "Notice that revert and reset take different arguments.",
@@ -28,15 +29,16 @@ exports.level = {
     "es_AR": "Notá que revert y reset toman parámetros distintos",
     "es_ES": "Observa que revert y reset utilizan parámetros distintos",
     "pt_BR": "Lembre que revert e reset recebem parâmetros diferentes",
-    "gl"   : "Lembra que revert e reset usan parámetros distintos",
+    "gl": "Lembra que revert e reset usan parámetros distintos",
     "zh_CN": "注意 revert 和 reset 使用的参数不同。",
     "zh_TW": "注意 revert 和 reset 使用不同的參數。",
     "ko": "revert와 reset이 받는 인자가 다름을 기억하세요",
-    "ja"   : "revertとresetとで引数が異なることに注意。",
+    "ja": "revertとresetとで引数が異なることに注意。",
     "ru_RU": "Обрати внимание, что revert и reset принимают разные параметры.",
     "uk": "Зверни увагу на те що revert та reset приймають різні параметри",
     "vi": "Lưu ý rằng hoàn tác(revert) và đặt lại(reset) có những đối số khác nhau.",
     "sl_SI": "Revert in reset sprejmeta različne argumente.",
+    "it_IT": "Revert e reset hanno parametri diversi.",
     "pl": "Zauważ, że revert i reset przyjmują różne argumenty",
   },
   "startDialog": {
@@ -61,7 +63,7 @@ exports.level = {
             "beforeMarkdowns": [
               "## Git Reset",
               "",
-              "`git reset` reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as \"rewriting history;\" `git reset` will move a branch backwards as if the commit had never been made in the first place.",
+              "`git reset` reverses changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as \"rewriting history;\" `git reset` will move a branch backwards as if the commit had never been made in the first place.",
               "",
               "Let's see what that looks like:"
             ],
@@ -141,9 +143,9 @@ exports.level = {
             "beforeMarkdowns": [
               "## Git Revert",
               "",
-              "Mientras que resetear los cambios funciona genial para ramas locales en tu máquina, su método de \"reescribir la historia\" no funciona para ramas remotas que otros están usando.",
+              "Mientras que resetear los cambios funciona genial para ramas locales en tu máquina, su método de \"reescribir la historia\" no funciona para ramas remotas que utilizan otras personas.",
               "",
-              "Para revertir cambios y *compartir* esa _revertida_ con otros, necesitamos usar `git revert`. Veámoslo en acción"
+              "Para revertir cambios y *compartir* esa _revertida_ con el resto, necesitamos usar `git revert`. Veámoslo en acción"
             ],
             "afterMarkdowns": [
               "Extraño. Hay un nuevo commit aplicado sobre el que queríamos revertir. Eso es porque este nuevo commit `C2'` introduce *cambios* - sólo que esos cambios son exactamente los necesarios para revertir los que introdujo `C2`.",
@@ -158,7 +160,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Para completar este nivel, revertí los dos commits más recientes, tanto en `local` como en `pushed`.",
+              "Para completar este nivel, revertí el commit más reciente, tanto en `local` como en `pushed`.",
               "",
               "Tené en cuenta que `pushed` es una rama remota y `local` es una rama local -- eso debería ayudarte a elegir qué métodos usar."
             ]
@@ -221,7 +223,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Para completar este nivel, deshaz los dos commits más recientes, tanto en `local` como en `pushed`.",
+              "Para completar este nivel, revierte el commit más reciente, tanto en `local` como en `pushed`.",
               "",
               "Ten en cuenta que `pushed` es una rama remota y `local` es una rama local -- eso debería ayudarte a elegir qué métodos usar."
             ]
@@ -284,7 +286,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Para completar este nível, reverta os dois commits mais recentes tanto em `local` como em `pushed`.",
+              "Para completar este nível, reverta o commit mais recente tanto em `local` como em `pushed`.",
               "",
               "Tenha em mente que `pushed` é um ramo remoto, e `local` é um ramo local -- isso deve ajudá-lo a escolher o método apropriado."
             ]
@@ -347,7 +349,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Para completar este nivel, reverte os dous commits máis recentes tanto en `local` como en `pushed`.",
+              "Para completar este nivel, reverte o commit máis recente tanto en `local` como en `pushed`.",
               "",
               "Ten en mente que `pushed` é unha rama remota, e `local` é unha rama local -- Iso poida que te axude a aplicar o método apropriado."
             ]
@@ -363,7 +365,7 @@ exports.level = {
             "markdowns": [
               "## Änderungen in Git rückgängig machen",
               "",
-              "Es gibt viele Möglichkeiten, Änderungen in Git zurückzunehmen. Und ebenso wie das Committen hat auch das rückgängig Machen eine Basis-Komponente (Dateien und Inhalte vormerken) und einen übergeordneten Aspekt (wie die Änderungen tatsächlich zurückgenommen werden). Dieses Level beschäftigt sich mit den übergeordneten Vorgängen.",
+              "Es gibt viele Möglichkeiten, Änderungen in Git zurückzunehmen. Und ebenso wie das Committen hat auch das Rückgängigmachen eine Basis-Komponente (Dateien und Inhalte vormerken) und einen übergeordneten Aspekt (wie die Änderungen tatsächlich zurückgenommen werden). Dieses Level beschäftigt sich mit den übergeordneten Vorgängen.",
               "",
               "Es gibt grundsätzlich zwei Arten in Git etwas rückgängig zu machen -- einerseits `git reset` und andererseits `git revert`. Wir schauen uns beide mal an.",
               ""
@@ -410,7 +412,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Um diesen Level abzuschließen musst du sowohl auf `local` also auch auf `pushed` jeweils die zwei letzten Commits zurücknehmen.",
+              "Um diesen Level abzuschließen musst du sowohl auf `local` als auch auf `pushed` jeweils den letzten Commit zurücknehmen.",
               "",
               "Vergiss nicht, dass `pushed` auch auf einem Server liegt und `local` ein rein lokaler Branch ist -- das sollte dir helfen, die richtige Methode zu wählen."
             ]
@@ -444,7 +446,7 @@ exports.level = {
               "どういう感じか見てみましょう。"
             ],
             "afterMarkdowns": [
-              "いいですね！Gitは単純にmasterブランチへのポインタを`C1`へ戻しました。これでこのローカルリポジトリにはまるで`C2`なんて無かったかのように変更をキャンセルできました。"
+              "いいですね！Gitは単純にmainブランチへのポインタを`C1`へ戻しました。これでこのローカルリポジトリにはまるで`C2`なんて無かったかのように変更をキャンセルできました。"
             ],
             "command": "git reset HEAD~1",
             "beforeCommand": "git commit"
@@ -461,7 +463,7 @@ exports.level = {
               "変更を巻き戻して他の人とそれを共有するためには、`git revert`を使う必要があります。今度はこれを見てみましょう。"
             ],
             "afterMarkdowns": [
-              "あれ、おかしいな。巻き戻したいと思ってたコミットの下に新しいコミットが出来上がってしまったみたいです。なぜか。これは、この新しい`C2'`コミットは`C2`へ戻すのに必要な内容を確かに変更して巻き戻していたのです。",
+              "あれ、おかしいな。巻き戻したいと思ってたコミットの下に新しいコミットが出来上がってしまったみたいです。そう、この新しい`C2'`コミットには`C2`コミットの内容を巻き戻す変更が含まれているのです。",
               "",
               "こんな風にして、巻き戻した内容を他人と共有するためにはrevertを使います。"
             ],
@@ -993,9 +995,9 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "## Odwracanie zmian w Gitcie",
+              "## Odwracanie zmian w Gicie",
               "",
-              "Istnieje wiele sposobów na odwrócenie zmian w Gicie. Podobnie jak w przypadku commitowania, odwracanie zmian w Gitcie ma zarówno komponent niskopoziomowy (zapisywanie stanów plików lub ich fragmentów), jak i wysokopoziomowy (sposób, w jaki zmiany są faktycznie odwracane). Nasza aplikacja skupi się na tym ostatnim.",
+              "Istnieje wiele sposobów na odwrócenie zmian w Gicie. Podobnie jak w przypadku commitowania, odwracanie zmian w Gicie ma zarówno komponent niskopoziomowy (zapisywanie stanów plików lub ich fragmentów), jak i wysokopoziomowy (sposób, w jaki zmiany są faktycznie odwracane). Nasza aplikacja skupi się na tym ostatnim.",
               "",
               "Istnieją dwa podstawowe sposoby na cofnięcie zmian w Gicie - jeden z nich to `git reset`, a drugi `git revert`. Przyjrzymy się każdemu z nich w następnym oknie",
               ""
@@ -1008,12 +1010,12 @@ exports.level = {
             "beforeMarkdowns": [
               "## Git Reset",
               "",
-              "`git reset` odwraca zmiany poprzez przesunięcie referencji gałęzi wstecz w czasie do starszego commita. Można myśleć o tym jako \"przepisywaniu historii\", \"resetowanie\" spowoduje cofnięcie gałęzi do tyłu, tak jakby commity powyżej nigdy nie zostały dodane.",
+              "`git reset` odwraca zmiany poprzez przesunięcie referencji gałęzi wstecz w czasie do starszego commita. Można myśleć o tym jako \"przepisywaniu historii\", \"resetowanie\" spowoduje cofnięcie gałęzi, tak jakby commit nigdy nie został dodany.",
               "",
-              "Sprawdźmy jak to działa:"
+              "Sprawdźmy, jak to działa:"
             ],
             "afterMarkdowns": [
-              "Świetnie! Git przeniósł referencję gałęzi `main` do `C1`; teraz nasze lokalne repozytoriu jest w stanie, jakby commit `C2` nigdy nie powstał."
+              "Nieźle! Git przeniósł referencję gałęzi `main` do `C1`; teraz nasze lokalne repozytorium jest w takim stanie, jakby commita `C2` nigdy nie było."
             ],
             "command": "git reset HEAD~1",
             "beforeCommand": "git commit"
@@ -1025,20 +1027,84 @@ exports.level = {
             "beforeMarkdowns": [
               "## Git Revert",
               "",
-              "Podczas gdy resetowanie działa świetnie dla lokalnych gałęzi na własnej maszynie, jego metoda \"przepisywania historii\" nie działa dla gałęzi zdalnych, które są używane przez innych.",
+              "Mimo że resetowanie działa świetnie w przypadku lokalnych gałęzi na twoim komputerze, jego metoda \"przepisywania historii\" nie działa dla gałęzi zdalnych, które są używane przez innych.",
               "",
-              "W celu odwrócenia zmian i *podzielenia się* tymi odwróconymi zmianami z innymi, musimy użyć `git revert`. Zobaczmy to w akcji."
+              "W celu odwrócenia zmian i *podzielenia się* nimi z innymi, musimy użyć `git revert`. Zobaczmy, jak to działa."
             ],
             "afterMarkdowns": [
-              "Dziwne, nowy commit spadł poniżej zobowiązania, które chcieliśmy odwrócić. To dlatego, że to nowy commit `C2'` wprowadza *zmiany* -- tak się składa, że wprowadza zmiany, które idealnie odwracają commit `C2`.",
+              "Dziwne, nowy commit spadł poniżej tego, który chcieliśmy odwrócić. To dlatego, że ten nowy commit `C2'` wprowadza *zmiany* -- akurat takie, które idealnie odwracają commit `C2`.",
               "",
-              "Dzięki `git revert`, możesz wypchnąć swoje zmiany, by podzielić się nimi z innymi."
+              "Dzięki `git revert` możesz wypchnąć swoje zmiany, by podzielić się nimi z innymi."
             ],
             "command": "git revert HEAD",
             "beforeCommand": "git commit"
           }
         },
       ]
-    }
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Annullare i cambiamenti in Git",
+              "",
+              "Esistono molti modi per annullare i cambiamenti in Git. Come la creazione di commit, anche l'annullamento in Git ha sia una componente di basso livello (tracciatura dei singoli file o blocchi) e uno di alto livello (come l'annullamento viene realmente eseguito). La nostra applicazione si concentrerà su quest'ultima.",
+              "",
+              "Ci sono due modi principali per annullare con Git -- uno è usare `git reset` e l'altro è `git revert`. Entreremo nel dettaglio per entrambi",
+              "",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "## Git Reset",
+              "",
+              '`git reset` annulla le modifiche spostando il puntatore al ramo indietro nel tempo a un commit precedente. Puoi vederla come se stessi "riscrivendo la storia;" `git reset` torna al commit precedente come se il nuovo commit non fosse mai esistito.',
+              "",
+              "Vediamone una rappresentazione:",
+            ],
+            afterMarkdowns: [
+              "Grande! Git ha spostato il puntatore del ramo main the main sul commit `C1`; ora il nostro repository locale è come se non avesse mai avuto un commit  `C2`.",
+            ],
+            command: "git reset HEAD~1",
+            beforeCommand: "git commit",
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "## Git Revert",
+              "",
+              'Git reset funziona perfettamente in locale sul proprio computer, la funzione di  "riscrivere la storia" non va d\'accordo con i rami salvati in remoto utilizzati da altri colleghi.',
+              "",
+              "Per fare in modo di annullare e *condividere* con gli altri le modifiche annullate, dobbiamo usare `git revert`. Vediamolo in azione.",
+            ],
+            afterMarkdowns: [
+              "Strano, un nuovo commit è stato creato sotto il commit che volevamo annullare. Questo perché il nuovo commit `C2'` porta *cambiamenti* -- per l'esattezza i cambiamenti sono quelli che annullano il commit `C2`.",
+              "",
+              "Con git revert, aggiungi i cambiamenti che possono essere poi condivisi con altrri.",
+            ],
+            command: "git revert HEAD",
+            beforeCommand: "git commit",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Per completare questo livello, annulla i commit più recenti sia in `local` che in `pushed`. Alla fine annullerai due commit in totale (uno per ramo).",
+              "",
+              "Tieni presente che `pushed` è un ramo remoto e `local` è un ramo locale -- questo dovrebbe aiutarti a scegliere quale metodo usare.",
+            ],
+          },
+        },
+      ],
+    },
+
   }
 };

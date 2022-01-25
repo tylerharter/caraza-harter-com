@@ -1,40 +1,44 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C4\",\"id\":\"side\",\"remoteTrackingBranchID\":null},\"bugFix\":{\"target\":\"C7\",\"id\":\"bugFix\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C3\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"}},\"tags\":{\"v0\":{\"target\":\"C0\",\"id\":\"v0\",\"type\":\"tag\"},\"v1\":{\"target\":\"C3\",\"id\":\"v1\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C4\",\"id\":\"side\",\"remoteTrackingBranchID\":null},\"bugFix\":{\"target\":\"C7\",\"id\":\"bugFix\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C3\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"}},\"tags\":{\"v0\":{\"target\":\"C0\",\"id\":\"v0\",\"type\":\"tag\"},\"v1\":{\"target\":\"C3\",\"id\":\"v1\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git commit ",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C4\",\"id\":\"side\",\"remoteTrackingBranchID\":null},\"bugFix\":{\"target\":\"C6\",\"id\":\"bugFix\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C3\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"tags\":{\"v0\":{\"target\":\"C0\",\"id\":\"v0\",\"type\":\"tag\"},\"v1\":{\"target\":\"C3\",\"id\":\"v1\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C4\",\"id\":\"side\",\"remoteTrackingBranchID\":null},\"bugFix\":{\"target\":\"C6\",\"id\":\"bugFix\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C3\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"tags\":{\"v0\":{\"target\":\"C0\",\"id\":\"v0\",\"type\":\"tag\"},\"v1\":{\"target\":\"C3\",\"id\":\"v1\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Git Describe",
     "fr_FR": "Git describe",
     "de_DE": "Git Describe",
-    "ja"   : "Git Describe",
+    "ja": "Git Describe",
     "es_AR": "Git Describe",
     "es_ES": "Git Describe",
     "pt_BR": "Git Describe",
-    "gl"   : "Git Describe",
+    "gl": "Git Describe",
     "zh_TW": "git describe",
     "zh_CN": "Git Describe",
     "ru_RU": "Git describe",
-    "ko"   : "Git describe(묘사)",
-    "uk"   : "Git Describe",
+    "ko": "Git describe(묘사)",
+    "uk": "Git Describe",
     "vi": "Git Describe(mô tả)",
-    "sl_SI": "Git Describe"
+    "sl_SI": "Git Describe",
+    "it_IT": "Git Describe",
+    "pl": "Git describe"
   },
   "hint": {
     "en_US": "Just commit once on bugFix when you're ready to move on",
     "fr_FR": "Faites un commit sur bugFix quand vous êtes prêt",
     "de_DE": "Committe nur einmal auf bugFix, wenn du soweit bist",
-    "ja"   : "次に進む準備が整ったなら、bugFixに対して一回commitしてください",
+    "ja": "次に進む準備が整ったなら、bugFixに対して一回commitしてください",
     "es_AR": "Simplemente commiteá una vez en bugFix cuando estés listo para seguir",
     "es_ES": "Simplemente crea un commit en la rama bugFix cuando estés listo para seguir",
     "pt_BR": "Simplesmente commite uma vez em bugFix quando quiser parar de experimentar",
-    "gl"   : "Simplemente fai commit en bugFix cando estés listo para continuar.",
+    "gl": "Simplemente fai commit en bugFix cando estés listo para continuar.",
     "zh_TW": "當你要移動的時候，只要在 bugFix 上面 commit 就好了",
     "zh_CN": "当你准备好时，在 bugFix 分支上面提交一次就可以了",
     "ru_RU": "Когда закончишь, просто сделай commit",
-    "ko"   : "다음으로 넘어가고 싶으면 bugFix를 한번 커밋하면 됩니다.",
-    "uk"   : "Просто зроби один коміт в bugFix коли ти будеш готовий іти далі",
+    "ko": "다음으로 넘어가고 싶으면 bugFix를 한번 커밋하면 됩니다.",
+    "uk": "Просто зроби один коміт в bugFix коли ти будеш готовий іти далі",
     "vi": "Đơn giản là hãy commit một lẩn ở bugFix là xong rồi",
-    "sl_SI": "Commitaj enkrat na bugFix, ko boš pripravljen za nadaljevanje."
+    "sl_SI": "Commitaj enkrat na bugFix, ko boš pripravljen za nadaljevanje.",
+    "it_IT": "Fai un commit da bugFix per procedere",
+    "pl": "Scommituj raz na bugFix, żeby przejść dalej",
   },
   "startDialog": {
     "en_US": {
@@ -108,7 +112,7 @@ exports.level = {
             "markdowns": [
               "### Git describe",
               "",
-              "Parce ce que les tags sont de très bonnes références dans le code, git à une commande pour *décrire* (describe) la différence entre le commit et le tag le plus récent. Cette commande s'appelle `git describe` !",
+              "Parce ce que les tags sont de très bonnes références dans le code, git a une commande pour *décrire* (describe) la différence entre le commit et le tag le plus récent. Cette commande s'appelle `git describe` !",
               "",
               "Git describe peut vous aider lorsque vous vous êtes beaucoup déplacé; cela peut arriver après un git bisect (chercher l'apparition d'un bug) ou lorsque vous revenez de vacances après 3 semaines sur l'ordinateur d'un collègue."
             ]
@@ -348,7 +352,7 @@ exports.level = {
             "markdowns": [
               "¡Eso es prácticamente todo lo que hay sobre git describe! Probá describiendo algunas referencias en este nivel para amigarte con el comando.",
               "",
-              "Cuando estés listo, hacé un commit para terminar el nivel. Te estamos dando una gratis :P"
+              "Cuando quieras, hacé un commit para terminar el nivel. Te estamos dando una gratis :P"
             ]
           }
         }
@@ -480,7 +484,7 @@ exports.level = {
         }
       ]
     },
-    "gl" : {
+    "gl": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -553,7 +557,7 @@ exports.level = {
               "",
               "Weil Tags so super als \"Anker\" im Repository dienen können, bietet Git einen Befehl um zu *beschreiben*, wo du dich relativ zum nächsten \"Anker\" (also Tag) befindest. Und der heißt `git describe`.",
               "",
-              "Er hilft dir dabei, dir einen Überblick zu verschaffen nachdem du viele Commits im Log zurück- oder vorgegangen bist; das kann vorkommen, nachdem du ein `git bisect` (eine Fehlersuche) abgeschlossen hast oder wenn du dich an den Rechner eines Kollegen setzt, der gerade aus dem Urlaub gekommen ist."
+              "Er hilft dir dabei, dir einen Überblick zu verschaffen, nachdem du viele Commits im Log zurück- oder vorgegangen bist; das kann vorkommen, nachdem du ein `git bisect` (eine Fehlersuche) abgeschlossen hast oder wenn du dich an den Rechner eines Kollegen setzt, der gerade aus dem Urlaub gekommen ist."
             ]
           }
         },
@@ -571,7 +575,7 @@ exports.level = {
               "",
               "`<Tag-Name>_<Anzahl Commits>_g<Hash>`",
               "",
-              "`<Tag-Name>` ist dabei der nächstliegende Tag in den Vorgänger-Commits, `<Anzahl Commits>` zeigt an, wieviele Commits dieses Tag entfernt ist und `<Hash>` ist das SHA des Commits, auf den HEAD zeigt.",
+              "`<Tag-Name>` ist dabei der nächstliegende Tag in den Vorgänger-Commits, `<Anzahl Commits>` zeigt an, wie viele Commits dieses Tag entfernt ist und `<Hash>` ist das SHA des Commits, auf den HEAD zeigt.",
               "",
               "**Achtung**: `<Anzahl Commits>` und `<Hash>` erscheint nur, wenn HEAD nicht auf ein Tag zeigt. `git describe` verarbeitet standardmäßig nur annotierte Tags. Um nicht annotierte Tags zu sehen, verwende bitte `git describe --tags`."
             ]
@@ -734,7 +738,7 @@ exports.level = {
         }
       ]
     },
-  "ko": {
+    "ko": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -985,6 +989,133 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### Git describe",
+              "",
+              "Ponieważ znaczniki służą jako świetne \"kotwice\" w bazie kodu, git ma polecenie *opisujące*, gdzie jesteś w stosunku do najbliższej \"kotwicy\". I jest to `git describe`!",
+              "",
+              "`Git describe` może pomóc ci zorientować się w sytuacji, gdy przesuniesz wiele commitów wstecz lub do przodu w historii; może się to zdarzyć po użyciu git bisect (na potrzeby debugowania) lub gdy siedzisz przy komputerze współpracownika, który właśnie wrócił z wakacji."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Git describe przyjmuje postać:",
+              "",
+              "`git describe <ref>`",
+              "",
+              "Gdzie `<ref>` jest czymkolwiek, co git może odnieść do commita. Jeśli nie podasz `<ref>`, git użyje aktualnie checkoutowanego miejsca (`HEAD`).",
+              "",
+              "Wynik polecenia wygląda następująco:",
+              "",
+              "`<tag>_<numCommits>_g<hash>`",
+              "",
+              "`tag` jest znacznikiem najbliższego przodka w historii, `numCommits` jest liczbą commitów od tego znacznika, a `<hash>` jest haszem opisywanego commitu."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Przyjrzyjmy się krótkiemu przykładowi. Dla tego drzewa poniżej:"
+            ],
+            "afterMarkdowns": [
+              "polecenie `git describe main` dałoby wynik:",
+              "",
+              "`v1_2_gC2`",
+              "",
+              "a `git describe side` dałoby wynik:",
+              "",
+              "`v2_1_gC4`"
+            ],
+            "command": "git tag v2 C3",
+            "beforeCommand": "git commit; go -b side HEAD~1; gc; gc; git tag v1 C0"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "To w zasadzie wszystko, co musisz wiedzieć o `git describe`! Spróbuj opisać kilka miejsc na tym poziomie, aby wyczuć to polecenie.",
+              "",
+              "Kiedy zechesz przejść dalej, po prostu zrób jeden commit, aby ukończyć poziom. Masz to w gratisie :P"
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "### Git Describe",
+              "",
+              'Visto che i tag fungono da "ancore", si può usare il comando `git describe` per capire dove ci si trova in riferimento all\'"ancora" (tag) più vicina!',
+              "",
+              "Git describe aiuta ad orientarti dopo che hai creato molti commit su per giù nell'albero; oppure dopo che hai concluso un git bisect (per ricercare bug) o quando utilizzi il computer di un collega che è appena tornato dalle vacanze.",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Git describe ha questa forma:",
+              "",
+              "`git describe <ref>`",
+              "",
+              "Dove `<ref>` è qualunque cosa che può indicare un commit. Se non specifichi un ref, git farà riferimento alla tua posizione attuale (`HEAD`).",
+              "",
+              "L'output del comando sarà:",
+              "",
+              "`<tag>_<numCommits>_g<hash>`",
+              "",
+              "Dove `tag` è il tag antenato più vicino, `numCommits` corrisponde al numero di commit tra ref e il tag, e `<hash>` è l'hash del commit che è descritto.",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Vediamo un esempio semplice. In quest'albero:",
+            ],
+            afterMarkdowns: [
+              "Il comando `git describe main` genera come output:",
+              "",
+              "`v1_2_gC2`",
+              "",
+              "Mentre `git describe side` genererà:",
+              "",
+              "`v2_1_gC4`",
+            ],
+            command: "git tag v2 C3",
+            beforeCommand:
+              "git commit; go -b side HEAD~1; gc; gc; git tag v1 C0",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Questo è più o meno quanto fa git describe! Prova questo comando in vari punti in questo livello per prendere confidenza.",
+              "",
+              "Quando hai finito, procedi e crea un commit per concludere il livello. Consideralo un omaggio della casa :P",
+            ],
+          },
+        },
+      ],
+    },
   }
 };

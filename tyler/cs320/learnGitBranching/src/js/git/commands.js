@@ -252,7 +252,7 @@ var commandConfig = {
       } else if (firstArg) {
         source = firstArg;
         assertIsBranch(engine.origin, source);
-        // get o/master locally if master is specified
+        // get o/main locally if main is specified
         destination = engine.origin.resolveID(source).getPrefixedID();
       } else {
         // can't be detached
@@ -296,7 +296,7 @@ var commandConfig = {
       switch (generalArgs.length) {
         // git fakeTeamwork
         case 0:
-          branch = 'master';
+          branch = 'main';
           numToMake = 1;
           break;
 
@@ -307,7 +307,7 @@ var commandConfig = {
             numToMake = 1;
           } else {
             numToMake = parseInt(generalArgs[0], 10);
-            branch = 'master';
+            branch = 'main';
           }
           break;
 
@@ -393,7 +393,7 @@ var commandConfig = {
         // technically we have a destination here as the remote branch
         source = firstArg;
         assertIsBranch(engine.origin, source);
-        // get o/master locally if master is specified
+        // get o/main locally if main is specified
         destination = engine.origin.resolveID(source).getPrefixedID();
       }
       if (source) { // empty string fails this check
@@ -615,7 +615,8 @@ var commandConfig = {
       '--interactive-test',
       '--aboveAll',
       '-p',
-      '--preserve-merges'
+      '--preserve-merges',
+      '--onto'
     ],
     regex: /^git +rebase($|\s)/,
     execute: function(engine, command) {
@@ -642,6 +643,17 @@ var commandConfig = {
             }
           );
         }
+        return;
+      }
+
+      if (commandOptions['--onto']) {
+        var args = commandOptions['--onto'].concat(generalArgs);
+        command.threeArgsImpliedHead(args, ' --onto');
+
+        engine.rebaseOnto(args[0], args[1], args[2], {
+          preserveMerges: commandOptions['-p'] || commandOptions['--preserve-merges']
+        });
+
         return;
       }
 

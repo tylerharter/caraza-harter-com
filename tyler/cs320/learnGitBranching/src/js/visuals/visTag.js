@@ -24,8 +24,8 @@ var VisTag = VisBase.extend({
     offsetX: GRAPHICS.nodeRadius,
     offsetY: GRAPHICS.nodeRadius,
 
-    vPad: 2,
-    hPad: 2,
+    vPad: 4,
+    hPad: 4,
 
     animationSpeed: GRAPHICS.defaultAnimationTime,
     animationEasing: GRAPHICS.defaultEasing
@@ -81,9 +81,9 @@ var VisTag = VisBase.extend({
    * compared in the goal (used in a goal visualization context
    */
   getIsLevelTagCompared: function() {
-    // we are not master, so return true if its not just master being compared
+    // we are not main, so return true if its not just main being compared
     var levelBlob = this.get('gitVisuals').getLevelBlob();
-    return !TreeCompare.onlyMasterCompared(levelBlob);
+    return !TreeCompare.onlyMainCompared(levelBlob);
   },
 
   getTagStackIndex: function() {
@@ -182,7 +182,7 @@ var VisTag = VisBase.extend({
 
     return firefoxFix({
       w: maxWidth,
-      h: textNode.clientHeight
+      h: textNode.getBoundingClientRect().height,
     });
   },
 

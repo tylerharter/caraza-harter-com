@@ -1,7 +1,7 @@
 exports.level = {
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22master%22%2C%22remoteTrackingBranchID%22%3A%22o/master%22%7D%2C%22o/master%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22o/master%22%2C%22remoteTrackingBranchID%22%3Anull%7D%2C%22side%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22side%22%2C%22remoteTrackingBranchID%22%3A%22o/master%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22side%22%2C%22id%22%3A%22HEAD%22%7D%2C%22originTree%22%3A%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22master%22%2C%22remoteTrackingBranchID%22%3Anull%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22master%22%2C%22id%22%3A%22HEAD%22%7D%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C1%22%2C%22id%22%3A%22main%22%2C%22remoteTrackingBranchID%22%3A%22o/main%22%7D%2C%22o/main%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22o/main%22%2C%22remoteTrackingBranchID%22%3Anull%7D%2C%22side%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22side%22%2C%22remoteTrackingBranchID%22%3A%22o/main%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22side%22%2C%22id%22%3A%22HEAD%22%7D%2C%22originTree%22%3A%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22main%22%2C%22remoteTrackingBranchID%22%3Anull%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22main%22%2C%22id%22%3A%22HEAD%22%7D%7D%7D",
   "solutionCommand": "git checkout -b side o/main;git commit;git pull --rebase;git push",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\"},\"o/master\":{\"target\":\"C1\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\"},\"o/main\":{\"target\":\"C1\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "name": {
     "en_US": "Remote Tracking",
     "zh_CN": "远程追踪",
@@ -9,15 +9,16 @@ exports.level = {
     "es_AR": "Trackeando remotos",
     "es_ES": "Trackeando remotos",
     "pt_BR": "Seguindo remotos",
-    "gl"   : "Traceando os remotos",
+    "gl": "Traceando os remotos",
     "de_DE": "Remote Tracking",
-    "ja"   : "リモートのトラッキング",
+    "ja": "リモートのトラッキング",
     "fr_FR": "Suivi de branche distante",
     "ru_RU": "Слежка за удалённым репозиторием",
-    "ko"   : "원격 저장소 추적하기",
-    "uk"   : "Слідкуємо за віддаленим репозиторієм",
-    "vi"   : "Theo dõi từ xa",
-    "sl_SI": "Sledenje Oddaljenega Repota"
+    "ko": "원격 저장소 추적하기",
+    "uk": "Слідкуємо за віддаленим репозиторієм",
+    "vi": "Theo dõi từ xa",
+    "sl_SI": "Sledenje Oddaljenega Repota",
+    "pl": "Śledzenie zdalnych repo"
   },
   "hint": {
     "en_US": "Remember there are two ways to set remote tracking!",
@@ -26,15 +27,16 @@ exports.level = {
     "es_AR": "¡Acordate de que hay dos formas de trackear un remoto!",
     "es_ES": "¡Recuerda que hay dos formas de trackear un remoto!",
     "pt_BR": "Lembre-se que há duas formas de seguir um ramo remoto!",
-    "gl"   : "¡Lembrate de que hai dúas formas de seguir unha rama remota!",
+    "gl": "¡Lembrate de que hai dúas formas de seguir unha rama remota!",
     "de_DE": "Nicht vergessen, es gibt zwei Arten Remote Tracking einzurichten!",
-    "ja"   : "リモートトラッキングを設定する方法が二つあるのをお忘れなく!",
+    "ja": "リモートトラッキングを設定する方法が二つあるのをお忘れなく!",
     "fr_FR": "Rappelez-vous qu'il existe deux façons de configurer le suivi de branche distante !",
     "ru_RU": "Помни, есть два способа установить слежку за удалённым репозиторием!",
-    "ko"   : "원격 추적하기를 설정하는데에는 두가지 방법이 있습니다!",
-    "uk"   : "Пам'ятай, є два способи слідкувати за віддаленим репозиорієм!",
-    "vi"   : "Hãy nhớ rằng, có 2 cách để thiết lập theo dõi từ xa!",
-    "sl_SI": "Spomni se, da obstajata dva načina za sledenje oddaljenega repota."
+    "ko": "원격 추적하기를 설정하는데에는 두가지 방법이 있습니다!",
+    "uk": "Пам'ятай, є два способи слідкувати за віддаленим репозиорієм!",
+    "vi": "Hãy nhớ rằng, có 2 cách để thiết lập theo dõi từ xa!",
+    "sl_SI": "Spomni se, da obstajata dva načina za sledenje oddaljenega repota.",
+    "pl": "Pamiętaj, zdalne repo można śledzić na dwa sposoby!"
   },
   "startDialog": {
     "en_US": {
@@ -214,7 +216,7 @@ exports.level = {
               "Assez parlé, faisons une démonstration ! Nous allons nous placer sur une nouvelle branche nommée `foo` et la configurer pour suivre `main` du dépôt distant."
             ],
             "afterMarkdowns": [
-              "Comme vous pouvez le voir, nous avons utilisé la cible de fusion déclarée pour `o/main` afin de mettre à jour la branche `foo`. Remarquez que la branche main n'a pas été mise à jour !!"
+              "Comme vous pouvez le voir, nous avons utilisé la cible de fusion déclarée pour `o/main` afin de mettre à jour la branche `foo`. Remarquez que la branche `main` n'a pas été mise à jour !!"
             ],
             "command": "git checkout -b foo o/main; git pull",
             "beforeCommand": "git clone; git fakeTeamwork"
@@ -301,7 +303,7 @@ exports.level = {
               "",
               "Durante un clone, git crea una rama remota por cada rama en el remoto (por ejemplo, ramas como `o/main`). Pero después crea una rama local que trackea la rama activa del remote, que suele ser `main`.",
               "",
-              "Una vez completado el git clone, sólo tenés una única rama local (para que no te asustes) pero podés ver todas las ramas que del remoto (si fueras tan curioso). ¡Es lo mejor de ambos mundos!",
+              "Una vez completado el git clone, sólo tenés una única rama local (para que no te asustes) pero podés ver todas las ramas del remoto (si fueras tan curioso). ¡Es lo mejor de ambos mundos!",
               "",
               "Esto también explica por qué podrías ver un mensaje como este durante la clonación:",
               "",
@@ -317,13 +319,13 @@ exports.level = {
             "markdowns": [
               "### ¿Puedo especificarlo yo?",
               "",
-              "¡Claro que sí! Podés hacer que cualquier rama que quieras trackee `o/main`, y si lo hicieras, esa rama va a tener el mismo destino implícito de push y objetivo implícito de merge que `main`. Eso significa que podés correr `git push` en una rama llamada `absolutamenteNoEsMaster` y ¡que tu trabajo se pushee a la rama `main` del remoto!",
+              "¡Claro que sí! Podés hacer que cualquier rama que quieras trackee `o/main`, y si lo hicieras, esa rama va a tener el mismo destino implícito de push y objetivo implícito de merge que `main`. Eso significa que podés correr `git push` en una rama llamada `absolutamenteNoEsMain` y ¡que tu trabajo se pushee a la rama `main` del remoto!",
               "",
               "Hay dos formas de establecer esta propiedad. La primera es checkoutear una nueva rama usando una rama remota como la referencia especificada. Ejecutar",
               "",
-              "`git checkout -b absolutamenteNoEsMaster o/main`",
+              "`git checkout -b absolutamenteNoEsMain o/main`",
               "",
-              "Crea una nueva rama llamada `absolutamenteNoEsMaster` y la hace trackear a `o/main`."
+              "Crea una nueva rama llamada `absolutamenteNoEsMain` y la hace trackear a `o/main`."
             ]
           }
         },
@@ -437,13 +439,13 @@ exports.level = {
             "markdowns": [
               "### ¿Puedo especificarlo yo?",
               "",
-              "¡Claro que sí! Puedes hacer que cualquier rama que quieras trackee `o/main`, y si lo hicieras, esa rama va a tener el mismo destino implícito de push y objetivo implícito de merge que `main`. Eso significa que puedes ejecutar `git push` en una rama llamada `absolutamenteNoEsMaster` y ¡que tu trabajo se pushee a la rama `main` del remoto!",
+              "¡Claro que sí! Puedes hacer que cualquier rama que quieras trackee `o/main`, y si lo hicieras, esa rama va a tener el mismo destino implícito de push y objetivo implícito de merge que `main`. Eso significa que puedes ejecutar `git push` en una rama llamada `absolutamenteNoEsMain` y ¡que tu trabajo se pushee a la rama `main` del remoto!",
               "",
               "Hay dos formas de establecer esta propiedad. La primera es hacer checkout sobre una nueva rama usando una rama remota como la referencia especificada. Ejecutar",
               "",
-              "`git checkout -b absolutamenteNoEsMaster o/main`",
+              "`git checkout -b absolutamenteNoEsMain o/main`",
               "",
-              "Crea una nueva rama llamada `absolutamenteNoEsMaster` y la hace trackear a `o/main`."
+              "Crea una nueva rama llamada `absolutamenteNoEsMain` y la hace trackear a `o/main`."
             ]
           }
         },
@@ -555,13 +557,13 @@ exports.level = {
             "markdowns": [
               "### Posso eu mesmo especificar isso?",
               "",
-              "Sim, você pode! Você pode fazer com que qualquer ramo arbitrário siga o `o/main`, e se você fizer isso, esse ramo terá o mesmo destino de push implícito que e o mesmo alvo de merge que o `main`. Isso significa que você pode executar `git push` em um ramo chamado `realmenteNaoSouOMaster` e ainda assim ter seu trabalho enviado ao ramo `main` do repositório remoto!",
+              "Sim, você pode! Você pode fazer com que qualquer ramo arbitrário siga o `o/main`, e se você fizer isso, esse ramo terá o mesmo destino de push implícito que e o mesmo alvo de merge que o `main`. Isso significa que você pode executar `git push` em um ramo chamado `realmenteNaoSouOMain` e ainda assim ter seu trabalho enviado ao ramo `main` do repositório remoto!",
               "",
               "Há duas formas de configurar essa propriedade. A primeira consiste em fazer checkout de um novo ramo usando o ramo remoto como especificação de referência. Executar",
               "",
-              "`git checkout -b realmenteNaoSouOMaster o/main`",
+              "`git checkout -b realmenteNaoSouOMain o/main`",
               "",
-              "Cria um novo ramo chamado `realmenteNaoSouOMaster` e o configura para seguir o `o/main`."
+              "Cria um novo ramo chamado `realmenteNaoSouOMain` e o configura para seguir o `o/main`."
             ]
           }
         },
@@ -675,13 +677,13 @@ exports.level = {
             "markdowns": [
               "### ¿Podo especificalo eu?",
               "",
-              "¡Claro que sí! Podes facer que calquera rama que quixeras seguir `o/main`, e se o fixeras, esa rama vai ter o mesmo destino implícito de push e  obxectivo implícito de merge que `main`. Eso significa que podes executar `git push` nunha rama chamada `nonMaster` e ¡que o teu traballo se empurre á rama `main` do remoto!",
+              "¡Claro que sí! Podes facer que calquera rama que quixeras seguir `o/main`, e se o fixeras, esa rama vai ter o mesmo destino implícito de push e  obxectivo implícito de merge que `main`. Eso significa que podes executar `git push` nunha rama chamada `nonMain` e ¡que o teu traballo se empurre á rama `main` do remoto!",
               "",
               "Hai dúas formas de establecer esta propiedade. A primeira é facer checkout a unha nova rama empregando unha rama remota como a referencia especificada. Executar",
               "",
-              "`git checkout -b nonMaster o/main`",
+              "`git checkout -b nonMain o/main`",
               "",
-              "Crea unha nova rama chamada `nonMaster` e persigue a `o/main`."
+              "Crea unha nova rama chamada `nonMain` e persigue a `o/main`."
             ]
           }
         },
@@ -869,7 +871,7 @@ exports.level = {
         }
       ]
     },
-    "zh_CN":{
+    "zh_CN": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -1012,7 +1014,7 @@ exports.level = {
               "",
               "Du fragst dich vielleicht wieso diese Eigenschaft auf dem `main` definiert ist, wenn du das doch gar nicht explizit gemacht hast. Naja, beim Clonen eines Repository macht Git das für den `main` automatisch.",
               "",
-              "Während des Clonens erstellt Git einen Remote Branch für jeden Branch, den es auf dem Remote Server findet (also Branches wie `o/main`); dann erstellt es für den Branch, auf den auf dem entfernten Server `HEAD` zeigt (meistens `main`) automatisch einen lokalen Branch und stellt ihn so ein, dass er sein Gegenstück auf dem Server trackt. Deswegen hast du beim clonen vielleicht schon mal dies gesehen:",
+              "Während des Clonens erstellt Git einen Remote Branch für jeden Branch, den es auf dem Remote Server findet (also Branches wie `o/main`); dann erstellt es für den Branch, auf den auf dem entfernten Server `HEAD` zeigt (meistens `main`) automatisch einen lokalen Branch und stellt ihn so ein, dass er sein Gegenstück auf dem Server trackt. Deswegen hast du beim Clonen vielleicht schon mal dies gesehen:",
               "",
               "    local branch \"main\" set to track remote branch \"o/main\""
             ]
@@ -1024,13 +1026,13 @@ exports.level = {
             "markdowns": [
               "### Kann ich das auch selbst machen?",
               "",
-              "Na klar! Du kannst jeden beliebigen Branch so einstellen, dass er `o/main` trackt, und wenn du das tust wird der Branch dieselben impliziten Zielangaben für `push` und `pull` haben wie `main`. Du kannst also `git push` auf dem Branch `absolut_nicht_master` ausführen und deine Commits auf `main` des entfernten Servers schieben lassen.",
+              "Na klar! Du kannst jeden beliebigen Branch so einstellen, dass er `o/main` trackt, und wenn du das tust wird der Branch dieselben impliziten Zielangaben für `push` und `pull` haben wie `main`. Du kannst also `git push` auf dem Branch `absolut_nicht_main` ausführen und deine Commits auf `main` des entfernten Servers schieben lassen.",
               "",
               "Es gibt zwei Möglichkeiten diese Eigenschaft zu definieren. Die erste ist, einen neuen lokalen Branch von einem Remote Branch auszuchecken. Wenn man",
               "",
-              "    git checkout -b absolut_nicht_master o/main",
+              "    git checkout -b absolut_nicht_main o/main",
               "",
-              "eingibt, wird ein neuer lokaler Branch namens `absolut_nicht_master` angelegt, der `o/main` trackt."
+              "eingibt, wird ein neuer lokaler Branch namens `absolut_nicht_main` angelegt, der `o/main` trackt."
             ]
           }
         },
@@ -1228,10 +1230,10 @@ exports.level = {
             "markdowns": [
               "### リモートトラッキングブランチ",
               "",
-              "もしかしたら直近の幾つかの章で、あることが「魔法」に見えたかもしれません。それは、gitが`main`ブランチは`o/main`に関連していることを知っていたということです。確かにこれらのブランチは似た名前を持っていて、それは、リモートの`main`ブランチとローカルの`main`ブランチを繋ぐ論理的な意味を成すかもしれません。しかし、リモートトラッキングの関係が、次のような2つの手順を明確にしています:",
+              "もしかしたら直近の幾つかの章で、「魔法」の様に見えた現象があるかもしれません:gitが`main`ブランチは`o/main`に関連していることを知っていたということです。確かにこれらのブランチは似た名前を持っていて、リモートの`main`ブランチとローカルの`main`ブランチを繋ぐ論理的な意味を成すかもしれません。以下の2例がこれらブランチが明確に繋がっている事を示します:",
               "",
-              "* プルの実行時は、コミットを`o/main`上にダウンロードし、`main`ブランチにそれを*マージ*します。マージの暗黙のターゲットは、リモートトラッキングの関係によって決められます。",
-              "* プッシュの実行時は、`main`ブランチの作業はリモートの`main`ブランチ（ローカルでは`o/main`によって表現されています）にプッシュされます。プッシュ動作の決定は、`main`と`o/main`のリモートトラッキングな関係から決定されます。",
+              "* プルの実行時は、コミットを`o/main`上にダウンロードし、`main`ブランチにそれを*マージ*します。マージのターゲットはこの繋がりから求められます。",
+              "* プッシュの実行時は、`main`ブランチの作業はリモートの`main`ブランチにプッシュされます（その後に`o/main`によってローカルに反映されています）。プッシュ先の決定は、`main`と`o/main`の繋がりから求められます。",
               ""
             ]
           }
@@ -1242,15 +1244,15 @@ exports.level = {
             "markdowns": [
               "## リモートトラッキング",
               "",
-              "かいつまんでは、`main`と`o/main`の関係は、単にそれぞれのブランチの\"remote traking\"というプロパティによって説召されます。`main`ブランチには`o/main`を追跡しているというように設定されているのです。これは、`main`ブランチのための暗黙のプッシュ先と暗黙の取り込み先が存在することを意味します。",
+              "端的に言えば、`main`と`o/main`の繋がりの正体はそれぞれのブランチの\"remote traking\"というプロパティです。`main`ブランチは`o/main`に追跡するように設定されているのです。これは、`main`ブランチのための暗黙のプッシュ先と暗黙の取り込み先が存在することを意味します。",
               "",
-              "あなたは特に何も指定せずにコマンドを走らせていたのに、`main`ブランチにこのプロパティが設定されていたことに疑問を持つかもしれません。そう、gitによってリポジトリを複製した時、gitは実はこのプロパティを自動的に設定してくれるのです。",
+              "特にそのような設定を行うコマンドを走らせていないのに、`main`ブランチにこのプロパティが設定されていたことに疑問を持つかもしれません。そう、gitによってリポジトリをクローンした時、gitはこのプロパティを自動的に設定してくれるのです。",
               "",
-              "クローンしている間、gitはリモートブランチをリモートのブランチ全てに対して作ります（例えば、`o/main`のような感じです）。その後、現在アクティブなブランチを追跡するローカルブランチを作成します。多くの場合それは`main`ブランチになります。",
+              "クローンしている間、gitはリモートブランチをリモートリポジトリのブランチ全てに対して作ります（`o/main`のように）。その後、リモート上でアクティブなブランチを追跡するローカルブランチを作成します。多くの場合それは`main`ブランチになります。",
               "",
-              "gitのクローンが完了した時、あなたの手にはたった一つだけローカルブランチがあります（なので、閉口しないでも大丈夫です）。しかし、あなたは全てのリモートのブランチ同士の違いを見ることができるのです（もし、あなたがそれについて非常に好奇心旺盛であるときはいつでもね！）。これは、両方の世界にとってベストです！",
+              "gitのクローンが完了した時、一つのローカルブランチしか存在しません（なので、情報量に圧倒される事はありません）。しかし、全てのリモートのブランチを見ることもできるのです（もしあなたが十分な好奇心を持っていれば、ですが）。いわゆるwin-winの関係ですね！",
               "",
-              "これはクローン中に次のようなコマンド出力が表示されることも説明します:",
+              "クローン中に次のような出力が表示されることの説明にもなりますね:",
               "",
               "    local branch \"main\" set to track remote branch \"o/main\""
             ]
@@ -1260,15 +1262,15 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "### 私は自分でトラッキングを設定できますか？",
+              "### 自分でトラッキング元を設定できますか？",
               "",
-              "はい、できます！あなたは、全てのブランチについて`o/main`との追跡を設定でき、もしそうした時は、同じ暗黙のプッシュ先と取り込み先を`main`として設定します。これは、例えば`tottallyNotMaster`という名前のブランチで`git push`を走らせ、作業をリモートの`main`ブランチにプッシュするといったことができるということを意味しています！",
+              "はい、できます！`o/main`を追跡するブランチを作成できますし、そのブランチは`main`と同じ暗黙のプッシュ先とマージターゲットを持ちます。例えば`tottallyNotMain`という名前のブランチで`git push`を走らせ、リモートの`main`ブランチにプッシュするといったことができるということを意味しています！",
               "",
-              "このプロパティを設定するには2つの方法があります。一つ目は、リモートブランチのリファレンスを使用して新しいブランチをチェックアウトするというものです。例えば次のコマンドを走らせてます",
+              "このプロパティを設定するには2つの方法があります。一つ目は、リモートブランチをリファレンスとして新しいブランチをチェックアウトするというものです。例えば",
               "",
               "`git checkout -b totallyNotMain o/main`",
               "",
-              "これは`totallyNotMain`という名前のブランチを新しく作り、`o/main`への追跡プロパティを設定します。"
+              "を実行する事で`totallyNotMain`という名前のブランチを新しく作り、`o/main`への追跡プロパティを設定します。"
             ]
           }
         },
@@ -1279,7 +1281,7 @@ exports.level = {
               "説明は十分でしょう、デモを見ていきましょう！`foo`という名前の新しいブランチをチェックアウトし、リモートの`main`への追跡プロパティを設定してみます。"
             ],
             "afterMarkdowns": [
-              "私たちは暗黙の取り込み先である`o/main`を使って、`foo`ブランチを更新します。`main`は更新されないことに注意してください！！"
+              "見ての通り、暗黙の取り込み先である`o/main`を使って`foo`ブランチを更新しました。`main`が更新されないことに注意してください！！"
             ],
             "command": "git checkout -b foo o/main; git pull",
             "beforeCommand": "git clone; git fakeTeamwork"
@@ -1292,7 +1294,7 @@ exports.level = {
               "これは`git push`にも適用されます"
             ],
             "afterMarkdowns": [
-              "わーお。全く違う名前がつけられているブランチですが、リモートの`main`に私たちの作業をプッシュできました。"
+              "わーお。全く違う名前がつけられているブランチですが、リモートの`main`に内容をプッシュできました。"
             ],
             "command": "git checkout -b foo o/main; git commit; git push",
             "beforeCommand": "git clone"
@@ -1304,11 +1306,11 @@ exports.level = {
             "markdowns": [
               "### 二番目の方法",
               "",
-              "ブランチのリモートトラッキングを設定するもう一つの方法は、単に`git branch -u`オプションを使うというものです。例えば以下のようにです",
+              "ブランチのリモートトラッキングを設定するもう一つの方法は、単に`git branch -u`オプションを使うというものです。例えば",
               "",
               "`git branch -u o/main foo`",
               "",
-              "これは、`foo`ブランチを`o/main`を追跡するように設定します。もし、`foo`が現在チェックアウトしているブランチだった場合、以下のように省略することができます:",
+              "を実行する事で`foo`ブランチが`o/main`を追跡するように設定できます。もし、`foo`が現在チェックアウトしているブランチだった場合、以下のように省略することができます:",
               "",
               "`git branch -u o/main`",
               ""
@@ -1319,7 +1321,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "実際に素早く、もう一つの方法でリモートトラッキングを指定する様子を見てみましょう..."
+              "もう一つの方法でリモートトラッキングを指定する様子を見てみましょう..."
             ],
             "afterMarkdowns": [
               "前回と一緒で、より明示的なコマンドですね。とてもいい感じです！"
@@ -1349,7 +1351,7 @@ exports.level = {
               "지난 몇개의 레슨에서 \"마법\"처럼 보일 수 있는게 하나 있었는데, git이 `main`브랜치가 `o/main`와 연관 되어있는걸 안다는 것입니다. 물론 이 두 브랜치가 이름이 비슷하기 때문에 로컬 `main`브랜치가 원격의 `main`브랜치와 연결 되어있다고 하자면 어찌 논리적으로 말이 되긴 합니다만..., 이 연결은 두가지 시나리오를 통해 뚜렷하게 확인이 됩니다:",
               "",
               "* pull 작업을 하는 도중, 커밋들은 `o/main`에 내려받아 지고 그다음 `main` 브랜치로 *merge*됩니다. merge에서 내재된 타겟은 이 연결에서 결정합니다.",
-              "* push 작업을 하는 도중, `main` 브랜치의 작업은 원격의 `main`브랜치(로컬에서 `o/main`로 표현되는)로 push 됩니다. push의 *목적지*는 master와 `o/main`의 연결에서 결정됩니다.",
+              "* push 작업을 하는 도중, `main` 브랜치의 작업은 원격의 `main`브랜치(로컬에서 `o/main`로 표현되는)로 push 됩니다. push의 *목적지*는 main와 `o/main`의 연결에서 결정됩니다.",
               ""
             ]
           }
@@ -1440,7 +1442,7 @@ exports.level = {
               "자 이 다른 방법이 작동하는 모습을 확인해 봅시다..."
             ],
             "afterMarkdowns": [
-              "이전과 같습니다,  좀 더 분명하게 알 수 있느 명령어죠. 좋아요!"
+              "이전과 같습니다,  좀 더 분명하게 알 수 있는 명령어죠. 좋아요!"
             ],
             "command": "git branch -u o/main foo; git commit; git push",
             "beforeCommand": "git clone; git checkout -b foo"
@@ -1734,13 +1736,13 @@ exports.level = {
             "markdowns": [
               "### Ali ga lahko določim sam?",
               "",
-              "Seveda se da! Narediš lahko, da bilokateri branch sledi `o/main`. V tem primeru bo imel ta branch enak impliciran cilj za push in merge kot `main`. To pomeni, da lahko poženeš `git push` na branchu poimenovanem `splohNiMaster` in pushas svoje delo na `main` branch na oddaljenem repotu!",
+              "Seveda se da! Narediš lahko, da bilokateri branch sledi `o/main`. V tem primeru bo imel ta branch enak impliciran cilj za push in merge kot `main`. To pomeni, da lahko poženeš `git push` na branchu poimenovanem `splohNiMain` in pushas svoje delo na `main` branch na oddaljenem repotu!",
               "",
               "Obstajata dva načina, da nastaviš to lastnost. Prvi je, da checkoutaš nov branch z uporabo oddaljenega brancha kot določeno referenca. Izvedba",
               "",
-              "`git checkout -b splohNiMaster o/main`",
+              "`git checkout -b splohNiMain o/main`",
               "",
-              "Ustvari nov branch imenovan `splohNiMaster` in nastavi, da sledi `o/main`."
+              "Ustvari nov branch imenovan `splohNiMain` in nastavi, da sledi `o/main`."
             ]
           }
         },
@@ -1805,6 +1807,242 @@ exports.level = {
           "options": {
             "markdowns": [
               "Ok! Za to stopnjo pushajmo delo na `main` branch na oddaljenem repotu, medtem ko lokalno *nismo* na `masterju`. Ostalo prepustim tebi, ker je to vseeno napredna stopnja :P"
+            ]
+          }
+        }
+      ]
+    },
+    "ta_IN": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### தூரத்திலுள்ள கிளையை கண்காணித்தல்",
+              "",
+              "கடந்த சில பாடங்களில் கிட் `main` மற்றும் `o/main` தொடர்பை கிட் அறிந்திருந்தது ஒரு  \"தந்திரம் போன்று\" தோன்றி இருக்கலாம்.  நிச்சயமாக இரு கிளைகளுக்கும் ஒத்த பெயர்கள் உள்ளன, மேலும் தொலைதூரத்தில் உள்ள  `main` கிளையை நமது கணினில் உள்ள  `main` கிளையுடன் இணைக்க இது சரியான காரணமாக தெரியலாம், ஆனால் இந்த இணைப்பு இரண்டு காரணிகளில் தெளிவாக நிரூபிக்கப்பட்டுள்ளது:",
+              "",
+              "* புல் செயல்பாட்டின் போது, கமிட்ஸ் `o/main` மீது பதிவிறக்கம் செய்யப்பட்டு `main` உடன் *ஒன்றிணைக்கப்படுகின்றது *.  கிளைகளுக்கு இடையிலான இணைப்பின் மறைமுக இலக்கு இந்த தொடர்பினால்  தீர்மானிக்கப்படுகிறது.",
+              "* புஸ் செயல்பாட்டின் பொது, `main` கிளையில் உள்ள மாற்றங்கள் தூரத்திலுள்ள `main` கிளைக்கு தள்ளப்படிகிரது (அது பின்னர் `o/main` என்று நம்மிடத்தில் குறித்துக்காட்டப்படும்).`main` மற்றும் `o/main` இடையிலான தொடர்பினை பொருத்து புஸ் செயலின் இலக்கு தீர்மானிக்கப்படுகிறது.",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## தொலைதூர இலக்கை கண்காணித்தல்",
+              "",
+              "சுருக்கமாக கூரினால், `main` மற்றும் `o/main` இடையிலான தொடர்பு  \"remote tracking\" குணத்தினால் விளக்கப்பட்டுகிறது. `main` கிளை `o/main` கிளையை கண்காணிக்குமாரு  அமைக்கப்பட்டுள்ளது  -- என்றால் இணைப்பிற்க்கான இலக்கும் புஸ்க்கான இலக்கும் மறைமுகமாக குறிக்கப்பட்டுள்ளது.",
+              "",
+              "எந்த ஓரு கட்டளையும் கொடுக்கப்படாமல் இந்த குணம் எப்படி  கிடைத்தது  என்ற குழப்பன் வேண்டாம்,  அது நீங்கள் ஒரு களஞ்சியத்தை நகல் எடுக்கும் போது  தானாக பொறுத்த படுகிறது. ",
+              "",
+              "நகல் எடுக்கும் பொலுது, கிட் தூரத்திலுள்ள கிளைகளுக்கும் ஒரு கிளையை உருவாக்குகிறது (`o/main` கிளையை போன்று).  பின்பு அது தூரத்தில் நடைமுறையில் உள்ள கிளையை கண்காணிக்கும் படி ஒரு கிளையை நமது இடத்தில் உருவாக்கும், அது பொதுவாக `main`ஆக இருக்கும்.",
+              "",
+              "நகால் எடுத்த பின்பு, நம்மிடம் உள்ள கிளை மட்டும் மீதம் இருக்கும் (எனவே நீங்கள் அதிகபடியாக எதையும் பெரவில்லை) ஆயினும் தேவைப்பட்டால் நீங்கள் தூரத்தில் உள்ள அனைத்து கிளைகளையும் காணலாம்.  இது இரு நிளைககளிலும் சிறந்தது!",
+              "",
+              "இதுதான் பின் வரும் கட்டளை நகல் எடுக்கும் போது பதிவு செயப்படுவதன் காரனம்:",
+              "",
+              "    local branch \"main\" set to track remote branch \"o/main\""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### இதை நானே குறிப்பிட முடியுமா?",
+              "",
+              "ஆமாம் கண்டிப்பாக!  உங்களால் எந்த ஒரு கிளையையும் `o/main` கண்காணிக்கும் படி அமைக்க முடியும், அப்படி செய்தால் அதிலும் இணைப்பிற்க்கான இலக்கு மற்றும்  புஸ்க்கான இலக்கு் இரண்டும் மறைமுகமாக `main`ஐ குறிக்கும் படி இருக்கும்.  அதலான் `totallyNotMain` கிளையில் செய்யப்படும் `git push` தூரத்தில் உள்ள `main` கிளையில் மாற்றங்களை இணைத்துவிடும்.",
+              "",
+              "இதனை இரண்டு வகையாக செய்யலாம். முதலாவதாக புதிய கிளையை பின் வரும் கட்டளை கொண்டு பதிப்பித்தல்",
+              "",
+              "`git checkout -b totallyNotMain o/main`",
+              "",
+              "அல்லது `totallyNotMain` என்ற கிளையை உருவாக்கி `o/main` கண்காணிக்கு படி அமைத்தல்."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "விளக்கங்கள் போதும், இப்போது செயல்முறையை காண்போம்! `foo` கிளையை `main` கண்காணிக்கு படி பதிப்பிப்போம்."
+            ],
+            "afterMarkdowns": [
+              "நீங்கள் பார்ப்பதை போன்று, `foo` கிளை `o/main`ஐ மறைமுக இணை்ப்பு இல்க்காக அமைக்கப்பட்டுள்ளது.  எவ்வளவு `main` புதுப்பிக்கப்படவில்லை என்பதை நினைவில் கொள்க!!"
+            ],
+            "command": "git checkout -b foo o/main; git pull",
+            "beforeCommand": "git clone; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "கிட் புஸ்-ஐயும் செயல் படுத்துங்கள்."
+            ],
+            "afterMarkdowns": [
+              "சிரப்பு. நமது  கிளைக்கு முற்றிலும் வேறுபட்ட பெயரிடப்பட்டிருந்தாலும், நமது மாற்றங்களை தொலைதூரத்தில் உள்ள `main`தள்ளினோம்."
+            ],
+            "command": "git checkout -b foo o/main; git commit; git push",
+            "beforeCommand": "git clone"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### வழி #2",
+              "",
+              "தூரத்திலுள்ள கிளையை கண்காணிக்கும் மற்றும் ஒரு முறை `git branch -u`ஐ பயன்படுத்துவது.  பின்வருமாரு கட்டளையிட்டு",
+              "",
+              "`git branch -u o/main foo`",
+              "",
+              "இது `foo` `o/main`ஐ கண்காணிக்கும் படி செய்யும்.  `foo` ஏற்க்கனவே பதிப்பிட பட்டு இருந்தால் அதையும் நீ்ங்கள் உள்ளீடாக தர அவசியம் இல்லை:",
+              "",
+              "`git branch -u o/main`",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "இப்போது இந்த இரண்டாவது முறையை விரைவாக காண்போம்..."
+            ],
+            "afterMarkdowns": [
+              "முன்பு குறிப்பிட்டது போன்றுதான், மேலும் சற்று வெளிப்படையன கட்டளையாக!"
+            ],
+            "command": "git branch -u o/main foo; git commit; git push",
+            "beforeCommand": "git clone; git checkout -b foo"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "சரி! இந்த நிலைக்கு நாம் தூரத்தில் உள்ள `main` கிளைக்கு அதனை பதிப்பிடாமல் மாற்றங்களை தள்ளுவோம்.  இது உயர்நிலை பாட பகுதி என்பதால் அதை எவ்வாரு செய்யலாம் என்பது உங்களிடமெ விட்டு விடுகின்றேன் :P"
+            ]
+          }
+        }
+      ]
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### Gałęzie śledzące",
+              "",
+              "Może ci się wydawać od kilku lekcji, że Git jakoś \"magicznie\" wie, że gałąź `main` jest powiązana z `o/main`. Co prawda nazwy tych gałęzi są podobne i, logicznie rzecz biorąc, `main` na zdalnym repo można skojarzyć z lokalną gałęzią `main`, ale na dwóch przykładach pokażemy, jak to działa w rzeczywistości:",
+              "",
+              "* Podczas operacji pull commity są pobierane do `o/main`, a następnie za pomocą *merge* scalane z gałęzią `main`. Na podstawie tego połączenia określa się pośrednio cel scalania.",
+              "* Podczas operacji push praca z gałęzi `main` jest wypychana do zdalnej gałęzi `main` (lokalnie reprezentowanej przez `o/main`). *Cel* polecenia push jest określony przez połączenie pomiędzy `main` a `o/main`.",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Remote tracking",
+              "",
+              "Żeby nie przedłużać: połączenie pomiędzy `main` i `o/main` da się wyjaśnić po prostu jedną z właściwości gałęzi: \"remote tracking\". Gałąź `main` ma ustawione śledzenie gałęzi `o/main` -- a to oznacza, że dla operacji merge i push określony jest domyślny cel.",
+              "",
+              "Może się zastanawiasz, jak to się stało, że `main` ma już ustawione śledzenie, skoro nie robiliśmy tego żadnym poleceniem. Otóż, kiedy klonujesz repozytorium w Gicie, ta właściwość jest ustawiana za ciebie automatycznie. ",
+              "",
+              "Przy klonowaniu Git tworzy zdalną gałąź dla każdej z gałęzi zdalnego repozytorium (czyli gałęzie takie jak `o/main`). Następnie tworzy lokalną gałąź, która śledzi aktualnie aktywną gałąź na zdalnym repo - czyli najczęściej `main`.",
+              "",
+              "Po zakończeniu klonowania lokalnie masz tylko jedną gałąź (żeby nie zawracać sobie niepotrzebnie głowy), ale możesz zobaczyć wszystkie gałęzie na zdalnym repozytorium (jeśli aż tak cię to ciekawi). To idealne dwa w jednym!",
+              "",
+              "A przy okazji to wyjaśnia, dlaczego przy klonowaniu możesz zobaczyć:",
+              "",
+              "    local branch \"main\" set to track remote branch \"o/main\""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### A czy mogę to określić samodzielnie?",
+              "",
+              "Jasne, że tak! Możesz kazać dowolnej gałęzi śledzić `o/main`, i w takim wypadku będzie miała taki sam domyślny cel operacji push i merge co `main`. To znaczy, że możesz zrobić `git push` na gałęzi o nazwie `totallyNotMain`, a twoja praca i tak zostanie wypchnięta do gałęzi `main` w zdalnym repozytorium!",
+              "",
+              "Są dwa sposoby ustawienia tej właściwości. Pierwszym jest checkout nowej gałęzi wykorzystujący zdalną gałąź jako określoną referencję. Polecenie",
+              "",
+              "`git checkout -b totallyNotMain o/main`",
+              "",
+              "tworzy nową gałąź o nazwie `totallyNotMain` i każe jej śledzić `o/main`."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Dość gadania, pora zobaczyć, jak to działa! Będziemy checkoutować nową gałąź o nazwie `foo` i każemy jej śledzić `main` na zdalnym repozytorium."
+            ],
+            "afterMarkdowns": [
+              "Jak widzisz, użyliśmy domyślnego celu scalania `o/main`, żeby zaktualizować gałąź `foo`. Zwróć uwagę, że `main` się nie aktualizuje!!!"
+            ],
+            "command": "git checkout -b foo o/main; git pull",
+            "beforeCommand": "git clone; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Dotyczy to również git push."
+            ],
+            "afterMarkdowns": [
+              "Tadam! Wypchnęliśmy naszą pracę do `main` na `remote`, mimo że nasza gałąź nazywała się zupełnie inaczej."
+            ],
+            "command": "git checkout -b foo o/main; git commit; git push",
+            "beforeCommand": "git clone"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "### Sposób #2",
+              "",
+              "Inny sposób na ustawienie remote tracking na branchu to po prostu użycie opcji `git branch -u`. Polecenie",
+              "",
+              "`git branch -u o/main foo`",
+              "",
+              "spowoduje, że gałąź `foo` będzie śledzić `o/main`. Jeśli aktualnie wybraną gałęzią jest `foo`, to możesz nawet pominąć jej nazwę:",
+              "",
+              "`git branch -u o/main`",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Spójrzmy jeszcze szybko, jak to wygląda w praktyce..."
+            ],
+            "afterMarkdowns": [
+              "Tak samo jak poprzednio, tylko wyraźniej, widać to w poleceniu. Pięknie!"
+            ],
+            "command": "git branch -u o/main foo; git commit; git push",
+            "beforeCommand": "git clone; git checkout -b foo"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Oki! Na tym poziomie wypchnijmy (push) pracę do gałęzi `main` na zdalnym repozytorium, *nie* checkoutując `main` lokalnie. Wymyśl samodzielnie, jak to zrobić. To przecież zaawansowana część kursu :P"
             ]
           }
         }

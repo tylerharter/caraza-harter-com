@@ -21,7 +21,7 @@ var GRAPHICS = {
   defaultAnimationTime: 400,
 
   rectFill: 'hsb(0.8816909813322127,0.6,1)',
-  headRectFill: '#2831FF',
+  headRectFill: '#7278FF',
   rectStroke: '#000',
   rectStrokeWidth: '1',
 
@@ -43,7 +43,7 @@ var GRAPHICS = {
 
   tagFill: 'hsb(0,0,0.9)',
   tagStroke: '#000',
-  tagStrokeWidth: '1',
+  tagStrokeWidth: 1,
 
   orphanNodeFill: 'hsb(0.5,0.8,0.7)'
 };
@@ -51,4 +51,3 @@ var GRAPHICS = {
 exports.TIME = TIME;
 exports.GRAPHICS = GRAPHICS;
 exports.VIEWPORT = VIEWPORT;
-

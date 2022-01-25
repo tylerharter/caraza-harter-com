@@ -3,20 +3,20 @@ exports.level = {
     "git cherry-pick": true,
     "git revert": true
   },
-  "compareOnlyMasterHashAgnosticWithAsserts": true,
+  "compareOnlyMainHashAgnosticWithAsserts": true,
   "goalAsserts": {
-    "master": [
-      function(data) {
+    "main": [
+      function (data) {
         return data.C2 > data.C3;
       },
-      function(data) {
+      function (data) {
         return data.C2 > data.C1;
       }
     ]
   },
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C3%27%27%22%2C%22id%22%3A%22master%22%7D%2C%22newImage%22%3A%7B%22target%22%3A%22C2%22%2C%22id%22%3A%22newImage%22%7D%2C%22caption%22%3A%7B%22target%22%3A%22C3%27%27%22%2C%22id%22%3A%22caption%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%27%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C3%27%22%5D%2C%22id%22%3A%22C2%27%22%7D%2C%22C2%27%27%22%3A%7B%22parents%22%3A%5B%22C3%27%22%5D%2C%22id%22%3A%22C2%27%27%22%7D%2C%22C2%27%27%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%27%27%27%22%7D%2C%22C3%27%27%22%3A%7B%22parents%22%3A%5B%22C2%27%27%27%22%5D%2C%22id%22%3A%22C3%27%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22master%22%2C%22id%22%3A%22HEAD%22%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C3%27%27%22%2C%22id%22%3A%22main%22%7D%2C%22newImage%22%3A%7B%22target%22%3A%22C2%22%2C%22id%22%3A%22newImage%22%7D%2C%22caption%22%3A%7B%22target%22%3A%22C3%27%27%22%2C%22id%22%3A%22caption%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%27%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C3%27%22%5D%2C%22id%22%3A%22C2%27%22%7D%2C%22C2%27%27%22%3A%7B%22parents%22%3A%5B%22C3%27%22%5D%2C%22id%22%3A%22C2%27%27%22%7D%2C%22C2%27%27%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%27%27%27%22%7D%2C%22C3%27%27%22%3A%7B%22parents%22%3A%5B%22C2%27%27%27%22%5D%2C%22id%22%3A%22C3%27%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22main%22%2C%22id%22%3A%22HEAD%22%7D%7D",
   "solutionCommand": "git rebase -i HEAD~2 --solution-ordering C3,C2;git commit --amend;git rebase -i HEAD~2 --solution-ordering C2'',C3';git rebase caption main",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\"},\"newImage\":{\"target\":\"C2\",\"id\":\"newImage\"},\"caption\":{\"target\":\"C3\",\"id\":\"caption\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"caption\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\"},\"newImage\":{\"target\":\"C2\",\"id\":\"newImage\"},\"caption\":{\"target\":\"C3\",\"id\":\"caption\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"caption\",\"id\":\"HEAD\"}}",
   "name": {
     "ko": "커밋들 갖고 놀기",
     "en_US": "Juggling Commits",
@@ -25,14 +25,16 @@ exports.level = {
     "es_AR": "Haciendo malabares con los commits",
     "es_ES": "Haciendo malabares con los commits",
     "pt_BR": "Malabarismo com commits",
-    "gl"   : "Argallando cos commits",
+    "gl": "Argallando cos commits",
     "ja": "コミットをやりくりする",
     "zh_CN": "提交的技巧 #1",
     "zh_TW": "commit 的戲法",
     "ru_RU": "Жонглируем коммитами",
     "uk": "Жонглюємо комітами",
     "vi": "Tung hứng commit",
-    "sl_SI": "Žongliranje s Commiti"
+    "sl_SI": "Žongliranje s Commiti",
+    "it_IT": "Giocoliere di Commit",
+    "pl": "Żonglowanie commitami",
   },
   "hint": {
     "en_US": "The first command is git rebase -i HEAD~2",
@@ -41,7 +43,7 @@ exports.level = {
     "es_AR": "El primer comando es git rebase -i HEAD~2",
     "es_ES": "El primer comando es git rebase -i HEAD~2",
     "pt_BR": "O primeiro comando é git rebase -i HEAD~2",
-    "gl"   : "O primeiro comando é git rebase -i HEAD~2",
+    "gl": "O primeiro comando é git rebase -i HEAD~2",
     "ja": "最初に打つコマンドはgit rebase -i HEAD~2",
     "ko": "첫번째 명령은 git rebase -i HEAD~2 입니다",
     "zh_CN": "第一个命令是 `git rebase -i HEAD~2`",
@@ -49,7 +51,9 @@ exports.level = {
     "ru_RU": "Первой командой должна быть git rebase -i HEAD~2",
     "uk": "Перша команда має бути git rebase -i HEAD~2",
     "vi": "Lệnh đầu tiên là git rebase -i HEAD~2",
-    "sl_SI": "Prvi ukaz je git rebase -i HEAD~2."
+    "sl_SI": "Prvi ukaz je git rebase -i HEAD~2.",
+    "it_IT": "Il primo comando è git rebase -i HEAD~2",
+    "pl": "Pierwsze polecenie to: git rebase -i HEAD~2",
   },
   "startDialog": {
     "en_US": {
@@ -269,7 +273,7 @@ exports.level = {
             "markdowns": [
               "## Jonglieren mit Commits",
               "",
-              "Eine weitere häufig vorkommende Situation: du hast einige Änderungen in `newImage` und weitere Änderungen in `caption`. Die Änderungen hängen voneinander ab, das heißt in diesem Fall `caption` ist ein Nachfolger von `newImage`.",
+              "Eine weitere häufig vorkommende Situation: Du hast einige Änderungen in `newImage` und weitere Änderungen in `caption`. Die Änderungen hängen voneinander ab, das heißt in diesem Fall `caption` ist ein Nachfolger von `newImage`.",
               "",
               "Nun kann es vorkommen, dass du einen früheren Commit verändern willst. In unserem Fall will die Design-Abteilung, dass die Abmessungen in `newImage` leicht verändert werden, obwohl das mitten in unserer History liegt!"
             ]
@@ -279,7 +283,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-            "Um das zu schaffen gehen wir wie folgt vor:",
+              "Um das zu schaffen gehen wir wie folgt vor:",
               "",
               "* Wir sortieren die Commits mit `git rebase -i` so um, dass der Commit, den wir ändern wollen, ganz oben liegt.",
               "* Wir verändern den Commit mit `git commit --amend`.",
@@ -290,7 +294,7 @@ exports.level = {
               "",
               "Beachte den geschilderten Zielzustand. Da wir die Commits zweimal umsortieren, bekommen sie jedes Mal ein Apostroph hinzugefügt (weil sie jedes Mal kopiert werden). Ein weiteres Apostroph entsteht durch den `git commit --amend`.",
               "",
-              "Zuguterletzt noch eine Bemerkung: ich kann Level nur auf Struktur und Apostroph-Differenz prüfen. So lange wie dein `main` am Ende dieselbe Struktur und Apostroph-Differenz aufweist wie der Ziel-`main`, ist der Level bestanden."
+              "Zu guter Letzt noch eine Bemerkung: Ich kann Level nur auf Struktur und Apostroph-Differenz prüfen. So lange wie dein `main` am Ende dieselbe Struktur und Apostroph-Differenz aufweist wie der Ziel-`main`, ist der Level bestanden."
             ]
           }
         },
@@ -319,7 +323,7 @@ exports.level = {
               "* `git rebase -i`を使って順番を変更する。これで、変更をかけたいコミットを一番先頭に持ってくる。",
               "* `git commit --amend`コマンドで僅かな変更を行う",
               "* `git rebase -i`コマンドを再度使って、先頭に持ってきていたコミットを元に戻す",
-              "* 最後に、レベルクリアのためにmasterブランチを先頭に持ってくる",
+              "* 最後に、レベルクリアのためにmainブランチを先頭に持ってくる",
               "",
               "クリアのための方法はいくつもありますが（cherry-pickを使うこともできます）、別の回答はまた後程の章で見ることにして、今回は上記の方法でやってみることにしましょう。",
               "",
@@ -339,7 +343,7 @@ exports.level = {
               "",
               "接下来这种情况也是很常见的：你之前在 `newImage` 分支上进行了一次提交，然后又基于它创建了 `caption` 分支，然后又提交了一次。",
               "",
-              "此时你想对的某个以前的提交记录进行一些小小的调整。比如设计师想修改一下 `newImage` 中图片的分辨率，尽管那个提交记录并不是最新的了。"
+              "此时你想对某个以前的提交记录进行一些小小的调整。比如设计师想修改一下 `newImage` 中图片的分辨率，尽管那个提交记录并不是最新的了。"
             ]
           }
         },
@@ -565,6 +569,74 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Żonglowanie commitami",
+              "",
+              "Oto inna sytuacja, która zdarza się dość często. Masz pewne zmiany (`newImage`) i inny zestaw zmian (`caption`), które są powiązane, więc są one ułożone jedne na drugim w twoim repozytorium (tzw. jeden po drugim).",
+              "",
+              "Problem polega na tym, że czasami trzeba dokonać małej modyfikacji wcześniejszego commitu. W tym przypadku projektant chce, abyśmy zmienili nieco wymiary `newImage`, mimo że ten commit jest daleko w tyle w naszej historii!!!"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Przezwyciężymy tę trudność, wykonując następujące czynności:",
+              "",
+              "* Zmienimy kolejność commitów tak, aby ten, który chcemy zmienić, był na górze, używając `git rebase -i`.",
+              "* Wykonamy `git commit --amend`, aby dokonać niewielkiej modyfikacji",
+              "* Następnie zmienimy kolejność commitów z powrotem na taką, jaka była poprzednio za pomocą `git rebase -i`.",
+              "* Na koniec przeniesiemy się do tej zaktualizowanej części drzewa, aby ukończyć ten poziom (w wybrany przez ciebie sposób)",
+              "",
+              "Istnieje wiele sposobów na osiągnięcie tego ogólnego celu (widzę, że masz na oku cherry-pick), i później zobaczymy ich więcej, ale na razie skupmy się na tej technice.",
+              "Na koniec zwróć uwagę na stan celu - ponieważ przenosimy commity dwukrotnie, oba otrzymują apostrof. Dodajemy jeszcze jeden apostrof dla commitu, który zmieniamy, co daje nam ostateczną postać drzewa",
+              "",
+              "Uwzględniając to, mogę teraz porównać poziomy w oparciu o strukturę i względne różnice apostrofów. Tak długo, jak gałąź `main` twojego drzewa ma taką samą strukturę, rozwiązanie zostanie uznane."
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Giocoliere di commit",
+              "",
+              "Ecco una situazione che capita spesso. Hai dei cambiamenti (`newImage`) e un altro insieme di modifiche (`caption`) che sono collegate tra loro, quindi sono posizionate una dopo l'altra nel repository.",
+              "",
+              "La cosa complicata è che a volte hai bisogno di fare una piccola modifica a un commit precedente. In questo caso, dobbiamo apporre una modifica a `newImage`, anche se questo commit non risulta essere l'ultimo!!",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Supereremo queste difficoltà facendo i seguenti passaggi:",
+              "",
+              "* Riordineremo i commit in modo che quello che vogliamo modificare risulti l'ultimo con `git rebase -i`",
+              "* Faremo `git commit --amend` per apporre la modifica",
+              "* Riordineremo i commit nello stesso ordine in cui erano, sempre con `git rebase -i`",
+              "* Alla fine, sposteremo main in questo ramo aggiornato dell'albero per finire il livello (utilizzate il metodo che volete)",
+              "",
+              "Ci sono vari modi per raggiungere l'obbiettivo finale (vedo che strizzi l'occhio verso cherry-pick), e ne vedremo altri più tardi, ma per ora concentriamoci su questa tecnica.",
+              "In fine, presta attenzione all'obiettivo -- visto che spostiamo i commit due volte, a entrambi viene messo un apostrofo. Un ulteriore apostrofo è aggiunto per il commit --amend, che completa in fine l'albero.",
+              "",
+              "Detto questo, posso confrontare i livelli in base alla struttura e i relativi apostrofi. Finchè il tuo ramo `main` avrà la stessa struttura con i giusti apostrofi, ti darò pieni voti.",
+            ],
+          },
+        },
+      ],
+    },
   }
 };

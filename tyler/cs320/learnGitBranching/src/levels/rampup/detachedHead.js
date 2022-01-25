@@ -1,42 +1,44 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"C4\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"C4\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git checkout C4",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Detach yo' HEAD",
     "es_AR": "Desatacheá tu HEAD",
     "es_ES": "Desatachea tu HEAD",
     "pt_BR": "Solte a sua cabeça",
-    "gl"   : "Abandona o teu HEAD",
+    "gl": "Abandona o teu HEAD",
     "fr_FR": "Détacher votre HEAD",
     "zh_CN": "分离 HEAD",
     "zh_TW": "分離 HEAD",
     "de_DE": "Den Kopf abtrennen",
-    "ja"   : "HEADの分離",
+    "ja": "HEADの分離",
     "ru_RU": "Теряем голову, или detached HEAD",
-    "ko"   : "HEAD 분리하기",
+    "ko": "HEAD 분리하기",
     "uk": "Втрачаємо голову чи detached HEAD",
     'vi': "Tháo đầu cái nào",
     "sl_SI": "Ločevanje tvoje glave - HEAD-a",
-    "pl"   : "Odczep swój HEAD"
+    "it_IT": "Perdere la testa (HEAD)",
+    "pl": "Odczep sobie HEAD"
   },
   "hint": {
     "en_US": "Use the label (hash) on the commit for help!",
     "es_AR": "¡Usá la etiqueta (hash) sobre el commit para ayudarte!",
     "es_ES": "¡Usa la etiqueta (hash) sobre el commit para ayudarte!",
     "pt_BR": "Use o identificador (hash) sobre o commit para te ajudar!",
-    "gl"   : "¡Usa a etiqueta (hash) sobre o commit para axudarte!",
+    "gl": "¡Usa a etiqueta (hash) sobre o commit para axudarte!",
     "de_DE": "Benutze den Bezeichner (den Hash) des Commits.",
-    "ja"   : "コミットのラベル（hash）を使用",
+    "ja": "コミットのラベル（hash）を使用",
     "fr_FR": "Utilisez le label (identifiant) du commit pour aider !",
     "zh_TW": "使用 commit 上的標籤（hash）來幫助你！",
     "zh_CN": "使用提交记录上的标签（哈希值）来指定提交记录！",
     "ru_RU": "Ориентируйся по идентификаторам (hash) коммитов.",
-    "ko"   : "커밋에 있는 라벨(hash)을 활용하세요!",
+    "ko": "커밋에 있는 라벨(hash)을 활용하세요!",
     "uk": "Орієнтуйся по індентифікаторам (hash) комітів.",
     "vi": "Dùng mã băm (hash) của commit để hoàn thành!",
     "sl_SI": "Uporabi oznako (hash) commita za pomoč!",
-    "pl": "Wpisz (hash) w wiadomości commita aby uzyskać pomoc!",
+    "it_IT": "Usa l'etichetta (hash) sul commit per aiutarti!",
+    "pl": "Użyj nazwy commita (hasza)!",
   },
   "startDialog": {
     "en_US": {
@@ -893,7 +895,7 @@ exports.level = {
         }
       ]
     },
-  "ko": {
+    "ko": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -1215,7 +1217,7 @@ exports.level = {
               "",
               "Zanim przejdziemy do niektórych z bardziej zaawansowanych funkcji Gita, ważne jest, aby zrozumieć różne sposoby poruszania się po drzewie commitów, które reprezentują twój projekt.",
               "",
-              "Kiedy będziesz już czuć się swobodnie, twoje moce z innymi komendami gitowymi zostaną wzmocnione!",
+              "Kiedy już poczujesz się z tym wygodnie, to i inne komendy Gita nabiorą więcej mocy!",
               "",
               "",
               "",
@@ -1230,11 +1232,11 @@ exports.level = {
             "markdowns": [
               "## HEAD",
               "",
-              "Najpierw musimy porozmawiać o \"HEAD\". HEAD to symboliczna nazwa dla aktualnie zcheckout'owanego commitu - jest to zasadniczo ostatni commit nad, którym pracowałeś.",
+              "Najpierw musimy porozmawiać o \"HEAD\". HEAD to symboliczna nazwa dla aktualnie checkoutowanego (wyciągniętego) commita - jest to zasadniczo commit z najnowszymi zmianami.",
               "",
-              "HEAD zawsze wskazuje na najnowszy commit, który jest odzwierciedlony w drzewie zmian. Większość poleceń git, które wprowadzają zmiany w drzewie, zaczyna się od zmiany HEAD'a.",
+              "HEAD zawsze wskazuje na najnowszy commit, który jest odzwierciedlony w drzewie zmian. Większość poleceń git, które wprowadzają zmiany w drzewie, zaczyna się od zmiany HEADa.",
               "",
-              "Normalnie HEAD wskazuje na nazwę gałęzi (jak np. `bugFix`). Kiedy commitujesz zmiany, status gałęzi `bugFix` się zmienia i zmiana ta jest widoczna właśnie poprzez przemieszczenie się HEAD'a."
+              "Normalnie HEAD wskazuje na nazwę gałęzi (jak np. `bugFix`). Kiedy commitujesz zmiany, status gałęzi `bugFix` się zmienia i zmiana ta jest widoczna właśnie poprzez przemieszczenie się HEADa."
             ]
           }
         },
@@ -1242,7 +1244,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Sprawdźmy to w akcji. Pokażemy HEAD przed i po commicie."
+              "Zobaczmy, jak to działa. Pokażemy HEAD przed i po commicie."
             ],
             "afterMarkdowns": [
               "Zobacz! HEAD przez cały czas ukrywał się pod naszą gałęzią `main`."
@@ -1255,9 +1257,9 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "### Odłączanie HEAD'a",
+              "### Odłączanie HEADa",
               "",
-              "Odłączenie HEAD'a oznacza po prostu dołączenie go do commita, a nie gałęzi. Tak to wyglądało przed:",
+              "Odłączenie HEADa oznacza po prostu dołączenie go do commita, a nie gałęzi. Tak to wyglądało przed:",
               "",
               "HEAD -> main -> C1",
               ""
@@ -1275,13 +1277,89 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Aby ukończyć ten poziom, odłącz HEAD od gałęzi `bugFix` i dołącz go do commita.",
+              "Aby ukończyć ten poziom, odłącz HEADa od gałęzi `bugFix` i dołącz go do commita.",
               "",
-              "Możesz wybrać konkretnego commita posługując się jego haszem. Hasz każdego commita jest wyświetlany na okręgu, który go reprezentuje."
+              "Możesz wybrać konkretnego commita, posługując się jego haszem. Hasz każdego commita jest wyświetlany na okręgu, który go reprezentuje."
             ]
           }
         }
       ]
-    }
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Spostarsi in Git",
+              "",
+              "Prima di imparare comandi avanzati in Git, è fondamentale conoscere i diversi modi per spostarsi nell'albero dei commit che costituiscono il tuo progetto.",
+              "",
+              "Una volta che ti sentirai a tuo agio, il potere con gli altri comandi git sarà amplificato!",
+              "",
+              "",
+              "",
+              "",
+              "",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## HEAD",
+              "",
+              "Prima di tutto dobbiamo parlare di \"HEAD\". HEAD (testa) è il nome simbolico dato al commit selezionato -- in pratica è il commit su cui stai lavorando.",
+              "",
+              "HEAD punta sempre al commit più recente. La maggior parte dei commandi git che fanno cambiamenti all'albero dei commit, faranno cambiamento a HEAD.",
+              "",
+              "Di norma HEAD punta al nome di un ramo (per esempio bugFix). Quando esegui un commit, lo stato di bugFix viene modificato, e questo cambiamento è visibile attraverso HEAD.",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Vediamolo in azione. Qui mostreremo HEAD prima e dopo un commit.",
+            ],
+            afterMarkdowns: [
+              "Visto! HEAD era nascosto sotto il ramo `main`.",
+            ],
+            command:
+              "git checkout C1; git checkout main; git commit; git checkout C2",
+            beforeCommand: "",
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "### Detaching HEAD (testa distaccata)",
+              "",
+              "Detaching HEAD significa attaccare la testa a un commit invece che a un ramo. All'inizio la situazione è questa:",
+              "",
+              "HEAD -> main -> C1",
+              "",
+            ],
+            afterMarkdowns: ["E ora è", "", "HEAD -> C1"],
+            command: "git checkout C1",
+            beforeCommand: "",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Per completare questo livello, stacchiamo HEAD da `bugFix` e attacchiamolo a un commit.",
+              "",
+              "Per specificare un commit si usa l'hash. L'hash per ogni commit è presente sul cerchio che rappresenta il commit.",
+            ],
+          },
+        },
+      ],
+    },
+
   }
 };

@@ -1,40 +1,45 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C5\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C3\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\",\"C4\"],\"id\":\"C5\"}},\"tags\":{\"v1\":{\"target\":\"C2\",\"id\":\"v1\",\"type\":\"tag\"},\"v0\":{\"target\":\"C1\",\"id\":\"v0\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"C2\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C5\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C3\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\",\"C4\"],\"id\":\"C5\"}},\"tags\":{\"v1\":{\"target\":\"C2\",\"id\":\"v1\",\"type\":\"tag\"},\"v0\":{\"target\":\"C1\",\"id\":\"v0\",\"type\":\"tag\"}},\"HEAD\":{\"target\":\"C2\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git tag v1 side~1;git tag v0 main~2;git checkout v1",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C5\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C3\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\",\"C4\"],\"id\":\"C5\"}},\"tags\":{},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C5\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C3\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\",\"C4\"],\"id\":\"C5\"}},\"tags\":{},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Git Tags",
     "de_DE": "Git Tags",
-    "ja"   : "Gitのタグ",
+    "ja": "Gitのタグ",
     "es_AR": "Tags en git",
     "es_ES": "Tags en git",
     "pt_BR": "Tags no Git",
-    "gl"   : "Etiquetas en git",
+    "gl": "Etiquetas en git",
     "fr_FR": "Git Tags",
     "zh_CN": "Git Tag",
     "zh_TW": "git tag",
     "ru_RU": "git tag",
-    "ko"   : "Git 태그",
-    "uk"   : "Git Tags",
-    "vi"   : "Tag trong Git",
-    "sl_SI": "Git Tagi"
+    "ko": "Git 태그",
+    "uk": "Git Tags",
+    "vi": "Tag trong Git",
+    "sl_SI": "Git Tagi",
+    "it_IT": "Git Tag",
+    "pl": "Tagi Gita",
   },
   "hint": {
     "en_US": "you can either check out the commit directly or simply checkout the tag!",
     "fr_FR": "Vous pouvez faire le checkout sur le commit ou sur le tag !",
     "de_DE": "Du kannst den Checkout entweder direkt auf den Commit oder das Tag machen.",
-    "ja"   : "コミットを直接チェックアウトできますが、簡単にタグでチェックアウトすることも可能!",
+    "ja": "コミットを直接チェックアウトできますが、簡単にタグでチェックアウトすることも可能!",
     "es_AR": "Podés checkoutear directamente el commit, ¡o simplemente el tag!",
     "es_ES": "Puedes hacer checkout directamente el commit, ¡o simplemente el tag!",
     "pt_BR": "Você pode fazer checkout diretamente no commit ou na tag correspondente!",
-    "gl"   : "Podes saltar directamente ó commit, ¡ou a etiqueta, que é máis doado!",
+    "gl": "Podes saltar directamente ó commit, ¡ou a etiqueta, que é máis doado!",
     "zh_TW": "你可以直接 checkout 到 commit 上，或是簡單的 checkout 到 tag 上",
     "zh_CN": "你可以直接 checkout 到 commit 上，或是简单地 checkout 到 tag 上",
     "ru_RU": "Можно сделать checkout напрямую на коммит или же на тег",
-    "ko"   : "커밋을 직접 또는 태그를 이용해서 체크아웃할수 있습니다!",
-    "uk"   : "ти можеш або зробити checkout коміта напряму чи просто зачекаутити таг!",
-    "vi"   : "Bạn có thể chuyển trực tiếp sang commit hoặc đơn giản là chuyển sang tag!",
-    "sl_SI": "Checkoutaš lahko neposredno commit ali pa preprosto njegov tag!"
+    "ko": "커밋을 직접 또는 태그를 이용해서 체크아웃할수 있습니다!",
+    "uk": "ти можеш або зробити checkout коміта напряму чи просто зачекаутити таг!",
+    "vi": "Bạn có thể chuyển trực tiếp sang commit hoặc đơn giản là chuyển sang tag!",
+    "sl_SI": "Checkoutaš lahko neposredno commit ali pa preprosto njegov tag!",
+    "it_IT":
+      "Puoi fare direttamente checkout del commit o semplicemente del tag!",
+    "pl": "Możesz checkoutować commit bezpośrednio lub po prostu tag!",
   },
   "startDialog": {
     "en_US": {
@@ -110,7 +115,7 @@ exports.level = {
             "markdowns": [
               "Vous l'avez deviné ! Les tags Git offrent cette fonctionnalité : les tags marquent à jamais certains commits comme \"milestone\" (étape clé) auxquels vous pouvez vous référer comme à des branches.",
               "",
-              "Encore plus important, il sont définitifs. Vous ne pouvez donc pas rajouter de commit dans un tag : les tags sont un peu comme un pointeur définitif dans l'arbre des commits.",
+              "Encore plus important, ils sont définitifs. Vous ne pouvez donc pas rajouter de commit dans un tag : les tags sont un peu comme un pointeur définitif dans l'arbre des commits.",
               "",
               "Voyons les tags en pratique."
             ]
@@ -214,7 +219,7 @@ exports.level = {
             "markdowns": [
               "当然有了！Git 的 tag 就是干这个用的啊，它们可以（在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签）永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了。",
               "",
-              "更难得的是，它们并不会随着新的提交而移动。你也不能检出到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置。",
+              "更难得的是，它们并不会随着新的提交而移动。你也不能切换到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置。",
               "",
               "咱们来看看标签到底是什么样。"
             ]
@@ -237,7 +242,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "在这个关卡中，按照目标建立两个标签，然后检出到 `v1` 上面，要注意你会进到分离 `HEAD` 的状态 —— 这是因为不能直接在`v1` 上面做 commit。",
+              "在这个关卡中，按照目标建立两个标签，然后切换到 `v1` 上面，要注意你会进到分离 `HEAD` 的状态 —— 这是因为不能直接在`v1` 上面做 commit。",
               "",
               "在下个关卡中我们会介绍更多关于标签的有趣的应用。"
             ]
@@ -472,9 +477,9 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Aber klar! In Git gibt es genau zu diesem Zweck Tags -- sie kennzeichnen einen Commit (ziemlich) permanent als Meilenstein oder ähnliches, und man kann sie ansprechen wie Branch-Namen.",
+              "Aber klar! In Git gibt es genau zu diesem Zweck Tags -- sie kennzeichnen einen Commit (ziemlich) permanent als Meilenstein oder ähnliches und man kann sie ansprechen wie Branch-Namen.",
               "",
-              "Noch viel wichtiger, Tags verändern nicht ihre Position wenn man Commits hinzufügt. Du kannst ein Tag nicht in diesem Sinne auschecken und dann Modifikationen darauf committen. Tags sind Anker im Commit-Baum, die bestimmte Stellen anzeigen.",
+              "Noch viel wichtiger, Tags verändern nicht ihre Position, wenn man Commits hinzufügt. Du kannst ein Tag nicht in diesem Sinne auschecken und dann Modifikationen darauf committen. Tags sind Anker im Commit-Baum, die bestimmte Stellen anzeigen.",
               "",
               "Lass uns anschauen wie Tags in der Praxis funktionieren."
             ]
@@ -484,7 +489,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-            "Lass uns ein Tag bei `C1` anlegen und damit die Version 1 unseres Prototyps markieren."
+              "Lass uns ein Tag bei `C1` anlegen und damit die Version 1 unseres Prototyps markieren."
             ],
             "afterMarkdowns": [
               "Peng! Ziemlich einfach. Wir haben das Tag `v1` genannt und lassen es auf `C1` zeigen. Wenn du den Commit weglässt, wird das Tag für den Commit erzeugt, auf den `HEAD` zeigt."
@@ -567,7 +572,7 @@ exports.level = {
               "",
               "В прошлых уроках мы усвоили, что ветки просто двигать туда-сюда и они часто ссылаются на разные коммиты как на изменения данных в ветке. Ветки просто изменить, они часто временны и постоянно меняют своё состояние.",
               "",
-              "В таком случае, где взять *постоянную* ссылку на момент в истории изменений? Для таких вещей, как релиз, большие слияния нужно нечто более постоянное, чем ветка.",
+              "В таком случае, где взять *постоянную* ссылку на момент в истории изменений? Для таких вещей, как релиз и большие слияния, нужно нечто более постоянное, чем ветка.",
               ""
             ]
           }
@@ -816,6 +821,110 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Tagi Gita",
+              "",
+              "Jak wiesz z poprzednich lekcji, gałęzie łatwo przemieszczać, i w momencie ukończenia pracy nad nimi często odnoszą się do różnych commitów. Gałęzie łatwo ulegają mutacjom, często są tymczasowe i zawsze się zmieniają.",
+              "",
+              "A skoro tak, to możesz się zastanawiać, czy istnieje sposób na *trwałe* zaznaczanie ważnych punktów  w historii projektu. Czy istnieje jakiś sposób na oznaczenie tych commitów czymś bardziej trwałym niż gałąź, w przypadku takich rzeczy jak duże wydania i duże scalenia/ merge?",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Pewnie, że tak! Znaczniki/tagi Gita obsługują dokładnie ten przypadek użycia -- (do pewnego stopnia) trwale oznaczają pewne commity jako \"kamienie milowe\", do których można się następnie odnieść (po nazwie) jak do gałęzi.",
+              "",
+              "Co ważniejsze jednak, nigdy się nie przesuwają, gdy tworzone są kolejne commity. Nie można \"checkoutować\" tagu, a następnie zakończyć pracy nad nim (jakby był gałęzią, na której można zapisać nowe zmiany) - tagi są jak kotwice w drzewie commitów, które wyznaczają pewne miejsca.",
+              "",
+              "Zobaczmy, jak tagi wyglądają w praktyce."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Spróbujmy zrobić tag w `C1`, który jest prototypem naszej wersji 1."
+            ],
+            "afterMarkdowns": [
+              "Otóż to! Całkiem proste. Nazwaliśmy tag `v1` i odwołaliśmy się do commitu `C1` w sposób jawny. Jeśli nie wskażesz konkretnego commitu, Git użyje commitu, na który wskazuje `HEAD`."
+            ],
+            "command": "git tag v1 C1",
+            "beforeCommand": "git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Dla tego poziomu utwórz tagi takie jak w wizualizacji celu, a następnie checkoutuj `v1`. Zauważ, że przechodzisz do odłączonego stanu `HEAD` - to dlatego, że nie możesz commitować bezpośrednio na tagu `v1`.",
+              "",
+              "Na kolejnym poziomie przeanalizujemy bardziej interesujący przypadek użycia tagów."
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Git Tag",
+              "",
+              "Come hai già imparato nelle lezioni precedenti, i rami sono facili da spostare e puntano a commit differenti man mano che il lavoro avanza. I rami subiscono modifiche, spesso temporaneamente, ma sono sempre in continua evoluzione.",
+              "",
+              "Ti starai chedendo se esiste un modo *definitivo* per segnare un particolare commit del repository. Nel caso di release importanti e grandi merge (fusioni), esiste un modo per segnare questi commit con qualcosa di più permanente dei rami?",
+              "",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              'Ci puoi scommettere! Git tags serve proprio a questo -- i tag contrassegnano in modo permanente dei commit "importanti" a cui puoi far riferimento come avviene con i rami.',
+              "",
+              'Ancora più importante il fatto che non si spostano anche se vengono eseguiti nuovi commit. Non puoi selezionare un tag e aggiungere del lavoro su quel tag -- i tag esistono come ancore nell\'albero dei commit, e si riferiscono a determinati punti.',
+              "",
+              "Vediamo in pratica a cosa servono i tag.",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Creiamo un tag in `C1` che è la nostra versione 1 del prototipo.",
+            ],
+            afterMarkdowns: [
+              "Ecco! Abbastanza facile. Abbiamo creato il tag `v1` che si riferisce al solo commit `C1`. Se non specifichi il commit, git creera il tag sul commit puntato da `HEAD`.",
+            ],
+            command: "git tag v1 C1",
+            beforeCommand: "git commit",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "In questo livello riproduci gli stessi tag mostrati nell'obbiettivo, e alla fine seleziona il tag `v1`. Presta attenzione a come vai nello stato di detached `HEAD` -- questo perché non puoi creare commit direttamente dal tag `v1.",
+              "",
+              "Nel livello successivo vedremo un utilizzo più interessante dell'uso dei tag.",
+            ],
+          },
+        },
+      ],
+    },
   }
 };

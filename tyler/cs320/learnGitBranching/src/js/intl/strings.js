@@ -18,7 +18,9 @@ exports.strings = {
     'ko': '와우! 마지막 레벨까지 마쳤습니다. 멋지네요!',
     'vi': 'Wao! Bạn đã phá đảo, quá tuyệt!',
     'sl_SI': 'Wow! Končal si zadnjo stopnjo, fantastično!',
-    'pl': 'Wow! Ukończono ostatni poziom, świetnie!'
+    'pl': 'Wow! Ukończono ostatni poziom, świetnie!',
+    'it_IT': "Wow! Hai concluso l'ultimo livello, grandioso!",
+    'ta_IN': 'ஆஹா! நீங்கள் கடைசி நிலையை முடித்துள்ளீர்கள், நன்று!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'finish-dialog-next': {
@@ -39,7 +41,9 @@ exports.strings = {
     'ko': '다음 레벨로 넘어갈까요? 레벨 *"{nextLevel}"*',
     'vi': 'Bạn có muốn chuyển sang cấp độ tiếp: *"{nextLevel}"* không?',
     'sl_SI': 'Bi rad nadaljeval na *"{nextLevel}"*, naslednjo stopnjo?',
-    'pl': 'Czy chcesz przejść do następnego poziomu - *"{nextLevel}"*?'
+    'pl': 'Czy chcesz przejść do następnego poziomu - *"{nextLevel}"*?',
+    'it_IT': 'Ti andrebbe di passare al prossimo livello, *"{nextLevel}"*?',
+    'ta_IN': 'அடுத்த நிலை * "{nextLevel}" * க்கு செல்ல விரும்புகிறீர்களா?'
   },
   ///////////////////////////////////////////////////////////////////////////
   'finish-dialog-win': {
@@ -60,7 +64,9 @@ exports.strings = {
     'ko': '멋져요! 우리의 해답과 일치하거나 우리보다 좀 더 나은 해답입니다.',
     'vi': 'Tuyệt vời! Đáp án của bạn đạt chuẩn thâm chí có thể tốt hơn.',
     'sl_SI': 'Bravo! Izenačil ali celo presegel si našo rešitev.',
-    'pl': 'Niesamowite! Rozwiązałeś zadanie w ten sam sposób lub lepiej.'
+    'pl': 'Niesamowite! Rozwiązałeś zadanie w ten sam sposób lub lepiej.',
+    'it_IT': "Grandioso! Hai uguagliato o migliorato la nostra soluzione.",
+    'ta_IN': 'அருமை! எங்கள் கொடுக்க பட்ட தீர்வை நிறைவு செய்து விட்டீர்கள்.'
   },
   ///////////////////////////////////////////////////////////////////////////
   'finish-dialog-lose': {
@@ -81,7 +87,9 @@ exports.strings = {
     'ko': '{best}회로 줄일 수 있다면 해보세요. :D',
     'vi': 'Thử xem bạn có thể giảm xuống {best} không? :D',
     'sl_SI': 'Misliš da lahko spraviš rešitev na {best}? :D',
-    'pl': 'Sprawdź, czy dasz radę to zrobić w {best} krokach :D'
+    'pl': 'Sprawdź, czy dasz radę to zrobić w {best} krokach :D',
+    'it_IT': "Prova a migliorarti facendolo solo con {best} comandi :D",
+    'ta_IN': 'நீங்கள் அதை குறைக்க முடியுமா என்று பாருங்கள் {best} :D'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hg-prune-tree': {
@@ -101,7 +109,10 @@ exports.strings = {
     'ko': '주의! Mercurial은 공격적으로 가비지 컬렉션을 수행하므로 트리를 정리할 필요가 있습니다.',
     'vi': 'Cảnh báo! Mercurial cần thực hiện thu gom rác và thu nhỏ cây lịch sử của bạn.',
     'sl_SI': 'Opozorilo! Mercurial ima agresivno politiko garbage collectiona in bo obrezal vaše drevo',
-    'pl': 'Ostrzeżenie! Mercurial prowadzi agresywną kolekcję śmieci i dlatego musi przycinać Twoje drzewo'
+    'pl': 'Ostrzeżenie! Mercurial prowadzi agresywną kolekcję śmieci i dlatego musi przycinać Twoje drzewo',
+     'it_IT':
+      "Attenzione! Mercurial ha un garbage collector molto aggressivo e perciò deve potare il tuo albero",
+    'ta_IN': 'எச்சரிக்கை! மெர்குரியல் வலிய களிவு சேகரிப்பு செய்கிறது, இதனால் உங்கள் மரத்தை கத்தரிக்க வேண்டிவரும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hg-a-option': {
@@ -121,7 +132,9 @@ exports.strings = {
     'ko': '이 앱에선 -A 옵션은 필요 없습니다. 그냥 커밋하세요!',
     'vi': 'Không cần thiết phải dùng tùy chọn -A trên ứng dụng này, cứ commit là được!',
     'sl_SI': 'Opcija -A ni potrebna za to aplikacijo, samo commitaj!',
-    'pl': 'Opcja -A nie jest wymagana w tej aplikacji, po prostu zrób `commit`!'
+    'pl': 'Opcja -A nie jest wymagana w tej aplikacji, po prostu zrób `commit`!',
+    'it_IT': "L'opzione -A non è necessiaria, fai semplicemente commit!",
+    'ta_IN': 'இந்த பயன்பாட்டிற்கு -A மாற்று தேவையில்லை, `கமிட்` செய்யுங்கள்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hg-error-no-status': {
@@ -141,7 +154,10 @@ exports.strings = {
     'ko': '이 앱을 위한 상태 명령어는 없습니다. 왜냐하면 파일들의 스테이징이 없기 때문입니다. 대신 hg summary를 시도해보세요.',
     'vi': 'Ứng dụng này không hỗ trợ lệnh `status` vì không có tệp nhớ đệm, thay vì đó hãy dùng lệnh `hg summary`',
     'sl_SI': 'Za to aplikacijo ni na voljo `status` ukaza, ker tu ni `stage-anja` datotek. Poizkusiš lahko `hg summary`',
-    'pl' : 'W tej aplikacji nie ma polecenia `status`, ponieważ nie ma przemieszczania plików. Zamiast tego wypróbuj `hg summary`'
+    'pl' : 'W tej aplikacji nie ma polecenia `status`, ponieważ nie ma przemieszczania plików. Zamiast tego wypróbuj `hg summary`',
+    'it_IT':
+      "Non esiste il comando status in quest'app, visto che non esiste lo staging dei file. Prova invece `hg summary`",
+    'ta_IN': 'கோப்புகள் எதுவும் அடுத்த படிநிலையில் இல்லை என்பதால், இந்த பயன்பாட்டிற்கான மதிப்பீடும் கட்டளை எதுவும் இல்லை. அதற்கு பதிலாக `hg summary` முயற்சிக்கவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hg-error-need-option': {
@@ -161,7 +177,9 @@ exports.strings = {
     'ko': '나는 그 명령어를 위한 {option} 옵션이 필요합니다.',
     'vi': 'Câu lệnh đó cần tùy chọn {option}!',
     'sl_SI': 'Potrebujem opcijo {option} za ta ukaz!',
-    'pl': 'Potrzebuję opcji {option} dla tego polecenia!'
+    'pl': 'Potrzebuję opcji {option} dla tego polecenia!',
+    'it_IT': "Ho bisogno di {option} per quel comando!",
+    'ta_IN': 'எனக்கு அந்த கட்டளைக்கு மாற்று {option} தேவை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hg-error-log-no-follow': {
@@ -181,7 +199,9 @@ exports.strings = {
     'ko': '-f가 없는 hg log는 현재 지원되지 않습니다. -f를 사용하세요.',
     'vi': 'Hiện tại thì `hg log` mà không có tùy chọn -f chưa được hỗ trợ, hãy viết thêm -f.',
     'sl_SI': 'hg log brez -f trenutno ni podprt, uporabi -f',
-    'pl': '`hg log` bez -f nie jest obecnie obsługiwany, użyj -f'
+    'pl': '`hg log` bez -f nie jest obecnie obsługiwany, użyj -f',
+    'it_IT': "hg log senza -f non è attualmente supportato, usa -f",
+    'ta_IN': '-f இல்லாமல் `hg log` தற்போது ஆதரிக்கப்படவில்லை, -f ஐப் பயன்படுத்தவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-status-detached': {
@@ -201,7 +221,9 @@ exports.strings = {
     'ko': '분리된 HEAD!',
     'vi': 'HEAD bị tách biệt!',
     'sl_SI': 'Detached head!',
-    'pl': 'Odłączono HEAD!'
+    'pl': 'Odłączono HEAD!',
+    'it_IT': "Testa distaccata (Detached head)!",
+    'ta_IN': 'பிரிக்கப்பட்ட தலை!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-status-onbranch': {
@@ -221,7 +243,9 @@ exports.strings = {
     'ko': '분기 지점 {branch}에서',
     'vi': 'Đang trên nhánh {branch}',
     'sl_SI': 'Na branchu {branch}',
-    'pl': 'Na branch-u {branch}'
+    'pl': 'Na branch-u {branch}',
+    'it_IT': "Sul ramo {branch}",
+    'ta_IN': '{branch} கிளையில்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-status-readytocommit': {
@@ -241,7 +265,9 @@ exports.strings = {
     'ko': '커밋을 준비하세요! (이 데모에서는 항상)',
     'vi': 'Sẵn sàng để commit! (khi demo thì luôn có thể commit)',
     'sl_SI': 'Pripravljen za commit! (kot vedno v tem demotu)',
-    'pl': 'Gotowy commit! (jak zawsze w tym demo)'
+    'pl': 'Gotowy commit! (jak zawsze w tym demo)',
+    'it_IT': "Pronto al commit! (come sempre in questa demo)",
+    'ta_IN': '`commit` செய்ய தயார்! (இந்த செயல் விளக்கத்தில் எப்போதும் செய்வதை போல)'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-dummy-msg': {
@@ -262,7 +288,9 @@ exports.strings = {
     'ko': '빨리 커밋하세요!',
     'vi': 'Commit luôn đi cho nóng!',
     'sl_SI': 'Hiter commit.',
-    'pl': 'Szybki commit.'
+    'pl': 'Szybki commit.',
+    'it_IT': "Laura I love you, but our dogs too (Barone & Duchessa)!",
+    'ta_IN': 'Quick commit. Go Bears!'
   },
   'git-error-origin-fetch-uptodate': {
     '__desc__': 'One of the error messages for git',
@@ -281,7 +309,9 @@ exports.strings = {
     'ko': '이미 최신 상태입니다!',
     'vi': 'Cập nhật mới nhất rồi!',
     'sl_SI': 'Že posodobljeno!',
-    'pl': 'Już aktualne!'
+    'pl': 'Już aktualne!',
+    'it_IT': "E' gia la versione più recente!",
+    'ta_IN': 'ஏற்கனவே புதுப்பித்த நிலையில் உள்ளது!'
   },
   'git-error-origin-fetch-no-ff': {
     '__desc__': 'One of the error messages for git',
@@ -300,7 +330,10 @@ exports.strings = {
     'ko': '당신의 오리진 브랜치가 원격 브랜치와 동기화되지 않았고, 패치를 실행할 수 없습니다.',
     'vi': 'Nhánh của bạn không đồng bộ với nhánh remote nên lệnh fetch không thực thi được.',
     'sl_SI': 'Tvoj origin branch ni sinhroniziran z oddaljenim branchem, zato se fetch se ne more izvesti',
-    'pl': 'Twój branch nie jest zsynchronizowany ze zdalny branch-em i nie można przeprowadzić pobierania'
+    'pl': 'Twój branch nie jest zsynchronizowany ze zdalny branch-em i nie można przeprowadzić pobierania',
+    'it_IT':
+      "Il tuo ramo origin non è sincronizzato con il ramo remoto, e fetch non puù essere eseguito",
+    'ta_IN': 'உங்கள் மூலக் கிளை தொலைநிலைக் கிளையுடன் ஓருங்கினைக்கப்படவில்லை. `fetch` செய்ய முடியாது'
   },
   'git-error-origin-push-no-ff': {
     '__desc__': 'One of the error messages for git',
@@ -319,7 +352,10 @@ exports.strings = {
     'ko': '원격 레포지토리가 당신의 로컬 레포지토리에서 분기하므로, 변경 사항을 업데이트 하는것은 간단한 fast forward가 아닙니다(따라서 push가 거절될 것입니다.). 원격 레포지토리에서의 변경 사항을 내려 받아 이 브랜치에 합치고, 이를 반복하세요. 당신은 git pull 또는 git pull --rebase를 사용해 이를 수행할 수 있습니다.',
     'vi': 'Kho chứa từ xa có sự khác biệt với kho chứa cục bộ của bạn, nên không thể tự động (fast forward) cập nhật thay đổi của bạn (và vì thế hoạt động push của bạn bị từ chối). Vui lòng kéo về thay đổi từ kho chứa từ xa, kết nạp vào nhánh hiện tại, và thử lại lần nữa. Bạn có thể dùng lệnh `git pull` hoặc `git pull --rebase`',
     'sl_SI': 'Oddaljen repozitorij se je ločil od tvojega lokalnega repozitorija, zato nalaganje sprememb ni možno z `fast forward` opcijo (zato je bil `push` zavrnjen). Prosim pull-aj dol nove spremembe iz oddaljenega repozitorija, jih vključi v svoj branch, nato pa poizkusi ponovno. To lahko narediš z `git pull` ali `git pull --rebase`',
-    'pl'   : 'Zdalne repozytorium różni się od lokalnego repozytorium, dlatego twoich zmian nie można przesłać za pomocą prostego szybkiego `fast forward` (i dlatego polecenie `push` zostało odrzucone). Najpierw zrób `pull` aby pobrać nowe zmiany do lokalnego repozytorium, zintegruj je z branch-em i spróbuj ponownie. Możesz to zrobić za pomocą `git pull` lub `git pull --rebase`'
+    'pl'   : 'Zdalne repozytorium różni się od lokalnego repozytorium, dlatego twoich zmian nie można przesłać za pomocą prostego szybkiego `fast forward` (i dlatego polecenie `push` zostało odrzucone). Najpierw zrób `pull` aby pobrać nowe zmiany do lokalnego repozytorium, zintegruj je z branch-em i spróbuj ponownie. Możesz to zrobić za pomocą `git pull` lub `git pull --rebase`',
+    'it_it':
+      "Il repository remoto è diverso dal tuo repository locale, quindi il caricamento non è un semplice fast forward (e per questo il tuo push è fallito). Per favore esegui pull per scaricare i nuovi cambiamenti dal repository remoto, incorporarli in questo ramo, e provare ancora. Puoi effettuarlo tramite i comandi git pull o git pull --rebase",
+    'ta_IN': 'தொலைநிலை களஞ்சியம் உங்கள் களஞ்சியத்திலிருந்து வேறுபட்டுள்ளது, எனவே உங்கள் மாற்றங்களை எளிமையான `fast forward` முறையில் பதிவேற்ற இயலாது (இதனால் உங்கள் `push` நிராகரிக்கப்பட்டது). தொலை களஞ்சியத்தில் புதிய மாற்றங்களை `pull` செய்து, அவற்றை இந்த கிளையில் இணைத்து, மீண்டும் முயற்சிக்கவும். நீங்கள் அவ்வாறு `git pull` அல்லது `git pull --rebase` கட்டளை கொண்டு செய்யலாம்'
   },
   'git-error-remote-branch': {
     '__desc__': 'One of the error messages for git',
@@ -338,7 +374,9 @@ exports.strings = {
     'ko': '당신은 원격 브랜치에서 그 명령어를 실행시킬 수 없습니다.',
     'vi': 'Bạn không thể thực thi lệnh đó lên nhánh từ xa.',
     'sl_SI': 'Tega ukaza ne moreš narediti na oddaljenem branchu',
-    'pl'   : 'Nie możesz wykonać tego polecenia w zdalnego branch-u'
+    'pl'   : 'Nie możesz wykonać tego polecenia w zdalnej gałęzi',
+    'it_it': "Non puoi eseguire questo comando su un ramo remoto",
+    'ta_IN': 'அந்த கட்டளையை நீங்கள் தொலைநிலை கிளையில் இயக்க முடியாது'
   },
   'git-error-origin-required': {
     '__desc__': 'One of the error messages for git',
@@ -357,7 +395,9 @@ exports.strings = {
     'ko': '그 명령어를 위한 오리진이 필요합니다.',
     'vi': 'Lệnh đó yêu cầu có origin.',
     'sl_SI': 'Origin je potreben za izvedbo tega ukaza',
-    'pl'   : 'Dla tego polecenia wymagany jest źródło (origin)'
+    'pl'   : 'Dla tego polecenia wymagane jest źródło (origin)',
+    'it_IT': "E' necessario definire origin per questo comando",
+    'ta_IN': 'அந்த கட்டளைக்கு ஒரு துவக்க மூலம் தேவை'
   },
   'git-error-origin-exists': {
     '__desc__': 'One of the error messages for git',
@@ -376,28 +416,34 @@ exports.strings = {
     'ko': '오리진이 이미 존재합니다! 당신은 새로 만들 수 없습니다.',
     'vi': 'Nguyên bản (origin) đã tồn tại. Bạn không thể tạo thêm 1 cái mới',
     'sl_SI': 'Origin že obstaja. Ne moreš narediti novega.',
-    'pl'   : 'origem już istnieje! Nie możesz go ponownie założyć'
+    'pl'   : 'Origin już istnieje! Nie możesz go ponownie założyć',
+    'it_IT': "Origin già esistente! Non puoi crearne uno nuovo",
+    'ta_IN': 'துவக்க மூலம் ஒன்று ஏற்கனவே உள்ளது! நீங்கள் மீன்டும் ஒன்றை உருவாக்க முடியாது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-branch': {
     '__desc__': 'One of the error messages for git',
-    'en_US': 'You can\'t delete the master branch, the branch you are on, or things that ' +
+    'en_US': 'You can\'t delete the main branch, the branch you are on, or things that ' +
       'aren\'t branches',
-    'de_DE': 'Du kannst nicht den Branch master, den Branch auf dem du gerade arbeitest oder Refs, die keine Branches sind, löschen',
-    'zh_CN': '你不能删除主分支（master），或者你当前所在的分支，或者其它连分支也不是的东西。',
-    'zh_TW': '你不能刪除 master branch，或者你當前所在的 branch，或者其它連 branch 都不是的東西。',
-    'es_AR': 'No podés borrar la rama master, la rama en la que estás, o cosas que no son ramas',
-    'es_MX': 'No puedes borrar la rama master, la rama en la que estás, o cosas que no son ramas',
-    'es_ES': 'No puedes eliminar la rama master, la rama en que estás, o cosas que no son ramas.',
-    'pt_BR': 'Você não pode apagar o ramo master, nem o ramo em que você está, nem coisas que não sejam ramos',
-    'gl'   : 'Non podes borrala rama master, nin a rama na que ti estás, nin cousas que non sexan ramas',
-    'fr_FR': 'Vous ne pouvez supprimer la branche master, la branche sur laquelle vous êtes, ou ce qui n\'est pas une branche',
-    'ru_RU' : 'Невозможно удалить ветку master, ветку на которой вы сейчас и то что не является веткой',
-    'uk': 'Неможливо видалити гілку master, гілку на якій ти зараз знаходишся чи штуки які не є гілкою',
+    'de_DE': 'Du kannst nicht den Branch main, den Branch auf dem du gerade arbeitest oder Refs, die keine Branches sind, löschen',
+    'zh_CN': '你不能删除主分支（main），或者你当前所在的分支，或者其它连分支也不是的东西。',
+    'zh_TW': '你不能刪除 main branch，或者你當前所在的 branch，或者其它連 branch 都不是的東西。',
+    'es_AR': 'No podés borrar la rama main, la rama en la que estás, o cosas que no son ramas',
+    'es_MX': 'No puedes borrar la rama main, la rama en la que estás, o cosas que no son ramas',
+    'es_ES': 'No puedes eliminar la rama main, la rama en que estás, o cosas que no son ramas.',
+    'pt_BR': 'Você não pode apagar o ramo main, nem o ramo em que você está, nem coisas que não sejam ramos',
+    'gl'   : 'Non podes borrala rama main, nin a rama na que ti estás, nin cousas que non sexan ramas',
+    'fr_FR': 'Vous ne pouvez supprimer la branche main, la branche sur laquelle vous êtes, ou ce qui n\'est pas une branche',
+    'ru_RU' : 'Невозможно удалить ветку main, ветку на которой вы сейчас и то что не является веткой',
+    'uk': 'Неможливо видалити гілку main, гілку на якій ти зараз знаходишся чи штуки які не є гілкою',
     'ko': '당신은 메인 브랜치, 당신이 현재 사용중인 브랜치, 또는 브랜치가 아닌 것들을 삭제할 수 없습니다.',
-    'vi': 'Bạn không thể xóa nhánh master, nhánh mà bạn đang tham chiếu tới, hoặc những gì không phải nhánh.',
-    'sl_SI': 'Ne moreš izbrisati master brancha, brancha na katerem si trenutno ali stvari, ki niso branchi',
-    'pl'   : 'Nie możesz usunąć branch-a master, branch-a nad którym aktualnie pracujesz, ani który nie jest branch-em'
+    'vi': 'Bạn không thể xóa nhánh main, nhánh mà bạn đang tham chiếu tới, hoặc những gì không phải nhánh.',
+    'sl_SI': 'Ne moreš izbrisati main brancha, brancha na katerem si trenutno ali stvari, ki niso branchi',
+    'pl'   : 'Nie możesz usunąć gałezi main, gałęzi na której aktualnie pracujesz, ani która nie jest gałezią',
+      'it_IT':
+      "Non puoi eliminare il ramo main, il ramo in cui sei, o cose che " +
+      "non sono rami",
+    'ta_IN': 'பிரதான கிளை, தற்ப்போது நடப்பில் உள்ள கிளை மற்றும் கிளை அல்லாத வற்றை அழிக்க இயலாது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-merge-msg': {
@@ -417,7 +463,9 @@ exports.strings = {
     'ko': '{target}을 {current}에 병합하세요.',
     'vi': 'Gộp {target} vào {current}.',
     'sl_SI': 'Mergaj {target} v {current}',
-    'pl'   : 'Łączenie {target} z {current}'
+    'pl'   : 'Łączenie {target} z {current}',
+    'it_IT': "Merge  {target} in {current}",
+    'ta_IN': '{target}ஐ {current} கிளையுடன் இணை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-rebase-none': {
@@ -437,7 +485,10 @@ exports.strings = {
     'ko': 'rebase를 하기 위한 커밋이 없습니다! 모든 커밋과 변경 사항들의 병합은 이미 적용되었습니다.',
     'vi': 'Không có commit nào để rebase. Mọi thứ là merge commit hoặc thay đổi đã được áp dụng.',
     'sl_SI': 'Ni commitov za rebase! Vse je merge commit ali pa so spremembe že dodane',
-    'pl'   : 'Nie znaleziono commit-u do zmiany! Wszystkie commit-y oraz scalenia lub zmiany już są zastosowane'
+    'pl'   : 'Nie znaleziono commit-u do zmiany! Wszystkie commit-y oraz scalenia lub zmiany już są zastosowane',
+    'it_IT':
+      "Non ci sono commit da ribasare! Sono tutti commit di merge o i cambiamenti sono giò stati applicati",
+    'ta_IN': '`rebase` செய்ய எந்த கமிட்டும் இல்லை, அனைத்தும் இணைப்பு கமிட்கள் அல்லது முன்பே இணைக்கப்பட்டவை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-result-nothing': {
@@ -457,7 +508,9 @@ exports.strings = {
     'ko': '할게 없습니다 ...',
     'vi': 'Không có gì để làm ...',
     'sl_SI': 'Ničesar za narediti ...',
-    'pl'   : 'Nie ma nic do zrobienia...'
+    'pl'   : 'Nie ma nic do zrobienia...',
+    'it_IT': "Niente da fare...",
+    'ta_IN': 'செய்வதற்க்கு ஒன்றும் இல்லை...'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-result-fastforward': {
@@ -477,7 +530,9 @@ exports.strings = {
     'ko': 'Fast forward 중입니다...',
     'vi': 'Đang fast forward...',
     'sl_SI': 'Fast forwardiranje',
-    'pl'   : 'Fast forward...'
+    'pl'   : 'Fast forward...',
+    'it_it': "Fast forwarding...",
+    'ta_IN': 'Fast forward...'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-result-uptodate': {
@@ -497,7 +552,9 @@ exports.strings = {
     'ko': '브랜치가 이미 최신 상태입니다.',
     'vi': 'Nhánh đã được cập nhật mới nhất.',
     'sl_SI': 'Branch je že posodobljen',
-    'pl'   : 'Branch jest już aktualny'
+    'pl'   : 'Branch jest już aktualny',
+    'it_IT': "Il ramo è già aggiornato",
+    'ta_IN': 'இந்த கிளை ஏற்கனவே புதுப்பித்த நிலையில் உள்ளது...'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-exist': {
@@ -517,7 +574,9 @@ exports.strings = {
     'ko': '{ref} 참조가 존재하지 않거나 알 수 없습니다.',
     'vi': 'Tham chiếu {ref} không tồn tại hoặc không thể tìm thấy.',
     'sl_SI': 'Ref {ref} new obstaja ali je neznan',
-    'pl'   : 'Odnośnik {ref} nie istnieje lub jest nieznany'
+    'pl'   : 'Odnośnik {ref} nie istnieje lub jest nieznany',
+    'it_IT': "Il riferimento (ref) {ref} non esiste o è sconosciuto",
+    'ta_IN': '{ref} இல்லை அல்லது தெரியவில்லை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-relative-ref': {
@@ -537,7 +596,9 @@ exports.strings = {
     'ko': '커밋 {commit}은 {match}를 가지고 있지 않습니다.',
     'vi': 'Commit {commit} mà không có {match}.',
     'sl_SI': 'Commit {commit} nima {match}',
-    'pl'   : 'Commit {commit} nie ma {match}'
+    'pl'   : 'Commit {commit} nie ma {match}',
+    'it_IT': "Commit {commit} non ha un {match}",
+    'ta_IN': '{commit}க்கு {match} எதுவும் இல்லை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-warning-detached': {
@@ -557,7 +618,9 @@ exports.strings = {
     'ko': '주의! 분리된 HEAD 상태',
     'vi': 'Cảnh báo! HEAD bị tách rời',
     'sl_SI': 'Opozorilo! Detached HEAD stanje',
-    'pl'   : 'Ostrzeżenie!! Odłączony tryb HEAD'
+    'pl'   : 'Ostrzeżenie!! Odłączony tryb HEAD',
+    'it_IT': "Attenzione!! Situazione di testa distaccata (Detached HEAD)",
+    'ta_IN': 'எச்சரிக்கை !! `HEAD` துன்டிக்கப்பட்ட நிலையில் உள்ளது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-warning-add': {
@@ -577,7 +640,9 @@ exports.strings = {
     'ko': '이 데모에서는 파일을 추가할 필요가 없습니다.',
     'vi': 'Không cần thêm tập tin trong bản giới thiệu này.',
     'sl_SI': 'Ni potrebe po dodajanju datotetk v tem demotu',
-    'pl'   : 'Nie ma potrzeby dodawania plików w tym demo'
+    'pl'   : 'Nie ma potrzeby dodawania plików w tym demo',
+    'it_IT': "Non c'è bisogno di aggiungere file in questa demo",
+    'ta_IN': 'இந்த நடைமுறையில் கோப்புகளை சேர்க்க தேவையில்லை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-options': {
@@ -597,7 +662,9 @@ exports.strings = {
     'ko': '당신이 지정한 그 옵션들은 호환되지 않거나 올바르지 않습니다.',
     'vi': 'Các tham số bạn chỉ định không tương thích hoặc không chính xác.',
     'sl_SI': 'Opcije, ki si jih podal, so nezdružljive ali napačne',
-    'pl'   : 'Podane przez Ciebie opcje są niezgodne lub nieprawidłowe'
+    'pl'   : 'Podane przez Ciebie opcje są niezgodne lub nieprawidłowe',
+    'it_IT': "Le opzioni che hai specificato sono incompatibili o sbagliate",
+    'ta_IN': 'நீங்கள் குறிப்பிட்ட அந்த மற்றிகள் பொருந்தாது அல்லது தவறானவை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-already-exists': {
@@ -617,7 +684,9 @@ exports.strings = {
     'ko': '커밋 {commit}은 이미 당신의 변경 내역에 존재합니다. 중단!',
     'vi': 'Commit {commit} đã tồn tại trong những thay đổi của bạn. Đang hủy!',
     'sl_SI': 'Commit {commit} že obstaja v tvoji množici sprememb, prekinjam!',
-    'pl'   : 'Commit {commit} już istnieje w Twoim zbiorze zmian, przerywam!'
+    'pl'   : 'Commit {commit} już istnieje w Twoim zbiorze zmian, przerywam!',
+    'it_IT': "Il commit {commit} è già presente, annullo!",
+    'ta_IN': '{commit} உங்கள் மாற்றங்களின் தொகுப்பில் ஏற்கனவே உள்ளது, கட்டளை கைவிடப்பட்டது!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-reset-detached': {
@@ -637,7 +706,10 @@ exports.strings = {
     'ko': '분리된 HEAD에서 reset할 수 없습니다. 만약 이동시키기를 원한다면 checkout을 사용하세요.',
     'vi': 'Trong trạng thái tách rời `HEAD` thì không thể `reset`. Dùng `checkout` nếu bạn muốn di chuyển.',
     'sl_SI': 'Ni možno resetat, zaradi detached HEADa',
-    'pl'   : 'Nie można zresetować w odłączonej HEAD! Użyj opcji `checkout`, jeśli chcesz się przenieść'
+    'pl'   : 'Nie można zresetować w odłączonej HEAD! Użyj opcji `checkout`, jeśli chcesz się przenieść',
+    'it_IT':
+      "Non posso fare reset in modalità testa distaccata (detached head)! Utilizza checkout se vuoi spostarti",
+    'ta_IN': 'பிரிக்கப்பட்ட தலையில் மீட்டமைக்க முடியாது! நீங்கள் நகர்த்த விரும்பினால் `checkout` பயன்படுத்தவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-warning-hard': {
@@ -665,7 +737,14 @@ exports.strings = {
       ' Nhưng mà hãy nhớ rằng thực tế thì `--mixed` mới là trạng thái mặc định của `reset`.',
     'sl_SI': 'Privzeto delovanje za reset na LearnGitBranching je --hard, zato lahko to izpustiš. Na pravem gitu je --mixed.',
     'pl'   : 'Domyślnym zachowaniem dla polecenia `reset` w LearnGitBranching jest parametr --hard, więc możesz pominąć tę opcję, ' +
-      'Pamiętaj tylko, że domyślne zachowanie rzeczywistego GIT-a jest parametr --mixed.'
+      'Pamiętaj tylko, że domyślne zachowanie rzeczywistego GIT-a jest parametr --mixed.',
+        'it_IT':
+      "Il comportamento base per i resets su LearnGitBranching è --hard, per cui puoi tranquillamente omettere " +
+      "quella opzione se ti sei stancato di scriverla. Ricorda però che in Git, " +
+      "l'opzione di default è --mixed.",
+    'ta_IN': 'The default behavior for resets on LearnGitBranching is a --hard, so feel free to omit ' +
+      'that option if you get tired of typing it out in our lessons. Just remember that the default ' +
+      'behavior on actual Git is --mixed.'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-staging': {
@@ -686,7 +765,11 @@ exports.strings = {
     'ko': '여기엔 파일을 추가하거나 스테이징한다는 개념이 없습니다. 따라서 그 옵션 또는 명령어는 유효하지 않습니다.',
     'vi': 'Không có khái nệm thêm tập tin đệm(staging file), nên tùy chọn đó là bất hợp lệ.',
     'sl_SI': 'Tu ni možnosti addanja/stageanja datotek, zato je ta ukaz nepravilen',
-    'pl'   : 'Nie ma koncepcji na dodawanie/indeksowanie zmian, więc opcja lub polecenie jest niepoprawne.'
+    'pl'   : 'Nie ma koncepcji na dodawanie/indeksowanie zmian, więc opcja lub polecenie jest niepoprawne.',
+     'it_IT':
+      "Non esiste il concetto di aggiungere / indicizzare i file, quindi quell'opzione o " +
+      "comando non è valido!",
+    'ta_IN': 'கோப்புகளைச் சேர்ப்பது / நிலைநிறுத்துவது என்ற கருத்து ஒன்றும் இல்லை, எனவே அந்த மற்றி அல்லது கட்டளை தவறானது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-revert-msg': {
@@ -706,7 +789,9 @@ exports.strings = {
     'ko': '{oldCommit}:{oldMsg}를 복구중입니다.',
     'vi': 'Hoàn tác {oldCommit}:{oldMsg}.',
     'sl_SI': 'Revertanje {oldCommit}: {oldMsg}',
-    'pl'   : 'Cofam {oldCommit} : {oldMsg}'
+    'pl'   : 'Cofam {oldCommit} : {oldMsg}',
+    'it_IT': "Ripristino {oldCommit}: {oldMsg}",
+    'ta_IN': '{oldCommit}: {oldMsg} மீன்டும் மாற்றியமைக்கிறது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-args-many': {
@@ -726,7 +811,9 @@ exports.strings = {
     'ko': '{what}을 위해 최대 {upper}개의 인자를 받습니다.',
     'vi': 'Có thể có nhiều nhất {upper} tham số cho {what}.',
     'sl_SI': 'Pričakovanih je največ {upper} argumentov za {what}',
-    'pl'   : 'Oczekuję maksymalne {upper} parametrów dla {what}'
+    'pl'   : 'Oczekuję maksymalne {upper} parametrów dla {what}',
+    'it_IT': "Mi aspetto al massimo {upper} parametro/i per {what}",
+    'ta_IN': 'நான் {what}க்கான உள்ளீடு(கள்) அதிகபட்சமாக {upper} எதிர்பார்க்கிறேன்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-args-few': {
@@ -746,7 +833,9 @@ exports.strings = {
     'ko': '{what}을 위해 최소 {lower}개의 인자를 받습니다.',
     'vi': 'Cần ít nhất {lower} tham số cho {what}.',
     'sl_SI': 'Pričakovanih je najmanj {lower} argumentov za {what}',
-    'pl'   : 'Oczekuję co najmniej {lower} parametrów dla {what}'
+    'pl'   : 'Oczekuję co najmniej {lower} parametrów dla {what}',
+    'it_IT': "Mi aspetto come minimo {lower} parametro/i per {what}",
+    'ta_IN': 'நான் {what}க்கான உள்ளீடு(கள்) குறைந்தபட்சம் {lower} எதிர்பார்க்கிறேன்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-error-no-general-args': {
@@ -766,7 +855,18 @@ exports.strings = {
     'ko': '그 명령어는 일반적으로 인자를 받지 않습니다.',
     'vi': 'Lệnh đó không chấp nhận các tham số chung.',
     'sl_SI': 'Ta ukaz ne sprejme splošnih ukazov',
-    'pl'   : 'To polecenie nie przyjmuje żadnych ogólnych parametrów'
+    'pl'   : 'To polecenie nie przyjmuje żadnych ogólnych parametrów',
+    'it_IT': "Quel comando non accetta parametri generici",
+    'ta_IN': 'அந்த கட்டளை பொதுவான உள்ளீடு எதுவும் ஏற்கவில்லை'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'git-error-command-not-supported': {
+    '__desc__': 'Message that appears in git console when command was not recognized.',
+    'en_US': 'The command "{command}" isn\'t supported, sorry!',
+    'de_DE': 'Entschuldigung, der Befehl "{command}" wird nicht unterstützt!',
+    'zh_TW': '很抱歉，目前無法支援指令 "{command}"!',
+    'it_IT': 'Mi spiace, il comando "{command}" non è supportato.',
+    'pl' : 'Polecenie "{command}" niestety nie jest obsługiwane.'
   },
   ///////////////////////////////////////////////////////////////////////////
   'copy-tree-string': {
@@ -786,7 +886,9 @@ exports.strings = {
     'ko': '다음 트리 문자열을 복사하세요.',
     'vi': 'Sao chép chuỗi cây bên dưới.',
     'sl_SI': 'Skopiraj besedilo drevesa spodaj',
-    'pl'   : 'Skopiuj poniższy kod'
+    'pl'   : 'Skopiuj poniższy kod',
+    'it_IT': "Copia il codice dell'albero qua sotto",
+    'ta_IN': '`tree string`ஐ கீழே நகலெடுக்கவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'learn-git-branching': {
@@ -807,7 +909,9 @@ exports.strings = {
     'ko': '깃 브랜칭을 배워봅시다.',
     'vi': 'Học nhánh Git.',
     'sl_SI': 'Nauči se Git Branching',
-    'pl': 'Nauka GIT Branching-u'
+    'pl': 'Naucz się Git Branching-u',
+    'it_IT': "Impara Git Branching",
+    'ta_IN': 'கிட் கிளை அமைத்தல்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'select-a-level': {
@@ -827,7 +931,9 @@ exports.strings = {
     'ko': '레벨을 선택하세요.',
     'vi': 'Chọn một cấp độ.',
     'sl_SI': 'Izberi stopnjo',
-    'pl': 'Wybierz poziom'
+    'pl': 'Wybierz poziom',
+    'it_IT': "Scegli un livello",
+    'ta_IN': 'ஒரு நிலையை தேர்வு செய்யுங்கள்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'main-levels-tab': {
@@ -843,7 +949,9 @@ exports.strings = {
     'ko': '메인',
     'vi': 'Bài học chính',
     'sl_SI': 'Glavno',
-    'pl': 'Główny'
+    'pl': 'Główny',
+    'it_IT': "Menu",
+    'ta_IN': 'பிரதானம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'remote-levels-tab': {
@@ -859,7 +967,9 @@ exports.strings = {
     'ko'   : '원격',
     'vi'   : 'Bài học về thao tác từ xa',
     'sl_SI': 'Oddaljeno',
-    'pl'   : 'Zdalny'
+    'pl'   : 'Zdalny',
+    'it_IT': "Remoto",
+    'ta_IN': 'தொலைநிலை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'branch-name-short': {
@@ -879,7 +989,10 @@ exports.strings = {
     'ko': '미안하지만, 우리는 시각적으로 더 좋게 보기위해 짧은 브랜치명이 필요합니다. 당신의 브랜치명은 9자리로 잘라 "{branch}"로 만들었습니다.',
     'vi': 'Xin lỗi, chúng tôi cần giữ tên nhánh ngắn để tiện minh họa. Tên nhánh của bạn đã bị cắt xuống 9 ký tự là "{branch}".',
     'sl_SI': 'Oprosti, imena branchev moramo obdržati kratka zaradi vizualizacije. Tvoje ime brancha je bilo skrajšano na 9 črk, kar predstavlja "{branch}"',
-    'pl': 'Przepraszamy, ze względu na wizualizacje musimy zachować krótkie nazwy branch-y. Nazwa Twojego branch-u została skrócona do 9 znaków, w wyniku czego otrzymano "{branch}"'
+    'pl': 'Przepraszamy, ze względu na wizualizacje musimy zachować krótkie nazwy gałęzi. Nazwa Twojej gałęzi została skrócona do 9 znaków, w wyniku czego otrzymano "{branch}"',
+    'it_IT':
+      'Scusa ma i nomi dei rami devono essere brevi per essere visualizzati. Il nome del tuo ramo è stato accorciato a 9 caratteri, rinominandolo come "{branch}"',
+    'ta_IN': 'மன்னிக்கவும், காட்சிகளுக்கு கிளை பெயர்களை குறுகியதாக வைத்திருக்க வேண்டி உள்ளது. உங்கள் கிளையின் பெயர் 9 எழுத்துகளாக சுருக்கப்பட்டு, "{branch}" ஆக மற்றப்பட்டுள்ளது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'bad-branch-name': {
@@ -899,7 +1012,9 @@ exports.strings = {
     'ko': '"{branch}"라는 브랜치명은 사용할 수 없습니다.',
     'vi': 'Tên nhánh "{branch}" không được chấp nhận.',
     'sl_SI': 'To ime brancha "{branch}" ni dovoljeno!',
-    'pl': 'Ta nazwa oddziału "{branch}" jest niedozwolona!'
+    'pl': 'Ta nazwa gałęzi "{branch}" jest niedozwolona!',
+    'it_IT': 'Il nome "{branch}" per i rami non è consentito!',
+    'ta_IN': '"{branch}" ஐ கிளையின் பெயராக ஏற்க்க இயலாது!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'bad-tag-name': {
@@ -919,7 +1034,9 @@ exports.strings = {
     'ko': '"{tag}"라는 태그명은 사용할 수 없습니다.',
     'vi': 'Tên thẻ "{tag}" không được chấp nhận.',
     'sl_SI': 'To ime tag-a "{tag}" ni dovoljeno!',
-    'pl': 'Ta nazwa tagu "{tag}" jest niedozwolona!'
+    'pl': 'Ta nazwa tagu "{tag}" jest niedozwolona!',
+    'it_IT': 'Il nome "{tag}" per i tag non è consentito!',
+    'ta_IN': '"{tag}" ஐ குறிச்சொல் பெயராக ஏற்க்க இயலாது!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'option-not-supported': {
@@ -939,7 +1056,9 @@ exports.strings = {
     'ko': '"{option}"(이)라는 옵션은 지원하지 않습니다.',
     'vi': 'Tùy chọn "{option}" không được hỗ trợ.',
     'sl_SI': 'Opcija "{option}" ni podprta! ',
-    'pl': 'Opcja "{option}" nie jest obsługiwana!'
+    'pl': 'Opcja "{option}" nie jest obsługiwana!',
+    'it_IT': 'L\'opzione "{option}" non è supportata!',
+    'ta_IN': '"{option}" மாற்று செயல் ஆதரிக்கப்படவில்லை!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-usage-command': {
@@ -959,7 +1078,9 @@ exports.strings = {
     'ko': 'git <명령어> [<인자들>]',
     'vi': 'git <lệnh> [<tham số>]',
     'sl_SI': 'git <ukaz> [<argumenti>]',
-    'pl': 'git <polecenie> [<parametry>]'
+    'pl': 'git <polecenie> [<parametry>]',
+    'it_IT': "git <command> [<args>]",
+    'ta_IN': 'git <command> [<args>]'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-supported-commands': {
@@ -979,7 +1100,9 @@ exports.strings = {
     'ko': '지원되는 명령어들:',
     'vi': 'Các lệnh được hỗ trợ:',
     'sl_SI': 'Podprti ukazi:',
-    'pl': 'Obsługiwane polecenia:'
+    'pl': 'Obsługiwane polecenia:',
+    'it_IT': "Comandi supportati:",
+    'ta_IN': 'செயலாக்கம் உள்ள கட்டளைகள்;'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-usage': {
@@ -999,7 +1122,9 @@ exports.strings = {
     'ko': '사용법',
     'vi': 'Cách dùng:',
     'sl_SI': 'Uporaba:',
-    'pl': 'Użyj'
+    'pl': 'Użyj',
+    'it_IT': "Utilizzo:",
+    'ta_IN': 'பயன்பாடு'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-version': {
@@ -1019,7 +1144,9 @@ exports.strings = {
     'ko': 'Git Version PCOTILE.1.0',
     'vi': 'Phiên bản Git TTC-Solutions.1.0',
     'sl_SI': 'Git Verzija PCOTTLE.1.0',
-    'pl' : 'Wersja GIT-a OLSZA-1.0'
+    'pl' : 'Wersja GIT-a OLSZA-YSC-1.0',
+    'it_IT': "Git Version SHARDANA_SOFT.1.0.0",
+    'ta_IN': 'Git Version PCOTTLE.1.0'
   },
   ///////////////////////////////////////////////////////////////////////////
   'flip-tree-command': {
@@ -1039,7 +1166,9 @@ exports.strings = {
     'ko': '트리 뒤집는중...',
     'vi': 'Cây lật...',
     'sl_SI': 'Obračanje drevesa ...',
-    'pl'   : 'Odwracanie drzewa...'
+    'pl'   : 'Odwracanie drzewa...',
+    'it_IT': "Girando l'albero...",
+    'ta_IN': 'Flipping tree...'
   },
   ///////////////////////////////////////////////////////////////////////////
   'refresh-tree-command': {
@@ -1059,7 +1188,9 @@ exports.strings = {
     'ko': '트리 다시 불러오는중...',
     'vi': 'Làm mới cây...',
     'sl_SI': 'Osveževanje drevesa ...',
-    'pl'   : 'Odświeżanie drzewa...'
+    'pl'   : 'Odświeżanie drzewa...',
+    'it_IT': "Aggiornando l'albero...",
+    'ta_IN': 'Refreshing tree...'
   },
   ///////////////////////////////////////////////////////////////////////////
   'locale-command': {
@@ -1079,7 +1210,9 @@ exports.strings = {
     'ko': '로케일이 {locale}로 설정되었습니다.',
     'vi': 'Ngôn ngữ được thay đổi thành {locale}.',
     'sl_SI': 'Locale nastavljen na {locale}',
-    'pl'   : 'Ustawiono język na {locale}'
+    'pl'   : 'Ustawiono język na {locale}',
+    'it_IT': "Locale impostato a {locale}",
+    'ta_IN': 'பிரதேசம் {locale}ஆக மற்ற பட்டுள்ளது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'locale-reset-command': {
@@ -1099,7 +1232,9 @@ exports.strings = {
     'ko': '로케일이 {locale}로 초기화 되었습니다.',
     'vi': 'Ngôn ngữ được đổi thành mặc định: {locale}.',
     'sl_SI': 'Locale ponastavljen na {locale}',
-    'pl'   : 'Przywrócono język do wartości domyślnych, czyli {locale}'
+    'pl'   : 'Przywrócono język do wartości domyślnych, czyli {locale}',
+    'it_IT': "Locale resettato al valore di default, che è {locale}",
+    'ta_IN': 'பிரதேசம் இயல்புநிலை {locale}க்கி மீட்டமைக்கப்பட்டுள்ளது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'show-command': {
@@ -1119,7 +1254,9 @@ exports.strings = {
     'ko': '더 많은 정보를 위해 다음 명령어들중 하나를 사용하세요.',
     'vi': 'Vui lòng dùng một trong các lệnh sau để có thêm thông tin:.',
     'sl_SI': 'Prosim uporabi enega od naslednjih ukazov',
-    'pl'   : 'Aby uzyskać więcej informacji, użyj jednego z następujących poleceń:'
+    'pl'   : 'Aby uzyskać więcej informacji, użyj jednego z następujących poleceń:',
+    'it_IT': "Usa uno dei seguenti comandi per maggiori informazioni:",
+    'ta_IN': 'மேலும் தகவலுக்கு பின்வரும் கட்டளைகளில் ஒன்றைப் பயன்படுத்தவும்:'
   },
   ///////////////////////////////////////////////////////////////////////////
   'show-all-commands': {
@@ -1134,12 +1271,14 @@ exports.strings = {
     'pt_BR': 'Esta é uma lista dos comandos disponíveis:',
     'gl'   : 'Esta é unha lista dos comando dispoñibles:',
     'fr_FR': 'Ci-dessous est la liste de toutes les commandes disponibles :',
-    'ru_RU': 'Вот все поддерживаемуе команды:',
+    'ru_RU': 'Вот все поддерживаемые команды:',
     'uk': 'Ось список всіх можливих команд:',
     'ko': '여기에 사용 가능한 모든 명령어들의 리스트가 있습니다.',
     'vi': 'Dưới đây là danh sách tất cả các lệnh hiện hành:.',
     'sl_SI': 'Tu je seznam vseh možnih ukazov:',
-    'pl'   : 'Oto lista wszystkich dostępnych poleceń:'
+    'pl'   : 'Oto lista wszystkich dostępnych poleceń:',
+    'it_IT': "Ecco la lista con tutti i comandi disponibili:",
+    'ta_IN': 'கிடைக்கக்கூடிய அனைத்து கட்டளைகளின் பட்டியல்:'
   },
   ///////////////////////////////////////////////////////////////////////////
   'cd-command': {
@@ -1159,7 +1298,9 @@ exports.strings = {
     'ko': '디렉토리가 "/directories/dont/matter/in/this/demo"로 변경되었습니다.',
     'vi': 'Thay đổi thư mục thành "/directories/dont/matter/in/this/demo".',
     'sl_SI': 'Mapa spremenjena na "/directories/dont/matter/in/this/demo"',
-    'pl'   : 'Katalog zmieniony na "/home/users/windows/pl/demo"'
+    'pl'   : 'Katalog zmieniony na "/home/users/windows/pl/demo"',
+    'it_IT': 'Cartella modificata in  "/directories/dont/matter/in/this/demo"',
+    'ta_IN': 'அடைவு "/directories/dont/matter/in/this/demo"க்கு மாற்றப்பட்டது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'ls-command': {
@@ -1179,7 +1320,9 @@ exports.strings = {
     'ko': 'DontWorryAboutFilesInThisDemo.txt (이_데모에서_파일에_대한_걱정은_하지마세요.txt)',
     'vi': 'DontWorryAboutFilesInThisDemo.txt (ĐừngLoLắngVềTậpTinTrongBảnGiớiThiệuNày.txt)',
     'sl_SI': 'DontWorryAboutFilesInThisDemo.txt',
-    'pl'   : 'SpokojnieToTylkoPlikDemo.txt'
+    'pl'   : 'SpokojnieToTylkoPlikDemo.txt',
+    'it_IT': "NoNdEvIpReOcCuPaRtIdEiFiLeInQuEsTaDeMo.txt",
+    'ta_IN': 'DontWorryAboutFilesInThisDemo.txt'
   },
   'mobile-alert': {
     '__desc__': 'When someone comes to the site on a mobile device, they can not input commands so this is a nasty alert to tell them',
@@ -1198,7 +1341,10 @@ exports.strings = {
     'ko': 'LGB는 모바일에서 입력을 받을 수 없습니다. 데스크톱으로 접속하세요! 이것은 가치가 있습니다. :D',
     'vi': 'Đáng tiếc là ứng dụng không thể nhận thông tin từ điện thoại hay máy tính bảng, hãy sử dụng máy tính cá nhân, đáng để bỏ công mà :D',
     'sl_SI': 'LGB ne more sprejeti ukazov na mobilni napravi, obiščite nas na računalinku! Je vredno :D ',
-    'pl'   : 'Przepraszamy, ale LearnGitBranching nie obsługuje wpisywania komend z urządzeń mobilnych. Odwiedź LearnGitBranching na komputerze stacjonarnym, warto! :D'
+    'pl'   : 'Przepraszamy, ale LearnGitBranching nie obsługuje wpisywania komend z urządzeń mobilnych. Odwiedź LearnGitBranching na komputerze stacjonarnym, warto! :D',
+    'it_IT':
+      "LGB non funziona su mobile, vieni a trovarci da pc! Ne vale veramente la pena :D",
+    'ta_IN': 'LGBஆல் மொபைலில் உள்ளீட்டைப் பெற முடியாது, டெஸ்க்டாப்பில் பார்வையிடவும், அது பயணுள்ளது :D'
   },
   ///////////////////////////////////////////////////////////////////////////
   'share-tree': {
@@ -1218,7 +1364,10 @@ exports.strings = {
     'ko': '친구들과 이 트리를 공유하세요! 그들은 "import tree"를 사용해 이를 로드할 수 있습니다.',
     'vi': 'Hãy chia sẻ cây này với bạn của mình! Họ có thể dùng "import tree" để tải.',
     'sl_SI': 'Deli to drevo s prijatelji! Lahko ga naložijo z "import tree"',
-    'pl'   : 'Udostępnij to drzewo znajomym! Mogą go załadować za pomocą "import tree"'
+    'pl'   : 'Udostępnij to drzewo znajomym! Mogą je załadować za pomocą "import tree"',
+    'it_IT':
+      'Condividi quest\'albero con i tuoi amici! Può essere importato tramite "import tree"',
+    'ta_IN': 'இந்த `tree`ஐ நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்! அவர்கள் அதை "import tree" மூலம் பெறலாம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'paste-json': {
@@ -1238,7 +1387,9 @@ exports.strings = {
     'ko': '아래에 JSON blob을 붙여넣으세요.',
     'vi': 'Dán một chuỗi JSON xuống bên dưới.',
     'sl_SI': 'Prilepi JSON kodo spodaj!',
-    'pl'   : 'Wklej poniżej obiekt z kodem JSON!'
+    'pl'   : 'Wklej poniżej obiekt z kodem JSON!',
+    'it_IT': "Incolla un blob JSON qui sotto!",
+    'ta_IN': 'ஒரு JSON blob-ஐ கீழே ஒட்டவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'solved-map-reset': {
@@ -1258,7 +1409,9 @@ exports.strings = {
     'ko': '해결된 지도가 초기화 되었습니다. 당신은 깨끗한 상태에서 시작합니다.',
     'vi': 'Tất cả đáp án đã được xóa, bạn có thể bắt đầu lại từ đầu.',
     'sl_SI': 'Rešena mapa je ponastavljena, začel boš lahko na novo!',
-    'pl'   : 'Rozwiązania zostały wyczyszczone, zaczynasz od czystej karty.'
+    'pl'   : 'Rozwiązania zostały wyczyszczone, zaczynasz z czystą kartą.',
+    'it_IT': "I progresse salvati sono stati resettati, stai iniziando da zero!",
+    'ta_IN': 'தீர்க்கப்பட்ட கோப்பு மீட்டமைக்கப்பட்டது, நீங்கள் ஆரம்பத்தில் இருந்து தொடங்குகிறீர்கள்!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'level-cant-exit': {
@@ -1278,7 +1431,10 @@ exports.strings = {
     'ko': '당신은 샌드박스에 있습니다. "levels"를 사용하여 레벨을 시작하세요.',
     'vi': 'Bạn hiện không ở cấp độ nào cả! Hãy bắt đầu một cấp độ với "levels".',
     'sl_SI': 'Nisi v stopnji! Si v peskovniku, začni stopnjo z "levels"',
-    'pl'   : 'Nie jesteś na poziomie! Jesteś w piaskownicy, zacznij poziom wpisując "levels"'
+    'pl'   : 'Nie jesteś na poziomie! Jesteś w trybie piaskownicy, zacznij poziom wpisując "levels"',
+    'it_IT':
+      'Non ti trovi in un livello! Sei nella sandbox, inizia un livello con "levels"',
+    'ta_IN': 'ஒரு நிலையில் இல்லாமல், நீங்கள் sandbox-இல் உள்ளீர்கள்! "நிலைகள்" மூலம் ஒரு நிலையைத் தொடங்கவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'level-no-id': {
@@ -1298,7 +1454,10 @@ exports.strings = {
     'ko': 'id "{id}"에 대한 레벨이 존재하지 않습니다. 레벨 선택 화면을 열어보세요.',
     'vi': 'Không tìm thấy cấp độ cho định danh "{id}". Mở cửa sổ chọn cấp độ.',
     'sl_SI': 'Stopnja za ta id "{id}" ni bila najdena! Odpiram pogled za izbiro stopnje',
-    'pl'   : 'Nie znaleziono poziomu {id}!. Otwieranie widoku wyboru poziomu...'
+    'pl'   : 'Nie znaleziono poziomu {id}!. Otwieranie widoku wyboru poziomu...',
+    'it_IT':
+      'Non è stato trovato un livello con id "{id}"! Apro la finestra con la selezione dei livelli',
+    'ta_IN': 'அந்த "{id}"-க்கான நிலை  காணப்படவில்லை! நிலை தேர்வு செய்யும் திரை திறக்கிறது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'undo-stack-empty': {
@@ -1318,7 +1477,9 @@ exports.strings = {
     'ko': '되돌리기 스택이 비었습니다!',
     'vi': 'Không có gì để hoàn tác!',
     'sl_SI': 'Undo seznam je prazen!',
-    'pl'   : 'Nie ma już poleceń do cofnięcia!'
+    'pl'   : 'Nie ma już poleceń do cofnięcia!',
+    'it_IT': "Non sono presenti comandi da annullare!",
+    'ta_IN': 'மீள்பதிவு அடுக்கு காலியாக உள்ளது!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'already-solved': {
@@ -1338,7 +1499,10 @@ exports.strings = {
     'ko': '당신은 이미 이 레벨을 해결했습니다. "levels"를 사용하여 다른 레벨에 도전하거나 "sandbox"를 사용하여 샌드박스로 돌아가세요.',
     'vi': 'Bạn đã vượt qua cấp độ này. Thử cấp độ khác với "levels" hoặc dùng "sandbox" để trở lại hộp cát.',
     'sl_SI': 'To stopnjo si že rešil, poizkusi druge stopnje z "levels" ali pojdi nazaj v peskovnik s "sandbox"',
-    'pl'   : 'Już rozwiązałeś ten poziom, wypróbuj inne, używając "levels" lub wróć do piaskownicy za pomocą polecenia "sandbox"'
+    'pl'   : 'Już rozwiązałeś ten poziom, wypróbuj inne, używając "levels" lub wróć do trybu piaskownicy za pomocą polecenia "sandbox"',
+    'it_IT':
+      'Hai già risolto questo livello, prova altri livelli con "levels" o torna alla sandbox con "sandbox"',
+    'ta_IN': 'நீங்கள் ஏற்கனவே இந்த நிலையை தீர்த்துள்ளீர்கள், "நிலைகள்" மூலம் பிற நிலைகளை முயற்சிக்கவும் அல்லது "sandbox" உடன் sandbox-க்குச் செல்லவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'solved-level': {
@@ -1354,7 +1518,9 @@ exports.strings = {
     'ko'   : '해결 완료!!\n:D',
     'vi'   : 'ĐÃ XONG!!\n:D',
     'sl_SI': 'Rešeno!!\n:D',
-    'pl'   : 'Rozwiązany!!\n:D'
+    'pl'   : 'Rozwiązany!!\n:D',
+    'it_IT': "Risolto!!\n:D",
+    'ta_IN': 'தீர்க்கப்பட்டது!!\n:D'
   },
   ///////////////////////////////////////////////////////////////////////////
   'command-disabled': {
@@ -1374,7 +1540,9 @@ exports.strings = {
     'ko': '그 Git 명령어는 이 레벨에서 사용할 수 없습니다.',
     'vi': 'Ở cấp độ này thì lệnh git đó bị vô hiệu hóa.',
     'sl_SI': 'Ta git ukaz je onemogočen za to stopnjo!',
-    'pl'   : 'To polecenie GIT-a jest wyłączone na tym poziomie!'
+    'pl'   : 'To polecenie Gita jest wyłączone na tym poziomie!',
+    'it_IT': "Questo comando git è disabilitato per questo livello!",
+    'ta_IN': 'இந்த நிலையில் அந்த கிட் கட்டளை முடக்கப்பட்டுள்ளது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'share-json': {
@@ -1394,7 +1562,10 @@ exports.strings = {
     'ko': '이 레벨을 위한 JSON 데이터가 있습니다! 이를 다른 사람들과 공유하거나 GitHub에서 제게 보내보세요.',
     'vi': 'Đây là chuỗi JSON cho cấp độ này! Hãy chia sẻ với người khắc hoặc với tôi qua GitHub.',
     'sl_SI': 'Tu je JSON za to stopnjo! Deli ga z nekom ali ga pošlji meni na GitHub',
-    'pl'   : 'To jest JSON dla tego poziomu. Udostępnij go, komu chcesz, lub wyślij do mnie na GitHub.'
+    'pl'   : 'To jest JSON dla tego poziomu. Udostępnij go, komu chcesz, lub wyślij do mnie na GitHub.',
+    'it_IT':
+      "Ecco il JSON per questo livello! Condividilo con qualcuno o inviamelo tramite GitHub",
+    'ta_IN': 'இதோ இந்த நிலைக்கான JSON, இதை பகிர்ந்து கொள்ளுங்கள் அல்லது GitHub-இல் எனக்கு அனுப்புங்கள்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'want-start-dialog': {
@@ -1414,7 +1585,10 @@ exports.strings = {
     'ko': '당신은 시작 대화창을 지정하지 않았습니다. 추가 하시겠습니까?',
     'vi': 'Không có cửa sổ hội thoại được chỉ định, thêm một cái chứ?',
     'sl_SI': 'Nisi določil začetnega dialoga, bi ga rad dodal?',
-    'pl'   : 'Nie określiłeś okna startowego, czy chcesz je dodać?'
+    'pl'   : 'Nie określiłeś okna startowego, czy chcesz je dodać?',
+    'it_IT':
+      "Non hai specificato una finestra di partenza, ne vuoi aggiungere una?",
+    'ta_IN': 'தொடக்க உரை எதுவும் நீங்கள் குறிப்பிடவில்லை, ஏதேனும் ஒன்றைச் சேர்க்க விரும்புகிறீர்களா?'
   },
   ///////////////////////////////////////////////////////////////////////////
   'want-hint': {
@@ -1434,7 +1608,9 @@ exports.strings = {
     'ko': '당신은 힌트를 지정하지 않았습니다. 추가 하시겠습니까?',
     'vi': 'Bạn chưa chỉ định một gợi ý, thêm một cái chứ?',
     'sl_SI': 'Nisi določil namiga, bi ga rad dodal?',
-    'pl'   : 'Nie podałeś podpowiedzi, czy chcesz ją dodać?'
+    'pl'   : 'Nie podałeś podpowiedzi, czy chcesz ją dodać?',
+    'it_IT': "Non hai specificato un suggerimento, ne vuoi aggiungere uno?",
+    'ta_IN': 'நீங்கள் குறிப்பெதுவும் தரவில்லை, ஏதேனும் ஒன்றைச் சேர்க்க விரும்புகிறீர்களா?'
   },
   ///////////////////////////////////////////////////////////////////////////
   'prompt-hint': {
@@ -1454,7 +1630,10 @@ exports.strings = {
     'ko': '이 레벨을 위한 힌트를 입력하거나 만약 이를 포함시키고 싶지 않을 경우엔 비워두세요.',
     'vi': 'Thêm một gợi ý cho cấp độ này, hoặc cứ để trống nếu bạn không muốn thêm.',
     'sl_SI': 'Vnesi namig za to stopnjo ali pusti to prazno, če ga nočeš dodati',
-    'pl'   : 'Wpisz wskazówkę dotyczącą tego poziomu lub pozostaw ją pustą, jeśli nie chcesz jej uwzględniać.'
+    'pl'   : 'Wpisz wskazówkę dotyczącą tego poziomu lub pozostaw ją pustą, jeśli nie chcesz jej uwzględniać.',
+    'it_IT':
+      "Inserisci un suggerimento per questo livello, oppure lascialo vuoto se non ne vuoi aggiungere",
+    'ta_IN': 'இந்த நிலைக்கான குறிப்பை உள்ளிடவும், குறிப்பு தேவை இல்லை என்றால் இதனை காலியாக விடுவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'prompt-name': {
@@ -1474,7 +1653,9 @@ exports.strings = {
     'ko': '레벨 이름을 입력하세요.',
     'vi': 'Nhập tên cho cấp độ này.',
     'sl_SI': 'Vnesi ime za stopnjo',
-    'pl'   : 'Wprowadź nazwę poziomu'
+    'pl'   : 'Wprowadź nazwę poziomu',
+    'it_IT': "Inserisci il nome per questo livello",
+    'ta_IN': 'நிலைக்கான பெயரை உள்ளிடவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'solution-empty': {
@@ -1494,7 +1675,9 @@ exports.strings = {
     'ko': '해답이 비어있습니다. 무언가 잘못되었습니다.',
     'vi': 'Đáp án bị bỏ trống!! Có gì thiếu rồi.',
     'sl_SI': 'Tvoja rešitev je prazna!! Nekaj ni vredu.',
-    'pl'   : 'Twoje rozwiązanie jest puste!! Coś musi zostać zrobione.'
+    'pl'   : 'Twoje rozwiązanie jest puste!! Coś musi zostać zrobione.',
+    'it_IT': "C'è qualcosa che non va. La soluzione è vuota!! ",
+    'ta_IN': 'உங்கள் தீர்வு காலியாக உள்ளது!! ஏதோ தவறாக இருக்கிறது'
   },
   ///////////////////////////////////////////////////////////////////////////
   'define-start-warning': {
@@ -1514,13 +1697,16 @@ exports.strings = {
     'ko': '시작 지점을 정의하세요... 만약 그것이 먼저 정의된다면 해답과 목표가 덮어씌워질 것입니다.',
     'vi': 'Xác định điểm bắt đầu ... Các giải pháp và mục tiêu sẽ được thay thế nếu đã được chỉ định từ trước.',
     'sl_SI': 'Določanje začetne točke ... rešitev in cilj bosta povožena, če sta bila prej že podana',
-    'pl'   : 'DUstawianie punktu początkowego... Rozwiązanie i cel zostaną nadpisane, jeśli zostały wcześniej zdefiniowane'
+    'pl'   : 'Ustawianie punktu startowego... Rozwiązanie i cel zostaną nadpisane, jeśli zostały wcześniej zdefiniowane',
+    'it_IT':
+      "Definendo punto di partenza... soluzione e obiettivo saranno sovvrascritti se erano già stati definiti.",
+    'ta_IN': 'தொடக்கத்தை வரையறுத்தல்... தீர்வு மற்றும் குறிக்கோள் முன்னரே வரையறுக்கப்பட்டிருந்தால் மேலெழுதப்படும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'help-vague-level': {
     '__desc__': 'When you are in a level and you say help, its vague and you need to specify',
     'en_US': 'You are in a level, so multiple forms of help are available. Please select either "help level" to learn more about this lesson, "help general" for using Learn GitBranching, or "objective" to learn about how to solve the level.',
-    'de_DE': 'Du befindest dich in einem Level, daher gibt es verschiedene Hilfen. Gib "help level" ein um mehr úber dieses Level zu erfahren, "help general" um zu sehen wie Learn Git Branching bedient wird, oder "objective" um das Ziel dieses Levels zu erfahren.',
+    'de_DE': 'Du befindest dich in einem Level, daher gibt es verschiedene Hilfen. Gib "help level" ein um mehr über dieses Level zu erfahren, "help general" um zu sehen wie Learn Git Branching bedient wird, oder "objective" um das Ziel dieses Levels zu erfahren.',
     'zh_CN': '您正在关卡中，这里有多种形式的帮助，请选择 "help level" (关卡帮助)或 "help general" (一般帮助)',
     'zh_TW': '您正在進行關卡中，這裡有多種不同型式的幫助，請選擇 "help level" 來了解這個關卡，或者是選擇 "help general" 來學習如何使用 Learn GitBranching，或者是選擇 "objective" 來學習如何解決這個關卡',
     'es_AR': 'Estás en un nivel, por lo que hay varios tipos de ayuda. Por favor elegí entre "help level" para aprender algo más sobre esta lección, "help general" para ayuda sobre el uso de Learn GitBranching, o "objective" para aprender a resolver este nivel.',
@@ -1534,7 +1720,10 @@ exports.strings = {
     'ko': '당신은 한 레벨에 들어가 있고, 여러가지 도움 양식들을 사용할 수 있습니다. 레슨에 대해 더 알고싶을 땐 "help level", LearnGitBranching을 사용하고 싶을 땐 "help general", 또는 레벨을 어떻게 해결해야할지 알고싶을 땐 "objective"를 선택하세요.',
     'vi': 'Bạn đang ở trong một cấp độ, nên sẽ có nhiều hỗ trợ. Vui lòng dùng "help level" để biết thêm về bài học này, "help general" để sử dụng HọcNhánhGit, hoặc "objective" để biết cách giải quyết bài tập.',
     'sl_SI': 'Si v stopnji, zato so na voljo različne pomoči. Prosim izberi "help level" za več informacij o tej lekciji, "help general" za splošna navodila ali "objective" da izveš kako rešiti to stopnjo',
-    'pl'   : 'Jesteście na jednym z poziomów, więc istnieje kilka rodzajów pomocy. Wpisz "help level", aby dowiedzieć się więcej o tej lekcji, wpisz "help general", aby uzyskać pomoc dotyczącą korzystania z nauki GitBranching, lub wpisz "objective", aby dowiedzieć się, jak rozwiązać ten poziom.'
+    'pl'   : 'Jesteś na poziomie, więc istnieje kilka rodzajów pomocy. Wpisz "help level", aby dowiedzieć się więcej o tej lekcji, wpisz "help general", aby uzyskać pomoc dotyczącą korzystania z nauki GitBranching, lub wpisz "objective", aby dowiedzieć się, jak rozwiązać ten poziom.',
+    'it_IT':
+      'Sei dentro a un livello, hai a disposizione vari tipi di aiuto. Digita "help level" per saperne di più su questa lezione, "help general" per come usare Learn GitBranching, o "objective" per capire come risolvere il livello.',
+    'ta_IN': 'நீங்கள் ஒரு நிலையில் உள்ளீர்கள், எனவே பல வகையான உதவி பெற இயலும். இந்த பாடத்தைப் பற்றி மேலும் அறிய "நிலைக்கான உதவி" என்பதைத் தேர்ந்தெடுக்கவும், Learn GitBranching பற்றி மேலும் அறிய "பொது உதவி" பயன்படுத்துக, அல்லது இந்த நிலையை எவ்வாறு தீர்ப்பது என்பது பற்றி அறிய "நோக்கம்" தேர்ந்தெடுக்கவும்.'
   },
   ///////////////////////////////////////////////////////////////////////////
   'help-vague-builder': {
@@ -1554,7 +1743,10 @@ exports.strings = {
     'ko': '당신은 한 레벨 생성기에 들어가 있고, 여러가지 도움 양식들을 사용할 수 있습니다. "help general" 또는 "help builder"를 선택해주세요.',
     'vi': 'Bạn đang tạo một cấp độ, nên sẽ có nhiều trợ giúp có sẵn. Vui lòng chọn "help general" hoặc "help builder".',
     'sl_SI': 'Si v graditelju stopenj, zato so na voljo različne pomoči. Prosim izberi "help general" ali "help builder"',
-    'pl'   : 'Jesteś w kreatorze poziomów, więc dostępnych jest wiele form pomocy. Wpisz "help general", aby uzyskać pomoc dotyczącą nauki GitBranching-u, lub wpisz "help builder", aby uzyskać pomoc dotyczącą konstruktora poziomów'
+    'pl'   : 'Znajdujesz się w kreatorze poziomów. Dostępnych jest tu kilka rodzajów pomocy. Wpisz "help general", aby uzyskać pomoc dotyczącą nauki GitBranching-u, lub wpisz "help builder", aby uzyskać pomoc dotyczącą konstruktora poziomów',
+    'it_IT':
+      'Sei in un generatore di livelli, hai a disposizione vari tipi di aiuto. Digita "help general" o "help builder"',
+    'ta_IN': 'நீங்கள் ஒரு நிலை கட்டமைப்பானில் உள்ளீர்கள், எனவே பல வகையான உதவி பெற இயலும். தயவுசெய்து "பொது உதவி" அல்லது "கட்டமைப்பான் உதவி" என்பதைத் தேர்ந்தெடுக்கவும்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'show-goal-button': {
@@ -1575,7 +1767,9 @@ exports.strings = {
     'ko': '목표 보기',
     'vi': 'Hiển thị mục tiêu',
     'sl_SI': 'Prikaži Cilj',
-    'pl' : 'Pokaż cel'
+    'pl' : 'Pokaż cel',
+    'it_IT': "Mostra obiettivo",
+    'ta_IN': 'இலக்கைக் காட்டு'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hide-goal-button': {
@@ -1596,7 +1790,9 @@ exports.strings = {
     'ko': '목표 숨기기',
     'vi': 'Ẩn mục tiêu',
     'sl_SI': 'Skrij Cilj',
-    'pl' : 'Ukryj cel'
+    'pl' : 'Ukryj cel',
+    'it_IT': "Nasconti obiettivo",
+    'ta_IN': 'இலக்கை மறை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'objective-button': {
@@ -1612,7 +1808,9 @@ exports.strings = {
     'ko': '목적',
     'vi': 'Chỉ dẫn',
     'sl_SI': 'Navodila',
-    'pl' : 'Instrukcje'
+    'pl' : 'Instrukcje',
+    'it_IT': "Istruzioni",
+    'ta_IN': 'வழிமுறைகள்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'git-demonstration-title': {
@@ -1628,7 +1826,9 @@ exports.strings = {
     'ko'   : 'Git 데모',
     'vi'   : 'Trình diễn Git',
     'sl_SI': 'Git Predstavitev',
-    'pl'   : 'Demo GIT'
+    'pl'   : 'Demo GIT',
+    'it_IT': "Dimostrazione Git",
+    'ta_IN': 'கிட் செயல் விளக்கம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'goal-to-reach': {
@@ -1649,28 +1849,33 @@ exports.strings = {
     'ko': '목표',
     'vi': 'Mục tiêu cần đạt',
     'sl_SI': 'Končni Cilj',
-    'pl': 'Cel do osiągnięcia'
+    'pl': 'Cel do osiągnięcia',
+    'it_IT': "Obiettivo da raggiungere",
+    'ta_IN': 'அடைய வேண்டிய இலக்கு'
   },
   ///////////////////////////////////////////////////////////////////////////
-  'goal-only-master': {
-    '__desc__': 'the helper message for the window that shows the goal tree when the goal will only be compared using the master branch',
-    'en_US': '<span class="fwber">Note:</span> Only the master branch will be checked in this level. The other branches are simply for reference (shown as dashed labels below). As always, you can hide this dialog with "hide goal"',
-    'fr_FR': '<span class="fwber">Note:</span> Dans ce niveau on ne doit faire de git checkout que sur la branche master. Les autres branches représentées ici (entourées d\'un cadre en tirets) doivent être utilisées uniquement comme références. Comme toujours, vous pouvez cacher cette fenêtre avec "Cacher les objectifs"',
-    'de_DE': '<span class="fwber">Hinweis:</span> In diesem Level wird nur der Branch master geprüft. Die anderen Branches dienen nur als Vergleichsbasis (als gestrichelte Bezeichner dargestellt). Wie immer kannst du diese Meldung mit "hide goal" ausblenden',
-    'es_AR': '<span class="fwber">Nota:</span> Sólo la rama master va a ser chequeada en este nivel. Las otras ramas sólo son para referencia. Como siempre, podés ocultar este mensaje con "hide goal"',
-    'es_MX': '<span class="fwber">Nota:</span> Sólo la rama master va a ser inspeccionada en este nivel. Las otras ramas sólo son para referencia (etiquetados abajo con guión). Como siempre, puedes ocultar éste mensaje con "hide goal"',
-    'es_ES': '<span class="fwber">Nota:</span> Sólo la rama master va a ser inspeccionado en este nivel. Las otras ramas sólo son para referencia (etiquetados abajo con guion). Siempre puedes ocultar este mensaje con "hide goal."',
-    'pt_BR': '<span class="fwber">Nota:</span> Apenas o ramo master será verificado neste nível. Os outros ramos (dentro das caixas clareadas) são somente para referência. Como sempre, você pode ocultar esta janela com "hide goal"',
-    'gl': '<span class="fwber">Nota:</span> Só a rama master será verificada neste nivel. As outras ramas (dentro das caixas clareadas) son soamente de referencia. Coma sempre, podes ocultar está ventá con "hide goal"',
-    'zh_CN': '<span class="fwber">注意:</span>本关卡中，只检查 master 分支，其他分支只是用作 reference 存在（以虚线标签表示）。照常，你可以用 “hide goal” 来隐藏此窗口。',
-    'zh_TW': '在這個關卡中，只有 master branch 會被檢查，別的 branch 只是用來做為 reference （下面用虛線符號表示）。一如往常，你可以利用 "hide goal" 來隱藏這個對話視窗',
-    'ja': '<span class="fwber">Note:</span> masterブランチだけをこのlevelではチェックします。その他のブランチ（以下では、破線で示されています）に関しては、参照のためにあります。また、いつでもこのウィンドウは"hide goal"と打つかクリックで閉じれます',
-    'ru_RU': '<span class="fwber">Важно:</span> В этом уровне проверяется только ветка master. Остальные ветки просто для наглядности. Как обычно, можно скрыть это сообщение при помощи "hide goal"',
-    'uk': '<span class="fwber">Важливо:</span> В цьому рівні буде перевірятися тільки гілка master. Решта гілок тільки для наглядності (показані пунктиром нижче). Як завжди, можна сховати цей діалог за допомогою "hide goal"',
+  'goal-only-main': {
+    '__desc__': 'the helper message for the window that shows the goal tree when the goal will only be compared using the main branch',
+    'en_US': '<span class="fwber">Note:</span> Only the main branch will be checked in this level. The other branches are simply for reference (shown as dashed labels below). As always, you can hide this dialog with "hide goal"',
+    'fr_FR': '<span class="fwber">Note:</span> Dans ce niveau on ne doit faire de git checkout que sur la branche main. Les autres branches représentées ici (entourées d\'un cadre en tirets) doivent être utilisées uniquement comme références. Comme toujours, vous pouvez cacher cette fenêtre avec "Cacher les objectifs"',
+    'de_DE': '<span class="fwber">Hinweis:</span> In diesem Level wird nur der Branch main geprüft. Die anderen Branches dienen nur als Vergleichsbasis (als gestrichelte Bezeichner dargestellt). Wie immer kannst du diese Meldung mit "hide goal" ausblenden',
+    'es_AR': '<span class="fwber">Nota:</span> Sólo la rama main va a ser chequeada en este nivel. Las otras ramas sólo son para referencia. Como siempre, podés ocultar este mensaje con "hide goal"',
+    'es_MX': '<span class="fwber">Nota:</span> Sólo la rama main va a ser inspeccionada en este nivel. Las otras ramas sólo son para referencia (etiquetados abajo con guión). Como siempre, puedes ocultar éste mensaje con "hide goal"',
+    'es_ES': '<span class="fwber">Nota:</span> Sólo la rama main va a ser inspeccionado en este nivel. Las otras ramas sólo son para referencia (etiquetados abajo con guion). Siempre puedes ocultar este mensaje con "hide goal."',
+    'pt_BR': '<span class="fwber">Nota:</span> Apenas o ramo main será verificado neste nível. Os outros ramos (dentro das caixas clareadas) são somente para referência. Como sempre, você pode ocultar esta janela com "hide goal"',
+    'gl': '<span class="fwber">Nota:</span> Só a rama main será verificada neste nivel. As outras ramas (dentro das caixas clareadas) son soamente de referencia. Coma sempre, podes ocultar está ventá con "hide goal"',
+    'zh_CN': '<span class="fwber">注意:</span>本关卡中，只检查 main 分支，其他分支只是用作 reference 存在（以虚线标签表示）。照常，你可以用 “hide goal” 来隐藏此窗口。',
+    'zh_TW': '在這個關卡中，只有 main branch 會被檢查，別的 branch 只是用來做為 reference （下面用虛線符號表示）。一如往常，你可以利用 "hide goal" 來隱藏這個對話視窗',
+    'ja': '<span class="fwber">Note:</span> mainブランチだけをこのlevelではチェックします。その他のブランチ（以下では、破線で示されています）に関しては、参照のためにあります。また、いつでもこのウィンドウは"hide goal"と打つかクリックで閉じれます',
+    'ru_RU': '<span class="fwber">Важно:</span> В этом уровне проверяется только ветка main. Остальные ветки просто для наглядности. Как обычно, можно скрыть это сообщение при помощи "hide goal"',
+    'uk': '<span class="fwber">Важливо:</span> В цьому рівні буде перевірятися тільки гілка main. Решта гілок тільки для наглядності (показані пунктиром нижче). Як завжди, можна сховати цей діалог за допомогою "hide goal"',
     'ko': '<span class="fwber">Note:</span> 이 레벨에선 오직 메인 브랜치만이 검사될 것입니다.. 다른 브랜치들은 단순히 참고용입니다. (아래에 대시 라벨로 보여집니다.). "hide goal"을 사용하여 언제든지 창을 숨길 수 있습니다.',
-    'vi': '<span class="fwber">Chú ý:</span> Ở cấp độ này chỉ nhánh master bị kiểm tra. Các nhánh khác chỉ dùng để tham chiếu(có dấu - ở nhãn). Như thường lệ, bạn có thể ẩn mục tiêu bằng "hide goal".',
-    'sl_SI': '<span class="fwber">Opomba:</span> Samo master branch bo preverjen v tej stopnji. Ostali branchi so zgolj za referenco (prikazani kot črtaste oznake spodaj). Kot ponavadi, lahko skriješ dialog z "hide goal"',
-    'pl': '<span class="fwber"> Uwaga:</span> Na tym poziomie sprawdzana będzie tylko główna gałąź. Pozostałe gałęzie są tylko do odwołania (pokazane jako przerywane etykiety poniżej). Jak zawsze, możesz ukryć to okno dialogowe z "ukryj cel".'
+    'vi': '<span class="fwber">Chú ý:</span> Ở cấp độ này chỉ nhánh main bị kiểm tra. Các nhánh khác chỉ dùng để tham chiếu(có dấu - ở nhãn). Như thường lệ, bạn có thể ẩn mục tiêu bằng "hide goal".',
+    'sl_SI': '<span class="fwber">Opomba:</span> Samo main branch bo preverjen v tej stopnji. Ostali branchi so zgolj za referenco (prikazani kot črtaste oznake spodaj). Kot ponavadi, lahko skriješ dialog z "hide goal"',
+    'pl': '<span class="fwber"> Uwaga:</span> Na tym poziomie będzie sprawdzana tylko poprawność gałęzi main. Pozostałe gałęzie są tylko odniesieniem (pokazane jako przerywane etykiety poniżej). Jak zawsze, możesz ukryć to okno klikając "Ukryj cel".',
+    'it_IT':
+      '<span class="fwber">Nota:</span> In questo livello sarà selezionato solo il ramo main. Gli altri rami ci sono solo come riferimento (mostrati come etichette tratteggiate). Come sempre, puoi nascondere questa finestra con "hide goal"',
+    'ta_IN': '<span class="fwber">குறிப்பு:</span> இந்த மட்டத்தில் பிரதான கிளை மட்டுமே சரிபார்க்கப்படும். மற்ற கிளைகள் வெறுமனே விளக்க குறிப்புக்காக மட்டுமே (கீழே விடுபட்ட மேற்கோள்களாக காட்டப்பட்டுள்ளது). எப்பொழுதும் போல், "இலக்கை மறை" மூலம் இந்த சாளரத்தை மறைக்கலாம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hide-goal': {
@@ -1691,7 +1896,9 @@ exports.strings = {
     'ko': '"hide goal"을 사용하여 이 창을 숨길 수 있습니다.',
     'vi': 'Bạn có thể ẩn cửa sổ này với "hide goal".',
     'sl_SI': 'To okno lahko skriješ z "hide goal"',
-    'pl': 'Możesz ukryć to okno za pomocą opcji "ukryj cel"'
+    'pl': 'Możesz ukryć to okno za pomocą opcji "ukryj cel"',
+    'it_IT': 'Puoi nascondere questa finestra con "hide goal"',
+    'ta_IN': 'இந்த சாளரத்தை "இலக்கை மறை" மூலம் மறைக்கலாம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'hide-start': {
@@ -1712,7 +1919,9 @@ exports.strings = {
     'ko': '"hide start"를 사용하여 이 창을 숨길 수 있습니다.',
     'vi': 'Bạn có thể ẩn cửa sổ này với "hide start".',
     'sl_SI': 'To okno lahko skriješ z "hide start"',
-    'pl': 'Możesz ukryć to okno za pomocą opcji "ukryj start"'
+    'pl': 'Możesz ukryć to okno za pomocą opcji "ukryj start"',
+    'it_IT': 'Puoi nascondere questa finestra con "hide start"',
+    'ta_IN': 'இந்த சாளரத்தை "தொடக்கத்தை மறை" மூலம் மறைக்கலாம்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'level-builder': {
@@ -1733,7 +1942,9 @@ exports.strings = {
     'ko': '레벨 생성기',
     'vi': 'Trình tạo câp độ',
     'sl_SI': 'Graditelj Stopenj',
-    'pl': 'Twórca poziomu'
+    'pl': 'Twórca poziomu',
+    'it_IT': "Generatore di livelli",
+    'ta_IN': 'நிலை கட்டமைப்பான்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'no-start-dialog': {
@@ -1754,7 +1965,9 @@ exports.strings = {
     'ko': '이 레벨을 위한 시작 대화창이 없습니다.',
     'vi': 'Cấp độ này không được giới thiệu.',
     'sl_SI': 'Ni začetnega dialoga za prikaz te stopnje!',
-    'pl': 'Dla tego poziomu nie ma okna startowego do wyświetlenia!'
+    'pl': 'Dla tego poziomu nie ma okna startowego do wyświetlenia!',
+    'it_it': "Non esiste una finestra di partenza per questo livello!",
+    'ta_IN': 'இந்த நிலை பற்றி விளக்கிகாட்ட தொடக்க உரையாடல் எதுவும் இல்லை'
   },
   ///////////////////////////////////////////////////////////////////////////
   'no-hint': {
@@ -1775,7 +1988,9 @@ exports.strings = {
     'ko': '흠, 이 레벨을 위한 힌트가 없어보이는군요.',
     'vi': 'Hmmm, có vẻ cấp độ này không có gợi ý rồi. :-/',
     'sl_SI': 'Hmm, izgleda da ni namiga za to stopnjo :-/',
-    'pl': 'Hmm, wydaje się, że nie ma podpowiedzi dla tego poziomu :-/'
+    'pl': 'Hmm, wydaje się, że nie ma podpowiedzi dla tego poziomu :-/',
+    'it_IT': "Mmh, sembra non ci sia un suggerimento per questo livello :-/",
+    'ta_IN': 'ஹ்ம், இந்த நிலைக்கு ஒரு குறிப்பு எதுவும் இருப்பதாகத் தெரியவில்லை :-/'
   },
   ///////////////////////////////////////////////////////////////////////////
   'error-untranslated-key': {
@@ -1796,7 +2011,10 @@ exports.strings = {
     'ko': '{key}를 위한 번역은 아직 존재하지 않습니다 :( 번역에 참여해주세요!',
     'vi': 'Bản dịch cho {key} không có rồi :( Nếu có thể thì hãy lên dự án của chúng tôi ở GitHub để cung cấp bản dịch!',
     'sl_SI': 'Prevod za {key} še ne obstaja :( Skoči na github in dodaj prevod!',
-    'pl': 'Tłumaczenie dla klucza "{key}" jeszcze nie istnieje tłumaczenia :( Zapraszam na GitHub, aby pomóc w tłumaczeniu!'
+    'pl': 'Tłumaczenie dla klucza "{key}" jeszcze nie istnieje tłumaczenia :( Zapraszam na GitHub, aby pomóc w tłumaczeniu!',
+    'it_IT':
+      "La traduzione per {key} non esiste ancora :( Fai un salto su GitHub e dacci una mano!",
+    'ta_IN': '{key}-இன் மொழிபெயர்ப்பு கிடைக்கவில்லை :( github-இன் வழியாக் நீங்களும் மொழி பெயர்க்க உதவலாம்!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'error-untranslated': {
@@ -1817,18 +2035,111 @@ exports.strings = {
     'ko': '이 대화창이나 텍스트는 아직 번역되지 않았습니다. :( 번역에 참여해주세요!',
     'vi': 'Hội thoại hoặc văn bản này chưa được dịch ra ngôn ngữ của bạn rồi. :( Hãy lên GitHub để cung cấp bản dịch!',
     'sl_SI': 'Ta dialog ali tekst še ni preveden za tvoj jezik :( Skoči na github in dodaj prevod!',
-    'pl' : 'Kolejne okno dialogowe lub tekst nie zostało jeszcze przetłumaczone na język polski :( Zapraszam na GitHub, aby pomóc w tłumaczeniu!'
+    'pl' : 'Kolejne okno dialogowe lub tekst nie zostało jeszcze przetłumaczone na język polski :( Zapraszam na GitHub, aby pomóc w tłumaczeniu!',
+    'it_IT':
+      "Questo messaggio o testo non è ancora stato tradotto nella tua lingua :(  Fai un salto su GitHub e dacci una mano!",
+    'ta_IN': 'இந்த உரையாடல் அல்லது உரை உங்கள் தமிழில் இன்னும் மொழிபெயர்க்கப்படவில்லை :( github-இன் வழியாக் நீங்களும் மொழி பெயர்க்க உதவலாம்!'
   },
   ///////////////////////////////////////////////////////////////////////////
   'cancel-button': {
     '__desc__': 'Cancel button label after completing a level',
     'en_US': 'Cancel',
-    'pl' : 'Powrót'
+    'de_DE': 'Abbrechen',
+    'zh_TW': '取消',
+    'pl' : 'Powrót',
+    'it_IT': "Annulla",
+    'ta_IN': 'இரத்துசெய்'
   },
   ///////////////////////////////////////////////////////////////////////////
   'confirm-button': {
     '__desc__': 'Confirm button label after completing a level',
     'en_US': 'Confirm',
-    'pl' : 'Dalej'
-  }
+    'de_DE': 'Bestätigen',
+    'zh_TW': '確認',
+    'pl' : 'Dalej',
+    'it_IT': "Conferma",
+    'ta_IN': 'உறுதிப்படுத்தவும்'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'level-label': {
+    '__desc__': 'Label in the top of the left-side menu. Rembember to leave some space on the sides',
+    'en_US': ' Level ',
+    'de_DE': ' Level ',
+    'zh_TW': '關卡 ',
+    'it_IT': " Livello ",
+    'pl' : ' Poziom '
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-levels': {
+    '__desc__': 'Levels command label in the bottom command helper bar.',
+    'en_US': 'Levels',
+    'de_DE': 'Levels',
+    'zh_TW': '關卡',
+    'it_IT': "Livelli",
+    'pl' : 'Poziomy'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-solution': {
+    '__desc__': 'Solution command label in the bottom command helper bar.',
+    'en_US': 'Solution',
+    'de_DE': 'Lösung',
+    'zh_TW': '解答',
+    'it_IT': "Soluzione",
+    'pl' : 'Rozwiązanie'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-reset': {
+    '__desc__': 'Reset command label in the bottom command helper bar.',
+    'en_US': 'Reset',
+    'de_DE': 'Zurücksetzen',
+    'zh_TW': '重新開始',
+    'it_IT': "Reset",
+    'pl' : 'Wyczyść'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-undo': {
+    '__desc__': 'Undo command label in the bottom command helper bar.',
+    'en_US': 'Undo',
+    'de_DE': 'Rückgängig',
+    'zh_TW': '回到上一步',
+    'it_IT': "Annulla",
+    'pl' : 'Cofnij'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-objective': {
+    '__desc__': 'Objective command label in the bottom command helper bar.',
+    'en_US': 'Objective',
+    'de_DE': 'Zielvorgabe',
+    'zh_TW': '目標',
+    'it_IT': "Obiettivo",
+    'pl' : 'Cel'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'command-helper-bar-help': {
+    '__desc__': 'Help command label in the bottom command helper bar.',
+    'en_US': 'Help',
+    'de_DE': 'Hilfe',
+    'zh_TW': '幫助',
+    'it_IT': "Aiuto",
+    'pl' : 'Pomoc'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'error-command-currently-not-supported': {
+    '__desc__': 'Message that appears in git console when command is not supported in the current environment.',
+    'en_US': 'That command is valid, but not supported in this current environment! Try entering a level or level builder to use that command',
+    'de_DE': 'Der Befehl ist gültig, aber in der aktuellen Umgebung nicht unterstützt! Rufe ein Level oder den Level-Editor auf, um diesen Befehl zu nutzen',
+    'zh_TW': '這項指令輸入正確，然而目前的環境不支援此指令。試著前往關卡或關卡建造器中使用此指令。',
+    'it_IT':
+      "Il comando è valido, ma non supportato in questo ambiente! Prova a entrare in un livello o nel generatore di livelli per usare quel comando",
+    'pl' : 'To polecenie jest poprawne, ale nie jest obsługiwane w obecnym środowisku! Spróbuj wybrać poziom lub włączyć konstruktor poziomów, aby użyć tej komendy'
+  },
+  ///////////////////////////////////////////////////////////////////////////
+  'interactive-rebase-title': {
+    '__desc__': 'Title for the popup',
+    'en_US': 'Interactive Rebase',
+    'de_DE': 'Interaktives Rebase',
+    'zh_TW': '互動式 Rebase',
+    'it_IT': "Rebase interattivo",
+    'pl' : 'Interaktywny Rebase'
+  },
 };

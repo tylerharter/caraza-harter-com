@@ -43,7 +43,7 @@ exports.dialog = {
     type: 'ModalAlert',
     options: {
       markdowns: [
-        '## ¿Estás seguro de que querés ver la solución?',
+        '## ¿Realmente querés ver la solución?',
         '',
         '¡Creo en vos! ¡Dale que podés!'
       ]
@@ -164,6 +164,29 @@ exports.dialog = {
         'Wierzę w Ciebie! Możesz to zrobić'
       ]
     }
-  }]
+  }],
+    'ta_IN': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## நீங்கள் நிச்சயமாக தீர்வை காண விரும்புகிறீர்களா?',
+        '',
+        'நான் உங்களால் அதை செய்ய முடியும் என நினைக்கிறேன்!'
+      ]
+    }
+  }],
+    "it_IT": [
+    {
+      type: "ModalAlert",
+      options: {
+        markdowns: [
+          "## Sicuro di voler sbirciare la soluzione?",
+          "",
+          "Io credo in te, dai che ce la fai!",
+        ],
+      },
+    },
+  ],
 };
+
 

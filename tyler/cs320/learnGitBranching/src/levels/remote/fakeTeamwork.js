@@ -1,40 +1,42 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C5\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\",\"localBranchesThatTrackThis\":null},\"o/master\":{\"target\":\"C3\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"master\"]}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C5\":{\"parents\":[\"C3\",\"C4\"],\"id\":\"C5\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C3\",\"id\":\"master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C5\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\",\"localBranchesThatTrackThis\":null},\"o/main\":{\"target\":\"C3\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"main\"]}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C5\":{\"parents\":[\"C3\",\"C4\"],\"id\":\"C5\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C3\",\"id\":\"main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "solutionCommand": "git clone;git fakeTeamwork 2;git commit ;git pull",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Faking Teamwork",
     "fr_FR": "Simulation du travail d'équipe",
     "de_DE": "Teamarbeit simulieren",
-    "ja"   : "擬似的なチーム作業",
+    "ja": "擬似的なチーム作業",
     "es_AR": "Simulando el trabajo en equipo",
     "es_ES": "Simulando el trabajo en equipo",
     "pt_BR": "Simulando trabalho em equipe",
-    "gl"   : "Simulando o traballo no repositorio",
+    "gl": "Simulando o traballo no repositorio",
     "zh_CN": "模拟团队合作",
     "zh_TW": "模擬團隊合作",
     "ru_RU": "Коллективная работа",
-    "uk"   : "Симуляція колективної роботи",
-    "ko"   : "가짜 팀워크",
-    "vi"   : "Giả lập làm việc nhóm",
-    "sl_SI": "Lažno Ekipno Delo"
+    "uk": "Симуляція колективної роботи",
+    "ko": "가짜 팀워크",
+    "vi": "Giả lập làm việc nhóm",
+    "sl_SI": "Lažno Ekipno Delo",
+    "pl": "Symulacja pracy zespołowej",
   },
   "hint": {
     "en_US": "remember you can specify the number of commits to fake",
     "fr_FR": "rappelez-vous que vous pouvez spécifier le nombre de commits à simuler",
-    "de_DE": "Nicht vergessen, du kannst angeben wieviele Commits simuliert werden sollen.",
-    "ja"   : "擬似的に作成するコミット数を指定できるのをお忘れなく",
+    "de_DE": "Nicht vergessen, du kannst angeben wie viele Commits simuliert werden sollen.",
+    "ja": "擬似的に作成するコミット数を指定できるのをお忘れなく",
     "es_AR": "Acordate que podés especificar cuántos commits simular",
     "es_ES": "Recuerda que puedes especificar cuántos commits simular",
     "pt_BR": "Lembre-se que você pode especificar quantos commits quer simular",
-    "gl"   : "Lembra que podes especifar cantos commits queres simular",
+    "gl": "Lembra que podes especifar cantos commits queres simular",
     "zh_CN": "记住你可以指定仿真提交的个数",
     "zh_TW": "你要記得指定要送多少個 commit 出去",
     "ru_RU": "помните, Вы можете указать количество фейковых коммитов",
-    "uk"   : "пам’ятай що ти можеш вказати кількість фейкових комітів",
-    "ko"   : "가장할 커밋의 갯수를 조절할 수 있습니다.",
-    "vi"   : "Nhớ rằng bạn có thể chỉ định số lượng commit để giả lập.",
-    "sl_SI": "Spomni se, da lahko določiš število lažnih commitov."
+    "uk": "пам’ятай що ти можеш вказати кількість фейкових комітів",
+    "ko": "가장할 커밋의 갯수를 조절할 수 있습니다.",
+    "vi": "Nhớ rằng bạn có thể chỉ định số lượng commit để giả lập.",
+    "sl_SI": "Spomni se, da lahko določiš število lažnih commitov.",
+    "pl": "Pamiętaj, że możesz określić liczbę symulowanych commitów",
   },
   "startDialog": {
     "en_US": {
@@ -415,7 +417,7 @@ exports.level = {
         }
       ]
     },
-    "zh_CN":{
+    "zh_CN": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -502,7 +504,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Du kannst auch angeben wieviele Commits oder auf welchem Branch sie gemacht werden sollen, indem du das an den Befehl anhängst."
+              "Du kannst auch angeben wie viele Commits oder auf welchem Branch sie gemacht werden sollen, indem du das an den Befehl anhängst."
             ],
             "afterMarkdowns": [
               "Mit einem Befehlt haben wir simuliert, dass ein Kollege drei Commits auf den  Branch `foo` gepackt hat."
@@ -524,58 +526,58 @@ exports.level = {
       ]
     },
     "ru_RU": {
-        "childViews": [
-            {
-                "type": "ModalAlert",
-                "options": {
-                    "markdowns": [
-                        "## Симуляция совместной работы",
-                        "",
-                        "В данном уроке мы находимся в немного затруднительном положении - для выполнения ряда упражнений нам нужно обучить вас скачивать наработки и изменения, которые были сделаны в удалённом репозитории.",
-                        "",
-                        "Это означает, что нам следует \"сделать вид\", как будто мы знаем о том, что наш удалённый репозиторий, с которым мы работаем, был изменён одним из ваших коллег / друзей / единомышленников. Это может быть какая-то ветка, либо же какой-то конкретный коммит.",
-                        "",
-                        "Для того, чтобы добиться своих целей, нам предоставляется команда со звучным именем `git fakeTeamwork`! Имя команды однозначно даёт понять, что она выполняет. Давайте ознакомимся с демо..."
-                    ]
-                }
-            },
-            {
-                "type": "GitDemonstrationView",
-                "options": {
-                    "beforeMarkdowns": [
-                        "Поведение команды `fakeTeamwork` по умолчанию заключается в том, чтобы просто \"инициировать\" коммит на main-е"
-                    ],
-                    "afterMarkdowns": [
-                        "Ну вот - удалённый репозиторий был изменён при помощи добавления нового коммита, и мы ещё не скачали этот коммит, потому что не запустили команду `git fetch`."
-                    ],
-                    "command": "git fakeTeamwork",
-                    "beforeCommand": "git clone"
-                }
-            },
-            {
-                "type": "GitDemonstrationView",
-                "options": {
-                    "beforeMarkdowns": [
-                        "В данной команде вам доступна возможность указать ветку и количество добавляемых коммитов"
-                    ],
-                    "afterMarkdowns": [
-                        "С помощью одной лишь команды мы симулируем добавление трёх коммитов в ветку `foo` на удалённом репозитории"
-                    ],
-                    "command": "git fakeTeamwork foo 3",
-                    "beforeCommand": "git branch foo; git clone"
-                }
-            },
-            {
-                "type": "ModalAlert",
-                "options": {
-                    "markdowns": [
-                        "Последующие уровни будут довольно сложными, поэтому в этом упражнении от вас больше ничего не требуется.",
-                        "",
-                        "Вперёд! Склонируйте удалённый репозиторий (с помощью `git clone`), симулируйте любые изменения на этом удалённом репозитории, сделайте какие-нибудь свои коммиты и затем скачайте \"чужие\" изменения. Это выглядит как несколько уроков в одном!"
-                    ]
-                }
-            }
-        ]
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Симуляция совместной работы",
+              "",
+              "В данном уроке мы находимся в немного затруднительном положении - для выполнения ряда упражнений нам нужно обучить вас скачивать наработки и изменения, которые были сделаны в удалённом репозитории.",
+              "",
+              "Это означает, что нам следует \"сделать вид\", как будто мы знаем о том, что наш удалённый репозиторий, с которым мы работаем, был изменён одним из ваших коллег / друзей / единомышленников. Это может быть какая-то ветка, либо же какой-то конкретный коммит.",
+              "",
+              "Для того, чтобы добиться своих целей, нам предоставляется команда со звучным именем `git fakeTeamwork`! Имя команды однозначно даёт понять, что она выполняет. Давайте ознакомимся с демо..."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Поведение команды `fakeTeamwork` по умолчанию заключается в том, чтобы просто \"инициировать\" коммит на main-е"
+            ],
+            "afterMarkdowns": [
+              "Ну вот - удалённый репозиторий был изменён при помощи добавления нового коммита, и мы ещё не скачали этот коммит, потому что не запустили команду `git fetch`."
+            ],
+            "command": "git fakeTeamwork",
+            "beforeCommand": "git clone"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "В данной команде вам доступна возможность указать ветку и количество добавляемых коммитов"
+            ],
+            "afterMarkdowns": [
+              "С помощью одной лишь команды мы симулируем добавление трёх коммитов в ветку `foo` на удалённом репозитории"
+            ],
+            "command": "git fakeTeamwork foo 3",
+            "beforeCommand": "git branch foo; git clone"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Последующие уровни будут довольно сложными, поэтому в этом упражнении от вас больше ничего не требуется.",
+              "",
+              "Вперёд! Склонируйте удалённый репозиторий (с помощью `git clone`), симулируйте любые изменения на этом удалённом репозитории, сделайте какие-нибудь свои коммиты и затем скачайте \"чужие\" изменения. Это выглядит как несколько уроков в одном!"
+            ]
+          }
+        }
+      ]
     },
     "ja": {
       "childViews": [
@@ -599,7 +601,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "`fakeTeamwork`のデフォルトの動作は、単にmasterの上にコミットを乗っけるだけです"
+              "`fakeTeamwork`のデフォルトの動作は、単にmainの上にコミットを乗っけるだけです"
             ],
             "afterMarkdowns": [
               "ではいってみましょう -- リモートには新しいコミットが更新され、それはまだ私たちの手元にはダウンロードされていません。なぜなら、`git fetch`を走らせていませんからね。"
@@ -707,10 +709,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "`fakeTeamwork`의 기본 행동은 원격 master에 간단히 하나의 커밋을 하는것 입니다."
+              "`fakeTeamwork`의 기본 행동은 원격 main에 간단히 하나의 커밋을 하는것 입니다."
             ],
             "afterMarkdowns": [
-              "자 됬습니다 -- 원격 저장소에 새로운 커밋이 갱신되었습니다. 아직 `git fetch`를 하지 않았기 때문에 로컬로 내려받아지지는 않았습니다."
+              "자, 됐습니다 -- 원격 저장소에 새로운 커밋이 갱신되었습니다. 아직 `git fetch`를 하지 않았기 때문에 로컬로 내려받아지지는 않았습니다."
             ],
             "command": "git fakeTeamwork",
             "beforeCommand": "git clone"
@@ -848,6 +850,60 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Symulacja pracy zespołowej",
+              "",
+              "Pora na małe oszustwo -- na potrzeby niektórych z nadchodzących lekcji musimy nauczyć cię, jak ściągać (pull) zmiany, które zostały wprowadzone na zdalnej gałęzi przez innych.",
+              "",
+              "W zasadzie oznacza to, że musimy \"udawać\", że zdalne repozytorium zostało zaktualizowane przez jednego z twoich współpracowników / przyjaciół / współtwórców na jakiejś gałęzi lub kilku commitach.",
+              "",
+              "Aby to zrobić, wprowadziliśmy polecenie `git fakeTeamwork`! Po polsku byłoby to symulujPracę :D -- zobaczmy, jak to działa..."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Domyślnym zachowaniem `fakeTeamwork` jest po prostu wrzucenie commita na gałąź main."
+            ],
+            "afterMarkdowns": [
+              "Proszę bardzo - zdalny serwer został zaktualizowany o nowy commit, a my jeszcze go nie pobraliśmy, ponieważ nie uruchomiliśmy `git fetch`."
+            ],
+            "command": "git fakeTeamwork",
+            "beforeCommand": "git clone"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Możesz również określić liczbę commitów lub gałąź poprzez dołączenie ich do polecenia."
+            ],
+            "afterMarkdowns": [
+              "Jednym poleceniem symulujemy, że kolega z zespołu wypycha trzy commity do gałęzi `foo` na zdalnym repozytorium."
+            ],
+            "command": "git fakeTeamwork foo 3",
+            "beforeCommand": "git branch foo; git clone"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Kolejne poziomy będą dość trudne, więc tym razem twoje zadanie też jest bardziej wymagające.",
+              "",
+              "Nie bój się, stwórz zdalne repozytorium (używając `git clone`), zasymuluj na nim kilka zmian i zatwierdź je, a następnie ściągnij (pull) je. To jak kilka lekcji w jednej!"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

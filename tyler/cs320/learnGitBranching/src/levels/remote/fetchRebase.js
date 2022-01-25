@@ -1,7 +1,7 @@
 exports.level = {
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22master%22%2C%22remoteTrackingBranchID%22%3A%22o/master%22%2C%22localBranchesThatTrackThis%22%3Anull%7D%2C%22o/master%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22o/master%22%2C%22remoteTrackingBranchID%22%3Anull%2C%22localBranchesThatTrackThis%22%3A%5B%22master%22%5D%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22master%22%2C%22id%22%3A%22HEAD%22%7D%2C%22originTree%22%3A%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22master%22%2C%22remoteTrackingBranchID%22%3Anull%2C%22localBranchesThatTrackThis%22%3Anull%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22master%22%2C%22id%22%3A%22HEAD%22%7D%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22main%22%2C%22remoteTrackingBranchID%22%3A%22o/main%22%2C%22localBranchesThatTrackThis%22%3Anull%7D%2C%22o/main%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22o/main%22%2C%22remoteTrackingBranchID%22%3Anull%2C%22localBranchesThatTrackThis%22%3A%5B%22main%22%5D%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22main%22%2C%22id%22%3A%22HEAD%22%7D%2C%22originTree%22%3A%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C3%27%22%2C%22id%22%3A%22main%22%2C%22remoteTrackingBranchID%22%3Anull%2C%22localBranchesThatTrackThis%22%3Anull%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%27%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22main%22%2C%22id%22%3A%22HEAD%22%7D%7D%7D",
   "solutionCommand": "git clone;git fakeTeamwork;git commit;git pull --rebase;git push",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Diverged History",
     "zh_CN": "偏离的提交历史",
@@ -9,15 +9,16 @@ exports.level = {
     "es_AR": "Historia divergente",
     "es_ES": "Historia divergente",
     "pt_BR": "Histórico divergente",
-    "gl"   : "Histórico diverxente",
-    "de_DE": "Abweichende History",
+    "gl": "Histórico diverxente",
+    "de_DE": "Abweichende Historie",
     "fr_FR": "Historique divergent",
-    "ja"   : "履歴の分岐",
+    "ja": "履歴の分岐",
     "ru_RU": "Расхождение в истории",
-    "uk"   : "Розбіжності в історії",
-    "ko"   : "엇갈린 히스토리",
-    "vi"   : "Dị biệt lịch sử",
-    "sl_SI": "Razdeljena Zgodovina"
+    "uk": "Розбіжності в історії",
+    "ko": "엇갈린 히스토리",
+    "vi": "Dị biệt lịch sử",
+    "sl_SI": "Razdeljena Zgodovina",
+    "pl": "Rozbieżna  historia"
   },
   "hint": {
     "en_US": "check out the ordering from the goal visualization",
@@ -26,15 +27,16 @@ exports.level = {
     "es_AR": "Prestá atención al orden del objetivo",
     "es_ES": "Presta atención al orden del objetivo",
     "pt_BR": "Preste atenção na ordem da visualização do objetivo",
-    "gl"   : "Presta atención ó orixe do obxectivo",
+    "gl": "Presta atención ó orixe do obxectivo",
     "de_DE": "Beachte die Reihenfolge in der Zieldarstellung",
-    "ja"   : "ゴールのツリーの順番を参考にすること",
+    "ja": "ゴールのツリーの順番を参考にすること",
     "fr_FR": "regardez l'ordre dans la fenêtre de visualisation d'objectif",
     "ru_RU": "проверьте сортировку в визуализации цели",
-    "uk"   : "перевірте порядок в візуалізації цілі",
-    "ko"   : "순서는 goal을 참고하세요",
-    "vi"   : "kiểm tra kỹ thứ tự trên mô hình mục tiêu",
-    "sl_SI": "Preveri vrstni red iz ciljne vizualizacije."
+    "uk": "перевірте порядок в візуалізації цілі",
+    "ko": "순서는 goal을 참고하세요",
+    "vi": "kiểm tra kỹ thứ tự trên mô hình mục tiêu",
+    "sl_SI": "Preveri vrstni red iz ciljne vizualizacije.",
+    "pl": "Przyjrzyj się kolejności na wizualizacji celu",
   },
   "startDialog": {
     "en_US": {
@@ -342,7 +344,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Imaginate que clonás un repositorio el lunes y empezás a desarrollar algo. Para el viernes ya estás listo para publicar tu trabajo, pero, ¡oh, oh! Tus colegas también escribieron código durante la semana, haciendo que tu trabajo quede desactualizado (y obsoleto). Además, ellos publicaron esos commits en el repositorio remoto, así que ahora *tu* trabajo está basado en una versión *vieja* del proyecto, que ya no le interesa a nadie.",
+              "Imaginate que clonás un repositorio el lunes y empezás a desarrollar algo. Para el viernes tenés todo listo para publicar tu trabajo, pero, ¡oh, oh! Tus colegas también escribieron código durante la semana, haciendo que tu trabajo quede desactualizado (y obsoleto). Además, publicaron esos commits en el repositorio remoto, así que ahora *tu* trabajo está basado en una versión *vieja* del proyecto, que ya no le interesa a nadie.",
               "",
               "En este caso, el comando `git push` es ambiguo. Si corrés `git push`, ¿git debería cambiar el repositorio a como estaba el lunes? ¿Debería tratar de agregar tu código sin eliminar el código nuevo? ¿O debería ignorar completamente tus cambios porque están desactualizados?",
               "",
@@ -752,7 +754,6 @@ exports.level = {
         }
       ]
     },
-
     "gl": {
       "childViews": [
         {
@@ -1039,7 +1040,7 @@ exports.level = {
         }
       ]
     },
-    "zh_CN":{
+    "zh_CN": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -1192,7 +1193,7 @@ exports.level = {
               "",
               "Bisher haben wir gesehen wie man per `pull` Commits von Anderen ins lokale Repository holt und die eigenen Änderungen in ein entferntes `push`t. Ist doch ziemlich einfach, wie kann man da durcheinander kommen?",
               "",
-              "Die Schwierigkeiten entstehen, wenn die Historys der beiden Repositorys *divergieren*, also voneinander abweichen. Bevor wir die Einzelheiten besprechen, schauen wir uns ein Beispiel an ...",
+              "Die Schwierigkeiten entstehen, wenn die Historien der beiden Repositorys *divergieren*, also voneinander abweichen. Bevor wir die Einzelheiten besprechen, schauen wir uns ein Beispiel an ...",
               ""
             ]
           }
@@ -1205,7 +1206,7 @@ exports.level = {
               "",
               "In diesem Fall ist ein `git push` problematisch. Wenn du es ausführst, soll Git das entfernte Repository in den Zustand von Montag zurückversetzen? Soll es versuchen deinen Code auf die aktuelle Version zu packen? Oder soll es deine Änderungen einfach ignorieren, weil sie total veraltet sind?",
               "",
-              "Da es in dieser Situation so viele Mehrdeutigkeiten gibt (da die Historys divergieren), erlaubt Git dir nicht, deine Änderungen einfach zu `push`en. Es zwingt dich, zuerst die neuesten Änderungen vom Server zu holen und in deine zu integrieren, bevor du deine Arbeit mit anderen teilen kannst."
+              "Da es in dieser Situation so viele Mehrdeutigkeiten gibt (da die Historien divergieren), erlaubt Git dir nicht, deine Änderungen einfach zu `push`en. Es zwingt dich, zuerst die neuesten Änderungen vom Server zu holen und in deine zu integrieren, bevor du deine Arbeit mit anderen teilen kannst."
             ]
           }
         },
@@ -1823,7 +1824,7 @@ exports.level = {
             "markdowns": [
               "다른 방법은 없냐고요? 당연히 있습니다! 같은것을 `merge`로 대신 해봅시다.",
               "",
-              "`git merge`가 여러분의 작업을 옮기지는 않지만(merge 커밋을 생성합니다). git에게 원격 저장소의 변경을 합쳤다고 알려주는 방법중에 하나입니다. 이제 원격 브랜치가 여러분 브랜치의 *부모*기 되었기때문입니다, 여러분의 커밋이 원격 브랜치의 모든 커밋을 반영했다는 뜻이죠.",
+              "`git merge`가 여러분의 작업을 옮기지는 않지만(merge 커밋을 생성합니다). git에게 원격 저장소의 변경을 합쳤다고 알려주는 방법중에 하나입니다. 이제 원격 브랜치가 여러분 브랜치의 *부모*가 되었기때문입니다, 여러분의 커밋이 원격 브랜치의 모든 커밋을 반영했다는 뜻이죠.",
               "",
               "눈으로 확인해봅시다..."
             ]
@@ -2182,6 +2183,149 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Rozbieżna praca",
+              "",
+              "Widzieliśmy wcześniej, jak `pull` pobiera commity od innych i jak `push` wysyła nasze własne zmiany. Wydaje się to całkiem proste, więc jak ludzie mogą być tak zdezorientowani?",
+              "",
+              "Trudności pojawiają się, gdy historia repozytorium zaczyna się *rozbiegać*. Zanim omówimy szczegóły tego rozwiązania, zobaczmy przykład...",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Wyobraźmy sobie, że klonujesz repozytorium w poniedziałek i zaczynasz pracować nad dodatkową funkcjonalnością. W piątek chcesz opublikować swoje zmiany -- ale, o nie! Współpracownicy napisali w ciągu tygodnia mnóstwo kodu, który sprawił, że twoja praca stała się nieaktualna (przestarzała). Opublikowali również te poprawki we wspólnym zdalnym repozytorium, więc teraz *twoja* praca jest oparta na *starej* wersji projektu, która nie jest już aktualna.",
+              "",
+              "W tym przypadku komenda `git push` jest niejednoznaczna. Jeśli uruchomisz `git push`: czy Git powinien zmienić zdalne repozytorium z powrotem na takie, jakie było w poniedziałek? Czy powinien próbować dodać twój kod, nie usuwając jednocześnie nowego kodu? Czy też ma całkowicie zignorować twoje zmiany, ponieważ są one zupełnie przestarzałe?",
+              "",
+              "Ponieważ w tej sytuacji (gdzie historia się rozbiegła) jest tak wiele niejasności, Git nie pozwala ci na `push` twoich zmian. W rzeczywistości zmusza cię do połączenia najnowszego stanu remote'a, zanim pozwoli ci udostępnić swoją pracę."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Dość gadania! Zobaczmy tę sytuację w działaniu."
+            ],
+            "afterMarkdowns": [
+              "Spójrz, nic się nie zmieniło, ponieważ wykonanie polecenia nie powiodło się. Polecenie `git push` nie powiedzie się, ponieważ twój najnowszy commit `C3` jest oparty na zdalnym `C1`. Zdalny został jednak zaktualizowany do `C2`, więc Git odrzuca twojego pusha."
+            ],
+            "command": "git push",
+            "beforeCommand": "git clone; git fakeTeamwork; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Jak rozwiążesz tę sytuację? To proste. Wszystko, co musisz zrobić, to oprzeć swoją pracę na najnowszej wersji remote'a.",
+              "",
+              "Jest kilka sposobów, aby to zrobić, ale najprostszym jest przeniesienie pracy poprzez rebase. Zobaczmy, jak to wygląda."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Zróbmy teraz inaczej: rebase przed wypchnięciem..."
+            ],
+            "afterMarkdowns": [
+              "Tadam! Zaktualizowaliśmy naszą lokalną reprezentację remote'a za pomocą `git fetch`, przebazowaliśmy naszą pracę, aby odzwierciedlić nowe zmiany na zdalnej gałęzi, a następnie wypchnęliśmy je za pomocą `git push`."
+            ],
+            "command": "git fetch; git rebase o/main; git push",
+            "beforeCommand": "git clone; git fakeTeamwork; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Czy istnieją inne sposoby na aktualizację naszej pracy, gdy zdalne repozytorium zostało zaktualizowane? Oczywiście! Spróbujmy rozwiązać to również z użyciem `merge`.",
+              "",
+              "Chociaż `git merge` nie przenosi twojej pracy (a zamiast tego po prostu tworzy commit scalający), jest to sposób na powiedzenie Gitowi, że dołączasz wszystkie zmiany z remote'a. Dzieje się tak dlatego, że zdalna gałąź jest teraz *przodkiem* twojej własnej gałęzi, co oznacza, że twój commit odzwierciedla wszystkie commity w zdalnej gałęzi.",
+              "",
+              "Zobaczmy, jak to wygląda..."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "A jeśli użyjemy `merge` zamiast `rebase`..."
+            ],
+            "afterMarkdowns": [
+              "Tadam! Zaktualizowaliśmy naszą lokalną reprezentację remote'a za pomocą `git fetch`, git dołączył (*merge*) nową pracę do naszej pracy (aby odzwierciedlić nowe zmiany na zdalnej gałęzi), a następnie wypchnął je za pomocą `git push`."
+            ],
+            "command": "git fetch; git merge o/main; git push",
+            "beforeCommand": "git clone; git fakeTeamwork; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Wspaniale! Czy jest jakiś sposób, żeby zrobić to bez wpisywania tylu komend?",
+              "",
+              "Oczywiście -- znasz już `git pull ` - jest po prostu skrótem dla fetch i merge. `git pull --rebase` jest bardzo wygodnym skrótem dla fetch i rebase!",
+              "",
+              "Zobaczmy, jak działają te skrócone polecenia."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Na początku z `--rebase`..."
+            ],
+            "afterMarkdowns": [
+              "Tak samo jak wcześniej! Tylko o wiele krócej."
+            ],
+            "command": "git pull --rebase; git push",
+            "beforeCommand": "git clone; git fakeTeamwork; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "A teraz z klasycznym `pull`."
+            ],
+            "afterMarkdowns": [
+              "Jeszcze raz, dokładnie tak samo jak wcześniej!"
+            ],
+            "command": "git pull; git push",
+            "beforeCommand": "git clone; git fakeTeamwork; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Ta kolejność fetchowania, rebase/merge i push jest dość powszechna. W kolejnych lekcjach zajmiemy się bardziej skomplikowanymi możliwościami . Na razie wypróbujmy to, czego się nauczyliśmy.",
+              "",
+              "Aby ukończyć ten poziom, wykonaj następujące kroki:",
+              "",
+              "* Sklonuj swoje repozytorium",
+              "* Zasymuluj pracę zespołową (1 commit)",
+              "* Scommituj własną pracę (1 commit)",
+              "* Opublikuj swoją pracę, korzystając z *rebase*"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

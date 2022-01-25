@@ -20,12 +20,11 @@ exports.dialog = {
         'Try out ',
         '[this special link](https://pcottle.github.io/learnGitBranching/?NODEMO)',
         '',
-        'PPS: GitHub (and the industry at large) is moving to naming the default branch as `main` instead of `master` ',
-        'with [more details available here](https://github.com/github/renaming). In order to accommodate this change in ',
-        'a backwards-compatible way, these two names will be considered aliases of each other, with `main` being ',
-        'the preferred one to display. We\'ve made a best-effort attempt to update all of the level content, but ',
-        'there will be a long-tail of areas we have missed. Please submit a PR (or open an issue) if you spot any ',
-        'egregious ones, and thanks for helping move away from biased terminology.'
+        'PPS: GitHub has started naming the default branch `main` instead of `master` ',
+        'to migrate away from biased terminology [(more details available here)](https://github.com/github/renaming). ',
+        'In accordance with this industry-wide movement, we have also updated "Learn Git Branching" to ',
+        'use `main` instead of `master` in our lessons. This rename should be fairly consistent by ',
+        'now but if you notice any errors, feel free to submit a PR (or open an issue).'
       ]
     }
   }],
@@ -33,7 +32,7 @@ exports.dialog = {
     type: 'ModalAlert',
     options: {
       markdowns: [
-        '## ¡Bienvenid@ a Learn Git Branching!',
+        '## ¡Te damos la bienvenida a Learn Git Branching!',
         '',
         'Esta aplicación está diseñada para ayudar a los principiantes ',
         'a manejar los poderosos conceptos que hay detrás del trabajo ',
@@ -46,7 +45,7 @@ exports.dialog = {
         '',
         '[https://pcottle.github.io/learnGitBranching/?demo](https://pcottle.github.io/learnGitBranching/?demo)',
         '',
-        '¿Harto de este mensaje? Agregale `?NODEMO` a la URL para dejar de verlo, como en este link:',
+        '¿Querés dejar de ver este mensaje? Agregale `?NODEMO` a la URL para dejar de verlo, como en este link:',
         '',
         '[https://pcottle.github.io/learnGitBranching/?NODEMO](?NODEMO)'
       ]
@@ -728,57 +727,86 @@ exports.dialog = {
       markdowns: [
         '## Witaj w Learn Git Branching!',
         '',
-        'Celem tej aplikacji jest zilustrowanie rozległych i złożonych relacji pomiędzy procesami związanymi z pracą z GIT-em.',
-        'Mam nadzieję, że ci się to spodoba i może nawet się czegoś nauczysz!',
-        '"Learn Git Branching" to najbardziej wizualny i interaktywny sposób na naukę GIT-a w sieci.',
-        'Będziesz miał do czynienia z ekscytującymi poziomami wraz z pokazaniem krok po kroku potężnych funkcji, a może nawet z odrobiną zabawy po drodze.',
+        'Jesteś zainteresowany nauką Gita? Cóż, trafiłeś we właściwe miejsce!',
+        '"Learn Git Branching" jest najbardziej wizualnym i interaktywnym sposobem na naukę gita w sieci.',
+        'Czekają na Ciebie ekscytujące poziomy, demonstracje zaawansowanych funkcji krok po kroku. Może nawet będziesz się dobrze bawić.',
         '',
+        'Po tym oknie dialogowym zobaczysz różnorodność poziomów, które mamy do zaoferowania.',
         'Jeśli jesteś początkujący, po prostu zacznij od pierwszego poziomu.',
-        'Jeśli znasz już podstawy GIT-a, wypróbuj niektóre z naszych późniejszych, bardziej wymagających poziomów.',
+        'Jeśli znasz już podstawy gita, wypróbuj niektóre z naszych późniejszych, bardziej wymagających poziomów.',
         '',
-        '# Demo!',
+        'Możesz zobaczyć wszystkie komendy wpisując `show commands` w terminalu.',
         '',
-        'Jeśli nie widziałeś tej demonstracji, możesz ją obejrzeć tutaj:',
+        'Chcesz następnym razem przejść prosto do trybu piaskownicy? Kilknij [tutaj](https://pcottle.github.io/learnGitBranching/?NODEMO)',
         '',
-        '[https://pcottle.github.io/learnGitBranching/?demo](https://pcottle.github.io/learnGitBranching/?demo)',
-        '',
-        'Masz dość tego okna? Dodaj `?NODEMO` do adresu URL, aby się go pozbyć, w ten sposób:',
-        '',
-        '[https://pcottle.github.io/learnGitBranching/?NODEMO](?NODEMO)'
-      ]
-    }
-  }, {
-    type: 'ModalAlert',
-    options: {
-      markdowns: [
-        '## Komendy GIT-a',
-        '',
-        'W trybie piaskownicy dostępna jest duża liczba poleceń GIT. Między innymi',
-        '',
-        ' * commit',
-        ' * branch',
-        ' * checkout',
-        ' * cherry-pick',
-        ' * reset',
-        ' * revert',
-        ' * rebase',
-        ' * merge'
-      ]
-    }
-  }, {
-    type: 'ModalAlert',
-    options: {
-      markdowns: [
-        '## Dzielenie się jest Fajne!',
-        '',
-        'Podziel się tymi drzewami GIT-a z przyjaciółmi, wpisując `export tree` oraz `import tree`.',
-        '',
-        'Czy masz coś, co warto wiedzieć o GIT-cie? Spróbuj zbudować swój poziom wpisując `build level` lub spróbuj poziomu znajomego wpisując `import level`',
-        '',
-        'Aby zobaczyć wszystkie polecenia, wpisz `show commands`. Pod spodem są "małe skarby" jak `undo`(cofnij) i `reset`',
-        '',
-        'Na razie zacznijmy od wpisania `levels`...'
+        'PS. GitHub zaczął nazywać domyślną gałąź `main` zamiast `master`, aby odejść od tendencyjnej terminologii. [(więcej informacji tutaj)](https://github.com/github/renaming)',,
+        'Zgodnie z tym ogólnobranżowym ruchem, zaktualizowaliśmy również "Learn Git Branching", by używać `main` zamiast `master` w naszych zadaniach.',
+        'Ta zmiana nazwy powinna być już w miarę spójna, ale jeśli zauważysz jakieś błędy, nie krępuj się dodać pull request (lub zgłosić issue na githubie - prawy górny róg).'
       ]
     }
   }],
+  'ta_IN': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Git Branching கற்க வரவேற்கிறோம்',
+        '',
+        'கிட் கற்க ஆர்வமா? அப்படியானால் நீங்கள் சரியான இடத்திற்கு வந்துவிட்டீர்கள்! ',
+        '"Learn Git Branching" Git ஐக் கற்றுக்கொள்வதற்கான வரைபடம் மற்றும் செயல்முறை ',
+        'பயிற்சியுடன் கூடிய சிரந்த கருவி; ',
+        'உங்களை சோதிக்கும் வகையிலான நிலைகளுடன் மிகுந்த சக்திவாய்ந்த அம்சங்களை ',
+        'படிப்படியாகவும், சில சமையம் விளையாட்டாகவும் கற்றுத்தர கூடியது.',
+        '',
+        'இந்த அறிவிற்ப்புக்கு பிறகு, நாங்கள் வழங்க உள்ள பல்வேறு நிலைகளை நீங்கள் காண்பீர்கள். ',
+        'நீங்கள் ஆரம்ம நிலையில் இருந்தால், முதல் கட்டத்தில் இருந்து  தொடங்கவும். ',
+        'கிட்டின் சில அடிப்படைகளை நீங்கள் ஏற்கனவே அறிந்திருந்தால், மெலும் உள்ள கடினமான கட்டங்களை முயற்ச்சி செய்யுங்கள்.',
+        '',
+        'தேவையானால் `show commands` ஐ பயன்படுத்தி அனைத்து கட்டளைகளையும் முனையத்தில் பார்க்கலாம்.',
+        '',
+        'பின்குறிப்பு: அடுத்தமுறை நேராக sandbox செல்ல வேண்டுமா?',
+        'அப்படியானால் பின் வரும் இணைப்பை பயன்பாடித்துக ',
+        '[this special link](https://pcottle.github.io/learnGitBranching/?NODEMO)',
+        '',
+        'பின்குறிப்பு: GitHub (பெரிய அளவில் பயன்பாட்டில் உள்ள இணையதலம்) `main` என்ற கிளையை `master`-க்கு பதில் ',
+        'முன்னிருப்பு கிளையாக பயன் படுத்த உள்ளது [more details available here](https://github.com/github/renaming). ',
+        'இந்த மாற்றத்தை பின்னோக்கி இணக்கமான வழியில் பொருத்துவதற்காக, `main`-ஐ முதன்மையாக கருதி ',
+        'இந்த இரண்டு பெயர்களும் ஒன்றுக்கொன்று மாற்றுப்பெயர்களாகக் கருதப்படும். ',
+        'இந்த மாற்றத்தை அனைத்து நிலை உள்ளடக்கங்களிலும் புதுப்பிக்க நாங்கள் சிறந்த முயற்சியை ',
+        'மேற்கொண்டோம், ஆயினும் ஏதேனும் விடுபட்டி இருந்தால் PR உருவாக்கி உதவுங்கள்.',
+        'ஒருபக்கச்சார்பான சொற்களிலிருந்து விலகிச் செல்ல உதவியதற்கு நன்றி.'
+      ]
+    }
+  }],
+  "it_IT": [
+    {
+      type: "ModalAlert",
+      options: {
+        markdowns: [
+          "## Benvenuto su Learn Git Branching",
+          "",
+          "Vorresti imparare Git? Bene, sei nel posto giusto! ",
+          '"Learn Git Branching" è il modo più chiaro e interattivo per imparare Git ',
+          "su internet; sarai messo alla prova tramite livelli stimolanti, con dimostrazioni ",
+          "passo a passo sulle sue potenzialità, e perché no, magari ti divertirai lungo questo percorso.",
+          "",
+          "Dopo questa finestra vedrai una varietà di livelli che abbiamo da offrire. Se sei alle",
+          "prime armi, procedi e parti dall'inizio. Se hai delle conoscenze base di Git , ",
+          "prova con gli ultimi livelli più impegnativi.",
+          "",
+          "Puoi vedere tutti i comandi disponibili digitando `show commands` sul terminale.",
+          "",
+          "PS: Preferisci andare direttamente al sandbox?",
+          "Prova ",
+          "[questo link](https://pcottle.github.io/learnGitBranching/?NODEMO?locale=it_IT)",
+          "",
+          "PPS: GitHub (e il settore in generale) sta modificando il nome del ramo di default in `main` invece che `master` ",
+          "leggi [qui per ulteriori dettagli](https://github.com/github/renaming). In modo da adattare questo cambiamento ",
+          "e tenere la retrocompatibilità , questi nomi saranno considerati equivalenti. `main` sarà comunque ",
+          "il nome predefinito. Ci siamo impegnati per aggiornare tutti i livelli, ma ci sarà ",
+          "sicuramente qualcosa che potremmo aver dimenticato. Esegui una PR (o segnala un problema) se ne trovi, ",
+          "vi ringrazio per l'aiuto.",
+        ],
+      },
+    },
+  ],
 };

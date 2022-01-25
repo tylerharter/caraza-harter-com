@@ -23,7 +23,9 @@ var langLocaleMap = {
   uk: 'uk',
   vi: 'vi',
   sl: 'sl_SI',
-  pl: 'pl'
+  pl: 'pl',
+  it:'it_IT',
+  ta: 'ta_IN'
 };
 
 var headerLocaleMap = {
@@ -32,6 +34,7 @@ var headerLocaleMap = {
   'pt-BR': 'pt_BR',
   'es-MX': 'es_MX',
   'es-ES': 'es_ES',
+  'it-IT':'it_IT',
   'sl-SI': 'sl_SI'
 };
 

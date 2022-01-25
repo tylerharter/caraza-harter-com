@@ -1,8 +1,8 @@
 exports.level = {
-  "compareOnlyMasterHashAgnosticWithAsserts": true,
+  "compareOnlyMainHashAgnosticWithAsserts": true,
   "goalAsserts": {
-    "master": [
-      function(data) {
+    "main": [
+      function (data) {
         return data.C4 > data.C1;
       }
     ]
@@ -10,9 +10,9 @@ exports.level = {
   "disabledMap": {
     "git revert": true
   },
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C4%27%22%2C%22id%22%3A%22master%22%7D%2C%22debug%22%3A%7B%22target%22%3A%22C2%22%2C%22id%22%3A%22debug%22%7D%2C%22printf%22%3A%7B%22target%22%3A%22C3%22%2C%22id%22%3A%22printf%22%7D%2C%22bugFix%22%3A%7B%22target%22%3A%22C4%27%22%2C%22id%22%3A%22bugFix%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C4%22%3A%7B%22parents%22%3A%5B%22C3%22%5D%2C%22id%22%3A%22C4%22%7D%2C%22C4%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C4%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22master%22%2C%22id%22%3A%22HEAD%22%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C4%27%22%2C%22id%22%3A%22main%22%7D%2C%22debug%22%3A%7B%22target%22%3A%22C2%22%2C%22id%22%3A%22debug%22%7D%2C%22printf%22%3A%7B%22target%22%3A%22C3%22%2C%22id%22%3A%22printf%22%7D%2C%22bugFix%22%3A%7B%22target%22%3A%22C4%27%22%2C%22id%22%3A%22bugFix%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C2%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C4%22%3A%7B%22parents%22%3A%5B%22C3%22%5D%2C%22id%22%3A%22C4%22%7D%2C%22C4%27%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C4%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22main%22%2C%22id%22%3A%22HEAD%22%7D%7D",
   "solutionCommand": "git rebase -i main --solution-ordering C4; git rebase bugFix main",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\"},\"debug\":{\"target\":\"C2\",\"id\":\"debug\"},\"printf\":{\"target\":\"C3\",\"id\":\"printf\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\"},\"debug\":{\"target\":\"C2\",\"id\":\"debug\"},\"printf\":{\"target\":\"C3\",\"id\":\"printf\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"bugFix\",\"id\":\"HEAD\"}}",
   "name": {
     "ko": "딱 한 개의 커밋만 가져오기",
     "en_US": "Grabbing Just 1 Commit",
@@ -21,23 +21,25 @@ exports.level = {
     "es_AR": "Tomando un único commit",
     "es_ES": "Tomando un único commit",
     "pt_BR": "Pegando um único commit",
-    "gl"   : "Escollendo un único commit",
+    "gl": "Escollendo un único commit",
     "ja": "一つのコミットのみを取得",
     "zh_CN": "只取一个提交记录",
     "zh_TW": "只取一個 commit",
     "ru_RU": "Выберем один коммит.",
     "uk": "Вибираємо всього один коміт",
     "vi": "Chỉ lấy 1 commit",
-    "sl_SI": "Izbiranje Samo Enega Commita"
+    "sl_SI": "Izbiranje Samo Enega Commita",
+    "it_IT": "Prendi solo 1 Commit",
+    "pl": "Wzięcie tylko 1 commita",
   },
   "hint": {
     "en_US": "Remember, interactive rebase or cherry-pick is your friend here",
-    "de_DE": "Vergiss nicht: hier kommst du mit interaktivem Rebase oder Cherry-Picking weiter",
+    "de_DE": "Vergiss nicht: Hier kommst du mit interaktivem Rebase oder Cherry-Picking weiter",
     "fr_FR": "Souvenez-vous, les rebases interactifs ou cherry-pick sont vos amis ici.",
     "es_AR": "Acordate, el rebase interactivo o cherry-pick son tus amigos acá",
     "es_ES": "Recuerda, el rebase interactivo y el cherry-pick son tus amigos",
     "pt_BR": "Lembre-se, o rebase interativo ou o cherry-pick são seus amigos aqui",
-    "gl"   : "Recorda, o rebase interativo ou cherry-pick é un dos teus colegas aquí",
+    "gl": "Recorda, o rebase interativo ou cherry-pick é un dos teus colegas aquí",
     "ja": "このレベルではインタラクティブモードのrebaseやcherry-pickがクリアのカギです",
     "ko": "대화식 리베이스(rebase -i)나 or 체리픽(cherry-pick)을 사용하세요",
     "zh_CN": "你有两个朋友，cherry-pick 和 rebase -i",
@@ -45,8 +47,10 @@ exports.level = {
     "ru_RU": "Не забывай, что интерактивный rebase и cherry-pick – это твои друзья!",
     "uk": "Не забувай, що інтерактивний rebase та cherry-pick -- це твої друзі!",
     "vi": "Hãy nhớ 2 anh bạn tương tác rebase và cherry-pick!",
-    "sl_SI": "Pomni, interaktivni rebase ali cherry-pick sta tu tvoja prijatelja."
-      },
+    "sl_SI": "Pomni, interaktivni rebase ali cherry-pick sta tu tvoja prijatelja.",
+    "it_IT": "Ricorda, rebase interattivo o cherry-pick sono tuoi amici",
+    "pl": "Pamiętaj, że znasz już interaktywny rebase oraz cherry-pick",
+  },
   "startDialog": {
     "en_US": {
       "childViews": [
@@ -288,7 +292,7 @@ exports.level = {
             "markdowns": [
               "## Lokale Commit-Haufen",
               "",
-              "Folgende Situation habe ich beim Entwickeln des Öfteren: ich bin auf der Suche nach einem Bug, aber er ist echt schwer zu finden. Um ihm auf die Spur zu kommen schreibe ich mehrere Debug-Kommandos und print-Befehle in den Code.",
+              "Folgende Situation habe ich beim Entwickeln des Öfteren: Ich bin auf der Suche nach einem Bug, aber er ist echt schwer zu finden. Um ihm auf die Spur zu kommen schreibe ich mehrere Debug-Kommandos und print-Befehle in den Code.",
               "",
               "Die committe ich auch immer wieder, je weiter die Suche mich trägt; natürlich in einem lokalen Branch. Schließlich finde ich den Bug, fixe ihn und freue mich!",
               "",
@@ -312,7 +316,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Da dies ein späterer Level ist überlasse ich es dir zu entscheiden, welchen Befehl du benutzen willst. Aber um das Level zu schaffen musst du irgendwie sicherstellen, dass `main` den Commit bekommt, auf den `bugFix` zeigt."
+              "Da dies ein späterer Level ist, überlasse ich es dir zu entscheiden, welchen Befehl du benutzen willst. Aber um das Level zu schaffen musst du irgendwie sicherstellen, dass `main` den Commit bekommt, auf den `bugFix` zeigt."
             ]
           }
         }
@@ -632,6 +636,84 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Lokalnie nałożone commity",
+              "",
+              "Oto sytuacja, która często się zdarza podczas pisania kodu: próbuję wytropić buga, ale on jest nieuchwytny. Aby pomóc sobie w poszukiwaniach, dodaję kilka poleceń debugowania i kilka instrukcji print.",
+              "",
+              "Wszystkie te polecenia debugowania / drukowania znajdują się w osobnych commitach. W końcu namierzam błąd, naprawiam go i cieszę się!",
+              "",
+              "Jedynym problemem jest to, że teraz muszę przywrócić mój `bugFix` do gałęzi `main`. Jeśli po prostu zrobiłbym fast-foward `main`, wtedy `main` dostałby wszystkie moje deklaracje debugowania, a tego bym nie chciał. Musi być na to inny sposób. . ."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Musimy powiedzieć Gitowi, żeby skopiował tylko jeden z commitów. Dokładnie w ten sam sposób jak we wcześniejszych poziomach z przenoszeniem pracy -- używając tych samych poleceń:",
+              "",
+              "* `git rebase -i`",
+              "* `git cherry-pick`",
+              "",
+              "aby osiągnać ten cel."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Jest to wyższy poziom, więc pozostawimy ci decyzję, której komendy chcesz użyć, ale aby ukończyć poziom, upewnij się, że `main` otrzyma commit, do którego odwołuje się `bugFix`."
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Commit impilati localmente",
+              "",
+              "Ecco una situazione che accade spesso in fase di sviluppo: Sto cercando di scovare un bug. Per aiutarmi nel mio lavoro di detective, inserisco alcuni comandi per il debug e alcune print per fare stampe.",
+              "",
+              "Questi comandi aggiunti per il debug vengono salvati con un commit loro dedicato. Finalmente riesco a beccare il bug, sistemo il tutto, e brindo!",
+              "",
+              "Ora l'unico problema è che devo salvare il lavoro di `bugFix` nel ramo `main`. Se eseguo un semplice fast-forwarded `main`, allora il `main` andrebbe a prendere anche tutto ciò che è stato aggiunto per il debug. Se solo ci fosse un altro modo...",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Dobbiamo dire a Git di fare la copia di un solo commit. Questo assomiglia a quanto visto in precedenza -- possiamo riusare gli stessi comandi:",
+              "",
+              "* `git rebase -i`",
+              "* `git cherry-pick`",
+              "",
+              "Per raggiungere l'obiettivo.",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Questo è un livello più avanzato, lascerò a te la libertà di decidere quale comando usare, ma per concludere il livello, assicurati che `main` riceva il commit puntato da `bugFix`.",
+            ],
+          },
+        },
+      ],
+    },
   }
 };

@@ -188,4 +188,29 @@ exports.dialog = {
       ]
     }
   }],
+  'ta_IN': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## ஆக சிரந்த செயல்!!',
+        '',
+        'நீங்கள் *{numCommands}* நிலைக்கான கட்டளை(கள்) கொண்டு தீர்வை அடிந்து விட்டீர்கள்; ',
+        'நமது தீர்வு {best}-ஐ பயன்படுத்து கின்றது.'
+      ]
+    }
+  }],
+   "it_IT": [
+    {
+      type: "ModalAlert",
+      options: {
+        markdowns: [
+          "## Ben fatto!!",
+          "",
+          "Hai risolto il livello con *{numCommands}* comando(i); ",
+          "noi l'abbiamo risolto con {best}.",
+        ],
+      },
+    },
+  ],
 };
+ 

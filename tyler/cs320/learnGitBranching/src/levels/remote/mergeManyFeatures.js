@@ -1,7 +1,7 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C11\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\",\"localBranchesThatTrackThis\":null},\"o/master\":{\"target\":\"C11\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"master\"]},\"side1\":{\"target\":\"C2\",\"id\":\"side1\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side2\":{\"target\":\"C4\",\"id\":\"side2\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side3\":{\"target\":\"C7\",\"id\":\"side3\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"},\"C9\":{\"parents\":[\"C2\",\"C8\"],\"id\":\"C9\"},\"C10\":{\"parents\":[\"C4\",\"C9\"],\"id\":\"C10\"},\"C11\":{\"parents\":[\"C10\",\"C7\"],\"id\":\"C11\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C11\",\"id\":\"master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C9\":{\"parents\":[\"C2\",\"C8\"],\"id\":\"C9\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"},\"C10\":{\"parents\":[\"C4\",\"C9\"],\"id\":\"C10\"},\"C11\":{\"parents\":[\"C10\",\"C7\"],\"id\":\"C11\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C11\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\",\"localBranchesThatTrackThis\":null},\"o/main\":{\"target\":\"C11\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"main\"]},\"side1\":{\"target\":\"C2\",\"id\":\"side1\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side2\":{\"target\":\"C4\",\"id\":\"side2\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side3\":{\"target\":\"C7\",\"id\":\"side3\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"},\"C9\":{\"parents\":[\"C2\",\"C8\"],\"id\":\"C9\"},\"C10\":{\"parents\":[\"C4\",\"C9\"],\"id\":\"C10\"},\"C11\":{\"parents\":[\"C10\",\"C7\"],\"id\":\"C11\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C11\",\"id\":\"main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C9\":{\"parents\":[\"C2\",\"C8\"],\"id\":\"C9\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"},\"C10\":{\"parents\":[\"C4\",\"C9\"],\"id\":\"C10\"},\"C11\":{\"parents\":[\"C10\",\"C7\"],\"id\":\"C11\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "solutionCommand": "git checkout main;git pull;git merge side1;git merge side2;git merge side3;git push",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\",\"localBranchesThatTrackThis\":null},\"o/master\":{\"target\":\"C1\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"master\"]},\"side1\":{\"target\":\"C2\",\"id\":\"side1\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side2\":{\"target\":\"C4\",\"id\":\"side2\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side3\":{\"target\":\"C7\",\"id\":\"side3\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"}},\"HEAD\":{\"target\":\"side3\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C8\",\"id\":\"master\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\",\"localBranchesThatTrackThis\":null},\"o/main\":{\"target\":\"C1\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":[\"main\"]},\"side1\":{\"target\":\"C2\",\"id\":\"side1\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side2\":{\"target\":\"C4\",\"id\":\"side2\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null},\"side3\":{\"target\":\"C7\",\"id\":\"side3\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C1\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"},\"C7\":{\"parents\":[\"C6\"],\"id\":\"C7\"}},\"HEAD\":{\"target\":\"side3\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C8\",\"id\":\"main\",\"remoteTrackingBranchID\":null,\"localBranchesThatTrackThis\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C8\":{\"parents\":[\"C1\"],\"id\":\"C8\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "name": {
     "en_US": "Merging with remotes",
     "zh_CN": "合并远程仓库",
@@ -9,15 +9,16 @@ exports.level = {
     "es_AR": "Mergeando con los remotos",
     "es_ES": "Haciendo merge con los remotos",
     "pt_BR": "Merge com remotos",
-    "gl"   : "Merge cos repos remotos",
+    "gl": "Merge cos repos remotos",
     "de_DE": "Änderungen vom Remote zusammenführen",
-    "ja"   : "リモートとのmerge",
+    "ja": "リモートとのmerge",
     "fr_FR": "Fusionner avec les branches distantes",
     "ru_RU": "Слияние с удалённым репозиторием",
-    "ko"   : "원격 작업과 merge하기",
-    "uk"   : "Мердж з віддаленим репозиторієм",
-    "vi"   : "Hợp nhất nhánh từ xa",
-    "sl_SI": "Merganje z oddaljenim repozitorijem"
+    "ko": "원격 작업과 merge하기",
+    "uk": "Мердж з віддаленим репозиторієм",
+    "vi": "Hợp nhất nhánh từ xa",
+    "sl_SI": "Merganje z oddaljenim repozitorijem",
+    "pl": "Scalanie z remote"
   },
   "hint": {
     "en_US": "Pay attention to the goal tree!",
@@ -26,17 +27,18 @@ exports.level = {
     "es_AR": "¡Prestá atención al árbol final!",
     "es_ES": "¡Presta atención al árbol final!",
     "pt_BR": "Preste atenção na árvore do objetivo!",
-    "gl"   : "Presta atención á arbore final!",
+    "gl": "Presta atención á arbore final!",
     "de_DE": "Beachte den Ziel-Baum!",
-    "ja"   : "ゴールツリーをよく見てください！",
+    "ja": "ゴールツリーをよく見てください！",
     "fr_FR": "Respectez l'arbre représentant l'objectif !",
     "ru_RU": "Внимательно посмотрите на цель уровня!",
-    "ko"   : "goal을 잘 살펴보세요!",
-    "uk"   : "Уважно подивись як має виглядати результат!",
-    "vi"   : "Hãy để ý đến cây mục tiêu!",
-    "sl_SI": "Poglej si ciljno drevo!"
+    "ko": "goal을 잘 살펴보세요!",
+    "uk": "Уважно подивись як має виглядати результат!",
+    "vi": "Hãy để ý đến cây mục tiêu!",
+    "sl_SI": "Poglej si ciljno drevo!",
+    "pl": "Zwróć uwagę, jak wygląda docelowe drzewo!"
   },
-  "compareOnlyMaster": true,
+  "compareOnlyMain": true,
   "startDialog": {
     "en_US": {
       "childViews": [
@@ -157,7 +159,7 @@ exports.level = {
               "",
               "* Rebasear modifica la historia (aparente) de tu árbol de commits.",
               "",
-              "Por ejemplo, el commit `C1` puede rebasearse para que aparezca *después* de `C3`. Entonces, parece que el trabajo de `C1'` se hizo después de `C3`, cuando en realizad se había hecho antes.",
+              "Por ejemplo, el commit `C1` puede rebasearse para que aparezca *después* de `C3`. Entonces, parece que el trabajo de `C1'` se hizo después de `C3`, cuando en realidad se había hecho antes.",
               "",
               "Algunos desarrolladores aman preservar la historia, por lo que prefieren mergear. Otros (como yo) preferimos tener un árbol de commits limpios, y preferimos rebasear. Todo es una cuestión de preferencias :D"
             ]
@@ -384,7 +386,7 @@ exports.level = {
               "",
               "Zum Beispiel kann durch Rebasen Commit `C1` an Commit `C3` *vorbei* bewegt werden, bzw. eine Kopie von `C1`. Es sieht dann so aus als wären die Änderungen in `C1` nach denen in `C3` gemacht worden, obwohl das nicht stimmt.",
               "",
-              "Manche Entwickler möchten lieber die History lassen, wie sie ist und ziehen daher das Mergen vor. Andere (wie ich) haben lieber einen sauberen Commit-Baum und ziehen Rebase vor. Am Ende ist es eine Geschmacksfrage. :D"
+              "Manche Entwickler möchten lieber die Historie lassen, wie sie ist und ziehen daher das Mergen vor. Andere (wie ich) haben lieber einen sauberen Commit-Baum und ziehen Rebase vor. Am Ende ist es eine Geschmacksfrage. :D"
             ]
           }
         },
@@ -398,7 +400,7 @@ exports.level = {
         }
       ]
     },
-    "zh_CN":{
+    "zh_CN": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -472,9 +474,9 @@ exports.level = {
               "",
               "* リベースは、コミットツリーの（見ため上の）履歴を改変してしまいます。",
               "",
-              "例えば、`C1`コミットは*過去*の`C3`コミットにリベースすることができます。それは、実際には前に完了しているのにもかかわらず、`C1'`の作業がまるで`C3`の後に行われたものであるかのように見えるようになります。",
+              "例えば、`C1`コミットは`C3`コミットの後ににリベースすることができます。現実とは逆に、`C1'`の作業がまるで`C3`の後に行われたものであるかのように見えるようになります。",
               "",
-              "幾人かの開発者は、履歴をそのまま保持するのが好みで、マージを選択します。その他（例えば私は）きれいなコミットツリーを好むのでリベースを選択します。つまるところ、好みの問題というわけですね :D"
+              "開発者によっては、履歴をそのまま保持するのを好むので、マージを選びます。他の人は（例えば私は）きれいなコミットツリーを好むのでリベースを選びます。つまるところ、好みの問題というわけですね :D"
             ]
           }
         },
@@ -708,6 +710,51 @@ exports.level = {
           "options": {
             "markdowns": [
               "Za to stopnjo, poizkusimo rešiti prešnjo stopnjo z *merganjem*. Mogoče bo malo zakomplicirano, vendar bo lepo ponazorilo poanto."
+            ]
+          }
+        }
+      ]
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Dlaczego nie merge?",
+              "",
+              "Aby wypchnąć nowe wersje, musisz tylko *nanieść* najnowsze zmiany ze zdalnego repozytorium. A to znaczy, że możesz zrobić albo rebase, *albo* merge gałęzi w zdalnym repozytorium (np. `o/main`).",
+              "",
+              "Skoro można to zrobić na oba sposoby, to dlaczego lekcje skupiały się do tej pory na przebazowaniu? Dlaczego `merge` nie jest lubianym poleceniem przy pracy na zdalnych repo?",
+              ""
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Wśród osób zajmujących się programowaniem toczą się spory, co jest lepsze: merge czy rebase. Oto ogólne za i przeciw rebase'owania:",
+              "",
+              "Za:",
+              "",
+              "* Przebazowanie sprawi, że twoje drzewo commitów będzie wyglądać bardzo czysto, ponieważ wszystko znajdzie się w jednej linii",
+              "",
+              "Przeciw:",
+              "",
+              "* Rebase zmienia (pozornie) historię drzewa commitów.",
+              "",
+              "Na przykład: commit `C1` można przebazować *za* `C3`. Pozornie będzie to wyglądać tak, jakby praca na `C1'` została wykonana później niż na `C3`, a w rzeczywistości było zupełnie odwrotnie.",
+              "",
+              "Część osób ceni sobie oryginalną historię i dlatego woli merdżować. Inni (w tym ja) wolą mieć czyste drzewo commitów i dlatego używają rebase. To po prostu kwestia osobistych preferencji :D"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Na tym poziomie spróbujemy rozwiązać zadanie z poprzedniego, ale tym razem użyjemy *merge*. Może się to wydawać lekko pogmatwane, ale dobrze pokazuje tę metodę."
             ]
           }
         }
