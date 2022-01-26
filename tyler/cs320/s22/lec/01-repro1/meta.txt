@@ -2,3 +2,4 @@ Reproducibility 1
 * Course Overview
 * Hardware, OS, Interpreters
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-01_26_22-10%3A49%3A04/1_fkgqc9tl">Lecture</a><br>
