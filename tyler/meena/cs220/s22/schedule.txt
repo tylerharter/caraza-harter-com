@@ -28,7 +28,7 @@ Pseudocode
 Operators
 * Syntax + Parsing
 * Values + Types
-* Calculation + Operators
+* Operator Precedence
 * Boolean Logic
 * Interactive vs. Script Mode, print
 <b>Read</b>: Downey Ch 1<br>
