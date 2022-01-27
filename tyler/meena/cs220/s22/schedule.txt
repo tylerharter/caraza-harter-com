@@ -26,11 +26,11 @@ Pseudocode
 
 =
 Operators
-* Syntax + Parsing
-* Values + Types
+* Syntax, Parsing, print
+* Values and Types
 * Operator Precedence
 * Boolean Logic
-* Interactive vs. Script Mode, print
+* Strings, escape charaters
 <b>Read</b>: Downey Ch 1<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/variables/toctree.html" target="_blank">Python for Everybody, Ch. 2</a><br>
 <!--a href="materials/lecture_ppts/lec_04_S22.pdf" target="_blank">Link to Slides</a><br-->
