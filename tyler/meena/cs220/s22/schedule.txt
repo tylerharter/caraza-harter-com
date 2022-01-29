@@ -71,6 +71,7 @@ Using Functions
 =
 Creating Functions
 
+* Blocks
 * Positional Params
 * Keyword Params
 * Return Values
