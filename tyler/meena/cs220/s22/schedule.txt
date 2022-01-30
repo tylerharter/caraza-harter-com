@@ -34,10 +34,11 @@ Operators
 <b>Read</b>: Downey Ch 1<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/variables/toctree.html" target="_blank">Python for Everybody, Ch. 2</a><br>
 <a href="materials/lecture_ppts/lec_03_S22.pdf" target="_blank">Link to Slides</a><br>
-<b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-03-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-03-worksheet.docx" target="_blank">docx</a><br-->
+<b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-03-worksheet.pdf" target="_blank">.pdf</a>, <a href="materials/lec-03-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Link to worksheet solutions: </b><a href="materials/lecture_ppts/worksheet_solutions/lec-03-worksheet-solution-kuemmel" target="_blank">Andy</a>, <a href="materials/worksheet_solutions/lec-03-worksheet-solution-meena.pdf" target="_blank">Meena</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-04/" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_03" target="_blank">code</a><br>
+<b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_03" target="_blank">code</a><br>
 
 =
 Vars and Exprs
