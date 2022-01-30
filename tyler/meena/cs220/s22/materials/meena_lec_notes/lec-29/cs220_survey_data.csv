@@ -1,0 +1,897 @@
+lecture,age,major,topping
+LEC001,19,Computer Science,basil/spinach
+LEC002,18,Engineering,pineapple
+LEC003,19,Business,pepperoni
+LEC003,19,Engineering,Other
+LEC001,19,Data Science,sausage
+LEC001,20,Engineering,sausage
+LEC004,18,Engineering,pepperoni
+LEC004,19,Engineering,mushroom
+LEC001,19,not sure yet but maybe biology ,none (just cheese)
+LEC004,18,Engineering,none (just cheese)
+LEC001,20,Engineering,basil/spinach
+LEC003,19,Business,pepperoni
+LEC004,20,Engineering,mushroom
+LEC001,18,Engineering,pepperoni
+LEC001,20,Business,mushroom
+LEC003,18,Computer Science,pepperoni
+LEC004,,Engineering,sausage
+LEC004,18,Data Science,pepperoni
+LEC004,20,Data Science,sausage
+LEC004,19,Data Science,Other
+LEC003,19,Engineering,pepperoni
+LEC002,19,Engineering,pepperoni
+LEC003,19,Engineering,mushroom
+LEC004,21,Business,sausage
+LEC003,20,Engineering,pineapple
+LEC003,19,Psychology/ Pre-law ,pepperoni
+LEC002,19,Engineering,sausage
+LEC001,18,Computer Science,none (just cheese)
+LEC003,19,Engineering,sausage
+LEC002,18,Engineering,basil/spinach
+LEC004,19,Engineering,pepperoni
+LEC003,19,Engineering,macaroni/pasta
+LEC004,18,Engineering,sausage
+LEC002,18,Social Science,sausage
+LEC003,19,Engineering,macaroni/pasta
+LEC002,19,Business,pepperoni
+LEC002,19,Data Science,macaroni/pasta
+LEC003,20,Engineering,pepperoni
+LEC003,19,Social Science,pepperoni
+LEC002,32,Engineering,pepperoni
+LEC003,19,Data Science,sausage
+LEC004,19,Engineering,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC004,18,Data Science,none (just cheese)
+LEC003,17,Engineering,sausage
+LEC004,19,Engineering,mushroom
+LEC003,18,Data Science,none (just cheese)
+LEC001,21,Business,basil/spinach
+LEC004,18,Data Science,pepperoni
+LEC001,19,Engineering,sausage
+LEC004,20,Engineering,sausage
+LEC003,19,Engineering,pepperoni
+LEC003,19,Computer Science,tomato
+LEC004,18,Engineering,macaroni/pasta
+LEC003,21,Business,none (just cheese)
+LEC003,19,Natural Science,none (just cheese)
+LEC002,18,Computer Science,Other
+LEC004,18,Data Science,sausage
+LEC003,23,Engineering,macaroni/pasta
+LEC003,19,Engineering,pepperoni
+LEC004,19,Data Science,sausage
+LEC004,20,Computer Science,macaroni/pasta
+LEC002,21,Natural Science,mushroom
+LEC001,18,Computer Science,none (just cheese)
+LEC004,18,Engineering,basil/spinach
+LEC001,21,Computer Science,green pepper
+LEC004,19,Engineering,sausage
+LEC003,21,Engineering,sausage
+LEC003,18,Computer Science,pepperoni
+LEC004,18,Data Science,sausage
+LEC003,20,Engineering,sausage
+LEC004,18,Engineering,pepperoni
+LEC001,19,Engineering,sausage
+LEC004,21,Data Science,pineapple
+LEC002,21,Natural Science,sausage
+LEC003,19,Engineering,pepperoni
+LEC002,18,Engineering,sausage
+LEC003,19,Business,tomato
+LEC003,18,Computer Science,pepperoni
+LEC004,20,Data Science,pepperoni
+LEC001,18,Engineering,sausage
+LEC003,20,Engineering,pepperoni
+LEC002,18,Natural Science,mushroom
+LEC002,19,Engineering,none (just cheese)
+LEC001,23,Computer Science,tomato
+LEC002,20,Engineering,pepperoni
+LEC004,18,Social Science,sausage
+LEC004,19,Computer Science,pepperoni
+LEC003,20,Engineering,pepperoni
+LEC002,19,Engineering,pepperoni
+LEC001,20,Engineering,sausage
+LEC004,20,Engineering,basil/spinach
+LEC002,19,Engineering,pepperoni
+LEC004,20,Engineering,none (just cheese)
+LEC002,46,Engineering,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC002,23,Economics,pineapple
+LEC002,18,Engineering,pepperoni
+LEC004,19,Engineering,Other
+LEC004,19,Business,pineapple
+LEC002,19,Engineering,sausage
+LEC004,18,Computer Science,none (just cheese)
+LEC003,20,Computer Science,sausage
+LEC004,21,Business,sausage
+LEC002,19,Data Science,none (just cheese)
+LEC004,19,Engineering,none (just cheese)
+LEC001,20,Engineering,green pepper
+LEC001,25,Data Science,green pepper
+LEC003,18,Computer Science,sausage
+LEC002,19,Data Science,mushroom
+LEC005,,Computer Science,pepperoni
+LEC004,21,Data Science,pineapple
+LEC003,18,Engineering,sausage
+LEC002,18,Engineering,Other
+LEC003,20,Engineering,sausage
+LEC001,19,Engineering,sausage
+LEC004,21,Economics w/ Math Emphasis,pepperoni
+LEC004,20,Natural Science,sausage
+LEC004,21,Computer Science,pineapple
+LEC001,18,Accounting,pepperoni
+LEC003,19,Engineering,mushroom
+LEC002,19,Engineering,Other
+LEC003,19,Engineering,pepperoni
+LEC004,18,Computer Science,pepperoni
+LEC002,19,Engineering,pepperoni
+LEC001,19,Data Science,macaroni/pasta
+LEC003,19,Engineering,pineapple
+LEC003,18,Data Science,mushroom
+LEC001,19,Data Science,mushroom
+LEC001,19,Engineering,mushroom
+LEC003,18,Business,Other
+LEC002,19,Data Science,pepperoni
+LEC001,19,Engineering,sausage
+LEC002,24,Engineering,pepperoni
+LEC004,18,Data Science,macaroni/pasta
+LEC002,21,Computer Science,pineapple
+LEC004,19,Engineering,pepperoni
+LEC004,20,Natural Science,basil/spinach
+LEC001,22,Engineering,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC004,18,Computer Science,basil/spinach
+LEC001,22,Business,mushroom
+LEC004,19,Data Science,mushroom
+LEC003,19,Engineering,pepperoni
+LEC003,19,Engineering,mushroom
+LEC002,19,Business,pepperoni
+LEC003,19,Engineering,pepperoni
+LEC003,21,Data Science,mushroom
+LEC004,18,Data Science,pineapple
+LEC001,20,Natural Science,basil/spinach
+LEC002,19,Engineering,pepperoni
+LEC003,19,Data Science,mushroom
+LEC003,21,Natural Science,mushroom
+LEC001,19,Data Science,pineapple
+LEC002,19,Business,sausage
+LEC002,22,Psychology,pepperoni
+LEC004,19,Business,pepperoni
+LEC001,18,Engineering,Other
+LEC003,19,Engineering,pineapple
+LEC002,20,Social Science,macaroni/pasta
+LEC001,19,Engineering,macaroni/pasta
+LEC002,19,Engineering,sausage
+LEC003,19,Engineering,mushroom
+LEC002,20,Data Science,sausage
+LEC001,20,Data Science,tomato
+LEC001,18,Computer Science,pepperoni
+LEC003,19,Business,pepperoni
+LEC002,18,Data Science,sausage
+LEC003,19,Engineering,sausage
+LEC001,20,Engineering,pepperoni
+LEC004,18,Business,Other
+LEC001,30,Data Science,basil/spinach
+LEC001,35,Data Science,none (just cheese)
+LEC002,19,Engineering,pineapple
+LEC004,21,Computer Science,none (just cheese)
+LEC001,29,Engineering,mushroom
+LEC004,18,Data Science,mushroom
+LEC004,20,Engineering,pepperoni
+LEC003,19,Business,pepperoni
+LEC002,18,Data Science,pepperoni
+LEC004,19,Engineering,sausage
+LEC001,18,Computer Science,none (just cheese)
+LEC001,18,Data Science,mushroom
+LEC002,20,Natural Science,basil/spinach
+LEC004,19,Engineering,none (just cheese)
+LEC003,21,Computer Science,Other
+LEC004,19,Engineering,pepperoni
+LEC002,19,atmospheric and oceanic science,pineapple
+LEC003,19,Engineering,pepperoni
+LEC002,18,Data Science,basil/spinach
+LEC004,19,Business,mushroom
+LEC001,20,Biomedical Engineering,macaroni/pasta
+LEC004,18,undecided,sausage
+LEC002,24,Computer Science,pepperoni
+LEC003,20,Engineering,sausage
+LEC002,19,Engineering,pepperoni
+LEC002,22,Neurobio and Econ,pineapple
+LEC002,19,Engineering,pepperoni
+LEC001,18,Engineering,macaroni/pasta
+LEC001,18,Social Science,tomato
+LEC003,18,Data Science,basil/spinach
+LEC004,21,Engineering,pepperoni
+LEC003,18,Data Science,pepperoni
+LEC003,20,Data Science,pineapple
+LEC002,20,Business,sausage
+LEC002,20,Business,sausage
+LEC003,19,Engineering,sausage
+LEC002,19,Engineering,sausage
+LEC001,20,Engineering,Other
+LEC001,23,Data Science,mushroom
+LEC001,20,Data Science,basil/spinach
+LEC005,18,Business,pepperoni
+LEC004,20,Engineering,pepperoni
+LEC002,18,Computer Science,mushroom
+LEC004,20,Data Science,pepperoni
+LEC003,19,Engineering,pepperoni
+LEC004,18,Statistics,pepperoni
+LEC004,19,Data Science,pepperoni
+LEC005,20,Engineering,tomato
+LEC001,18,Business,mushroom
+LEC003,22,Computer Science,sausage
+LEC001,18,Engineering,macaroni/pasta
+LEC003,18,Computer Science,basil/spinach
+LEC001,22,Engineering,pineapple
+LEC001,22,Natural Science,sausage
+LEC003,19,Engineering,pepperoni
+LEC001,19,Business,sausage
+LEC003,19,Engineering,macaroni/pasta
+LEC001,18,Business,basil/spinach
+LEC001,18,Data Science,sausage
+LEC003,19,Engineering,Other
+LEC004,19,Data Science,Other
+LEC004,20,Engineering,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC003,19,Engineering,sausage
+LEC005,19,Engineering,none (just cheese)
+LEC003,18,Statistics,none (just cheese)
+LEC001,18,Social Science,pineapple
+LEC002,18,Engineering,Other
+LEC005,21,Data Science,green pepper
+LEC005,20,biology,tomato
+LEC005,19,Data Science,none (just cheese)
+LEC003,18,Engineering,sausage
+LEC005,19,Data Science,pineapple
+LEC005,18,Data Science,pineapple
+LEC002,19,Business,pineapple
+LEC004,19,Engineering,pepperoni
+LEC003,18,Computer Science,pineapple
+LEC002,18,Data Science,Other
+LEC003,19,mathematics,sausage
+LEC005,20,Natural Science,mushroom
+LEC005,18,Data Science,tomato
+LEC005,18,Data Science,tomato
+LEC003,22,Natural Science,sausage
+LEC003,18,Business,mushroom
+LEC004,18,Engineering,pepperoni
+LEC003,19,Engineering,sausage
+LEC004,18,Data Science,pineapple
+LEC005,21,Business,sausage
+LEC003,22,Engineering,pineapple
+LEC002,19,Computer Science,pineapple
+LEC005,20,Computer Science,none (just cheese)
+LEC001,20,Economics,pineapple
+LEC001,18,Engineering,pepperoni
+LEC001,21,Natural Science,pepperoni
+LEC003,18,AMEP,pineapple
+LEC005,18,Undecided,Other
+LEC003,21,Business,none (just cheese)
+LEC003,28,Engineering,pepperoni
+LEC004,20,Data Science,macaroni/pasta
+LEC005,20,Mathematics,pepperoni
+LEC003,19,Engineering,none (just cheese)
+LEC001,19,Engineering,sausage
+LEC005,20,Computer Science,sausage
+LEC003,20,Data Science,pineapple
+LEC005,18,Data Science,basil/spinach
+LEC005,20,Computer Science,sausage
+LEC003,19,Data Science,pepperoni
+LEC002,19,Engineering,pepperoni
+LEC003,19,Engineering,tomato
+LEC003,23,Engineering,Other
+LEC004,22,Business,pepperoni
+LEC005,19,Computer Science,pepperoni
+LEC002,19,Engineering,sausage
+LEC003,19,Business,pepperoni
+LEC003,19,Engineering,pepperoni
+LEC004,19,Engineering,macaroni/pasta
+LEC002,18,Undecided,pineapple
+LEC004,19,Engineering,macaroni/pasta
+LEC003,21,Natural Science,sausage
+LEC002,19,Engineering,pepperoni
+LEC003,19,Engineering,basil/spinach
+LEC003,18,Engineering,pineapple
+LEC003,18,Engineering,pepperoni
+LEC001,18,Data Science,pineapple
+LEC002,18,Engineering,sausage
+LEC005,18,Data Science,mushroom
+LEC001,20,Engineering,Other
+LEC003,19,Engineering,none (just cheese)
+LEC003,19,Engineering,pepperoni
+LEC003,19,Engineering,pepperoni
+LEC001,20,Computer Science,mushroom
+LEC004,18,Data Science,pepperoni
+LEC003,18,Computer Science,mushroom
+LEC003,18,Engineering,macaroni/pasta
+LEC003,19,Engineering,Other
+LEC002,19,Data Science,macaroni/pasta
+LEC004,18,Engineering,pepperoni
+LEC002,19,Engineering,pepperoni
+LEC005,21,math,sausage
+LEC003,19,Business,mushroom
+LEC003,19,Engineering,none (just cheese)
+LEC003,19,Engineering,Other
+LEC001,18,Engineering,none (just cheese)
+LEC002,19,Undecided,none (just cheese)
+LEC001,18,Data Science,none (just cheese)
+LEC004,19,Engineering,sausage
+LEC002,19,Engineering,mushroom
+LEC004,20,Engineering,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC004,19,Business,pepperoni
+LEC003,20,Computer Science,mushroom
+LEC003,21,Computer Science,none (just cheese)
+LEC003,18,Data Science,sausage
+LEC003,19,Engineering,macaroni/pasta
+LEC003,17,Computer Science,sausage
+LEC003,20,undecided,basil/spinach
+LEC003,19,Data Science,pepperoni
+LEC003,19,Engineering,pineapple
+LEC003,19,Data Science,Other
+LEC003,19,Business,basil/spinach
+LEC003,19,Statistics,basil/spinach
+LEC003,20,Business,none (just cheese)
+LEC003,18,Business,sausage
+LEC003,18,Computer Science,pepperoni
+LEC003,20,Engineering,pepperoni
+LEC003,19,Social Science,pineapple
+LEC003,18,Engineering,Other
+LEC003,25,Engineering,mushroom
+LEC002,20,Social Science,sausage
+LEC003,19,Engineering,pineapple
+LEC003,18,Computer Science,none (just cheese)
+LEC003,18,Computer Science,none (just cheese)
+LEC001,19,Business,mushroom
+LEC003,19,Engineering,pepperoni
+LEC003,18,Business,sausage
+LEC003,18,Data Science,pepperoni
+LEC003,20,communication arts,mushroom
+LEC001,20,Business,pepperoni
+LEC001,21,Data Science,sausage
+LEC001,19,Engineering,pepperoni
+LEC004,,Computer Science,pepperoni
+LEC004,19,Engineering,sausage
+LEC002,20,Engineering,tomato
+LEC001,18,Business,pepperoni
+LEC001,19,Computer Science,Other
+LEC004,20,Natural Science,pepperoni
+LEC003,20,Data Science,pepperoni
+LEC003,18,Engineering,sausage
+LEC003,19,Engineering,pepperoni
+LEC002,21,Geographic Information Systems,none (just cheese)
+LEC004,19,Engineering,basil/spinach
+LEC001,19,Data Science,pepperoni
+LEC001,22,Business,green pepper
+LEC004,19,Engineering,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC001,18,Data Science,sausage
+LEC004,20,Natural Science,sausage
+LEC001,20,Data Science,sausage
+LEC003,20,Data Science,none (just cheese)
+LEC003,20,Engineering,none (just cheese)
+LEC004,19,Engineering,tomato
+LEC001,28,Engineering,none (just cheese)
+LEC002,21,Business,mushroom
+LEC003,19,Engineering,pepperoni
+LEC002,19,Engineering,sausage
+LEC005,19,Engineering,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC003,18,Math,pepperoni
+LEC003,19,Engineering,macaroni/pasta
+LEC004,19,Computer Science,basil/spinach
+LEC004,20,Environmental Sciences ,none (just cheese)
+LEC004,20,Engineering,mushroom
+LEC001,19,Computer Science,mushroom
+LEC003,19,Engineering,pineapple
+LEC004,21,Natural Science,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC005,19,Data Science,pineapple
+LEC004,18,Data Science,sausage
+LEC004,20,Data Science,pineapple
+LEC002,19,Engineering,pineapple
+LEC004,19,Engineering,pepperoni
+LEC001,22,Data Science,pepperoni
+LEC004,22,Business,sausage
+LEC001,19,Natural Science,sausage
+LEC004,18,undecided,pepperoni
+LEC002,19,Engineering,basil/spinach
+LEC004,21,Computer Science,pepperoni
+LEC004,24,Computer Science,basil/spinach
+LEC002,21,Social Science,pineapple
+LEC003,18,Engineering,sausage
+LEC003,20,Computer Science,basil/spinach
+LEC001,20,Data Science,pineapple
+LEC004,20,Engineering,sausage
+LEC003,21,Natural Science,sausage
+LEC001,19,Data Science,sausage
+LEC002,18,Engineering,pepperoni
+LEC001,19,Data Science,sausage
+LEC001,20,Engineering,macaroni/pasta
+LEC001,19,Computer Science,pepperoni
+LEC004,20,Engineering,pineapple
+LEC001,19,Computer Science,sausage
+LEC004,27,Computer Science,sausage
+LEC004,20,Engineering,sausage
+LEC004,18,Engineering,pineapple
+LEC004,18,Data Science,basil/spinach
+LEC002,20,Social Science,basil/spinach
+LEC005,18,Computer Science,Other
+LEC004,19,Natural Science,pepperoni
+LEC003,21,Economics with math emphasis,basil/spinach
+LEC002,21,Social Science,none (just cheese)
+LEC003,19,Engineering,macaroni/pasta
+LEC003,19,Computer Science,sausage
+LEC002,18,Engineering,mushroom
+LEC002,19,Engineering,macaroni/pasta
+LEC004,18,Data Science,pepperoni
+LEC001,22,Computer Science,pepperoni
+LEC001,20,Business,pineapple
+LEC005,18,Data Science,pepperoni
+LEC001,,Social Science,Other
+LEC001,20,Computer Science,pineapple
+LEC001,21,Computer Science,pineapple
+LEC001,18,Data Science,pineapple
+LEC001,20,statistics,sausage
+LEC001,21,Data Science,mushroom
+LEC001,18,Engineering,pepperoni
+LEC004,19,Data Science,macaroni/pasta
+LEC001,20,Computer Science,sausage
+LEC001,19,Engineering,sausage
+LEC001,21,Business,pepperoni
+LEC004,20,Business,pepperoni
+LEC001,19,Natural Science,macaroni/pasta
+LEC003,18,Computer Science,pepperoni
+LEC001,20,Computer Science,none (just cheese)
+LEC001,20,Engineering,sausage
+LEC001,19,Computer Science,sausage
+LEC001,20,Business,pepperoni
+LEC001,20,Computer Science,pineapple
+LEC001,19,Engineering,basil/spinach
+LEC001,21,Computer Science,pineapple
+LEC001,21,Public Policy,pepperoni
+LEC001,20,Business,sausage
+LEC001,17,Data Science,Other
+LEC001,19,Engineering,sausage
+LEC001,20,Information Systems,Other
+LEC001,18,Engineering,mushroom
+LEC001,23,Business,pineapple
+LEC001,20,Natural Science,green pepper
+LEC001,19,Data Science,pineapple
+LEC001,18,Data Science,Other
+LEC001,21,Engineering,Other
+LEC001,20,Business,pepperoni
+LEC001,21,Computer Science,pineapple
+LEC001,18,Computer Science,mushroom
+LEC001,18,Data Science,none (just cheese)
+LEC001,18,Engineering,pepperoni
+LEC002,20,Marketing and Information Systems,pepperoni
+LEC001,21,STATS,basil/spinach
+LEC001,18,Computer Science,pepperoni
+LEC001,19,Engineering,sausage
+LEC001,18,Computer Science,pepperoni
+LEC001,18,Data Science,none (just cheese)
+LEC001,21,Data Science,Other
+LEC001,19,Engineering,pepperoni
+LEC001,18,Data Science,none (just cheese)
+LEC002,19,Computer Science,sausage
+LEC001,18,Data Science,pepperoni
+LEC001,19,Engineering,pineapple
+LEC001,19,Engineering,pepperoni
+LEC001,23,Mechanical Engineering,pepperoni
+LEC004,20,Business,sausage
+LEC002,21,Engineering,pepperoni
+LEC004,21,Human Development and Communications,basil/spinach
+LEC002,26,Natural Science,sausage
+LEC001,18,Data Science,pepperoni
+LEC004,21,Engineering,macaroni/pasta
+LEC002,20,Computer Science,basil/spinach
+LEC003,18,Engineering,basil/spinach
+LEC003,17,Engineering,pineapple
+LEC001,18,Engineering,basil/spinach
+LEC001,19,Computer Science,pepperoni
+LEC003,19,Engineering,sausage
+LEC003,21,Engineering,pepperoni
+LEC001,19,Data Science,none (just cheese)
+LEC004,18,Social Science,Other
+LEC004,18,Computer Science,none (just cheese)
+LEC001,20,Business,sausage
+LEC001,18,Engineering,none (just cheese)
+LEC004,18,Statistics,macaroni/pasta
+LEC005,31,Computer Science,pepperoni
+LEC004,20,Data Science,pepperoni
+LEC001,20,Natural Science,Other
+LEC001,20,Meteorology or Oceanography,basil/spinach
+LEC001,19,Engineering,pineapple
+LEC001,18,Engineering,tomato
+LEC004,20,Engineering,mushroom
+LEC003,18,Data Science,basil/spinach
+LEC005,18,Data Science,tomato
+LEC002,19,Social Science,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC002,20,Computer Science,sausage
+LEC001,19,economics,none (just cheese)
+LEC001,20,Engineering,Other
+LEC001,18,Social Science,pepperoni
+LEC001,19,Engineering,sausage
+LEC002,19,Natural Science,basil/spinach
+LEC001,19,Data Science,sausage
+LEC004,20,Data Science,pepperoni
+LEC005,18,Computer Science,sausage
+LEC002,21,Computer Science,sausage
+LEC003,20,Engineering,sausage
+LEC004,18,Engineering,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC001,19,Engineering,green pepper
+LEC004,19,Computer Science,pineapple
+LEC001,22,Data Science,pepperoni
+LEC004,19,Computer Science,pepperoni
+LEC002,20,Business,none (just cheese)
+LEC001,19,Business,pepperoni
+LEC004,18,Engineering,pineapple
+LEC001,18,Engineering,pineapple
+LEC001,18,Natural Science,none (just cheese)
+LEC003,22,Computer Science,sausage
+LEC003,19,Engineering,none (just cheese)
+LEC003,18,Business,macaroni/pasta
+LEC005,22,Engineering,mushroom
+LEC002,18,Engineering,sausage
+LEC001,19,Business,basil/spinach
+LEC002,25,Computer Science,pepperoni
+LEC003,16,Economics with a data science certificate ,pineapple
+LEC003,20,Natural Science,pineapple
+LEC001,20,Geography/GIS,pineapple
+LEC002,21,Social Science,pepperoni
+LEC001,19,Engineering,sausage
+LEC001,20,Statistics,mushroom
+LEC001,20,Data Science,sausage
+LEC001,19,Engineering,pepperoni
+LEC002,21,Business,sausage
+LEC002,18,Computer Science,pepperoni
+LEC001,21,Engineering,sausage
+LEC002,19,Engineering,Other
+LEC002,,Engineering,Other
+LEC002,19,Engineering,sausage
+LEC002,19,Computer Science,mushroom
+LEC002,19,Engineering,pepperoni
+LEC001,19,Computer Science,sausage
+LEC001,18,Computer Science,pineapple
+LEC002,21,Data Science,Other
+LEC005,21,Agricultural and Applied Economics,sausage
+LEC001,,Data Science,Other
+LEC002,20,Engineering,macaroni/pasta
+LEC001,20,Computer Science,pepperoni
+LEC002,20,Data Science,macaroni/pasta
+LEC001,19,Data Science,pepperoni
+LEC002,18,Computer Science,pepperoni
+LEC002,20,Engineering,Other
+LEC001,18,Computer Science,sausage
+LEC002,21,Data Science,mushroom
+LEC002,20,Business,tomato
+LEC001,19,Engineering,mushroom
+LEC002,18,Data Science,macaroni/pasta
+LEC002,18,Biomedical Engineering,sausage
+LEC002,20,Math,none (just cheese)
+LEC002,18,Economics,pepperoni
+LEC002,18,Engineering,mushroom
+LEC002,19,Engineering,pepperoni
+LEC002,20,Mathematics,sausage
+LEC002,19,Data Science,sausage
+LEC001,19,Data Science,sausage
+LEC002,22,Business,pepperoni
+LEC001,20,chemistry,pepperoni
+LEC002,20,English Literature,pepperoni
+LEC004,20,Computer Science,none (just cheese)
+LEC002,18,Engineering,macaroni/pasta
+LEC002,18,Computer Science,Other
+LEC002,19,Engineering,sausage
+LEC002,20,Engineering,sausage
+LEC002,20,Engineering,pineapple
+LEC002,17,Computer Science,pepperoni
+LEC003,19,Engineering,mushroom
+LEC001,18,Natural Science,pineapple
+LEC002,18,Engineering,sausage
+LEC004,19,Data Science,mushroom
+LEC002,23,Data Science,pepperoni
+LEC002,19,Engineering,sausage
+LEC004,21,Data Science,mushroom
+LEC004,18,journalism,pepperoni
+LEC003,,Natural Science,Other
+LEC003,18,Business,tomato
+LEC002,22,Natural Science,Other
+LEC002,19,Engineering,pepperoni
+LEC002,18,Engineering,sausage
+LEC002,19,Engineering,sausage
+LEC003,20,Economics,pepperoni
+LEC002,18,Engineering,mushroom
+LEC005,18,Computer Science,mushroom
+LEC001,20,Business,pepperoni
+LEC004,21,Business,pineapple
+LEC004,20,Computer Science,basil/spinach
+LEC004,19,Engineering,pepperoni
+LEC004,18,Engineering,basil/spinach
+LEC003,20,Computer Science,pepperoni
+LEC005,20,Data Science,pineapple
+LEC003,18,Engineering,pepperoni
+LEC001,21,Business,mushroom
+LEC001,18,Engineering,basil/spinach
+LEC005,20,Engineering,pepperoni
+LEC005,21,Social Science,basil/spinach
+LEC005,19,Engineering,sausage
+LEC002,19,Engineering,mushroom
+LEC004,17,Computer Science,sausage
+LEC004,19,Business,pepperoni
+LEC002,19,Business,none (just cheese)
+LEC002,18,Computer Science,none (just cheese)
+LEC005,17,Computer Science,basil/spinach
+LEC005,19,Business,pepperoni
+LEC001,22,Data Science,sausage
+LEC004,19,Engineering,pineapple
+LEC005,20,Computer Science,sausage
+LEC002,20,Data Science,pepperoni
+LEC003,21,Computer Science,mushroom
+LEC001,21,Business,sausage
+LEC002,17,Natural Science,pineapple
+LEC002,21,Computer Science,pepperoni
+LEC001,17,Computer Science,Other
+LEC005,18,Data Science,pepperoni
+LEC004,19,Engineering,basil/spinach
+LEC005,20,Data Science,pineapple
+LEC004,21,Data Science,sausage
+LEC004,19,Engineering,pepperoni
+LEC002,18,Business,sausage
+LEC003,17,Engineering,Other
+LEC001,20,Engineering,pepperoni
+LEC001,21,Natural Science,sausage
+LEC001,19,Data Science,pepperoni
+LEC005,19,Computer Science,sausage
+LEC005,19,Engineering,sausage
+LEC001,20,Data Science,sausage
+LEC001,19,Engineering,tomato
+LEC001,19,Data Science,pepperoni
+LEC005,19,Engineering,macaroni/pasta
+LEC003,19,Natural Science,pepperoni
+LEC003,20,Computer Science,pepperoni
+LEC004,20,Engineering,sausage
+LEC005,19,Computer Science,mushroom
+LEC002,20,Engineering,none (just cheese)
+LEC003,21,Natural Science,sausage
+LEC001,21,Engineering,pepperoni
+LEC002,18,Engineering,pepperoni
+LEC003,18,Data Science,none (just cheese)
+LEC001,19,Engineering,pepperoni
+LEC004,20,Social Science,mushroom
+LEC005,18,Computer Science,pineapple
+LEC002,20,Computer Science,sausage
+LEC004,20,Business,mushroom
+LEC002,18,Engineering,pepperoni
+LEC002,19,Data Science,pepperoni
+LEC002,23,Data Science,green pepper
+LEC001,18,Data Science,pepperoni
+LEC002,18,Engineering,green pepper
+LEC003,19,Engineering,pineapple
+LEC004,18,undecided,pepperoni
+LEC004,19,Computer Science,pineapple
+LEC003,18,math,pineapple
+LEC001,19,Data Science,pepperoni
+LEC004,19,Engineering,pepperoni
+LEC002,26,Computer Science,pineapple
+LEC005,18,Natural Science,sausage
+LEC003,18,Computer Science,tomato
+LEC001,21,Engineering,basil/spinach
+LEC003,20,Engineering,pepperoni
+LEC001,19,Data Science,pepperoni
+LEC002,18,Data Science,basil/spinach
+LEC004,20,Data Science,Other
+LEC005,20,Computer Science,pineapple
+LEC004,18,Computer Science,sausage
+LEC002,22,Computer Science,pepperoni
+LEC001,22,Engineering,pineapple
+LEC002,19,undecided/maybe data science,green pepper
+LEC001,19,Computer Science,pepperoni
+LEC004,19,Engineering,sausage
+LEC002,20,Data Science,none (just cheese)
+LEC002,19,Data Science,Other
+LEC002,26,Natural Science,basil/spinach
+LEC004,18,Computer Science,pepperoni
+LEC001,25,Social Science,Other
+LEC001,20,Computer Science,pineapple
+LEC001,21,Data Science,basil/spinach
+LEC001,21,Natural Science,basil/spinach
+LEC001,21,Data Science,none (just cheese)
+LEC004,20,Data Science,Other
+LEC001,,Data Science,pineapple
+LEC004,19,Engineering,pepperoni
+LEC003,19,Engineering,basil/spinach
+LEC003,30,Natural Science,pineapple
+LEC004,18,Engineering,sausage
+LEC001,34,Data Science,tomato
+LEC002,19,Engineering,macaroni/pasta
+LEC001,20,Engineering,pepperoni
+LEC004,21,Natural Science,pineapple
+LEC002,,Computer Science,pepperoni
+LEC004,19,Math and Statistics,none (just cheese)
+LEC001,18,Applied Math,pepperoni
+LEC001,19,Business,sausage
+LEC002,18,Engineering,sausage
+LEC002,20,Business,sausage
+LEC004,18,Business,pineapple
+LEC001,20,Computer Science,none (just cheese)
+LEC004,19,Engineering,sausage
+LEC004,,Data Science,sausage
+LEC001,18,Statistics,pepperoni
+LEC004,21,Natural Science,pineapple
+LEC005,23,Data Science,pepperoni
+LEC004,22,Natural Science,pineapple
+LEC005,18,Computer Science,sausage
+LEC002,20,Data Science,sausage
+LEC002,21,Computer Science,pepperoni
+LEC002,18,Business,basil/spinach
+LEC002,18,Business,mushroom
+LEC005,19,Engineering,sausage
+LEC005,18,Computer Science,sausage
+LEC002,20,Computer Science,none (just cheese)
+LEC002,24,Math,tomato
+LEC001,19,Data Science,sausage
+LEC002,21,Data Science,mushroom
+LEC001,18,Computer Science,pepperoni
+LEC005,21,Engineering,basil/spinach
+LEC004,21,Computer Science,pepperoni
+LEC002,19,Computer Science,pepperoni
+LEC005,19,Engineering,basil/spinach
+LEC004,19,Engineering,green pepper
+LEC001,21,Computer Science,pineapple
+LEC003,29,Data Science,green pepper
+LEC005,19,Engineering,sausage
+LEC001,25,Natural Science,pepperoni
+LEC005,23,Data Science,none (just cheese)
+LEC002,20,Computer Science,pepperoni
+LEC005,24,Natural Science,pepperoni
+LEC001,22,Computer Science,sausage
+LEC004,21,Computer Science,sausage
+LEC001,23,Social Science,tomato
+LEC003,21,Engineering,pepperoni
+LEC001,21,Engineering,sausage
+LEC005,21,Business,tomato
+LEC001,18,Engineering,basil/spinach
+LEC001,22,Business,mushroom
+LEC004,19,Engineering,sausage
+LEC003,20,Mathematics,pepperoni
+LEC005,18,economics,sausage
+LEC004,19,Engineering,sausage
+LEC004,19,Engineering,sausage
+LEC004,19,Engineering,pineapple
+LEC004,20,Engineering,pepperoni
+LEC001,21,Business,pepperoni
+LEC004,22,Data Science,pineapple
+LEC004,22,Engineering,basil/spinach
+LEC001,26,Engineering,pepperoni
+LEC002,18,Data Science,none (just cheese)
+LEC002,20,Engineering,pepperoni
+LEC001,22,Natural Science,sausage
+LEC003,19,Social Science,basil/spinach
+LEC005,20,Business,pineapple
+LEC003,18,Engineering,macaroni/pasta
+LEC003,20,Data Science,mushroom
+LEC005,21,Business,tomato
+LEC004,,AMEP,none (just cheese)
+LEC005,19,Mathematics,pepperoni
+LEC003,18,Computer Science,sausage
+LEC002,18,Engineering,Other
+LEC002,19,Data Science,macaroni/pasta
+LEC002,19,Engineering,macaroni/pasta
+LEC005,20,Computer Science,sausage
+LEC001,20,Engineering,sausage
+LEC005,20,Social Science,pepperoni
+LEC005,22,Data Science,sausage
+LEC005,18,Data Science,mushroom
+LEC001,22,Data Science,pineapple
+LEC004,23,Natural Science,pepperoni
+LEC005,19,Computer Science,mushroom
+LEC005,19,Computer Science,none (just cheese)
+LEC005,18,Engineering,pepperoni
+LEC001,20,Computer Science,mushroom
+LEC001,20,Natural Science,sausage
+LEC002,18,Business,sausage
+LEC001,22,Engineering,pepperoni
+LEC003,18,Engineering,pepperoni
+LEC005,18,Computer Science,green pepper
+LEC001,27,Natural Science,pepperoni
+LEC001,22,statistics,pepperoni
+LEC002,21,Data Science,sausage
+LEC005,21,Engineering,pepperoni
+LEC005,37,Data Science,green pepper
+LEC001,21,Natural Science,Other
+LEC004,19,Business,pepperoni
+LEC001,19,Computer Science,pineapple
+LEC004,28,animal science,none (just cheese)
+LEC005,20,Business,mushroom
+LEC005,20,Engineering,pepperoni
+LEC001,19,Data Science,pepperoni
+LEC005,21,Business,sausage
+LEC005,21,Applied Math Economics ,pepperoni
+LEC005,20,Information Systems,pepperoni
+LEC003,,Business,green pepper
+LEC002,24,Natural Science,pepperoni
+LEC001,19,Engineering,pineapple
+LEC002,20,Genetics,sausage
+LEC002,33,Computer Science,basil/spinach
+LEC003,19,Engineering,pepperoni
+LEC001,20,Business,pepperoni
+LEC001,21,Computer Science,Other
+LEC003,22,Engineering,sausage
+LEC001,19,Computer Science,macaroni/pasta
+LEC001,20,Data Science,pepperoni
+LEC001,19,Engineering,pepperoni
+LEC001,20,Data Science,mushroom
+LEC003,25,Engineering,pepperoni
+LEC003,18,Computer Science,none (just cheese)
+LEC005,22,Computer Science,Other
+LEC002,21,Business,Other
+LEC005,21,Natural Science,basil/spinach
+LEC001,,Computer Science,Other
+LEC004,19,Computer Science,sausage
+LEC001,19,Business,basil/spinach
+LEC004,18,Biochem,none (just cheese)
+LEC005,21,Engineering,sausage
+LEC005,18,Computer Science,mushroom
+LEC003,20,Engineering,pepperoni
+LEC005,21,English and Journalism,none (just cheese)
+LEC001,22,Data Science,pepperoni
+LEC001,18,Data Science,sausage
+LEC001,21,Business,sausage
+LEC001,19,Engineering,sausage
+LEC005,21,Data Science,pineapple
+LEC005,19,Engineering,sausage
+LEC005,19,Computer Science,pepperoni
+LEC005,22,Computer Science,pepperoni
+LEC002,18,Business,none (just cheese)
+LEC005,18,Data Science,sausage
+LEC005,22,Data Science,sausage
+LEC001,25,Computer Science,mushroom
+LEC005,18,Business,pepperoni
+LEC002,21,Data Science,none (just cheese)
+LEC005,21,Natural Science,mushroom
+LEC002,22,Natural Science,none (just cheese)
+LEC005,20,Engineering,sausage
+LEC004,20,Engineering,sausage
+LEC005,20,Data Science,mushroom
+LEC002,18,Computer Science,none (just cheese)
+LEC004,20,Social Science,sausage
+LEC003,17,Social Science,pepperoni
+LEC004,18,Engineering,sausage
+LEC005,19,Computer Science,sausage
+LEC001,19,Data Science,pepperoni
+LEC001,21,Engineering,macaroni/pasta
+LEC004,20,Data Science,none (just cheese)
+LEC005,20,Computer Science,pepperoni
+LEC002,18,Engineering,tomato
+LEC001,20,Business,pineapple
+LEC004,19,Engineering,none (just cheese)
+LEC001,19,Data Science,tomato
+LEC004,,Engineering,Other
+LEC005,22,Data Science,mushroom
+LEC001,18,Engineering,sausage
+LEC002,20,Engineering,pepperoni
+LEC002,21,Economics,pepperoni
+LEC001,21,Business,pepperoni
+LEC001,22,Data Science,mushroom
+LEC001,18,Computer Science,green pepper
+LEC001,21,Computer Science,pepperoni
+LEC002,19,Data Science,none (just cheese)
+LEC004,18,Business,Other
+LEC003,20,Computer Science,pepperoni
+LEC004,19,Data Science,pepperoni
+LEC004,19,Engineering,Other
+LEC001,18,Engineering,sausage
+LEC003,18,Data Science,pineapple
+LEC005,22,Data Science,pineapple
+LEC001,20,Data Science,Other
+LEC002,20,Engineering,sausage
+LEC002,20,Data Science,pepperoni
+LEC002,19,Data Science,mushroom
+LEC001,19,Data Science,pepperoni
+LEC001,20,Data Science,pepperoni
+LEC004,21,Computer Science,pepperoni
+LEC001,19,Engineering,tomato
+LEC004,18,Engineering,pepperoni
