@@ -49,8 +49,8 @@ Vars and Exprs
 <b>Read</b>: Downey Ch 2<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/debugging/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
 <b>Due</b>: P1<br>
-<!--a href="materials/lecture_ppts/lec_05_S22.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-05" target="_blank">code</a><br-->
+<a href="materials/lecture_ppts/lec_04_S22.pdf" target="_blank">Link to Slides</a><br>
+<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-04" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_04" target="_blank">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p2" target="_blank">Lab-P2</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p2" target="_blank">P2</a><br-->
 
@@ -65,7 +65,7 @@ Using Functions
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.1 - 5.4 </a><br>
 <b>Due</b>: Quiz1<br>
-<!--a href="materials/lecture_ppts/lec_06_S22.pdf" target="_blank">Link to Slides</a><br-->
+<!--a href="materials/lecture_ppts/lec_05_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-06" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_05" target="_blank">code</a><br-->
 
