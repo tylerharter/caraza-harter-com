@@ -107,7 +107,7 @@ Conditionals 1
 
 * Boolean Logic
 * if,elif,else
-* Modular arithmetic
+* Blocks of code
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.1 - 4.5 </a><br>
