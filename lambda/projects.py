@@ -283,20 +283,21 @@ def get_code_analysis(student_email, project_id, project_files):
                 comments.append('<b>error:</b> expected submitter to be "%s", not "%s"' % (student_email, submitter))
                 analysis['errors'] = True
 
-    # check partner is on the roster
-    if len(fields['partner']) == 1:
-        partner = list(fields['partner'])[0]
-        if partner.strip().lower() == "none":
-            comments.append('info: no partner')
-        else:
-            if not '@' in partner:
-                partner += NET_ID_EMAIL_SUFFIX
-            analysis['partner'] = partner
-            if not partner in get_roster_emails():
-                comments.append('<b>error:</b> "%s" not on the roster' % partner)
-                analysis['errors'] = True
+    # check partner is on the roster (if partners are enabled)
+    if s3().read_cached_json('config.json').get("partners", True):
+        if len(fields['partner']) == 1:
+            partner = list(fields['partner'])[0]
+            if partner.strip().lower() == "none":
+                comments.append('info: no partner')
             else:
-                comments.append('info: partner is ' + partner)
+                if not '@' in partner:
+                    partner += NET_ID_EMAIL_SUFFIX
+                analysis['partner'] = partner
+                if not partner in get_roster_emails():
+                    comments.append('<b>error:</b> "%s" not on the roster' % partner)
+                    analysis['errors'] = True
+                else:
+                    comments.append('info: partner is ' + partner)
 
     # check that hours is a number
     if len(fields['hours']) == 1:
