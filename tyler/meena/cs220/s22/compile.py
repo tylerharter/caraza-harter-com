@@ -43,7 +43,7 @@ def schedule():
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Course Schedule</h1>\n')
 
-    start_date = date(2021, 1, 23)
+    start_date = date(2021, 1, 24)
     end_date = date(2021, 5, 5)
     day_count = (end_date - start_date).days + 1
 
