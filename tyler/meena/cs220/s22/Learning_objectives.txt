@@ -1,47 +1,37 @@
-Lecture 1: Introduction
-1.1 Interpret the Syllabus statements regarding assignment rules and requirements
+Introduction
+- Interpret the Syllabus statements regarding assignment rules and requirements
 
-Lecture 2: The Terminal
-2.1 Access the Terminal(Mac) or PowerShell (Windows) application
-2.2 Use basic Terminal/PowerShell commands such as ls, pwd, cd, cd .., mkdir, echo, echo >, echo >>
-2.3 Navigate using absolute and relative paths
+Lab p1: Shell Commands
+- Access the Terminal(Mac) or PowerShell (Windows) application
+- Use basic Terminal/PowerShell commands such as ls, pwd, cd, cd .., mkdir
+- Navigate using absolute and relative paths
 
-Lecture 3: Pseudocode
-3.1 Hand-trace PseudoCode algorithms involving state and control flow
-3.2 Hand-trace PseudoCode algorithms involving lists and dictionaries
+Pseudocode
+- Hand-trace PseudoCode algorithms involving state and control flow
+- Hand-trace PseudoCode algorithms involving lists and dictionaries
 
-Lecture 4: Operators
-4.1 Run Python Code (think this is all taught in lab-p2)
-- from the command line (interactive mode and script mode)
-- from IDLE (interactive mode and script mode)
-- from a Jupyter Notebook (combines interactive and script modes) 
+Lab p2: Shell Commands and Operators
+- Run Python Code
+ -- from the command line (interactive mode and script mode)
+ -- from a Jupyter Notebook (combines interactive and script modes) 
 
-4.2 Evaluate numeric expressions containing mathematical operators 
-
-4.3 Evaluate string expressions containing string operators and escape characters
-
-4.4 Recognize examples of different Python data types: int, float, str, bool
-
-4.4 Evaluate boolean expressions that contain the operators and, or, not
+Operators
+- Evaluate numeric expressions containing mathematical operators 
+- Evaluate string expressions containing string operators and escape characters
+- Recognize examples of different Python data types: int, float, str, bool
+- Evaluate boolean expressions that contain the operators and, or, not
 
 
-Lecture 5: Variables and Expressions
-5.1 Evaluate Expressions
- by identifying operators and operands
- by identifying literal values and variables
- by identifying the correct order of operations
-  
-5.2 Write assignment statements with proper syntax
- Start with a variable name that follows proper rules for variables
- Use a single equals sign
- Finish with an expression
-  
-5.3 Define, give examples of, and identify 3 kinds of errors
- Syntax error
- Runtime error
- Semantic error
-  
-5.4 Write Python code that computes with strings ints, floats, and Boolean types
+Variables and Expressions
+- In Expressions, Identify 
+ - operators and operands
+ - literal values and variables
+- Write assignment statements with proper syntax
+-Define, give examples of, and identify 3 kinds of errors
+ - Syntax error
+ - Runtime error
+ - Semantic error
+- Write Python code that computes with strings ints, floats, and Boolean types
 
 
 Lecture 6: Using Functions and Modules
