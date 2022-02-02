@@ -3,3 +3,4 @@ Performance 2
 * time
 * complexity analysis
 * Big O
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-02_02_22-10%3A54%3A37/1_npfozrtb">Lecture</a><br>
