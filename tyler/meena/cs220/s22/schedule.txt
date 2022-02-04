@@ -66,8 +66,8 @@ Using Functions
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.1 - 5.4 </a><br>
 <b>Due</b>: Quiz1<br>
-<!--a href="materials/lecture_ppts/lec_05_S22.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-05" target="_blank">code</a><br-->
+<a href="materials/lecture_ppts/lec_05_S22.pdf" target="_blank">Link to Slides</a><br>
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-05" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_05" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_05" target="_blank">code</a><br>
 
