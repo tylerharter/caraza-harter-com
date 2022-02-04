@@ -2,3 +2,4 @@ Performance 3
 * complexity analysis
 * big O notation
 * worksheet practice
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-02_04_22-10%3A57%3A16/1_xouf0p6i">Lecture</a><br>
