@@ -6,9 +6,7 @@ No class
 
 =
 Introduction
-* Class Overview
-* Hardware
-* Software
+* Class overview
 * Resources for getting help
 <b>Read</b>: <a href="syllabus.html" target="_blank">Syllabus</a><br>
 <a href="materials/lecture_ppts/lec_01_S22.pdf" target="_blank">Link to Slides</a><br>
@@ -17,7 +15,7 @@ Introduction
 
 =
 Pseudocode
-* Flow of Execution
+* Flow of execution
 * State
 <b>Link to worksheet: </b><a href="materials/worksheets/lec-02-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/worksheets/lec-02-worksheet.docx" target="_blank">docx</a><br>
 <b>Link to worksheet solutions: </b><a href="materials/worksheet_solutions/lec-02-worksheet-solution-meena.pdf" target="_blank">Meena</a>, <a href="materials/worksheet_solutions/lec-02-worksheet-solution-kuemmel.pdf" target="_blank">Andy</a>, <a href="materials/worksheet_solutions/lec-02-worksheet-solution-nelson.pdf" target="_blank">Cole</a><br>
@@ -26,11 +24,12 @@ Pseudocode
 
 =
 Operators
-* Syntax, Parsing, print
-* Values and Types
-* Operator Precedence
-* Boolean Logic
+* Syntax, parsing, print
+* Values and types
+* Operator precedence
+* Boolean logic
 * Strings, escape charaters
+* Comments
 <b>Read</b>: Downey Ch 1<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/variables/toctree.html" target="_blank">Python for Everybody, Ch. 2</a><br>
 <a href="materials/lecture_ppts/lec_03_S22.pdf" target="_blank">Link to Slides</a><br>
@@ -42,10 +41,9 @@ Operators
 
 =
 Vars and Exprs
-* Naming Rules
+* Naming rules
 * Assignment
 * Types of errors
-* Comments
 <b>Read</b>: Downey Ch 2<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/debugging/toctree.html" target="_blank">Python for Everybody, Ch. 3</a><br>
 <b>Due</b>: P1<br>
@@ -59,10 +57,10 @@ Vars and Exprs
 Using Functions
 
 * Functions
-* input, str funcs, float funcs
-* Arguments, Return Values
-* Importing Modules
-* Math Module
+* Arguments, return values
+* input, print, type cast functions: int, float, str, bool 
+* Importing modules
+* math Module
 <b>Read</b>: Downey Ch 3 ("Function Calls" to "Composition")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.1 - 5.4 </a><br>
 <b>Due</b>: Quiz1<br>
@@ -75,14 +73,14 @@ Using Functions
 Creating Functions
 
 * Blocks
-* Positional Params
-* Keyword Params
-* Return Values
+* Positional arguments
+* Keyword arguments
+* Return values
 
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.5 - 5.8</a><br>
 
-<b>Read</b>: <a href="materials/lecture_ppts/lec-07-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
+<b>Read</b>: <a href="materials/lecture_ppts/lec-06-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
 <!--a href="materials/lecture_ppts/lec_07_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-07-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-07-worksheet.docx" target="_blank">docx</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec07-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
@@ -92,10 +90,10 @@ Creating Functions
 =
 Function Scope
 
-* Local vs. Global
-* Argument Passing
+* Local vs. global
+* Argument passing
 * Frames
-* Stack Diagrams
+* Stack diagrams
 <b>Read</b>: Downey Ch 3 ("Parameters and Arguments" to end)<br>
 <b>Due</b>: P2<br>
 <!--a href="materials/lecture_ppts/lec_08_S22.pdf" target="_blank">Link to Slides</a><br-->
@@ -107,8 +105,8 @@ Function Scope
 =
 Conditionals 1
 
-* Boolean Logic
-* if,elif,else
+* Boolean logic
+* if, elif, else
 * Blocks of code
 <b>Read</b>: Downey Ch 5 ("Floor Division and Modulus" to "Nested Conditionals" and "Keyboard Input" to end)
 and Ch 6 ("Return Values" to "Boolean Functions")<br>
