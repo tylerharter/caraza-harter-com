@@ -75,7 +75,8 @@ Creating Functions
 * Blocks
 * Positional arguments
 * Keyword arguments
-* Return values
+* default arguments
+* return
 <b>Read</b>: Downey Ch 3 ("Adding New Functions" to "Flow of Execution" and "Fruitful and Void Functions")<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/functions/toctree.html" target="_blank">Python for Everybody, 5.5 - 5.8</a><br>
 <b>Read</b>: <a href="materials/lecture_ppts/lec-06-extra.pdf" target="_blank">Creating Fruitful Functions</a><br>
