@@ -65,10 +65,13 @@ def read_days():
             meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a><br>'
         reading = os.path.join("lec", dirname, "reading.md")
         if os.path.exists(reading):
-            meta += f'\n<b>Read</b>: <a href="{github}/{reading}">Lecture Notes</a><br>'
+            meta += f'\n<b>Read</b>: <a href="{github}/{reading}">Course Notes</a><br>'
         reading = os.path.join("lec", dirname, "reading.html")
         if os.path.exists(reading):
-            meta += f'\n<b>Read</b>: <a href="{reading}">Lecture Notes</a> (<a href="{reading.replace(".html", ".ipynb")}">NB</a>)<br>'
+            meta += f'\n<b>Read</b>: <a href="{reading}">Course Notes</a> (<a href="{reading.replace(".html", ".ipynb")}">NB</a>)<br>'
+        meta = re.sub("^(https://mediaspace.wisc.edu.*)$",
+                      r'<b>Watch</b>: <a href="\g<1>">Lecture</a><br>',
+                      meta, flags=re.MULTILINE)
         days.append(meta)
     return days
 
