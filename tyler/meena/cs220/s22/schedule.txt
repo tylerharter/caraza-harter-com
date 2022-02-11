@@ -122,8 +122,8 @@ and Ch 6 ("Return Values" to "Boolean Functions")<br>
 
 =
 Conditionals 2
-* Refactoring
 * Nesting
+* Refactoring
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published//py4e-int/conditional/toctree.html" target="_blank">Python for Everybody, 4.6 - end (skip 4.7) </a><br>
 <!--a href="materials/lecture_ppts/lec_10_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec10-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
@@ -135,6 +135,7 @@ Iteration 1
 * While Loop
 * Loop Control Variable
 * Infinite Iteration
+* for i in range
 <b>Read</b>: Downey Ch 7<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.1 - 6.3</a><br>
 <b>Due</b>: P3<br>
@@ -161,14 +162,14 @@ Iteration 2
 
 =
 Iteration Practice
-* For loops
+* for loops
 * Count, min, max, filtering
 * Nested loop tracing
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.5 - end </a><br>
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_12" target="_blank">code</a><br-->
 
 =
-Exam 1 review day
+Exam 1 review in lecture
 * Regular exam: 7:30 to 9:30 pm
 * McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P4<br>
@@ -373,7 +374,7 @@ Files and Directories
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_27" target="_blank">code</a><br-->
 
 =
-Exam 2 review day
+Exam 2 review in lecture
 * Regular exam: 7:30 to 9:30 pm
 * McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P9<br>
