@@ -85,6 +85,10 @@ var reviewer = {};
           var url = ('code_review.html?project_id=' + submission.project_id +
                      '&student_email=' + submission.student_email +
                      '&submission_id=' + submission.submission_id)
+          var question = common.getUrlParameter("q")
+          if (question) {
+            url += "&q="+question
+          }
 
           $('<a>',{
             text:submission.display,

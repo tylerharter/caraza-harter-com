@@ -494,6 +494,15 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       html += '<button onclick="'+js+'">'+idx+'</button> '
     })
     $("#comment_links").html(html)
+
+    // scroll to specific question, if specified in query string
+    var spans = document.getElementsByTagName("span");
+    for (var i = 0; i < spans.length; i++) {
+      if (spans[i].textContent == "#q"+common.getUrlParameter("q")) {
+        window.scrollTo(0,spans[i].offsetTop);
+        break;
+      }
+    }    
   }
 
   code_review.getSubmission = function() {
