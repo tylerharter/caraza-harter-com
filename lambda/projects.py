@@ -209,6 +209,30 @@ def extract_project_files(submission_id, filename, payload):
                     except Exception as e:
                         code = 'could not read\n' # not everything in a zip should be readable, so this is fine
                     result['files'][filename] = code
+                elif filename.endswith('.ipynb'):
+                    nb = json.loads(str(z.read(filename), 'utf-8'))
+                    cells = nb.get('cells', [])
+                    for i,cell in enumerate(cells):
+                        exec_count = cell.get('execution_count', None)
+                        if exec_count == None:
+                            exec_count = ' '
+
+                        # we can't use ipython execution order as the ID, because some cells
+                        # might not have been run (so they won't have an execution order)
+                        # TODO: avoid repeats if multiple .ipynb files...
+                        inbox = 'in-%d' % (i + 1000)
+                        outbox = 'out-%d' % (i + 1000)
+
+                        # in cell
+                        result['files'][inbox] = ''.join(cell['source'])
+                        if result['files'][inbox] == '':
+                            result['files'][inbox] = '\n'
+                        add_file_meta(inbox, 'In [%s]'%str(exec_count), order=i, content_type='python')
+
+                        # out cell
+                        if len(cell.get('outputs', [])) > 0:
+                            result['files'][outbox] = nb_cell_output_html(cell)
+                            add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
                 else:
                     result['files'][filename] = '...not code...'
 
