@@ -5,3 +5,4 @@ OOP 3: Inheritance
 <b>Due:</b> P1<br>
 <b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p2">P2 (trees)</a><br>
 <b>Optional Reading</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-02_14_22-10%3A57%3A47/1_jb5om1x8
