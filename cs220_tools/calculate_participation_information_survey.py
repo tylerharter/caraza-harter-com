@@ -48,7 +48,7 @@ def update_participation(grade_data, survey_emails, survey_column):
     return grade_data
 
 def main():
-    if len(sys.argv) < 5:
+    if len(sys.argv) < 3:
         print("Usage: python3 {} <survey.csv> <canvas survey column ex: CS220 Student Information Survey (1350484)>".format(sys.argv[0]))
         sys.exit(0)
 
