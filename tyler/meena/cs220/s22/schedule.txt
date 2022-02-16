@@ -140,8 +140,8 @@ Iteration 1
 <b>Read</b>: Downey Ch 7<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/iterations/toctree.html" target="_blank">Python for Everybody, 6.1 - 6.3</a><br>
 <b>Due</b>: P3<br>
-<!--a href="materials/lecture_ppts/lec_11_S22.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-11" target="_blank">code</a><br-->
+<a href="materials/lecture_ppts/lec_10_S22.pdf" target="_blank">Link to Slides</a><br>
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-10" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_10" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_10" target="_blank">code</a><br>
 <!--b>Code review walkthrough: </b><a href="https://www.youtube.com/watch?v=uhvV2AzeVew" target="_blank">YouTube</a><br-->
