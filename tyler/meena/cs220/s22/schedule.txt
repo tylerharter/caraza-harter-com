@@ -142,7 +142,7 @@ Iteration 1
 <b>Due</b>: P3<br>
 <!--a href="materials/lecture_ppts/lec_11_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-11" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_10" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_10" target="_blank">code</a><br>
 <!--b>Code review walkthrough: </b><a href="https://www.youtube.com/watch?v=uhvV2AzeVew" target="_blank">YouTube</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p4" target="_blank">Lab-P4</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p4" target="_blank">P4</a><br-->
 
