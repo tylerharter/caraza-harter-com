@@ -33,7 +33,7 @@ def get_pet(idx):
 
 def get_season(idx):
     """get_season(idx) returns the favorite season of the students in row idx"""
-    return int(__students__[int(idx)]['season'])
+    return __students__[int(idx)]['season']
 
 
 def get_years(idx):
@@ -43,7 +43,7 @@ def get_years(idx):
 
 def get_pizza(idx):
     """get_pizza(idx) returns the pizza topping of the students in row idx"""
-    return int(__students__[int(idx)]['pizza'])
+    return __students__[int(idx)]['pizza']
 
 
 __init__()
