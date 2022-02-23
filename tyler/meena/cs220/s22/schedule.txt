@@ -178,7 +178,7 @@ Exam 1 review in lecture
 * Regular exam: 7:30 to 9:30 pm
 * McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P4<br>
-<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p5" target="_blank">P5</a><br-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p5" target="_blank">Lab-P5</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p5" target="_blank">P5</a><br>
 
 =
 Strings
