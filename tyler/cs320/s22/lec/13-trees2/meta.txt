@@ -1,4 +1,4 @@
 Trees 2
-* implementing sets with BSTs
-* balance, complexity
-* graph search
+* BSTs: height, for sets+dicts
+* depth-first search
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-02_23_22-10%3A58%3A37/1_d4t95a0a
