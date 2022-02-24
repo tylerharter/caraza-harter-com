@@ -1,2 +1,5 @@
 Graph Search 1
-* depth-first search
+* breadth-first search
+* stacks, queues, priority queues
+* deque (for queues)
+* heapq (for priority queues)
