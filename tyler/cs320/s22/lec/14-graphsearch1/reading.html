@@ -13975,12 +13975,12 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Dict-and-Graph-Search">Dict and Graph Search<a class="anchor-link" href="#Dict-and-Graph-Search">&#182;</a></h1><p>In this reading, we'll do two things:</p>
+<h1 id="Search-Paths">Search Paths<a class="anchor-link" href="#Search-Paths">&#182;</a></h1><p>In the last reading, we learned about how to check whether there is a path from node A to node B.</p>
+<p>In this reading, we'll do additional things:</p>
 <ol>
-<li>see how we could implement a class that works the same as dict (maps keys to values)</li>
-<li>see how we can search more general graphs (that may have cycles)</li>
+<li>return the path (a list of nodes) found instead of just True/False</li>
+<li>learn BFS, an alternative to DFS that is guaranteed to find the shortest path</li>
 </ol>
-<p>You can download the .ipynb form of this reading <a href="lec-12-dict-graph-search.ipynb">here</a>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14000,804 +14000,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Review">Review<a class="anchor-link" href="#Review">&#182;</a></h2><p>Carefully read the following code.  It's similar to the BST (binary search tree) implementation in the last reading, except that <code>add</code> and <code>contains</code> have been turned into methods in <code>Node</code> (instead of just functions).</p>
+<h2 id="Review">Review<a class="anchor-link" href="#Review">&#182;</a></h2><p>Let's revisit the graph search from the end of the last reading (only change is addition of <code>__repr__</code>):</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
-    
-    <span class="k">def</span> <span class="nf">to_graphviz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
-            
-        <span class="c1"># draw self</span>
-        <span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val</span><span class="p">))</span>
-    
-        <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">)]:</span>
-            <span class="k">if</span> <span class="n">child</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="c1"># draw child, recursively</span>
-                <span class="n">child</span><span class="o">.</span><span class="n">to_graphviz</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-                
-                <span class="c1"># draw edge from self to child</span>
-                <span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val</span><span class="p">),</span> <span class="nb">repr</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">val</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">g</span>
-    
-    <span class="k">def</span> <span class="nf">_repr_svg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_graphviz</span><span class="p">()</span><span class="o">.</span><span class="n">_repr_image_svg_xml</span><span class="p">()</span>
-    
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">:</span>
-            <span class="k">return</span>
-        <span class="k">elif</span> <span class="n">val</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-        <span class="k">elif</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">target</span>
-                
-<span class="n">tree</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">)</span>
-<span class="n">tree</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="206pt" height="305pt"
- viewBox="0.00 0.00 206.00 305.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 301)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-301 202,-301 202,4 -4,4"/>
-<!-- &#39;A&#39; -->
-<g id="node1" class="node">
-<title>&#39;A&#39;</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-279" rx="27" ry="18"/>
-<text text-anchor="middle" x="63" y="-275.3" font-family="Times,serif" font-size="14.00">&#39;A&#39;</text>
-</g>
-<!-- &#39;D&#39; -->
-<g id="node2" class="node">
-<title>&#39;D&#39;</title>
-<ellipse fill="none" stroke="black" cx="63" cy="-192" rx="27" ry="18"/>
-<text text-anchor="middle" x="63" y="-188.3" font-family="Times,serif" font-size="14.00">&#39;D&#39;</text>
-</g>
-<!-- &#39;A&#39;&#45;&gt;&#39;D&#39; -->
-<g id="edge6" class="edge">
-<title>&#39;A&#39;&#45;&gt;&#39;D&#39;</title>
-<path fill="none" stroke="black" d="M63,-260.8C63,-249.16 63,-233.55 63,-220.24"/>
-<polygon fill="black" stroke="black" points="66.5,-220.18 63,-210.18 59.5,-220.18 66.5,-220.18"/>
-<text text-anchor="middle" x="68" y="-231.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;B&#39; -->
-<g id="node3" class="node">
-<title>&#39;B&#39;</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-105" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;B&#39;</text>
-</g>
-<!-- &#39;D&#39;&#45;&gt;&#39;B&#39; -->
-<g id="edge2" class="edge">
-<title>&#39;D&#39;&#45;&gt;&#39;B&#39;</title>
-<path fill="none" stroke="black" d="M55.89,-174.21C50.78,-162.14 43.79,-145.64 37.97,-131.89"/>
-<polygon fill="black" stroke="black" points="41.1,-130.31 33.98,-122.47 34.65,-133.04 41.1,-130.31"/>
-<text text-anchor="middle" x="52.5" y="-144.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;F&#39; -->
-<g id="node5" class="node">
-<title>&#39;F&#39;</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-105" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;F&#39;</text>
-</g>
-<!-- &#39;D&#39;&#45;&gt;&#39;F&#39; -->
-<g id="edge5" class="edge">
-<title>&#39;D&#39;&#45;&gt;&#39;F&#39;</title>
-<path fill="none" stroke="black" d="M70.11,-174.21C75.22,-162.14 82.21,-145.64 88.03,-131.89"/>
-<polygon fill="black" stroke="black" points="91.35,-133.04 92.02,-122.47 84.9,-130.31 91.35,-133.04"/>
-<text text-anchor="middle" x="89" y="-144.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;C&#39; -->
-<g id="node4" class="node">
-<title>&#39;C&#39;</title>
-<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;C&#39;</text>
-</g>
-<!-- &#39;B&#39;&#45;&gt;&#39;C&#39; -->
-<g id="edge1" class="edge">
-<title>&#39;B&#39;&#45;&gt;&#39;C&#39;</title>
-<path fill="none" stroke="black" d="M27,-86.8C27,-75.16 27,-59.55 27,-46.24"/>
-<polygon fill="black" stroke="black" points="30.5,-46.18 27,-36.18 23.5,-46.18 30.5,-46.18"/>
-<text text-anchor="middle" x="32" y="-57.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;E&#39; -->
-<g id="node6" class="node">
-<title>&#39;E&#39;</title>
-<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;E&#39;</text>
-</g>
-<!-- &#39;F&#39;&#45;&gt;&#39;E&#39; -->
-<g id="edge3" class="edge">
-<title>&#39;F&#39;&#45;&gt;&#39;E&#39;</title>
-<path fill="none" stroke="black" d="M99,-86.8C99,-75.16 99,-59.55 99,-46.24"/>
-<polygon fill="black" stroke="black" points="102.5,-46.18 99,-36.18 95.5,-46.18 102.5,-46.18"/>
-<text text-anchor="middle" x="103.5" y="-57.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;G&#39; -->
-<g id="node7" class="node">
-<title>&#39;G&#39;</title>
-<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"/>
-<text text-anchor="middle" x="171" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;G&#39;</text>
-</g>
-<!-- &#39;F&#39;&#45;&gt;&#39;G&#39; -->
-<g id="edge4" class="edge">
-<title>&#39;F&#39;&#45;&gt;&#39;G&#39;</title>
-<path fill="none" stroke="black" d="M111.87,-88.8C122.93,-75.75 139.04,-56.74 151.65,-41.85"/>
-<polygon fill="black" stroke="black" points="154.45,-43.96 158.24,-34.06 149.11,-39.43 154.45,-43.96"/>
-<text text-anchor="middle" x="144" y="-57.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">),</span> <span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(True, False)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-1:-BST-based-Dictionary">Part 1: BST-based Dictionary<a class="anchor-link" href="#Part-1:-BST-based-Dictionary">&#182;</a></h2><p>The above BST (binary search tree) is basically acting like a set.  We can add values and efficiently check whether certain values have already been added.</p>
-<p>What if we want to make it act like a dict?  There are a couple things we should do:</p>
-<ol>
-<li>have both <code>key</code> and <code>val</code> attributes in <code>Node</code></li>
-<li>the sort order should be based on <code>key</code>, not <code>val</code></li>
-<li>we should implement <code>__getitem__</code> and <code>__setitem__</code></li>
-</ol>
-<p>Let's do it:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
-        
-        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
-        
-    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">to_graphviz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">g</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">g</span> <span class="o">=</span> <span class="n">Digraph</span><span class="p">()</span>
-
-        <span class="c1"># draw self</span>
-        <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">child</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">)]:</span>
-            <span class="k">if</span> <span class="n">child</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">child</span><span class="o">.</span><span class="n">to_graphviz</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-                <span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">g</span>
-    
-    <span class="k">def</span> <span class="nf">_repr_svg_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_graphviz</span><span class="p">()</span><span class="o">.</span><span class="n">_repr_image_svg_xml</span><span class="p">()</span>
-    
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">val</span>
-        <span class="k">elif</span> <span class="n">key</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">target</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">left</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">right</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
-        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">target</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">val</span>
-    
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
-
-<span class="n">tree</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">tree</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
-
-
-
-<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="219pt" height="305pt"
- viewBox="0.00 0.00 219.14 305.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 301)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-301 215.14,-301 215.14,4 -4,4"/>
-<!-- &#39;B&#39;=3 -->
-<g id="node1" class="node">
-<title>&#39;B&#39;=3</title>
-<ellipse fill="none" stroke="black" cx="29.25" cy="-105" rx="29.5" ry="18"/>
-<text text-anchor="middle" x="29.25" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;B&#39;=3</text>
-</g>
-<!-- &#39;C&#39;=6 -->
-<g id="node2" class="node">
-<title>&#39;C&#39;=6</title>
-<ellipse fill="none" stroke="black" cx="29.25" cy="-18" rx="29.5" ry="18"/>
-<text text-anchor="middle" x="29.25" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;C&#39;=6</text>
-</g>
-<!-- &#39;B&#39;=3&#45;&gt;&#39;C&#39;=6 -->
-<g id="edge1" class="edge">
-<title>&#39;B&#39;=3&#45;&gt;&#39;C&#39;=6</title>
-<path fill="none" stroke="black" d="M29.25,-86.8C29.25,-75.16 29.25,-59.55 29.25,-46.24"/>
-<polygon fill="black" stroke="black" points="32.75,-46.18 29.25,-36.18 25.75,-46.18 32.75,-46.18"/>
-<text text-anchor="middle" x="34.25" y="-57.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;D&#39;=2 -->
-<g id="node3" class="node">
-<title>&#39;D&#39;=2</title>
-<ellipse fill="none" stroke="black" cx="67.25" cy="-192" rx="29.8" ry="18"/>
-<text text-anchor="middle" x="67.25" y="-188.3" font-family="Times,serif" font-size="14.00">&#39;D&#39;=2</text>
-</g>
-<!-- &#39;D&#39;=2&#45;&gt;&#39;B&#39;=3 -->
-<g id="edge2" class="edge">
-<title>&#39;D&#39;=2&#45;&gt;&#39;B&#39;=3</title>
-<path fill="none" stroke="black" d="M59.74,-174.21C54.34,-162.14 46.97,-145.64 40.82,-131.89"/>
-<polygon fill="black" stroke="black" points="43.89,-130.17 36.61,-122.47 37.5,-133.03 43.89,-130.17"/>
-<text text-anchor="middle" x="55.75" y="-144.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;F&#39;=4 -->
-<g id="node4" class="node">
-<title>&#39;F&#39;=4</title>
-<ellipse fill="none" stroke="black" cx="105.25" cy="-105" rx="28.7" ry="18"/>
-<text text-anchor="middle" x="105.25" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;F&#39;=4</text>
-</g>
-<!-- &#39;D&#39;=2&#45;&gt;&#39;F&#39;=4 -->
-<g id="edge5" class="edge">
-<title>&#39;D&#39;=2&#45;&gt;&#39;F&#39;=4</title>
-<path fill="none" stroke="black" d="M74.75,-174.21C80.15,-162.14 87.53,-145.64 93.67,-131.89"/>
-<polygon fill="black" stroke="black" points="97,-133.03 97.88,-122.47 90.61,-130.17 97,-133.03"/>
-<text text-anchor="middle" x="94.25" y="-144.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;E&#39;=5 -->
-<g id="node5" class="node">
-<title>&#39;E&#39;=5</title>
-<ellipse fill="none" stroke="black" cx="105.25" cy="-18" rx="28.7" ry="18"/>
-<text text-anchor="middle" x="105.25" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;E&#39;=5</text>
-</g>
-<!-- &#39;F&#39;=4&#45;&gt;&#39;E&#39;=5 -->
-<g id="edge3" class="edge">
-<title>&#39;F&#39;=4&#45;&gt;&#39;E&#39;=5</title>
-<path fill="none" stroke="black" d="M105.25,-86.8C105.25,-75.16 105.25,-59.55 105.25,-46.24"/>
-<polygon fill="black" stroke="black" points="108.75,-46.18 105.25,-36.18 101.75,-46.18 108.75,-46.18"/>
-<text text-anchor="middle" x="109.75" y="-57.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;G&#39;=7 -->
-<g id="node6" class="node">
-<title>&#39;G&#39;=7</title>
-<ellipse fill="none" stroke="black" cx="181.25" cy="-18" rx="29.8" ry="18"/>
-<text text-anchor="middle" x="181.25" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;G&#39;=7</text>
-</g>
-<!-- &#39;F&#39;=4&#45;&gt;&#39;G&#39;=7 -->
-<g id="edge4" class="edge">
-<title>&#39;F&#39;=4&#45;&gt;&#39;G&#39;=7</title>
-<path fill="none" stroke="black" d="M118.83,-88.8C130.43,-75.83 147.3,-56.97 160.57,-42.12"/>
-<polygon fill="black" stroke="black" points="163.47,-44.14 167.52,-34.35 158.25,-39.47 163.47,-44.14"/>
-<text text-anchor="middle" x="152.25" y="-57.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;A&#39;=1 -->
-<g id="node7" class="node">
-<title>&#39;A&#39;=1</title>
-<ellipse fill="none" stroke="black" cx="67.25" cy="-279" rx="29.8" ry="18"/>
-<text text-anchor="middle" x="67.25" y="-275.3" font-family="Times,serif" font-size="14.00">&#39;A&#39;=1</text>
-</g>
-<!-- &#39;A&#39;=1&#45;&gt;&#39;D&#39;=2 -->
-<g id="edge6" class="edge">
-<title>&#39;A&#39;=1&#45;&gt;&#39;D&#39;=2</title>
-<path fill="none" stroke="black" d="M67.25,-260.8C67.25,-249.16 67.25,-233.55 67.25,-220.24"/>
-<polygon fill="black" stroke="black" points="70.75,-220.18 67.25,-210.18 63.75,-220.18 70.75,-220.18"/>
-<text text-anchor="middle" x="72.25" y="-231.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="s2">&quot;G&quot;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(1, 6, 7)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">777</span>
-<span class="n">tree</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">888</span>
-<span class="n">tree</span><span class="p">[</span><span class="s2">&quot;G&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
-<span class="n">tree</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111</span>
-<span class="n">tree</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-
-
-
-<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Pages: 1 -->
-<svg width="255pt" height="392pt"
- viewBox="0.00 0.00 254.69 392.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 388)">
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-388 250.69,-388 250.69,4 -4,4"/>
-<!-- &#39;B&#39;=3 -->
-<g id="node1" class="node">
-<title>&#39;B&#39;=3</title>
-<ellipse fill="none" stroke="black" cx="43.35" cy="-192" rx="29.5" ry="18"/>
-<text text-anchor="middle" x="43.35" y="-188.3" font-family="Times,serif" font-size="14.00">&#39;B&#39;=3</text>
-</g>
-<!-- &#39;C&#39;=888 -->
-<g id="node2" class="node">
-<title>&#39;C&#39;=888</title>
-<ellipse fill="none" stroke="black" cx="38.35" cy="-105" rx="38.19" ry="18"/>
-<text text-anchor="middle" x="38.35" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;C&#39;=888</text>
-</g>
-<!-- &#39;B&#39;=3&#45;&gt;&#39;C&#39;=888 -->
-<g id="edge1" class="edge">
-<title>&#39;B&#39;=3&#45;&gt;&#39;C&#39;=888</title>
-<path fill="none" stroke="black" d="M42.33,-173.8C41.65,-162.16 40.73,-146.55 39.95,-133.24"/>
-<polygon fill="black" stroke="black" points="43.44,-132.95 39.36,-123.18 36.45,-133.36 43.44,-132.95"/>
-<text text-anchor="middle" x="46.35" y="-144.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;D&#39;=2 -->
-<g id="node3" class="node">
-<title>&#39;D&#39;=2</title>
-<ellipse fill="none" stroke="black" cx="81.35" cy="-279" rx="29.8" ry="18"/>
-<text text-anchor="middle" x="81.35" y="-275.3" font-family="Times,serif" font-size="14.00">&#39;D&#39;=2</text>
-</g>
-<!-- &#39;D&#39;=2&#45;&gt;&#39;B&#39;=3 -->
-<g id="edge2" class="edge">
-<title>&#39;D&#39;=2&#45;&gt;&#39;B&#39;=3</title>
-<path fill="none" stroke="black" d="M73.84,-261.21C68.44,-249.14 61.07,-232.64 54.92,-218.89"/>
-<polygon fill="black" stroke="black" points="57.99,-217.17 50.71,-209.47 51.6,-220.03 57.99,-217.17"/>
-<text text-anchor="middle" x="69.85" y="-231.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;F&#39;=4 -->
-<g id="node4" class="node">
-<title>&#39;F&#39;=4</title>
-<ellipse fill="none" stroke="black" cx="123.35" cy="-192" rx="28.7" ry="18"/>
-<text text-anchor="middle" x="123.35" y="-188.3" font-family="Times,serif" font-size="14.00">&#39;F&#39;=4</text>
-</g>
-<!-- &#39;D&#39;=2&#45;&gt;&#39;F&#39;=4 -->
-<g id="edge6" class="edge">
-<title>&#39;D&#39;=2&#45;&gt;&#39;F&#39;=4</title>
-<path fill="none" stroke="black" d="M89.44,-261.61C95.49,-249.38 103.86,-232.44 110.77,-218.46"/>
-<polygon fill="black" stroke="black" points="113.98,-219.85 115.27,-209.34 107.71,-216.75 113.98,-219.85"/>
-<text text-anchor="middle" x="110.35" y="-231.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;E&#39;=5 -->
-<g id="node5" class="node">
-<title>&#39;E&#39;=5</title>
-<ellipse fill="none" stroke="black" cx="123.35" cy="-105" rx="28.7" ry="18"/>
-<text text-anchor="middle" x="123.35" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;E&#39;=5</text>
-</g>
-<!-- &#39;F&#39;=4&#45;&gt;&#39;E&#39;=5 -->
-<g id="edge3" class="edge">
-<title>&#39;F&#39;=4&#45;&gt;&#39;E&#39;=5</title>
-<path fill="none" stroke="black" d="M123.35,-173.8C123.35,-162.16 123.35,-146.55 123.35,-133.24"/>
-<polygon fill="black" stroke="black" points="126.85,-133.18 123.35,-123.18 119.85,-133.18 126.85,-133.18"/>
-<text text-anchor="middle" x="127.85" y="-144.8" font-family="Times,serif" font-size="14.00">L</text>
-</g>
-<!-- &#39;G&#39;=999 -->
-<g id="node6" class="node">
-<title>&#39;G&#39;=999</title>
-<ellipse fill="none" stroke="black" cx="208.35" cy="-105" rx="38.19" ry="18"/>
-<text text-anchor="middle" x="208.35" y="-101.3" font-family="Times,serif" font-size="14.00">&#39;G&#39;=999</text>
-</g>
-<!-- &#39;F&#39;=4&#45;&gt;&#39;G&#39;=999 -->
-<g id="edge5" class="edge">
-<title>&#39;F&#39;=4&#45;&gt;&#39;G&#39;=999</title>
-<path fill="none" stroke="black" d="M138.15,-176.19C151.19,-163.15 170.4,-143.95 185.43,-128.92"/>
-<polygon fill="black" stroke="black" points="188.25,-131.04 192.85,-121.5 183.3,-126.09 188.25,-131.04"/>
-<text text-anchor="middle" x="176.35" y="-144.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;H&#39;=111 -->
-<g id="node7" class="node">
-<title>&#39;H&#39;=111</title>
-<ellipse fill="none" stroke="black" cx="208.35" cy="-18" rx="38.19" ry="18"/>
-<text text-anchor="middle" x="208.35" y="-14.3" font-family="Times,serif" font-size="14.00">&#39;H&#39;=111</text>
-</g>
-<!-- &#39;G&#39;=999&#45;&gt;&#39;H&#39;=111 -->
-<g id="edge4" class="edge">
-<title>&#39;G&#39;=999&#45;&gt;&#39;H&#39;=111</title>
-<path fill="none" stroke="black" d="M208.35,-86.8C208.35,-75.16 208.35,-59.55 208.35,-46.24"/>
-<polygon fill="black" stroke="black" points="211.85,-46.18 208.35,-36.18 204.85,-46.18 211.85,-46.18"/>
-<text text-anchor="middle" x="213.35" y="-57.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-<!-- &#39;A&#39;=777 -->
-<g id="node8" class="node">
-<title>&#39;A&#39;=777</title>
-<ellipse fill="none" stroke="black" cx="81.35" cy="-366" rx="38.19" ry="18"/>
-<text text-anchor="middle" x="81.35" y="-362.3" font-family="Times,serif" font-size="14.00">&#39;A&#39;=777</text>
-</g>
-<!-- &#39;A&#39;=777&#45;&gt;&#39;D&#39;=2 -->
-<g id="edge7" class="edge">
-<title>&#39;A&#39;=777&#45;&gt;&#39;D&#39;=2</title>
-<path fill="none" stroke="black" d="M81.35,-347.8C81.35,-336.16 81.35,-320.55 81.35,-307.24"/>
-<polygon fill="black" stroke="black" points="84.85,-307.18 81.35,-297.18 77.85,-307.18 84.85,-307.18"/>
-<text text-anchor="middle" x="86.35" y="-318.8" font-family="Times,serif" font-size="14.00">R</text>
-</g>
-</g>
-</svg>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tree</span><span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="s2">&quot;G&quot;</span><span class="p">],</span> <span class="n">tree</span><span class="p">[</span><span class="s2">&quot;H&quot;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(777, 888, 999, 111)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Our BST-based dictionary may have some advantages over the regular <code>dict</code>.  Specifically, which features will be easier to add to our version?</p>
-<ol>
-<li>getting the values corresponding to all keys in some range</li>
-<li>providing a way to loop over the keys in ascending order</li>
-<li>finding the key corresponding to a specific value</li>
-</ol>
-<details>
-<summary>Answers</summary>
-(1) yes.  Substrees correspond to ranges of keys, so we can efficiently search for all keys in a range (not possible with a regular dict).<br>
-(2) yes.  We would need to write some tricky code with generators, but the data is already arranged in a sorted order.<br>
-(3) no.  The same value may appear multiple times anywhere in the tree.  There is no way to efficiently find all nodes with a given value without checking all the nodes.<br>
-</details>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Part-2:-Graph-Search">Part 2: Graph Search<a class="anchor-link" href="#Part-2:-Graph-Search">&#182;</a></h2><p>Checking whether a tree has a value is an example of a search problem.</p>
-<p>What if we want to search a more general graph for a particular value, from a particular starting node?  There are many use cases for this:</p>
-<ol>
-<li>looking for a route between two cities</li>
-<li>looking through different move choices in a game (each board state is a node; an edge represents a legal move)</li>
-<li>cycle detection, perhaps representing incoherent preferences we want to identify (do people claim to like chocolate more than vanilla, vanilla more than strawberry, and strawberry more than chocolate?)</li>
-</ol>
-<p>We can force a loop with our Node objects, complicating the search problem.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">A</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">B</span>
-<span class="n">B</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">A</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="p">[</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">]:</span>
-        <span class="k">if</span> <span class="n">child</span> <span class="o">!=</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">search</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-            <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="kc">False</span>
-
-<span class="c1"># does it work?</span>
-<span class="n">search</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>It worked there, but we're going to have a problem if we look for something we can't find.  Searching A will make us search B.  Searching B will make us search A.</p>
-<p>This will cause infinite recusion:</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">search</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">RecursionError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I warned you!&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>I warned you!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Graph-Search,-Done-Right">Graph Search, Done Right<a class="anchor-link" href="#Graph-Search,-Done-Right">&#182;</a></h3><p>To avoid getting trapped in cycles, we'll need to keep track of which nodes we have visited in our search and make sure we don't visit them more than once.</p>
-<p>Let's write a Node class for a general directed graph (each node can have any other node as a child) and a Graph class that can keep graph-wide state, like a set of nodes that have been visited during a recursive search.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">mygraph</span><span class="p">:</span>
@@ -14830,6 +14039,9 @@ a.anchor-link {
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span> <span class="o">=</span> <span class="n">graph</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;node </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
         
     <span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
@@ -14864,7 +14076,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -14935,10 +14147,13 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">),</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">),</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">),</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -14954,15 +14169,16 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>(True, False, True, False)</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>True
+False
+True
+False
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -14972,26 +14188,42 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Challenge: can you modify the find method, so that instead of returning False or True, it returns None (could not find from the starting point) or a list (indicating the path from the src to the dst)?</p>
+<h2 id="Getting-the-Path">Getting the Path<a class="anchor-link" href="#Getting-the-Path">&#182;</a></h2><p>Rather than just determine if there is a path, let's output what it is.  We'll modify the <code>find</code> method.  If there's a path, it should return it as a list (or tuple!) of nodes traversed.  If there is not a path, it should return None.</p>
+<p>The logic works like this: if the X node is a child of the W node, and we've found an <code>(X,Y,Z)</code> path, then <code>(W,X,Y,Z)</code> is also a valid path.  On line 11, we're using tuple concatenation to create a new tuple based on the one the child found, but with the parent added to the beginning.</p>
 
 </div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><p>There are many ways to search through graph structures to find specific nodes/values.  In this reading, we learned two new techniques:</p>
-<ol>
-<li>if the graph is a binary search tree, we can efficiently find what we want, without checking each node.  This is because we know an upper/lower bound on a subtree, so we can skip it if it can't contain what we want.</li>
-<li>if a graph has cycles, it's easy to write search code that results in infinite recursion.  The trick is to keep a set of visited nodes, to make sure we don't keep searching over the same ones infinitely.</li>
-</ol>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">dst</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">path</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="c1"># monkey patching lets us redefine a method in</span>
+<span class="c1"># a class, without recreating the whole class</span>
+<span class="c1"># (not a recommended practice, but means we don&#39;t</span>
+<span class="c1"># need to show the complete new version of Node)</span>
+<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_v2</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span>
 </pre></div>
 
      </div>
@@ -14999,6 +14231,1189 @@ a.anchor-link {
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="134pt" height="188pt"
+ viewBox="0.00 0.00 134.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 130,-184 130,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="71" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="71" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge1" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M92.36,-144.41C89.09,-136.22 85.06,-126.14 81.38,-116.95"/>
+<polygon fill="black" stroke="black" points="84.55,-115.45 77.59,-107.47 78.05,-118.05 84.55,-115.45"/>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="98" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="98" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge2" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M77.4,-72.41C80.51,-64.34 84.33,-54.43 87.83,-45.35"/>
+<polygon fill="black" stroke="black" points="91.13,-46.55 91.46,-35.96 84.6,-44.03 91.13,-46.55"/>
+</g>
+<!-- D&#45;&gt;B -->
+<g id="edge3" class="edge">
+<title>D&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M101.65,-36.09C103.68,-46.43 105.98,-59.91 107,-72 108.34,-87.94 108.2,-92.04 107,-108 106.36,-116.48 105.16,-125.66 103.88,-133.96"/>
+<polygon fill="black" stroke="black" points="100.42,-133.45 102.25,-143.89 107.32,-134.59 100.42,-133.45"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>None
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>(&#39;C&#39;, &#39;D&#39;, &#39;B&#39;)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Multiple-Paths">Multiple Paths<a class="anchor-link" href="#Multiple-Paths">&#182;</a></h2><p>What if there are multiple paths?  Which will we return?</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="90pt" height="332pt"
+ viewBox="0.00 0.00 90.00 332.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 86,-328 86,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-306" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-302.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- E -->
+<g id="node2" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- A&#45;&gt;E -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M23.75,-287.89C21.95,-277.54 19.91,-264.06 19,-252 13.01,-172.22 13.01,-151.78 19,-72 19.64,-63.52 20.84,-54.34 22.12,-46.04"/>
+<polygon fill="black" stroke="black" points="25.58,-46.55 23.75,-36.11 18.68,-45.41 25.58,-46.55"/>
+</g>
+<!-- B -->
+<g id="node3" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="55" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="55" y="-230.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge2" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M33.64,-288.41C36.91,-280.22 40.94,-270.14 44.62,-260.95"/>
+<polygon fill="black" stroke="black" points="47.95,-262.05 48.41,-251.47 41.45,-259.45 47.95,-262.05"/>
+</g>
+<!-- C -->
+<g id="node4" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="55" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="55" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M55,-215.7C55,-207.98 55,-198.71 55,-190.11"/>
+<polygon fill="black" stroke="black" points="58.5,-190.1 55,-180.1 51.5,-190.1 58.5,-190.1"/>
+</g>
+<!-- D -->
+<g id="node5" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="55" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="55" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge4" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M55,-143.7C55,-135.98 55,-126.71 55,-118.11"/>
+<polygon fill="black" stroke="black" points="58.5,-118.1 55,-108.1 51.5,-118.1 58.5,-118.1"/>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M48.36,-72.41C45.09,-64.22 41.06,-54.14 37.38,-44.95"/>
+<polygon fill="black" stroke="black" points="40.55,-43.45 33.59,-35.47 34.05,-46.05 40.55,-43.45"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;A&#39;, &#39;E&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Nice, it found the shortest one!  But what if we build the same graphs, but adding the edges in a different order?</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span> <span class="c1"># we used to add this first, now last</span>
+<span class="n">g</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="89pt" height="332pt"
+ viewBox="0.00 0.00 89.00 332.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 85,-328 85,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-306" rx="27" ry="18"/>
+<text text-anchor="middle" x="54" y="-302.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-230.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M47.6,-288.41C44.49,-280.34 40.67,-270.43 37.17,-261.35"/>
+<polygon fill="black" stroke="black" points="40.4,-260.03 33.54,-251.96 33.87,-262.55 40.4,-260.03"/>
+</g>
+<!-- E -->
+<g id="node3" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="54" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="54" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- A&#45;&gt;E -->
+<g id="edge2" class="edge">
+<title>A&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M57.65,-287.91C59.68,-277.57 61.98,-264.09 63,-252 69.72,-172.28 69.72,-151.72 63,-72 62.28,-63.5 60.93,-54.31 59.49,-46.01"/>
+<polygon fill="black" stroke="black" points="62.91,-45.29 57.65,-36.09 56.03,-46.56 62.91,-45.29"/>
+</g>
+<!-- C -->
+<g id="node4" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge3" class="edge">
+<title>B&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M27,-215.7C27,-207.98 27,-198.71 27,-190.11"/>
+<polygon fill="black" stroke="black" points="30.5,-190.1 27,-180.1 23.5,-190.1 30.5,-190.1"/>
+</g>
+<!-- D -->
+<g id="node5" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge4" class="edge">
+<title>C&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M27,-143.7C27,-135.98 27,-126.71 27,-118.11"/>
+<polygon fill="black" stroke="black" points="30.5,-118.1 27,-108.1 23.5,-118.1 30.5,-118.1"/>
+</g>
+<!-- D&#45;&gt;E -->
+<g id="edge5" class="edge">
+<title>D&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M33.4,-72.41C36.51,-64.34 40.33,-54.43 43.83,-45.35"/>
+<polygon fill="black" stroke="black" points="47.13,-46.55 47.46,-35.96 40.6,-44.03 47.13,-46.55"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;E&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Yuck!  If Google Maps gave me these directions for getting from city A to E, then I might just switch to Apple Maps.</p>
+<p>The search pattern we're using is known as "depth first search", or DFS.  It explores one child completely (including all that child's descendents) before checking if the other children know a path.</p>
+<p>The alternative to DFS is BFS, or "breadth first search".  This algorithm will explore all children before exploring grandchildren, before exploring great grandchildren, etc.</p>
+<p>The algorithm for BFS is not recursive, but many find it less intuitive that recursive DFS.  The strategy is to keep a "TODO" list of all nodes that need to be visited.  The list is used as a <em>queue</em>, meaning the first nodes added to the list will be the first ones visited.  When a child is explored, we generally discover grandchildren, but rather than explore those grandchildren immediately (as in DFS), we add those grandchildren to the end of the TODO queue, to be processed eventually after the other children.</p>
+<p>Let's try it:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_bfs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="c1"># the first node to explore is the starting point</span>
+    <span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+
+    <span class="c1"># keep looping while there are unexplored nodes</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TODO:&quot;</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pop from beginning</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VISITING:&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">curr</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="c1"># add to end</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># nothing left to check, and we haven&#39;t already returned True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_bfs</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="278pt" height="188pt"
+ viewBox="0.00 0.00 278.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 274,-184 274,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="135" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M126.65,-144.76C122.29,-136.28 116.85,-125.71 111.96,-116.2"/>
+<polygon fill="black" stroke="black" points="114.99,-114.44 107.3,-107.15 108.77,-117.64 114.99,-114.44"/>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>A&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M143.35,-144.76C147.71,-136.28 153.15,-125.71 158.04,-116.2"/>
+<polygon fill="black" stroke="black" points="161.23,-117.64 162.7,-107.15 155.01,-114.44 161.23,-117.64"/>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C74.25,-64.94 60.48,-51.55 48.97,-40.36"/>
+<polygon fill="black" stroke="black" points="51.41,-37.85 41.8,-33.38 46.53,-42.87 51.41,-37.85"/>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- B&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>B&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-63.98 99,-54.71 99,-46.11"/>
+<polygon fill="black" stroke="black" points="102.5,-46.1 99,-36.1 95.5,-46.1 102.5,-46.1"/>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-14.3" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>C&#45;&gt;F</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-63.98 171,-54.71 171,-46.11"/>
+<polygon fill="black" stroke="black" points="174.5,-46.1 171,-36.1 167.5,-46.1 174.5,-46.1"/>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-14.3" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C&#45;&gt;G</title>
+<path fill="none" stroke="black" d="M185.57,-74.83C195.75,-64.94 209.52,-51.55 221.03,-40.36"/>
+<polygon fill="black" stroke="black" points="223.47,-42.87 228.2,-33.38 218.59,-37.85 223.47,-42.87"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>TODO: [node A]
+VISITING: node A
+TODO: [node B, node C]
+VISITING: node B
+TODO: [node C, node D, node E]
+VISITING: node C
+TODO: [node D, node E, node F, node G]
+VISITING: node D
+TODO: [node E, node F, node G]
+VISITING: node E
+TODO: [node F, node G]
+VISITING: node F
+TODO: [node G]
+VISITING: node G
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Cool!  We're searching one level at a time.  But did you notice we lost some functionality?  We aren't keeping track of how we got to the final node.  There are often multiple ways to reach a node, so we should add a <code>back</code> attribute to backtrack how we got there.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">while</span> <span class="n">node</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">back</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">find_bfs_v2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dst</span><span class="p">):</span>
+    <span class="c1"># the first node to explore is the starting point</span>
+    <span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="p">]</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+    <span class="c1"># keep looping while there are unexplored nodes</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TODO:&quot;</span><span class="p">,</span> <span class="n">todo</span><span class="p">)</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">todo</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># pop from beginning</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VISITING:&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">curr</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">dst</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">backtrace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">curr</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">curr</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">child</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="p">:</span>
+                    <span class="n">todo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+                    <span class="c1"># remember we found child via curr</span>
+                    <span class="c1"># (will help us backtrack later!)</span>
+                    <span class="n">child</span><span class="o">.</span><span class="n">back</span> <span class="o">=</span> <span class="n">curr</span>
+    
+    <span class="c1"># nothing left to check, and we haven&#39;t already returned True</span>
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="n">Node</span><span class="o">.</span><span class="n">find</span> <span class="o">=</span> <span class="n">find_bfs_v2</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">mygraph</span><span class="p">()</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="278pt" height="188pt"
+ viewBox="0.00 0.00 278.00 188.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 274,-184 274,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="135" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="135" y="-158.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M126.65,-144.76C122.29,-136.28 116.85,-125.71 111.96,-116.2"/>
+<polygon fill="black" stroke="black" points="114.99,-114.44 107.3,-107.15 108.77,-117.64 114.99,-114.44"/>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>A&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M143.35,-144.76C147.71,-136.28 153.15,-125.71 158.04,-116.2"/>
+<polygon fill="black" stroke="black" points="161.23,-117.64 162.7,-107.15 155.01,-114.44 161.23,-117.64"/>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-14.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M84.43,-74.83C74.25,-64.94 60.48,-51.55 48.97,-40.36"/>
+<polygon fill="black" stroke="black" points="51.41,-37.85 41.8,-33.38 46.53,-42.87 51.41,-37.85"/>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-14.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- B&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>B&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M99,-71.7C99,-63.98 99,-54.71 99,-46.11"/>
+<polygon fill="black" stroke="black" points="102.5,-46.1 99,-36.1 95.5,-46.1 102.5,-46.1"/>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-14.3" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>C&#45;&gt;F</title>
+<path fill="none" stroke="black" d="M171,-71.7C171,-63.98 171,-54.71 171,-46.11"/>
+<polygon fill="black" stroke="black" points="174.5,-46.1 171,-36.1 167.5,-46.1 174.5,-46.1"/>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-14.3" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge6" class="edge">
+<title>C&#45;&gt;G</title>
+<path fill="none" stroke="black" d="M185.57,-74.83C195.75,-64.94 209.52,-51.55 221.03,-40.36"/>
+<polygon fill="black" stroke="black" points="223.47,-42.87 228.2,-33.38 218.59,-37.85 223.47,-42.87"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>TODO: [node A]
+VISITING: node A
+TODO: [node B, node C]
+VISITING: node B
+TODO: [node C, node D, node E]
+VISITING: node C
+TODO: [node D, node E, node F, node G]
+VISITING: node D
+TODO: [node E, node F, node G]
+VISITING: node E
+TODO: [node F, node G]
+VISITING: node F
+TODO: [node G]
+VISITING: node G
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(node A, node C, node G)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's make a tougher test case, with the following:</p>
+<ol>
+<li>cycles</li>
+<li>short and long paths to the same target</li>
+</ol>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">edge</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">g</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+
+
+
+<div class="jp-RenderedSVG jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="image/svg+xml">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.44.1 (20200629.0846)
+ -->
+<!-- Pages: 1 -->
+<svg width="293pt" height="260pt"
+ viewBox="0.00 0.00 292.61 260.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-256 288.61,-256 288.61,4 -4,4"/>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-234" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-230.3" font-family="Times,serif" font-size="14.00">A</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-158.3" font-family="Times,serif" font-size="14.00">B</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A&#45;&gt;B</title>
+<path fill="none" stroke="black" d="M93.16,-216.41C92.3,-208.51 92.05,-198.85 92.41,-189.94"/>
+<polygon fill="black" stroke="black" points="95.9,-190.18 93.12,-179.96 88.92,-189.68 95.9,-190.18"/>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<ellipse fill="none" stroke="black" cx="207" cy="-162" rx="27" ry="18"/>
+<text text-anchor="middle" x="207" y="-158.3" font-family="Times,serif" font-size="14.00">C</text>
+</g>
+<!-- A&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>A&#45;&gt;C</title>
+<path fill="none" stroke="black" d="M117.81,-220.81C135,-209.67 160.62,-193.06 179.99,-180.5"/>
+<polygon fill="black" stroke="black" points="181.92,-183.43 188.4,-175.05 178.11,-177.56 181.92,-183.43"/>
+</g>
+<!-- B&#45;&gt;A -->
+<g id="edge5" class="edge">
+<title>B&#45;&gt;A</title>
+<path fill="none" stroke="black" d="M104.88,-179.96C105.71,-187.83 105.95,-197.37 105.58,-206.19"/>
+<polygon fill="black" stroke="black" points="102.07,-206.18 104.84,-216.41 109.06,-206.69 102.07,-206.18"/>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<ellipse fill="none" stroke="black" cx="27" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="27" y="-86.3" font-family="Times,serif" font-size="14.00">D</text>
+</g>
+<!-- B&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>B&#45;&gt;D</title>
+<path fill="none" stroke="black" d="M84.43,-146.83C74.25,-136.94 60.48,-123.55 48.97,-112.36"/>
+<polygon fill="black" stroke="black" points="51.41,-109.85 41.8,-105.38 46.53,-114.87 51.41,-109.85"/>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<ellipse fill="none" stroke="black" cx="99" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="99" y="-86.3" font-family="Times,serif" font-size="14.00">E</text>
+</g>
+<!-- B&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>B&#45;&gt;E</title>
+<path fill="none" stroke="black" d="M99,-143.7C99,-135.98 99,-126.71 99,-118.11"/>
+<polygon fill="black" stroke="black" points="102.5,-118.1 99,-108.1 95.5,-118.1 102.5,-118.1"/>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<ellipse fill="none" stroke="black" cx="171" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="171" y="-86.3" font-family="Times,serif" font-size="14.00">F</text>
+</g>
+<!-- C&#45;&gt;F -->
+<g id="edge6" class="edge">
+<title>C&#45;&gt;F</title>
+<path fill="none" stroke="black" d="M198.65,-144.76C194.29,-136.28 188.85,-125.71 183.96,-116.2"/>
+<polygon fill="black" stroke="black" points="186.99,-114.44 179.3,-107.15 180.77,-117.64 186.99,-114.44"/>
+</g>
+<!-- G -->
+<g id="node7" class="node">
+<title>G</title>
+<ellipse fill="none" stroke="black" cx="243" cy="-90" rx="27" ry="18"/>
+<text text-anchor="middle" x="243" y="-86.3" font-family="Times,serif" font-size="14.00">G</text>
+</g>
+<!-- C&#45;&gt;G -->
+<g id="edge7" class="edge">
+<title>C&#45;&gt;G</title>
+<path fill="none" stroke="black" d="M215.35,-144.76C219.71,-136.28 225.15,-125.71 230.04,-116.2"/>
+<polygon fill="black" stroke="black" points="233.23,-117.64 234.7,-107.15 227.01,-114.44 233.23,-117.64"/>
+</g>
+<!-- Z -->
+<g id="node8" class="node">
+<title>Z</title>
+<ellipse fill="none" stroke="black" cx="198" cy="-18" rx="27" ry="18"/>
+<text text-anchor="middle" x="198" y="-14.3" font-family="Times,serif" font-size="14.00">Z</text>
+</g>
+<!-- C&#45;&gt;Z -->
+<g id="edge8" class="edge">
+<title>C&#45;&gt;Z</title>
+<path fill="none" stroke="black" d="M229.1,-151.61C246.19,-143.01 268.63,-128.5 279,-108 286.22,-93.72 286.61,-86.07 279,-72 268.82,-53.17 248.71,-39.95 231.07,-31.43"/>
+<polygon fill="black" stroke="black" points="232.17,-28.08 221.61,-27.17 229.29,-34.46 232.17,-28.08"/>
+</g>
+<!-- E&#45;&gt;Z -->
+<g id="edge9" class="edge">
+<title>E&#45;&gt;Z</title>
+<path fill="none" stroke="black" d="M117.16,-76.16C132.37,-65.41 154.29,-49.91 171.47,-37.76"/>
+<polygon fill="black" stroke="black" points="173.81,-40.39 179.96,-31.76 169.77,-34.67 173.81,-40.39"/>
+</g>
+</g>
+</svg>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now there are two A-to-Z paths:</p>
+<ul>
+<li>A,B,E,Z</li>
+<li>A,C,Z</li>
+</ul>
+<p>We ought to find the second one!</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>TODO: [node A]
+VISITING: node A
+TODO: [node B, node C]
+VISITING: node B
+TODO: [node C, node D, node E]
+VISITING: node C
+TODO: [node D, node E, node F, node G, node Z]
+VISITING: node D
+TODO: [node E, node F, node G, node Z]
+VISITING: node E
+TODO: [node F, node G, node Z]
+VISITING: node F
+TODO: [node G, node Z]
+VISITING: node G
+TODO: [node Z]
+VISITING: node Z
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(node A, node C, node Z)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Just what we wanted.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We have lots of experience using data structures like lists and dicts to keep track of data.  But data structures can also be used to keep track work that a program needs to do.  This strategy is used by BFS and many other systems.</p>
+<p>Although more complicated to implement, BFS guarantees the shortest path will be found (in contrast to DFS).  Of course, significant memory might be required to maintain the queue of nodes to visit if the graph is large.  Depending on the shape of the graph, this memory expense may be greater or less than the memory needed for the stack frames necessarly during a recursive depth-first search.</p>
+
+</div>
 </div>
 </body>
 
