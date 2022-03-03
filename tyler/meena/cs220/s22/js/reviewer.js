@@ -61,11 +61,13 @@ var reviewer = {};
         if (submissions[i].tested) {
           submissions[i].display += ' | tested'
         }
+	console.log("Testing output display:")
+	console.log(submissions[i].has_review) 
+
         if (submissions[i].has_review) {
           submissions[i].display += ' | REVIEWED'
           submissions[i].display.replace('NOT REVIEWED','REVIEWED')
-        }
-	else {
+        } else {
           submissions[i].display += ' | NOT REVIEWED'
 	}
         categories[category].push(submission)
