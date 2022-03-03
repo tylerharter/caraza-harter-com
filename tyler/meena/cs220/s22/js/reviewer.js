@@ -63,7 +63,11 @@ var reviewer = {};
         }
         if (submissions[i].has_review) {
           submissions[i].display += ' | REVIEWED'
+          submissions[i].display.replace('NOT REVIEWED','REVIEWED')
         }
+	else {
+          submissions[i].display += ' | NOT REVIEWED'
+	}
         categories[category].push(submission)
       }
 
