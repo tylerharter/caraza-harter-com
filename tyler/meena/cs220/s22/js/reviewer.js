@@ -61,6 +61,8 @@ var reviewer = {};
         if (submissions[i].tested) {
           submissions[i].display += ' | tested | NOT REVIEWED'
         }
+	console.log("Testing display output:")
+	console.log(submission.submission_id)
 
         if (submissions[i].has_review) {
 	  //submissions[i].display += ' | REVIEWED'
