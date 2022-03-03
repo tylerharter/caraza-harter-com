@@ -1,0 +1,8 @@
+restaurant_id,name,x_coord,y_coord
+MCD_1,McDonalds,-3,-3
+EIN_1,Einsteins Bagels,1,3
+STA_1,Starbucks,0,1
+MCD_2,McDonalds,2,0
+GRE_1,Greenbush Donuts,0,-3
+STA_2,Starbucks,-2,1
+PAN_1,Panda Express,,
