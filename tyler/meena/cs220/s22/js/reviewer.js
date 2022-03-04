@@ -68,7 +68,7 @@ var reviewer = {};
 
         if (submissions[i].has_review) {
 	  //submissions[i].display += ' | REVIEWED'
-          submissions[i].display.replace('NOT REVIEWED','REVIEWED')
+          submissions[i].display = submissions[i].display.replace('NOT REVIEWED','REVIEWED')
         }
 	console.log("Testing display output after replace:")
 	console.log(submissions[i].display)
