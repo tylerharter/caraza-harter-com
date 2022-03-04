@@ -72,6 +72,7 @@ var reviewer = {};
         }
 	console.log("Testing display output after replace:")
 	console.log(submissions[i].display)
+	console.log(typeof submissions[i].display)
         categories[category].push(submission)
       }
 
