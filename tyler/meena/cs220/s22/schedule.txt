@@ -295,11 +295,10 @@ No class
 * Spring break 
 
 =
-Objects
-* tuples and namedtuple
+Objects & Tuples
+* tuple and namedtuple
 * Mutability
 * References
-* Python Tutor
 <b>Read</b>: Downey Ch 10 ("Objects and Values" and "Aliasing") and Ch 12<br>
 <b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/tuples/toctree.html" target="_blank">Python for Everybody, Ch. 11</a><br>
 <!--a href="materials/lecture_ppts/lec_21_S22.pdf" target="_blank">Link to Slides</a><br-->
