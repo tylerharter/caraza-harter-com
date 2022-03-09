@@ -263,7 +263,7 @@ Dictionaries 2
 * dict of dicts
 <b>Read</b>: Downey Ch 11 ("Dictionaries and Lists" and "Global Variables" to end)<br>
 <b>Due</b>: P6<br>
-<a href="materials/lecture_ppts/lec_17_S22.pdf" target="_blank">Link to Slides</a><br>
+<a href="materials/lecture_ppts/lec_18_S22.pdf" target="_blank">Link to Slides</a><br>
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec19-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-19" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_18" target="_blank">code</a><br>
