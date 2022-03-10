@@ -1,5 +1,5 @@
 Web 4: More Flask
-* query strings
-* rate limiting (HTTP 429)
 * robots.txt
+* query strings
+* decorators
 <b>Due:</b> P3<br>
