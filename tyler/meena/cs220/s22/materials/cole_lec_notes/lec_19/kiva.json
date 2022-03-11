@@ -1,0 +1,75 @@
+{
+  "data": {
+    "lend": {
+      "loans": {
+        "values": [
+          {
+            "name": "Polikseni",
+            "description": "Polikseni is 70 years old and married. She and her husband are both retired and their main income is a retirement pension of $106 a month for Polikseni and disability income for her husband of $289 a month. <br /><br />Polikseni's husband, even though disabled, works in a very small shop as a watchmaker on short hours, just to provide additional income for his family and to feel useful. Polikseni's husband needs constant medical treatment due to his health problems. She requested another loan, which she will use to continue paying for the therapy her husband needs. With a part of the loan, she is going to pay the remainder of the previous loan.",
+            "loanAmount": "1325.00",
+            "geocode": {
+              "city": "Korce",
+              "country": {
+                "name": "Albania",
+                "region": "Eastern Europe",
+                "fundsLentInCountry": 9051250
+              }
+            }
+          },
+          {
+            "name": "Safarmo",
+            "description": "Safarmo is 47 years old. She lives with her husband and her children in Khuroson district. <br /><br />Safarmo is a seamstress. She has been engaged in sewing for 10 years. She learned this activity with help of her mother and elder sister. <br /><br />Safarmo's sewing machine is old and she cannot work well. Her difficulty is lack of money. That’s why she applied for a loan to buy a new modern sewing machine. <br /><br />Safarmo needs your support.",
+            "loanAmount": "1075.00",
+            "geocode": {
+              "city": "Khuroson",
+              "country": {
+                "name": "Tajikistan",
+                "region": "Asia",
+                "fundsLentInCountry": 64243075
+              }
+            }
+          },
+          {
+            "name": "Elizabeth",
+            "description": "Elizabeth is a mom blessed with five lovely children, who are her greatest motivation in life.  She lives in the Natuu area of Kenya.  Elizabeth is one of the most hardworking women in sub-Saharan Africa.  Being a mother and living in a poor country has never been an excuse for Elizabeth, who has practiced mixed farming for the past few years.<br /><br />The cultural expectations in her area contribute to the notion that men should support their families.  However, Elizabeth works independently for the success of her children.  She perseveres because she wants to provide a better future for them.<br /><br />Elizabeth  has always loved farming. She is a very proud farmer and enjoys milking her dairy cows.  Elizabeth keeps poultry and grows crops, but she has not been making a good profit because of poor farming inputs. <br /><br />Elizabeth will use this loan to buy farm inputs and purchase high-quality seeds and good fertilizer to improve her crop production.  Modern farming requires the use of modern techniques, and, therefore, using high-quality seeds will assure her of a bumper harvest and increased profit levels.<br /><br />Elizabeth  is very visionary.  Her goal for the season is to boost her crop production over the previous year.",
+            "loanAmount": "800.00",
+            "geocode": {
+              "city": "Matuu",
+              "country": {
+                "name": "Kenya",
+                "region": "Africa",
+                "fundsLentInCountry": 120841775
+              }
+            }
+          },
+          {
+            "name": "Ester",
+            "description": "Ester believes that this year is her year of prosperity. Ester is a hardworking, progressive and honest farmer from a very remote village in the Kitale area of Kenya. This area is very fertile, with favorable weather patterns that support farming activities. Ester is happily married and the proud mother of lovely children. Together, they live on a small piece of land that she really treasures. Her primary sources of income are eggs and milk.<br /><br />Although this humble and industrious mother makes a profit, she faces the challenge of not being able to produce enough to meet the readily available market. Therefore, she is seeking funds from Kiva lenders to buy farm inputs such as good fertilizer and good-quality seeds. Through this loan, Ester should double her production, and this will translate into increased income. She then intends to save more money in the future so that she can develop her farming.<br /><br />One objective that Juhudi Kilimo aims at fulfilling is increasing the ease of accessing farm inputs and income-generating assets for farmers. Through the intervention of Juhudi Kilimo and Kiva, inputs such as fertilizers and pesticides have become more accessible to its members than buying a bottle of water. Ester is very optimistic and believes this loan will change her life completely.",
+            "loanAmount": "275.00",
+            "geocode": {
+              "city": "Kitale",
+              "country": {
+                "name": "Kenya",
+                "region": "Africa",
+                "fundsLentInCountry": 120841775
+              }
+            }
+          },
+          {
+            "name": "Cherifa",
+            "description": "Cherifa is married, 57 years old with two children. She caters and also sells the local drink. She asks for credit to buy the necessities, in particular bags of anchovies, bags of maize and bundles of firewood. She wants to have enough income to run the house well.",
+            "loanAmount": "875.00",
+            "geocode": {
+              "city": "Agoe",
+              "country": {
+                "name": "Togo",
+                "region": "Africa",
+                "fundsLentInCountry": 13719125
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
