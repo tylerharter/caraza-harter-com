@@ -280,7 +280,7 @@ JSON
 <!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-20-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-20-worksheet.docx" target="_blank">docx</a>, <a href="https://youtu.be/cNFJfF9J5xc?list=PLXeQ4WrA7asvcMAx9387BXbNrogdN7Sx-">problem 3 solution video</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-20" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_19" target="_blank">code</a><br>
-
+<b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_19" target="_blank">code</a><br>
 
 =
 No class
