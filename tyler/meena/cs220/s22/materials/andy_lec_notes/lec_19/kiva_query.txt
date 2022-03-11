@@ -1,0 +1,21 @@
+# Welcome to Kiva's GraphQL API!
+# Here's an example query to get you started
+{
+  lend {
+    loans (filters: {status: fundraising}, limit: 5) {
+      values {
+        name
+        description
+        loanAmount
+        geocode {
+          city
+          country {
+            name
+            region
+            fundsLentInCountry
+          }
+        }
+      }
+    }
+  }
+}
