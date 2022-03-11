@@ -276,8 +276,8 @@ JSON
 * Python/JSON dfferences
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter16/" target="_blank">Sweigart Ch 16</a><br>
 <b>Due</b>: Quiz5<br>
-<!--a href="materials/lecture_ppts/lec_20_S22.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-20-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-20-worksheet.docx" target="_blank">docx</a>, <a href="https://youtu.be/cNFJfF9J5xc?list=PLXeQ4WrA7asvcMAx9387BXbNrogdN7Sx-">problem 3 solution video</a><br-->
+<a href="materials/lecture_ppts/lec_19_S22.pdf" target="_blank">Link to Slides</a><br>
+<b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-19-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/lec-19-worksheet.docx" target="_blank">docx</a>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-20" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_19" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_19" target="_blank">code</a><br>
