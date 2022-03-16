@@ -3,3 +3,4 @@ Web 4: More Flask
 * query strings
 * decorators
 <b>Due:</b> P3<br>
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-03_11_22-10%3A57%3A00/1_hjxl5uh2
