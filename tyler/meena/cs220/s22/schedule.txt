@@ -248,7 +248,7 @@ Dictionaries 1
 * Insert
 * Pop
 <b>Read</b>: Downey Ch 11 ("A Dictionary is a Mapping" through "Looping and Dictionaries")<br>
-<b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/dictionaries/toctree.html" target="_blank">Python for Everybody, Ch. 10</a><br>
+<b>Read</b>: <a href="https://runestone.academy/ns/books/published/py4e-int/dictionaries/toctree.html" target="_blank">Python for Everybody, 10.1 - 10.7 </a><br>
 <a href="materials/lecture_ppts/lec_17_S22.pdf" target="_blank">Link to Slides</a><br>
 <a href="materials/lec-17.html" target="_blank">Interactive Exercises</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-17" target="_blank">code</a><br>
@@ -305,7 +305,7 @@ Objects & Tuples
 <!--a href="materials/lecture_ppts/lec_21_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec21-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-21" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_20" target="_blank">code</a><br-->
+<>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_20" target="_blank">code</a><br-->
 
 =
 Copying
