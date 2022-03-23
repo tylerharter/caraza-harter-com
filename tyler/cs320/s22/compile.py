@@ -25,7 +25,7 @@ def template():
             with open(new, 'w') as f:
                 f.write(full)
 
-def format_day(day):
+def format_day(day, num):
     lines = [re.sub("#.*", "\n", line) for line in day.split('\n')]
     out = []
     for i,line in enumerate(lines):
@@ -37,16 +37,19 @@ def format_day(day):
                 out.append('</ul>')
         else:
             out.append(line)
+    out[0] = f'<span id="lec-{num}-title">{out[0]}</span>'
     return '\n'.join(out)
 
 def read_days():
     days = []
     for dirname in sorted(os.listdir("lec")):
-        if not re.match(r"\d\d\-", dirname):
+        m = re.match(r"(\d\d)\-", dirname)
+        if not m:
             continue
+        num = m.group(1)
         meta = os.path.join("lec", dirname, "meta.txt")
         with open(meta) as f:
-            meta = format_day(f.read())
+            meta = format_day(f.read(), num)
         meta = meta.replace("SLIDES\n", "")
 
         outline = os.path.join("lec", dirname, "README.md")
