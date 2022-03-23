@@ -315,11 +315,12 @@ Copying
 * Deep Copy
 <b>Read</b>: <a href="https://automatetheboringstuff.com/2e/chapter4/">Sweigart Ch 4</a> ("References" through the end)<br>
 <b>Due</b>: P7<br>
-<!--a href="materials/lecture_ppts/lec_22_S22.pdf" target="_blank">Link to Slides</a><br-->
-<!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-22-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-22-worksheet.docx" target="_blank">docx</a><br-->
-<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
+<a href="materials/lecture_ppts/lec_21_S22.pdf" target="_blank">Link to Slides</a><br>
+<b>Link to worksheet: </b><a href="materials/worksheets/lec-21-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/worksheets/lec-21-worksheet.docx" target="_blank">docx</a><br>
+<a href="materials/lec-21.html" target="_blank">Interactive Exercises</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p8" target="_blank">Lab-P8</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p8" target="_blank">P8</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_21" target="_blank">code</a><br-->
+<!--a href="http://pytutor.ddns.net/cs220-spring21/worksheets/html/Lec22-InteractiveExercises.html" target="_blank">Interactive Exercises</a><br-->
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_21" target="_blank">code</a><br>
 
 =
