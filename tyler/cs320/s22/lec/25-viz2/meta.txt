@@ -4,3 +4,6 @@ Visualization 2
 * high resolution graphics
 <b>Due:</b> P4<br>
 <b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p5">P5 (trace analysis)</a><br>
+<b>Watch:</b> <a href="https://mediaspace.wisc.edu/media/part1-more-patches/1_fyth8gd7">Lecture (Part 1)</a><br>
+<b>Watch:</b> <a href="https://mediaspace.wisc.edu/media/part2-geopandas/1_ll865fqw">Lecture (Part 2)</a><br>
+<b>Watch:</b> <a href="https://mediaspace.wisc.edu/media/part3-crs/1_cdmgsl59">Lecture (Part 3)</a><br>
