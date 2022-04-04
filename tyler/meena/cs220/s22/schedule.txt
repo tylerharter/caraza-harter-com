@@ -387,7 +387,7 @@ Files and Directories
 <b>Read</b>: Downey Ch 14<br>
 <!--a href="materials/lecture_ppts/lec_27_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-27" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_26" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_26" target="_blank">code</a><br>
 
 =
 Exam 2 review in lecture
