@@ -1,3 +1,5 @@
 Visualization 3
-* shapely
+* shapefiles, GeoJSON
+* DPI (dots per inch)
 * animations
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_04_22-10%3A57%3A27/1_njfoczmq
