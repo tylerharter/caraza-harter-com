@@ -358,7 +358,7 @@ Comprehensions
 <b>Read</b>: Downey Ch 19.2, 12.3<br>
 <b>Due</b>: P8<br>
 <b>Link to worksheet: </b><a href="materials/worksheets/lec-24-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/worksheets/lec-24-worksheet.docx" target="_blank">docx</a><br>
-<b>Link to worksheet answers: </b><a href="materials/lecture_ppts/lec_24_worksheet_solution.pdf" target="_blank">pdf</a><br>
+<b>Link to worksheet answers: </b><a href="materials/worksheet_solutions/lec-24-worksheet-solution.pdf" target="_blank">pdf</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-24" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_24" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_24" target="_blank">code</a><br>
