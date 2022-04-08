@@ -404,8 +404,7 @@ Pandas 1 (DS topic)
 * mean, median, mode, quantiles
 <b>Required Reading</b>: Pandas Intro Notebook (<a href="materials/readings/pandas-intro.html">HTML</a> or <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">pandas-intro.ipynb</a>)<br>
 <b>No slides</b><br>
-<!--b>Link to worksheet (notebook)</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/pandas_1_worksheet.ipynb" target="_blank">code</a><br-->
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-29" target="_blank">code</a><br-->
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-27" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_27" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_27" target="_blank">code</a><br>
 
