@@ -358,7 +358,7 @@ Comprehensions
 <b>Read</b>: Downey Ch 19.2, 12.3<br>
 <b>Due</b>: P8<br>
 <b>Link to worksheet: </b><a href="materials/worksheets/lec-24-worksheet.pdf" target="_blank">pdf</a>, <a href="materials/worksheets/lec-24-worksheet.docx" target="_blank">docx</a><br>
-<b>Link to worksheet answers: </b><a href="materials/lecture_ppts/lec_24_worksheet_solution.pdf" target="_blank">pdf</a><br>
+<b>Link to worksheet answers: </b><a href="materials/worksheet_solutions/lec-24-worksheet-solution.pdf" target="_blank">pdf</a><br>
 <b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-24" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_24" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_24" target="_blank">code</a><br>
@@ -395,7 +395,7 @@ Exam 2 review in lecture
 * Regular exam: 7:30 to 9:30 pm
 * McBurney exam: 5:30 to 9:30 pm
 <b>Due</b>: P9<br>
-<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, P10 will be released by 3:30 pm today><!--a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p10" target="_blank">P10</a><br-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p10" target="_blank">Lab-P10</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p10" target="_blank">P10</a><br>
 
 =
 Pandas 1 (DS topic)
@@ -406,7 +406,8 @@ Pandas 1 (DS topic)
 <b>No slides</b><br>
 <!--b>Link to worksheet (notebook)</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/pandas_1_worksheet.ipynb" target="_blank">code</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-29" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_27" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_27" target="_blank">code</a><br>
+<b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_27" target="_blank">code</a><br>
 
 ################################################################################
 # PART 3
