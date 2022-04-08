@@ -1,0 +1,721 @@
+Lecture,Age,Primary major,Other majors,Zip Code,Pizza topping,Pet owner,Runner,Sleep habit,Procrastinator
+LEC002,19,Engineering: Mechanical,,53711,pepperoni,Yes,No,night owl,Maybe
+LEC002,20,Science: Physics,"Astronomy-Physics, History",53726,pineapple,Yes,Yes,night owl,Yes
+LEC001,20,Science: Chemistry,,53703,pepperoni,Yes,No,early bird,No
+LEC004,19,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,night owl,No
+LEC004,20,Other,Economics ,53715,mushroom,Yes,Yes,no preference,Maybe
+LEC003,18,Statistics,,53706,Other,Yes,No,night owl,Yes
+LEC003,18,Mathematics/AMEP,,53706,sausage,No,No,night owl,No
+LEC004,18,Engineering: Biomedical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC003,19,Data Science,Stats,53715,pineapple,Yes,No,no preference,No
+LEC003,19,Business: Finance,,53703,sausage,Yes,Yes,early bird,Yes
+LEC003,18,Engineering: Mechanical,,53706,Other,No,No,no preference,No
+LEC004,18,Other,I am undecided – thinking about Data Science Major,53706,basil/spinach,Yes,No,night owl,Maybe
+LEC004,19,Engineering: Other,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC003,18,Statistics,psychology,53706,mushroom,No,No,night owl,Yes
+LEC004,20,Statistics,Mathematics ,53726,pepperoni,Yes,Yes,early bird,Maybe
+LEC004,20,Mathematics/AMEP,,53711,sausage,Yes,No,night owl,Yes
+LEC003,18,Science: Physics,Data Science,53706,pepperoni,No,Yes,early bird,No
+LEC003,19,Data Science,Economics,53715,pepperoni,No,Yes,no preference,Maybe
+LEC003,19,Engineering: Mechanical,nuclear engineering,53706,sausage,Yes,No,night owl,Yes
+LEC003,21,Science: Chemistry,,,green pepper,Yes,No,early bird,Maybe
+LEC003,18,Engineering: Other,,53706,pepperoni,Yes,Yes,no preference,Yes
+LEC003,,Engineering: Other,,,pineapple,Yes,No,early bird,Maybe
+LEC002,20,Computer Science,Data Science,53706,basil/spinach,Yes,No,night owl,Maybe
+LEC002,21,Science: Other,,53703,sausage,Yes,No,early bird,Maybe
+LEC001,21,Computer Science,Data Science,53715,pepperoni,Yes,No,night owl,Maybe
+LEC004,18,Engineering: Mechanical,,53706,pepperoni,Yes,No,early bird,Maybe
+LEC002,18,Languages,Linguistics,53706,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC002,18,Engineering: Mechanical,,53706,Other,No,Yes,night owl,Maybe
+LEC002,18,Other,,53706,none (just cheese),Yes,Yes,night owl,Yes
+LEC001,19,Science: Other,,53706,mushroom,Yes,No,night owl,Yes
+LEC001,18,Engineering: Biomedical,,,pepperoni,Yes,No,no preference,Maybe
+LEC003,19,Engineering: Biomedical,,53706,none (just cheese),Yes,No,night owl,Maybe
+LEC001,20,Science: Physics,Mathematics,53703,pineapple,Yes,No,early bird,No
+LEC002,28,Science: Other,,53703,pineapple,Yes,Yes,night owl,Maybe
+LEC001,18,Other,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Engineering: Other,,53715,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Science: Physics,Life Science Communication,53706,pineapple,Yes,No,night owl,Yes
+LEC003,18,Engineering: Biomedical,pre-medicine,53706,sausage,Yes,Yes,early bird,No
+LEC003,,Engineering: Biomedical,,53706,none (just cheese),No,Yes,early bird,Yes
+LEC001,21,Science: Other,,53711,pepperoni,Yes,No,night owl,No
+LEC002,18,Engineering: Biomedical,,53706,sausage,Yes,No,no preference,No
+LEC001,18,Engineering: Biomedical,,53706,macaroni/pasta,Yes,No,early bird,Yes
+LEC004,21,Engineering: Biomedical,,53703,pepperoni,Yes,No,no preference,Yes
+LEC004,18,Business: Information Systems,,53706,pepperoni,Yes,Yes,night owl,No
+LEC001,19,Business: Actuarial,Data Science and Analytics,53706,pepperoni,Yes,Yes,night owl,No
+LEC001,22,Engineering: Industrial,,,sausage,Yes,No,night owl,Yes
+LEC003,20,Other,"data science, business",53703,mushroom,Yes,Yes,no preference,Maybe
+LEC004,18,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,18,Engineering: Other,,53706,mushroom,No,No,early bird,No
+LEC001,19,Data Science,Sports Journalism certificate,53703,pepperoni,Yes,Yes,no preference,No
+LEC004,18,Data Science,,53706,none (just cheese),Yes,No,night owl,Yes
+LEC002,20,Statistics,"Data Science, Math",53715,mushroom,No,No,night owl,No
+LEC001,19,Engineering: Biomedical,,53706,mushroom,Yes,Yes,early bird,No
+LEC003,20,Other,Data science certificate,,sausage,Yes,Yes,no preference,Yes
+LEC003,20,Engineering: Industrial,Computer science,53719,sausage,No,No,early bird,Maybe
+LEC003,,Computer Science,Minors in Data Science and Chicano and Latino Studies,53715,macaroni/pasta,No,Yes,night owl,Yes
+LEC002,19,Computer Science,,,mushroom,Yes,No,no preference,No
+LEC002,18,Engineering: Biomedical,,,pepperoni,Yes,No,night owl,Yes
+LEC002,20,Business: Finance,Economics,53715,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Engineering: Biomedical,,53706,sausage,Yes,Yes,no preference,Maybe
+LEC002,19,Engineering: Biomedical,,52706,pepperoni,Yes,Yes,early bird,No
+LEC001,19,Science: Biology/Life,,53703,basil/spinach,Yes,No,night owl,Maybe
+LEC002,19,Engineering: Mechanical,History,53706,none (just cheese),No,Yes,no preference,Yes
+LEC002,21,Computer Science,Math,53715,sausage,Yes,No,night owl,Yes
+LEC004,19,Data Science,Economics,53706,pepperoni,No,No,night owl,Yes
+LEC001,18,Engineering: Mechanical,,53715,none (just cheese),Yes,Yes,no preference,Maybe
+LEC004,18,Engineering: Biomedical,,53706,pineapple,Yes,No,night owl,Yes
+LEC003,18,Other,Sociology,53706,pineapple,Yes,No,night owl,Yes
+LEC004,18,Engineering: Biomedical,,53706,pepperoni,Yes,Yes,early bird,No
+LEC001,23,Business: Other,,53705,pineapple,No,No,no preference,No
+LEC004,18,Engineering: Biomedical,,53706,mushroom,Yes,Yes,no preference,Maybe
+LEC001,18,Data Science,,53703,pepperoni,Yes,No,night owl,No
+LEC001,19,Business: Finance,,53706,pineapple,No,No,night owl,Maybe
+LEC004,19,Science: Biology/Life,"Environmental Sciences, Conservation Biology",53715,basil/spinach,Yes,No,no preference,No
+LEC001,20,Computer Science,,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC004,18,Computer Science,Data Science,53706,none (just cheese),Yes,No,early bird,Yes
+LEC003,18,Science: Other,,53706,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Engineering: Biomedical,,53706,sausage,Yes,Yes,no preference,Yes
+LEC001,19,Computer Science,Economics,53715,sausage,Yes,No,no preference,Yes
+LEC001,21,Other,,,mushroom,No,No,night owl,Maybe
+LEC004,21,Data Science,,53703,none (just cheese),Yes,No,night owl,Yes
+LEC002,20,Data Science,,53703,pineapple,Yes,Yes,early bird,Maybe
+LEC002,18,Data Science,,53715,Other,Yes,No,early bird,No
+LEC003,19,Mathematics/AMEP,Double major math and economics,,pepperoni,Yes,Yes,night owl,No
+LEC003,18,Science: Biology/Life,,53706,none (just cheese),No,Yes,night owl,Yes
+LEC003,20,Computer Science,Computer Engineering,,pepperoni,Yes,No,night owl,Maybe
+LEC002,20,Engineering: Industrial,Maybe Data Science,53703,none (just cheese),Yes,No,night owl,Yes
+LEC003,18,Data Science,Biochemistry,53706,basil/spinach,No,Yes,no preference,Yes
+LEC003,19,Science: Other,,53706,Other,No,Yes,early bird,No
+LEC003,20,Engineering: Mechanical,,53706,pepperoni,No,No,night owl,Maybe
+LEC001,36,Other,,53705,sausage,No,No,no preference,Maybe
+LEC003,18,Data Science,,53706,pineapple,Yes,No,early bird,No
+LEC003,19,Engineering: Mechanical,,,pepperoni,Yes,No,no preference,No
+LEC004,20,Science: Biology/Life,,53703,pepperoni,Yes,No,night owl,Yes
+LEC001,22,Engineering: Biomedical,,53703,sausage,Yes,No,night owl,Yes
+LEC002,18,Business: Information Systems,,53706,macaroni/pasta,Yes,Yes,no preference,Maybe
+LEC001,18,Engineering: Other,,53703,basil/spinach,Yes,Yes,no preference,Yes
+LEC002,19,Statistics,mathematics,53703,Other,No,Yes,night owl,Yes
+LEC001,20,Engineering: Biomedical,,53715,pepperoni,Yes,No,early bird,Yes
+LEC002,24,Science: Other,,53703,mushroom,Yes,No,night owl,Yes
+LEC001,20,Computer Science,Data science,53715,pepperoni,Yes,Yes,night owl,No
+LEC001,19,Mathematics/AMEP,Spanish,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC003,20,Data Science,,53726,sausage,Yes,No,night owl,Maybe
+LEC004,20,Other,,53713,pineapple,Yes,No,early bird,Maybe
+LEC002,23,Engineering: Other,,53705,pineapple,Yes,No,night owl,Maybe
+LEC001,21,Engineering: Mechanical,,53706,pepperoni,No,Yes,night owl,Yes
+LEC003,21,Science: Biology/Life,,53726,basil/spinach,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,No
+LEC004,19,Engineering: Other,,53706,sausage,Yes,No,night owl,Yes
+LEC001,19,Science: Physics,,53706,Other,Yes,No,night owl,Maybe
+LEC002,20,Engineering: Industrial,,53715,basil/spinach,Yes,No,night owl,Yes
+LEC003,19,Science: Biology/Life,Data sciences ,53706,pineapple,Yes,Yes,early bird,No
+LEC003,19,Other,undecided/exploring majors in science/math/tech,53706,macaroni/pasta,Yes,Yes,night owl,Maybe
+LEC001,19,Engineering: Industrial,,53703,sausage,Yes,No,night owl,Yes
+LEC003,20,Engineering: Industrial,,53703,sausage,Yes,Yes,night owl,Yes
+LEC002,18,Other,,53706,pepperoni,Yes,No,no preference,Yes
+LEC003,19,Business: Information Systems,Management and Human Resources ,53706,none (just cheese),No,No,night owl,No
+LEC001,19,Computer Science,Computer engineering,53726,pepperoni,Yes,Yes,night owl,Yes
+LEC001,18,Business: Finance,Minor: Data Science,53703,pepperoni,Yes,No,night owl,Maybe
+LEC002,18,Engineering: Mechanical,,53706,Other,Yes,No,night owl,Yes
+LEC004,18,Engineering: Mechanical,,53715,sausage,Yes,No,no preference,Maybe
+LEC002,19,Engineering: Biomedical,,53715,pepperoni,Yes,No,night owl,Maybe
+LEC002,22,Science: Other,,53715,sausage,Yes,Yes,night owl,Yes
+LEC001,19,Other,Education Studies,53715,mushroom,No,No,night owl,Yes
+LEC001,24,Business: Actuarial,,53713,sausage,Yes,No,night owl,Maybe
+LEC001,18,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,25,Engineering: Industrial,,53705,pineapple,No,No,night owl,Maybe
+LEC003,20,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC003,18,Engineering: Mechanical,business,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC002,21,Engineering: Biomedical,,53703,basil/spinach,Yes,No,night owl,Maybe
+LEC003,19,Computer Science,,53703,pepperoni,Yes,No,no preference,No
+LEC003,18,Data Science,,53703,pepperoni,Yes,Yes,early bird,No
+LEC001,19,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC003,18,Mathematics/AMEP,,52706,mushroom,Yes,Yes,night owl,No
+LEC001,19,Data Science,,53706,macaroni/pasta,Yes,No,night owl,Maybe
+LEC003,18,Business: Other,I wasn't sure what to answer in the question above because I'm a Freshman and I'm Pre-Business.,53703,none (just cheese),Yes,No,night owl,Yes
+LEC001,21,Data Science,,53715,pepperoni,Yes,Yes,early bird,No
+LEC003,18,Computer Science,,53706-1203,Other,Yes,No,night owl,Yes
+LEC001,20,Computer Science,,53706,pepperoni,No,No,night owl,Yes
+LEC003,19,Business: Information Systems,,53706,sausage,Yes,Yes,no preference,No
+LEC001,21,Business: Actuarial,Risk Management and Insurance,53715,pineapple,Yes,No,night owl,Maybe
+LEC003,19,Science: Biology/Life,Data Science,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC004,20,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,early bird,No
+LEC002,21,Other,Economics with Math Emphasis,53703,pepperoni,Yes,No,no preference,Yes
+LEC001,20,Business: Other,Certificates in Data Science and Digital Studies,53715,sausage,Yes,Yes,early bird,Maybe
+LEC001,18,Engineering: Mechanical,,,pineapple,No,No,no preference,Yes
+LEC003,19,Computer Science,,53706,pepperoni,No,Yes,no preference,Maybe
+LEC003,18,Statistics,Data Science ,53706,pepperoni,Yes,No,night owl,No
+LEC004,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC002,26,Engineering: Other,,53705,Other,Yes,Yes,early bird,Yes
+LEC001,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,18,Engineering: Mechanical,,53706,basil/spinach,Yes,No,night owl,Yes
+LEC001,27,Computer Science,,53703,sausage,No,No,early bird,Maybe
+LEC003,20,Engineering: Biomedical,,,mushroom,Yes,No,early bird,Yes
+LEC001,18,Statistics,,,sausage,Yes,No,night owl,Maybe
+LEC004,19,Statistics,Considering data science as my secondary field of study.,53726,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Engineering: Industrial,,,basil/spinach,Yes,Yes,night owl,Yes
+LEC001,20,Other,,53706,macaroni/pasta,Yes,Yes,night owl,Maybe
+LEC004,20,Other,,53703,sausage,Yes,Yes,night owl,Yes
+LEC001,21,Engineering: Other,,53715,pepperoni,No,No,night owl,Yes
+LEC004,20,Engineering: Mechanical,,53711,mushroom,Yes,No,night owl,Yes
+LEC003,20,Business: Information Systems,,53715,pepperoni,Yes,No,night owl,Yes
+LEC003,21,Engineering: Other,,,mushroom,Yes,No,night owl,Yes
+LEC001,24,Statistics,data science,53703,basil/spinach,Yes,No,early bird,No
+LEC003,19,Computer Science,math,53706,basil/spinach,Yes,No,early bird,Maybe
+LEC004,21,Computer Science,,53715,pepperoni,Yes,Yes,early bird,No
+LEC002,21,Mathematics/AMEP,,53715,pepperoni,Yes,No,early bird,Maybe
+LEC001,,Science: Biology/Life,,,Other,Yes,Yes,early bird,No
+LEC003,18,Engineering: Mechanical,Computer Science Certificate,53706,basil/spinach,No,Yes,early bird,No
+LEC002,18,Other,Data Science,53706,basil/spinach,Yes,No,early bird,No
+LEC003,18,Business: Information Systems,Data Science Certificate,53706,basil/spinach,Yes,Yes,early bird,No
+LEC002,19,Engineering: Industrial,,53706,sausage,Yes,No,early bird,Maybe
+LEC004,18,Engineering: Mechanical,,53706,sausage,Yes,No,night owl,Maybe
+LEC001,22,Science: Other,Mathematics,53726,pepperoni,Yes,Yes,no preference,Yes
+LEC001,18,Engineering: Industrial,,53706,mushroom,No,Yes,early bird,Yes
+LEC002,19,Engineering: Mechanical,,53706,green pepper,No,Yes,night owl,No
+LEC003,18,Statistics,mathematics,53706,mushroom,Yes,No,night owl,No
+LEC003,19,Other,,53706,pepperoni,Yes,Yes,no preference,Yes
+LEC003,20,Other,"Education, Psychology, Data Science",53715,pineapple,Yes,Yes,no preference,Yes
+LEC003,19,Statistics,,53703,pepperoni,Yes,No,early bird,Maybe
+LEC003,20,Data Science,,53703,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC004,20,Business: Actuarial,,53706,pepperoni,Yes,No,early bird,No
+LEC003,20,Data Science,,53703,mushroom,Yes,No,night owl,Yes
+LEC003,19,Mathematics/AMEP,finance,53706,sausage,No,Yes,early bird,Maybe
+LEC003,21,Other,Political Science,53703,pepperoni,Yes,No,night owl,Maybe
+LEC002,19,Engineering: Mechanical,,53706,basil/spinach,Yes,Yes,night owl,Maybe
+LEC001,19,Mathematics/AMEP,Data Science,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,18,Computer Science,Information Systems (Maybe),53706,sausage,Yes,No,early bird,Yes
+LEC001,20,Business: Actuarial,Business: Risk Management,53703,pepperoni,Yes,No,early bird,Yes
+LEC002,26,Engineering: Other,,53705,mushroom,No,No,night owl,Maybe
+LEC001,18,Business: Information Systems,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,23,Engineering: Other,Environmental Science,53703,mushroom,Yes,Yes,early bird,Maybe
+LEC003,18,Science: Biology/Life,,53706,pineapple,No,No,early bird,Yes
+LEC002,18,Engineering: Biomedical,,53706,pepperoni,Yes,No,no preference,No
+LEC001,18,Other,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,Data Science,53726,sausage,Yes,No,no preference,Yes
+LEC003,20,Data Science,,53715,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Engineering: Biomedical,,53706,pepperoni,No,Yes,early bird,No
+LEC004,19,Business: Information Systems,,53715,none (just cheese),Yes,No,night owl,Yes
+LEC001,20,Computer Science,,53703,mushroom,Yes,Yes,early bird,Maybe
+LEC002,18,Data Science,,53703,none (just cheese),Yes,No,night owl,Yes
+LEC004,19,Engineering: Mechanical,,53575,sausage,Yes,No,night owl,Maybe
+LEC004,20,Business: Other,Information Systems,53703,sausage,Yes,Yes,no preference,Maybe
+LEC003,18,Engineering: Biomedical,,53715,pineapple,Yes,No,no preference,Yes
+LEC004,19,Engineering: Mechanical,,53706,mushroom,Yes,No,early bird,Maybe
+LEC003,,Engineering: Biomedical,Certificate in French,,macaroni/pasta,Yes,Yes,night owl,No
+LEC003,21,Business: Information Systems,,53703,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,,Data Science,,5 3706,mushroom,Yes,No,night owl,No
+LEC004,19,Engineering: Biomedical,,53715,none (just cheese),Yes,Yes,no preference,Yes
+LEC002,19,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,night owl,No
+LEC003,20,Computer Science,,53711,sausage,No,No,night owl,Maybe
+LEC004,21,Science: Biology/Life,,53711,sausage,Yes,Yes,night owl,No
+LEC003,21,Other,"Psychology, Chinese",53703,Other,Yes,Yes,night owl,Maybe
+LEC003,20,Data Science,Minor - Comp Sci,53703,basil/spinach,Yes,Yes,no preference,Yes
+LEC004,21,Science: Other,"Global Health is main major, possibly on the premed track, Data Science Certificate",53715,pineapple,Yes,Yes,early bird,No
+LEC003,20,Engineering: Mechanical,,53726,pepperoni,Yes,Yes,night owl,Yes
+LEC001,22,Science: Biology/Life,,53703,green pepper,Yes,No,night owl,Yes
+LEC002,19,Science: Biology/Life,,53703,pepperoni,Yes,No,night owl,Maybe
+LEC004,21,Engineering: Biomedical,,53715,green pepper,Yes,Yes,night owl,Maybe
+LEC002,20,Business: Finance,Real Estate,53703,pepperoni,Yes,Yes,night owl,No
+LEC004,21,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC002,19,Engineering: Industrial,"not positive on IE, maybe ME",53703,pepperoni,Yes,No,night owl,Maybe
+LEC004,18,Engineering: Biomedical,,53706,mushroom,Yes,No,early bird,No
+LEC003,19,Business: Actuarial,Data Science,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,24,Other,Life Science Communications,53703,pineapple,Yes,No,night owl,No
+LEC004,22,Engineering: Other,,53715,pepperoni,No,Yes,early bird,No
+LEC002,18,Engineering: Mechanical,,53715,pepperoni,Yes,Yes,night owl,Maybe
+LEC004,19,Data Science,business: finance,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Business: Other,"Economics, Data Science",53703,pepperoni,Yes,Yes,early bird,No
+LEC004,18,Engineering: Other,,53706,pineapple,Yes,Yes,night owl,Maybe
+LEC003,19,Engineering: Mechanical,,53706,none (just cheese),Yes,No,early bird,No
+LEC002,18,Engineering: Mechanical,,53706,Other,Yes,Yes,early bird,No
+LEC001,19,Other,,53706,green pepper,Yes,Yes,night owl,Yes
+LEC004,18,Engineering: Biomedical,,53706,basil/spinach,Yes,Yes,no preference,No
+LEC001,19,Business: Information Systems,,53726,green pepper,No,Yes,night owl,Maybe
+LEC001,18,Engineering: Biomedical,,53706,sausage,Yes,No,night owl,Yes
+LEC003,19,Engineering: Industrial,,53715,pepperoni,No,Yes,early bird,Yes
+LEC002,27,Business: Information Systems,,53703,mushroom,No,Yes,night owl,No
+LEC001,30,Business: Other,,57305,pineapple,Yes,No,night owl,Yes
+LEC004,18,Engineering: Biomedical,Neuroscience/pre-med,53706,none (just cheese),Yes,No,night owl,Yes
+LEC002,20,Data Science,,53703,mushroom,No,No,early bird,Yes
+LEC001,19,Data Science,,53706,Other,Yes,Yes,no preference,Maybe
+LEC001,22,Engineering: Biomedical,,53706,sausage,Yes,No,night owl,Yes
+LEC003,20,Data Science,,,mushroom,Yes,No,no preference,Maybe
+LEC003,20,Other,Economics with Math emphasis,53703,pineapple,No,No,early bird,Maybe
+LEC002,20,Computer Science,Data Science,53706,basil/spinach,Yes,No,no preference,Yes
+LEC001,24,Science: Biology/Life,,53706,mushroom,Yes,Yes,early bird,No
+LEC004,20,Business: Information Systems,Real Estate,53703,pepperoni,Yes,No,night owl,Maybe
+LEC001,20,Data Science,Economics,53703,sausage,Yes,No,no preference,Maybe
+LEC002,20,Engineering: Mechanical,,53703,pepperoni,Yes,Yes,night owl,Maybe
+LEC004,20,Engineering: Mechanical,,53715,pineapple,Yes,Yes,night owl,No
+LEC004,20,Science: Biology/Life,Data Science Certificate (maybe) ,53703,sausage,Yes,Yes,night owl,Maybe
+LEC004,18,Engineering: Mechanical,,19002,pepperoni,Yes,No,no preference,Yes
+LEC001,19,Engineering: Other,,53706,pepperoni,Yes,No,no preference,Maybe
+LEC002,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,early bird,Maybe
+LEC004,19,Computer Science,Mathematics,53706,pineapple,Yes,No,no preference,Maybe
+LEC003,18,Business: Information Systems,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Science: Physics,,53706,pineapple,Yes,Yes,night owl,Maybe
+LEC004,18,Other,,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,25,Engineering: Other,"Architect, Landscape Planner",,mushroom,Yes,Yes,early bird,No
+LEC001,21,Engineering: Mechanical,Physics,53706,mushroom,No,Yes,no preference,Maybe
+LEC004,20,Other,"I major in economics, hoping to obtain a data science certificate.",53703,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Data Science,Economics,53703,none (just cheese),No,Yes,night owl,Maybe
+LEC001,21,Science: Other,,53703,mushroom,Yes,No,night owl,Yes
+LEC002,18,Data Science,,53706,pepperoni,Yes,No,night owl,No
+LEC002,24,Business: Other,,53711,sausage,Yes,No,night owl,Yes
+LEC001,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC003,20,Business: Actuarial,,53703,pepperoni,No,Yes,night owl,No
+LEC001,21,Data Science,Economics,53715,pineapple,Yes,No,night owl,Maybe
+LEC001,23,Other,"Marketing, Data science ",,none (just cheese),No,No,early bird,Maybe
+LEC002,22,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,night owl,No
+LEC003,18,Computer Science,,53703,sausage,Yes,No,night owl,Yes
+LEC003,19,Science: Physics,Astronomy-Physics ,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53715,pepperoni,Yes,No,early bird,No
+LEC001,18,Data Science,,53706,pepperoni,Yes,Yes,early bird,Yes
+LEC001,18,Business: Information Systems,,53706,pepperoni,No,No,night owl,Yes
+LEC002,20,Mathematics/AMEP,data and risk analysis (data science),53726,pineapple,Yes,No,night owl,Yes
+LEC001,18,Other,,53706,mushroom,Yes,No,no preference,Yes
+LEC002,20,Science: Biology/Life,Economics with Math Emphasis,53703,pepperoni,Yes,No,early bird,Yes
+LEC001,18,Data Science,,53706,none (just cheese),Yes,No,night owl,Yes
+LEC001,,Statistics,Econ,,pineapple,No,No,night owl,Maybe
+LEC003,19,Engineering: Biomedical,,53706,pineapple,Yes,No,night owl,Yes
+LEC003,18,Engineering: Mechanical,,53706,Other,Yes,Yes,night owl,Yes
+LEC003,18,Engineering: Biomedical,,53089,pepperoni,Yes,No,night owl,Yes
+LEC003,18,Mathematics/AMEP,,53703,sausage,No,No,no preference,Maybe
+LEC001,18,Data Science,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Data Science,,53706,pepperoni,Yes,No,early bird,Yes
+LEC003,21,Engineering: Biomedical,,53726,sausage,Yes,No,early bird,Maybe
+LEC004,22,Business: Other,,53703,green pepper,Yes,Yes,night owl,Yes
+LEC002,19,Engineering: Mechanical,computer science,53706,pineapple,Yes,Yes,night owl,Maybe
+LEC004,21,Science: Biology/Life,,53703,sausage,Yes,No,early bird,No
+LEC002,18,Engineering: Other,,53706,sausage,Yes,Yes,night owl,Maybe
+LEC001,20,Data Science,Economics,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Engineering: Industrial,,53703,pepperoni,Yes,Yes,early bird,Maybe
+LEC003,21,Computer Science,no,53703,pineapple,Yes,No,night owl,No
+LEC002,20,Engineering: Mechanical,,53706,mushroom,Yes,No,night owl,Yes
+LEC003,21,Business: Finance,,53715,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Science: Other,,53703,Other,Yes,Yes,night owl,Maybe
+LEC001,20,Engineering: Other,,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Engineering: Biomedical,,53706,green pepper,Yes,Yes,early bird,No
+LEC002,19,Engineering: Mechanical,"German Certificate, Theatre Certificate",53706,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Engineering: Biomedical,,53703,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Statistics,,53715,sausage,Yes,No,night owl,Yes
+LEC001,18,Engineering: Industrial,,53706,none (just cheese),Yes,No,night owl,Maybe
+LEC004,22,Data Science,Economics,53703,pepperoni,Yes,No,night owl,Maybe
+LEC001,18,Other,,53703,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC001,23,Other,Biological Anthropology,53705,none (just cheese),Yes,No,early bird,Yes
+LEC001,19,Engineering: Biomedical,,53706,pineapple,Yes,Yes,no preference,Maybe
+LEC004,19,Business: Actuarial,econ,53715,sausage,Yes,No,night owl,Yes
+LEC001,18,Engineering: Mechanical,,53703,macaroni/pasta,Yes,No,night owl,Yes
+LEC002,18,Business: Other,,53706,mushroom,No,No,night owl,Maybe
+LEC002,20,Other,,53703,mushroom,Yes,Yes,no preference,Yes
+LEC002,19,Business: Actuarial,,53703,Other,Yes,No,no preference,Maybe
+LEC001,21,Business: Other,,53715,pepperoni,Yes,No,night owl,Yes
+LEC001,21,Business: Other,econ with math emphasis,53715,mushroom,Yes,Yes,night owl,Maybe
+LEC004,21,Science: Biology/Life,,53703,none (just cheese),Yes,No,night owl,Maybe
+LEC004,22,Other,"Psychology, communications",53715,basil/spinach,Yes,No,night owl,Yes
+LEC003,18,Statistics,,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,20,Statistics,,53703,pepperoni,Yes,Yes,night owl,Maybe
+LEC002,21,Data Science,,,pepperoni,Yes,Yes,no preference,Maybe
+LEC001,18,Engineering: Biomedical,,,sausage,Yes,Yes,early bird,No
+LEC003,20,Statistics,,53706,sausage,Yes,No,night owl,No
+LEC002,21,Business: Other,,53703,pineapple,Yes,Yes,night owl,Maybe
+LEC001,22,Data Science,,53715,pineapple,Yes,Yes,night owl,Maybe
+LEC003,25,Computer Science,,53705,mushroom,Yes,No,night owl,Yes
+LEC004,20,Other,,53715,pepperoni,Yes,Yes,early bird,Yes
+LEC002,19,Computer Science,"ds,econ",53711,Other,Yes,No,night owl,No
+LEC002,18,Other,,53706,pepperoni,No,No,night owl,Yes
+LEC002,21,Business: Actuarial,Management,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Business: Finance,Data science,53703,pepperoni,No,No,no preference,Maybe
+LEC003,18,Engineering: Mechanical,,53703,pineapple,Yes,Yes,no preference,No
+LEC001,21,Business: Other,"Consumer Behavior & Marketplace Studies, Data Science",53703,pepperoni,Yes,No,night owl,No
+LEC002,20,Business: Finance,,53715,sausage,Yes,No,night owl,Yes
+LEC001,19,Other,Psychology,53703,pepperoni,No,Yes,night owl,Yes
+LEC003,18,Engineering: Biomedical,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Business: Information Systems,,53711,sausage,Yes,No,night owl,No
+LEC003,21,Computer Science,,53715,sausage,No,Yes,early bird,Yes
+LEC004,20,Business: Other,,53703,pineapple,Yes,Yes,early bird,Yes
+LEC001,,Other,,53706,pineapple,Yes,No,no preference,Maybe
+LEC001,18,Statistics,economics,53703,pineapple,Yes,No,no preference,Yes
+LEC003,19,Business: Finance,,53706,mushroom,Yes,No,night owl,Maybe
+LEC001,18,Computer Science,Data Science,53706,mushroom,No,No,night owl,Maybe
+LEC003,20,Statistics,,53703,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Engineering: Biomedical,,,macaroni/pasta,Yes,No,night owl,Yes
+LEC003,19,Data Science,,53715,green pepper,Yes,No,early bird,Maybe
+LEC001,19,Other,Psychology,53703,pepperoni,Yes,Yes,night owl,Maybe
+LEC003,21,Business: Finance,Economics,53703,pepperoni,Yes,No,night owl,Maybe
+LEC002,24,Engineering: Other,,53703,sausage,Yes,No,night owl,Yes
+LEC003,19,Engineering: Industrial,,53703,pepperoni,Yes,Yes,no preference,Maybe
+LEC002,20,Engineering: Other,"urban & regional planning, environmental engineering, data science",53706-1406,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC003,23,Engineering: Other,,53705,pepperoni,No,Yes,night owl,Yes
+LEC001,19,Science: Biology/Life,,53703,pepperoni,Yes,No,early bird,No
+LEC001,18,Data Science,,53706,basil/spinach,Yes,No,night owl,Maybe
+LEC003,19,Business: Information Systems,,53703,macaroni/pasta,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC004,18,Science: Biology/Life,,53706,pepperoni,Yes,Yes,early bird,No
+LEC003,27,Science: Biology/Life,,53705,mushroom,Yes,No,early bird,Maybe
+LEC004,,Computer Science,,53715,pepperoni,Yes,No,night owl,Yes
+LEC004,20,Engineering: Biomedical,,53715,pepperoni,Yes,Yes,early bird,No
+LEC001,18,Computer Science,,53706,none (just cheese),No,Yes,night owl,Yes
+LEC004,17,Science: Biology/Life,Data science certificate,53706,pepperoni,Yes,No,no preference,Maybe
+LEC002,19,Data Science,"Econ, data science",53715,Other,Yes,No,night owl,Maybe
+LEC001,18,Computer Science,Data Science,53706,mushroom,No,No,night owl,Yes
+LEC002,18,Data Science,Economics,,pineapple,No,Yes,no preference,Yes
+LEC002,18,Engineering: Industrial,,53703-1104,sausage,Yes,No,night owl,Maybe
+LEC001,20,Business: Actuarial,Risk Management & Insurance,53703,pepperoni,Yes,No,early bird,No
+LEC001,19,Data Science,,53715,mushroom,Yes,Yes,no preference,Maybe
+LEC001,18,Engineering: Mechanical,,53706-1127,pepperoni,Yes,Yes,night owl,Yes
+LEC003,18,Engineering: Other,,53703,Other,No,Yes,early bird,No
+LEC001,24,Science: Other,data science,53715,pepperoni,Yes,Yes,early bird,Yes
+LEC004,19,Engineering: Biomedical,,53715,green pepper,Yes,No,early bird,Yes
+LEC003,20,Engineering: Biomedical,,53703,pepperoni,Yes,Yes,early bird,Maybe
+LEC003,21,Mathematics/AMEP,Biochemistry,53715,none (just cheese),Yes,Yes,early bird,No
+LEC003,20,Business: Other,,53706,sausage,Yes,No,night owl,Maybe
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,no preference,Yes
+LEC003,21,Engineering: Industrial,,53711,basil/spinach,No,Yes,night owl,Yes
+LEC001,20,Engineering: Industrial,,53703,pepperoni,Yes,Yes,no preference,No
+LEC003,18,Engineering: Industrial,,53706,sausage,Yes,Yes,night owl,No
+LEC003,20,Science: Biology/Life,Global Health,55416,pineapple,Yes,Yes,night owl,Yes
+LEC003,18,Engineering: Biomedical,,53706,basil/spinach,No,No,no preference,Maybe
+LEC003,19,Business: Other,,53706,sausage,Yes,No,night owl,Yes
+LEC003,18,Engineering: Industrial,,53706,green pepper,Yes,Yes,night owl,Yes
+LEC004,20,Data Science,Economics - math emphasis,53703,pepperoni,Yes,No,no preference,Yes
+LEC003,19,Business: Information Systems," Operations, Technology, Management",53715,pepperoni,Yes,No,night owl,Maybe
+LEC004,21,Engineering: Other,,53706,pineapple,No,Yes,early bird,No
+LEC003,19,Engineering: Mechanical,,53715,Other,Yes,No,early bird,No
+LEC003,20,Computer Science,Data Science,53703,none (just cheese),No,Yes,night owl,Maybe
+LEC003,18,Science: Biology/Life,Data science,53706,sausage,Yes,No,night owl,No
+LEC004,20,Engineering: Mechanical,,53715,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC002,,Business: Other,Double Business Major (Supply Chain and Business Management),53703,basil/spinach,Yes,No,night owl,Maybe
+LEC003,18,Business: Finance,,53715,none (just cheese),No,Yes,night owl,Yes
+LEC002,20,Engineering: Industrial,,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC001,22,Data Science,Stat or CS,53705,basil/spinach,Yes,Yes,early bird,No
+LEC003,20,Business: Information Systems,"International Business, French",53703,basil/spinach,Yes,Yes,early bird,No
+LEC004,19,Engineering: Other,,53706,none (just cheese),Yes,Yes,night owl,Maybe
+LEC002,20,Other,ECONOMICS,53715,none (just cheese),Yes,Yes,night owl,Maybe
+LEC004,19,Engineering: Mechanical, ,53715,pepperoni,Yes,No,night owl,Maybe
+LEC004,19,Engineering: Mechanical,,53715,pepperoni,Yes,Yes,no preference,Yes
+LEC004,20,Statistics,,53703,pepperoni,Yes,No,early bird,Yes
+LEC001,19,Business: Actuarial,RMI,53706,basil/spinach,Yes,Yes,night owl,Yes
+LEC001,20,Engineering: Biomedical,,53703,sausage,No,Yes,night owl,Yes
+LEC004,19,Engineering: Biomedical,,53706,basil/spinach,Yes,No,early bird,Yes
+LEC003,18,Data Science,,53706,none (just cheese),Yes,No,night owl,Maybe
+LEC001,21,Computer Science,,53703,Other,Yes,Yes,night owl,Maybe
+LEC001,19,Engineering: Industrial,,53706,pepperoni,Yes,No,night owl,No
+LEC004,20,Science: Other,,53713,pineapple,Yes,Yes,night owl,Maybe
+LEC004,18,Data Science,,53706,macaroni/pasta,Yes,No,night owl,Yes
+LEC004,20,Engineering: Industrial,NA,54636,macaroni/pasta,Yes,Yes,early bird,Maybe
+LEC001,19,Computer Science,,53711,mushroom,Yes,No,night owl,Yes
+LEC004,19,Computer Science,,53711,sausage,No,No,night owl,Maybe
+LEC004,19,Engineering: Biomedical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC004,19,Engineering: Mechanical,,53711,macaroni/pasta,Yes,No,night owl,Yes
+LEC004,19,Engineering: Mechanical,,53597,pepperoni,No,Yes,night owl,No
+LEC004,18,Engineering: Biomedical,,53706,sausage,Yes,Yes,night owl,Maybe
+LEC004,18,Computer Science,Data science,53706,basil/spinach,No,Yes,no preference,Maybe
+LEC004,21,Engineering: Biomedical,,53703,sausage,Yes,Yes,night owl,Yes
+LEC004,19,Business: Information Systems,Accounting,53706,mushroom,Yes,No,night owl,No
+LEC004,18,Engineering: Other,,53706,sausage,Yes,Yes,night owl,Yes
+LEC004,20,Data Science,,53715,Other,Yes,No,night owl,Yes
+LEC004,18,Engineering: Mechanical,,53706,mushroom,Yes,Yes,night owl,Yes
+LEC004,18,Engineering: Mechanical,,53706,macaroni/pasta,Yes,Yes,no preference,Maybe
+LEC001,18,Engineering: Biomedical,,53706,Other,No,No,night owl,Maybe
+LEC004,19,Business: Finance,Industrial Engineering,53706,sausage,Yes,No,night owl,Maybe
+LEC001,18,Business: Other,Main one is economics and data science,53706,pepperoni,No,No,no preference,Maybe
+LEC004,18,Engineering: Industrial,,83001,sausage,Yes,Yes,night owl,Yes
+LEC004,20,Engineering: Biomedical,,53715,pepperoni,Yes,Yes,night owl,Maybe
+LEC004,18,Engineering: Mechanical,,53706,none (just cheese),No,No,night owl,Yes
+LEC004,20,Other,,53715,sausage,No,No,night owl,Maybe
+LEC004,19,Business: Information Systems,Business: Supply Chain Management,53703,pepperoni,Yes,No,no preference,Maybe
+LEC004,20,Other,,53703,basil/spinach,Yes,No,night owl,Yes
+LEC004,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC004,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,27,Computer Science,,53711,mushroom,Yes,Yes,no preference,Yes
+LEC004,19,Business: Actuarial,,53706-1188,sausage,Yes,No,no preference,Yes
+LEC004,21,Other,,53703,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Business: Other,,53703,pepperoni,Yes,No,no preference,Maybe
+LEC004,18,Business: Finance,Data Science,53706,basil/spinach,Yes,No,night owl,Yes
+LEC004,18,Science: Physics,,53706,mushroom,Yes,No,night owl,Yes
+LEC002,19,Mathematics/AMEP,Actuarial Science,53706,sausage,Yes,Yes,night owl,Yes
+LEC004,19,Business: Finance,data science,53706,pepperoni,Yes,Yes,no preference,Maybe
+LEC002,19,Data Science,"Electrical engineering, physics",53703,none (just cheese),Yes,No,night owl,Yes
+LEC004,21,Engineering: Biomedical,History Certificate ,53715,green pepper,Yes,No,no preference,Maybe
+LEC001,19,Business: Finance,,53703,sausage,Yes,Yes,night owl,Maybe
+LEC001,18,Business: Finance,,53703,pepperoni,Yes,No,night owl,Yes
+LEC004,21,Engineering: Mechanical,Mechanical Engineering ,53703,green pepper,No,No,no preference,No
+LEC004,19,Business: Information Systems,,53706,pepperoni,Yes,Yes,no preference,Maybe
+LEC002,18,Computer Science,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC001,21,Computer Science,,43706,mushroom,Yes,Yes,no preference,Yes
+LEC002,20,Business: Finance,Data Science,53703,pepperoni,No,Yes,no preference,No
+LEC002,20,Engineering: Biomedical,,53703,pineapple,Yes,Yes,early bird,Maybe
+LEC001,19,Business: Actuarial,risk management and insurance,53711,pepperoni,No,No,night owl,Yes
+LEC002,21,Other,"Linguistics, Communication Sciences and Disorders",53715,green pepper,Yes,Yes,night owl,No
+LEC001,19,Engineering: Mechanical,,53706,none (just cheese),Yes,Yes,night owl,Yes
+LEC002,18,Engineering: Mechanical,,53706,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC001,19,Data Science,,53703,pineapple,Yes,No,night owl,Yes
+LEC001,18,Science: Biology/Life,"Either stats, data science, or math (undecided)",53706,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC001,19,Data Science,Mathematics,53703,green pepper,Yes,Yes,night owl,Maybe
+LEC001,23,Business: Other,,53711,pineapple,Yes,No,night owl,Maybe
+LEC001,20,Data Science,economics,53703,none (just cheese),Yes,No,early bird,Yes
+LEC001,18,Computer Science,Planning on Data Sci but unsure,53708,macaroni/pasta,Yes,No,night owl,Yes
+LEC002,18,Science: Other,,53706,pepperoni,Yes,No,early bird,Maybe
+LEC001,18,Computer Science,,53706,green pepper,Yes,Yes,night owl,Yes
+LEC001,19,Statistics,,53703,pineapple,Yes,No,night owl,No
+LEC001,20,Computer Science,Data Science,53703,pepperoni,Yes,Yes,no preference,Yes
+LEC001,19,Business: Information Systems,,53706,basil/spinach,Yes,No,night owl,Yes
+LEC001,19,Data Science,,53703,pineapple,No,Yes,night owl,Maybe
+LEC001,18,Engineering: Mechanical,,53706,macaroni/pasta,Yes,Yes,night owl,No
+LEC001,18,Data Science,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Engineering: Industrial,Data Science,53706,green pepper,Yes,No,night owl,Yes
+LEC004,21,Other,,53726,sausage,Yes,No,night owl,Yes
+LEC001,19,Engineering: Mechanical,,53704,sausage,Yes,No,no preference,Yes
+LEC001,18,Computer Science,Data Science,53706,pepperoni,No,Yes,no preference,No
+LEC001,19,Other,,53705,pepperoni,No,No,night owl,Yes
+LEC001,21,Computer Science,data science,53706,pineapple,No,No,night owl,Yes
+LEC001,19,Statistics,,53703,sausage,Yes,No,night owl,Maybe
+LEC001,19,Science: Chemistry,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Other,legal study,53705,sausage,Yes,No,no preference,Maybe
+LEC001,19,Statistics,biochemistry,53703,pineapple,Yes,No,no preference,Yes
+LEC001,22,Engineering: Biomedical,,,basil/spinach,Yes,Yes,night owl,Maybe
+LEC001,19,Engineering: Industrial,,53706,sausage,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53711,sausage,Yes,No,no preference,Yes
+LEC001,19,Engineering: Mechanical,,53703,none (just cheese),Yes,Yes,night owl,Yes
+LEC001,21,Computer Science,Computer Engineering,53703,sausage,No,No,night owl,Yes
+LEC003,20,Engineering: Mechanical,,53703,sausage,No,No,night owl,No
+LEC001,21,Computer Science,Electrical Engineering,53715,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,19,Engineering: Industrial,Business,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC001,18,Other,,53706,none (just cheese),Yes,No,night owl,Yes
+LEC001,18,Science: Biology/Life,"Data Science Minor, French",53706,pineapple,Yes,No,night owl,Yes
+LEC001,21,Other,,53703,mushroom,Yes,Yes,early bird,Yes
+LEC001,22,Computer Science,DS,53711,Other,Yes,No,no preference,Maybe
+LEC003,19,Other,,53703,pepperoni,No,No,no preference,Yes
+LEC001,19,Data Science,,53706,Other,No,Yes,early bird,Yes
+LEC002,18,Engineering: Mechanical,Minor in Business ,53706,sausage,Yes,No,no preference,Yes
+LEC001,21,Engineering: Other,Civil Engineering,53715,Other,No,Yes,no preference,Yes
+LEC002,19,Statistics,Economics,53703,pepperoni,Yes,No,night owl,Yes
+LEC002,20,Business: Actuarial,,53703,sausage,Yes,No,night owl,No
+LEC001,24,Business: Other,,53703,green pepper,No,No,early bird,Maybe
+LEC004,18,Engineering: Biomedical,,53706,sausage,Yes,No,no preference,No
+LEC001,23,Other,,53703,pineapple,Yes,No,night owl,Yes
+LEC003,19,Statistics,,53706,none (just cheese),Yes,Yes,early bird,Yes
+LEC002,18,Other,,53706,basil/spinach,Yes,No,night owl,Yes
+LEC001,20,Statistics,,53703,mushroom,Yes,Yes,night owl,Yes
+LEC004,18,Computer Science,Data Science,,none (just cheese),Yes,Yes,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53706,Other,Yes,No,no preference,Yes
+LEC002,22,Science: Biology/Life,,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC003,,Computer Science,Possibly Data Science (Definitely a Certificate),53706,Other,No,No,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53562,pepperoni,Yes,Yes,night owl,Yes
+LEC002,19,Other,Data Science,53715,green pepper,Yes,Yes,no preference,Yes
+LEC003,18,Statistics,,53706,Other,No,No,night owl,Yes
+LEC004,19,Engineering: Mechanical,,53715,sausage,Yes,No,night owl,Yes
+LEC003,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC002,21,Business: Other,,53703,mushroom,No,No,no preference,Yes
+LEC003,19,Business: Information Systems,,53711,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Business: Actuarial,,53706,sausage,No,No,night owl,Yes
+LEC002,21,Data Science,,53703,sausage,Yes,Yes,night owl,Yes
+LEC001,23,Data Science,,53705,mushroom,Yes,No,night owl,Yes
+LEC002,20,Computer Science,Data Science,53726,pineapple,Yes,Yes,night owl,Maybe
+LEC003,18,Engineering: Industrial,,53706,pepperoni,Yes,No,night owl,Yes
+LEC002,27,Data Science,,53705,basil/spinach,Yes,No,night owl,Yes
+LEC002,18,Computer Science,Data Science,53706,mushroom,Yes,No,early bird,Yes
+LEC001,22,Data Science,,53706,sausage,Yes,No,night owl,Yes
+LEC002,20,Computer Science,,53715,pepperoni,No,Yes,night owl,Yes
+LEC002,21,Data Science,,53703,macaroni/pasta,No,No,night owl,No
+LEC002,20,Computer Science,,,mushroom,Yes,No,early bird,Maybe
+LEC001,19,Computer Science,prolly data science,92376,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC002,19,Engineering: Mechanical,,,none (just cheese),Yes,No,night owl,Yes
+LEC002,19,Data Science,,53717,none (just cheese),Yes,No,night owl,Yes
+LEC002,22,Science: Other,,53715,green pepper,Yes,Yes,early bird,Yes
+LEC002,19,Engineering: Biomedical,,53706,sausage,Yes,No,early bird,No
+LEC002,20,Business: Finance,,53703,pepperoni,Yes,No,early bird,No
+LEC002,18,Business: Actuarial,,53706,pepperoni,Yes,No,early bird,No
+LEC002,19,Engineering: Mechanical,,53706,Other,Yes,No,night owl,Yes
+LEC002,20,Data Science,economics,internation student,mushroom,Yes,Yes,early bird,Maybe
+LEC003,19,Engineering: Mechanical,,,Other,No,No,night owl,Yes
+LEC002,19,Engineering: Industrial,,53703,sausage,No,Yes,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53701,pepperoni,Yes,Yes,no preference,Yes
+LEC002,22,Computer Science,,53703,sausage,Yes,No,night owl,Yes
+LEC001,19,Engineering: Industrial,,53715,pepperoni,Yes,No,no preference,Maybe
+LEC002,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC002,23,Mathematics/AMEP,,53719,sausage,No,Yes,early bird,Yes
+LEC002,18,Engineering: Industrial,,53706,pineapple,No,Yes,no preference,Maybe
+LEC002,20,Other,Communication Arts,53711,sausage,Yes,Yes,no preference,Maybe
+LEC002,21,Business: Information Systems,Finance ,53703,pepperoni,Yes,Yes,night owl,Maybe
+LEC002,21,Science: Physics,Astrophysics,,macaroni/pasta,Yes,No,no preference,Maybe
+LEC002,21,Science: Biology/Life,,53703,green pepper,Yes,No,early bird,Maybe
+LEC003,21,Engineering: Other,,53706,none (just cheese),Yes,No,early bird,Maybe
+LEC002,19,Data Science,Economics,53715,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Data Science,,53706,none (just cheese),No,Yes,night owl,Yes
+LEC001,20,Statistics,"economics, social science",53715,pepperoni,No,No,no preference,Yes
+LEC004,19,Business: Other,"Information systems, Data science",53706,sausage,Yes,Yes,night owl,Yes
+LEC004,18,Computer Science,,53706,basil/spinach,Yes,No,no preference,Yes
+LEC003,18,Computer Science,,53703,pepperoni,Yes,No,night owl,Yes
+LEC003,,Mathematics/AMEP,,,mushroom,No,Yes,night owl,Yes
+LEC004,19,Data Science,,53706,mushroom,Yes,No,night owl,Yes
+LEC001,19,Science: Chemistry,Data Science,53706,sausage,Yes,No,night owl,No
+LEC002,19,Mathematics/AMEP,,53703,Other,No,No,night owl,Yes
+LEC003,18,Other,,53703,pineapple,No,No,early bird,No
+LEC004,19,Engineering: Mechanical,,53703,pepperoni,Yes,No,early bird,Yes
+LEC003,19,Statistics,thinking about a data science certificate or switching major to data science,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Other,,53706,pepperoni,Yes,Yes,night owl,Maybe
+LEC003,18,Statistics,data science,53706,pineapple,No,No,night owl,Maybe
+LEC003,21,Computer Science,,53705,mushroom,Yes,No,night owl,Maybe
+LEC002,21,Other,Data Science,53705,sausage,Yes,No,night owl,Yes
+LEC003,20,Science: Biology/Life,,53703,pineapple,No,No,early bird,Maybe
+LEC003,18,Other,,53715,pepperoni,Yes,No,early bird,No
+LEC004,18,Engineering: Biomedical,,53706,pepperoni,Yes,Yes,early bird,Yes
+LEC001,21,Computer Science,,53715,macaroni/pasta,Yes,No,night owl,Yes
+LEC003,21,Science: Other,Data Science,53711,mushroom,Yes,Yes,night owl,Yes
+LEC004,19,Engineering: Mechanical,,,sausage,No,No,early bird,No
+LEC002,20,Engineering: Industrial,,53715,mushroom,No,No,night owl,Yes
+LEC002,19,Engineering: Mechanical,,53706,pepperoni,Yes,No,no preference,No
+LEC002,22,Science: Physics,,53703,sausage,Yes,No,night owl,Yes
+LEC004,19,Engineering: Other,,53706,sausage,Yes,Yes,no preference,Maybe
+LEC001,19,Engineering: Biomedical,,53711,macaroni/pasta,Yes,No,night owl,Yes
+LEC001,23,Data Science,,53703,mushroom,Yes,Yes,night owl,Maybe
+LEC001,20,Engineering: Industrial,,53703,pepperoni,Yes,No,night owl,Yes
+LEC003,18,Science: Other,,53706,pineapple,Yes,Yes,night owl,Yes
+LEC003,25,Computer Science,,53713,sausage,Yes,No,night owl,Yes
+LEC001,31,Data Science,,53575,sausage,Yes,Yes,early bird,Maybe
+LEC001,19,Data Science,,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC002,21,Computer Science,,53703,pepperoni,Yes,No,night owl,Yes
+LEC003,20,Business: Actuarial,Risk Management and Insurance,53715,pepperoni,Yes,No,night owl,No
+LEC004,19,Data Science,,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC001,19,Computer Science,,53706,mushroom,Yes,No,early bird,Maybe
+LEC001,19,Mathematics/AMEP,,,pepperoni,Yes,No,night owl,Maybe
+LEC001,19,Engineering: Mechanical,,53705,sausage,Yes,No,night owl,Yes
+LEC004,19,Engineering: Mechanical,,53706,pineapple,Yes,No,night owl,Yes
+LEC002,19,Science: Physics,,53706,Other,Yes,No,no preference,Yes
+LEC001,21,Computer Science,Data science,53703,basil/spinach,No,Yes,night owl,No
+LEC003,19,Mathematics/AMEP,data science,53706,sausage,Yes,No,night owl,Yes
+LEC002,18,Science: Biology/Life,data science certificate,53706,pineapple,Yes,Yes,night owl,Yes
+LEC004,18,Statistics,,53706,sausage,No,Yes,night owl,Yes
+LEC003,21,Engineering: Industrial,,53562,pepperoni,Yes,No,night owl,Maybe
+LEC001,20,Engineering: Mechanical,,53715,green pepper,Yes,No,early bird,Yes
+LEC003,19,Engineering: Mechanical,,,pineapple,No,No,early bird,No
+LEC003,20,Statistics,,53703,mushroom,Yes,Yes,no preference,No
+LEC002,18,Engineering: Mechanical,"Industrial, Buisness",53701,pepperoni,No,No,night owl,Maybe
+LEC001,18,Other,Legal Studies,53706,mushroom,No,No,night owl,Yes
+LEC001,20,Data Science,,53703,none (just cheese),Yes,Yes,night owl,Yes
+LEC001,21,Other,,53703,Other,Yes,Yes,no preference,Maybe
+LEC001,22,Engineering: Biomedical,pre-med,53715,none (just cheese),Yes,Yes,no preference,Yes
+LEC003,20,Other,"Philosophy, Data Science Certificate, Pre-Med",53703,basil/spinach,No,Yes,early bird,Yes
+LEC001,21,Business: Finance,Economics,53703,basil/spinach,Yes,No,night owl,Yes
+LEC003,19,Statistics,,53705,none (just cheese),Yes,Yes,no preference,Yes
+LEC001,18,Engineering: Industrial,,53703,sausage,Yes,Yes,night owl,Yes
+LEC003,21,Science: Biology/Life,My majors are Environmental Science and Spanish,53703,macaroni/pasta,Yes,No,night owl,Maybe
+LEC001,18,Other,,,pepperoni,Yes,No,no preference,Yes
+LEC004,23,Science: Physics,Astronomy,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC002,21,Computer Science,,53711,sausage,Yes,No,night owl,Maybe
+LEC002,18,Engineering: Mechanical,,53706,sausage,Yes,Yes,early bird,Yes
+LEC003,19,Engineering: Other,Environmental Science,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,19,Science: Other,Life science communications,53706,Other,Yes,No,night owl,Maybe
+LEC004,21,Engineering: Mechanical,,53703,sausage,Yes,Yes,no preference,No
+LEC001,20,Computer Science,,53703,pineapple,Yes,No,night owl,Yes
+LEC001,20,Other,,53703,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC001,22,Other,"psychology, legal studies, certificate in criminal justice ",53711,sausage,Yes,No,night owl,Maybe
+LEC002,21,Data Science,,53711,none (just cheese),Yes,No,night owl,Yes
+LEC003,21,Other,,53703,mushroom,Yes,No,early bird,Yes
+LEC002,20,Engineering: Industrial,,53703,pineapple,Yes,Yes,early bird,Yes
+LEC001,19,Computer Science,data science,53706,pineapple,No,No,night owl,No
+LEC003,19,Statistics,Data Science,53703,pineapple,No,No,night owl,Maybe
+LEC001,20,Computer Science,,53726,none (just cheese),Yes,No,night owl,Yes
+LEC002,,Computer Science,,,pepperoni,Yes,No,night owl,Maybe
+LEC001,18,Computer Science,,53706,pineapple,No,No,no preference,Maybe
+LEC001,19,Computer Science,data science,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC003,19,Other,Undecided in STEM,53706,pepperoni,No,No,night owl,No
+LEC001,18,Computer Science,data science,53590,Other,No,No,night owl,Yes
+LEC004,18,Other,,53706,Other,Yes,No,night owl,Maybe
+LEC003,19,Data Science,,53706,basil/spinach,Yes,No,no preference,Maybe
+LEC001,19,Business: Finance,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC001,19,Engineering: Industrial,,53704,basil/spinach,No,No,no preference,Yes
+LEC004,18,Engineering: Other,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC002,18,Computer Science,,,macaroni/pasta,Yes,Yes,night owl,Yes
+LEC003,20,Engineering: Biomedical,,53715,none (just cheese),Yes,Yes,no preference,Maybe
+LEC001,18,Other,,52816,none (just cheese),Yes,No,night owl,Yes
+LEC002,18,Engineering: Mechanical,Computes Science Certificate Potentially,53706,sausage,Yes,Yes,night owl,Yes
+LEC002,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,no preference,No
+LEC003,20,Business: Finance,Business: Risk Management ,53703,sausage,Yes,Yes,night owl,Yes
+LEC001,19,Science: Chemistry,,53706,pineapple,Yes,No,night owl,Yes
+LEC001,20,Engineering: Mechanical,,59301,pepperoni,Yes,Yes,no preference,Maybe
+LEC001,22,Mathematics/AMEP,Economics ,53715,basil/spinach,Yes,Yes,early bird,No
+LEC001,22,Other,,53703,green pepper,Yes,Yes,night owl,Yes
+LEC001,19,Engineering: Other,,53715,none (just cheese),Yes,Yes,night owl,No
+LEC002,18,Engineering: Mechanical,,53706,sausage,Yes,Yes,night owl,Yes
+LEC001,23,Engineering: Other,,53711,green pepper,Yes,Yes,no preference,Maybe
+LEC001,18,Science: Chemistry,,53706,sausage,Yes,Yes,night owl,No
+LEC001,23,Engineering: Mechanical,,53715,pepperoni,Yes,Yes,night owl,Maybe
+LEC002,19,Data Science,Economics,53706,macaroni/pasta,No,No,early bird,Yes
+LEC001,20,Engineering: Industrial,"Science: Other, Economics",53703,sausage,Yes,Yes,early bird,No
+LEC003,21,Data Science,"Economics, Social Science",53703,sausage,Yes,Yes,no preference,Maybe
+LEC002,18,Data Science,,10306,none (just cheese),Yes,No,night owl,Maybe
+LEC002,20,Mathematics/AMEP,Environmental Sciences,53715,pepperoni,No,No,night owl,Maybe
+LEC002,18,Statistics,,53706,pepperoni,Yes,No,night owl,Maybe
+LEC003,21,Engineering: Mechanical,,53715,pepperoni,Yes,Yes,night owl,Yes
+LEC002,20,Engineering: Biomedical,,53703,pepperoni,Yes,No,night owl,Yes
+LEC002,19,Data Science,,53703,pineapple,Yes,No,no preference,Yes
+LEC001,21,Engineering: Other,,53715,mushroom,No,No,early bird,Maybe
+LEC003,18,Data Science,possibly Statistics / Math,53706,mushroom,Yes,No,night owl,Yes
+LEC002,,Business: Other,,,pepperoni,Yes,No,early bird,No
+LEC002,19,Other,,53706,pepperoni,Yes,No,night owl,Yes
+LEC001,19,Engineering: Other,,53706,pineapple,Yes,No,night owl,Maybe
+LEC003,19,Computer Science,data science I havent decided on a major yet but it might be either one of these,53726,none (just cheese),No,No,night owl,Maybe
+LEC003,20,Business: Finance,,53703,Other,Yes,No,night owl,Yes
+LEC001,21,Science: Other,,53703,sausage,No,No,night owl,Yes
+LEC001,20,Other,,53703,pepperoni,No,No,night owl,Yes
+LEC004,20,Engineering: Other,,53703,none (just cheese),Yes,No,night owl,Yes
+LEC001,21,Business: Information Systems,,53703,Other,Yes,Yes,no preference,No
+LEC003,21,Mathematics/AMEP,,,mushroom,No,No,night owl,Yes
+LEC001,18,Other,,53703,mushroom,Yes,No,night owl,Yes
+LEC003,19,Business: Actuarial,,53175,sausage,Yes,Yes,early bird,Yes
+LEC003,20,Engineering: Mechanical,Naval Architecture & Marnie Engineering (self-tutored),53711,green pepper,Yes,No,night owl,Maybe
+LEC002,20,Business: Other,,53703,pineapple,Yes,No,night owl,Maybe
+LEC003,20,Data Science,"computer science, stats ",53711,pineapple,Yes,No,early bird,Yes
+LEC004,19,Statistics,,53706,pepperoni,Yes,No,night owl,Yes
+LEC003,18,Engineering: Industrial,Data science ,53715,pepperoni,No,Yes,early bird,Maybe
+LEC004,20,Other,"Economics, Data Science",53715,mushroom,Yes,No,no preference,Maybe
+LEC001,19,Engineering: Mechanical,,53706,sausage,Yes,Yes,night owl,Yes
+LEC002,21,Engineering: Mechanical,Spanish,53719,none (just cheese),Yes,Yes,night owl,Maybe
+LEC001,24,Engineering: Industrial,Business,53726,mushroom,Yes,No,night owl,Maybe
+LEC002,20,Other,NA,53703,basil/spinach,Yes,Yes,night owl,Yes
+LEC004,18,Engineering: Mechanical,,53706,sausage,Yes,Yes,early bird,Yes
+LEC001,19,Other,"Data Science Certificate, Economics",53703,sausage,No,Yes,night owl,Yes
+LEC001,18,Engineering: Mechanical,,53706,pepperoni,No,No,night owl,Yes
+LEC003,18,Engineering: Mechanical,,53706,pepperoni,Yes,Yes,night owl,Yes
+LEC004,19,Engineering: Biomedical,,53706,none (just cheese),Yes,No,no preference,Yes
+LEC001,20,Computer Science,,53715,sausage,Yes,No,night owl,Yes
+LEC001,17,Engineering: Mechanical,,53706,pineapple,Yes,No,night owl,Yes
+LEC002,20,Data Science,,53703,pepperoni,Yes,Yes,night owl,Yes
+LEC003,18,Engineering: Mechanical,,53715,pineapple,No,No,night owl,Maybe
+LEC003,19,Engineering: Biomedical,,53703,none (just cheese),Yes,Yes,night owl,Yes
+LEC003,20,Other,Data Science,53715,mushroom,Yes,Yes,early bird,Maybe
+LEC003,19,Mathematics/AMEP,,53705,pineapple,No,No,night owl,Yes
+LEC002,19,Engineering: Mechanical,chemical engineering,53711,green pepper,Yes,No,night owl,Maybe
+LEC003,21,Computer Science,Data Science,53715,mushroom,No,No,night owl,Maybe
+LEC003,19,Data Science,,53590,pepperoni,No,No,no preference,Yes
+LEC001,20,Computer Science,,,pepperoni,Yes,No,early bird,Yes
+LEC001,20,Data Science,"Biology, Bioinformatics",53703,sausage,Yes,No,no preference,Yes
+LEC002,21,Engineering: Mechanical,,53705,none (just cheese),Yes,No,no preference,Maybe
+LEC001,19,Computer Science,Data Science,53706,Other,No,Yes,night owl,No
+LEC001,20,Business: Finance,Data Science,53715,sausage,Yes,Yes,night owl,Yes
+LEC001,19,Data Science,Computer science,53706,pineapple,No,Yes,no preference,Yes
+LEC002,23,Science: Other,Computer Science,53711,pineapple,Yes,Yes,early bird,No
+LEC003,18,Engineering: Mechanical,,53706,sausage,No,No,night owl,No
+LEC001,19,Computer Science,Data Science,53703,Other,No,No,no preference,Maybe
+LEC001,19,Science: Other,,53706,macaroni/pasta,Yes,No,night owl,Yes
+LEC003,19,Other,I do not have a secondary major but my major is International Studies. ,53076,pepperoni,Yes,Yes,early bird,Yes
+LEC001,21,Science: Biology/Life,,53715,pepperoni,Yes,No,night owl,Yes
+LEC001,20,Engineering: Mechanical,,53726,pepperoni,Yes,No,night owl,Yes
+LEC002,20,Engineering: Industrial,,53715,pepperoni,Yes,No,no preference,Yes
+LEC003,20,Science: Biology/Life,Life Science Communication,53703,pepperoni,Yes,No,early bird,Maybe
+LEC002,19,Science: Biology/Life,Data Science,,pepperoni,No,No,no preference,Maybe
+LEC002,22,Computer Science,,53703,sausage,Yes,No,night owl,Yes
+LEC001,20,Business: Information Systems,,53706,mushroom,Yes,No,night owl,Yes
+LEC001,19,Business: Other,,53706,pepperoni,Yes,No,early bird,Yes
+LEC001,21,Other,"Economics/Philosophy, Data Science Certificate",53703,pepperoni,Yes,No,no preference,Yes
+LEC003,19,Computer Science,Data science,53706,pineapple,Yes,Yes,night owl,Yes
