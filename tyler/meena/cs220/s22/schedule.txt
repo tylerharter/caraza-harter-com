@@ -419,7 +419,7 @@ Pandas 2
 <b>No slides</b><br>
 <!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-30-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-30-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-30" target="_blank">code</a><br-->
-<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_30" target="_blank">code</a><br>
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_28" target="_blank">code</a><br>
 
 
 =
@@ -433,7 +433,7 @@ Web 1
 <b>Due</b>: CS319 Project part 1: proposal (Not applicable to CS220 students)<br>
 <!--a href="materials/lecture_ppts/lec_31_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-31" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_31" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_29" target="_blank">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p11" target="_blank">Lab-P11</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p11" target="_blank">P11</a><br-->
 
 =
@@ -443,7 +443,7 @@ Web 2
 <b>Due</b>: Quiz8<br>
 <!--a href="materials/lecture_ppts/lec_32_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-32" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_32" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_30" target="_blank">code</a><br-->
 
 =
 Web 3
@@ -452,7 +452,7 @@ Web 3
 * beautifulsoup
 <!--a href="materials/lecture_ppts/lec_33_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-33" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_33" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_31" target="_blank">code</a><br-->
 
 =
 Database 1
@@ -465,7 +465,7 @@ Database 1
 <b>Due</b>: CS319 Project part 2: data set (Not applicable to CS220 students)<br>
 <!--a href="materials/lecture_ppts/lec_34_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-34" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_34" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_32" target="_blank">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p12" target="_blank">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p12" target="_blank">P12</a><br-->
 
 =
@@ -476,7 +476,7 @@ Database 2
 <b>Due</b>: Quiz9<br>
 <!--b>Link to worksheet (notebook)</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-35/worksheet" target="_blank">ipynb</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-35" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_35" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_33" target="_blank">code</a><br-->
 
 =
 Database 3
@@ -486,7 +486,7 @@ Database 3
 <!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-36-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-36-worksheet.docx" target="_blank">docx</a><br-->
 <!--b>Link to worksheet solution (partial): </b><a href="materials/lecture_ppts/lec-36-worksheet_solution.pdf" target="_blank".pdf</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-36" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_36" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_34" target="_blank">code</a><br-->
 
 =
 Plotting 1
@@ -497,7 +497,7 @@ Plotting 1
 <b>Due</b>: P12<br>
 <b>Due</b>: CS319 Project part 3: initial code (Not applicable to CS220 students)<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-37" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_37" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_35" target="_blank">code</a><br-->
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p13" target="_blank">P13</a><br-->
 
 =
@@ -507,7 +507,7 @@ Plotting 2
 <b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">line-and-bar.ipynb and data</a>)<br>
 <b>Due</b>: Quiz10<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-38" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_38" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_36" target="_blank">code</a><br-->
 
 =
 Plotting 3
@@ -515,7 +515,7 @@ Plotting 3
 * bar plots with 'other'
 <b>Read</b>: same as for "Plotting 2"<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-39" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_39" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_37" target="_blank">code</a><br-->
 
 =
 Plotting 4
@@ -528,7 +528,7 @@ Plotting 4
 <b>Due</b>: No work accepted after today. No late days or extensions may be used.<br>
 <b>Due</b>: CS319 Project part 4: final code (Not applicable to CS220 students)<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-40" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_40" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_38" target="_blank">code</a><br-->
 
 
 =
@@ -543,4 +543,4 @@ Randomness
 * Significance
 <!--a href="materials/lecture_ppts/lec_41_S22.pdf" target="_blank">Link to Slides</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-41" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_41" target="_blank">code</a><br-->
+<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_39" target="_blank">code</a><br-->
