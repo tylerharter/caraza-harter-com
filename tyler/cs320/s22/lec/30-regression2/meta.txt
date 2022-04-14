@@ -1,0 +1,4 @@
+Regression 2
+* PolynomialFeatures
+* OneHot Encoding
+* Pipelines
