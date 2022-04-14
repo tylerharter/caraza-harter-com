@@ -1,0 +1,181 @@
+{
+  "credits": 3,
+  "description": "Learn the process of incrementally developing small (200-500 lines) programs along with the fundamental Computer Science topics. These topics include: problem abstraction and decomposition, the edit-compile-run cycle, using variables of primitive and more complex data types, conditional and loop-based flow control, basic testing and debugging techniques, how to define and call functions (methods), and IO processing techniques. Also teaches and reinforces good programming practices including the use of a consistent style, and meaningful documentation. Intended for students who have no prior programming experience.",
+  "keywords": [
+    "computer",
+    "science",
+    "programming",
+    "java"
+  ],
+  "name": "Programming 1",
+  "number": "COMPSCI_200",
+  "requisites": [],
+  "sections": [
+    {
+      "instructor": "Jim Williams",
+      "location": "132 Noland Hall",
+      "subsections": [
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "9:30am - 10:45am"
+          },
+          "number": "LAB_311"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "11:00am - 12:15pm"
+          },
+          "number": "LAB_312"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "2:30pm - 3:45pm"
+          },
+          "number": "LAB_314"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "4:00pm - 5:15pm"
+          },
+          "number": "LAB_315"
+        }
+      ],
+      "time": {
+        "thursday": "8:00am - 9:15am",
+        "tuesday": "8:00am - 9:15am"
+      },
+      "number": "LEC_001"
+    },
+    {
+      "instructor": "Jim Williams",
+      "location": "132 Noland Hall",
+      "subsections": [
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "9:30am - 10:45am"
+          },
+          "number": "LAB_321"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "1:00pm - 2:15pm"
+          },
+          "number": "LAB_323"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "2:30pm - 3:45pm"
+          },
+          "number": "LAB_324"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "wednesday": "4:00pm - 5:15pm"
+          },
+          "number": "LAB_325"
+        }
+      ],
+      "time": {
+        "thursday": "11:00am - 12:15pm",
+        "tuesday": "11:00am - 12:15pm"
+      },
+      "number": "LEC_002"
+    },
+    {
+      "instructor": "Marc Renault",
+      "location": "113 Brogden Psychology Building",
+      "subsections": [
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "9:30am - 10:45am"
+          },
+          "number": "LAB_331"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "11:00am - 12:15pm"
+          },
+          "number": "LAB_332"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "1:00pm - 2:15pm"
+          },
+          "number": "LAB_333"
+        },
+        {
+          "location": "1350 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "2:30pm - 3:45pm"
+          },
+          "number": "LAB_334"
+        }
+      ],
+      "time": {
+        "friday": "1:20pm - 2:10pm",
+        "monday": "1:20pm - 2:10pm",
+        "wednesday": "1:20pm - 2:10pm"
+      },
+      "number": "LEC_003"
+    },
+    {
+      "instructor": "Marc Renault",
+      "location": "113 Brogden Psychology Building",
+      "subsections": [
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "9:30am - 10:45am"
+          },
+          "number": "LAB_341"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "11:00am - 12:15pm"
+          },
+          "number": "LAB_342"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "1:00pm - 2:15pm"
+          },
+          "number": "LAB_343"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "2:30pm - 3:45pm"
+          },
+          "number": "LAB_344"
+        },
+        {
+          "location": "1370 Computer Sciences and Statistics",
+          "time": {
+            "tuesday": "4:00pm - 5:15pm"
+          },
+          "number": "LAB_345"
+        }
+      ],
+      "time": {
+        "friday": "3:30pm - 4:20pm",
+        "monday": "3:30pm - 4:20pm",
+        "wednesday": "3:30pm - 4:20pm"
+      },
+      "number": "LEC_004"
+    }
+  ],
+  "subject": "Computer Science"
+}
