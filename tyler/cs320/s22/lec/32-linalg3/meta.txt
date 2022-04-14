@@ -1,2 +1,0 @@
-Linear Algebra 3
-* catchup

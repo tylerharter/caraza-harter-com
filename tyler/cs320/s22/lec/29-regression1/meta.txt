@@ -1,5 +1,5 @@
-Regression 2
-* PolynomialFeatures
-* OneHot Encoding
-* Pipelines
+Regression 1
+* sklearn LinearRegression
+* explained variance
+* train/test split
 https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_13_22-10%3A56%3A37/1_g0nc8mcx
