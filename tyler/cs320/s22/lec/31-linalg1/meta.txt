@@ -2,5 +2,3 @@ Linear Algebra 1
 * numpy arrays
 * numpy images
 * multiplication
-<b>Due:</b> P5<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p6">P6 (land matrices and regression)</a><br>
