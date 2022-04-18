@@ -1,0 +1,102 @@
+[
+  {
+    "Title": "Guardians of the Galaxy",
+    "Genre": "Action,Adventure,Sci-Fi",
+    "Director": "James Gunn",
+    "Cast": "Chris Pratt, Vin Diesel, Bradley Cooper, Zoe Saldana",
+    "Year": 2014,
+    "Runtime": 121,
+    "Rating": 8.1,
+    "Revenue": 333130000.0
+  },
+  {
+    "Title": "Prometheus",
+    "Genre": "Adventure,Mystery,Sci-Fi",
+    "Director": "Ridley Scott",
+    "Cast": "Noomi Rapace, Logan Marshall-Green, Michael         fassbender, Charlize Theron",
+    "Year": 2012,
+    "Runtime": 124,
+    "Rating": 7.0,
+    "Revenue": 126460000.0
+  },
+  {
+    "Title": "Split",
+    "Genre": "Horror,Thriller",
+    "Director": "M. Night Shyamalan",
+    "Cast": "James McAvoy, Anya Taylor-Joy, Haley Lu Richardson, Jessica Sula",
+    "Year": 2016,
+    "Runtime": 117,
+    "Rating": 7.3,
+    "Revenue": 138120000.0
+  },
+  {
+    "Title": "Sing",
+    "Genre": "Animation,Comedy,Family",
+    "Director": "Christophe Lourdelet",
+    "Cast": "Matthew McConaughey,Reese Witherspoon, Seth MacFarlane, Scarlett Johansson",
+    "Year": 2016,
+    "Runtime": 108,
+    "Rating": 7.2,
+    "Revenue": 270320000.0
+  },
+  {
+    "Title": "Suicide Squad",
+    "Genre": "Action,Adventure,Fantasy",
+    "Director": "David Ayer",
+    "Cast": "Will Smith, Jared Leto, Margot Robbie, Viola Davis",
+    "Year": 2016,
+    "Runtime": 123,
+    "Rating": 6.2,
+    "Revenue": 325020000.0
+  },
+  {
+    "Title": "The Great Wall",
+    "Genre": "Action,Adventure,Fantasy",
+    "Director": "Yimou Zhang",
+    "Cast": "Matt Damon, Tian Jing, Willem Dafoe, Andy Lau",
+    "Year": 2016,
+    "Runtime": 103,
+    "Rating": 6.1,
+    "Revenue": 45130000.0
+  },
+  {
+    "Title": "La La Land",
+    "Genre": "Comedy,Drama,Music",
+    "Director": "Damien Chazelle",
+    "Cast": "Ryan Gosling, Emma Stone, Rosemarie DeWitt, J.K. Simmons",
+    "Year": 2016,
+    "Runtime": 128,
+    "Rating": 8.3,
+    "Revenue": 151060000.0
+  },
+  {
+    "Title": "Mindhorn",
+    "Genre": "Comedy",
+    "Director": "Sean Foley",
+    "Cast": "Essie Davis, Andrea Riseborough, Julian Barratt,Kenneth Branagh",
+    "Year": 2016,
+    "Runtime": 89,
+    "Rating": 6.4,
+    "Revenue": 0.0
+  },
+  {
+    "Title": "The Lost City of Z",
+    "Genre": "Action,Adventure,Biography",
+    "Director": "James Gray",
+    "Cast": "Charlie Hunnam, Robert Pattinson, Sienna Miller, Tom Holland",
+    "Year": 2016,
+    "Runtime": 141,
+    "Rating": 7.1,
+    "Revenue": 8010000.0
+  },
+  {
+    "Title": "Passengers",
+    "Genre": "Adventure,Drama,Romance",
+    "Director": "Morten Tyldum",
+    "Cast": "Jennifer Lawrence, Chris Pratt, Michael Sheen,Laurence Fishburne",
+    "Year": 2016,
+    "Runtime": 116,
+    "Rating": 7.0,
+    "Revenue": 100010000.0
+  }
+]
