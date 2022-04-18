@@ -463,11 +463,11 @@ Web 3
 
 =
 Database 1
-* schemas/types
-* queries
-* where
-* SQLite
-* Querying from Pandas
+* why use a database?
+* sqlite3 module
+* querying from Pandas
+* basic query structure
+
 <b>Due</b>: P11<br>
 <b>Due</b>: CS319 Project part 2: data set (Not applicable to CS220 students)<br>
 <!--a href="materials/lecture_ppts/lec_34_S22.pdf" target="_blank">Link to Slides</a><br-->
