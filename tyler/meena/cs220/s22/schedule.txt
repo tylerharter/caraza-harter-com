@@ -471,7 +471,7 @@ Database 1
 <b>Due</b>: P11<br>
 <b>Due</b>: CS319 Project part 2: data set (Not applicable to CS220 students)<br>
 <a href="materials/lecture_ppts/lec_32_S22.pdf" target="_blank">Link to Slides</a><br>
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-34" target="_blank">code</a><br-->
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-32" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_32" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_32" target="_blank">code</a><br>
 <b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p12" target="_blank">Lab-P12</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p12" target="_blank">P12</a><br>
