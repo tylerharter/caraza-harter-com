@@ -3,3 +3,4 @@ Linear Algebra 2
 * fit with np.linalg.solve
 * predict with np.dot
 * column perspective
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_20_22-10%3A59%3A00/1_7uz1yx8q
