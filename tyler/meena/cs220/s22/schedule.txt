@@ -478,8 +478,8 @@ Database 1
 
 =
 Database 2
-* aggregates
-* distinct
+* min, max, distinct
+* count, avg, sum
 * group by
 * having
 <b>No slides</b><br>
@@ -490,7 +490,7 @@ Database 2
 
 =
 Database 3
-* Worksheets
+* Worksheet
 * Pandas <--> SQL
 <b>No slides</b><br>
 <!--b>Link to worksheet: </b><a href="materials/lecture_ppts/lec-36-worksheet.pdf" target="_blank".pdf</a>, <a href="materials/lec-36-worksheet.docx" target="_blank">docx</a><br-->
