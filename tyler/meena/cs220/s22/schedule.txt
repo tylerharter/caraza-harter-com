@@ -478,15 +478,15 @@ Database 1
 
 =
 Database 2
-* min, max, distinct
-* count, avg, sum
+* min, max, sum, avg
+* count, distinct
 * group by
 * having
 <b>No slides</b><br>
 <b>Due</b>: Quiz9<br>
 <!--b>Link to worksheet (notebook)</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/lectureDemo_code/lec-35/worksheet" target="_blank">ipynb</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-35" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_33" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_33" target="_blank">code</a><br>
 
 =
 Database 3
