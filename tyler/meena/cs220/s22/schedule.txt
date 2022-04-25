@@ -498,6 +498,7 @@ Database 3
 <!--b>Link to worksheet solution (partial): </b><a href="materials/lecture_ppts/lec-36-worksheet_solution.pdf" target="_blank".pdf</a><br-->
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-36" target="_blank">code</a><br-->
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_34" target="_blank">code</a><br>
+<b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_34" target="_blank">code</a><br>
 
 =
 Plotting 1
