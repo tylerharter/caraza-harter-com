@@ -504,19 +504,20 @@ Database 3
 Plotting 1
 * bar plots
 * customizing plots
-* AxesSublot
+* setting the index
 * making a bar for 'other'
 <b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a> or <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">matplotlib-intro.ipynb and data</a>)<br>
 <b>Due</b>: P12<br>
 <b>Due</b>: CS319 Project part 3: initial code (Not applicable to CS220 students)<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-37" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_35" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_35" target="_blank">code</a><br>
 <!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p13" target="_blank">P13</a><br-->
 
 =
 Plotting 2
 * scatter plots
-* line plots
+* correlation
+* line of best fit
 <b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">line-and-bar.ipynb and data</a>)<br>
 <b>Due</b>: Quiz10<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-38" target="_blank">code</a><br-->
@@ -524,7 +525,8 @@ Plotting 2
 
 =
 Plotting 3
-* simulations
+* line plots
+* multiple line plots
 <b>Read</b>: same as for "Plotting 2"<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-39" target="_blank">code</a><br-->
 <!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_37" target="_blank">code</a><br-->
@@ -533,8 +535,8 @@ Plotting 3
 Plotting 4
 * axes limits
 * logarithmic axes
+* subplots
 * adjacent plots
-* design decisions
 <b>Read</b>: Axes and Plot Design (<a href="materials/readings/axes.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">axes.ipynb and data</a>)<br>
 <b>Due</b>: P13<br>
 <b>Due</b>: No work accepted after today. No late days or extensions may be used.<br>
