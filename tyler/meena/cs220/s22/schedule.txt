@@ -509,10 +509,10 @@ Plotting 1
 <b>Read</b>: Matplotlib Intro (<a href="materials/readings/matplotlib-intro.html">HTML</a> or <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">matplotlib-intro.ipynb and data</a>)<br>
 <b>Due</b>: P12<br>
 <b>Due</b>: CS319 Project part 3: initial code (Not applicable to CS220 students)<br>
-<!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-37" target="_blank">code</a><br-->
+<b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-35" target="_blank">code</a><br>
 <b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_35" target="_blank">code</a><br>
 <b>Cole's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/cole_lec_notes/lec_35" target="_blank">code</a><br>
-<!--b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p13" target="_blank">P13</a><br-->
+<b>Assigned</b>: <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/lab-p13" target="_blank">Lab-P13</a>, <a href="https://github.com/msyamkumar/cs220-s22-projects/tree/master/p13" target="_blank">P13</a><br>
 
 =
 Plotting 2
