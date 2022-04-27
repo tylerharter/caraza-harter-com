@@ -1,3 +1,4 @@
 Classification 2
 * confusion matrices
 * accuracy, precision, recall
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_27_22-10%3A54%3A09/1_g7q0cpiz
