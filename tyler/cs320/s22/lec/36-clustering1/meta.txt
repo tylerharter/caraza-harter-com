@@ -1,2 +1,5 @@
 Clustering 1
-* k-means
+* KMeans
+* AgglomerativeClustering
+* fit, transform, "predict"
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_29_22-10%3A59%3A34/1_lck55det
