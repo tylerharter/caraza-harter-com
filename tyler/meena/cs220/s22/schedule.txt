@@ -518,7 +518,6 @@ Plotting 1
 Plotting 2
 * scatter plots
 * correlation
-* line of best fit
 <b>Read</b>: Line and Advanced Bar Plots (<a href="materials/readings/line-and-bar.html">HTML</a>, <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/readings" target="_blank">line-and-bar.ipynb and data</a>)<br>
 <b>Due</b>: Quiz10<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-38" target="_blank">code</a><br-->
@@ -529,6 +528,7 @@ Plotting 2
 =
 Plotting 3
 * line plots
+* line of best fit
 * multiple line plots
 * advanced bar plots
 <b>Read</b>: same as for "Plotting 2"<br>
