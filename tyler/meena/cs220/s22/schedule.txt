@@ -528,12 +528,11 @@ Plotting 2
 =
 Plotting 3
 * line plots
-* line of best fit
 * multiple line plots
-* advanced bar plots
+* multiple bar plots
 <b>Read</b>: same as for "Plotting 2"<br>
 <!--b>Meena's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/meena_lec_notes/lec-39" target="_blank">code</a><br-->
-<!--b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_37" target="_blank">code</a><br-->
+<b>Andy's Lecture</b>: <a href="https://github.com/tylerharter/caraza-harter-com/tree/master/tyler/meena/cs220/s22/materials/andy_lec_notes/lec_37" target="_blank">code</a><br>
 
 =
 Plotting 4
