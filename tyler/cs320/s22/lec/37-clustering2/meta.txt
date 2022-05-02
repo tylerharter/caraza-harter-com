@@ -1,5 +1,5 @@
 Clustering 2
-* hierarchical clustering
+* binary trees as matrices
 * dendrograms
 * linkage matrices
-* AgglomerativeClustering
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-05_02_22-10%3A57%3A14/1_rlsr9u0q

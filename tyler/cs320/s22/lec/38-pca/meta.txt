@@ -1,5 +1,4 @@
 Decomposition
-* Singular Value Decomposition (SVD)
 * Principal Component Analysis (PCA)
 * Compressing Data
 <b>Due:</b> P7<br>

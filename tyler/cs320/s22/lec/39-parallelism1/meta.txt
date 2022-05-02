@@ -1,3 +1,5 @@
-Parallelism 1
+Parallelism
+* threads vs. processes
 * multiprocessing pools
 * parallel map
+* pytorch
