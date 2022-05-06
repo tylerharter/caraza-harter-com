@@ -3,3 +3,4 @@ Parallelism
 * multiprocessing pools
 * parallel map
 * pytorch
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-05_06_22-10%3A58%3A47/1_5cge0xr1
