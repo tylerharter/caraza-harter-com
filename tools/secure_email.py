@@ -12,10 +12,14 @@ def main():
 
     filename, topic = sys.argv[1:]
 
+    # can be a dict (email => message) or a list of dicts with more info per message
     with open(filename) as f:
         emails = json.load(f)
 
     for email in emails:
+        if isinstance(email, str):
+            email = {"to": email, "message": emails[email], "html": True, "subject": ""}
+
         print(email)
         assert(email['html'])
 
