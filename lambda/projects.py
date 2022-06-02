@@ -125,7 +125,7 @@ def nb_cell_output_html(cell):
             web = data.get("text/html", None)
             plain = data.get("text/plain", None)
             if png:
-                parts.append('<img src="data:image/png;base64, {}"/>'.format(png.strip()))
+                parts.append('<img src="data:image/png;base64, {}"/>'.format(html.escape(png.strip())))
             elif web:
                 parts.append(sanitize_html("".join(web)))
             elif plain:
