@@ -1,0 +1,7 @@
+Web 1: Selenium
+* finding elements, text
+* polling
+* screenshots
+* clicking, typing
+<a href="https://tyler.caraza-harter.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-03_02_22-10%3A56%3A54/1_i6vkx1xg

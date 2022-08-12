@@ -1,0 +1,5 @@
+Linear Algebra 1
+* numpy arrays
+* numpy images
+* multiplication
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_18_22-10%3A55%3A32/1_4rau6wqo

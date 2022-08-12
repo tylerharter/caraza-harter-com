@@ -1,0 +1,5 @@
+Visualization 4
+* animation
+* FuncAnimation
+* frames, intervals, fps
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_06_22-10%3A55%3A18/1_3lcgqqpv

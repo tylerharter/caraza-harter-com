@@ -4,6 +4,7 @@ from datetime import date, timedelta
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs320/f22'
 github2 = 'https://github.com/cs320-wisc/f22/tree/main'
+canvas = 'https://canvas.wisc.edu/courses/322105'
 
 def template():
     with open('template.html') as f:
@@ -139,9 +140,9 @@ def schedule():
                 f.write(f'<b>Lab</b>: <a href="{github2}/labs/lab{week}.md">Week {week} Activities</a>\n')
             if day == 1 and week in extra["quizzes"]:
                 if week > 2:
-                    f.write(f'<b>Quiz</b>: <a href="https://canvas.wisc.edu/courses/293982/quizzes">week {week-1} and before (cumulative)</a>\n')
+                    f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1} and before (cumulative)</a>\n')
                 else:
-                    f.write(f'<b>Quiz</b>: <a href="https://canvas.wisc.edu/courses/293982/quizzes">week {week-1}</a>\n')
+                    f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1}</a>\n')
 
             f.write('</div>\n')
         f.write('</div>\n')

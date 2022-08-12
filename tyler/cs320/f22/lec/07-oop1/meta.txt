@@ -1,0 +1,6 @@
+OOP 1: Classes
+* attributes
+* methods
+* constructors
+<b>Optional Reading</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15, 16, and 17.1 - 17.5</a><br>
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-02_09_22-10%3A58%3A13/1_0pdqr8ba

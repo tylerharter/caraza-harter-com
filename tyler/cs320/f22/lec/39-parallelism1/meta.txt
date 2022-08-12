@@ -1,0 +1,6 @@
+Parallelism
+* threads vs. processes
+* multiprocessing pools
+* parallel map
+* pytorch
+<b>Due:</b> P7<br>

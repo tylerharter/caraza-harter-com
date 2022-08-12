@@ -1,0 +1,6 @@
+Web 4: More Flask
+* robots.txt
+* query strings
+* decorators
+<b>Due:</b> P3<br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p4">P4 (website)</a><br>

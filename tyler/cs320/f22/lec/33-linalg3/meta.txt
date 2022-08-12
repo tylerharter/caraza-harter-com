@@ -1,0 +1,4 @@
+Linear Algebra 3
+* column spaces
+* projection matrices
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_22_22-10%3A58%3A03/1_sl725jrb

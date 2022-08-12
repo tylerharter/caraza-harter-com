@@ -1,0 +1,5 @@
+Web 3: Flask
+* Internet overview
+* flask
+* headers, rate limiting (HTTP 429)
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-03_09_22-10%3A59%3A28/1_ggjyxnof
