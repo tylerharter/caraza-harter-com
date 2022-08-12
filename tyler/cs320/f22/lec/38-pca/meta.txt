@@ -1,4 +1,4 @@
 Decomposition
 * Principal Component Analysis (PCA)
 * Compressing Data
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-05_04_22-10%3A56%3A16/1_yer2skb7
+

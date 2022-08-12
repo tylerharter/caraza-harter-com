@@ -5,4 +5,4 @@ Classification 1
 * standardization
 <b>Due:</b> P6<br>
 <b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p7">P7 (classification)</a><br>
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_25_22-10%3A55%3A15/1_mfydgqln
+
