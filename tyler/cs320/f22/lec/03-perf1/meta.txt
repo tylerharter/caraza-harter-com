@@ -1,5 +1,5 @@
 Performance 1
 * git
 #<a href="lec/03-perf1/lec3-morning.ipynb">LECTURE NB</a><br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/s22/tree/main/p1">P1 (perf measurements)</a><br>
+<b>Released:</b> <a href="https://github.com/cs320-wisc/f22/tree/main/p1">P1 (perf measurements)</a><br>
 
