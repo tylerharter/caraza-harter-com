@@ -150,7 +150,7 @@ Here, we named the new repo "fresh", but you could have called it anything.
 Before we can create commits in our new repo, we need to create some
 files.  You could do this with any tool you like (e.g., you could run
 Jupyter in this directory).  `nano` is a simple terminal-editor you
-make want to learn (https://itsfoss.com/nano-editor-guide/).
+may want to learn (https://itsfoss.com/nano-editor-guide/).
 
 Create a file in the directory called "x.txt" that contains the
 word "apple".  Now, run `git status`.  You'll see something like this:
