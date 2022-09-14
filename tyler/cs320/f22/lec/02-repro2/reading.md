@@ -189,8 +189,8 @@ complain it doesn't know who you are (remember that git remembers who
 made what changes).  You can tell it with commands like these:
 
 ```
-git config -- global user.email "PUT YOUR NAME HERE"
-git config -- global user.name "PUT YOUR EMAIL HERE"
+git config -- global user.email "PUT YOUR EMAIL HERE"
+git config -- global user.name "PUT YOUR NAME HERE"
 ```
 
 Run `git status` and `git log` to get a sense of your current workspace (you'll run those a lot).
