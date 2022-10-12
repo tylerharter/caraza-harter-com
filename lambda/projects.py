@@ -29,7 +29,7 @@ def get_project_due_utc():
         projects[k] = datetime.datetime.strptime(projects[k], "%m/%d/%y") + datetime.timedelta(days=1, hours=7)
     return projects
 
-MAX_SIZE_KB = 10240
+MAX_SIZE_KB = 5*1024
 
 ########################################
 # lookup S3 paths for various objects
