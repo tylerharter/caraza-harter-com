@@ -3,3 +3,4 @@ Web 2: Recursive Crawl
 * BFS for webpages
 <a href="https://tyler.caraza-harter.com/cs320/crawl/practice.html">CRAWL PRACTICE</a><br>
 
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_14_22-10%3A59%3A12/1_njus26up
