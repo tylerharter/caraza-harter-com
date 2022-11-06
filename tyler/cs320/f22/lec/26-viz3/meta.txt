@@ -1,5 +1,4 @@
 Visualization 3
 * shapefiles, GeoJSON
 * DPI (dots per inch)
-* animations
-
+* geocoding
