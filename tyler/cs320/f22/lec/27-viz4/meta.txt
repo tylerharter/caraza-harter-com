@@ -1,5 +1,0 @@
-Visualization 4
-* animation
-* FuncAnimation
-* frames, intervals, fps
-
