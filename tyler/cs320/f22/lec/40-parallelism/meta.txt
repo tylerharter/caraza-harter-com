@@ -3,4 +3,3 @@ Parallelism
 * multiprocessing pools
 * parallel map
 * pytorch
-<b>Due:</b> P7<br>
