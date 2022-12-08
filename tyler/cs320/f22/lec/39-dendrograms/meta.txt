@@ -1,0 +1,3 @@
+Dendrograms
+* binary trees as matrices
+* linkage matrices
