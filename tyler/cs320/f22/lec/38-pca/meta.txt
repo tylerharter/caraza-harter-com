@@ -1,4 +1,6 @@
 Decomposition
 * Principal Component Analysis (PCA)
+* Feature Dimensionality Reduction
 * Compressing Data
 
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-12_09_22-10%3A56%3A04/1_04tzpswm
