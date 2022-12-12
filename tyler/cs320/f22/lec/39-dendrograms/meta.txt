@@ -1,4 +1,0 @@
-Dendrograms
-* binary trees as matrices
-* linkage matrices
-<b>Due:</b> P7<br>
