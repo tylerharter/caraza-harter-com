@@ -3,3 +3,5 @@ Parallelism
 * multiprocessing pools
 * parallel map
 * pytorch
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-12_14_22-10%3A57%3A22/1_wr1muzpk
