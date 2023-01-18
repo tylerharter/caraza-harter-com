@@ -2,14 +2,17 @@
   "sections": {
     "1": ["Part 1: Performance"],
     "6": ["Part 2: Web and Visualization"],
-    "11": ["Part 3: Machine Learning"]
+    "12": ["Part 3: Machine Learning"]
   },
   "holiday": {
-    "09/05": ["Labor Day"],
-    "10/17": ["Exam 1 (In-Class)"],
-    "11/14": ["Exam 2 (In-Class)"],
-    "11/25": ["Thanksgiving (no class)"]
+    "01/23": ["No Class"],
+    "03/03": ["Exam 1 (In-Class)"],
+    "04/07": ["Exam 2 (In-Class)"],
+    "03/13": ["Spring Break"],
+    "03/15": ["Spring Break"],
+    "03/17": ["Spring Break"]
   },
-  "labs": [2,3,4,5,6,7,8,9,10,12,13,14,15],
-  "quizzes": [2,3,4,5,6,8,9,10,13,14]
+  "labs": [2,3,4,5,6,7,9,10,11,12,13,14,15],
+  "quizzes": [2,3,4,5,6,9,10,11,13,14]
 }
+

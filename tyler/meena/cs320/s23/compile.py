@@ -2,9 +2,9 @@
 import calendar, os, json, re
 from datetime import date, timedelta
 
-github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs320/f22'
+github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs320/s23'
 github2 = 'https://github.com/cs320-wisc/f22/tree/main'
-canvas = 'https://canvas.wisc.edu/courses/322105'
+canvas = 'https://canvas.wisc.edu/courses/343506'
 
 def template():
     with open('template.html') as f:
@@ -85,8 +85,8 @@ def schedule():
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Course Schedule</h1>\n')
 
-    start_date = date(2022, 9, 5)
-    end_date = date(2022, 12, 14)
+    start_date = date(2023, 1, 23)
+    end_date = date(2023, 5, 5)
     day_count = (end_date - start_date).days + 1
 
     with open('schedule.json') as extra_sched:
