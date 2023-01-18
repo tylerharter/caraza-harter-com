@@ -2,4 +2,3 @@ Visualization 3
 * shapefiles, GeoJSON
 * DPI (dots per inch)
 * geocoding
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-11_07_22-10%3A57%3A36/1_11sv2v27

@@ -3,6 +3,5 @@ Visualization 2
 * shapely
 * coordinate reference systems
 <b>Due:</b> P4<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f22/tree/main/p5">P5 (trace analysis)</a><br>
+<b>Release date:</b> <a href="">P5 (trace analysis)</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-11_04_22-10%3A55%3A43/1_0kmkkiz4

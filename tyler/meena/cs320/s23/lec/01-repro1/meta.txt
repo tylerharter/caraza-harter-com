@@ -3,4 +3,3 @@ Reproducibility 1
 * Hardware, OS, Interpreters
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-09_07_22-10%3A56%3A04/1_bittu3zb

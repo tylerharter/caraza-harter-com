@@ -2,4 +2,3 @@ Graphs and Tree Intro
 * types of graph
 * graphviz
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-09_30_22-11%3A00%3A27/1_38gir23r

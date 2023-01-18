@@ -2,5 +2,4 @@ Clustering 1
 * KMeans
 * AgglomerativeClustering
 * fit, transform, "predict"
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-12_05_22-10%3A55%3A36/1_c8ubkaxi
+<b>Due:</b> P6<br>
