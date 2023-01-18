@@ -11,13 +11,22 @@ def main():
     for num, title in matches:
         if len(num) == 1:
             num = "0"+num
+
+        short = title.split()[0].lower()
+
         if num in lookup:
-            pass
+            dirname = lookup[num]
+            metaname = f"{dirname}/meta.txt"
+            with open(metaname) as f:
+                lines = list(f) + [""]
+            lines[0] = title
+            with open(metaname, "w") as f:
+                f.write("\n".join(lines) + "\n")
         else:
-            short = title.split()[0].lower()
             dirname = f"lec/{num}-{short}"
+            metaname = f"{dirname}/meta.txt"
             os.mkdir(dirname)
-            with open(f"{dirname}/meta.txt", "w") as f:
+            with open(metaname, "w") as f:
                 f.write(title + "\n")
     print(matches)
 

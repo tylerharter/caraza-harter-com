@@ -1,1 +1,8 @@
-Compute Resources (CPUs/Processes/Threads)
+Compute Resources (Threads)
+
+
+
+
+
+
+

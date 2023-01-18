@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "1": ["Part 1: Resources and Deployment"],
+    "6": ["Part 2: Clusters and Hadoop Ecosystem"],
+    "12": ["Part 3: The Cloud"]
+  },
+  "holiday": {
+    "01/23": ["No Class"],
+    "03/13": ["Spring Break"],
+    "03/15": ["Spring Break"],
+    "03/17": ["Spring Break"]
+  },
+  "labs": [],
+  "quizzes": [2,3,4,5,6,7,9,10,13,14]
+}

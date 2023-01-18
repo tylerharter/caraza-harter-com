@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Intro to Big Data Systems</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom">
+	<a class="navbar-brand" href="schedule.html">Intro to Big Data Systems</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">Get Help</a>
+	    </li>            
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href=" https://github.com/cs544-wisc/s23/tree/main">Semester GitHub Repo</a>
+                <a class="dropdown-item" href="https://pages.cs.wisc.edu/~harter/cs639/resources.html">Datasets</a>
+                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1SKXl7ge_dwbxA2AQBTtB37zwNWEoOo_WLPyVY9BhISQ/edit?usp=sharing">Office Hour Schedule</a>
+                <a class="dropdown-item" href="https://tinyurl.com/jrwacpvm">Lecture Snippets</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/lcupsjme6oh4gw" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/345251" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="https://app.tophat.com/e/826611" target="_blank">TopHat</a>
+                <a class="dropdown-item" href="surveys.html">Class Forms</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Syllabus</h1>
+
+<p>Welcome to Intro to Big Data Systems!  We'll deploy and use
+distributed systems to store and analyze large datasets. Unstructured
+and structured approaches to storage will be covered. Analysis will
+involve learning new query languages, processing streaming data, and
+training machine learning models.  Systems covered include Docker,
+  PyTorch, HDFS, Spark, Cassandra, Kafka, and more.
+
+<p><b>About the course number:</b> new courses get trialled as a
+section of CS 639 (we're section 4).  I hope this gets approved as a
+regularly offered course, numbered CS 544.  I'll informally refer to
+the course as "544" throughout the semester so that I don't need to
+make as many edits in the course materials in the future.</p>
+
+<h3 class="mt-3">Revisions to Syllabus</h3>
+
+<ul>
+  <li>none yet
+</ul>
+
+
+<h2>Learning Objectives</h2>
+
+      <ul>
+	<li>Deploy distributed systems for data storage and analytics
+	<li>Demonstrate competencies with tools and processes necessary for loading data into distributed storage systems
+	<li>Write programs that use distributed platforms to efficiently analyze large datasets
+	<li>Produce meaning from large datasets by training machine learning models in parallel or on distributed systems
+	<li>Measure resource usage and overall cost of running distributed programs 
+	<li>Optimize distributed analytics programs to reduce resource consumption and program runtime
+	<li>Demonstrate competencies with cloud services designed to store or analyze large datasets
+      </ul>
+
+<h3>Communication</h3>
+
+<p>We message the class regularly
+via <a href="https://canvas.wisc.edu/courses/345251/announcements">Canvas
+announcements</a>.  We recommend updating
+your <a href="https://canvas.wisc.edu/profile/communication">Canvas
+settings</a> so that the "Announcement" option is "Notify immediately"
+so that you don't miss something important.
+
+<p>See the <a href="help.html">help page</a> for details about how to contact us.
+
+<p>We have <a href="surveys.html">various forms</a> for us to leave
+    (optionally anonymous) feedback, report lab attendance, and thank
+    TAs.
+
+<h3>Lecture</h3>
+
+<p>We meet 3 times a week -- see the lecture
+  schedule <a href="schedule.html">here</a>.
+
+<p>I'll ask questions during lecture
+via <a href="https://app.tophat.com/e/826611">TopHat</a>.  Answering
+questions (and getting them correct) will help your participation
+  score, though perfect attendance is not necessary for full credit.
+
+<h3>Grading</h3>
+
+<p>Grading breakdown
+  <ul>
+    <li>Midterm (18%)
+    <li>Final (20%)
+    <li>10 quizzes (10% total)
+    <li>7 programming projects (48% total; 2 worth 4% and 5 worth 8%)
+    <li>participation (4% total)
+  </ul>
+
+  <h3>Midterms and Final</h3>
+
+  <p>These will be multiple choice exams taken in person.  The midterm
+  will be in class, the final will be at a different location (to be
+  announced).
+  
+<p>At the end, you'll have a score out of 100, and I'll set a curve
+based on where there are obvious breaks in the distribution and the
+difficulty this semester (there are not a capped numbers of A's, so
+you're not really competing with your peers).
+
+  <h3>Quizzes</h3>
+
+<p>There will be a short Canvas quiz due at the end of most
+  Wednesdays.  Make sure you know the rules regarding what is allowed
+  and what is not.
+
+  <h5>Allowed</h5>
+  <ul>
+    <li>however much time you need
+    <li>discussing answers with classmates who are taking the quiz <b>at the same time</b>
+    <li>referencing texts, notes, or provided course materials
+    <li>searching online for general information
+    <li>running code
+  </ul>
+
+  <h5>NOT allowed</h5>
+  <ul>
+    <li>taking it more than once
+    <li>discussing answers with anybody outside of the course
+    <li>discussing with classmates who have already completed the quiz when you haven't completed it yourself yet
+    <li>posting anything online about the quizzes
+    <li>using such material potentially posted by other students who broke the preceding rule
+    <li>getting TA/instructor help on quiz questions prior to the quiz deadline
+  </ul>
+
+  <h3>Projects</h3>
+
+  <p>See project policies <a href="https://github.com/cs544-wisc/s23/blob/main/projects.md">here</a>.
+  
+  <h3>Participation</h3>
+
+  <p>Some of the things that count towards participation:
+
+    <ul>
+      <li>TopHat (most important)
+      <li>filling class surveys
+      <li>accepted pull requests fixing issues with project specifications
+      <li>instructor endorsed piazza contributions (be sure to use your NETID@wisc.edu email so we can identify you)
+      <li>other...
+  </ul>
+
+  <h3 class="mt-3">Readings</h3>
+
+  <p>We'll be learning about many different big data systems, and so
+  no textbook closely corresponds to the lecture content.  Thus,
+  attending lectures and taking notes will be your primary
+    resource.</p>
+
+  <p>We will have recommended (though optional) readings for many
+  systems, however.  We'll select from O'Reilly text books because you
+    can read them free online via the Madison Public Library.  You just need to do the following:
+
+    <ol>
+      <li><a href="https://www.madisonpubliclibrary.org/library-cards/get-a-card#getcard">get a library card (free)</a>
+      <li><a href="https://www.madisonpubliclibrary.org/library-cards/get-a-card#getcard">sign into the O'Reilly collection with your card number</a>
+      <li>search for the assigned book
+    </ol>
+  
+  <p>Here are some of the main texts we'll reference this semester:
+
+    <ul>
+      <li>Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems (1st edition), by Martin Kleppmann
+      <li>Learning Spark: Lightning-Fast Data Analytics (2nd edition), by Jules Damji <i>et al.</i>
+      <li>Cassandra: The Definitive Guide, (Revised) Third Edition:
+      Distributed Data at Web Scale 3rd Edition (3rd edition), by Jeff
+        Carpenter <i>et al.</i>
+      <li>Machine Learning with PyTorch and Scikit-Learn: Develop machine learning and deep learning models with Python, by Sebastian Raschka <i>et al.</i>
+    </ul>
+
+<h3>Academic Misconduct</h3>
+
+<p>Code copying between students is not allowed in this course, except
+between project partners.  Copying includes emailing, taking photos,
+looking while typing line by line, etc.  Copying code then changing it
+is still copying and thus not allowed.  Lock your compute when it's
+  not attended.
+
+  <p>Be sure to read and understand the full project collaboration policies <a href="https://github.com/cs544-wisc/s23/blob/main/projects.md">here</a>.
+
+<p><b>Citing Code:</b> you can copy small snippets of code from
+  stackoverflow (and other online references) if you cite them.  For
+  example, suppose I need to write some code that gets the median number
+  from a list of numbers.  I might search for "how to get the median of
+  a list in python" and find a solution
+  at <a href="https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python">https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python</a>.
+
+<p>I could (legitimately) post code from that page in my code, as long as
+  it has a comment as follows:
+
+  <pre class="example">
+    # copied/adapted from https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python
+    def median(lst):
+      sortedLst = sorted(lst)
+      lstLen = len(lst)
+      index = (lstLen - 1) // 2
+
+      if (lstLen % 2):
+        return sortedLst[index]
+      else:
+        return (sortedLst[index] + sortedLst[index + 1])/2.0
+  </pre>
+
+<p>In contrast, copying from a nearly complete project (that
+  accomplishes what you're trying to do for your project) is not OK.
+  When in doubt, ask us!  The best way to stay out of trouble is to be
+  completely transparent about what you're doing.
+  
+  <h3>Recommendation Letters</h3>
+
+<p>Earning a recommendation letter is much harder than earning an A in
+this course.  At a minimum, I'll want to see you doing something
+complex and interesting beyond the assingments.  For a typical letter,
+I'll have collaborated with a student on some project for multiple
+  months, with many iterations of feedback.
+
+  <p>Most grad schools require recommenders to fill long forms rating
+students on various abilities (see an example below).  Make sure that
+if you're asking me, I would be able to fill such a form without
+needing to put "I don't know" as my answer to many of the questions.
+
+<p>
+  
+  <img src="img/rec-letters.png">
+  
+  <br><br>
+
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2022 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>
