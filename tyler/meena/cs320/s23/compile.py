@@ -5,6 +5,7 @@ from datetime import date, timedelta
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs320/s23'
 github2 = 'https://github.com/cs320-wisc/f22/tree/main'
 canvas = 'https://canvas.wisc.edu/courses/343506'
+lab_project_github = 'https://github.com/msyamkumar/cs320-s23-projects'
 
 def template():
     with open('template.html') as f:
@@ -137,7 +138,7 @@ def schedule():
 
             # week/quiz
             if day == 0 and week in extra["labs"]:
-                f.write(f'<b>Lab</b>: <a href="{github2}/labs/lab{week}.md">Week {week} Activities</a>\n')
+                f.write(f'<b>Lab</b>: <a href="{lab_project_github}/labs/lab{week}.md">Week {week} Activities</a>\n')
             if day == 1 and week in extra["quizzes"]:
                 if week > 2:
                     f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1} and before (cumulative)</a>\n')
