@@ -1,0 +1,5 @@
+Web 2: Recursive Crawl
+* more tricky pages
+* BFS for webpages
+<a href="https://tyler.caraza-harter.com/cs320/crawl/practice.html">CRAWL PRACTICE</a><br>
+

@@ -1,0 +1,5 @@
+Decomposition
+* Principal Component Analysis (PCA)
+* Feature Dimensionality Reduction
+* Compressing Data
+

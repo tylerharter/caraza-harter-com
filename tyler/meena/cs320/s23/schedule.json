@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "1": ["Part 1: Performance"],
+    "6": ["Part 2: Web and Visualization"],
+    "12": ["Part 3: Machine Learning"]
+  },
+  "holiday": {
+    "01/23": ["No Class"],
+    "03/03": ["Exam 1 (In-Class)"],
+    "04/07": ["Exam 2 (In-Class)"],
+    "03/13": ["Spring Break"],
+    "03/15": ["Spring Break"],
+    "03/17": ["Spring Break"]
+  },
+  "labs": [2,3,4,5,6,7,9,10,11,12,13,14,15],
+  "quizzes": [2,3,4,5,6,9,10,11,13,14]
+}
+

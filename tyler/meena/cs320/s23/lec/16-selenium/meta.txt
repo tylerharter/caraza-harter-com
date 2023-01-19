@@ -1,0 +1,7 @@
+Web 1: Selenium
+* finding elements, text
+* polling
+* screenshots
+* clicking, typing
+<b>Due:</b> P2<br>
+<a href="https://tyler.caraza-harter.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>

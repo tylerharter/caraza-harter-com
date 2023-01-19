@@ -1,0 +1,4 @@
+Final review / Unsupervised Machine Learing Recap
+* wrapup Dendrograms
+* when to use KMeans, AgglomerativeClustering, PCA
+<b>Due:</b> P7<br>

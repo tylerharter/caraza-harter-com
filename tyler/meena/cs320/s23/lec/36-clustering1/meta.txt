@@ -1,0 +1,5 @@
+Clustering 1
+* KMeans
+* AgglomerativeClustering
+* fit, transform, "predict"
+<b>Due:</b> P6<br>

@@ -1,0 +1,4 @@
+Regression 1
+* sklearn LinearRegression
+* explained variance
+* train/test split

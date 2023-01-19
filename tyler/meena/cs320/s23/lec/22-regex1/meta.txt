@@ -1,0 +1,6 @@
+Regex 1
+* character classes
+* repetition
+* anchoring
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/13/text_regex.html">DS100 Ch 13</a><br>
+

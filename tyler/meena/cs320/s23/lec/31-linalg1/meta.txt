@@ -1,0 +1,6 @@
+Linear Algebra 1
+* numpy arrays
+* numpy images
+* multiplication
+<b>Due:</b> P5<br>
+<b>Release date:</b> <a href="">P6 (land matrices and regression)</a><br>

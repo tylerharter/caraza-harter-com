@@ -1,0 +1,4 @@
+Trees 2
+* BSTs: height, for sets+dicts
+* depth-first search
+
