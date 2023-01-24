@@ -1,0 +1,7 @@
+Linear Algebra 2
+* more multiplication
+* fit with np.linalg.solve
+* predict with np.dot
+* column perspective
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-11_23_22-10%3A56%3A22/1_k30oj84q

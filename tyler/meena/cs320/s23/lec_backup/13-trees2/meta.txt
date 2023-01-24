@@ -1,0 +1,5 @@
+Trees 2
+* BSTs: height, for sets+dicts
+* depth-first search
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_05_22-10%3A59%3A27/1_0kaidh0t

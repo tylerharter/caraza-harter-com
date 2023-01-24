@@ -1,0 +1,7 @@
+Regex 1
+* character classes
+* repetition
+* anchoring
+<b>Read</b>: <a href="https://www.textbook.ds100.org/ch/13/text_regex.html">DS100 Ch 13</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_28_22-10%3A56%3A39/1_jnper9hc
