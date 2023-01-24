@@ -109,6 +109,11 @@ def schedule():
             dname = curr.strftime("%m/%d")
             if dname in holiday:
                 content = "\n".join(holiday[dname]) + "\n"
+                if "exam" in holiday[dname][0].lower():
+                    content += '<ul class="compact-ul">\n'
+                    content += '	<li> Regular exam: in class\n'
+                    content += '	<li> McBurney exam: 5:45 to 7:05 PM\n'
+                    content += '</ul>\n'
             else:
                 content = days.pop(0) if len(days)>0 else 'TBD\n...'
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
@@ -139,7 +144,8 @@ def schedule():
             # week/quiz
             if day == 0 and week in extra["labs"]:
                 f.write(f'<b>Lab</b>: <a href="{lab_project_github}/labs/lab{week}.md">Week {week} Activities</a>\n')
-            if day == 1 and week in extra["quizzes"]:
+            #if day == 1 and week in extra["quizzes"]:
+            if day == 2 and week in extra["quizzes"]:
                 if week > 2:
                     f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1} and before (cumulative)</a>\n')
                 else:
