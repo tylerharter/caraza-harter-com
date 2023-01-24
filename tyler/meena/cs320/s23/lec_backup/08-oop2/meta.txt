@@ -1,7 +1,0 @@
-OOP 2: <span style="font-size:90%">Special Methods</span>
-* __str__, __repr__, _repr_html_
-* __eq__, __lt__
-* __len__, __getitem__
-* __enter__, __exit__
-<b>Optional Reading</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-09_23_22-10%3A59%3A40/1_p38a7v8t

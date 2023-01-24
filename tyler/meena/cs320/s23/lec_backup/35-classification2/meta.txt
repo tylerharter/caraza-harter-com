@@ -1,5 +1,0 @@
-Classification 2
-* confusion matrices
-* accuracy, precision, recall
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-12_02_22-10%3A56%3A44/1_6dxas2ag

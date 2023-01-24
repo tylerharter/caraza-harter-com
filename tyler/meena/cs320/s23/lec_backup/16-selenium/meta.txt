@@ -1,7 +1,0 @@
-Web 1: Selenium
-* finding elements, text
-* polling
-* screenshots
-* clicking, typing
-<a href="https://tyler.caraza-harter.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>
-<b>Recordings:</b> <a href="https://mediaspace.wisc.edu/media/cs320-web1-part1/1_epzaehl4">Video 1</a>, <a href="https://mediaspace.wisc.edu/media/cs320-web1-part2/1_atsmlr1a">Video 2</a>, <a href="https://mediaspace.wisc.edu/media/cs320-web1-part3/1_ekzhhc1x">Video 3</a><br>

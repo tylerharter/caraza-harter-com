@@ -1,5 +1,0 @@
-Visualization 1
-* matplotlib coordinate systems
-* drawing custom lines/polygons
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-11_02_22-10%3A58%3A29/1_utmgnld4

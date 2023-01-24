@@ -1,7 +1,0 @@
-Regression 1
-* sklearn LinearRegression
-* explained variance
-* train/test split
-<b>Due:</b> P5<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f22/tree/main/p6">P6 (land matrices and regression)</a><br>
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-11_16_22-10%3A54%3A11/1_7vn85e3w

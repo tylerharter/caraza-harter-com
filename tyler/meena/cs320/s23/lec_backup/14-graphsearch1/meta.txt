@@ -1,5 +1,0 @@
-Graph Search 1
-* breadth-first search
-* stacks, queues, priority queues
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_07_22-10%3A56%3A16/1_p1ilsrnx

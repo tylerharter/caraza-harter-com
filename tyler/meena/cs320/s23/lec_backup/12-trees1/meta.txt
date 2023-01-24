@@ -1,6 +1,0 @@
-Trees 1
-* trees
-* binary trees
-* binary search trees (BSTs)
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_03_22-10%3A58%3A36/1_1g87jn65

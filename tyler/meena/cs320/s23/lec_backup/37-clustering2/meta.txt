@@ -1,5 +1,0 @@
-Clustering 2
-* AgglomerativeClustering
-* linkage
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-12_07_22-10%3A55%3A35/1_4twjx98z

@@ -1,8 +1,0 @@
-Web 4: More Flask
-* robots.txt
-* query strings
-* decorators
-<b>Due:</b> P3<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f22/tree/main/p4">P4 (website)</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harte-Chemistry%20S413-10_21_22-08%3A50%3A05/1_s0u2augl

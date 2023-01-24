@@ -1,8 +1,0 @@
-Graph Search 2
-* deque (for queues)
-* heapq (for priority queues)
-* web intro
-<b>Due:</b> P2<br>
-<b>Released:</b> <a href="https://github.com/cs320-wisc/f22/tree/main/p3">P3 (crawler)</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Ingraham%20019-10_10_22-10%3A59%3A42/1_co0g85ar
