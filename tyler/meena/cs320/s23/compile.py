@@ -77,6 +77,18 @@ def read_days():
         meta = re.sub("^(https://mediaspace.wisc.edu.*)$",
                       r'<b>Watch</b>: <a href="\g<1>">Lecture</a><br>',
                       meta, flags=re.MULTILINE)
+        if "01" in dirname:
+            # Exception for 1st lecture: swapping Reading with Slides            
+            meta_parts = meta.split("\n")
+            for idx, line in enumerate(meta_parts):
+                if "Read" in line:
+                    read_idx = idx
+                if "Slides" in line:
+                    slides_idx = idx
+            # Swapping Read line and Slides line
+            meta_parts[slides_idx], meta_parts[read_idx] = meta_parts[read_idx], meta_parts[slides_idx]
+            meta = "\n".join(meta_parts)
+
         days.append(meta)
     return days
 
