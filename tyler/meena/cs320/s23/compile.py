@@ -83,7 +83,7 @@ def read_days():
             for idx, line in enumerate(meta_parts):
                 if "Read" in line:
                     read_idx = idx
-                if "Slides" in line:
+                if "Watch" in line:
                     slides_idx = idx
             # Swapping Read line and Slides line
             meta_parts[slides_idx], meta_parts[read_idx] = meta_parts[read_idx], meta_parts[slides_idx]
