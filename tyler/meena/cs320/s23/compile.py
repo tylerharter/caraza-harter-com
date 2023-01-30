@@ -5,7 +5,7 @@ from datetime import date, timedelta
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/meena/cs320/s23'
 github2 = 'https://github.com/cs320-wisc/f22/tree/main'
 canvas = 'https://canvas.wisc.edu/courses/343506'
-lab_project_github = 'https://github.com/msyamkumar/cs320-s23-projects'
+lab_project_github = 'https://github.com/msyamkumar/cs320-s23-projects/tree/main/'
 
 def template():
     with open('template.html') as f:
@@ -87,6 +87,21 @@ def read_days():
                     slides_idx = idx
             # Swapping Read line and Slides line
             meta_parts[slides_idx], meta_parts[read_idx] = meta_parts[read_idx], meta_parts[slides_idx]
+            meta = "\n".join(meta_parts)
+        if "03" in dirname:
+            # Exception for lecture 3 recording
+            meta_parts = meta.split("\n")
+            count = 0
+            first_idx = 0
+            second_idx = 0
+            for idx, line in enumerate(meta_parts):
+                if "Lecture" in line:
+                    if count == 0:
+                        first_idx = idx
+                        second_idx = idx + 1
+                        break
+            meta_parts[first_idx] = meta_parts[first_idx].replace("Lecture", "Lecture (LEC001)")
+            meta_parts[second_idx] = meta_parts[second_idx].replace("Lecture", "Lecture (LEC002)")
             meta = "\n".join(meta_parts)
 
         days.append(meta)
