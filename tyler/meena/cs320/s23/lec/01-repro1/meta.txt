@@ -3,3 +3,4 @@ Reproducibility 1
 * Hardware, OS, Interpreters
 <b>Read</b>: <a href="syllabus.html">Syllabus</a><br>
 
+https://mediaspace.wisc.edu/media/1_k8ra92os

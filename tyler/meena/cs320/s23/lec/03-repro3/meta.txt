@@ -2,3 +2,7 @@ Reproducibility 3
 * git commands
 * branching and merging
 * conflict resolution
+
+https://mediaspace.wisc.edu/media/1_rmr6xgyo
+https://mediaspace.wisc.edu/media/1_ig6vh065
+<b>Lecture notes</b>: <a href="https://github.com/msyamkumar/cs320-lecture-notes">Lecture notes repository</a><br>
