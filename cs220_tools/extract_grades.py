@@ -1,22 +1,16 @@
 import os, sys, json, copy, math
+from datetime import datetime
 from collections import defaultdict as ddict
 
 COURSE = 'a'
 not_reviewed = {'p1'}
-#CR_URL = 'https://tyler.caraza-harter.com/cs301/fall19/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 CR_URL = 'https://www.msyamkumar.com/cs220/s20/code_review.html?project_id=%s&student_email=%s@wisc.edu'
 
 def try_read_json(path, default={}):
     try:
-        if "rcody3" in path:
-            print(path)
         with open(path) as f:
             return json.load(f)
     except Exception as e:
-        if "rcody3" in path:
-            print("DEFAULT:", end="")
-            print(default)
-            print(e)
         return copy.deepcopy(default)
 
 
@@ -28,6 +22,11 @@ class Grades:
 
         self.extensions = self.get_extensions()
         self.grade_rows = [self.get_student_grade(nid) for nid in net_ids]
+
+        #with open("config.json") as f:
+        #    deadlines = json.load(f)["deadlines"]
+        #deadlines = {k: datetime.strptime(v, "%m/%d/%y") for k, v in deadlines.items()}
+        #print(deadlines)
 
 
     # returns dict
@@ -45,7 +44,7 @@ class Grades:
             path = os.path.join(dirname, name)
             with open(path) as f:
                 days = json.load(f)["days"]
-            net_id = name.split("*at*")[0]
+            net_id = name.split("__at__")[0]
             links = self.get_proj_links(net_id)
             for link in links:
                 with open(link) as f:
@@ -103,15 +102,10 @@ class Grades:
         # - extensions (to adjust lateness)
 
         ready = False
-        late_days_ungraded_project = 0
         if submission_dir:
             sub = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "submission.json"), {})
             test = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "test.json"), {})
             cr = try_read_json(os.path.join("snapshot", COURSE, submission_dir, "cr.json"), {})
-            if net_id == "rcody3":
-                print(os.path.join("snapshot", COURSE, submission_dir, "test.json"))
-                print(test)
-                print(cr)
             if sub != {} and test != {} and (cr != {} or self.project in not_reviewed):
                 test_score = test.get("score", 0)
                 ta_deduction = cr.get("points_deducted", 0)
@@ -120,15 +114,14 @@ class Grades:
                 for comments in cr.get("highlights", {}).values():
                     comment_count += len(comments)
                 ready = True
-            elif sub != {}:
-                late_days_ungraded_project  = math.ceil(max(sub.get("late_days", 0) - self.extensions[submission_dir], 0))
 
         if not ready:
             test_score = 0
             ta_deduction = 0
-            late_days = late_days_ungraded_project
-            #late_days = 0
+            late_days = 0
             comment_count = 0
+
+        #submit_date = sub.get("submit_time_utc", "")
 
         score = max(test_score - ta_deduction, 0)
         cr_url = CR_URL % (self.project, net_id)
@@ -136,6 +129,7 @@ class Grades:
         return {"project": self.project, "net_id": net_id, "test_score": test_score,
                 "ta_deduction": ta_deduction, "score": score, "late_days": late_days,
                 "comment_count": comment_count, "ready": ready, "code_review_url": cr_url}
+                #"submit_date": submit_date}
 
 
 def main():
