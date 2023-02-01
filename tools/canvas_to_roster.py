@@ -1,16 +1,21 @@
+################################################################################
+# Instructions:
+# 1. Download canvas roster and save file as canvas.csv (in the local directory)
+# 2. Run: "python3 canvas_to_roster.py" -> generates roster.json
+# DO NOT PUSH roster.json / canvas.csv to gitlab! That will violate FERPA rules.
+################################################################################
+
+
 import os, sys, json, csv, random, re
 from datetime import datetime
 
-tas = []
-with open("tas.json") as f:
-    raw = json.load(f)
-    for ta in raw:
-        tas.extend([ta] * ta['weight'])
-random.shuffle(tas)
-
 def main():
     print("canvas.csv => roster.json")
-
+    
+    # dummy roster.json file
+    with open("roster.json", "w") as f:
+        f.write("[]" + "\n") 
+    
     # parse roster
     with open("roster.json") as f:
         roster = json.load(f)
@@ -44,10 +49,17 @@ def main():
             roster_dict[net_id]["enrolled"] = True
             roster_dict.pop(net_id)
         else:
+            lname, fname = row["Student"].split(", ")
             # add new students
-            ta = tas[ta_idx % len(tas)]
-            roster.append({"enrolled": True, "net_id": net_id, "section": section, "ta_name": ta["name"], "ta_email":ta["email"]})
-            ta_idx += 1
+            student_dict = {
+                "fname": fname,
+                "lname": lname,
+                "name": row["Student"], 
+                "email": email, 
+                "net_id": net_id, 
+                "section": section, 
+                "enrolled": True}
+            roster.append(student_dict)
 
     # anybody left here was not in canvas
     for key in roster_dict:
@@ -60,3 +72,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
