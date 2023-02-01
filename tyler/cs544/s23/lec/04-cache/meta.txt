@@ -2,4 +2,4 @@ Memory Resources (Caching)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Systems Performance, Gregg (6.2.2; "CPU Caches" and "Latency" subsections of 6.4.1)</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Science%20180-01_30_23-09%3A53%3A13/1_soiune2e
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Science%20180-02_01_23-09%3A52%3A54/1_rjl2fncq
