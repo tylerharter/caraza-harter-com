@@ -1,3 +1,4 @@
 Compute Resources (PyTorch ML)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Machine Learning with PyTorch and Scikit-Learn ("Building input pipelines in PyTorch" and "Building an NN model in PyTorch" sections of chapter 12, "Parallelizing Neural Network Training with PyTorch")</a><br>
+
