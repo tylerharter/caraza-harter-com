@@ -3,4 +3,6 @@ OOP 1: Classes
 * methods
 * constructors
 <b>Optional Reading</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 15, 16, and 17.1 - 17.5</a><br>
-<b>Lecture: </b><a href="https://forms.gle/X444jHYUxnu6SC6y8" target="_blank">attendance (requires wisc login)</a><br>
+<b>Lecture: </b><a href="https://forms.gle/t5UQZh9ti9umHu1S8" target="_blank">attendance (requires wisc login)</a><br>
+
+https://mediaspace.wisc.edu/media/1_pu4933ig
