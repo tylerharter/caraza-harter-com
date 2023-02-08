@@ -5,3 +5,4 @@ OOP 2: <span style="font-size:90%">Special Methods</span>
 * __enter__, __exit__
 <b>Release date:</b> <a href="">P2 (trees)</a><br>
 <b>Optional Reading</b>: <a href="https://docs.python.org/3/reference/datamodel.html">Python Data Model</a><br>
+<b>Lecture: </b><a href="https://forms.gle/7gK6NUSf4m1ieELaA" target="_blank">attendance (requires wisc login)</a><br>
