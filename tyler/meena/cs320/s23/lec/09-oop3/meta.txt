@@ -4,3 +4,4 @@ OOP 3: Inheritance
 * calling overridden methods
 <b>Optional Reading</b>: <a href="https://greenteapress.com/wp/think-python-2e/">Think Python 18</a><br>
 
+<b>Lecture: </b><a href="https://forms.gle/mDNddFxWzHvxDSfW6" target="_blank">attendance (requires wisc login)</a><br>
