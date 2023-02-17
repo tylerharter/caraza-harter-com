@@ -3,3 +3,4 @@ Graphs and Tree Intro
 * graphviz
 
 <b>Lecture: </b><a href="https://forms.gle/PSH5df2bmS69QxW77" target="_blank">attendance (requires wisc login)</a><br>
+https://mediaspace.wisc.edu/media/1_cfrugloj
