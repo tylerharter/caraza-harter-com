@@ -2,3 +2,4 @@ Graphs and Tree Intro
 * types of graph
 * graphviz
 
+<b>Lecture: </b><a href="https://forms.gle/PSH5df2bmS69QxW77" target="_blank">attendance (requires wisc login)</a><br>
