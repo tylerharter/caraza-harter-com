@@ -1,18 +1,4 @@
-HDFS
+Hadoop Ecosystem, HDFS
 
 <b>Due:</b> P2<br>
 <b>Released:</b> <a href="https://github.com/cs544-wisc/s23/tree/main/p3">P3 (HDFS, Loans)</a><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
