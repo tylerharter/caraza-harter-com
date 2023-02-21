@@ -4,3 +4,4 @@ Trees 1
 * binary search trees (BSTs)
 
 <b>Lecture: </b><a href="https://forms.gle/pcPRH2MiFR63S6cq7" target="_blank">attendance (requires wisc login)</a><br>
+https://mediaspace.wisc.edu/media/1_fkcq9s7v

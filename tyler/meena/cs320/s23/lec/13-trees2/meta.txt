@@ -2,3 +2,4 @@ Trees 2
 * BSTs: height, for sets+dicts
 * depth-first search
 
+<b>Lecture: </b><a href="https://forms.gle/m61vbYMnfKWTka18A" target="_blank">attendance (requires wisc login)</a><br>
