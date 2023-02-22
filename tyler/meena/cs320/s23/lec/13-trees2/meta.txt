@@ -3,3 +3,4 @@ Trees 2
 * depth-first search
 
 <b>Lecture: </b><a href="https://forms.gle/m61vbYMnfKWTka18A" target="_blank">attendance (requires wisc login)</a><br>
+https://mediaspace.wisc.edu/media/1_h9xsi25a
