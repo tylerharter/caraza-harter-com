@@ -1,7 +1,7 @@
 Graph Search 1
 * breadth-first search
 * stacks, queues, priority queues
-<b>Release date:</b> <a href="">P3 (crawler)</a><br>
+<b>Released:</b> <a href="https://github.com/msyamkumar/cs320-s23-projects/tree/main/p3">P3 (crawler)</a><br>
 
 <b>Lecture: </b><a href="https://forms.gle/v3Y6rDTcRMYFadzJ7" target="_blank">attendance (requires wisc login)</a><br>
 https://mediaspace.wisc.edu/media/1_bywegl76
