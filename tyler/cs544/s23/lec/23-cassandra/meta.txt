@@ -1,8 +1,1 @@
-Cassandra Replication
-
-
-
-
-
-
-
+Cassandra Data Model
