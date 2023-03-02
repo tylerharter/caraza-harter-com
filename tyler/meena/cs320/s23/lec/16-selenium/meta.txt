@@ -7,4 +7,4 @@ Web 1: Selenium
 <a href="https://www.msyamkumar.com/cs320/tricky/scrape.html">TRICKY PAGES</a><br>
 
 <b>Lecture: </b><a href="https://forms.gle/iqwkr7AK3KSSzLDU9" target="_blank">attendance (requires wisc login)</a><br>
-
+https://mediaspace.wisc.edu/media/1_jqj45o9d
