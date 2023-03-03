@@ -1,4 +1,4 @@
 HDFS
 
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a>
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a><br>
 <b>Watch: </b> <a href="https://mediaspace.wisc.edu/media/hdfs-part1/1_cudjwys7">Part 1</a>, <a href="https://mediaspace.wisc.edu/media/hdfs-part2/1_hl8khu1p">Part 2</a>
