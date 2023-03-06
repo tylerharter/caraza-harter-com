@@ -1,1 +1,3 @@
 Spark (Structured APIs)
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 4, "Spark SQL and DataFrames: Introduction to Built-in Data Sources")</a><br>
