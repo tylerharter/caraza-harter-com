@@ -4,3 +4,5 @@ Web 2: Recursive Crawl
 <a href="https://www.msyamkumar.com/cs320/crawl/practice.html">CRAWL PRACTICE</a><br>
 
 <b>Lecture: </b><a href="https://forms.gle/4LBaZfmrAft8AYRf6" target="_blank">attendance (requires wisc login)</a><br>
+
+https://mediaspace.wisc.edu/media/1_a8mn2yc1
