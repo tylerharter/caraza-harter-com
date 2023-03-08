@@ -3,3 +3,4 @@ Web 3: Flask
 * flask
 * headers, rate limiting (HTTP 429)
 
+<b>Lecture: </b><a href="https://forms.gle/PKqnff9eJ8Rz2HU68" target="_blank">attendance (requires wisc login)</a><br>
