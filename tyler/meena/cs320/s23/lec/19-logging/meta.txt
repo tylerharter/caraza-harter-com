@@ -3,6 +3,6 @@ Web 4: More Flask
 * query strings
 * decorators
 <b>Due:</b> P3<br>
-<b>Release date:</b> <a href="">P4 (website)</a><br>
+<b>Released:</b> <a href="https://github.com/msyamkumar/cs320-s23-projects/tree/main/p4">P4 (website)</a><br>
 
 https://mediaspace.wisc.edu/media/1_cosqq05m
