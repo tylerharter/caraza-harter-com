@@ -2,3 +2,5 @@ Web 6: Dashboards
 * dashboards
 * POST
 * CDFs
+
+<b>Lecture attendance: </b>link provided in-person<br>
