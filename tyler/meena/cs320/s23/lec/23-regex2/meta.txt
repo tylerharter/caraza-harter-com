@@ -1,3 +1,4 @@
 Regex 2
 * practice
 
+<b>Lecture attendance: </b>link provided in-person<br>

@@ -5,3 +5,5 @@ Regex 1
 <b>Read</b>: <a href="https://www.textbook.ds100.org/ch/13/text_regex.html">DS100 Ch 13</a><br>
 
 <b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/1_36iuk30m
