@@ -1,4 +1,4 @@
-Cassandra Storage Engine
+Cassandra Partitioning+Replication
 
 <b>Due:</b> P4<br>
 <b>Released:</b> <a href="https://github.com/cs544-wisc/s23/tree/main/p5">P5 (Cassandra, Weather)</a><br>
