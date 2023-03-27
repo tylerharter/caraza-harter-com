@@ -2,3 +2,4 @@ Visualization 1
 * matplotlib coordinate systems
 * drawing custom lines/polygons
 
+<b>Lecture attendance: </b>link provided in-person<br>
