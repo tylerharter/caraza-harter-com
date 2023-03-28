@@ -1,1 +1,3 @@
 Cassandra Storage Engine
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (sections "Memtables, SSTables, and Commit Logs" to "Summary" of Chapter 6, "The Cassandra Architecture")</a><br>
