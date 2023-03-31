@@ -1,4 +1,4 @@
-Streaming: Spark 2
+Streaming: Spark 1
 
 
 
