@@ -2,3 +2,5 @@ ML overview
 * regression, classification
 * clustering, decomposition
 
+<b>Lecture attendance: </b>link provided in-person<br>
+
