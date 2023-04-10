@@ -2,3 +2,7 @@ Regression 1
 * sklearn LinearRegression
 * explained variance
 * train/test split
+
+<b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/1_53pxfdwd

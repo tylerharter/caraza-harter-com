@@ -3,3 +3,4 @@ Regression 2
 * OneHot Encoding
 * Pipelines
 
+<b>Lecture attendance: </b>link provided in-person<br>
