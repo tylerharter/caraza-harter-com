@@ -1,3 +1,5 @@
 Streaming: Kafka
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> ("Enter Kafka" section of Chapter 1, "Meet Kafka")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Science%20180-04_10_23-09%3A52%3A44/1_q5gy2tcn
