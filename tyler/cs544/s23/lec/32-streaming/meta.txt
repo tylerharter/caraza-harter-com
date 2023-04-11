@@ -1,4 +1,4 @@
-Streaming: Spark 2
+Streaming: Spark
 
 <b>Due:</b> P5<br>
 <b>Released:</b> <a href="https://github.com/cs544-wisc/s23/tree/main/p6">P6 (Streaming+MLib, Weather)</a><br>
