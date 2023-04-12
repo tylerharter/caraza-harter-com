@@ -1,3 +1,5 @@
 Streaming: Kafka 2
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Science%20180-04_12_23-09%3A47%3A10/1_uqo7inq4
