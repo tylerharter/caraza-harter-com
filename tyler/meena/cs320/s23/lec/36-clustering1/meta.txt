@@ -3,3 +3,5 @@ Clustering 1
 * AgglomerativeClustering
 * fit, transform, "predict"
 <b>Due:</b> P6<br>
+
+<b>Lecture attendance: </b>link provided in-person<br>

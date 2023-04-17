@@ -4,3 +4,4 @@ Parallelism
 * parallel map
 * pytorch
 
+<b>Lecture attendance: </b>link provided in-person<br>

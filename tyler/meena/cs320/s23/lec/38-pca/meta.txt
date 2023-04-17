@@ -3,3 +3,4 @@ Decomposition
 * Feature Dimensionality Reduction
 * Compressing Data
 
+<b>Lecture attendance: </b>link provided in-person<br>
