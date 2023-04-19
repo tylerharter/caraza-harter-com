@@ -3,3 +3,5 @@ Linear Algebra 3
 * projection matrices
 
 <b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/1_8d1x7pur
