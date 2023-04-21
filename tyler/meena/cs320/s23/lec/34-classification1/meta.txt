@@ -6,3 +6,5 @@ Classification 1
 <b>Released:</b> <a href="https://github.com/msyamkumar/cs320-s23-projects/tree/main/p7">P7 (classification)</a><br>
 
 <b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/1_6uzhbr8i
