@@ -4,3 +4,6 @@ Parallelism
 * parallel map
 * pytorch
 
+<b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/Yiyin%20Shen-Educational%20Sciences%20204-05_03_23-13%3A14%3A07/1_s2qh0oh9

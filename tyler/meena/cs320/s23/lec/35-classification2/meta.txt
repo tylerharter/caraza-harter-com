@@ -2,3 +2,6 @@ Classification 2
 * confusion matrices
 * accuracy, precision, recall
 
+<b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/1_divygtc3

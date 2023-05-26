@@ -1,6 +1,10 @@
-Final review / Unsupervised Machine Learing Recap
+Final review / Unsupervised Machine Learning Recap
 * wrapup Dendrograms
 * when to use KMeans, AgglomerativeClustering, PCA
-<b>Due:</b> P7<br>
+<b>Due (HARD DEADLINE - No submissions accepted after today):</b> P7<br>
 <b>Final exam:</b> Regular exam: Friday, May 12th 10:05AM - 12:05PM<br>
 <b>Final exam:</b> McBurney exam: Friday, May 12th 9:00AM - 1:00PM<br>
+
+<b>Lecture attendance: </b>link provided in-person<br>
+
+https://mediaspace.wisc.edu/media/Yiyin%20Shen-Noland%20132-05_05_23-10%3A54%3A59/1_3hdbdd4g
