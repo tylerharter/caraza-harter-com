@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>CS320 UW-Madison</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<img src="img/color-UWcrest-print.png" alt="University of Wisconsin-Madison logo" height="40"> &nbsp;&nbsp;
+	<a class="navbar-brand" href="schedule.html">Data Science Programming II</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">Get Help</a>
+	    </li>           
+	    <li class="nav-item">
+                <a class="nav-link" href="surveys.html">Class Forms</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="submission.html">Projects</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/343506/pages/cs320-staff" target="_blank">CS320 staff</a>
+                <a class="dropdown-item" href="https://calendar.google.com/calendar/u/1?cid=Y18zYzM2OWVjYzJmZDUxN2I3NDVlYTc0MmFlNzI0OWUyMWVjZTQ0ZTJkZTkyYmJjMDIyOWQ0MmY2OWU4ODliMmRkQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" target="_blank">Office hours calendar</a>
+                <a class="dropdown-item" href="messages.html?topic=group">Group Info</a>
+                <!--a class="dropdown-item" href="messages.html?topic=exam1">Exam 1 Answers</a>
+                <a class="dropdown-item" href="messages.html?topic=exam2">Exam 2 Answers</a>
+                <a class="dropdown-item" href="messages.html?topic=exam3">Exam 3 Answers</a>
+                <a class="dropdown-item" href="messages.html?topic=exam3room">Exam 3 Location</a>
+                <a class="dropdown-item" href="https://tinyurl.com/49x3crec">Lecture Snippets</a-->
+                <a class="dropdown-item" href="https://www.cs.wisc.edu/report-an-incident/" target="_blank">Incident Reporting</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/wisc/spring2023/sp23compsci320001" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/343506" target="_blank">Canvas</a>
+                <!--a class="dropdown-item" href="https://app.tophat.com/e/594996" target="_blank">TopHat</a-->
+                <!--a class="dropdown-item" href="surveys.html">Class Forms</a-->
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs320/pythontutor/live.html#mode=edit" target="_blank">Python Tutor</a>
+                <a class="dropdown-item" href="https://www.msyamkumar.com/cs320/learnGitBranching/index.html" target="_blank">Git Simulator</a>
+                <a class="dropdown-item" href="reviewer.html">TA Only</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Syllabus</h1>
+
+<p>Welcome to Data Science Programming II!  In this course, we will learn
+object-oriented programming to create tree and graph data structures
+to represent hierarchical data and implement algorithms for
+efficiently searching these structures.</p>
+
+<p>We'll often create our own datasets, using techniques like logging,
+benchmarking, web scraping, and A/B testing.</p>
+
+<p>In the last third of the semester we'll explore some basic machine
+learning techniques, including regression, classification, clustering,
+and decomposition.</p>
+
+<h3 class="mt-3">Additions To Syllabus Made During Semester</h3>
+
+<ul>
+  <li>none yet
+</ul>
+
+<h3 class="mt-3">Course Instructor</h3>
+<ul>
+  <li>Yiyin Shen (graduate student - Department of Computer Sciences) yshen82@wisc.edu</li>
+</ul>
+</p>
+
+<h3 class="mt-3">Lecture</h3>
+<ul>
+	<li><b>Time: </b>MTWR 10:00 AM - 10:50 AM Jun 5 - Aug 13</li>
+  <li><b>Zoom Meetings: </b><a href="https://canvas.wisc.edu/courses/355770/external_tools/14065" target="_blank">Canvas - Zoom - Upcoming Meetings - CS320 SU23 Lectures</a></li>
+</ul>
+<p>Lecture recordings will be provided through the <a href="schedule.html">schedule page</a> or <a href="https://canvas.wisc.edu/courses/355770/external_tools/14065" target="_blank">Canvas - Zoom - Cloud Recordings</a></p>
+
+<h3 class="mt-3">Lab</h3>
+<ul>
+	<li><b>Time: </b>TR 11:00 AM - 11:50 AM Jun 5 - Aug 13</li>
+  <li><b>Zoom Meetings: </b><a href="https://canvas.wisc.edu/courses/355770/external_tools/14065" target="_blank">Canvas - Zoom - Upcoming Meetings - CS320 SU23 Labs</a></li>
+</ul>
+<p>
+  We'll post a weekly lab activities document. 
+  During the lab, you will be assigned to a breakout room with your assigned study group, 
+  and you can work on the lab activities individually or with your study group. 
+  TAs and PMs will circulate breakout rooms to answer questions and check your progress in finishing the lab activities. 
+  If you have extra time at the lab after completing the lab document, you can work with your assigned study group on projects or quizzes.
+  
+  There are five attendance points for each lab: 
+  <ul>
+    <li>2 for joining the breakout room no later than 5 minutes after the lab begins</li> 
+    <li>3 for efficient progress on finishing the lab activities: 
+      At the end of each lab, you need to submit screenshots of the work (code + running results) you have done so far to Canvas. 
+      You don't have to finish every lab activity, but sufficient working progress is needed.</li>
+  </ul>
+</p>
+
+<h3>Communication</h3>
+
+<p>
+  We message the class regularly via 
+  <a href="https://canvas.wisc.edu/courses/355770/announcements" target="_blank">Canvas announcements</a>.  
+  We recommend updating your 
+  <a href="https://canvas.wisc.edu/profile/communication" target="_blank">Canvas settings</a> 
+  so that the "Announcement" option is "Notify immediately" so that you don't miss something important.
+</p>
+
+<p>See the <a href="help.html">help page</a> for details about how to contact us.
+
+<p>
+  We have <a href="surveys.html">various forms</a> for us to leave
+  (optionally anonymous) feedback, submit regrade request, and thank
+  TAs/mentors.
+</p>
+
+<h3>Grading</h3>
+
+<p>Grading breakdown
+  <ul>
+    <li><b>49%</b> - 7 projects (7% each, no drops)
+    <li><b>7%</b> - online quizzes (1% each, 1 drop out of 8 quizzes)
+    <li><b>11%</b> - midterm 1
+    <li><b>11%</b> - midterm 2
+    <li><b>15%</b> - final
+    <li><b>4%</b> - lab attendance (6 drops out of 18 labs)
+    <li><b>2%</b> - lecture attendance (14 drops out of 38 lectures)
+    <li><b>1%</b> - class surveys
+  </ul>
+</p>
+
+<h3>Letter Grades</h3>
+
+<p>At the end of the semester, we will assign final grades based on these thresholds:</p>
+<ul>
+<li>93% - 100%: <strong>A</strong></li>
+<li>88% - 92.99%: <strong>AB</strong></li>
+<li>80% - 87.99%: <strong>B</strong></li>
+<li>75% - 79.99%: <strong>BC</strong></li>
+<li>70% - 74.99%: <strong>C</strong></li>
+<li>60% - 69.99% <strong>D</strong></li>
+</ul>
+<p>
+  Letter grade ranges include decimal points, 
+  meaning we will <b>NOT</b> be rounding up scores at the end of the semester. 
+  No extra credit is given in this course. 
+</p>
+
+<h3>Graded Component Details</h3>
+
+<h4>Projects</h4>
+
+<p><b>Submission:</b> Everybody will individually upload either a .py
+file, a .ipynb, or a zip (as specified) file for each project with
+the <a href="submission.html">submission tool</a>. 
+Every project has a regular deadline and a hard deadline. 
+Hard deadline will always be 4-days after the regular deadline. 
+Exception: p7's hard deadline will be the same as the regular deadline.</p>
+
+
+<p><b>Collaboration:</b> Even though everybody will make their
+individual submission, every project will have (1) a group part to be
+optionally done with your assigned study group and (2) an individual
+part.  For the group part, any form of help from anybody on your group
+is allowed (even looking at each other's code); I recommend you find
+times for everybody on the group to work at the same time so you can
+help each other through coding difficulties in this part.  You're also
+welcome to do the "group" part individually, or with a subset of your
+assigned study group.  For the individual part, you may only receive help
+from course staff (instructor/TAs/mentors); you may not discuss this
+part with anybody else (in the class or otherwise) or get help from
+them. </p>
+
+<p><b>Late Policy:</b> 
+  <ul>
+    <li>Students have a bank of 8 late days for the semester.
+    <li>For a given project, you may use 2 late days without any deduction. 
+      After that, 5% deduction per late day, for the next 2 days. 
+      Projects which are late by more than 4 days will not be accepted.
+    <li>For a given project, you cannot use more than 2 late days, 
+      as deduction kicks in on the 3rd day.
+    <li>After the bank runs out, 5% deduction will be applied per late day.
+    <li>You <strong>may not</strong> use late days on the last project.
+    <li>Late days only apply to projects. They do not apply to Quizzes.
+    <li>Late days are automatically applied and do not need to be requested.
+    <li>Late days are calculated as whole days. That is, even if your project is late by 2 hours, 
+      that counts as 1 whole late day.
+    <li>For calculating late days, we will always consider your last possible submission. 
+      We will not be accepting requests to grade a prior submission for the same project.
+  </ul>
+</p>
+
+<p><b>Code Review:</b> A TA will give you detailed comments on
+specific parts of your assignment.  This feedback process is called
+a "code review", and is a common requirement in industry before a
+programmer is allowed to add her code changes to the main codebase.
+Read your code reviews carefully; even if you receive 100% on your
+work, we'll often give you tips to save effort in the future.</p>
+
+<p><b>Project Grading:</b> Grades will be largely based on automatic
+tests that we run.  We'll share the tests with you before the due
+date, so you should rarely be too surprised by your grade.  Though
+it shouldn't be common, we may deduct points for serious hardcoding,
+not following directions, or other issues.  Some bugs (called
+non-deterministic bugs) don't show up every time code is run -- if
+you have such an issues, we may give you a different grade based on
+the tester than what you were expecting based on when you ran it.
+Finally, our tests aren't very good at evaluating whether plots and
+other visualizations look how they should (a human usually needs to
+evaluate that).</p>
+
+<p><b>Auto-grader:</b> The autograder will run hourly after the release of a project. 
+Because of this, we expect you to try submitting your project early and make sure nothing
+crashes. However, this should not be a substitute for running
+tester.py locally. You should only try submitting once you pass the tests locally.
+<ul>
+	<li>Clearing the auto-grader is a <b>mandatory</b> part of the project submission process.</li>
+	<li>If your project fails auto-grader, 
+    it will be your responsibility to utilize office hours and make an appropriate resubmission.
+    The resubmission will also be counted towards late day usage.</li>
+	<li>Regular project deadlines will be applicable for autograder failures as well. 
+    That is, your project submission must clear auto-grader within the hard deadline for a project. 
+    If not, we are unable to grade your project submission.</li>
+</ul>
+</p>
+
+<p><b>Allowed Packages:</b> anything that comes pre-installed with
+Python may be used.  Additionally, you may install and use the
+following if they're useful: <i>jupyter, pandas, numpy, matplotlib,
+requests, beautifulsoup4, statistics, recordclass, sklearn, haversine,
+gitpython, graphviz, pylint, lxml, flask, bs4, html5lib, geopandas,
+shapely, descartes, click, netaddr, torch==1.4.0+cpu, torch
+vision=0.5.0+cpu</i>.  Using unapproved packages may result in a
+score of zero when submitted for grading because the autograder won't
+be able to run your code without those packages.</p>
+
+<h4>Quizzes</h4>
+
+<p>There will be a short Canvas quiz due at the end of most
+  Thursdays.  Make sure you know the rules regarding what is allowed
+  and what is not.
+
+  <h5>Allowed</h5>
+  <ul>
+    <li>however much time you need
+    <li>discussing answers with members of your assigned study group who are taking the quiz <b>at the same time</b>
+    <li>referencing texts, notes, or provided course materials
+    <li>searching online for general information
+    <li>running code
+  </ul>
+
+  <h5>NOT allowed</h5>
+  <ul>
+    <li>taking it more than once
+    <li>discussing answers with anybody outside of your group
+    <li>discussing with members of your group who have already completed the quiz when you haven't completed it yourself yet
+    <li>posting anything online about the quizzes
+    <li>using such material potentially posted by other 320 students who broke the preceding rule
+  </ul>
+
+<h4>Midterms and Final</h4>
+  <p>These will be multiple choice exams taken through <a href="https://canvas.wisc.edu/courses/355770/quizzes" target="_blank">Canvas - Quizzes</a> 
+    with <a href="https://it.wisc.edu/services/honorlock/" target="_blank">HonorLock</a>. 
+<ul>
+	<li>Midterm 1: Friday, June 30th, 7:00PM - 8:30PM 
+	<li>Midterm 2: Friday, July 21st, 7:00PM - 8:30PM 
+	<li>Final: Thursday, August 10th, 10:00AM - 12:30PM
+</ul>
+
+<h3 class="mt-3">Readings</h3>
+
+<p>We'll sometimes assign readings from the following sources (all free):
+
+<ul>
+  <li><i>Think Python 2nd Edition</i> by Allen B. Downey: <a href="https://greenteapress.com/wp/think-python-2e/" target="_blank">Read Online</a>
+  <li><i>Automate the Boring Stuff with Python</i> by Al Sweigart: <a href="https://automatetheboringstuff.com/" target="_blank">Read Online</a>
+  <li><i>Principles and Techniques of Data Science</i> by Sam Lau, Joey Gonzalez, and Deb Nolan: <a href="https://www.textbook.ds100.org/intro.html" target="_blank">Read Online</a>
+  <li><i>Scipy Lecture Notes</i> by many contributors: <a href="http://scipy-lectures.org/index.html" target="_blank">Read Online</a>
+</ul>
+
+<h3>Cheating</h3>
+
+<p>Yeah, of course you shouldn't cheat, but what is cheating?  The
+  most common form of academic misconduct in these classes involves
+  copying/sharing code for programming projects.  Here's an overview
+  of what you can and cannot do:
+
+<p><b>Acceptable</b>
+  <ul>
+    <li>any collaboration with your assigned study group members on the group part of a project
+    <li>doing worksheets with friends
+    <li>copying code examples from online examples that is NOT specific to your project (if project solutions are leaked online, you may not use that).  
+      If you copy code, you must cite it in your code with a comment (think of it like citing a quote in a essay -- without the citation, you're plagarizing).
+    <li>using ChatGPT to ask simple questions. For example: how do I use "self" inside a class constructor?
+  </ul>
+
+<p><b>NOT Acceptable</b>
+  <ul>
+    <li>using ChatGPT to solve project questions in entirety - 
+      please note that this will lead to your work getting detected by the plagiarism detector 
+    <li>getting project help of any kind for the group part from anybody who is not either 
+      (a) on your assigned study group or (b) 320 staff
+    <li>getting project help of any kind for the individual part from anybody who is not 320 staff
+    <li>using part or all of project solutions found online
+    <li>breaking any of the rules listed under the "Quizzes" section
+    <li>reporting lab attendance for yourself or someone else who didn't actually attend 
+      (dropping in for a few minutes is not "attending")
+    <li>counting lab attendance as merely showing up without spending substantial time on the assigned lab activities
+    <li>using TopHat while not actually physically present in the room (since we sometimes use this for attendance)
+    <li>helping somebody else cheat
+  </ul>
+
+<p><b>Citing Code:</b> you can copy small snippets of code from
+  stackoverflow (and other online references) if you cite them.  For
+  example, suppose I need to write some code that gets the median number
+  from a list of numbers.  I might search for "how to get the median of
+  a list in python" and find a solution at 
+  <a href="https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python" target="_blank">https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python</a>.
+
+<p>I could (legitimately) post code from that page in my code, as long as
+  it has a comment as follows:
+
+  <pre class="example">
+    # copied/adapted from https://stackoverflow.com/questions/24101524/finding-median-of-list-in-python
+    def median(lst):
+      sortedLst = sorted(lst)
+      lstLen = len(lst)
+      index = (lstLen - 1) // 2
+
+      if (lstLen % 2):
+        return sortedLst[index]
+      else:
+        return (sortedLst[index] + sortedLst[index + 1])/2.0
+  </pre>
+
+<p>In contrast, copying from a nearly complete project (that
+  accomplishes what you're trying to do for your project) is not OK.
+  When in doubt, ask us!  The best way to stay out of trouble is to be
+  completely transparent about what you're doing.
+
+<p><b>Similarity Detection:</b> of course, with about 400+ students, it's
+  hard for a human TA to notice similar code across two submissions.
+  Thus, we use automated tools to looks for similarities across
+  submissions.  Such similarity detection is an active area of computer
+  science research, and the result is tools that detect code copying
+  even when students methodically rename all variables and shuffle the
+  order of their code.  We take cheating detection seriously to make the
+  course fair to students who put in the honest effort.
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2023 Tyler R. Caraza-Harter, Meenakshi Syamkumar</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>
