@@ -104,3 +104,31 @@ div.nb_cell {
     background-color: #c5050c!important;
 
 }
+
+.read {
+  background-color: #2ac371;
+}
+
+.slides {
+  background-color: #40bdbe;
+}
+
+.watch {
+  background-color: #0072ed;
+}
+
+.worksheet {
+  background-color: #55a3f3;
+}
+
+.project {
+  background-color: #da1217;
+}
+
+.quiz {
+  background-color: #f98300;
+}
+
+.exam {
+  background-color: #7928e1;
+}
