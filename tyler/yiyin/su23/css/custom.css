@@ -106,29 +106,29 @@ div.nb_cell {
 }
 
 .read {
-  background-color: #2ac371;
+  background-color: #2ac371!important;;
 }
 
 .slides {
-  background-color: #40bdbe;
+  background-color: #40bdbe!important;;
 }
 
 .watch {
-  background-color: #0072ed;
+  background-color: #0072ed!important;;
 }
 
 .worksheet {
-  background-color: #55a3f3;
+  background-color: #55a3f3!important;;
 }
 
 .project {
-  background-color: #da1217;
+  background-color: #da1217!important;;
 }
 
 .quiz {
-  background-color: #f98300;
+  background-color: #f98300!important;;
 }
 
 .exam {
-  background-color: #7928e1;
+  background-color: #7928e1!important;;
 }
