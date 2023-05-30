@@ -123,6 +123,10 @@ div.nb_cell {
   background-color: #f98300!important;
 }
 
+.release {
+  background-color: #e66467!important;
+}
+
 .project {
   background-color: #da1217!important;
 }
@@ -136,7 +140,7 @@ div.nb_cell {
 }
 
 ul {
-  padding-left: 5px;
+  padding-left: 15px;
 }
 
 .btn {
