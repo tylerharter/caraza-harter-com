@@ -100,35 +100,40 @@ div.nb_cell {
 }
 
 .bg-dark {
-
     background-color: #c5050c!important;
-
 }
 
 .read {
-  background-color: #2ac371!important;;
+  background-color: #2ac371!important;
+  outline-color: #2ac371!important;
 }
 
 .slides {
-  background-color: #40bdbe!important;;
+  background-color: #40bdbe!important;
+  outline-color: #40bdbe!important;
 }
 
 .watch {
-  background-color: #0072ed!important;;
+  background-color: #0072ed!important;
+  outline-color: #0072ed!important;
 }
 
 .worksheet {
-  background-color: #55a3f3!important;;
+  background-color: #55a3f3!important;
+  outline-color: #55a3f3!important;
 }
 
 .project {
-  background-color: #da1217!important;;
+  background-color: #da1217!important;
+  outline-color: #da1217!important;
 }
 
 .quiz {
-  background-color: #f98300!important;;
+  background-color: #f98300!important;
+  outline-color: #f98300!important;
 }
 
 .exam {
-  background-color: #7928e1!important;;
+  background-color: #7928e1!important;
+  outline-color: #7928e1!important;
 }
