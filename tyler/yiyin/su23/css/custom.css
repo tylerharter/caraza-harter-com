@@ -103,6 +103,11 @@ div.nb_cell {
     background-color: #c5050c!important;
 }
 
+.btn {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .read {
   background-color: #2ac371!important;
 }
@@ -137,13 +142,9 @@ div.nb_cell {
 
 .exam {
   background-color: #6c23c9!important;
+  position: absolute!important; 
 }
 
 ul {
   padding-left: 15px;
-}
-
-.btn {
-  outline: none !important;
-  box-shadow: none !important;
 }
