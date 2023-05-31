@@ -104,7 +104,7 @@ div.nb_cell {
 }
 
 .btn {
-  outline: none !important;
+  border-color: transparent;
   box-shadow: none !important;
 }
 
@@ -142,7 +142,6 @@ div.nb_cell {
 
 .exam {
   background-color: #6c23c9!important;
-  position: absolute!important; 
 }
 
 ul {
