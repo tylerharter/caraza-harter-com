@@ -25,7 +25,7 @@ from pytutor import *
 def lambda_handler(event, context):
     # TODO: we'll need to specify this in all calls from the front end...
     course = event.get('course', 'a')
-    if not course in ('a', 'b', 'c'):
+    if not course in ('a', 'b', 'c', 'd'):
         return error('invalid course ID: "%s"' % course)
     init_s3(course)
 
