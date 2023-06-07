@@ -278,7 +278,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       if (final_score != 100) {
         html += ('<li>' + "Not the score you were expecting? Don't panic. " +
                  'Submit the project grade issue form under course website - class form. ' +
-                 'Our TA will reply to the request regularly.')
+                 'Our TA will reply to the requests regularly.')
       }
       html += ('</ul>')
     } else {
