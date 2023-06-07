@@ -271,18 +271,14 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
       html += ('<ul>')
       html += ('<li>Base score: ' + test_score + ' (from tests)')
       html += ('<li>Less ' + ta_deduction + ' points (TA deduction)')
-      html += ('<li>Final score: <b>' + final_score + '</b>')
+      html += ('<li>Score after TA review: <b>' + final_score + '</b>')
       html += ('<li>Reviewer Contact Email: ' + sub.cr.reviewer_email)
-      html += ('<li>Note: this final score does not consider whether this project was ' +
-               'submitted late.  If it was, and you did not have late days left, ' +
-               'you may not receive all these points.')
+      html += ('<li>Note: This score does not consider any late penalties. Your ' +
+               'final score might be different.')
       if (final_score != 100) {
-        html += ('<li>' + "Not the score you were expecting?  Don't panic.  " +
-                 "Reach out to your reviewer to understand what went wrong.  " +
-                 "Please copy the URL of this page to the email you send them.  " +
-                 "If something trivial (e.g., wrong file name or missing comment " +
-                 "about your partner) caused you to get zero, we'll be reasonable and " +
-                 "help you fix it.")
+        html += ('<li>' + "Not the score you were expecting? Don't panic. " +
+                 'Submit the project grade issue form under course website - class form. ' +
+                 'Our TA will reply to the request regularly.')
       }
       html += ('</ul>')
     } else {
@@ -312,7 +308,7 @@ var thumb_down_img = '<svg viewBox="0 0 200 200"><path stroke="#FFFFFF" stroke-w
     }
     html += ('<textarea style="width:100%" rows=6 id="general_comments">'+general_comments+'</textarea><br>')
     html += ('<div class="grader_content" style="display:none;">')
-    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job!  Please...</button> ')
+    html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Great job!  Please check comments below.\')">Great job! Please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Good job, please check comments below.\')">Good job, please...</button> ')
     html += ('<button type="button" class="btn btn-dark" onclick="code_review.genericComment(\'Please check comments below.\')">Please check comments below.</button> ')
     html += ('</div>')
