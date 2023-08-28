@@ -5,4 +5,4 @@ Network Resources (RPC)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Science%20180-02_15_23-09%3A51%3A49/1_sv9hr0xn
+
