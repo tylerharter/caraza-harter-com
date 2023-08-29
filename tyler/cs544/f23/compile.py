@@ -56,10 +56,18 @@ def read_days():
         outline = os.path.join("lec", dirname, "README.md")
         slides = os.path.join("lec", dirname, "slides.pdf")
         if os.path.exists(slides):
-            meta += f'\n<b>Slides</b>: <a href="{slides}">PDF</a><br>'
+            modtime = os.path.getmtime(slides)
+            if modtime < 1693327527: # Aug 29, 2023 (from time.time())
+                meta += f'\n<b>Old Slides</b>: <a href="{slides}">PDF</a><br>'
+            else:
+                meta += f'\n<b>Slides</b>: <a href="{slides}">PDF</a><br>'
         worksheet = os.path.join("lec", dirname, "worksheet.pdf")
         if os.path.exists(worksheet):
-            meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a>'
+            modtime = os.path.getmtime(slides)
+            if modtime < 1693327527: # Aug 29, 2023 (from time.time())
+                meta += f'\n<b>Old Worksheet</b>: <a href="{worksheet}">PDF</a>'
+            else:
+                meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a>'
             answers = os.path.join("lec", dirname, "worksheet-answers.pdf")
             if os.path.exists(answers):
                 meta += f' (<a href="{answers}">answers</a>)'
