@@ -2,9 +2,9 @@
 import calendar, os, json, re
 from datetime import date, timedelta
 
-github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/s23'
-github2 = 'https://github.com/cs544-wisc/s23/tree/main'
-canvas = 'https://canvas.wisc.edu/courses/345251'
+github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f23'
+github2 = 'https://github.com/cs544-wisc/f23/tree/main'
+canvas = 'https://canvas.wisc.edu/courses/374194'
 
 def template():
     with open('template.html') as f:
