@@ -65,13 +65,15 @@ def read_days():
         if os.path.exists(worksheet):
             modtime = os.path.getmtime(slides)
             if modtime < 1693327527: # Aug 29, 2023 (from time.time())
-                meta += f'\n<b>Old Worksheet</b>: <a href="{worksheet}">PDF</a>'
+                meta += f'\n<b>Old Worksheet</b>: <a href="{worksheet}">PDF</a><br>'
             else:
-                meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a>'
+                meta += f'\n<b>Worksheet</b>: <a href="{worksheet}">PDF</a><br>'
             answers = os.path.join("lec", dirname, "worksheet-answers.pdf")
             if os.path.exists(answers):
                 meta += f' (<a href="{answers}">answers</a>)'
-            meta += '<br>'
+        anki = os.path.join("lec", dirname, "anki.apkg")
+        if os.path.exists(anki):
+            meta += f'\n<b>Anki Flashcards</b>: <a href="{anki}">Deck</a>'
         pt = os.path.join("lec", dirname, "pytutor.html")
         if os.path.exists(pt):
             meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a><br>'
