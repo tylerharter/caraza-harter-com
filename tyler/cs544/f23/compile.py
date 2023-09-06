@@ -63,7 +63,7 @@ def read_days():
                 meta += f'\n<b>Slides</b>: <a href="{slides}">PDF</a><br>'
         worksheet = os.path.join("lec", dirname, "worksheet.pdf")
         if os.path.exists(worksheet):
-            modtime = os.path.getmtime(slides)
+            modtime = os.path.getmtime(worksheet)
             if modtime < 1693327527: # Aug 29, 2023 (from time.time())
                 meta += f'\n<b>Old Worksheet</b>: <a href="{worksheet}">PDF</a><br>'
             else:
