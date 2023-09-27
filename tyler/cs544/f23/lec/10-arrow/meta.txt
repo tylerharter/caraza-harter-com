@@ -1,3 +1,5 @@
 Memory Resources (PyArrow)
 
 <b>Read:</b> <a href="http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery of Processor Cache Effects (Examples 1 and 2)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-09_27_23-13%3A16%3A41/1_p4b6nobd
