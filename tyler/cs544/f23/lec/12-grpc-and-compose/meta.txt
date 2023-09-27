@@ -1,0 +1,2 @@
+Network Resources (gRPC+Compose)
+<b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
