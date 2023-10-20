@@ -233,6 +233,8 @@ def extract_project_files(submission_id, filename, payload):
                         if len(cell.get('outputs', [])) > 0:
                             result['files'][outbox] = nb_cell_output_html(cell)
                             add_file_meta(outbox, 'Out[%s]'%str(exec_count), order=i, content_type='html')
+                elif filename.endswith('.svg'):
+                    result['files'][filename] = f'<img src="data:image/svg+xml,{z.read(filename)}">'
                 else:
                     result['files'][filename] = '...not code...'
 
