@@ -1,0 +1,5 @@
+Compute Resources (Locks)
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Concurrency in Python ("Working With Threads In Python" chapter)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-09_22_23-13%3A19%3A26/1_iy4po0hh

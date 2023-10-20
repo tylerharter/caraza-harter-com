@@ -73,7 +73,7 @@ def read_days():
                 meta += f' (<a href="{answers}">answers</a>)'
         anki = os.path.join("lec", dirname, "anki.apkg")
         if os.path.exists(anki):
-            meta += f'\n<b>Anki Flashcards</b>: <a href="{anki}">Deck</a>'
+            meta += f'\n<b>Anki Flashcards</b>: <a href="{anki}">Deck</a><br>'
         pt = os.path.join("lec", dirname, "pytutor.html")
         if os.path.exists(pt):
             meta += f'\n<b>PythonTutor</b>: <a href="{pt}">examples</a><br>'
