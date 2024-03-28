@@ -1,3 +1,4 @@
 C Things
 
-
+* pointer bugs
+* gdb debugger

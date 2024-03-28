@@ -1,4 +1,7 @@
 Basics
+* types
+* if, for, functions
+* bitsets, vectors, pairs
 
 <b>Released:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/project/p1.md">P1 (Tooling and Basics)</a><br>
 

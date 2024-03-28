@@ -1,4 +1,6 @@
 Basics
+* course logistics
+* why learn C++?
 
 <b>Read:</b> <a href="syllabus.html">Syllabus</a><br>
 

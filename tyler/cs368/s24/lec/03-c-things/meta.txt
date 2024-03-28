@@ -1,2 +1,6 @@
 C Things
+* building code
+* structs
+* pointers
 
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Microbial%20Science%201520-03_27_24-15%3A57%3A46/1_2q82lca6
