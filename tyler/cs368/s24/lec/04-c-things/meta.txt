@@ -2,3 +2,5 @@ C Things
 
 * pointer bugs
 * gdb debugger
+
+<b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec04-pointer-bugs.md">Recorded Demos</a><br>
