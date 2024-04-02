@@ -1,3 +1,5 @@
-Data Types
-
-
+More Memory
+* stack vs. heap
+* new/delete
+* arrays
+* const, references
