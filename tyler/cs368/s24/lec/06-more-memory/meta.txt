@@ -1,4 +1,11 @@
 More Memory
 
+* references with auto
+* pointer arithmetic
+* double pointers
+* strings
+* constexpr
+
 <b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec06-more-memory.md">Recorded Demos</a><br>
 <b>Due:</b> P1<br>
+<b>Released:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/project/p3.md">P3 (references and conversions)</a><br>
