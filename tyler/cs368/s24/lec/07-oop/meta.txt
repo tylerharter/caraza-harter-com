@@ -1,0 +1,5 @@
+Object Oriented Programming
+
+* classes and methods
+* public/private/friend visibility
+* constructors, copy constructors, destructors
