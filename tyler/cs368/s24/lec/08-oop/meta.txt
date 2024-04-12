@@ -2,3 +2,4 @@ Object Oriented Programming
 
 <b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec08-oop.md">Recorded Demos</a><br>
 <b>Due:</b> P2<br>
+<b>Released:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/project/p4.md">P4 (object oriented programming)</a><br>
