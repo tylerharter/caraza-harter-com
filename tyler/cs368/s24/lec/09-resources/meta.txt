@@ -1,5 +1,3 @@
-Resources and Containers
-* RAII
-* smart pointers
-* move semantics
+Vectors and Movement
 * vectors
+* move semantics
