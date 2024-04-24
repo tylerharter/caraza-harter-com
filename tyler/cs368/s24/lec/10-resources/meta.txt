@@ -1,4 +1,4 @@
 Vectors and Movement
 <b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec10-vectors.md">Recorded Demos</a><br>
 <b>Due:</b> P3<br>
-
+<b>Released:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/project/p5.md">P5 (copying and moving)</a><br>

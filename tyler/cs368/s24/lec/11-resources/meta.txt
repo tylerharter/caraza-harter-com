@@ -1,3 +1,5 @@
-Functional Programming
-
-
+Smart Pointers
+* RAII
+* files
+* unique_ptr
+* shared_ptr
