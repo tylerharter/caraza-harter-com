@@ -1,3 +1,4 @@
 Smart Pointers
 <b>Due:</b> P4<br>
 <b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec12-smart.md">Recorded Demos</a><br>
+<b>Released:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/project/p6.md">P6 (tables)</a><br>
