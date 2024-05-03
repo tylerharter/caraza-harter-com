@@ -1,3 +1,4 @@
 Templates
 <b>Due:</b> P5<br>
 <b>Due:</b> P6<br>
+<b>Watch:</b> <a href="https://github.com/cs368-wisc/s24/blob/main/demos/lec14-templates.md">Recorded Demos</a><br>
