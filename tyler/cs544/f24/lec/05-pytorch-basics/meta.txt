@@ -1,0 +1,5 @@
+Compute Resources (PyTorch Basics)
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Machine Learning with PyTorch and Scikit-Learn ("PyTorch's computation graphs", "PyTorch tensor objects for storing and updating model parameters", and "Computing gradients via automatic differentiation" sections of chapter 13, "Going Deeper - Mechanics of PyTorch")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-09_15_23-13%3A13%3A39/1_nqbhje51

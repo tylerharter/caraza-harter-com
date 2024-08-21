@@ -1,0 +1,5 @@
+Spark Internals and Performance
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 7, "Optimizing and Tuning Spark Applications")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Soils%20270-10_30_23-09%3A50%3A42/1_24n33q35
