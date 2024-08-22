@@ -2,9 +2,13 @@
 import calendar, os, json, re
 from datetime import date, timedelta
 
-github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f23'
+github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f24'
 github2 = 'https://github.com/cs544-wisc/f23/tree/main'
 canvas = 'https://canvas.wisc.edu/courses/374194'
+
+START_DATE = date(2024, 9, 2)
+CUTOFF_DATE = date(2024, 12, 13) # don't show content after this
+END_DATE = date(2024, 12, 11)
 
 def template():
     with open('template.html') as f:
@@ -95,10 +99,7 @@ def schedule():
     f = open('schedule.content.html', 'w', encoding='utf-8')
     f.write('<h1 class="mt-5">Course Schedule</h1>\n')
 
-    start_date = date(2023, 9, 4)
-    cutoff_date = None # date(2023, 3, 17) # TODO: don't show content after this
-    end_date = date(2023, 12, 13)
-    day_count = (end_date - start_date).days + 1
+    day_count = (END_DATE - START_DATE).days + 1
 
     with open('schedule.json') as extra_sched:
         extra = json.loads(extra_sched.read())
@@ -108,7 +109,7 @@ def schedule():
     cells = []
     full = 0
     free = 0
-    for curr in (start_date + timedelta(n) for n in range(day_count)):
+    for curr in (START_DATE + timedelta(n) for n in range(day_count)):
         day = calendar.day_abbr[curr.weekday()]
         if day in ['Mon', 'Wed', 'Fri']:
             if len(days) == 0:
@@ -121,7 +122,7 @@ def schedule():
                 content = "\n".join(holiday[dname]) + "\n"
             else:
                 content = days.pop(0) if len(days)>0 else 'TBD\n'
-                if cutoff_date != None and curr >= cutoff_date:
+                if CUTOFF_DATE != None and curr >= CUTOFF_DATE:
                     projects = re.findall(".*Released:.*", content)
                     content = "Not Posted Yet\n" + "\n".join(projects)
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]

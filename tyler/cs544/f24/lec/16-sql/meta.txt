@@ -2,4 +2,4 @@ SQL Databases (MySQL)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">MySQL Crash Course, Silva (Chapters 3+5)</a>, <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data-Intensive Applications, Kleppmann ("The Meaning of ACID" section in Chapter 7, "Transactions")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-10_11_23-13%3A19%3A52/1_slisn99j
+

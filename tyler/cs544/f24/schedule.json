@@ -1,12 +1,12 @@
 {
   "sections": {
-    "1": ["Part 1: Resources and Deployment"],
-    "7": ["Part 2: Clusters and Hadoop Ecosystem"],
-    "13": ["Part 3: The Cloud"]
+    "1": ["Part 1: Resources"],
+    "7": ["Part 2: Clusters"],
+    "13": ["Part 3: Cloud"]
   },
   "holiday": {
-    "09/04": ["Labor Day"],
-    "11/24": ["Thanksgiving Break"]
+    "09/02": ["Labor Day"],
+    "11/29": ["Thanksgiving Break"]
   },
   "quizzes": [2,3,4,5,6,7,9,10,11,12,13,14]
 }

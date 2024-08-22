@@ -2,4 +2,4 @@ Spark DataFrames
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 4, "Spark SQL and DataFrames: Introduction to Built-in Data Sources")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-10_25_23-13%3A15%3A24/1_qf2lnbkm
+
