@@ -1,5 +1,0 @@
-Wide Tables: HBase and Cassandra
-
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (Chapter 4, "The Cassandra Query Language")</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-11_03_23-13%3A20%3A08/1_n53fcb6o

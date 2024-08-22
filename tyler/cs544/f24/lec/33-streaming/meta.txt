@@ -1,5 +1,5 @@
-Streaming: Spark Programming
+Streaming: Kafka Reliability
 
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 8, "Structured Streaming")</a><br>
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-11_20_23-13%3A20%3A26/1_mvpxnma3
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-11_17_23-13%3A16%3A48/1_z73m40c9
