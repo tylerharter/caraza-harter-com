@@ -99,10 +99,13 @@ class Syncer:
         self.set_last_commit(git.Repo('.').commit().hexsha)
 
     def sync(self):
+        print("here")
         repo = git.Repo('.')
         prev = repo.commit(self.get_last_commit())
         curr = repo.commit()
+        print(prev, curr)
         for d in prev.diff(curr):
+            print(d)
             change_type = d.change_type
             print('GIT: %s %s' % (change_type, d.b_path))
             if change_type in ['A', 'M']:

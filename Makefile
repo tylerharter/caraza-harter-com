@@ -1,7 +1,7 @@
 .PHONY: compile deploy
 
 compile:
-	cd tyler/cs544/s23 && python3 compile.py
+	cd tyler/cs544/f24 && python3 compile.py
 
 deploy:
-	python s3-sync.py
+	python3 sync-s3.py
