@@ -3,4 +3,4 @@ Streaming: Spark Programming
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 8, "Structured Streaming")</a><br>
 
 <b>Due:</b> P6<br>
-<b>Released:</b> <a href="https://github.com/cs544-wisc/f24/tree/main/p7">P7 (Kafka, Weather Stations)</a><br>
+<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p7">P7 (Kafka, Weather Stations)</a><br>

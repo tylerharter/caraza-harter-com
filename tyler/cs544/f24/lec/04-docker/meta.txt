@@ -1,4 +1,4 @@
 Deployment (Docker)
 
-<b>Released:</b> <a href="https://github.com/cs544-wisc/f24/tree/main/p1">P1 (Docker)</a><br>
+<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p1">P1 (Docker)</a><br>
 

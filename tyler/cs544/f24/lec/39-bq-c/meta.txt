@@ -3,6 +3,6 @@ Big Query 3
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
 
 <b>Due:</b> P7<br>
-<b>Released:</b> <a href="https://github.com/cs544-wisc/f24/tree/main/p8">P8 (BigQuery, Loans)</a><br>
+<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p8">P8 (BigQuery, Loans)</a><br>
 
 

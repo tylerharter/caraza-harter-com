@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f24'
 github2 = 'https://github.com/cs544-wisc/f23/tree/main'
-canvas = 'https://canvas.wisc.edu/courses/374194'
+canvas = 'https://canvas.wisc.edu/courses/427528'
 
 START_DATE = date(2024, 9, 2)
 CUTOFF_DATE = date(2024, 12, 13) # don't show content after this
