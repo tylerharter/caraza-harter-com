@@ -1,0 +1,5 @@
+Network Resources (gRPC)
+<b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+
+<b>Watch:</b> <a href="https://www.loom.com/share/02b6db7578d84db783e2df3b47630ada">Lecture Part 1 (concepts)</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/741dba1688ed4dd6ac676936e52963b9">Lecture Part 2 (demo)</a><br>
