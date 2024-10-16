@@ -2,4 +2,4 @@ MapReduce
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (sections "The Importance of an Optimal Storage Solution", "Databases", and "Data Lakes" of chapter 9, "Building Reliable Data Lakes with Apache Spark")</a><br>
 
-
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Bascom%20272-10_16_24-09%3A51%3A16/1_f8dv2mzh
