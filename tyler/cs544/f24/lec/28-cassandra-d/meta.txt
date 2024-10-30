@@ -1,6 +1,0 @@
-Cassandra Replication
-
-<b>Due:</b> P5<br>
-<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p6">P6 (Cassandra, Weather)</a><br>
-
-

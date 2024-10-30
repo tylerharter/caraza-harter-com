@@ -1,5 +1,0 @@
-Cassandra Partitioning
-
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (sections "Data Centers and Racks" to "Hinted Handoff" of Chapter 6, "The Cassandra Architecture")</a><br>
-
-
