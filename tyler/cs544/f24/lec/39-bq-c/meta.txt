@@ -5,4 +5,4 @@ Big Query 3
 <b>Due:</b> P7<br>
 <b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p8">P8 (BigQuery, Loans)</a><br>
 
-
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-12_04_24-14%3A25%3A38/1_dobqzglq
