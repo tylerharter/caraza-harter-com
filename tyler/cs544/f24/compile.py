@@ -8,7 +8,7 @@ canvas = 'https://canvas.wisc.edu/courses/427528'
 
 START_DATE = date(2024, 9, 2)
 CUTOFF_DATE = date(2024, 12, 13) # don't show content after this
-END_DATE = date(2024, 12, 11)
+END_DATE = date(2024, 12, 13)
 
 def template():
     with open('template.html') as f:
