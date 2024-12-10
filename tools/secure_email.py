@@ -23,7 +23,7 @@ def main():
         print(email)
         assert(email['html'])
 
-        path = '%s/messages/%s/%s.json' % (COURSE, email["to"].replace("@", "*at*"), topic)
+        path = '%s/messages/%s/%s.json' % (COURSE, email["to"].replace("@", "*at*").lower(), topic)
         print(path)
         s3.put_object(Bucket=BUCKET,
                       Key=path,
