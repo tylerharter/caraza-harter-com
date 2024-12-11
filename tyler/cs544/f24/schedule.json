@@ -7,7 +7,7 @@
   "holiday": {
     "09/02": ["Labor Day"],
     "11/29": ["Thanksgiving Break"],
-    "12/13": ["Final Exam", "<b>Time</b>: 7:45 - 9:45am<br>", "<b>Location</b>: TBD"]
+    "12/13": ["Final Exam", "<b>Time</b>: 7:45 - 9:45am<br>", "<b>Location</b>: <a href=messages.html?topic=room>lookup</a>"]
   },
   "quizzes": [2,3,4,5,7,9,10,11,12,13,14]
 }
