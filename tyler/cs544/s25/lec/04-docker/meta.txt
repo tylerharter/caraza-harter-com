@@ -1,0 +1,5 @@
+Deployment (Docker)
+
+<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p1">P1 (Docker)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-09_11_24-14%3A24%3A53/1_syrloc68

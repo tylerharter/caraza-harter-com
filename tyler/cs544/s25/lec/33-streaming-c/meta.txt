@@ -1,0 +1,7 @@
+Streaming: Kafka Reliability
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
+
+<b>Watch:</b> <a href="https://www.loom.com/share/306e1a3a74ff45b9a282371f9eed66ae?sid=73b4f49a-a313-467a-90bc-de81e59900a9">Lecture Part 1: GROUP BY</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/29d3bab5a2fa44d6a57a7da66f2b901c?sid=551ab3b0-8383-4d01-bb56-f2466117d9f1">Lecture Part 2: Reliability</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/6342721ab83744ad961828fb4ed854c7?sid=d81e6bc7-2862-4c87-a924-3c0f90c09c61">Lecture Part 3: Exactly Once</a><br>

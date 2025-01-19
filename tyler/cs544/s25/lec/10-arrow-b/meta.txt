@@ -1,0 +1,6 @@
+Memory Resources (PyArrow)
+
+<b>Read:</b> <a href="http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery of Processor Cache Effects (Examples 1 and 2)</a><br>
+
+<b>Watch:</b> <a href="https://www.loom.com/share/b8a356d8fdb447e0b472a9d49a267685">Lecture Part 1 (CPU Cache)</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/ef69e089595541eebe118b55d50b6095">Lecture Part 2 (OS Cache)</a><br>

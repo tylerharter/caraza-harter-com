@@ -1,0 +1,5 @@
+Big Query 2
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> ("BigQuery Geographic Information Systems" section of Chapter 8, "Advanced Queries")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-12_02_24-14%3A25%3A11/1_f5vzdwe8

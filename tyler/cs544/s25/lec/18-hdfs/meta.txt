@@ -1,0 +1,9 @@
+HDFS Practice
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a><br>
+
+<b>Released:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f24/main/-/tree/main/p4">P4 (HDFS, Loans)</a><br>
+
+<b>Due:</b> P3<br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Bascom%20272-10_14_24-09%3A53%3A40/1_4bzfmf89
