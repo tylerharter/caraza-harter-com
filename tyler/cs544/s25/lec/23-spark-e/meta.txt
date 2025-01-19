@@ -5,4 +5,4 @@ Spark Internals and Performance 1
 <b>Due:</b> P4<br>
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p5">P5 (Spark, Loans)</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-10_25_24-14%3A23%3A51/1_7csqik9z
+

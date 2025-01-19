@@ -5,4 +5,4 @@ Storage Resources (Formats and DBs)
 <b>Due:</b> P2<br>
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p3">P3 (Compute+Storage)</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Bascom%20272-10_04_24-09%3A53%3A23/1_uv7nydzz
+

@@ -2,4 +2,4 @@ Memory Resources (Caching Practice)
 
 <b>Due:</b> P1<br>
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p2">P2 (Network+Memory)</a><br>
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-09_23_24-14%3A23%3A31/1_usfrb011
+

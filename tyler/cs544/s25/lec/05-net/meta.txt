@@ -2,4 +2,4 @@ Network Resources (Overview)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Agriculture%20125-09_13_24-14%3A24%3A19/1_wljm96fa
+
