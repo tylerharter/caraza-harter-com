@@ -1,5 +1,7 @@
 Network Resources (Overview)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
-
-
+<b>Watch:</b> <a href="https://www.loom.com/share/81dce8fa1d3444c0ad1da6a90bf2e8e7">Part 1: Dockerfiles</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/5d51a909a302432386232ed0e3de2aa2">Part 2: Networking Intro</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/8659cf07eeb04a7aa5acd24e03f24c7e">Part 3: Web Server Demo</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/4b46568087ae4e8197ffa5607bc64988">Part 4: gRPC</a><br>
