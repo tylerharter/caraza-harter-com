@@ -1,2 +1,5 @@
 Network Resources (gRPC)
 <b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/0898101943da4e5d93955afc5aedb749"></a>Part 1: gRPC Demo<br>
+<b>Watch:</b> <a href="https://www.loom.com/share/44ca289bbb4e4cf28fce73cfc5630824">Part 2: gRPC repeated values</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/347ffed2f5434adaba0427f7fc7bbf55">Part 3: Docker port forwarding</a><br>
