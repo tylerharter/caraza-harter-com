@@ -5,3 +5,5 @@ Hadoop
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p4">P4 (HDFS, Loans)</a><br>
 
 <b>Due:</b> P3<br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-03_03_25-10%3A58%3A43/1_nd7sc2xj
