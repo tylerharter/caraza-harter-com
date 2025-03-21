@@ -1,3 +1,4 @@
 Cassandra Query Language (CQL)
 
-
+<b>Watch:</b> <a href="https://www.loom.com/share/c92f552e0348424fb26c035f73977743">Part 1: CQL Demos</a><br>
+<b>Watch:</b> <a href="https://www.loom.com/share/f248958907cd464c846c3fcc1a86fee7">Part 2: Cassandra Partitioning</a><br>
