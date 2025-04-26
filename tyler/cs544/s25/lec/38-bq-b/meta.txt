@@ -4,3 +4,5 @@ Big Query 2: Data Sources
 
 <b>Due:</b> P7<br>
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p8">P8 (Cloud Services)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-04_25_25-10%3A59%3A46/1_glr6oxjq
