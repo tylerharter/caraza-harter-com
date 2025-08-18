@@ -1,0 +1,8 @@
+Streaming: Kafka Reliability
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
+
+<b>Due:</b> P6<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p7">P7 (Kafka, Weather Stations)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-04_14_25-10%3A58%3A19/1_l1s4f4ih

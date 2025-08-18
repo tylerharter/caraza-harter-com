@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "1": ["Part 1: Resources"],
+    "7": ["Part 2: Clusters"],
+    "14": ["Part 3: Cloud"]
+  },
+  "holiday": {
+    "01/20": ["Martin Luther King Day!"],
+    "03/24": ["Spring Break"],
+    "03/26": ["Spring Break"],
+    "03/28": ["Spring Break"]
+  },
+  "quizzes": [2,3,4,5,7,8,9,11,13,14,15]
+}

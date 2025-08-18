@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Intro to Big Data Systems</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom">
+	<a class="navbar-brand" href="schedule.html">Intro to Big Data Systems</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">Get Help</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="forms.html">Forms</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main">Semester GitLab Repo</a>
+                <a class="dropdown-item" href="https://pages.cs.wisc.edu/~harter/cs544/resources.html">Datasets</a>
+                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1DYPmLwUuzYKha8isG92M_S9_d3xE12TD0L648g1FjpQ/edit?usp=sharing">Office Hour Schedule</a>
+                <a class="dropdown-item" href="https://tinyurl.com/3wveu74r">Lecture Snippets</a>
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/exams">Old Exams</a>
+                <a class="dropdown-item" href="workbook.pdf">Workbook</a>
+                <a class="dropdown-item" href="messages.html?topic=ta">Who is my TA?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam1">What were my exam 1 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam2">What were my exam 2 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=room">Where is my final exam?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam3">What were my exam 3 answers?</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/m64hzy9v23v398" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/450562" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="https://app.tophat.com/e/013778" target="_blank">TopHat</a>
+                <a class="dropdown-item" href="https://apps.ankiweb.net/" target="_blank">Anki</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Syllabus</h1>
+
+<p>Welcome to Intro to Big Data Systems!  We'll deploy and use
+distributed systems to store and analyze large datasets. Unstructured
+and structured approaches to storage will be covered. Analysis will
+involve learning new query languages, processing streaming data, and
+training machine learning models.  Systems covered include Docker,
+  PyTorch, HDFS, Spark, Cassandra, Kafka, and more.
+
+<h3 class="mt-3">Revisions to Syllabus</h3>
+
+<ul>
+  <li>none yet
+</ul>
+
+
+<h2>Learning Objectives</h2>
+
+      <ul>
+	<li>Deploy distributed systems for data storage and analytics
+	<li>Demonstrate competencies with tools and processes necessary for loading data into distributed storage systems
+	<li>Write programs that use distributed platforms to efficiently analyze large datasets
+	<li>Produce meaning from large datasets by training machine learning models in parallel or on distributed systems
+	<li>Measure resource usage and overall cost of running distributed programs 
+	<li>Optimize distributed analytics programs to reduce resource consumption and program runtime
+	<li>Demonstrate competencies with cloud services designed to store or analyze large datasets
+      </ul>
+
+<h3>Lecture</h3>
+
+<p>We meet 3 times a week -- see the lecture
+  schedule <a href="schedule.html">here</a>.
+
+<p>I'll ask questions during lecture
+via TopHat.  Though
+in-person attendance is not required, you can earn extra credit by
+answering these correctly.  Answering TopHat questions remotely is not
+permitted.
+
+  <h3 class="mt-3">Readings</h3>
+
+  <p>We'll be learning about many different big data systems, and so
+  no textbook closely corresponds to the lecture content.  Thus,
+  attending lectures and taking notes will be your primary
+    resource.</p>
+
+  <p>We will have recommended (though optional) readings for many
+  systems, however.  We'll select from O'Reilly text books because you
+    can read them free online via the Madison Public Library.  You just need to do the following:
+
+    <ol>
+      <li><a href="https://www.madisonpubliclibrary.org/library-cards/get-a-card#getcard">get a library card (free)</a>
+      <li><a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">sign into the O'Reilly collection with your card number</a>
+      <li>search for the assigned book
+    </ol>
+  
+  <p>Here are some of the main texts we'll reference this semester:
+
+    <ul>
+      <li>Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems (1st edition), by Martin Kleppmann
+      <li>Learning Spark: Lightning-Fast Data Analytics (2nd edition), by Jules Damji <i>et al.</i>
+      <li>Cassandra: The Definitive Guide, (Revised) Third Edition:
+      Distributed Data at Web Scale 3rd Edition (3rd edition), by Jeff
+        Carpenter <i>et al.</i>
+      <li>Machine Learning with PyTorch and Scikit-Learn: Develop machine learning and deep learning models with Python, by Sebastian Raschka <i>et al.</i>
+    </ul>
+
+    <p>Sometimes we may post lecture notes too.</p>
+  
+      
+<h3>Communication</h3>
+
+<p>We message the class regularly
+via Canvas announcements.  We recommend updating
+your <a href="https://canvas.wisc.edu/profile/communication">Canvas
+settings</a> so that the "Announcement" option is "Notify immediately"
+so that you don't miss something important.
+
+<p>See the <a href="help.html">help page</a> for details about how to
+contact us.
+
+<p>We have <a href="surveys.html">various forms</a> for us to leave
+    (optionally anonymous) feedback, report lab attendance, and thank
+    TAs.
+
+<h3>Course Components</h3>
+
+There will be an opportunity to earn 104 points during the semester (100 regular points and 4 extra credit points).
+
+<p>Point distribution
+  <ul>
+    <li>3 Exams (19 points each, 57 points total)
+    <li>11 quizzes (1 point each, 11 points total)
+    <li>8 programming projects (4 points each, 32 points total)
+    <li>4 extra credit points (for TopHat, Instructor Endorsements on Piazza, etc)
+  </ul>
+
+<p>Grade thresholds will be applied to points (not percents!) as follows:
+
+  <ul>
+    <li>A &gt;= 94
+    <li>AB &gt;= 90
+    <li>B &gt;= 82
+    <li>BC &gt;= 72
+    <li>C &gt;= 65
+    <li>D &gt;= 60
+    <li>F &lt; 60
+  </ul>
+
+<p>The extra credit opportunities will add up to more than 4, but nobody can earn more than 4 extra credit points in the course.  One TopHat points will be worth 0.2 course points in the extra credit category.
+
+  <h4>Exams</h4>
+
+  <p>These will be multiple choice and taken in person.  Exams 1+2
+  will be during class, and exam 3 will be during finals week.  All
+    exams are cumulative.
+
+  <p>If you must miss an exam (e.g., due to illness), the others will
+  receive greater weight, without scaling.  For example, if you only
+  do exam 1 and 3, then those will each be worth 28.5% (assuming you
+  were explicitly excused from exam 2 by the instructor).  If you are
+  excused from taking both exams 1+2, then exam 3 will be worth 57%.
+  Exam 3 cannot be skipped (only rescheduled to a later date, if
+  necessary).
+
+  <h4>Quizzes</h4>
+
+  <p>There will be a short Canvas quiz due at the end of most
+  Wednesdays.  Make sure you know the rules regarding what is allowed
+  and what is not.
+
+  <h4>Projects</h4>
+
+  <p>See project policies <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/blob/main/projects.md">here</a>.
+
+<h3>Academic Misconduct</h3>
+
+  <h4>Project Policies</h4>
+
+  <p>Be sure to read and understand the full project collaboration
+    policies <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/blob/main/projects.md">here</a>.
+
+    <h4>TopHat Policies</h4>
+
+    <p>TopHat questions are intended for in-class participants.
+    Students who submit any TopHat question remotely are not eligible
+    for any extra credit for the course.  We might notice this by
+    passing around a sign-up sheet following a TopHat question.
+
+      <h4>Piazza Policies</h4>
+
+      <p>Do not post project code snippets that are >5 lines long.
+      
+      <h4>Exam Policies</h4>
+
+      <ul>
+        <li>students who have not taken an exam yet may study/prep with other students who have not taken it yet; it is fine to collaborate on creating note sheets (when allowed)
+        <li>students who have taken an exam may not discuss/share with a student who has not taken the exam yet; unless you have first-hand knowledge that another student has taken an exam, assume they have not taken it
+        <li>you may not sit adjacent to anybody you have met or know (event slightly)
+      </ul>
+
+    <h4>Quiz Policies</h4>
+    
+    <h5>Allowed</h5>
+    <ul>
+      <li>however much time you need
+      <li>discussing answers with classmates who are taking the quiz <b>at the same time</b>
+      <li>referencing texts, notes, or provided course materials
+      <li>searching online for general information
+      <li>running code
+    </ul>
+
+  <h5>NOT allowed</h5>
+  <ul>
+    <li>taking it more than once
+    <li>discussing answers with anybody outside of the course
+    <li>discussing with classmates who have already completed the quiz when you have not completed it yourself yet
+    <li>posting anything online about the quizzes
+    <li>using such material potentially posted by other students who broke the preceding rule
+    <li>getting TA/instructor help on quiz questions prior to the quiz deadline
+  </ul>    
+
+  <h3>Recommendation Letters</h3>
+
+<p>Earning a recommendation letter is much harder than earning an A in
+this course.  At a minimum, I'll want to see you doing something
+complex and interesting beyond the assingments.  For a typical letter,
+I'll have collaborated with a student on some project for multiple
+  months, with many iterations of feedback.
+
+  <p>Most grad schools require recommenders to fill long forms rating
+students on various abilities (see an example below).  Make sure that
+if you're asking me, I would be able to fill such a form without
+needing to put "I don't know" as my answer to many of the questions.
+
+<p>
+  
+  <img src="img/rec-letters.png">
+  
+  <br><br>
+
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2025 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>
