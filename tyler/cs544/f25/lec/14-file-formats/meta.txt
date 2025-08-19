@@ -1,8 +1,0 @@
-Storage Resources (Formats and DBs)
-
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Transaction Processing or Analytics?" and "Column-Oriented Storage" sections of Chapter 3, "Storage and Retrieval")</a><br>
-
-<b>Due:</b> P2<br>
-<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p3">P3 (Compute+Storage)</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-02_21_25-10%3A59%3A49/1_h92fplgf

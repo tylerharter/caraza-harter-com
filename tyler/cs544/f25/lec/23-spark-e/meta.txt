@@ -1,8 +1,0 @@
-Spark Internals and Performance
-
-<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 7, "Optimizing and Tuning Spark Applications")</a><br>
-
-<b>Due:</b> P4<br>
-<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/s25/main/-/tree/main/p5">P5 (Spark, Loans)</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Psychology%20113-03_14_25-10%3A59%3A21/1_qeum269r

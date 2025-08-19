@@ -2,13 +2,13 @@
 import calendar, os, json, re
 from datetime import date, timedelta
 
-github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f24'
+github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/f25'
 github2 = 'https://github.com/cs544-wisc/f23/tree/main'
 canvas = 'https://canvas.wisc.edu/courses/427528'
 
-START_DATE = date(2025, 1, 20)
-CUTOFF_DATE = date(2025, 5, 2) # don't show content after this
-END_DATE = date(2025, 5, 2)
+START_DATE = date(2025, 9, 1)
+CUTOFF_DATE = date(2025, 12, 12) # don't show content after this
+END_DATE = date(2025, 12, 12)
 
 def template():
     with open('template.html') as f:
@@ -153,9 +153,9 @@ def schedule():
             # week/quiz
             if day == 1 and week in extra["quizzes"]:
                 if week > 2:
-                    f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1} and before (cumulative)</a>\n')
+                    f.write(f'<b>Online Quiz</b>: <a href="{canvas}/quizzes">week {week-1} and before (cumulative)</a>\n')
                 else:
-                    f.write(f'<b>Quiz</b>: <a href="{canvas}/quizzes">week {week-1}</a>\n')
+                    f.write(f'<b>Online Quiz</b>: <a href="{canvas}/quizzes">week {week-1}</a>\n')
 
             f.write('</div>\n')
         f.write('</div>\n')

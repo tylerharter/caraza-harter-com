@@ -1,0 +1,4 @@
+Big Query 3: Machine Learning
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
+
