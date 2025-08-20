@@ -1,5 +1,2 @@
 The Cloud
 
-<b>Watch:</b> <a href="https://www.loom.com/share/7ef52df904374fdf8c2c826bc68c32a1?sid=e7c0f5d8-4b10-48b4-b9b8-a128e3d5ebb1">Part 1: Cloud Intro</a><br>
-<b>Watch:</b> <a href="https://www.loom.com/share/b1458321c41f44f088e74eea2a42e81d?sid=2c725122-2f31-466e-b5b3-61a4beeb2744">Part 2: Cloud Platforms</a><br>
-<b>Watch:</b> <a href="https://www.loom.com/share/fa97aed107c14b75b5092845c9bc89f1?sid=4b72e7b9-8c7d-40a6-8ea1-ee28d1497994">Part 3: Creating a Cloud VM</a><br>
