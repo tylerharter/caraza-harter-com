@@ -1,0 +1,14 @@
+[project]
+name = "caraza-harter-com"
+version = "0.1.0"
+dependencies = [
+    "boto3",
+    "gitpython",
+]
+
+[tool.setuptools]
+packages = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
