@@ -1,0 +1,5 @@
+Storage Resources (File Systems)
+
+<b>Due:</b> P2<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p3">P3 (Compute+Storage)</a><br>
+
