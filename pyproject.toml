@@ -9,6 +9,11 @@ dependencies = [
 [tool.setuptools]
 packages = []
 
+[tool.uv.workspace]
+members = [
+    "tools",
+]
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"

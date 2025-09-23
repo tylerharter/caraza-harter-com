@@ -2,6 +2,12 @@ version = 1
 revision = 3
 requires-python = ">=3.13"
 
+[manifest]
+members = [
+    "caraza-harter-com",
+    "tools",
+]
+
 [[package]]
 name = "boto3"
 version = "1.40.12"
@@ -119,6 +125,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/44/cd/a040c4b3119bbe532
 wheels = [
     { url = "https://files.pythonhosted.org/packages/04/be/d09147ad1ec7934636ad912901c5fd7667e1c858e19d355237db0d0cd5e4/smmap-5.0.2-py3-none-any.whl", hash = "sha256:b30115f0def7d7531d22a0fb6502488d879e75b260a9db4d0819cfb25403af5e", size = 24303, upload-time = "2025-01-02T07:14:38.724Z" },
 ]
+
+[[package]]
+name = "tools"
+version = "0.1.0"
+source = { virtual = "tools" }
+dependencies = [
+    { name = "boto3" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "boto3", specifier = ">=1.40.12" }]
 
 [[package]]
 name = "urllib3"
