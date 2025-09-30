@@ -1,5 +1,3 @@
 Compute Resources (Threads)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Fluent Python, 2nd Edition ("What's New in This Chapter" through "A Bit of Jargon" in chapter 19, "Concurrency Models in Python")</a><br>
-
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_29_25-09%3A53%3A48/1_p9nbzx5b
