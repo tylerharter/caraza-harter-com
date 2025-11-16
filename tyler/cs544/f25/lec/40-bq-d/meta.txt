@@ -1,0 +1,5 @@
+Big Query 4: Cost
+
+<b>Due:</b> P7<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p8">P8 (Cloud Services)</a><br>
+
