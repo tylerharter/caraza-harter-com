@@ -2,3 +2,4 @@ The Cloud
 
 <b>Due:</b> P6<br>
 
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p7">P7 (Kafka, Weather Stations)</a><br>
