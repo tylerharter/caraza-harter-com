@@ -1,5 +1,6 @@
-Big Query 4: Cost
+BigQuery 3: Machine Learning
 
 <b>Due:</b> P7<br>
 <b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p8">P8 (Cloud Services)</a><br>
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
 
