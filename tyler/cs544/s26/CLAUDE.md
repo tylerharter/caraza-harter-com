@@ -111,6 +111,8 @@ Example:
 - P8 should be due on the last day of class
 - Allow at least 1 week per project (P8 needs exactly 1 week)
 - Projects crossing spring break can have longer durations
+- **Always pair Due of PN with Release of P(N+1)** on the same lecture
+- Use single-word titles (e.g., "Docker", "Spark", "Kafka") or simple combinations (e.g., "Network+Memory")
 
 The `compile.py` script automatically adds Release/Due lines to the schedule based on this JSON. Do NOT put project info in `meta.txt` files.
 
@@ -161,6 +163,7 @@ Questions to ask:
 
 - First midterm should be in week 3
 - No midterms in the last two weeks of the semester
+- Place midterms at **content boundaries** (e.g., after networking, after SQL, after Spark)
 - Space midterms roughly evenly throughout the semester
 - Use `claude_util.py create <pos> midterm --midterm` to create midterm lectures with red styling
 - Midterm lectures should have `meta.txt` containing: `<h4 style="color: red;">In-Class Midterm</h4>`
@@ -186,3 +189,11 @@ Verify:
 **Spring semesters:**
 - MLK Day (third Monday of January) - START_DATE should be this Monday
 - Spring Break (M, W, F of spring break week)
+
+## Instructor Preferences
+
+**When making changes:**
+- Don't change weights of course components (projects, worksheets, etc.) unless explicitly asked
+- It's okay if points temporarily don't add to 100 - instructor will fix later
+- When verifying project pairings, always check that Due of PN = Release of P(N+1)
+- Last lecture should typically be a review day
