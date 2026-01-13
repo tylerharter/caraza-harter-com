@@ -1,0 +1,5 @@
+Cassandra Partitioning
+
+<b>Watch:</b> forgot to hit record.  Sorry!  Consider checking <a href="https://ms.sites.cs.wisc.edu/cs544/f25/schedule.html">Meena's recordings</a><br>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (sections "Data Centers and Racks" to "Hinted Handoff" of Chapter 6, "The Cassandra Architecture")</a><br>

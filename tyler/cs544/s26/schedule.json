@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "1": ["Part 1: Resources"],
+    "7": ["Part 2: Clusters"],
+    "13": ["Part 3: Cloud"]
+  },
+  "holiday": {
+    "09/01": ["Labor Day!"],
+    "11/28": ["Thanksgiving Break"]
+  },
+  "quizzes": [2,3,7,10,14]
+}

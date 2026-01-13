@@ -1,0 +1,5 @@
+Spark Machine Learning API
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 10, "Machine Learning with MLlib")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_31_25-09%3A55%3A46/1_o8b9xdsr

@@ -1,0 +1,6 @@
+Network Resources (gRPC)
+<b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+
+* note: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_15_25-09%3A55%3A01/1_avlgcp1j">Tyler's recording</a> didn't capture video, so sharing Meena's recording
+
+https://mediaspace.wisc.edu/media/CS544+%28FA25%29%3A+Network+Resources+%28gRPC%29/1_l9zjm8lr

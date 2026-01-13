@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Intro to Big Data Systems</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom">
+	<a class="navbar-brand" href="schedule.html">Intro to Big Data Systems</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">Get Help</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="forms.html">Forms</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main">Semester GitLab Repo</a>
+                <a class="dropdown-item" href="https://pages.cs.wisc.edu/~harter/cs544/resources.html">Datasets</a>
+                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1JJ7X5O665YcmDIRBNOP-08_23MMq8EDBs7FLQewG8Gs/edit?usp=sharing">Office Hour Schedule</a>
+                <a class="dropdown-item" href="https://docs.google.com/document/d/1bLaq9bMc25RV1hjqvGqxh0jK5nNAQgiOtbTaEo_PKV4/edit?usp=sharing">Lecture Snippets</a>
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/exams">Old Exams</a>
+                <a class="dropdown-item" href="workbook.pdf">Workbook</a>
+                <a class="dropdown-item" href="messages.html?topic=ta">Who is my TA?</a>
+                <!--
+                <a class="dropdown-item" href="messages.html?topic=exam1">What were my exam 1 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam2">What were my exam 2 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=room">Where is my final exam?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam3">What were my exam 3 answers?</a>
+                -->
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/merk8zm4in1ib" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/478879" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="https://app.tophat.com/e/472306" target="_blank">TopHat</a>
+                <a class="dropdown-item" href="https://apps.ankiweb.net/" target="_blank">Anki</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Course Schedule</h1>
+<div class="alert alert-primary my-5 week">Part 1: Resources</div>
+<h3 class="my-3 border-bottom border-top">Week 1</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 1</strong><br>Labor Day!</h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 3</strong><br><span id="lec-01-title">Course Intro</span></h5>
+
+<b>Read:</b> <a href="syllabus.html">Syllabus</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_03_25-09%3A43%3A56/1_tuxekyvj">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/01-course/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/01-course/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 5</strong><br><span id="lec-02-title">Deployment (Linux Shell)</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_05_25-09%3A54%3A21/1_h1epipuk">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/02-shell/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/02-shell/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 2</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 8</strong><br><span id="lec-03-title">Deployment (Linux Pipelines)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Batch Processing with Unix Tools" of Chapter 10)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_08_25-09%3A46%3A26/1_em54scli">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/03-pipelines/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 10</strong><br><span id="lec-04-title">Deployment (Docker)</span></h5>
+
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p1">P1 (Docker)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_10_25-09%3A51%3A03/1_vn2aofu6">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/04-docker/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/04-docker/anki.apkg">Deck</a><br>
+<b>Online Quiz</b>: <a href="https://canvas.wisc.edu/courses/478879/quizzes">week 1</a>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 12</strong><br><span id="lec-05-title">Network Resources (Overview)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/CS544+%28FA25%29%3A+Network+Resources+%28Overview%29/1_iajrzcfh">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/05-net/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/05-net/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 3</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 15</strong><br><span id="lec-06-title">Network Resources (gRPC)</span></h5>
+<b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+
+<ul class="compact-ul">
+<li> note: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_15_25-09%3A55%3A01/1_avlgcp1j">Tyler's recording</a> didn't capture video, so sharing Meena's recording
+</ul>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/CS544+%28FA25%29%3A+Network+Resources+%28gRPC%29/1_l9zjm8lr">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/06-grpc/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/06-grpc/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 17</strong><br><span id="lec-07-title">gRPC Catchup</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler+Caraza-Harter-Morgridge+1570-09+17+25-09%3A51%3A33/1_ym2t6qqr">Lecture</a><br>
+<b>Online Quiz</b>: <a href="https://canvas.wisc.edu/courses/478879/quizzes">week 2 and before (cumulative)</a>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 19</strong><br><span id="lec-08-title">Network Resources (Compose)</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_19_25-09%3A52%3A47/1_d9uli949">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/08-compose/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 4</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 22</strong><br><span id="lec-09-title">Memory Resources (Caching)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Systems Performance, Gregg (6.2.2; "CPU Caches" and "Latency" subsections of 6.4.1)</a><br>
+
+<b>Due:</b> P1<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p2">P2 (Network+Memory)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_22_25-09%3A54%3A25/1_3rknjrn7">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/09-caching/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/09-caching/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 24</strong><br><span id="lec-10-title">In-Person Quiz (in class)</span></h5>
+
+Catchup+Quiz<br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_24_25-09%3A51%3A58/1_8w1whzda">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 26</strong><br><span id="lec-11-title">Memory Resources (Caching Practice)</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_26_25-09%3A53%3A29/1_56z0285i">Lecture</a><br>
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 5</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 29</strong><br><span id="lec-12-title">Memory Resources (PyArrow)</span></h5>
+
+<b>Read:</b> <a href="http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery of Processor Cache Effects (Examples 1 and 2)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_29_25-09%3A53%3A48/1_p9nbzx5b">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/12-arrow/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/12-arrow/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 1</strong><br><span id="lec-13-title">Compute Resources (Threads)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Fluent Python, 2nd Edition ("What's New in This Chapter" through "A Bit of Jargon" in chapter 19, "Concurrency Models in Python")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_01_25-09%3A55%3A10/1_fvntiqza">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/13-threads/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/13-threads/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 3</strong><br><span id="lec-14-title">Compute Resources (Locks)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Concurrency in Python ("Working With Threads In Python" chapter)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_03_25-09%3A55%3A41/1_du8im2js">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/14-locks/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/14-locks/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 6</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 6</strong><br><span id="lec-15-title">Storage Resources (File Systems)</span></h5>
+
+<b>Due:</b> P2<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p3">P3 (Compute+Storage)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_06_25-09%3A53%3A53/1_fynbflnc">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/15-file-systems/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/15-file-systems/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 8</strong><br><span id="lec-16-title">Storage Resources (Formats and DBs)</span></h5>
+<h4 style="color: red;">In-Person Midterm (evening)</h4>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Transaction Processing or Analytics?" and "Column-Oriented Storage" sections of Chapter 3, "Storage and Retrieval")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Michael%20Doescher-Morgridge%201570-10_08_25-09%3A53%3A58/1_vudu9ulk">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/16-file-formats/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/16-file-formats/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 10</strong><br><span id="lec-17-title">SQL Databases (MySQL)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">MySQL Crash Course, Silva (Chapters 3+5)</a>, <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data-Intensive Applications, Kleppmann ("The Meaning of ACID" section in Chapter 7, "Transactions")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_10_25-09%3A55%3A19/1_dxhhhv7w">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/17-sql/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/17-sql/anki.apkg">Deck</a><br>
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 2: Clusters</div>
+<h3 class="my-3 border-bottom border-top">Week 7</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 13</strong><br><span id="lec-18-title">SQL Practice</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_13_25-09%3A55%3A15/1_2gyw25ay">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 15</strong><br><span id="lec-19-title">Hadoop</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a><br>
+
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p4">P4 (HDFS, Loans)</a><br>
+
+<b>Due:</b> P3<br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_15_25-09%3A55%3A13/1_67l0uz9k">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/19-hdfs/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/19-hdfs/anki.apkg">Deck</a><br>
+<b>Online Quiz</b>: <a href="https://canvas.wisc.edu/courses/478879/quizzes">week 6 and before (cumulative)</a>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 17</strong><br><span id="lec-20-title">MapReduce</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (sections "The Importance of an Optimal Storage Solution", "Databases", and "Data Lakes" of chapter 9, "Building Reliable Data Lakes with Apache Spark")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_17_25-09%3A54%3A10/1_u6knxi3c">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/20-spark-a/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/20-spark-a/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 8</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 20</strong><br><span id="lec-21-title">Spark RDDs</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_20_25-09%3A53%3A44/1_agyp4wzk">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 22</strong><br><span id="lec-22-title">Spark DataFrames</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 4, "Spark SQL and DataFrames: Introduction to Built-in Data Sources")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_22_25-09%3A55%3A18/1_9lq7n7a7">Lecture</a><br>
+
+<b>Anki Flashcards</b>: <a href="lec/22-spark-c/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 24</strong><br><span id="lec-23-title">Spark SQL</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Reduce-Side Joins and Grouping" of Chapter 10, "Batch Processing")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_24_25-09%3A55%3A14/1_ucxs21qc">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/23-spark-d/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/23-spark-d/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 9</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 27</strong><br><span id="lec-24-title">Spark Internals and Performance</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 7, "Optimizing and Tuning Spark Applications")</a><br>
+
+<b>Due:</b> P4<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p5">P5 (Spark, Loans)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_27_25-09%3A54%3A06/1_bvt1onkv">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/24-spark-e/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/24-spark-e/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 29</strong><br><span id="lec-25-title">In-Person Quiz (in class)</span></h5>
+
+Catchup+Quiz
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 31</strong><br><span id="lec-26-title">Spark Machine Learning API</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 10, "Machine Learning with MLlib")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-10_31_25-09%3A55%3A46/1_o8b9xdsr">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/26-spark-f/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/26-spark-f/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 10</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 3</strong><br><span id="lec-27-title">Spark Machine Learning: PLANET</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_03_25-09%3A55%3A05/1_dg0bwe5s">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 5</strong><br><span id="lec-28-title">Wide Tables: HBase and Cassandra</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (Chapter 4, "The Cassandra Query Language")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_05_25-09%3A55%3A10/1_qjba2w7v">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/28-cassandra-a/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/28-cassandra-a/anki.apkg">Deck</a><br>
+<b>Online Quiz</b>: <a href="https://canvas.wisc.edu/courses/478879/quizzes">week 9 and before (cumulative)</a>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 7</strong><br><span id="lec-29-title">Cassandra Query Language (CQL)</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_07_25-09%3A54%3A47/1_sk2olosx">Lecture</a><br>
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 11</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 10</strong><br><span id="lec-30-title">Cassandra Partitioning</span></h5>
+
+<b>Watch:</b> forgot to hit record.  Sorry!  Consider checking <a href="https://ms.sites.cs.wisc.edu/cs544/f25/schedule.html">Meena's recordings</a><br>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (sections "Data Centers and Racks" to "Hinted Handoff" of Chapter 6, "The Cassandra Architecture")</a><br>
+
+<b>Slides</b>: <a href="lec/30-cassandra-c/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/30-cassandra-c/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 12</strong><br><span id="lec-31-title">Cassandra Replication</span></h5>
+
+<b>Due:</b> P5<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p6">P6 (Cassandra, Weather)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_12_25-09%3A54%3A08/1_5q5blhiy">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/31-cassandra-d/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/31-cassandra-d/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 14</strong><br><span id="lec-32-title">Streaming: Kafka Concepts</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> ("Enter Kafka" section of Chapter 1, "Meet Kafka")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_14_25-09%3A55%3A26/1_tdc32odl">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/32-streaming-a/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/32-streaming-a/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 12</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 17</strong><br><span id="lec-33-title">Streaming: Kafka Demos</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_17_25-09%3A54%3A42/1_duqwo34g">Lecture</a><br>
+
+<b>Anki Flashcards</b>: <a href="lec/33-streaming-b/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 19</strong><br><span id="lec-34-title">Review/Catchup</span></h5>
+
+<h4 style="color: red;">In-Person Midterm (evening)</h4>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_19_25-09%3A53%3A40/1_0mo271dk">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 21</strong><br><span id="lec-35-title">Streaming: Kafka Reliability</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_21_25-09%3A53%3A47/1_0bjdwdlw">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/35-streaming-c/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/35-streaming-c/anki.apkg">Deck</a><br>
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 3: Cloud</div>
+<h3 class="my-3 border-bottom border-top">Week 13</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 24</strong><br><span id="lec-36-title">The Cloud</span></h5>
+
+<b>Due:</b> P6<br>
+
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p7">P7 (Kafka, Weather Stations)</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_24_25-09%3A54%3A30/1_2ikqha0e">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/36-cloud/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/36-cloud/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 26</strong><br><span id="lec-37-title">BigQuery 1: Basics</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_26_25-09%3A56%3A28/1_op34ad3r">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/37-bq-a/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/37-bq-a/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 28</strong><br>Thanksgiving Break</h5>
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 14</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Dec 1</strong><br><span id="lec-38-title">BigQuery 2: Data Sources + Geo Data</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> ("BigQuery Geographic Information Systems" section of Chapter 8, "Advanced Queries")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-12_01_25-09%3A55%3A50/1_928i3yai">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/38-bq-b/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/38-bq-b/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Dec 3</strong><br><span id="lec-39-title">BigQuery Catchup</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-12_03_25-09%3A54%3A24/1_bbavo2sj">Lecture</a><br>
+
+<b>Online Quiz</b>: <a href="https://canvas.wisc.edu/courses/478879/quizzes">week 13 and before (cumulative)</a>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Dec 5</strong><br><span id="lec-40-title">BigQuery 3: Machine Learning</span></h5>
+
+<b>Due:</b> P7<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p8">P8 (Cloud Services)</a><br>
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-12_05_25-09%3A54%3A59/1_q9x5qagx">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/40-bq-d/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/40-bq-d/anki.apkg">Deck</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 15</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Dec 8</strong><br><span id="lec-41-title">BigQuery 4: Cost</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-12_08_25-09%3A56%3A12/1_pjpztqno">Lecture</a><br>
+
+<b>Slides</b>: <a href="lec/41-bq-e/slides.pdf">PDF</a><br>
+<b>Anki Flashcards</b>: <a href="lec/41-bq-e/anki.apkg">Deck</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Dec 10</strong><br><span id="lec-42-title">Review</span></h5>
+
+<b>Watch</b>: <a href="https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-12_10_25-09%3A54%3A14/1_i4x3ao7i">Lecture</a><br>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Dec 12</strong><br><span id="lec-43-title">No Class</span></h5>
+
+<b>Due:</b> P8
+
+</div>
+</div>
+<br>
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2025 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>
