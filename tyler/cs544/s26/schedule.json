@@ -5,8 +5,10 @@
     "13": ["Part 3: Cloud"]
   },
   "holiday": {
-    "09/01": ["Labor Day!"],
-    "11/28": ["Thanksgiving Break"]
+    "01/19": ["MLK Day"],
+    "03/30": ["Spring Break"],
+    "04/01": ["Spring Break"],
+    "04/03": ["Spring Break"]
   },
   "quizzes": [2,3,7,10,14]
 }

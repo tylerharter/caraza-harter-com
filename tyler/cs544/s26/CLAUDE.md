@@ -54,3 +54,32 @@ This processes all content and generates the final HTML files.
 - Lecture directories: `NN-topic` (e.g., `01-course`, `02-shell`)
 - Content files: `name.content.html` → generates `name.html`
 - JavaScript: `js/name.js` is automatically included if it exists for `name.html`
+
+## Setting Up a New Semester
+
+When copying a previous semester to create a new one, update the following:
+
+### Academic Calendar
+Fetch dates from: https://secfac.wisc.edu/academic-calendar/
+
+### Files to Update
+
+**compile.py:**
+- `START_DATE`: Must be a **Monday** for correct MWF column order (even if that Monday is a holiday)
+- `CUTOFF_DATE` and `END_DATE`: Last day of instruction
+- `github`: Update semester in URL (e.g., `f25` → `s26`)
+- `github2`: Update semester reference
+- `canvas`: Update Canvas course ID
+
+**schedule.json:**
+- Update `holiday` entries for the new semester
+
+### Semester-Specific Holidays (MWF classes)
+
+**Fall semesters:**
+- Labor Day (first Monday of September) - START_DATE should be this Monday
+- Thanksgiving Break (Wednesday and Friday of Thanksgiving week)
+
+**Spring semesters:**
+- MLK Day (third Monday of January) - START_DATE should be this Monday
+- Spring Break (M, W, F of spring break week)
