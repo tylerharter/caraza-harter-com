@@ -55,30 +55,85 @@ This processes all content and generates the final HTML files.
 - Content files: `name.content.html` → generates `name.html`
 - JavaScript: `js/name.js` is automatically included if it exists for `name.html`
 
+## Lecture Management (claude_util.py)
+
+Utility script for managing lectures efficiently:
+
+```bash
+# List all lectures with descriptions
+python3 claude_util.py list
+
+# Delete a lecture and renumber all subsequent lectures
+python3 claude_util.py delete <number-or-pattern>
+python3 claude_util.py -y delete grpc-catchup  # skip confirmation
+
+# Insert space for a new lecture (shifts subsequent lectures up)
+python3 claude_util.py insert <position>
+
+# Rename a lecture topic (keeps the number)
+python3 claude_util.py rename <number-or-pattern> <new-name>
+```
+
+Use `-y` flag to skip confirmation prompts.
+
 ## Setting Up a New Semester
 
-When copying a previous semester to create a new one, update the following:
+When copying a previous semester to create a new one, follow this checklist. Claude should be able to handle most of this autonomously, asking the instructor questions as needed.
 
-### Academic Calendar
-Fetch dates from: https://secfac.wisc.edu/academic-calendar/
+### Step 1: Fetch Academic Calendar
+Get dates from: https://secfac.wisc.edu/academic-calendar/
 
-### Files to Update
+Look for:
+- Instruction begin date
+- Spring break dates (spring) or Thanksgiving dates (fall)
+- Instruction end date
+- Final exam period dates
 
-**compile.py:**
+### Step 2: Update compile.py
+
 - `START_DATE`: Must be a **Monday** for correct MWF column order (even if that Monday is a holiday)
 - `CUTOFF_DATE` and `END_DATE`: Last day of instruction
 - `github`: Update semester in URL (e.g., `f25` → `s26`)
-- `github2`: Update semester reference
-- `canvas`: Update Canvas course ID
+- `github2`: Update semester reference (e.g., `f23` → `s26`)
+- `canvas`: Update Canvas course ID (ask instructor for new ID)
 
-**schedule.json:**
-- Update `holiday` entries for the new semester
+### Step 3: Update schedule.json
+
+- `holiday`: Update entries for the new semester (see below)
+- `quizzes`: Ask instructor if online quizzes are being used; set to `[]` if not
+
+### Step 4: Update syllabus.content.html
+
+- Clear the revision history (set to "none yet" or similar)
+- Update final exam date/time (search for "exam 3" or "finals week")
+- Ask instructor about any changes to course components (quizzes, projects, etc.)
+
+### Step 5: Ask Instructor About Changes
+
+Questions to ask:
+- Are there any lectures to delete, add, or rename?
+- Are online quizzes being used this semester?
+- What is the Canvas course ID?
+- What is the final exam date/time?
+- Any other syllabus changes?
+
+### Step 6: Build and Verify
+
+```bash
+python3 compile.py
+```
+
+Verify:
+- No errors
+- Schedule shows MWF columns (not WFM or other order)
+- Correct number of class days
+- Holidays appear correctly
 
 ### Semester-Specific Holidays (MWF classes)
 
 **Fall semesters:**
 - Labor Day (first Monday of September) - START_DATE should be this Monday
-- Thanksgiving Break (Wednesday and Friday of Thanksgiving week)
+- Thanksgiving Break (W and F of Thanksgiving week, possibly all 3 days)
 
 **Spring semesters:**
 - MLK Day (third Monday of January) - START_DATE should be this Monday
