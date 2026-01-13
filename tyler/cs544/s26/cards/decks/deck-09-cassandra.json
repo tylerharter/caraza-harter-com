@@ -1,0 +1,259 @@
+{
+  "deck_number": "09",
+  "topic": "cassandra",
+  "card_count": 36,
+  "cards": [
+    {
+      "note_id": 1699019881106,
+      "front": "What is the open source system most similar to Google's BigTable?",
+      "back": "HBase",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699019980708,
+      "front": "How do HBase and Cassandra handle replication differently for N-times replicated data?",
+      "back": "A row in HBase will belong to a single RegionServer, but that RegionServer will store that data in a N-times replicated HDFS file.<br><br>A row in Cassandra will belong to N different workers, each of which will store it in a single local file system (the local FS does not replicate it).<br><br>In other words: HBase replicates at the file system level, Cassandra replicates at the database level.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020193674,
+      "front": "HBase and BigTable are \"versioned sparse tables\" -- what does this mean?",
+      "back": "There is not a fixed number of columns, and different rows can have different columns.&nbsp; Looking up a cell is more like using a dictionary, something like table[\"row:column\"].<br><br>Each cell may also have multiple versions, and if we want a specific one, we can use table[\"row:column:version\"].<br><br>If we look at every possible combination of rows/columns in the table, many correspond to cells with no values -- in a normal database, these missing values would be represented as NULL and representing those NULLs would take a little storage/memory space.&nbsp; In versioned sparse tables, no space is used to represent the missing values (hence \"sparse\").",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020293445,
+      "front": "What happens to the regions an HBase RegionServer was responsible for if that server dies?",
+      "back": "All of that dead server's files (which contain region data) should still be safely stored in HDFS, so other healthy RegionServers can be assigned to take over these regions.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020352665,
+      "front": "What is a Cassandra keyspace, and where is the data it contains stored?",
+      "back": "A collection of tables.&nbsp; Every keyspace has data spread across all workers in the cluster.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020411056,
+      "front": "Why might you want all data for a particular user to live in a single row in an HBase table?",
+      "back": "A single row will belong to a single RegionServer, meaning requests for that users data will go to one server instead of many.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020469911,
+      "front": "At what granularity can a user specify the replication factor, in both HDFS and Cassandra?",
+      "back": "HDFS: the user specifies replication per <b>file</b><br>Cassandra: the user specifies replication per <b>keyspace</b>",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020520843,
+      "front": "What is the primary key in a Cassandra table?",
+      "back": "The combination of the partition key and cluster key.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020576879,
+      "front": "What about a row determines which Cassandra workers are responsible for that row?",
+      "back": "The value in the <b>partition key</b>",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020593171,
+      "front": "What determines the sort order of rows within a partition?",
+      "back": "The values in the <b>cluster key</b>&nbsp;column(s)",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020641527,
+      "front": "For what kinds of columns are the same values shared across many rows of data?",
+      "back": "Two cases:<br>1. partition key<br>2. static column",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699020987053,
+      "front": "What are two systems that inspired the design of Cassandra?",
+      "back": "Dynamo (from Amazon)<br>BigTable (from Google)<br><br>Both these published papers, but not source code.&nbsp; Facebook designed Cassandra using the ideas in the papers, then open-sourced Cassandra.",
+      "source_lecture": "28-cassandra-a",
+      "original_tags": "lec28"
+    },
+    {
+      "note_id": 1699456668009,
+      "front": "What is a weakness of HDFS's approach to partitioning?",
+      "back": "You need a data structure somewhere that maps logical blocks to physical locations on DataNodes.&nbsp; If there are many blocks in the system, the structure is large -- in the case of HDFS, it is stored in memory in the NameNode, which is expensive.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699456764275,
+      "front": "What is elasticity?",
+      "back": "It means you can efficiently scale up/down (for example, adding or removing workers in a cluster).&nbsp; Being efficient means we can't move the majority of the data over the network each time we gain/lose a worker.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699456857379,
+      "front": "What are the strengths and weaknesses of hash partitioning?",
+      "back": "Strength: it's highly scalable because anybody can figure out where data goes with a little math: hash(key)%partition_count -- no need to ask a centralized boss.&nbsp;&nbsp;<br><br>Weakness: it's not elastic.&nbsp; hash(key)%partition_count rarely equals hash(key)%(partition_count+1).&nbsp; This means that if you add a worker, most data in the cluster will need to be shuffled over the network to a different worker.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699456918963,
+      "front": "What are a couple famous systems that use consistent hashing to partition data across workers?",
+      "back": "Dynamo and Cassandra",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457122268,
+      "front": "In consistent hashing, how are tokens managed for (a) workers and (b) rows?",
+      "back": "Workers: the system can choose tokens for workers (aka nodes) however it wants.&nbsp; Some options: randomly, or trying to space tokens evenly.&nbsp; Given the flexibility in the decision, whatever is decided needs to be remembered -- that is, stored in some data structure.&nbsp; For Cassandra, that data structure is called the token map.&nbsp; If there are only a few thousand workers in the cluster (a lot, actually), the token map won't take that much space in RAM.<br><br>Rows: we want to handle MANY rows (billions, trillions, ...) in the system, so it's not reasonable to store a map of tokens for every row in a table.&nbsp; Instead, we take a hash of the row's key.&nbsp; For Cassandra, the key used is the \"partition key\".&nbsp; This means that all rows in the same partition will have the same token.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457256020,
+      "front": "Why does Cassandra have tokens for vnodes (virtual nodes) instead of just for nodes (the workers in the cluster)?",
+      "back": "1. when we add a worker to the cluster, it's better if the new worker can take some work away from a few other nodes.&nbsp; If we only reassign some work from just one old node, it will take longer to hand off the data, and the cluster will not be as balanced in the end.<br><br>2. some workers might have more CPU/RAM/etc.&nbsp; We can give these stronger nodes more vnodes, which will result in them receiving more work.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457348845,
+      "front": "Given a Cassandra row's token, how do we select a vnode to be responsible for that token?&nbsp; Assume single replication.",
+      "back": "If a vnode has exactly the same token as the row, then that vnode owns the row.&nbsp; Having an exact match like this is rare.<br><br>Otherwise, we move to the right in the token ring, finding the first vnode token that is bigger than the row's token.&nbsp; We wrap around (from biggest to smallest token) if necessary.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457399547,
+      "front": "What is the \"wrapping range\" in Cassandra, and how do we handle it?&nbsp; Assume single replication.",
+      "back": "This is the range of tokens that are bigger than any vnode token.&nbsp; <br><br>Having a row with a token in this range is a special case since we usually \"walk the ring\" to the right to find a vnode for a row.&nbsp; We handle this corner case by assigning the row to the vnode with the smallest token in the cluster.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457442399,
+      "front": "What is \"heterogeneity\" in a cluster?",
+      "back": "It means the workers are running on different hardware -- some machines might be more powerful than others (more CPU, RAM, etc.).",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457481070,
+      "front": "Where is the token map stored in Cassandra?",
+      "back": "We don't have a centralized boss, so every worker in the cluster stores a copy of the token map.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457654267,
+      "front": "How do we update the token map in Cassandra?&nbsp; For example, we might need to insert some new vnodes to the token map if a new worker joins the cluster.",
+      "back": "We can't plan to update all the workers at once (remember, they all have a copy of the token map).&nbsp; At any given time, there are probably some machines offline (for example, rebooting) if we have a large cluster.<br><br>Instead, we update a few workers in the cluster.&nbsp; All the workers engage in a \"gossip\" protocol.&nbsp; Once every second (or N seconds), a worker chooses a peer, and they exchange gossip about any new information their copies of the token map.<br><br>As with gossip or epidemics, the information will quickly spread to all the nodes that are alive.&nbsp; If a node was down or rebooting, it will get the information soon after it comes back online and starts gossiping with its peers.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699457731993,
+      "front": "If a client wants to interact with a Cassandra cluster, how does it start?",
+      "back": "The client can connect to any worker, which will serve as a coordinator.&nbsp; Every worker has a copy of the token map, so the coordinator will know what node (or nodes) need to be involved for operations on a given partiton of rows.",
+      "source_lecture": "30-cassandra-c",
+      "original_tags": "lec30"
+    },
+    {
+      "note_id": 1699628758444,
+      "front": "When multiple nodes in a system can be affected by the same fault, we say they are in the same _________",
+      "back": "fault domain<br><br>these nodes are vulnerable to \"correlated failure\"",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699628987488,
+      "front": "What are some examples of \"faults\", and what does fault tolerance mean?",
+      "back": "Few examples of faults: disk failure, network down, node dies, rack loses power, data center is destroyed.<br><br>Fault tolerance: the system can keep \"working\" even when certain faults occur.&nbsp; <br><br>Fault tolerance can take many forms, because different systems can handle different kinds of faults.&nbsp; For example, HDFS can handle a DataNode failure, but it is not geographically distributed, so it couldn't handle loss of a whole data center.&nbsp; Cassandra can be geographically distributed, so it could potentially.&nbsp; Fault tolerance also varies based on what \"working\" mean -- for example, some systems might insure durability (your data is not lost), but not availability (so the system might be offline for a while).",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629175902,
+      "front": "Given a token T for a row that is replicated N times, how do you \"walk the ring\" to find the N nodes necessary?",
+      "back": "Start on T, and keep increasing it, recording every vnode you match or pass in a replica set.&nbsp; Stop when the replica set contains N nodes.<br><br>Special cases:<br>1. if you get to the biggest possible token number, wrap around to the smallest<br>2. if you find a vnode that is in the same \"failure domain\" as another vnode already found, potentially skip it.&nbsp; This depends on the policy, which is pluggable.&nbsp; The simplest policy will just skip vnodes on the same physical node, but more complex policies might also skip nodes that are in the same rack or datacenter.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629360312,
+      "front": "What does \"ack\" stand for, and what does it mean in the context of writing data?",
+      "back": "\"ack\" is short for \"acknowledgement\", and receiving an acknowledgement back from a system means our data is \"committed\" (in other words, \"safe\" even if certain bad things happen).<br><br>Different systems guarantee different levels of safety for committed data.&nbsp; For example, for one system it might mean the data is in RAM on two workers.&nbsp; On a system with a stronger guarantee, in contrast, it might mean the data is on disk on three workers.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629420815,
+      "front": "If you receive an ACK, what does it mean?&nbsp; If you don't receive an ACK, what does it mean?",
+      "back": "ACK: the data is definitely committed<br><br>No ACK: the data MAY or MAY NOT be committed (perhaps the write works fine, but an issue arose with sending the message back to report that)",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629565724,
+      "front": "Cassandra has RF, W, and R options.&nbsp; How are these used when reading and writing data?",
+      "back": "Writing: a coordinator will attempt to write RF copies of the data.&nbsp; It will report success (ack) if at least W nodes successfully write it.<br><br>Reading: a coordinator will attempt to read the data from R nodes.&nbsp; 1 of these will be a full data read, and (R-1) workers will just send back a checksum of the data.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629660223,
+      "front": "In terms of RF, W, and R: what should you do if you want a stronger <b>durability</b> guarantee when you get an ack?",
+      "back": "Increase W (RF must be &gt;= W, so RF might need to increase too).",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629706498,
+      "front": "In terms of RF, W, and R: what should you do if you want better <b>write availability</b>?",
+      "back": "Decrease W -- then our write can be considered successful even if fewer nodes are currently working.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629731266,
+      "front": "In terms of RF, W, and R: what should you do if you want better <b>read availability</b>?",
+      "back": "Decrease R: then we can read the data even if fewer nodes are currently working.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629757868,
+      "front": "In terms of RF, W, and R: what should you do if you want to guarantee that <b>reads will see the last written data</b>?",
+      "back": "Make sure W+R &gt; RF.<br><br>This guarantees the write and read quorums will overlap.&nbsp; For example, if you have 5 nodes, and two subsets, of size 2 and 4, those two subsets are mathematically guaranteed to have some overlap.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699629951126,
+      "front": "What does eventually consistent mean?",
+      "back": "It means different versions of the data on different workers can temporarily \"diverge\" -- this means that neither version 1 or version 2 of a row is strictly \"newest\".<br><br>Perhaps version 1 has the latest data in column A, but version 2 has the latest data in column B.&nbsp; Eventually, though, the rows should sync up.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    },
+    {
+      "note_id": 1699630124316,
+      "front": "In eventually consistent systems, sometimes you do a read, and you get conflicting versions of the data back.&nbsp; Neither version can be considered strictly better.&nbsp; What are some approaches to handling this?&nbsp; What does Cassandra do?",
+      "back": "Approach 1: Pass all the different versions back to the client doing the reads -- let the client sort it out.<br><br>Approach 2: Automatically merge all the versions to get a new version.&nbsp;&nbsp;<br><br>Cassandra automatically merges.&nbsp; It keeps timestamps on every cell, and uses a LWW policy (last writer wins), meaning we compare the versions cell by cell, picking the data with the freshest timestamp in each case.",
+      "source_lecture": "31-cassandra-d",
+      "original_tags": "lec31"
+    }
+  ]
+}

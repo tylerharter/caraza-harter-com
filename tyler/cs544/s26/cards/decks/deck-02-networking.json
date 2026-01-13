@@ -1,0 +1,280 @@
+{
+  "deck_number": "02",
+  "topic": "networking",
+  "card_count": 39,
+  "cards": [
+    {
+      "note_id": 1695997816388,
+      "front": "How many bits are in a MAC address?",
+      "back": "48",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695997844682,
+      "front": "What does the prefix of a MAC address indicate?",
+      "back": "The vendor/manufacter that produced the NIC<br><br>This is so that we can achieve globally unique MAC addresses (each vendor gets a prefix, and is expected not to reuse the same suffix for different devices).",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695997883361,
+      "front": "How can you see the MAC addresses and IP addresses for your NICs?",
+      "back": "ip address",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695997929207,
+      "front": "What is a virtual NIC that is only reachable from the local machine, and what IP address does it use?",
+      "back": "The \"loopback\" device, which has address 127.0.0.1",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695997971946,
+      "front": "What is a network?",
+      "back": "A collection of computers that can send each other messages by MAC address",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998002798,
+      "front": "Within a network, what device can forward data that is sent to a specific MAC address?",
+      "back": "A switch",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998034319,
+      "front": "What is the device that connects multiple networks to form an internet, or the Internet?",
+      "back": "a router",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998102238,
+      "front": "How many bits does an IPv4 address contain, and how many possible addresses are there?",
+      "back": "32 bits, and about 4 billion possible addresses",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998119370,
+      "front": "What does the prefix of an IP address tell you?",
+      "back": "It identifies the network",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998235251,
+      "front": "Why do routers forward based on IP address rather than MAC address?",
+      "back": "Because there are too many MAC addresses in the world, and forwarding tables would need to be too big if every router needed to remember where every MAC address lives.<br><br>With IP addresses, IPs with the same prefix are on the same network.&nbsp; A router just needs to know where to forward data to get it closer to the correct network.",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998390616,
+      "front": "The following are private IP ranges, meaning multiple networks can use the same IPs from these ranges internally:<br><br>192.168.0.0&nbsp;to&nbsp;192.168.255.255<br>172.16.0.0&nbsp;to&nbsp;172.31.255.255<br>10.0.0.0&nbsp;to&nbsp;10.255.255.255<br><br>What device/software can let us connect to machines using these IPs, given they are not unique?",
+      "back": "A NAT (network address translation).<br><br>It can map a unique public address to one or more private IPs within a network.",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998418646,
+      "front": "What is something that both UDP and TCP add in addition to what IP provides?",
+      "back": "The both provide port numbers, which let us direct communication to a specific process on a machine",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998462852,
+      "front": "What is something that TCP provides that UDP does not?",
+      "back": "TCP provides more reliable communication:<br><br>retry when a packet is dropped<br><br>buffer packets on receiving side and re-arrange so they arrive in the same order they were sent",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998479161,
+      "front": "What does UDP stand for?",
+      "back": "User Datagram Protocol",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998490745,
+      "front": "What does TCP stand for?",
+      "back": "Transmission Control Protocol",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1695998567171,
+      "front": "Why would you ever prefer UDP over TCP?",
+      "back": "TCP does extra work, which is sometimes not necessary.&nbsp; For example, in a Zoom call, if some packets are dropped the session may freeze.&nbsp; After that, it's more natural for humans to repeat what they were saying (it would be weird if it replayed video/audio from the few seconds when the connection was lost).",
+      "source_lecture": "05-net",
+      "original_tags": "lec5"
+    },
+    {
+      "note_id": 1696359592644,
+      "front": "What is the relationship between domain names in a URL and IP addresses?<br><br>Example:<br><br><div><div>https://tyler.caraza-harter.com:443/cs544/s23/schedule.html</div></div>",
+      "back": "When you enter a domain name into a browser, it gets translated to an IP address automatically for you.",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359695287,
+      "front": "If you are using HTTP over TCP/IP, what functionality does TCP/IP provide, and what does HTTP provide?",
+      "back": "TCP/IP gives you IP addresses and port numbers, letting you communicate with a specific process (a server on a specific machine.<br><br>HTTP additionally lets you specify what resource you want to access via that server.<br><br>For example, consider this URL:<br><br><div>https://tyler.caraza-harter.com:443/cs544/s23/schedule.html</div><div><br></div><div>The resource is \"/cs544/s23/schedule.html\"</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359769282,
+      "front": "What does RPC stand for?",
+      "back": "Remote Procedure Call<br><br>Procedure: another name for a function/method<br>Remote: we want it to run on a different process/container/computer",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359793963,
+      "front": "What are the RPC implementations created by Meta and Google called, respectively?",
+      "back": "Thrift and gRPC",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359907491,
+      "front": "What is gRPC layered on top of?",
+      "back": "HTTP<br><br>Every method call is an HTTP POST request.&nbsp; The arguments go in the request body, the return value goes in the response body.",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359947955,
+      "front": "What is it called when we convert various data types into bytes to send over the wire?&nbsp; What about the reverse conversion?",
+      "back": "serialization/deserialization",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696359969921,
+      "front": "What does gRPC use for serialization?",
+      "back": "Protocol Buffers (protobufs for short)",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360079703,
+      "front": "What is variable-length encoding, and what are the pros/cons of using it?",
+      "back": "Use more space for bigger numbers.&nbsp; E.g., if an int32 value is small enough, we could use 1, 2, or 3 bytes (instead of the usual 4).<br><br>Pros: save space.&nbsp; Very important for sending data over the network, so protobufs do this.<br>Cons: CPUs cannot directly operate on int32's unless they are 4 bytes, so conversion is necessary before sending and after receiving this data.",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360151521,
+      "front": "Port forwarding: if we want to forward port 300 of the loopback device on a VM to port 80 inside a container, how do we run the container?",
+      "back": "<div>docker run -p 127.0.0.1:300:80 myimg</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360255197,
+      "front": "What does this do?<br><br><div>ssh USER@VM -L localhost:1234:localhost:5678</div>",
+      "back": "This is executed on a machine (say your laptop) to create an SSH tunnel to the VM.&nbsp; While the tunnel is in use, any requests to localhost:1234 on the laptop will be forwarded to localhost:5678 on the VM (\"localhost\" is not redundant here because it is referring to two different loopback devices, the one on the laptop and the one on the VM).",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360391008,
+      "front": "<div>Consider this:</div><div><br></div><div>docker run -d -p 300:80 myimg</div><div><br></div><div>We specify the port on the VM (300) and container (80), but we don't specify which NIC.&nbsp; What will be used?</div>",
+      "back": "By default, the command is equivalent to this:<br><br><div>docker run -d -p 0.0.0.0:300:80 myimg</div><div><br></div><div>This means traffic on all of the VM's NICs will forward to the container (possibly a security risk, depending on your firewall settings).</div><div><br></div><div>Inside the container, it will forward to whatever the main NIC is (e.g., eth0), NOT the loopback device (so anything inside the container should listen on 0.0.0.0, not localhost).</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360444120,
+      "front": "What is container orchestration, and what is currently a very popular orchestrator?",
+      "back": "Orchestration lets you deploy cooperating containers across many different machines.<br><br>Kubernetes is probably the most well known.",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360464570,
+      "front": "What does \"docker compose\" do?",
+      "back": "Lets you start a bunch of cooperating containers on the same machine.",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360534501,
+      "front": "protobuf files (.proto) can support two different syntaxes, v2 and v3.&nbsp; If you want v3, what should the first line of your .proto be?",
+      "back": "<b><span style=\"font-weight: 400;\">syntax = \"proto3\";</span></b>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360594795,
+      "front": "What are the two main things a .proto file contains?",
+      "back": "messages<br>services<br><br>Example:<br><br><div>message MyMessage {</div><div>&nbsp; ...</div><div>}</div><div><br></div><div><div>service MyService {</div><div>&nbsp; ...</div><div>}</div><br></div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360657693,
+      "front": "In a .proto file, what does a message contain?",
+      "back": "Fields, each with a type and a number, like this:<br><br><div>message MyMessage {</div><div>&nbsp;&nbsp;int32 x = 1;</div><div>&nbsp;&nbsp;int32 y = 2;</div><div>}</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360721507,
+      "front": "In a .proto file, what does a service contain?",
+      "back": "RPCs, like this:<br><br><div>service MyService {</div><div>&nbsp;&nbsp;rpc MyRPC(Message1) returns (Message2);</div><div>}</div><div><br></div><div>Each RPC has one message containing arguments and another containing return values.</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360812718,
+      "front": "When you generate code for a .proto file, you get two files:<br><br><b><span style=\"font-weight: 400;\">????_pb2<br>????_pb2_grpc<br></span></b><br>What are they each for?",
+      "back": "<b><span style=\"font-weight: 400;\">????_pb2: code for serializing/deserializing the messages<br><br>????_pb2_grpc: servicer (class to be inherited from) and stubs for making remote procedure calls</span></b>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360885664,
+      "front": "Consider this:<br><br>python3 -u server.py &amp;&gt; log.txt<br><br>What does \"-u\" do?",
+      "back": "<div>\"force the stdout and stderr streams to be unbuffered\"</div><div><br></div><div>Otherwise, if its buffered, any prints from server.py might not immediately appear in log.txt (that can be confusing if you're using log.txt to debug).</div>",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360929444,
+      "front": "If you have a&nbsp;docker-compose.yml in the current directory, and you want to start running the services defined, what can you do?",
+      "back": "docker compose up",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360954528,
+      "front": "If you want to see the compose containers currently running, what do you do?",
+      "back": "docker compose ps",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696360987818,
+      "front": "If you want to stop running containers for a compose cluster, what can you do?",
+      "back": "docker compose down",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    },
+    {
+      "note_id": 1696361020792,
+      "front": "If you want to delete all containers for a docker compose cluster, what can you do?",
+      "back": "docker compose rm<br><br>(add -f to force it; for example, might be necessary if they're currently running)",
+      "source_lecture": "06-grpc",
+      "original_tags": "lec6"
+    }
+  ]
+}

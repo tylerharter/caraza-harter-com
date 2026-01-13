@@ -1,0 +1,189 @@
+{
+  "deck_number": "04",
+  "topic": "compute",
+  "card_count": 26,
+  "cards": [
+    {
+      "note_id": 1695150235596,
+      "front": "There is one virtual address space per _______",
+      "back": "process",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150244413,
+      "front": "A process is a running ______",
+      "back": "program",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150276870,
+      "front": "Virtual memory maps to ______",
+      "back": "physical memory",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150324259,
+      "front": "Which address space can contain \"holes\" (invalid addresses)",
+      "back": "Virtual address spaces can have holes (physical address spaces do not -- they are contiguous)",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150344754,
+      "front": "What are three things that go in a virtual address space?",
+      "back": "code<br>stack<br>heap",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150372311,
+      "front": "Which pointer indicates what code to execute next?",
+      "back": "The \"instruction pointer\"",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150401698,
+      "front": "There is one stack per _____ and one heap per ______",
+      "back": "thread, process",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150432850,
+      "front": "What is it called when the scheduler stops running one thread and starts running a different one?",
+      "back": "A \"context switch\"",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150449318,
+      "front": "What are three states a thread can be in?",
+      "back": "running, blocked, ready",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150474737,
+      "front": "What are some reasons a thread might be blocked?",
+      "back": "waiting on user input, disk operations, network operations, timer sleep, etc.",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150564260,
+      "front": "How do you create and launch a thread object for running function f(x)?",
+      "back": "t = threading.Thread()<br>t.start(target=f, args=[x])",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150578004,
+      "front": "How do you wait for a thread t to finish running?",
+      "back": "t.join()",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150590346,
+      "front": "How can you print a thread's ID?",
+      "back": "t.get_native_id()",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150678602,
+      "front": "What is a \"race condition\"",
+      "back": "A bug that only sometimes surfaces, depending on when context switches happened between threads",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695150816279,
+      "front": "When might a context switch occur?",
+      "back": "Between instructions -- a single line of code might correspond to multiple bytecodes or machine instructions, so it's important to note that context switches often occur in the middle of a line of code being executed.",
+      "source_lecture": "12-threads",
+      "original_tags": "lec13"
+    },
+    {
+      "note_id": 1695393206611,
+      "front": "What is a \"race condition\"?",
+      "back": "A bug, where whether or not you get correct behavior depends on how threads get scheduled.<br><br>Race conditions are tricky to test+debug because they're non-deterministic (not same behavior each time), and you might only see the incorrect behavior rarely (say one in a million times).",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393291888,
+      "front": "What is \"deadlock\"?",
+      "back": "This is when threads can never make progress, because they each want to acquire a lock that will never be released.<br><br>One example: t1 has A and t2 and B; t1 is waiting to additionally acquire B, and t2 is waiting to additionally acquire A.&nbsp; This will never happen because neither thread will release its first lock until it has acquired the second lock and done some work.",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393337943,
+      "front": "How can a thread (a) get a lock and (b) let go of it?",
+      "back": "lock.acquire()<br>lock.release()",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393366547,
+      "front": "How can you rewrite the following code so that the release will happen, even if an exception occurs?<br><br>lock.acquire()<br># code with possible exception<br>lock.release()",
+      "back": "with lock:<br>&nbsp; &nbsp; # code with possible exception",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393425819,
+      "front": "What do you call a section of code where certain interleavings with other code would be a problem?",
+      "back": "critical section",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393475332,
+      "front": "What is \"atomicity\" in the context of multi-threaded programs?",
+      "back": "If a thread is changing multiple things together, we never want to see (say from another thread) partial results, with only some changes made.",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393552103,
+      "front": "What is an \"invariant\"?",
+      "back": "A rule that applies to the data, often something a human might know from context.&nbsp; For example, an invariant might be a list of ages cannot contain negative numbers.&nbsp; Some invariants are known by the system (for example, that the length of the list itself cannot be negative).",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393570422,
+      "front": "What is \"consistency\" in the context of threading?",
+      "back": "All invariants are enforced.",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393620107,
+      "front": "If thread t1 holds a lock, what could happen?<br>1. we could context switch to another thread t2<br>2. another thread t2 could acquire the lock",
+      "back": "(1) is possible, (2) is not",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393638712,
+      "front": "What happens in Python when you try to release a lock that has already been released?",
+      "back": "There is an exception",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    },
+    {
+      "note_id": 1695393654280,
+      "front": "What is the GIL?",
+      "back": "Global Interpreter Lock",
+      "source_lecture": "13-locks",
+      "original_tags": "lec14"
+    }
+  ]
+}

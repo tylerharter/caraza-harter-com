@@ -1,0 +1,70 @@
+{
+  "deck_number": "06",
+  "topic": "sql",
+  "card_count": 9,
+  "cards": [
+    {
+      "note_id": 1697034881624,
+      "front": "What SQL clause lets you combine two tables?",
+      "back": "JOIN",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697034943294,
+      "front": "What are two SQL clauses that let you filter down what rows are included based on some condition, and how do these two clauses differ?",
+      "back": "WHERE and HAVING<br><br>WHERE is prior GROUP BY (if GROUP BY is used), so filters input rows<br><br>HAVING is after GROUP BY, so filters groups",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697034957561,
+      "front": "What SQL clause pulls together related rows?",
+      "back": "GROUP BY",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697034990932,
+      "front": "In SQL, SUM, AVG, and other operations that work over all rows (or groups of rows) are called ______",
+      "back": "aggregates",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697035003649,
+      "front": "What SQL clause sorts rows?",
+      "back": "ORDER BY",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697035018319,
+      "front": "What SQL clause lets you limit results to the first N rows?",
+      "back": "LIMIT",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697035038286,
+      "front": "What does ACID stand for?",
+      "back": "<ul>\n<li>atomiticy: it all happens or nothing happens (partial progress is rolled back)</li>\n<li>consistency: application invariants (like no negative bank accounts) are supported</li>\n<li>isolation: others cannot see a transaction in progress (aka <i>atomicity</i> when talking about locks)</li>\n<li>durability: once finished, it persists (even if machine crashes+restarts)</li></ul>",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697035144248,
+      "front": "If&nbsp;conn is a SQLAlchemy connection, and you've made some changes as part of a transaction, how do you <b>finalize</b> that transaction?",
+      "back": "<b><span style=\"font-weight: 400;\">conn.commit()</span></b>",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    },
+    {
+      "note_id": 1697035156704,
+      "front": "If&nbsp;conn is a SQLAlchemy connection, and you've made some changes as part of a transaction, how do you&nbsp;<b>abandon</b>&nbsp;that transaction?",
+      "back": "<b><span style=\"font-weight: 400;\">conn.rollback()</span></b>",
+      "source_lecture": "16-sql",
+      "original_tags": "lec17"
+    }
+  ]
+}

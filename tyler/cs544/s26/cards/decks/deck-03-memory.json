@@ -1,0 +1,126 @@
+{
+  "deck_number": "03",
+  "topic": "memory",
+  "card_count": 17,
+  "cards": [
+    {
+      "note_id": 1695497916291,
+      "front": "Before a CPU can add two values in RAM, what must it do?",
+      "back": "Load those values to CPU registers",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695497945880,
+      "front": "Which CPU cache level is fastest, of L1, L2, L3?",
+      "back": "L1",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695497954565,
+      "front": "Which CPU cache level is biggest, of L1, L2, L3?",
+      "back": "L3",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695497986215,
+      "front": "When data in a cache is too old and no longer valid, we say it is _______",
+      "back": "stale",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498003853,
+      "front": "What does FIFO stand for?",
+      "back": "First In First Out",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498014371,
+      "front": "What does LRU stand for?",
+      "back": "Least Recently Used",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498154316,
+      "front": "How are FIFO and LRU similar?&nbsp; How are they different?",
+      "back": "They are the same for a miss: the data is added to the cache, in the \"newest\" position.<br><br>They are different for a hit: FIFO does not change how it prioritizes the item, but LRU resets it to the \"newest\" position.",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498166550,
+      "front": "What do you call it when you find an item in a cache?",
+      "back": "\"hit\"",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498175333,
+      "front": "What do you call it when you CANNOT find an item in a cache?",
+      "back": "\"miss\"",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695498265520,
+      "front": "What is a pattern where a random eviction policy would beat LRU and FIFO?",
+      "back": "A common pattern is that the data is too big to fit completely in cache, and the program loops, repeatedly reading over the dataset in the same order.&nbsp; LRU and FIFO will have a 0% hit rate, but random will at least get some hits.",
+      "source_lecture": "08-caching",
+      "original_tags": "lec9"
+    },
+    {
+      "note_id": 1695760392606,
+      "front": "What is the name for a piece of data loaded to CPU cache?",
+      "back": "cache line",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760420981,
+      "front": "What is the most common cache line size for modern CPUs?",
+      "back": "64 bytes is common (other sizes like 128 used to be more common; new Macs haved started using 128 again)",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760507670,
+      "front": "If you want to sum over column in a numpy matrix in a cache friendly way, how should you create the array?",
+      "back": "First create an array where each column is actually stored as a row in the matrix.&nbsp; Then transpose it.&nbsp; This will get you columns that are contiguous in memory, resulting in fewer cache lines being loaded as the data is scanned.",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760546425,
+      "front": "How does PyArrow indicate which strings/ints/etc are null/None in an array?",
+      "back": "validity bitmap: 1 means valid, 0 means null/None",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760585096,
+      "front": "How can you add a region to your virtual address space that is not backed by a file?",
+      "back": "anonymous mmap",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760614687,
+      "front": "How can you map a file into your virtual address space?",
+      "back": "Open the file, get the f.fileno(), and pass it to mmap.",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    },
+    {
+      "note_id": 1695760647422,
+      "front": "If you want to be able to evict pages in anonymously mmap'd regions, what do you need to do?",
+      "back": "enable a swap file in Linux",
+      "source_lecture": "11-arrow",
+      "original_tags": "lec12"
+    }
+  ]
+}

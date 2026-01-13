@@ -1,0 +1,294 @@
+{
+  "deck_number": "11",
+  "topic": "cloud",
+  "card_count": 41,
+  "cards": [
+    {
+      "note_id": 1701097515246,
+      "front": "What does EC2 stand for, and what is it?",
+      "back": "Elastic Compute Cloud<br><br>AWS's VM service (AWS is Amazon Web Services).",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701097548437,
+      "front": "What is usually more expensive to rent in the cloud, 1 VM for 100 hours, or 100 VMs for 1 hour?",
+      "back": "The cost is usually the same.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701097696543,
+      "front": "What is the difference between IaaS and PaaS?",
+      "back": "IaaS: Infrastructure as a Service.&nbsp; You rent low-level hardware-like resources (e.g., VMs, virtual disks, private networks, etc).&nbsp; You use these to deploy systems yourself.&nbsp; For example, you might launch a bunch of VMs and start running HDFS DataNodes on them.<br><br>PaaS: Platform as a Service.&nbsp; The cloud provider runs a specific system on your behalf.&nbsp; It could be something they built (e.g., S3), or something open source (e.g., MySQL).&nbsp; This is usually more convenient, but you often pay more for that convenience.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701097784650,
+      "front": "What does cloud \"lock in\" mean?",
+      "back": "It means it is difficult to move to another cloud (or out of the cloud), even if if that's desirable in the long run.&nbsp; Reasons for the difficulty:<br><br>1. need to pay a high network egress cost to get your data out<br><br>2. your code might be written to specifically use an API not available in other clouds",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701097953937,
+      "front": "What is a \"tenant\", and what is the difference between multi-tenant hosts and single-tenant hosts?",
+      "back": "A tenant is a customer paying for cloud services, and might include multiple users (e.g., employees in the same company).<br><br>Multi-tenant: different tenants rent VMs on the same physical machine.<br><br>Single-tenant: all the VMs on a single physical machine will belong to the same tenant.&nbsp; Usually more expensive, especially if that tenant doesn't have enough VMs to keep that physical machine fully utilized.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098036912,
+      "front": "What is a cloud cost you typically pay when VMs are powered off, but not deleted?",
+      "back": "You'll typically pay for the virtual disk attached to the VM (because the cloud provider needs to expend storage resources to keep your data around so your VM can be booted up again later).",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098129072,
+      "front": "What is a typical geographic hierarchy in clouds?",
+      "back": "continents (approximate) contain regions, which contain zones.<br><br>Zones in the same region will be geographically near each other, but generally have different power and network resources, making correlated failures between zones unlikely.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098284813,
+      "front": "What is ingress/egress in terms of cloud resources, and what is more expensive?",
+      "back": "Ingress: incoming network I/O (e.g., data being uploaded to a VM).<br><br>Egress: outgoing network I/O (e.g., data being downloaded from a VM).<br><br>Ingress is typically free.&nbsp; Egress is sometimes free (perhaps when egress is to another VM in the same zone), but there is usually a cost per GB of data transferred.&nbsp; Transferring out of the cloud is usually most expensive.&nbsp; Within the cloud, the cost depends on whether it is the same region, same continent, etc.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098387596,
+      "front": "You can either pay a fixed price to get a VM (with high chances of success), or you can pay a fluxuating price (usually cheaper), and potentially get pre-empted (VM is taken away so cloud can use resources for something of higher priority).<br><br>What are these two billing models called?",
+      "back": "\"on-demand\" instances and \"spot\" instances, respectively.",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098482858,
+      "front": "The HDFS file system was modeled on a paper about the GFS file system at Google.&nbsp; What is the newer distributed file system Google built and started using after GFS?",
+      "back": "Colossus File System",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098579981,
+      "front": "Is BigQuery a data warehouse or a data lake?",
+      "back": "The distinction is blurred.&nbsp; The BigQuery engine is integrated with a BigQuery storage engine (as in a warehouse), but BigQuery can also execute on external data sources such as parquet files in HDFS (as in a lake).",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098627902,
+      "front": "The parquet file format was inspired by the ______ format developed at Google, which was eventually replaced internally at Google with the _______ format.",
+      "back": "ColumnIO, Capacitor",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098696373,
+      "front": "When a value in a column is repeated many times consecutively, we can record just the value and count (instead of many copies of the value).&nbsp; This is called ________ encoding.",
+      "back": "run-length",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098758070,
+      "front": "When a column contains large strings, and the same values show up multiple times, we can replace those strings with shorter numeric codes.&nbsp; We can use the numeric codes to lookup the original strings as needed.&nbsp; This is called ______ encoding.",
+      "back": "dictionary",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098881678,
+      "front": "What is something that a GPL open-source license requires that is not required by MIT/BSD/Apache?",
+      "back": "If you are making changes to the source code, you generally have to release your changes publicly under the GPL too (there are some exceptions/workarounds).",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701098975355,
+      "front": "What is a type of intellectual property the Apache open-source license focuses on that the MIT and BSD licenses do not talk much about?",
+      "back": "They all talk about copyright; Apache additionally talks about patents",
+      "source_lecture": "35-cloud",
+      "original_tags": "lec36"
+    },
+    {
+      "note_id": 1701270975657,
+      "front": "What are some factors you might consider when choosing a GCS bucket region?",
+      "back": "Cost, carbon emissions, proximity to users, etc.",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271039518,
+      "front": "What is the GCP marketplace?",
+      "back": "Collection of datasets (some free) that can directly be queried with BigQuery (the marketplace also includes software and other things).",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271111676,
+      "front": "How can you activate/deactivate your GCP credentials on a GCP VM?",
+      "back": "gcloud auth ...",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271162989,
+      "front": "What does this let you do?<br><br><div><div>%load_ext bigquery_magics</div></div>",
+      "back": "It lets you write BiqQuery queries directly in Jupyter cells, like this:<br><br><div>%%bigquery</div><div>SELECT * FROM some_table</div>",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271234772,
+      "front": "You run this:<br><br><div>q = bq.query(\"...\")<br><br>Why might&nbsp;q.total_bytes_processed be different than&nbsp;q.total_bytes_billed?</div>",
+      "back": "Billing gets rounded up to the nearest MB, and there is a 10 MB min overall.",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271285060,
+      "front": "What is a cross join?",
+      "back": "Every row in table A is matched with every row in table B (there is no \"ON\" expression to limit the matches between tables).",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271451108,
+      "front": "What is a <b>correlated</b> cross join?",
+      "back": "Some fields in a row might contain multiple values -- for example, it could be an an array of structs.<br><br>A <b>correlated</b> cross join does a cross join on a row by row basis.&nbsp; For example, say we have two rows like this, and we are doing a correlated cross join between the two columns:<br>[1], [2,3]<br>[4,5], [6,7]<br><br>We would get these outputs:<br>1,2<br>1,3<br>4,6<br>5,6<br>4,7<br>5,7<br><br>Notice we don't join across rows (for example, 1 does NOT get paired with 6).",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701271520635,
+      "front": "If you want to do a correlated cross join against a field C containing an array of structs, how do you first \"expand\" the arrays so each entry becomes its own row?",
+      "back": "UNNEST(C)",
+      "source_lecture": "36-bq-a",
+      "original_tags": "lec37"
+    },
+    {
+      "note_id": 1701444606067,
+      "front": "What are some examples of external tables we can register in BigQuery?",
+      "back": "Parquet files in GCS, Google sheets, etc.",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1701444658272,
+      "front": "If column C is an array type, how do you get the Nth item from every array using BigQuery?",
+      "back": "SELECT C[OFFSET(N)]<br>FROM some_table",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1701444744960,
+      "front": "What can we call if we want to get a pandas DataFrame from a BigQuery query?&nbsp; What about a geopandas GeoDataFrame?<br><br>bq.query(...).?????()",
+      "back": "to_dataframe<br>to_geodataframe",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1701444852898,
+      "front": "Say you have a query like this:<br><br><span style=\"color: rgb(255, 0, 0);\">SELECT * FROM myproj.mydataset.tbl1 WHERE x=3</span><br><br>And you want to put the results in a new BigQuery table named myproj.mydataset.tbl2<br><br>How do you do this?",
+      "back": "<b>CREATE OR REPLACE TABLE</b> `myproj.mydataset.tbl2`<br><b>AS</b><br><span style=\"color: rgb(255, 0, 0);\">SELECT * FROM myproj.mydataset.tbl1 WHERE x=3</span>",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1701444984644,
+      "front": "What is the difference between&nbsp;ST_CENTROID_AGG(geo_column) and&nbsp;ST_CENTROID(geo_column)?",
+      "back": "ST_CENTROID_AGG will give a single centroid for the shape representing the union of every shape in geo_column.<br><br>ST_CENTROID will give many centroids, one for each shape in a cell of geo_column.",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1701445036532,
+      "front": "If you have floats long and lat, what can you call in BigQuery to convert this to a geographic point that can be used with other spatial functions?",
+      "back": "ST_GEOGPOINT(long, lat)",
+      "source_lecture": "38-bq-b",
+      "original_tags": "lec38"
+    },
+    {
+      "note_id": 1702049571588,
+      "front": "In BigQuery, what are two reasons to do train/test splitting yourself (for ML) instead of letting BigQuery do it?",
+      "back": "1. BigQuery has odd defaults depending on dataset size.&nbsp; For example, for &lt;500 rows, all data is used for training.<br>2. BigQuery remembers the train/test split for 48 hours, so it will feel deterministic at first, but you'll be surprised later",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702049621159,
+      "front": "In BigQuery, what must be passed to ML.WEIGHTS(...)?",
+      "back": "MODEL your_model_name",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702049645077,
+      "front": "In BigQuery, what must be passed to ML.PREDICT(...)?",
+      "back": "MODEL your_model_name, QUERY<br><br>The query must have all the features needed to predict.",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702049690005,
+      "front": "In BigQuery, what must be passed to ML.EVALUATE(...)?",
+      "back": "MODEL your_model_name, QUERY<br><br>The query must return all the features needed to predict AND a label column indicating the correct label.",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702049792529,
+      "front": "In BigQuery, how do we do non-linear transformations on our features?",
+      "back": "When creating the model, add a line something like this:<br><br>TRANSFORM(POWER(x, 2), ...)<br><br>In the parentheses, you can put things you would normally put after select: \"SELECT ?????\".&nbsp; This lets you add columns that are transformations of raw columns in the input data.",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702049818807,
+      "front": "In BigQuery, how do you handle OneHot encoding?",
+      "back": "Do nothing: BigQuery will automatically do it for you if your training data has categorical features.",
+      "source_lecture": "40-bq-d",
+      "original_tags": "lec39"
+    },
+    {
+      "note_id": 1702048969074,
+      "front": "What is a BigQuery slot?",
+      "back": "A unit of resources, consisting of approximately 1 GB of RAM and 0.5 CPUs",
+      "source_lecture": "41-bq-e",
+      "original_tags": "lec41"
+    },
+    {
+      "note_id": 1702049008344,
+      "front": "What are two BigQuery billing models?",
+      "back": "Capacity and On-Demand",
+      "source_lecture": "41-bq-e",
+      "original_tags": "lec41"
+    },
+    {
+      "note_id": 1702049084291,
+      "front": "Which BigQuery billing model has priority access to resources (i.e., first \"right of refusal\")?",
+      "back": "Capacity billing.&nbsp; This is reserved capacity, so it should be usable whenever needed.&nbsp;&nbsp;<br><br>Any leftover resources (if any) are shared between on-demand jobs.",
+      "source_lecture": "41-bq-e",
+      "original_tags": "lec41"
+    },
+    {
+      "note_id": 1702049135378,
+      "front": "What do on-demand and capacity billing charge for in BigQuery?",
+      "back": "Both charge for Collosus storage.<br><br>On-demand additionally charges for Collosus I/O.<br><br>Capacity additionally charges for CPU+memory.",
+      "source_lecture": "41-bq-e",
+      "original_tags": "lec41"
+    },
+    {
+      "note_id": 1702049194433,
+      "front": "What does it mean that a BigQuery task is preemptible?",
+      "back": "It can be interrupted if resources are needed for something more important.&nbsp; For example, an on-demand task might be preempted by a capacity task (capacity is considered more important).",
+      "source_lecture": "41-bq-e",
+      "original_tags": "lec41"
+    }
+  ]
+}

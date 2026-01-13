@@ -1,0 +1,350 @@
+{
+  "deck_number": "08",
+  "topic": "spark",
+  "card_count": 49,
+  "cards": [
+    {
+      "note_id": 1697638524360,
+      "front": "What is the difference between a data warehouse and data lake?",
+      "back": "Both are a place where we collect data for analysis (OLAP workloads).<br><br>A warehouse is a database with integrated storage+computation.<br><br>A data lake is a combination of distributed storage (for example, HDFS) and decoupled analytics engine (for example, Spark)",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697638644666,
+      "front": "In MapReduce, what parameters do map and reduce functions take?",
+      "back": "<div>def map(key, <b>value</b>)</div><div><div>def reduce(key, <b>values</b>)</div></div><div><br></div><div>Note that with reduce, all values with the same key will go to a single reduce call on a single machine.&nbsp; During map, different values with the same key go to different map calls, perhaps even on different machines.</div>",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697638692339,
+      "front": "A reduce task might have the reduce function called several times.&nbsp; What can we say about the keys across these multiple calls for a single task?",
+      "back": "The keys will be sorted",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697638723457,
+      "front": "What determines the number of output files in a MapReduce job?",
+      "back": "The number of reducers, because each reducer produces one output file.",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697638861196,
+      "front": "What are some performance advantages Spark has over MapReduce?",
+      "back": "intermediate data is handled better (could directly pass from one computation to the next, without materializing in HDFS)<br><br>a chain of RDDs lets us specify many steps to get to a desired end result, but lazy execution means that an optimizer could find more efficient ways to get to that same result",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697638909600,
+      "front": "If you have a regular Python list, how can you convert it into a Spark RDD?",
+      "back": "<div>rdd = sc.parallelize(YOUR LIST)</div>",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639006808,
+      "front": "What is the relationship between actions, operations, and transformations?",
+      "back": "<b>actions</b> and <b>transformations</b> are both kinds of <b>operations<br><br>transformations</b> are lazy (no work done yet), and describe how to produce an output RDD given an input RDD<br><br><b>actions</b>&nbsp;actually materialize some output (on the screen, in an HDFS file, etc), triggering whatever work is necessary to compute that output.&nbsp; An action is often at the end of a chain of transformations.",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639076957,
+      "front": "A Spark task:<ul>\n<ul>\n<li>runs on a _________</li>\n<li>operates on a _________</li>\n</ul></ul>",
+      "back": "runs on a&nbsp;<b>single CPU core</b><br>operates on a <b>single partition, which is loaded entirely to memory</b>",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639135684,
+      "front": "Why might you want bigger Spark partitions?",
+      "back": "Each partition corresponds to a task, and there is an overhead to starting tasks.&nbsp; Bigger partitions =&gt; fewer partitions =&gt; less overhead.",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639191403,
+      "front": "Why might you want smaller Spark partitions?",
+      "back": "<ul>\n<li>use more cores that are available in the cluster</li>\n<li>balance work more evenly across executors</li>\n<li>use less memory at any given time</li></ul>",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639302132,
+      "front": "What are two categories of Spark transformations?",
+      "back": "<b>narrow</b> transformation: one input partition corresponds to one output partition<br><br><b>wide</b> transformation: each output partition might need data from multiple input partitions (and vice versa)<br><br>if partitions are on different physical machines, wide transformations often cause network I/O (rows need to be shuffled/exchanged across the network)",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639340284,
+      "front": "If df is a Spark DataFrame, how would we start/stop caching it?",
+      "back": "df.cache() # start<br>df.unpersist() # stop",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697639570550,
+      "front": "What does RDD stand for, in the context of Spark?",
+      "back": "Resilient Distributed Dataset",
+      "source_lecture": "20-spark-a",
+      "original_tags": "lec20"
+    },
+    {
+      "note_id": 1697812705111,
+      "front": "How do you create a SparkData corresponding to a CSV at location PATH?",
+      "back": "<div>df = spark.read.format(\"csv\").load(PATH)</div>",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1697812730072,
+      "front": "How can you see the number of RDD partitions for a Spark DataFrame df?",
+      "back": "df.rdd.getNumPartitions()",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1697812842468,
+      "front": "<div>Say you run this:&nbsp;</div><div>spark.read.format(\"csv\").load(\"test.csv\")</div><div><br></div><div>And test.csv looks like this:</div><div>a,b</div><div>1,2</div><div>3,4</div><div><br></div><div>What will be the first row of data?</div>",
+      "back": "a,b<br><br>Because headers are off by default.&nbsp; Add this:<br><br><div>spark.read.format(\"csv\")<b>.option(\"header\", True)</b>.load(\"test.csv\")</div>",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1697812906967,
+      "front": "<div>Say you run this:&nbsp;</div><div>spark.read.format(\"csv\")<b><span style=\"font-weight: 400;\">.option(\"header\", True)</span></b>.load(\"test.csv\")</div><div><br></div><div>And test.csv looks like this:</div><div>a,b</div><div>1,2</div><div>3,4</div><div><br></div><div>What will be the data types for the columns?</div>",
+      "back": "strings, because everything in a CSV is a string.<br><br>To get ints, use this:<br><br><div>spark.read.format(\"csv\").option(\"header\", True)<b>.option(\"inferSchema\", True)</b>.load(\"test.csv\")</div>",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1697812961445,
+      "front": "If you want to select the \"x\" column of a Spark DataFrame df, add 1 to it, and call the result column y, how would you do that?",
+      "back": "<b><span style=\"font-weight: 400;\">df.select(expr(\"x+1\").alias(\"y\"))</span></b>",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1697813030215,
+      "front": "Spark gives an error about a file already existing when you run this:<br><br>df.select(columns).write.format(\"parquet\").save(PATH)<br><br>What can you add to replace the previous file?",
+      "back": ".mode(\"overwrite\")<br><br>Like this:<br><br>df.select(columns).write.format(\"parquet\")<b>.mode(\"overwrite\")</b>.save(PATH)",
+      "source_lecture": "22-spark-c",
+      "original_tags": "lec22"
+    },
+    {
+      "note_id": 1698416517073,
+      "front": "If df is a Spark DataFrame, what are two ways you can make it appear as a view in Hive (for the purpose of upcoming SQL queries)?",
+      "back": "df.createTempView(\"VIEW_NAME\")<br>df.createOrReplaceTempView(\"VIEW_NAME\")<br><br>The former raises an exception if the view already exists.",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416559584,
+      "front": "If you have a query, say \"SELECT * FROM data\", how can you run it with Spark SQL?&nbsp; Assume your Spark session is in a variable \"spark\".",
+      "back": "spark.sql(\"SELECT * FROM data\")",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416582534,
+      "front": "What type does spark.sql(\"QUERY\") return?",
+      "back": "a Spark DataFrame",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416615274,
+      "front": "How do you write a Spark DataFrame (say df) as a Hive table?",
+      "back": "df.write.saveAsTable(\"TABLE_NAME\")",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416652077,
+      "front": "What does spark.sql(\"SHOW TABLES\") do?",
+      "back": "Gives you a DataFrame listing all the tables AND all the views.&nbsp; You'll need to do .show(), .toPandas(), or similar to actually see it.",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416696549,
+      "front": "If tv is a table OR view in Hive, how can you get the corresponding Spark DataFrame?",
+      "back": "spark.table(\"tv\")",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698416869702,
+      "front": "What kind of Spark operation is .count()?",
+      "back": "It depends.<br><br>In df.count() where df is a DataFrame, then it is an <b>ACTION</b>, because it actually triggers the work to get a number back.<br><br>In groups.count() where groups is a&nbsp;GroupedData, then it is a <b>TRANSFORMATION</b>, because the counts per group might only be an intermediate result that will be further processed.",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698417108973,
+      "front": "How are grouping and windowing similar and different?",
+      "back": "In each case, we pull together related data into groups/partitions.<br><br>In grouping, there is one output row per group (e.g., an AVG stat).<br><br>In windowing, all the rows in the partitions can be part of the output, but they can have stats relative to the rest of the partition (e.g., a row_number() relative to the row's position with the partition).",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698417310308,
+      "front": "Say you want to filter the results of a Spark SQL query based on a value computed with a windowing function.&nbsp; Why is this tricky, and what are some solutions?",
+      "back": "We can't use WHERE -- that runs prior to the windowing function.&nbsp; We can't use HAVING -- that is only for GROUP BY.<br><br>Options:<br>1. nested SQL query (the outer query can have a WHERE clause to filter)<br>2. add a where filter using the DataFrame API after the SQL query (this is an excellent case for mixing and matching Spark SQL with Spark DataFrames).<br><br>Example of option 2:<br><br><div><div>spark.sql(\"\"\"</div></div><div>SELECT area, Call_Number, row_number() OVER (PARTITION BY area ORDER BY Call_Number ASC) AS num</div><div>FROM calls</div>\"\"\")<b>.where(\"num &lt;= 3\")</b>.toPandas()<br>",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698417413883,
+      "front": "JOINs typically have ON clauses.&nbsp; Say your ON clause is something like this:<br><br>ON tbl1.colA = tbl2.colB<br><br>What is the technical name for this kind of JOIN?",
+      "back": "\"equi join\"",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698417563548,
+      "front": "If you only want to get the unique values in column C of table T, what SQL can you write?",
+      "back": "<div>SELECT <span style=\"color: rgb(255, 0, 0);\"><b>DISTINCT</b></span> C FROM T;</div>",
+      "source_lecture": "23-spark-d",
+      "original_tags": "lec23"
+    },
+    {
+      "note_id": 1698675122234,
+      "front": "What is the difference between these Spark caching levels?<br><ul>\n<li>MEMORY_ONLY</li>\n<li>MEMORY_ONLY_SER</li></ul>",
+      "back": "MEMORY_ONLY: data is represented as JVM objects on which computation can be done directly.&nbsp; Unfortunately, JVM objects are somewhat bloated (often using 2-5x more memory than the actual data).<br><br>MEMORY_ONLY_SER: data is seralized to a compact byte format.&nbsp; This saves space, but data partitions must be transformed to JVM objects every time computation is done on them.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675156261,
+      "front": "Is data that is cached at the DISK_ONLY level serialized?",
+      "back": "Yes, so it will actually use less storage space than MEMORY_ONLY (not serialized) uses of memory.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675199147,
+      "front": "What is df.cache() a shortcut for?",
+      "back": "<div>df.persist(StorageLevel.MEMORY_ONLY)</div>",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675355645,
+      "front": "What is the difference between these to Spark caching levels, and what are the tradeoffs?<br><ul>\n<li>MEMORY_ONLY</li><li>MEMORY_ONLY_2</li></ul>",
+      "back": "MEMORY_ONLY only keeps the data in RAM on one worker.<br><br>MEMORY_ONLY_2 keeps it in RAM on two workers.&nbsp; This uses more memory in the cluster (unfortunately), but it means we have more flexibility: when doing computation on an RDD partition, Spark has two workers with cached data it can choose from, so it can pick the worker that is less busy.<br><br>Also, if a worker with cached data crashes, we can use the other worker, avoiding a long delay to recompute the data that had been cached.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675473351,
+      "front": "What is the difference between normal partitioning and hash partitioning in Spark?",
+      "back": "In normal partitioning, the rows are divided roughly evenly into partitions, and there is no guarantee about what row will be in what partition.<br><br>With hash partitioning, the user specifies a \"key\" (usually one or more columns).&nbsp; For each row, we compute hash(key) % partition_count to get a partition number.&nbsp; This means that a partition can contain rows with different keys, but all rows for the same key will end up in the same partition.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675514257,
+      "front": "What is the idea of partial aggregates in Spark?",
+      "back": "<div>For some aggregates (e.g., sum, count, avg), we can compute partial results prior to the exchange, often saving network I/O.</div><div><br></div><div>For example, instead of sending (\"A\", 1), (\"A\", 2), (\"B\", 4) when we're summing per key, a task could send this:</div><div><br></div><div>(\"A\", 3), (\"B\", 4)<br></div><div><br></div><div>Of course, the receiving task might get \"A\" values from other executors too, so 3 is a partial sum, not the total sum.</div>",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675745308,
+      "front": "One optimization that is part of adaptive query execution (AQE) in Spark is \"partition coallescing\".&nbsp; What is it?",
+      "back": "For GROUP BY and similar queries, Spark needs to bring together related data with hash partitioning, using partition_num = hash(key) % partition_count, for each row.<br><br>partition_count could be anything, but needs to be the same for the entire Spark session.&nbsp; It is 200 by default, which often creates many very small partitions (which is slow later).<br><br>The idea of partition coalescing is that the boss checks the sizes of fragments of partition data before those partitions are sent over the network.&nbsp; It then combines some partitions together to form bigger partitions, ideally similar in size.&nbsp; Executors are informed of the combining decisions.&nbsp; So there will generally be &lt;200 partitions in the end.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698675980943,
+      "front": "What does bucketBy do when Spark is writing parquet files?",
+      "back": "Each task that is writing data will bucket the data by key (this is basically the same as partitioning, but in Spark \"partitioning\" refers to memory/RDDs, and \"bucketing\" refers to files).&nbsp; Data for each bucket is written to a different Parquet file.<br><br>This means that when we read the data back in, we can get an RDD that is already hash partitioned by that key.&nbsp; If we want to do a GROUP BY (on the bucket key) followed by an aggregate, we can skip the network shuffle/exchange that would usually be necessary.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698676013313,
+      "front": "What does SMJ stand for?",
+      "back": "<div>Shuffle Sort Merge Join</div>",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698676029200,
+      "front": "<div>What does BHJ stand for?</div>",
+      "back": "Broadcast Hash Join",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698676135397,
+      "front": "How does a distributed JOIN work with BHJ?",
+      "back": "This is best for a join between a big table and small table.<br><br>The small table is loaded to a dictionary and sent to every machine that will work on a partition of the big table.<br><br>Tasks operating on partitions of the big table can independently loop over rows, matching keys with the dictionary.<br><br>The dictionary needs to fit in memory on every machine, so this is only a good strategy when the small table is small enough.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698676295408,
+      "front": "How does a distributed JOIN work with SMJ?",
+      "back": "Table A and table B are both hash partitioned on the column we are joining on.&nbsp; Then we shuffle data to that we get pairs of partitions (one from A, one from B) with keys in common on the same executor.<br><br>The rows in these partitions are sorted by key, so tasks doing the JOIN can loop over the rows together, efficiently finding matches.",
+      "source_lecture": "24-spark-e",
+      "original_tags": "lec24"
+    },
+    {
+      "note_id": 1698848858479,
+      "front": "Is this deterministic?<br><br><b><span style=\"font-weight: 400;\">df.</span><span style=\"color: rgb(255, 0, 0); font-weight: 400;\">randomSplit</span><span style=\"font-weight: 400;\">([0.75, 0.25], seed=544)</span></b>",
+      "back": "Not completely, because the deterministic split happens at the partition level.&nbsp; If the number of partitions changes (e.g., because the number of workers changes and Spark decides a different partition count would be ideal), then the overall split won't be deterministic.",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698848909854,
+      "front": "Consider Spark's DecisionTreeRegressionModel&nbsp;and DecisionTreeRegressor.&nbsp; Which one is fitted?",
+      "back": "DecisionTreeRegressionModel is fitted.<br>DecisionTreeRegressor is NOT fitted.<br><br>Usually, the class names ending in \"Model\" represent fitted models in Spark.",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698849033417,
+      "front": "dt = DecisionTreeRegressor(featuresCol=\"????\", labelCol=\"????\")<br><br>We can only pass in one featuresCol -- how do we handle multiple features?",
+      "back": "Use a vector assembler to transform a DataFrame we want to train/predict on, adding a column of vectors that contains data from multiple columns:<br><b><div><span style=\"font-weight: 400;\">va = VectorAssembler(inputCols=[\"col1\", \"col2\", ...], outputCol=\"features\")</span></div></b>",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698849081338,
+      "front": "If we have a fitted model in Spark, how do we used it to make predictions?",
+      "back": "df_WITH_predictions = model.transform(df_WITHOUT_predictions)<br><br>.transform(...) in Spark is used both for preprocessing AND prediction.",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698849335431,
+      "front": "A Spark \"Pipeline\" object is an unfit model, consisting of multiple transformers and ending in an estimator.&nbsp; When we call \"fit\" on it, we get a fitted PipelineModel.&nbsp; What does it contain?",
+      "back": "All the transformers of Pipeline are copied to PipelineModel.<br><br>\"fit\" is called on the estimator at the end of Pipeline, and this \"fit\" returns a transformer.&nbsp; The transformer is copied to the end of PipelineModel, such that PipelineModel is a series of transformers.",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698849502014,
+      "front": "The traditional decision tree training algorithm considers splits on every column, for every possible split between rows (a threshold on a column is a split).&nbsp; Where does Spark consider splits?",
+      "back": "It still looks at every column, but we configure a number of bins on each column, for example: dt.setMaxBins(N).&nbsp; A histogram is computed on this with N buckets, and the thresholds considered are those that split the buckets (so N-1 possible split points per column).",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    },
+    {
+      "note_id": 1698849607572,
+      "front": "What is an \"equi-depth\" histogram?",
+      "back": "Each bucket contains a similar number of data points, even if that means some buckets cover a wider range of values than others (e.g., 1-3, 3-10, 10-100, etc).&nbsp; <br><br>In contrast, most histograms have buckets with fixed intervals (e.g., 0-10, 10-20, 20-30, etc).",
+      "source_lecture": "25-spark-f",
+      "original_tags": "lec26"
+    }
+  ]
+}
