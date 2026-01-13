@@ -105,26 +105,50 @@ def schedule():
         extra = json.loads(extra_sched.read())
     sections = extra['sections'] # indexed by week
     holiday = extra['holiday']
+    projects = extra.get('projects', {})
+
+    # Build project info by lecture number
+    project_releases = {}  # lecture_num -> list of (project_name, title)
+    project_dues = {}      # lecture_num -> list of project_name
+    for pname, pinfo in projects.items():
+        rel = pinfo['release']
+        due = pinfo['due']
+        title = pinfo.get('title', '')
+        project_releases.setdefault(rel, []).append((pname, title))
+        project_dues.setdefault(due, []).append(pname)
 
     cells = []
     full = 0
     free = 0
+    lecture_num = 0
     for curr in (START_DATE + timedelta(n) for n in range(day_count)):
         day = calendar.day_abbr[curr.weekday()]
         if day in ['Mon', 'Wed', 'Fri']:
-            if len(days) == 0:
+            dname = curr.strftime("%m/%d")
+            is_holiday = dname in holiday
+
+            if not is_holiday:
+                lecture_num += 1
+
+            if len(days) == 0 and not is_holiday:
                 free += 1
-            else:
+            elif not is_holiday:
                 full += 1
 
-            dname = curr.strftime("%m/%d")
-            if dname in holiday:
+            if is_holiday:
                 content = "\n".join(holiday[dname]) + "\n"
             else:
                 content = days.pop(0) if len(days)>0 else 'TBD\n'
                 if CUTOFF_DATE != None and curr > CUTOFF_DATE:
-                    projects = re.findall(".*Released:.*", content)
-                    content = "Not Posted Yet\n" + "\n".join(projects)
+                    proj_info = re.findall(".*Released:.*", content)
+                    content = "Not Posted Yet\n" + "\n".join(proj_info)
+
+                # Add project releases and dues from JSON
+                for pname in project_dues.get(lecture_num, []):
+                    content += f'\n<b>Due:</b> {pname}<br>'
+                for pname, ptitle in project_releases.get(lecture_num, []):
+                    content += f'\n<b>Release:</b> <a href="{github2}/{pname.lower()}">{pname} ({ptitle})</a><br>'
+
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
             header = '<h5><strong>%s, %s</strong><br>%s</h5>' % (curr.strftime("%a"),
                                                                  curr.strftime("%b %-d"),

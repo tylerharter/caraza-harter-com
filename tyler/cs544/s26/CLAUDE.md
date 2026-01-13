@@ -27,7 +27,7 @@ This is a course website for CS 544 "Intro to Big Data Systems" at UW-Madison. T
 
 ### Configuration Files
 
-- **schedule.json**: Defines course sections, holidays, and quiz weeks
+- **schedule.json**: Defines course sections, holidays, quizzes, and project schedule
 - **Static Assets**: CSS in `css/`, JavaScript in `js/`, images in `img/`
 
 ## Common Commands
@@ -70,11 +70,49 @@ python3 claude_util.py -y delete grpc-catchup  # skip confirmation
 # Insert space for a new lecture (shifts subsequent lectures up)
 python3 claude_util.py insert <position>
 
+# Move a lecture to a new position (shifts others accordingly)
+python3 claude_util.py move <source> <dest>
+python3 claude_util.py -y move 9 7  # move lecture 9 to position 7
+
+# Create a new lecture at a position (shifts others if needed)
+python3 claude_util.py create <position> <name>
+python3 claude_util.py create 7 midterm --midterm  # creates with red styling
+
 # Rename a lecture topic (keeps the number)
 python3 claude_util.py rename <number-or-pattern> <new-name>
+
+# Swap two lectures' positions
+python3 claude_util.py swap <lecture_a> <lecture_b>
 ```
 
 Use `-y` flag to skip confirmation prompts.
+
+## Project Schedule (schedule.json)
+
+Projects are defined in `schedule.json` under the `projects` key. Each project specifies:
+- `release`: Lecture number when project is released
+- `due`: Lecture number when project is due
+- `title`: Short description shown in parentheses
+
+Example:
+```json
+{
+  "projects": {
+    "P1": {"release": 4, "due": 10, "title": "Docker"},
+    "P2": {"release": 10, "due": 16, "title": "Network+Memory"},
+    ...
+  }
+}
+```
+
+**Guidelines for project scheduling:**
+- Prefer Wednesday releases and due dates when possible
+- Avoid due dates right before or after spring break
+- P8 should be due on the last day of class
+- Allow at least 1 week per project (P8 needs exactly 1 week)
+- Projects crossing spring break can have longer durations
+
+The `compile.py` script automatically adds Release/Due lines to the schedule based on this JSON. Do NOT put project info in `meta.txt` files.
 
 ## Setting Up a New Semester
 
@@ -101,6 +139,7 @@ Look for:
 
 - `holiday`: Update entries for the new semester (see below)
 - `quizzes`: Ask instructor if online quizzes are being used; set to `[]` if not
+- `projects`: Update release/due lecture numbers based on new schedule (see "Project Schedule" section above)
 
 ### Step 4: Update syllabus.content.html
 
@@ -115,7 +154,16 @@ Questions to ask:
 - Are online quizzes being used this semester?
 - What is the Canvas course ID?
 - What is the final exam date/time?
+- How many midterms and when should they be scheduled?
 - Any other syllabus changes?
+
+### Midterm Scheduling Guidelines
+
+- First midterm should be in week 3
+- No midterms in the last two weeks of the semester
+- Space midterms roughly evenly throughout the semester
+- Use `claude_util.py create <pos> midterm --midterm` to create midterm lectures with red styling
+- Midterm lectures should have `meta.txt` containing: `<h4 style="color: red;">In-Class Midterm</h4>`
 
 ### Step 6: Build and Verify
 

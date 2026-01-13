@@ -10,5 +10,15 @@
     "04/01": ["Spring Break"],
     "04/03": ["Spring Break"]
   },
-  "quizzes": []
+  "quizzes": [],
+  "projects": {
+    "P1": {"release": 4, "due": 10, "title": "Docker"},
+    "P2": {"release": 10, "due": 16, "title": "Network+Memory"},
+    "P3": {"release": 16, "due": 22, "title": "Compute+Storage"},
+    "P4": {"release": 22, "due": 28, "title": "HDFS, Loans"},
+    "P5": {"release": 28, "due": 31, "title": "Spark, Loans"},
+    "P6": {"release": 31, "due": 35, "title": "Cassandra, Weather"},
+    "P7": {"release": 35, "due": 38, "title": "Kafka, Weather Stations"},
+    "P8": {"release": 38, "due": 41, "title": "Cloud Services"}
+  }
 }

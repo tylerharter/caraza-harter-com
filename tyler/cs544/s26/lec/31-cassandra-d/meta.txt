@@ -1,6 +1,3 @@
 Cassandra Replication
 
-<b>Due:</b> P5<br>
-<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f25/main/-/tree/main/p6">P6 (Cassandra, Weather)</a><br>
-
 https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-11_12_25-09%3A54%3A08/1_5q5blhiy
