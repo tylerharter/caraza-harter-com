@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/s26'
 github2 = 'https://github.com/cs544-wisc/s26/tree/main'
-canvas = 'https://canvas.wisc.edu/courses/478879'  # TODO: update Canvas course ID for S26
+canvas = 'https://canvas.wisc.edu/courses/501599'
 
 START_DATE = date(2026, 1, 19)  # Monday (MLK Day - holiday, instruction starts Tue Jan 20)
 CUTOFF_DATE = date(2026, 5, 1)  # Last day of instruction
