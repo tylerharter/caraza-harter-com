@@ -30,6 +30,10 @@ This is a course website for CS 544 "Intro to Big Data Systems" at UW-Madison. T
 - **schedule.json**: Defines course sections, holidays, quizzes, and project schedule
 - **Static Assets**: CSS in `css/`, JavaScript in `js/`, images in `img/`
 
+### Related Files (Other Repos)
+
+- **Projects policy**: `/Users/tharter/g/s26/projects.md` - Contains project submission policies, late policy, grade disputes, etc. This file and `syllabus.content.html` together define all course policies tested in the Canvas policy quiz.
+
 ## Common Commands
 
 ### Build the Website
@@ -219,6 +223,44 @@ Verify:
 - Schedule shows MWF columns (not WFM or other order)
 - Correct number of class days
 - Holidays appear correctly
+
+### Step 8: Sync Canvas Assignments
+
+After the schedule is finalized, sync project and midterm deadlines to Canvas:
+
+```bash
+source venv/bin/activate
+# Read points from syllabus.content.html first, then run:
+python3 claude_util.py -y canvas-sync --project-points <N> --midterm-points <N>
+```
+
+This creates assignments as unpublished drafts. The instructor can review and publish them.
+
+### Step 9: Verify Policy Quiz
+
+The policy quiz tests students on policies documented in two places:
+- `syllabus.content.html` (this repo)
+- `/Users/tharter/g/s26/projects.md` (separate repo)
+
+Download the policy quiz and check for consistency:
+
+```bash
+source venv/bin/activate
+python3 claude_util.py canvas-quiz "https://canvas.wisc.edu/courses/COURSE_ID/quizzes/QUIZ_ID" > quiz.md
+```
+
+Then compare quiz.md against both policy documents:
+1. Every policy tested in the quiz should be documented in one of the two files
+2. Check for contradictions between quiz answers and documentation
+3. Update documentation or quiz as needed to resolve inconsistencies
+
+Common policy areas to verify:
+- GitLab submission process (Status: Passed meaning, official scores in Issues)
+- Late policy (no grace period, 3-day waiver requirements, no email submissions)
+- Grade disputes (contact TA who graded you first)
+- Hand-in worksheets (in-person only, due date or next lecture, deduction reasons)
+- Email guidelines (CC partner, 2 business days to escalate, single thread for multiple recipients)
+- TopHat/extra credit (own section only, enough to miss many and max out, no re-opens)
 
 ### Semester-Specific Holidays (MWF classes)
 

@@ -348,6 +348,56 @@ def get_midterm_lectures():
     return sorted(midterms)
 
 
+def cmd_schedule_view(args):
+    """Display a compact 7x15 character grid of the semester schedule."""
+    with open('schedule.json') as f:
+        schedule = json.load(f)
+
+    holidays = schedule.get('holiday', {})
+    projects = schedule.get('projects', {})
+
+    # Build set of spring break dates only (holidays with "Spring" in name)
+    spring_break_dates = set()
+    for date_str, names in holidays.items():
+        if any('spring' in name.lower() for name in names):
+            month, day = map(int, date_str.split('/'))
+            spring_break_dates.add(date(START_DATE.year, month, day))
+
+    # Build set of project release dates
+    release_dates = set()
+    for pinfo in projects.values():
+        release_lecture = pinfo['release']
+        release_date = get_lecture_date(release_lecture)
+        if release_date:
+            release_dates.add(release_date)
+
+    # Build set of midterm dates
+    midterm_dates = set()
+    for lecture_num in get_midterm_lectures():
+        midterm_date = get_lecture_date(lecture_num)
+        if midterm_date:
+            midterm_dates.add(midterm_date)
+
+    # Find the Monday of the week containing START_DATE
+    week_start = START_DATE - timedelta(days=START_DATE.weekday())
+
+    # Print 15 weeks
+    for week in range(15):
+        row = ""
+        for day_offset in range(7):
+            current_date = week_start + timedelta(weeks=week, days=day_offset)
+
+            if current_date in midterm_dates:
+                row += "M"
+            elif current_date in release_dates:
+                row += "P"
+            elif current_date in spring_break_dates:
+                row += "S"
+            else:
+                row += "-"
+        print(f"Week {week+1:02d}: {row}")
+
+
 def cmd_canvas_sync(args):
     """Sync project deadlines and midterms from schedule.json to Canvas."""
     # Get Canvas API token from file or environment
@@ -734,6 +784,10 @@ def main():
     quiz_parser = subparsers.add_parser("canvas-quiz", help="Download a Canvas quiz as markdown")
     quiz_parser.add_argument("quiz_url", help="Canvas quiz URL")
     quiz_parser.set_defaults(func=cmd_canvas_quiz)
+
+    # schedule-view command
+    sched_parser = subparsers.add_parser("schedule-view", help="Display compact 7x15 schedule grid")
+    sched_parser.set_defaults(func=cmd_schedule_view)
 
     args = parser.parse_args()
     args.func(args)
