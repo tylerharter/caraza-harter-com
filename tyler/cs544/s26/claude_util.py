@@ -2,10 +2,18 @@
 """Utility script for Claude to manage course content efficiently."""
 
 import argparse
+import calendar
+import json
 import os
 import re
 import subprocess
 import sys
+from datetime import date, timedelta
+
+import requests
+
+# Import configuration from compile.py
+from compile import START_DATE, canvas
 
 LEC_DIR = "lec"
 
@@ -304,6 +312,329 @@ def cmd_clear_videos(args):
 
     print(f"\nModified {modified_count} meta.txt files")
 
+def get_lecture_date(lecture_num):
+    """Calculate the actual date for a given lecture number.
+
+    Iterates through MWF days from START_DATE, skipping holidays,
+    until reaching the target lecture number.
+    """
+    with open('schedule.json') as f:
+        extra = json.load(f)
+    holidays = extra.get('holiday', {})
+
+    current_lecture = 0
+    current_date = START_DATE
+
+    while current_lecture < lecture_num:
+        day_name = calendar.day_abbr[current_date.weekday()]
+        if day_name in ['Mon', 'Wed', 'Fri']:
+            date_str = current_date.strftime("%m/%d")
+            if date_str not in holidays:
+                current_lecture += 1
+                if current_lecture == lecture_num:
+                    return current_date
+        current_date += timedelta(days=1)
+
+    return None
+
+
+def get_midterm_lectures():
+    """Find lecture numbers that are midterms (directories containing 'midterm')."""
+    midterms = []
+    for lec in get_lectures():
+        num, name = parse_lecture_dir(lec)
+        if 'midterm' in name.lower():
+            midterms.append(num)
+    return sorted(midterms)
+
+
+def cmd_canvas_sync(args):
+    """Sync project deadlines and midterms from schedule.json to Canvas."""
+    # Get Canvas API token from file or environment
+    token = os.environ.get('CANVAS_TOKEN')
+    if not token:
+        token_file = os.path.expanduser('~/auth/canvas.txt')
+        if os.path.exists(token_file):
+            with open(token_file) as f:
+                token = f.read().strip()
+        else:
+            print(f"Error: Canvas API token not found.")
+            print(f"  - Set CANVAS_TOKEN environment variable, or")
+            print(f"  - Create {token_file} with your token")
+            print("Get your token from Canvas -> Account -> Settings -> New Access Token")
+            sys.exit(1)
+
+    # Read projects from schedule.json
+    with open('schedule.json') as f:
+        schedule = json.load(f)
+    projects = schedule.get('projects', {})
+
+    # Find midterm lectures
+    midterm_lectures = get_midterm_lectures()
+
+    # Extract base URL and course ID from canvas URL
+    # canvas is like 'https://canvas.wisc.edu/courses/501599'
+    course_id = canvas.split('/')[-1]
+    base_url = canvas.rsplit('/courses/', 1)[0]  # 'https://canvas.wisc.edu'
+
+    # Points from command line
+    project_points = args.project_points
+    midterm_points = args.midterm_points
+
+    assignments_to_create = []
+
+    # Add projects
+    print(f"\nProjects ({project_points} points each):")
+    print("-" * 50)
+    for pname in sorted(projects.keys(), key=lambda x: int(x[1:])):
+        pinfo = projects[pname]
+        due_lecture = pinfo['due']
+        due_date = get_lecture_date(due_lecture)
+
+        if due_date is None:
+            print(f"  Warning: Could not calculate date for {pname} (lecture {due_lecture})")
+            continue
+
+        # Due at 11:59 PM
+        due_datetime = f"{due_date.isoformat()}T23:59:00"
+
+        print(f"  {pname}: due {due_date.strftime('%a %b %d, %Y')} at 11:59 PM (lecture {due_lecture})")
+        assignments_to_create.append({
+            'name': pname,
+            'due_at': due_datetime,
+            'points': project_points
+        })
+
+    # Add midterms
+    print(f"\nMidterms ({midterm_points} points each):")
+    print("-" * 50)
+    for i, lecture_num in enumerate(midterm_lectures, 1):
+        due_date = get_lecture_date(lecture_num)
+
+        if due_date is None:
+            print(f"  Warning: Could not calculate date for Midterm {i} (lecture {lecture_num})")
+            continue
+
+        # Midterms at 8:00 AM (start of class)
+        due_datetime = f"{due_date.isoformat()}T08:00:00"
+        name = f"Midterm {i}"
+
+        print(f"  {name}: {due_date.strftime('%a %b %d, %Y')} at 8:00 AM (lecture {lecture_num})")
+        assignments_to_create.append({
+            'name': name,
+            'due_at': due_datetime,
+            'points': midterm_points
+        })
+
+    print("-" * 50)
+    print(f"Total: {len(assignments_to_create)} assignments")
+
+    if not args.yes:
+        confirm = input("\nCreate these assignments on Canvas? [y/N] ")
+        if confirm.lower() != 'y':
+            print("Aborted.")
+            return
+
+    # Create assignments via Canvas API
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+
+    api_url = f"{base_url}/api/v1/courses/{course_id}/assignments"
+
+    for assignment in assignments_to_create:
+        payload = {
+            'assignment': {
+                'name': assignment['name'],
+                'due_at': assignment['due_at'],
+                'points_possible': assignment['points'],
+                'submission_types': ['none'],
+                'published': False  # Create as draft
+            }
+        }
+
+        print(f"Creating {assignment['name']}...", end=' ')
+        response = requests.post(api_url, headers=headers, json=payload)
+
+        if response.status_code == 201:
+            print("OK")
+        else:
+            print(f"FAILED ({response.status_code})")
+            print(f"  Error: {response.text}")
+
+    print("\nDone! Assignments created as drafts (unpublished).")
+
+
+def cmd_canvas_quiz(args):
+    """Download a Canvas quiz and output as markdown with answers."""
+    import html
+
+    # Get Canvas API token from file or environment
+    token = os.environ.get('CANVAS_TOKEN')
+    if not token:
+        token_file = os.path.expanduser('~/auth/canvas.txt')
+        if os.path.exists(token_file):
+            with open(token_file) as f:
+                token = f.read().strip()
+        else:
+            print(f"Error: Canvas API token not found.", file=sys.stderr)
+            print(f"  - Set CANVAS_TOKEN environment variable, or", file=sys.stderr)
+            print(f"  - Create {token_file} with your token", file=sys.stderr)
+            sys.exit(1)
+
+    # Parse quiz URL to extract course_id and quiz_id
+    # URL format: https://canvas.wisc.edu/courses/501599/quizzes/698797
+    url = args.quiz_url
+    match = re.match(r'.*/courses/(\d+)/quizzes/(\d+)', url)
+    if not match:
+        print(f"Error: Could not parse quiz URL: {url}", file=sys.stderr)
+        print("Expected format: https://canvas.wisc.edu/courses/COURSE_ID/quizzes/QUIZ_ID", file=sys.stderr)
+        sys.exit(1)
+
+    course_id = match.group(1)
+    quiz_id = match.group(2)
+    base_url = url.split('/courses/')[0]
+
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+
+    # Fetch quiz details
+    quiz_url = f"{base_url}/api/v1/courses/{course_id}/quizzes/{quiz_id}"
+    response = requests.get(quiz_url, headers=headers)
+    if response.status_code != 200:
+        print(f"Error fetching quiz: {response.status_code}", file=sys.stderr)
+        print(response.text, file=sys.stderr)
+        sys.exit(1)
+    quiz = response.json()
+
+    # Fetch quiz questions
+    questions_url = f"{base_url}/api/v1/courses/{course_id}/quizzes/{quiz_id}/questions"
+    params = {'per_page': 100}
+    response = requests.get(questions_url, headers=headers, params=params)
+    if response.status_code != 200:
+        print(f"Error fetching questions: {response.status_code}", file=sys.stderr)
+        print(response.text, file=sys.stderr)
+        sys.exit(1)
+    questions = response.json()
+
+    # Helper to strip HTML tags
+    def strip_html(text):
+        if not text:
+            return ""
+        # Decode HTML entities
+        text = html.unescape(text)
+        # Remove HTML tags
+        text = re.sub(r'<[^>]+>', '', text)
+        return text.strip()
+
+    # Output markdown
+    print(f"# {quiz.get('title', 'Quiz')}")
+    print()
+    if quiz.get('description'):
+        print(strip_html(quiz['description']))
+        print()
+    print(f"**Points:** {quiz.get('points_possible', 'N/A')}")
+    print(f"**Time Limit:** {quiz.get('time_limit', 'None')} minutes")
+    print()
+    print("---")
+    print()
+
+    for i, q in enumerate(questions, 1):
+        q_type = q.get('question_type', 'unknown')
+        q_text = strip_html(q.get('question_text', ''))
+        q_points = q.get('points_possible', 0)
+
+        print(f"## Question {i}")
+        print(f"*({q_points} points, {q_type})*")
+        print()
+        print(q_text)
+        print()
+
+        answers = q.get('answers', [])
+
+        if q_type in ('multiple_choice_question', 'true_false_question'):
+            for ans in answers:
+                ans_text = strip_html(ans.get('text', ''))
+                is_correct = ans.get('weight', 0) > 0
+                marker = "✓" if is_correct else "○"
+                print(f"- {marker} {ans_text}")
+            print()
+
+        elif q_type == 'multiple_answers_question':
+            for ans in answers:
+                ans_text = strip_html(ans.get('text', ''))
+                is_correct = ans.get('weight', 0) > 0
+                marker = "✓" if is_correct else "☐"
+                print(f"- {marker} {ans_text}")
+            print()
+
+        elif q_type == 'short_answer_question':
+            print("**Accepted answers:**")
+            for ans in answers:
+                ans_text = ans.get('text', '')
+                print(f"- {ans_text}")
+            print()
+
+        elif q_type == 'fill_in_multiple_blanks_question':
+            print("**Blanks:**")
+            blanks = {}
+            for ans in answers:
+                blank_id = ans.get('blank_id', 'unknown')
+                ans_text = ans.get('text', '')
+                if blank_id not in blanks:
+                    blanks[blank_id] = []
+                blanks[blank_id].append(ans_text)
+            for blank_id, texts in blanks.items():
+                print(f"- [{blank_id}]: {', '.join(texts)}")
+            print()
+
+        elif q_type == 'matching_question':
+            print("**Matches:**")
+            for ans in answers:
+                left = strip_html(ans.get('left', ''))
+                right = strip_html(ans.get('right', ''))
+                print(f"- {left} → {right}")
+            print()
+
+        elif q_type == 'numerical_question':
+            print("**Accepted answers:**")
+            for ans in answers:
+                exact = ans.get('exact')
+                margin = ans.get('margin', 0)
+                range_start = ans.get('start')
+                range_end = ans.get('end')
+                if exact is not None:
+                    if margin:
+                        print(f"- {exact} (± {margin})")
+                    else:
+                        print(f"- {exact}")
+                elif range_start is not None and range_end is not None:
+                    print(f"- Range: {range_start} to {range_end}")
+            print()
+
+        elif q_type == 'essay_question':
+            print("*(Essay response required)*")
+            print()
+
+        elif q_type == 'text_only_question':
+            # No answer needed, just informational
+            pass
+
+        else:
+            # Unknown type, just dump answers if any
+            if answers:
+                print("**Answers:**")
+                for ans in answers:
+                    print(f"- {ans}")
+                print()
+
+        print("---")
+        print()
+
+
 def cmd_swap(args):
     """Swap two lectures' positions."""
     lectures = get_lectures()
@@ -392,6 +723,17 @@ def main():
     # clear-videos command
     clear_parser = subparsers.add_parser("clear-videos", help="Remove video links from all meta.txt files")
     clear_parser.set_defaults(func=cmd_clear_videos)
+
+    # canvas-sync command
+    canvas_parser = subparsers.add_parser("canvas-sync", help="Sync project and midterm deadlines to Canvas")
+    canvas_parser.add_argument("--project-points", type=int, required=True, help="Points per project")
+    canvas_parser.add_argument("--midterm-points", type=int, required=True, help="Points per midterm")
+    canvas_parser.set_defaults(func=cmd_canvas_sync)
+
+    # canvas-quiz command
+    quiz_parser = subparsers.add_parser("canvas-quiz", help="Download a Canvas quiz as markdown")
+    quiz_parser.add_argument("quiz_url", help="Canvas quiz URL")
+    quiz_parser.set_defaults(func=cmd_canvas_quiz)
 
     args = parser.parse_args()
     args.func(args)

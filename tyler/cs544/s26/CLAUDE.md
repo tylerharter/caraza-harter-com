@@ -90,6 +90,35 @@ python3 claude_util.py clear-videos
 
 Use `-y` flag to skip confirmation prompts.
 
+## Canvas Integration (claude_util.py)
+
+Canvas commands require an API token. Store your token in `~/auth/canvas.txt` or set the `CANVAS_TOKEN` environment variable. Get a token from Canvas → Account → Settings → New Access Token.
+
+These commands require the venv: `source venv/bin/activate`
+
+```bash
+# Sync project and midterm deadlines to Canvas
+# Creates assignments as unpublished drafts with "No Submission" type
+# Points should be read from syllabus.content.html before running
+python3 claude_util.py -y canvas-sync --project-points 3 --midterm-points 12
+
+# Download a Canvas quiz as markdown with answers
+python3 claude_util.py canvas-quiz "https://canvas.wisc.edu/courses/COURSE_ID/quizzes/QUIZ_ID"
+python3 claude_util.py canvas-quiz "URL" > quiz.md  # save to file
+```
+
+**canvas-sync details:**
+- Reads project due dates from `schedule.json` (by lecture number)
+- Finds midterms by scanning `lec/*/` for directories containing "midterm"
+- Projects are due at 11:59 PM on the lecture date
+- Midterms are due at 8:00 AM on the lecture date
+- Creates assignments as unpublished drafts
+
+**canvas-quiz details:**
+- Outputs quiz as markdown with questions and answers
+- Correct answers marked with ✓, incorrect with ○ or ☐
+- Supports multiple choice, true/false, multiple answers, short answer, fill-in-the-blank, matching, numerical, and essay questions
+
 ## Project Schedule (schedule.json)
 
 Projects are defined in `schedule.json` under the `projects` key. Each project specifies:
