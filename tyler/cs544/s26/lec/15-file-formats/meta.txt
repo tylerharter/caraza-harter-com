@@ -1,5 +1,3 @@
 Storage Resources (Formats and DBs)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Transaction Processing or Analytics?" and "Column-Oriented Storage" sections of Chapter 3, "Storage and Retrieval")</a><br>
-
-https://mediaspace.wisc.edu/media/Michael%20Doescher-Morgridge%201570-10_08_25-09%3A53%3A58/1_vudu9ulk

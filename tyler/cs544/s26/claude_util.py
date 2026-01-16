@@ -264,6 +264,46 @@ def cmd_rename(args):
     new_path = os.path.join(LEC_DIR, new_dir)
     run_git(["mv", old_path, new_path])
 
+def cmd_clear_videos(args):
+    """Remove video recording links from all meta.txt files."""
+    lectures = get_lectures()
+    modified_count = 0
+
+    for lec in lectures:
+        meta_path = os.path.join(LEC_DIR, lec, "meta.txt")
+        if not os.path.exists(meta_path):
+            continue
+
+        with open(meta_path, 'r') as f:
+            lines = f.readlines()
+
+        # Filter out video-related lines
+        new_lines = []
+        for line in lines:
+            stripped = line.strip()
+            # Skip standalone mediaspace URLs
+            if stripped.startswith('https://mediaspace.wisc.edu'):
+                continue
+            # Skip notes about recordings (e.g., "* note: ... recording ...")
+            if stripped.startswith('* note:') and 'recording' in stripped.lower():
+                continue
+            new_lines.append(line)
+
+        # Remove trailing blank lines but keep one newline at end
+        while len(new_lines) > 1 and new_lines[-1].strip() == '':
+            new_lines.pop()
+
+        # Check if anything changed
+        if new_lines != lines:
+            with open(meta_path, 'w') as f:
+                f.writelines(new_lines)
+                if new_lines and not new_lines[-1].endswith('\n'):
+                    f.write('\n')
+            print(f"Cleaned: {lec}")
+            modified_count += 1
+
+    print(f"\nModified {modified_count} meta.txt files")
+
 def cmd_swap(args):
     """Swap two lectures' positions."""
     lectures = get_lectures()
@@ -348,6 +388,10 @@ def main():
     swap_parser.add_argument("lecture_a", help="First lecture number or name pattern")
     swap_parser.add_argument("lecture_b", help="Second lecture number or name pattern")
     swap_parser.set_defaults(func=cmd_swap)
+
+    # clear-videos command
+    clear_parser = subparsers.add_parser("clear-videos", help="Remove video links from all meta.txt files")
+    clear_parser.set_defaults(func=cmd_clear_videos)
 
     args = parser.parse_args()
     args.func(args)

@@ -83,6 +83,9 @@ python3 claude_util.py rename <number-or-pattern> <new-name>
 
 # Swap two lectures' positions
 python3 claude_util.py swap <lecture_a> <lecture_b>
+
+# Remove all video recording links from meta.txt files (for new semester)
+python3 claude_util.py clear-videos
 ```
 
 Use `-y` flag to skip confirmation prompts.
@@ -134,7 +137,7 @@ Look for:
 - `START_DATE`: Must be a **Monday** for correct MWF column order (even if that Monday is a holiday)
 - `CUTOFF_DATE` and `END_DATE`: Last day of instruction
 - `github`: Update semester in URL (e.g., `f25` → `s26`)
-- `github2`: Update semester reference (e.g., `f23` → `s26`)
+- `github2`: GitLab URL for project links - update semester (e.g., `s26` in the path)
 - `canvas`: Update Canvas course ID (ask instructor for new ID)
 
 ### Step 3: Update schedule.json
@@ -149,7 +152,15 @@ Look for:
 - Update final exam date/time (search for "exam 3" or "finals week")
 - Ask instructor about any changes to course components (quizzes, projects, etc.)
 
-### Step 5: Ask Instructor About Changes
+### Step 5: Clear Previous Semester's Video Links
+
+```bash
+python3 claude_util.py clear-videos
+```
+
+This removes all mediaspace.wisc.edu video recording links from `meta.txt` files, since new recordings will be made for the new semester.
+
+### Step 6: Ask Instructor About Changes
 
 Questions to ask:
 - Are there any lectures to delete, add, or rename?
@@ -168,7 +179,7 @@ Questions to ask:
 - Use `claude_util.py create <pos> midterm --midterm` to create midterm lectures with red styling
 - Midterm lectures should have `meta.txt` containing: `<h4 style="color: red;">In-Class Midterm</h4>`
 
-### Step 6: Build and Verify
+### Step 7: Build and Verify
 
 ```bash
 python3 compile.py
