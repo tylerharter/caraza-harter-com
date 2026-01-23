@@ -87,9 +87,15 @@ def read_days():
         reading = os.path.join("lec", dirname, "reading.html")
         if os.path.exists(reading):
             meta += f'\n<b>Read</b>: <a href="{reading}">Course Notes</a> (<a href="{reading.replace(".html", ".ipynb")}">NB</a>)<br>'
-        meta = re.sub("^(https://mediaspace.wisc.edu.*)$",
-                      r'<b>Watch</b>: <a href="\g<1>">Lecture</a><br>',
-                      meta, flags=re.MULTILINE)
+        # Handle lecture recording links
+        recording_urls = re.findall(r"^(https://mediaspace.wisc.edu.*)$", meta, flags=re.MULTILINE)
+        for url in recording_urls:
+            meta = meta.replace(url + "\n", "")  # Remove the URL line
+        if len(recording_urls) == 1:
+            meta += f'\n<b>Watch</b>: <a href="{recording_urls[0]}">Lecture</a><br>'
+        elif len(recording_urls) > 1:
+            for i, url in enumerate(recording_urls, 1):
+                meta += f'\n<b>Watch</b>: <a href="{url}">Lecture (Part {i})</a><br>'
         days.append(meta)
     return days
 
