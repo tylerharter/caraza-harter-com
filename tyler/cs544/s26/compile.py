@@ -123,6 +123,12 @@ def schedule():
         project_releases.setdefault(rel, []).append((pname, title))
         project_dues.setdefault(due, []).append(pname)
 
+    # Build worksheet info by lecture number
+    worksheets = extra.get('worksheets', {})
+    worksheet_dues = {}  # lecture_num -> list of worksheet names
+    for wname, winfo in worksheets.items():
+        worksheet_dues.setdefault(winfo['due'], []).append(wname)
+
     cells = []
     full = 0
     free = 0
@@ -154,6 +160,11 @@ def schedule():
                     content += f'\n<b>Due:</b> {pname}<br>'
                 for pname, ptitle in project_releases.get(lecture_num, []):
                     content += f'\n<b>Release:</b> <a href="{github2}/{pname.lower()}">{pname} ({ptitle})</a><br>'
+
+                # Add worksheet dues from JSON
+                for wname in worksheet_dues.get(lecture_num, []):
+                    ws_url = github2.replace('/tree/main', f'/blob/main/handin-worksheets/{wname.lower()}.pdf')
+                    content += f'\n<b>Due:</b> <a href="{ws_url}">{wname} Worksheet</a><br>'
 
             title,content = content[:content.index('\n')], content[content.index('\n')+1:]
             header = '<h5><strong>%s, %s</strong><br>%s</h5>' % (curr.strftime("%a"),

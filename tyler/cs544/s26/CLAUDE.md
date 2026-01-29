@@ -152,6 +152,25 @@ Example:
 
 The `compile.py` script automatically adds Release/Due lines to the schedule based on this JSON. Do NOT put project info in `meta.txt` files.
 
+## Worksheet Schedule (schedule.json)
+
+Worksheets are defined in `schedule.json` under the `"worksheets"` key. Each worksheet specifies only a due date (no release date). The key is the worksheet name (displayed as "{Name} Worksheet" on the schedule, lowercased for the PDF filename).
+
+Example:
+```json
+{
+  "worksheets": {
+    "Shell": {"due": 6},
+    "Git": {"due": 8}
+  }
+}
+```
+
+- `due`: Lecture number when the worksheet is due
+- The link points to `handin-worksheets/{name_lower}.pdf` on GitLab
+
+The `compile.py` script automatically adds "Due:" lines to the schedule based on this JSON.
+
 ## Setting Up a New Semester
 
 When copying a previous semester to create a new one, follow this checklist. Claude should be able to handle most of this autonomously, asking the instructor questions as needed.

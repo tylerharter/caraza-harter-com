@@ -20,5 +20,8 @@
     "P6": {"release": 31, "due": 34, "title": "Cassandra"},
     "P7": {"release": 34, "due": 38, "title": "Kafka"},
     "P8": {"release": 38, "due": 41, "title": "Cloud"}
+  },
+  "worksheets": {
+    "Shell": {"due": 6}
   }
 }
