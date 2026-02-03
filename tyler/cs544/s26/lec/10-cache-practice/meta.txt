@@ -1,1 +1,1 @@
-Memory Resources (Caching Practice)
+Memory (Caching Practice)

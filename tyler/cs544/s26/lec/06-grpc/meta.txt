@@ -1,4 +1,4 @@
-Network Resources (gRPC)
+Network (gRPC)
 <b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
 
 https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-02_02_26-10%3A59%3A39/1_k2ubfe5y

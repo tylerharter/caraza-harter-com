@@ -1,1 +1,1 @@
-Storage Resources (File Systems)
+Storage (File Systems)
