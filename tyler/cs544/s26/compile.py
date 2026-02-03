@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import calendar, os, json, re
 from datetime import date, timedelta
+import qrcode
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/s26'
 github2 = 'https://git.doit.wisc.edu/cdis/cs/courses/cs544/s26/main/-/tree/main'
@@ -204,9 +205,24 @@ def schedule():
 
     f.close()
 
+def generate_qr_codes():
+    with open('forms.content.html') as f:
+        content = f.read()
+    os.makedirs('QRs', exist_ok=True)
+    for match in re.finditer(r'<a\s+href="([^"]+)"[^>]*>([^<]+)</a>', content):
+        url, text = match.group(1), match.group(2)
+        # strip leading number+dot (e.g. "1. ") and trailing punctuation
+        name = re.sub(r'^\d+\.\s*', '', text).strip().rstrip('.')
+        filename = re.sub(r'[^a-z0-9]+', '_', name.lower()).strip('_') + '.png'
+        path = os.path.join('QRs', filename)
+        img = qrcode.make(url)
+        img.save(path)
+        print(f'QR: {name} => {path}')
+
 def main():
     schedule()
     template()
+    generate_qr_codes()
 
 if __name__ == '__main__':
     main()
