@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import calendar, os, json, re
 from datetime import date, timedelta
-import qrcode
 
 github = 'https://github.com/tylerharter/caraza-harter-com/blob/master/tyler/cs544/s26'
 github2 = 'https://git.doit.wisc.edu/cdis/cs/courses/cs544/s26/main/-/tree/main'
@@ -206,6 +205,12 @@ def schedule():
     f.close()
 
 def generate_qr_codes():
+    try:
+        import qrcode
+    except:
+        print("Cannot import qrcode, skipping")
+        return
+    
     with open('forms.content.html') as f:
         content = f.read()
     os.makedirs('QRs', exist_ok=True)
