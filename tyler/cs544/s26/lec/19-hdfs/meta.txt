@@ -1,3 +1,5 @@
 Hadoop Ecosystem<br>HDFS
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-03_04_26-10%3A55%3A56/1_zkfi4w0x
