@@ -1,3 +1,5 @@
 Spark SQL
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Reduce-Side Joins and Grouping" of Chapter 10, "Batch Processing")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-03_13_26-10%3A58%3A11/1_nau7e50a
