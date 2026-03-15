@@ -1,3 +1,8 @@
 Spark Internals and Performance
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 7, "Optimizing and Tuning Spark Applications")</a><br>
+
+https://mediaspace.wisc.edu/media/Spark%20SQL%20JOINs%20(Mar%2016)/1_lc4phjpb
+https://mediaspace.wisc.edu/media/Spark%20Perf%2C%20Cache_Balance%20Demo%20(Mar%2016)/1_yyf1uxg6
+https://mediaspace.wisc.edu/media/Spark%20Group%20Perf%20(Mar%2016)/1_7y3wbrv2
+https://mediaspace.wisc.edu/media/Spark%20JOIN%20perf%20(Mar%2016)/1_vbru5kx5
