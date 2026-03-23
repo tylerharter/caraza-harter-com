@@ -96,5 +96,13 @@ div.nb_cell {
 }
 
 .bg-custom {
-    background-color: #D50000;
+    background-color: #000000;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1) !important;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+    font-weight: bold;
 }
