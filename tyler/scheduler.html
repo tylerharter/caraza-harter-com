@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session Scheduler</title>
+<style>
+  body { font-family: sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #111; }
+  h1 { font-size: 1.4em; }
+  h2 { font-size: 1.1em; margin-top: 2em; }
+  table { border-collapse: collapse; margin-top: 10px; }
+  th, td { border: 1px solid #999; padding: 6px 12px; text-align: center; color: #111; }
+  th { background: #e0e0e0; }
+  td.available { background: #c8e6c9; cursor: pointer; }
+  td.available:hover { background: #81c784; }
+  td.full { background: #ffcdd2; color: #555; }
+  .info { background: #f5f5f5; padding: 12px; border-radius: 4px; margin: 10px 0; }
+  button { padding: 8px 16px; margin: 5px 0; cursor: pointer; font-size: 1em; }
+  #login { margin: 20px 0; }
+  #login input { padding: 8px; width: 500px; font-family: monospace; font-size: 1em; }
+  .error { color: #b00; font-weight: bold; margin: 10px 0; }
+  .success { color: #006400; font-weight: bold; margin: 10px 0; }
+  #content { display: none; }
+</style>
+</head>
+<body>
+
+<h1>Session Scheduler</h1>
+
+<div id="login">
+  <p>Enter your enrollment code:</p>
+  <input type="text" id="code-input" placeholder="enrollment code" onkeydown="if(event.key==='Enter')login()">
+  <button onclick="login()">Go</button>
+  <div id="login-error" class="error"></div>
+</div>
+
+<div id="content">
+  <div id="session-info" class="info"></div>
+  <div id="message"></div>
+  <div id="actions"></div>
+  <div id="schedule"></div>
+</div>
+
+<script>
+var API = 'https://0vw3rp9zr7.execute-api.us-east-1.amazonaws.com';
+var enrollmentCode = '';
+var isBooked = false;
+
+function api(method, path, body) {
+  var opts = {
+    method: method,
+    headers: { 'Authorization': 'Bearer ' + enrollmentCode }
+  };
+  if (body) {
+    opts.headers['Content-Type'] = 'application/json';
+    opts.body = JSON.stringify(body);
+  }
+  return fetch(API + path, opts);
+}
+
+function minutesToTime(m) {
+  var h = Math.floor(m / 60);
+  var mm = m % 60;
+  var ampm = h >= 12 ? 'PM' : 'AM';
+  if (h === 0) h = 12;
+  else if (h > 12) h -= 12;
+  return h + ':' + (mm < 10 ? '0' : '') + mm + ' ' + ampm;
+}
+
+function login() {
+  enrollmentCode = document.getElementById('code-input').value.trim();
+  document.getElementById('login-error').textContent = '';
+  if (!enrollmentCode) return;
+  loadSession();
+}
+
+function loadSession() {
+  api('GET', '/api/student/session').then(function(r) {
+    if (!r.ok) {
+      document.getElementById('login-error').textContent = 'Invalid enrollment code';
+      return;
+    }
+    return r.json();
+  }).then(function(info) {
+    if (!info) return;
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+    showSession(info);
+  }).catch(function(err) {
+    document.getElementById('login-error').textContent = 'Connection error: ' + err.message;
+  });
+}
+
+function showSession(info) {
+  var html = '<b>' + info.course_name + ' / ' + info.assessment_name + '</b><br>'
+    + 'Duration: ' + info.duration_minutes + ' minutes<br>'
+    + 'Available dates: ' + info.start_date + ' to ' + info.end_date;
+
+  if (info.booked_date) {
+    html += '<br><br>Booked: <b>' + info.booked_date
+      + ' at ' + minutesToTime(info.booked_start_minutes) + '</b>';
+  }
+
+  isBooked = !!info.booked_date;
+  document.getElementById('session-info').innerHTML = html;
+  document.getElementById('message').innerHTML = '';
+  document.getElementById('schedule').innerHTML = '';
+
+  var actions = document.getElementById('actions');
+  if (info.booked_date) {
+    actions.innerHTML = '<button onclick="cancelBooking()">Cancel Booking</button>'
+      + ' <button onclick="showSchedule()">Refresh Available Times</button>';
+  } else {
+    actions.innerHTML = '<button onclick="showSchedule()">Refresh Available Times</button>';
+  }
+  showSchedule();
+}
+
+function showSchedule() {
+  document.getElementById('schedule').innerHTML = 'Loading...';
+  api('GET', '/api/student/session/schedule').then(function(r) {
+    return r.json();
+  }).then(function(sched) {
+    var dates = Object.keys(sched).sort();
+    if (dates.length === 0) {
+      document.getElementById('schedule').innerHTML = '<p>No available times.</p>';
+      return;
+    }
+
+    // Collect all unique times across all dates
+    var timeSet = {};
+    dates.forEach(function(d) {
+      Object.keys(sched[d]).forEach(function(t) { timeSet[t] = true; });
+    });
+    var times = Object.keys(timeSet).map(Number).sort(function(a, b) { return a - b; });
+
+    var html = '<h2>Available Times</h2>'
+      + (isBooked ? '' : '<p>Click a cell to book.</p>')
+      + '<table><tr><th>Time</th>';
+    var dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    dates.forEach(function(d) {
+      var dow = dayNames[new Date(d + 'T00:00:00').getDay()];
+      html += '<th>' + d + '<br>(' + dow + ')</th>';
+    });
+    html += '</tr>';
+
+    times.forEach(function(t) {
+      html += '<tr><td>' + minutesToTime(t) + '</td>';
+      dates.forEach(function(d) {
+        var avail = sched[d][String(t)];
+        if (avail === undefined) {
+          html += '<td>-</td>';
+        } else if (avail === 0) {
+          html += '<td class="full">Full</td>';
+        } else {
+          if (isBooked) {
+            html += '<td class="available" style="cursor:default">' + avail + '</td>';
+          } else {
+            html += '<td class="available" onclick="book(\'' + d + '\',' + t + ')">' + avail + '</td>';
+          }
+        }
+      });
+      html += '</tr>';
+    });
+
+    html += '</table>';
+    document.getElementById('schedule').innerHTML = html;
+  }).catch(function(err) {
+    document.getElementById('schedule').innerHTML = '<p class="error">Connection error: ' + err.message + '</p>';
+  });
+}
+
+function book(date, startMinutes) {
+  api('POST', '/api/student/session', { date: date, start_minutes: startMinutes })
+    .then(function(r) {
+      if (r.ok) {
+        document.getElementById('message').innerHTML = '<p class="success">Booked!</p>';
+        loadSession();
+      } else {
+        return r.text().then(function(t) {
+          document.getElementById('message').innerHTML = '<p class="error">' + t + '</p>';
+        });
+      }
+    }).catch(function(err) {
+      document.getElementById('message').innerHTML = '<p class="error">Connection error: ' + err.message + '</p>';
+    });
+}
+
+function cancelBooking() {
+  if (!confirm('Cancel your booking?')) return;
+  api('DELETE', '/api/student/session').then(function(r) {
+    if (r.ok) {
+      document.getElementById('message').innerHTML = '<p class="success">Booking cancelled.</p>';
+      loadSession();
+    } else {
+      return r.text().then(function(t) {
+        document.getElementById('message').innerHTML = '<p class="error">' + t + '</p>';
+      });
+    }
+  }).catch(function(err) {
+    document.getElementById('message').innerHTML = '<p class="error">Connection error: ' + err.message + '</p>';
+  });
+}
+</script>
+</body>
+</html>
