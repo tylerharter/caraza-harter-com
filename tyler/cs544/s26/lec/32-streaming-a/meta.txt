@@ -1,3 +1,5 @@
 Streaming: Kafka Concepts
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> ("Enter Kafka" section of Chapter 1, "Meet Kafka")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-04_10_26-10%3A57%3A49/1_gsb7dw7c
