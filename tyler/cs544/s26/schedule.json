@@ -24,6 +24,7 @@
   "worksheets": {
     "Shell": {"due": 6},
     "Threads": {"due": 19},
-    "HDFS_Spark": {"due": 28}
+    "HDFS_Spark": {"due": 28},
+    "Cassandra": {"due": 34}
   }
 }
