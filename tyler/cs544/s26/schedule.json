@@ -25,6 +25,7 @@
     "Shell": {"due": 6},
     "Threads": {"due": 19},
     "HDFS_Spark": {"due": 28},
-    "Cassandra": {"due": 34}
+    "Cassandra": {"due": 34},
+    "Kafka": {"due": 37}
   }
 }
