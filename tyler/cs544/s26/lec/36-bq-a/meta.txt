@@ -1,1 +1,1 @@
-BigQuery 1: Basics
+Cloud Demos (Google)
