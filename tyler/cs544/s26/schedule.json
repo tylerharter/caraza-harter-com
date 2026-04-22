@@ -14,7 +14,7 @@
   "projects": {
     "P1": {"release": 4, "due": 10, "title": "Docker"},
     "P2": {"release": 10, "due": 16, "title": "Network+Memory"},
-    "P3": {"release": 16, "due": 22, "title": "Compute+Storage"},
+    "P3": {"release": 16, "due": 23, "title": "Compute+Storage"},
     "P4": {"release": 22, "due": 28, "title": "HDFS"},
     "P5": {"release": 28, "due": 31, "title": "Spark"},
     "P6": {"release": 31, "due": 36, "title": "Cassandra"},
