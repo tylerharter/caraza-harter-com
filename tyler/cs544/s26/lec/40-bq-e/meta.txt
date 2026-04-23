@@ -1,1 +1,1 @@
-BigQuery 4: TBD
+BigQuery 4: Cost and Performance
