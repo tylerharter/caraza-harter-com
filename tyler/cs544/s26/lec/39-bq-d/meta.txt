@@ -2,4 +2,4 @@ BigQuery: Machine Learning
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
 
-https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Noland%20132-04_27_26-08%3A49%3A03/1_3zp6ajh0
+https://mediaspace.wisc.edu/media/Michael%20Doescher-Morgridge%201570-04_27_26-10%3A59%3A47/1_l591n8sa
