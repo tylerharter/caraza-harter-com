@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Google Auth stuff -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="531980636037-3a6miiekf2ao8d0n7qv1fkrev8cbvvdt.apps.googleusercontent.com">
+
+    <title>Intro to Big Data Systems</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/loader.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-custom">
+	<a class="navbar-brand" href="schedule.html">Intro to Big Data Systems</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item">
+	      <a class="nav-link" href="schedule.html">Schedule</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="syllabus.html">Syllabus</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="help.html">Get Help</a>
+	    </li>
+            <li class="nav-item">
+	      <a class="nav-link" href="forms.html">Forms</a>
+	    </li>
+	    <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Resources
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main">Semester GitLab Repo</a>
+                <a class="dropdown-item" href="https://pages.cs.wisc.edu/~harter/cs544/resources.html">Datasets</a>
+                <a class="dropdown-item" href="https://docs.google.com/spreadsheets/d/1WWTjmla-GMO8i8Yj6wquGGEV2OVupgxcMDITO7HVagw/view">Office Hour Schedule</a>
+                <a class="dropdown-item" href="https://docs.google.com/document/d/1xDPCxU50yZZJKP-P5IbTWSAcPqB9qLAZSDSQe2f0_Ls/view">Lecture Snippets</a>
+                <a class="dropdown-item" href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/exams">Old Exams</a>
+                <a class="dropdown-item" href="workbook.pdf">Workbook</a>
+                <a class="dropdown-item" href="anki.html">Anki Flash Cards</a>
+                <a class="dropdown-item" href="messages.html?topic=ta">Who is my TA?</a>
+                <!--
+                <a class="dropdown-item" href="messages.html?topic=exam1">What were my exam 1 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam2">What were my exam 2 answers?</a>
+                <a class="dropdown-item" href="messages.html?topic=room">Where is my final exam?</a>
+                <a class="dropdown-item" href="messages.html?topic=exam3">What were my exam 3 answers?</a>
+                -->
+	      </div>
+	    </li>
+
+            <li class="nav-item dropdown">
+	      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Tools
+	      </a>
+	      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://piazza.com/class/mkfpr12hg74rf" target="_blank">Piazza</a>
+                <a class="dropdown-item" href="https://canvas.wisc.edu/courses/501599" target="_blank">Canvas</a>
+                <a class="dropdown-item" href="https://app.tophat.com/e/456633" target="_blank">TopHat (Sec 1)</a>
+                <a class="dropdown-item" href="https://app.tophat.com/e/560685" target="_blank">TopHat (Sec 2)</a>
+	      </div>
+	    </li>
+
+            <li class="nav-item">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="common.googleSignOut()" id="signout" style="display:none;">Logout</button>
+	    </li>
+	  </ul>
+	</div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Course Schedule</h1>
+<div class="alert alert-primary my-5 week">Part 1: Resources</div>
+<h3 class="my-3 border-bottom border-top">Week 1</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Aug 31</strong><br>No Class</h5>
+<i>Fall instruction begins Wed, Sep 2</i>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 2</strong><br><span id="lec-01-title">Course Intro</span></h5>
+
+<b>Read:</b> <a href="syllabus.html">Syllabus</a><br>
+
+<b>Slides</b>: <a href="lec/01-course/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 4</strong><br><span id="lec-02-title">Deployment (Linux Shell)</span></h5>
+
+<b>Slides</b>: <a href="lec/02-shell/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 2</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 7</strong><br>Labor Day</h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 9</strong><br><span id="lec-03-title">Deployment (Linux Pipelines)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Batch Processing with Unix Tools" of Chapter 10)</a><br>
+
+<b>Slides</b>: <a href="lec/03-pipelines/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 11</strong><br><span id="lec-04-title">Deployment (Docker)</span></h5>
+
+<b>Slides</b>: <a href="lec/04-docker/slides.pdf">PDF</a><br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p1">P1 (Docker)</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 3</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 14</strong><br><span id="lec-05-title">Network (Overview)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
+
+<b>Slides</b>: <a href="lec/05-net/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 16</strong><br><span id="lec-06-title">Network (gRPC)</span></h5>
+<b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+
+<b>Slides</b>: <a href="lec/06-grpc/slides.pdf">PDF</a><br>
+<b>Due:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/blob/main/handin-worksheets/shell.pdf">Shell Worksheet</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 18</strong><br><span id="lec-07-title">Network (Distributed Computing)</span></h5>
+
+<b>Slides</b>: <a href="lec/07-compose/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 4</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 21</strong><br><span id="lec-08-title">TBD</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 23</strong><br><span id="lec-09-title">Memory (Cache Concepts)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Systems Performance, Gregg (6.2.2; "CPU Caches" and "Latency" subsections of 6.4.1)</a><br>
+
+<b>Slides</b>: <a href="lec/09-caching/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Sep 25</strong><br><span id="lec-10-title">Memory (Cache Implementation)</span></h5>
+
+<b>Due:</b> P1<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p2">P2 (Network+Memory)</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 5</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Sep 28</strong><br><span id="lec-11-title">Memory (Cache Friendly)</span></h5>
+
+<b>Read:</b> <a href="http://igoro.com/archive/gallery-of-processor-cache-effects/">Gallery of Processor Cache Effects (Examples 1 and 2)</a><br>
+
+<b>Slides</b>: <a href="lec/11-cache-aware/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Sep 30</strong><br><span id="lec-12-title">Compute (Threads)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Fluent Python, 2nd Edition ("What's New in This Chapter" through "A Bit of Jargon" in chapter 19, "Concurrency Models in Python")</a><br>
+
+<b>Slides</b>: <a href="lec/12-threads/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 2</strong><br><span id="lec-13-title">Compute (Locks)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Concurrency in Python ("Working With Threads In Python" chapter)</a><br>
+
+<b>Slides</b>: <a href="lec/13-locks/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 6</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 5</strong><br><span id="lec-14-title">Compute (Advanced Concurrency)<br>Storage (Block Devices)</span></h5>
+
+<b>Slides</b>: <a href="lec/14-file-systems/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 7</strong><br><span id="lec-15-title">Storage (File Systems and Formats)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Transaction Processing or Analytics?" and "Column-Oriented Storage" sections of Chapter 3, "Storage and Retrieval")</a><br>
+
+<b>Slides</b>: <a href="lec/15-file-formats/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 9</strong><br><span id="lec-16-title">SQL Databases (MySQL)</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">MySQL Crash Course, Silva (Chapters 3+5)</a>, <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data-Intensive Applications, Kleppmann ("The Meaning of ACID" section in Chapter 7, "Transactions")</a><br>
+
+<b>Slides</b>: <a href="lec/16-sql/slides.pdf">PDF</a><br>
+<b>Due:</b> P2<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p3">P3 (Compute+Storage)</a><br>
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 2: Clusters</div>
+<h3 class="my-3 border-bottom border-top">Week 7</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 12</strong><br><span id="lec-17-title">SQL Practice</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 14</strong><br><span id="lec-18-title">TBD</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 16</strong><br><span id="lec-19-title">Hadoop Ecosystem<br>HDFS</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Mastering Hadoop 3, Singh <i>et al.</i> ("Deep Dive Into the Hadoop Distributed File System" chapter)</a><br>
+
+<b>Slides</b>: <a href="lec/19-hdfs/slides.pdf">PDF</a><br>
+<b>Due:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/blob/main/handin-worksheets/threads.pdf">Threads Worksheet</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 8</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 19</strong><br><span id="lec-20-title">HDFS<br>MapReduce</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (sections "The Importance of an Optimal Storage Solution", "Databases", and "Data Lakes" of chapter 9, "Building Reliable Data Lakes with Apache Spark")</a><br>
+
+<b>Slides</b>: <a href="lec/20-spark-a/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 21</strong><br><span id="lec-21-title">Spark RDDs</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 23</strong><br><span id="lec-22-title">Spark DataFrames</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 4, "Spark SQL and DataFrames: Introduction to Built-in Data Sources")</a><br>
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 9</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Oct 26</strong><br><span id="lec-23-title">Spark SQL</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Reduce-Side Joins and Grouping" of Chapter 10, "Batch Processing")</a><br>
+
+<b>Slides</b>: <a href="lec/23-spark-d/slides.pdf">PDF</a><br>
+<b>Due:</b> P3<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p4">P4 (HDFS)</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Oct 28</strong><br><span id="lec-24-title">Spark Internals and Performance</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 7, "Optimizing and Tuning Spark Applications")</a><br>
+
+<b>Slides</b>: <a href="lec/24-spark-e/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Oct 30</strong><br><span id="lec-25-title">Spark Machine Learning API</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Learning Spark, 2nd edition by Damji <i>et al.</i> (Chapter 10, "Machine Learning with MLlib")</a><br>
+
+<b>Slides</b>: <a href="lec/25-spark-f/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 10</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 2</strong><br><span id="lec-26-title">Spark Machine Learning: PLANET</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 4</strong><br><span id="lec-27-title">TBD</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 6</strong><br><span id="lec-28-title">Wide Tables: HBase and Cassandra</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (Chapter 4, "The Cassandra Query Language")</a><br>
+
+<b>Slides</b>: <a href="lec/28-cassandra-a/slides.pdf">PDF</a><br>
+<b>Due:</b> P4<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p5">P5 (Spark)</a><br>
+<b>Due:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/blob/main/handin-worksheets/hdfs_spark.pdf">HDFS_Spark Worksheet</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 11</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 9</strong><br><span id="lec-29-title">Cassandra Query Language (CQL)</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 11</strong><br><span id="lec-30-title">Cassandra Partitioning</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Cassandra, The Definitive Guide, by Carpenter <i>et al.</i> (sections "Data Centers and Racks" to "Hinted Handoff" of Chapter 6, "The Cassandra Architecture")</a><br>
+
+<b>Slides</b>: <a href="lec/30-cassandra-c/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 13</strong><br><span id="lec-31-title">Cassandra Replication</span></h5>
+
+<b>Slides</b>: <a href="lec/31-cassandra-d/slides.pdf">PDF</a><br>
+<b>Due:</b> P5<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p6">P6 (Cassandra)</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 12</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 16</strong><br><span id="lec-32-title">Streaming: Kafka Concepts</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> ("Enter Kafka" section of Chapter 1, "Meet Kafka")</a><br>
+
+<b>Slides</b>: <a href="lec/32-streaming-a/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 18</strong><br><span id="lec-33-title">Streaming: Kafka Demos</span></h5>
+
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 20</strong><br><span id="lec-34-title">Streaming: Kafka Reliability</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Kafka, The Definitive Guide, 2nd edition by Shapira <i>et al.</i> (Chapter 7, "Reliable Data Delivery")</a><br>
+
+<b>Slides</b>: <a href="lec/34-streaming-c/slides.pdf">PDF</a><br>
+<b>Due:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/blob/main/handin-worksheets/cassandra.pdf">Cassandra Worksheet</a><br>
+</div>
+</div>
+<div class="alert alert-primary my-5 week">Part 3: Cloud</div>
+<h3 class="my-3 border-bottom border-top">Week 13</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 23</strong><br><span id="lec-35-title">The Cloud</span></h5>
+
+<b>Slides</b>: <a href="lec/35-cloud/slides.pdf">PDF</a><br>
+<b>Due:</b> P6<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p7">P7 (Kafka)</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Nov 25</strong><br><span id="lec-36-title">Cloud Demos (Google)</span></h5>
+
+<b>Slides</b>: <a href="lec/36-bq-a/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Nov 27</strong><br>Thanksgiving Break</h5>
+
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 14</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Nov 30</strong><br><span id="lec-37-title">DataForm and BigQuery Types</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> ("BigQuery Geographic Information Systems" section of Chapter 8, "Advanced Queries")</a><br>
+
+<b>Slides</b>: <a href="lec/37-bq-b/slides.pdf">PDF</a><br>
+<b>Due:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/blob/main/handin-worksheets/kafka.pdf">Kafka Worksheet</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Dec 2</strong><br><span id="lec-38-title">BigQuery: Geographic Data</span></h5>
+
+<b>Due:</b> P7<br>
+<b>Release:</b> <a href="https://git.doit.wisc.edu/cdis/cs/courses/cs544/f26/main/-/tree/main/p8">P8 (Cloud)</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Fri, Dec 4</strong><br><span id="lec-39-title">BigQuery: Machine Learning</span></h5>
+
+<b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Google BigQuery: The Definitive Guide, by Lakshmanan <i>et al.</i> (Chapter 9, "Machine Learning in BigQuery")</a><br>
+
+<b>Slides</b>: <a href="lec/39-bq-d/slides.pdf">PDF</a><br>
+</div>
+</div>
+<h3 class="my-3 border-bottom border-top">Week 15</h2>
+<div class="row">
+<div class="col-md-4 my-3">
+<h5><strong>Mon, Dec 7</strong><br><span id="lec-40-title">BigQuery 4: Cost and Performance</span></h5>
+
+<b>Slides</b>: <a href="lec/40-bq-e/slides.pdf">PDF</a><br>
+</div>
+<div class="col-md-4 my-3">
+<h5><strong>Wed, Dec 9</strong><br><span id="lec-41-title">Review</span></h5>
+
+<b>Due:</b> P8<br>
+</div>
+</div>
+<br>
+
+      <script>
+        // this is a hack so that signin works, regardless of whether google or common.js
+        // loads first
+        var gapiLoaded = false
+        var gapiLoadedCallback = null
+
+        function gapiLoad() {
+        console.log("in gapiLoad")
+        gapiLoaded = true
+        if (gapiLoadedCallback != null) {
+        console.log("call gapi callback")
+        gapiLoadedCallback()
+        }
+        }
+      </script>
+
+      <!-- popups -->
+      <div class="loader" id="loader_wheel" style="display:none;"></div>
+
+      <div class="center_fixed_text alert alert-success" id="thank_you" style="display:none;">
+        <strong>Submitted</strong> - thank you.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show clicker_alert" role="alert" id="error_box" style="display:none;">
+        <button type="button" class="close" onclick="$('#error_box').hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Error:</strong> <span id="error_message"></span>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+	<span class="text-muted">Copyright &copy; 2026 Tyler R. Caraza-Harter</span>
+      </div>
+    </footer>
+
+    <!-- dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+	    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	    crossorigin="anonymous"></script>
+
+    <!-- main js -->
+    <script src="js/code-prettify/run_prettify.js"></script>
+    <script src="js/common.js"></script>
+    
+    <script src="https://apis.google.com/js/platform.js?onload=gapiLoad" defer async></script>
+  </body>
+</html>

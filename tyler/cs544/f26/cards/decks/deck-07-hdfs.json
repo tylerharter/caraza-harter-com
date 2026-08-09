@@ -1,0 +1,119 @@
+{
+  "deck_number": "07",
+  "topic": "hdfs",
+  "card_count": 16,
+  "cards": [
+    {
+      "note_id": 1697393570653,
+      "front": "What does GFS stand for?",
+      "back": "Google File System",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393593009,
+      "front": "What is the Hadoop system similar to GFS?",
+      "back": "HDFS (Hadoop File System)",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393629678,
+      "front": "What is a Hadoop system similar to Google's BigTable?",
+      "back": "HBase",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393687547,
+      "front": "What is a distributed analytics system that many people have started using instead of MapReduce?",
+      "back": "Spark",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393719734,
+      "front": "When Google MapReduce and BigTable were first created, where did they store their data?",
+      "back": "GFS",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393759470,
+      "front": "What is the technical word for having multiple copies of our data on different systems?",
+      "back": "replication",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393786575,
+      "front": "What is the technical word for breaking our data (for example, a file) into smaller pieces that are more manageable?",
+      "back": "partitioning",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393824565,
+      "front": "HDFS has a boss/worker architecture.&nbsp; What are the specific names given to the boss and workers in an HDFS cluster?",
+      "back": "boss: NameNode<br>worker: DataNode",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697393954782,
+      "front": "When a client wants to read an HDFS file, how does it interact with the NameNode and DataNodes?",
+      "back": "First it tells the NameNode what it wants to read, and the NameNode responds with information about where the client can find the data.<br><br>Then, the client fetches the data directly from the DataNodes.<br><br>Data does not flow through the NameNode because otherwise having a single NameNode would be a major bottleneck.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697394036715,
+      "front": "What are pipelined writes?",
+      "back": "If a client wants to write 3 replicas of a block to DataNodes DN1, DN2, and DN3, it does not send the data directly to each of them.<br><br>Instead, it sends the data to DN1, which forwards to DN2, which forwards to DN3.<br><br>This prevents any one computer from having too much work (most importantly, the client isn't doing all the work, because the client may be a weaker machine than the servers).",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697394103593,
+      "front": "If you write 1 MB to a triply replicated file, how much disk I/O does that generate?&nbsp; What if you read 1 MB from a triply replicated file?",
+      "back": "Write: 3 MB (need a copy on each machine, for safety)<br>Read: 1 MB (the three machines have identical data, so there is no point in requesting it from more than one)",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697466904426,
+      "front": "How do you format an HDFS NameNode?",
+      "back": "<div>hdfs namenode -format</div>",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697466932552,
+      "front": "How do you start running an HDFS NameNode with hostname \"main\" and port 9000?",
+      "back": "<div>hdfs namenode --fs hdfs://main:9000</div>",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697466961705,
+      "front": "How can you get an HDFS cluster report for hdfs://main:9000/?",
+      "back": "<div>hdfs dfsadmin -fs hdfs://main:9000/ -report</div>",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697466995208,
+      "front": "How can you start a DataNode and connect it to a NameNode with hostname \"main\" on port 9000?",
+      "back": "hdfs datanode -fs hdfs://main:9000",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "note_id": 1697467054692,
+      "front": "If you want to use commands like mkdir, cp, ls, cat, and du on HDFS, how do you do it?",
+      "back": "hdfs dfs -COMMAND ARGS<br><br>For example, to run \"ls\" on the \"data\" directory:<br><div>hdfs dfs -ls hdfs://main:9000/data/</div>",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    }
+  ]
+}

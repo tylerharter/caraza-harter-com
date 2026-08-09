@@ -1,0 +1,154 @@
+{
+  "deck_number": "05",
+  "topic": "storage",
+  "card_count": 21,
+  "cards": [
+    {
+      "note_id": 1696602931197,
+      "front": "Memory is byte-addressible.&nbsp; But what is the unit of access for an HDD, SSD, etc?",
+      "back": "These are block devices, so the unit is a <b>block</b>.&nbsp; A typical block size might be about 512 bytes.",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603018380,
+      "front": "What are two ways we can use memory to make access to block devices more efficient?",
+      "back": "caching: keep some disk data in memory, so we don't need to go back to disk if the data is reused<br><br>buffering: when doing many smaller reads/writes, accumulate more data in memory before doing the transfer between disk and memory (because block devices are more efficient for bigger accesses).",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603073951,
+      "front": "What are the names for these two data access patterns?<br>1. reading lots of data in order<br>2. jumping around and reading from many different places",
+      "back": "1. sequential<br>2. random",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603200628,
+      "front": "\"block\" and \"page\" have different meanings for SSD internals than we've seen for operating systems and interactions with block devices.&nbsp; What are the differences?",
+      "back": "<b>block</b> (for SSDs): unit of erasure (perhaps 100s of KBs)<br><b>block</b> (for using a block device): unit of transfer to/from device, perhaps 512 bytes<br><br><b>page&nbsp;</b>(for SSDs): unit of read/write within the define (few KBs)<br><b>page</b>&nbsp;(for system memory): unit of mapping between virtual memory and physical memory (usually 4 KB)",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603219406,
+      "front": "How can we break a block device into smaller sections?",
+      "back": "with partitions",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603243515,
+      "front": "How can we treat multiple individual block devices like one bigger, more reliabel one?",
+      "back": "With RAID (redundant array of inexpensive disks)",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603269134,
+      "front": "What is the data structure in a file system that points to blocks containing file data?",
+      "back": "inode",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696603297752,
+      "front": "On UNIX, how do we make many smaller file systems appear as one big one?",
+      "back": "By <b>mounting</b> them on top of each other",
+      "source_lecture": "14-file-systems",
+      "original_tags": "lec15"
+    },
+    {
+      "note_id": 1696794641624,
+      "front": "What does it mean for a format to be \"column oriented\"?",
+      "back": "The data in the column is layout out consecutively in memory or within a file.",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696794668748,
+      "front": "What is the orientation of CSVs and parquet files?",
+      "back": "CSVs: row oriented<br>Parquet: column oriented",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696794745006,
+      "front": "What is the tradeoff between text encoded and binary encoded formats?",
+      "back": "text: easier to debug (because you can just look at it)<br>binary: usually more efficient (often less space, and numbers usually already in a format on which CPUs can directly operate without further conversion)",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696794819347,
+      "front": "Compression works by looking for repetition over some window, say 32 KB.&nbsp; What would be the advantage and disadvage of increasing the window size?",
+      "back": "Advantage: find more repetition, and use that to get a smaller file size<br><br>Disadvantage: spend more computation time finding the repetition",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696794900455,
+      "front": "What does snappy prioritize, high speed, or high compression ratios?",
+      "back": "high speed<br><br>from the docs: \"[Snappy] does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression.\"",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696794980879,
+      "front": "Considering CSVs and parquets: when do we need to infer the schema?",
+      "back": "With CSVs we need to infer it, because everything in a CSV is a string (need to detect that all the strings in a given column look like integers, for example).<br><br>Parquets have schema information built in, so there is no need to infer the schema.",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795021697,
+      "front": "What is transactions processing?",
+      "back": "Operating on individual rows or a small number of rows at a time (e.g., adding, modifying, deleting rows).",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795048802,
+      "front": "What is analytics processing?",
+      "back": "Trying to answer questions about the data, which involves computation over whole columns of data.",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795061320,
+      "front": "What does OLTP stand for?",
+      "back": "Online Transactions Processing",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795070721,
+      "front": "What does OLAP stand for?",
+      "back": "Online Analytics Processing",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795136729,
+      "front": "What is a data warehouse?",
+      "back": "An OLAP database where we collect data from multiple sources (e.g., OLTP databases) for analysis.",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795196735,
+      "front": "What does ETL stand for?",
+      "back": "Extract Transform Load<br><br>Often used to get data into a data warehouse.&nbsp; For example, an ETL process might extract data from an OLTP database, transform it in some way, then load it into an OLAP database (the data warehouse).",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    },
+    {
+      "note_id": 1696795340200,
+      "front": "For analytics work, what are some tradeoffs between storing data in a database vs. storing it in some files (e.g., parquet files)?",
+      "back": "Database advantage: a database will often have a special storage format co-designed to work with the analytics engine -- the tight integration can lead to great performance.<br><br>Files advantage: if you want to go beyond doing SQL queries, having your data in a bunch of files makes it easier to use other tools.&nbsp; For example, it will probably be faster for some machine learning package to pull data from Parquet files (than do a big query on the database to extract everything).",
+      "source_lecture": "15-file-formats",
+      "original_tags": "lec16"
+    }
+  ]
+}

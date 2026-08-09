@@ -1,0 +1,26 @@
+/* spinner from https://www.w3schools.com/howto/howto_css_loader.asp */
+.loader {
+    border: 12px solid #f3f3f3;
+    border-top: 12px solid black;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -30px;
+    margin-left: -30px;
+    width: 60px;
+    height: 60px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.clicker_alert {
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    position:fixed;
+}

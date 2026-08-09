@@ -1,0 +1,273 @@
+{
+  "deck_number": "10",
+  "topic": "kafka",
+  "card_count": 38,
+  "cards": [
+    {
+      "note_id": 1699733870028,
+      "front": "What are two communication systems we've learned, for synchronous and asynchronous communication, respectively?",
+      "back": "gRPC: sync<br>Kafka: async<br><br>gRPC uses protobufs for messages.&nbsp; Kafka can use any format for messages (protobufs are a reasonable option).",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699733907923,
+      "front": "What are the three kinds of processes that work together in Kafka?",
+      "back": "producers =&gt; brokers =&gt; consumers",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699733946343,
+      "front": "What is cron?",
+      "back": "A program that can run other programs on a schedule",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734127864,
+      "front": "What are some advantages of using a streaming platform like Kafka for ETL jobs, rather than running ETL jobs on a schedule (say with cron) to move data from system A to system B?",
+      "back": "1. data will be fresher if we're constantly streaming it from transactions processing systems to analytics systems<br><br>2. if you have many transactions processing systems and many analytics systems, you may need to write a custom job for every pair of systems.&nbsp; Having a centralized log (like Kafka) means you just need to write one producer for each transactions processing system and one consumer for each analytics system",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734154675,
+      "front": "Where is topics data stored in Kafka?",
+      "back": "on brokers",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734173336,
+      "front": "Kafka topics consist of one or more _____, each of which contains a series of ________",
+      "back": "partitions<br>messages",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734273914,
+      "front": "When a producer sends a message, what are 3 things it typically specifies?&nbsp; And of the 3 things, what is optional?",
+      "back": "topic, key, value<br><br>key is optional",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734325685,
+      "front": "If a message doesn't have a key, how does a Kafka consumer decide what topic partition it should go in?",
+      "back": "A \"round robin\" policy is used, meaning the producer just rotates between different partitions each time there is a new message.",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734392493,
+      "front": "If a Kafka producer specifies a key for a message, how does it determine what partition the message should go to?",
+      "back": "partition = hash(key) % partition_count<br><br>Note that this is pluggable -- you could define a different policy to override the default if you wanted to.",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734453101,
+      "front": "How does a Kafka consumer request a batch of messages from the brokers, with a timeout of N milliseconds?",
+      "back": "<div>batch = consumer.poll(N)</div>",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734493355,
+      "front": "What does a Kafka batch contain?",
+      "back": "messages, divided by topic partition",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734602467,
+      "front": "If Kafka message A was produced before message B, when can we guarantee that consumers will see A before B?<br><br>Assume we don't know the partition count, but that whatever it is won't change.",
+      "back": "We can only guarantee this when A and B have the same <b>topic</b> AND&nbsp;<b>key</b>.",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734679517,
+      "front": "Kafka consumers typically read messages at ever increasing offsets in each of the tracked topic partitions, but if consumers want to move to a different offset, they can call this:<br><br><div>consumer.?????(partition, offset)</div>",
+      "back": "consumer.seek(partition, offset)",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734766949,
+      "front": "Why might you want to have different Kafka consumer groups?",
+      "back": "There are cases you might want the same messages to be seen by multiple different applications.&nbsp; You can achieve this by using different consumer groups for each application.<br><br>Example:<br><div>c = KafkaConsumer(\"clicks\", group_id=\"g1\", ...)</div>",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699734876680,
+      "front": "Why might you want multiple Kafka consumers in the same consumer group?",
+      "back": "If the consumer group is subscribed to a high-volume topic (meaning the topic is getting new messages at a high rate), it will help the system scale if different consumers running on different machines can be responsible for different partitions of that topic.",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699735056600,
+      "front": "What is the difference between log \"rollover\" and \"deletion\" in Kafka?&nbsp; What does \"retention\" mean?",
+      "back": "At any given time, new data for a topic partition is being written to an \"active\" file.&nbsp; Due to limits on file size/age, we might want to switch to writing to a new file, while still keeping the old file around in a finalized state.&nbsp; This is \"rollover\".<br><br>\"deletion\" refers to deleting non-active files that are too old, or to meet some other criteria specified by a \"retention\" policy.",
+      "source_lecture": "32-streaming-a",
+      "original_tags": "lec32"
+    },
+    {
+      "note_id": 1699995581506,
+      "front": "If your want to connect to a Kafka broker \"localhost:9092\", how would you do it in these cases?<br><br>from kafka import KafkaAdminClient, KafkaProducer, KafkaConsumer<br>admin = KafkaAdminClient(????)<br>producer = KafkaProducer(????)<br>consumer = KafkaConsumer(????)",
+      "back": "This can be pasted in where each \"????\" is:<br><br>bootstrap_servers=[\"localhost:9092\"]",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995646563,
+      "front": "How can you create a Kafka topic \"T\" with P partitions and R replicas?",
+      "back": "admin.create_topics([NewTopic(\"T\", num_partitions=P, replication_factor=R)])",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995692964,
+      "front": "How can a Kafka producer send the string \"hello\" to topic \"greetings\"?",
+      "back": "producer.send(\"greetings\", value=bytes(\"hello\", \"utf-8\"))<br><br>Values must always be represented as bytes!",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995728223,
+      "front": "How does a Kafka consumer check for a new batch of messages, with timeout of 1 second?",
+      "back": "batch = consumer.poll(1000)",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995755653,
+      "front": "How can you see the topic partitions a Kafka consumer is responsible for?",
+      "back": "consumer.assignment()",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995780318,
+      "front": "If you want a Kafka consumer to go back the start of each topic partition, how can you do that?",
+      "back": "consumer.seek_to_beginning()",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995901027,
+      "front": "Assignment of topic partitions to a Kafka consumer can happen automatically or manually.&nbsp; What does the code for each look like?",
+      "back": "automatic:<br>consumer.<b>subscribe</b>([\"some_topic\"])&nbsp; # Kafka decides which partitions of some_topic<br><br>manual:<br>consumer.<b>assign</b>([TopicPartition(\"some_topic\", 3)])&nbsp; &nbsp; # this consumer will only read from partition 3 of some_topic",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1699995968602,
+      "front": "If tp is a topic partition, how can you check the next offset a Kafka consumer will read at for that partition?",
+      "back": "offset = consumer.position(tp)",
+      "source_lecture": "33-streaming-b",
+      "original_tags": "lec33"
+    },
+    {
+      "note_id": 1700169996769,
+      "front": "When is a Kafka message considered \"committed\"?",
+      "back": "When it is written to ALL in-sync replicas.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700170095801,
+      "front": "In Kafka, both consumers and follower replicas fetch data from the leader replica.&nbsp; But how do the fetches differ?",
+      "back": "Consumers fetch only \"committed\" messages.<br><br>Followers fetch both committed and uncomitted messages.<br><br>This is because we only want consumers to see committed messages.&nbsp; But the way messages become committed is by being received by more replicas, so the follower replicas need to fetch uncommitted data.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700170433308,
+      "front": "If&nbsp;min.insync.replicas is X and the number of currently in-sync replicas is Y, why doesn't Kafka consider a message committed as soon as it is written to at least X replicas?&nbsp; (assume X&lt;Y in this question)",
+      "back": "Hypothetical scenario showing why sending an ACK in this scenario could result in loss of committed data:<br><br>Let's say X=2 and Y=3.<br><br>1. write occurs on two replicas (one \"in-sync\" replica doesn't have the message)<br>2. leader returns an \"ack\" indicating message is committed at offset 100<br>3. leader dies<br>4. Kafka selects a new leader from those that are in-sync -- let's say it selects the one that didn't receive the message<br>5. the new leader is the authority on what messages are at each offset, and might write a different messages at offset 100.&nbsp; This will mean a previously committed message will have changed<br><br>That's why a Kafka leader WILL NOT return an ack in step 2.&nbsp; It will wait until the message is on the third replica too.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700171802385,
+      "front": "In order to be considered \"in sync\", does a follower replica in Kafka need to have ALL the messages the leader has seen?",
+      "back": "No, it is allowed to lag a bit.&nbsp; This is configurable -- for example, you might define \"in sync\" to mean the follower has retrieved a batch reading the end of the topic partition in the last N seconds.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700233866531,
+      "front": "How do \"elections\" in distributed systems usually differ from a regular democratic election humans might participate in?",
+      "back": "In a human election, we usually have a couple goals:<br>1. represent the will of the people<br>2. have a well defined process so it is clear who the leader is (it is problematic if there is disagreement about who the leader is)<br><br>In distributed systems, we usually just care about (2).&nbsp; So in Kafka, for example, \"election\" of a replica leader is really just a special \"controller\" broker making a decision without input from other brokers.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700233937297,
+      "front": "What is an example of a \"write anomoly\" in Kafka?",
+      "back": "A message was acknowledged as successfully written, but it was not actually readable later.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700233956748,
+      "front": "What is an example of a \"read anomoly\" in Kafka?",
+      "back": "A message was read, but when you try to read it again later, it has dissapeared.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234037224,
+      "front": "Producers can be created like this: KafkaProducer(..., acks=????)<br><br>What are the options, and what do they each do?",
+      "back": "0: don't wait for the leader to send an ack<br>1: ack means leader has written message to its own log<br>\"all\": message has been written to all in-sync replicas",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234130832,
+      "front": "How might we end up with \"at-least-once\" semantics?",
+      "back": "This happens when a sender keeps retrying until it gets an acknowledgement of success.&nbsp; If the ack is received on the Nth time, then for the first (N-1) times, the message may or may not have gone through.&nbsp; This means the message will have been sent between 1 and N times.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234196767,
+      "front": "How might you end up with \"at-most-once\" semantics?",
+      "back": "You try to send a message, and you never retry sending, even if it isn't acknowledged.&nbsp; If not acknowledged, there's still a chance the message made it through, and the failure happened before the ack could be sent.&nbsp; So the messages will have been received either 0 or 1 times.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234218195,
+      "front": "What does it mean for an operation to be idempotent?",
+      "back": "<div>the effect of performing the operation multiple times is equivalent to the effect of performing the operation a single time</div>",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234278418,
+      "front": "How might we make an operation idempotent, even if it not naturally so?",
+      "back": "Associate the operation with a unique ID, and whatever system is receiving the operation requests is responsible for remembering previously seen IDs and supressing/ignoring duplicates.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234401062,
+      "front": "What is the problem with \"auto commit\" for Kafka consumers?",
+      "back": "Auto commit happens on some timer, and it's possible the consumer created some output (based on messages in a batch), then crashed before commiting the offset after those messages.&nbsp; When a new consumer takes over, it will start from slightly old offsets, and re-process messages that have already influenced the output.&nbsp; This could result in \"overcounting\" or other incorrect output.",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    },
+    {
+      "note_id": 1700234594315,
+      "front": "If we have Kafka consumers (a) processing messages from a Kafka topic and (b) writing output based on that processing, how can we guarantee each message is considered exactly once in the output, even if the consumer crashes and restarts?",
+      "back": "Whenever the consumer writes output, we want to simultaneously (that is, \"atomically\") write offsets to indicate what messages were used to create that output.&nbsp; For example, if the consumer is writing to a MySQL database, it might do two INSERTs as part of the <b>same transaction </b>(one INSERT for the actual output, and another INSERT to record the corresponding offsets somewhere).",
+      "source_lecture": "34-streaming-c",
+      "original_tags": "lec35"
+    }
+  ]
+}

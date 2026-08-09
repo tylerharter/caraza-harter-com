@@ -1,0 +1,672 @@
+{
+  "deck_number": "01",
+  "topic": "foundations",
+  "card_count": 95,
+  "cards": [
+    {
+      "note_id": 1693504271053,
+      "front": "What do systems primarily manage?",
+      "back": "Resources<br><br>Major resource types: compute, memory, storage, and network",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506640322,
+      "front": "what does a compiler do?",
+      "back": "translate high-level code (something a programmer would write) to low-level code, such as machine code that a CPU can directly execute",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506728206,
+      "front": "what does an interpreter do?",
+      "back": "loop over high-level code and execute corresponding operations on the CPU, as the program executes",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506837996,
+      "front": "What is a language (other than Java) that compiles to bytecode for the JVM?",
+      "back": "Scala is the best answer (important for us, because we'll learn Spark, which was written in Scala).<br><br>Python could technically be an answer too due to the Jython project, but this probably isn't used much in practice.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506880035,
+      "front": "Consider high level code (like Python), machine code, and byte code -- what can run directly on a CPU?",
+      "back": "machine code",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506888808,
+      "front": "What does JVM stand for?",
+      "back": "Java Virtual Machine",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506921132,
+      "front": "What is a common extension for files containing Java bytecode?",
+      "back": ".class",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506928242,
+      "front": "What is a common extension for files containing Python bytecode?",
+      "back": ".pyc",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693506974739,
+      "front": "What does this Python code do?<br><br>import dis<br>dis.dis(\"????\")",
+      "back": "Shows you the Python bytecode corresponding to the Python code in the string.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507002993,
+      "front": "If you start using more machines, what kind of scaling is it?",
+      "back": "scaling out",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507014986,
+      "front": "If you start using a more powerful machine, what kind of scaling is it?",
+      "back": "scale up",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507085355,
+      "front": "What does CPU stand for?",
+      "back": "Central Processing Unit",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507093662,
+      "front": "What does GPU stand for?",
+      "back": "Graphics Processing Unit",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507106625,
+      "front": "What does RAM stand for?",
+      "back": "Random Access Memory",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507117531,
+      "front": "What does HDD stand for?",
+      "back": "Hard Disk Drive",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507126103,
+      "front": "What does SSD stand for?",
+      "back": "Solid State Disk",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507167936,
+      "front": "What does NIC stand for?",
+      "back": "Network interface card/controller",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507642698,
+      "front": "What does it mean for a device to provide random access?",
+      "back": "You can jump around and read from different locations efficiently.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507654997,
+      "front": "What values can a bit hold?",
+      "back": "0 or 1",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507688239,
+      "front": "How many different values can a byte hold?",
+      "back": "A byte has 8 bits, so there are 2^8 different possible combinations of bits.&nbsp; So 256 different values.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507736825,
+      "front": "How much is 1 KB?",
+      "back": "1024 (or 1000) bytes",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507748524,
+      "front": "How much is 1 MB?",
+      "back": "1024 KB (or 1000 KB)",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507761676,
+      "front": "How much is 1 GB?",
+      "back": "1024 (or 1000) MB",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507771738,
+      "front": "How much is 1 TB?",
+      "back": "1024 (or 1000) GB",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507819520,
+      "front": "What does it mean for a device to be \"byte addressible\"?",
+      "back": "Each byte has it's own address, and the CPU can use that address to get the value.<br><br>Extracting a single bit from a byte actually involves more steps than using the whole byte.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507836280,
+      "front": "What is generally faster, storage or memory?",
+      "back": "Memory",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507896008,
+      "front": "What does volatile mean, and what is an example of hardware that is volatile?",
+      "back": "Volatile means you lose the contents upon reboot.&nbsp; Memory (e.g., RAM) is volatile, storage (e.g., SSD) is non-volatile.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693507995049,
+      "front": "What do we mean with we call HDDs and SSDs \"block devices\"?",
+      "back": "Data is read/written in blocks of many bytes (for example, 0.5 KB).<br><br>Accessing 1 byte in the block takes the same time as accessing the whole block.",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693508080732,
+      "front": "A device can store 1000 GB, can transfer 100 MB/s, and serve one request in 10 ms.&nbsp; What kinds of metrics are these, respectively?",
+      "back": "1000 GB: capacity<br>100 MB/s: throughput<br>10 ms: latency",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693510260893,
+      "front": "If throughput can be expressed as X MB/s or Y Mbps, what is the relationship between X and Y?",
+      "back": "Y = X * 8<br><br>(because the \"b\" in Mbps stands for bits, and there are 8 bits in a byte)",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693510506280,
+      "front": "often a bunch of server machines are stacked on top of each other in a metal box called a ______ and connected with a network switch",
+      "back": "rack",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693510550623,
+      "front": "a large facility containing many racks of computers is called a ______",
+      "back": "data center",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1693510600994,
+      "front": "a cluster is a ______",
+      "back": "bunch of computers working together",
+      "source_lecture": "01-course",
+      "original_tags": "lec1"
+    },
+    {
+      "note_id": 1694118812603,
+      "front": "what is a program you can use to run shell programs on another machine?",
+      "back": "ssh",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118863086,
+      "front": "what is the technical term for \"folder\"?",
+      "back": "\"directory\" -- \"d\" shows up in many acronyms/commands for this reason (pwd, cd, etc)",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118891126,
+      "front": "What Linux command tells you see what directory you're in?",
+      "back": "pwd",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118907800,
+      "front": "What Linux command shows you all the contents of a directory?",
+      "back": "ls",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118919160,
+      "front": "How do you create a new empty file, file.txt?",
+      "back": "touch file.txt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118934922,
+      "front": "What Linux command do you use to install software on Ubuntu?",
+      "back": "apt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694118971122,
+      "front": "What is a Linux command you can use to download from a URL to a file on your computer?",
+      "back": "wget SOME_URL<br><br>(curl is a similar tool)",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119012816,
+      "front": "What Linux command lets you rename a file?",
+      "back": "mv name1.txt name2.txt<br><br>It also lets you move a file, like this:<br><br>mv name.txt somedir",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119023770,
+      "front": "How can you copy from file A to file B?",
+      "back": "cp A B",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119036775,
+      "front": "What Linux command lets you copy files between computers?",
+      "back": "scp",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119059806,
+      "front": "What Linux command lets you see everything in a file?",
+      "back": "cat",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119083413,
+      "front": "What Linux commands let you see just the start or end of a file?",
+      "back": "head file.txt<br>tail file.txt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119098427,
+      "front": "What Linux command creates a new directory?",
+      "back": "mkdir somedir",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119194195,
+      "front": "What command lets you see entries in the Linux manual?",
+      "back": "man SOMECOMMAND",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119208114,
+      "front": "How do you navitage to a new directory?",
+      "back": "cd SOMEDIR",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119225961,
+      "front": "How do you run commands as the root user?",
+      "back": "sudo COMMAND",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119244443,
+      "front": "What Linux command lets you change the access permissions on a file?",
+      "back": "chmod",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119264574,
+      "front": "Given a program name, how can you find where it is on your computer?",
+      "back": "which PROGRAMNAME",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119297349,
+      "front": "How can you see an environment variable (for example, PATH)?",
+      "back": "echo $PATH",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119313672,
+      "front": "How can you pipe the standard output of A to the standard input of B?",
+      "back": "A | B",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119361014,
+      "front": "How do you redirect the standard output of A to file.txt, creating file.txt (or <b>replacing</b> any prior content)?",
+      "back": "A &gt; file.txt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119378981,
+      "front": "How do you redirect the standard output of A to file.txt, creating file.txt (or <b>appending</b> to the end of any prior content)?",
+      "back": "A &gt;&gt; file.txt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119405931,
+      "front": "How do you send BOTH standard output and standard error to a file?",
+      "back": "myprogram &amp;&gt; file.txt",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119428931,
+      "front": "What program counts lines, words, and characters?",
+      "back": "wc",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119451633,
+      "front": "What program filters standard input, writing matching lines to standard output?",
+      "back": "grep",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119465577,
+      "front": "What program recursively finds directories and files?",
+      "back": "find",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119503930,
+      "front": "How can you run a program asyncronously?&nbsp; (meaning you can type other things on the prompt while waiting for it to finish)",
+      "back": "longprogram &amp;",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119546355,
+      "front": "How can you see running programs and their PIDs?&nbsp; (process IDs)",
+      "back": "ps<br><br>To see more:<br><br>ps ax<br><br>a=other users<br>x=not just processes attached to a terminal",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119561882,
+      "front": "How do you kill a process by its PID number?",
+      "back": "kill PID",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119572306,
+      "front": "How do you kill a process by its name?",
+      "back": "pkill NAME",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119588670,
+      "front": "How can you see CPU and memory usage on your machine?",
+      "back": "htop",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119611937,
+      "front": "What Linux command shows you disk utilization?",
+      "back": "df<br><br>(\"df -h\" shows human readable)",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119630184,
+      "front": "What command shows you disk usage by everything in the current directory?",
+      "back": "du -hs .",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694119680206,
+      "front": "How can you see most port numbers being used by processes on your machine?",
+      "back": "sudo ss -tlpn",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1725569658336,
+      "front": "If a file is continually growing (for example, a program is logging to it), how can you run the \"tail\" command so that you keep seeing additional content as it is written to the file?",
+      "back": "tail -f somefile.txt<br><br>Without following (-f), tail will print the current end of the file and exit, without waiting for future data to be written.",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1737647129259,
+      "front": "What keyboard shortcut can you use to run the previous shell command again?",
+      "back": "Up arrow key",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1737647148774,
+      "front": "What keyboard shortcut can you use to kill a program running in a shell",
+      "back": "Control C<br>(it's not copy!)",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1737647178704,
+      "front": "What keyboard shortcut can you use to indicate you are done typing, and want to exit the shell (or other program taking input)?",
+      "back": "Control D",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1737647206342,
+      "front": "What keyboard shortcut can you use to search over previous shell commands?",
+      "back": "Control R<br>(reverse search)",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1737647236823,
+      "front": "In the shell, if you start typing a few characters and want the shell to complete it, what key should you hit?",
+      "back": "TAB",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1757005791933,
+      "front": "How can you set an environment variable MYVAR to value xyz, in a way that's visible to programs you will later launch in the shell session?",
+      "back": "export MYVAR=xyz",
+      "source_lecture": "02-shell",
+      "original_tags": "lec2"
+    },
+    {
+      "note_id": 1694531105027,
+      "front": "If you want to download an image X from DockerHub to your VM, what command do you use?",
+      "back": "docker pull X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531116887,
+      "front": "How can you see all the Docker images on your VM?",
+      "back": "docker images",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531178437,
+      "front": "How can you give a Docker image \"a\" an additional second name, \"b\"?",
+      "back": "docker tag a b",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531206659,
+      "front": "How can you launch a container from image X?",
+      "back": "docker run X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531220803,
+      "front": "How can you see existing containers, including those exited?",
+      "back": "For running containers:<br>docker ps<br><br>For exited ones too, add \"-a\":<br>docker ps -a",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531239486,
+      "front": "How can you delete a container X?",
+      "back": "docker rm X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531248826,
+      "front": "How can you delete an image X?",
+      "back": "docker rmi X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531277581,
+      "front": "How can you see Docker's disk utilization?",
+      "back": "docker system df",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531292734,
+      "front": "How can you cleanup unnecessary Docker data to free up space?",
+      "back": "docker system prune",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531319406,
+      "front": "How can you see the output (for example prints) for an application running inside container X?",
+      "back": "docker logs X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531380960,
+      "front": "How do you run a command (lets say \"ls\") inside a running container X?",
+      "back": "docker exec X ls",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531407793,
+      "front": "How do you see resource consumption of running containers?",
+      "back": "docker stats",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531430801,
+      "front": "How do you get a bash shell inside an existing container X?",
+      "back": "docker exec -it X bash",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531477146,
+      "front": "How do you cause a container X to immediately quit?",
+      "back": "docker kill X<br><br>This sends a kill signal, which the container cannot ignore.",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531522324,
+      "front": "How do you use the Dockerfile in the current directory to build an image X?",
+      "back": "docker build . -t X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531572294,
+      "front": "What is the difference between \"docker rm\" and \"docker kill\"",
+      "back": "After \"docker kill\", the container won't be running, but it will still exist (you can see it with \"docker ps -a\").&nbsp; \"docker rm\" actually cleans up the space that was used by that container.",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531593591,
+      "front": "In a Dockerfile, how do you specify a base image X?",
+      "back": "FROM X",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531628070,
+      "front": "In a Dockerfile, how do you execute a command, say \"apt update\"?",
+      "back": "RUN apt update",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1694531673377,
+      "front": "In a Dockerfile, how do you copy a file X.txt (in the same directory on the VM) to /Y.txt (in the image)?",
+      "back": "COPY X.txt /Y.txt",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1726063702490,
+      "front": "In a Dockerfile, why is a single install line preferred?<br><br>RUN apt-get update &amp;&amp; apt-get install -y ...<br><br>In contrast to two lines:<br><br>RUN apt-get update<br>RUN apt-get install -y ...",
+      "back": "The \"update\" refreshes the VM's knowledge of what packages are in the apt repositories, and \"install\" actuall installs something from a repository.&nbsp; If you wait too long between an update and install, apt's view of the repositories will be stale, and the install won't work.<br><br>Docker builds cache results on a line-by-line basis to avoid running repeat commands.&nbsp; That means that it might not run \"apt-get update\" again if it has been run previously.&nbsp; Usually that's ok, but in this case we want it to be recent.",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    },
+    {
+      "note_id": 1757431148541,
+      "front": "How do you cause a container X to quit gracefully?",
+      "back": "docker stop X<br><br>This sends a terminate signal to the container, which the application can catch and then handle by cleaning up before stopping.&nbsp; If it takes too long, a kill signal will be sent, though.",
+      "source_lecture": "04-docker",
+      "original_tags": "lec4"
+    }
+  ]
+}
