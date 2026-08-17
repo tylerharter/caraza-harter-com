@@ -112,6 +112,7 @@ def schedule():
     sections = extra['sections'] # indexed by week
     holiday = extra['holiday']
     projects = extra.get('projects', {})
+    week_labels = extra.get('week_labels', {}) # HTML appended to the week heading
 
     # Build project info by lecture number
     project_releases = {}  # lecture_num -> list of (project_name, title)
@@ -184,7 +185,10 @@ def schedule():
 
         # days
         row = cells[i:i+cols]
-        f.write('<h3 class="my-3 border-bottom border-top">Week %d</h2>\n' % week)
+        heading = 'Week %d' % week
+        if str(week) in week_labels:
+            heading += ': ' + week_labels[str(week)]
+        f.write('<h3 class="my-3 border-bottom border-top">%s</h2>\n' % heading)
 
         f.write('<div class="row">\n')
         for day, cell in enumerate(row):

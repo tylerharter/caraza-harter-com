@@ -10,6 +10,13 @@
     "11/27": ["Thanksgiving Break"]
   },
   "quizzes": [],
+  "week_labels": {
+    "2": "<span style='color: red;'>Warmup Quiz (2 points)</span>",
+    "4": "<span style='color: red;'>Quiz 1 (8 points)</span>",
+    "7": "<span style='color: red;'>Quiz 2 (8 points)</span>",
+    "11": "<span style='color: red;'>Quiz 3 (8 points)</span>",
+    "14": "<span style='color: red;'>Quiz 4 (8 points)</span>"
+  },
   "projects": {
     "P1": {"release": 4, "due": 10, "title": "Docker"},
     "P2": {"release": 10, "due": 16, "title": "Network+Memory"},
