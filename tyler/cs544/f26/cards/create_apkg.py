@@ -83,8 +83,9 @@ def create_deck_from_json(json_path, output_dir):
 
 
 def main():
-    decks_dir = Path('/Users/tharter/scratch/cards/decks')
-    output_dir = Path('/Users/tharter/scratch/cards/apkg')
+    cards_dir = Path(__file__).resolve().parent
+    decks_dir = cards_dir / 'decks'
+    output_dir = cards_dir / 'apkg'
     output_dir.mkdir(exist_ok=True)
 
     print("=== CREATING APKG FILES ===\n")
