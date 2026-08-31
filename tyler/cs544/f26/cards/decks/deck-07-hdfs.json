@@ -1,7 +1,7 @@
 {
   "deck_number": "07",
   "topic": "hdfs",
-  "card_count": 16,
+  "card_count": 27,
   "cards": [
     {
       "note_id": 1697393570653,
@@ -112,6 +112,72 @@
       "note_id": 1697467054692,
       "front": "If you want to use commands like mkdir, cp, ls, cat, and du on HDFS, how do you do it?",
       "back": "hdfs dfs -COMMAND ARGS<br><br>For example, to run \"ls\" on the \"data\" directory:<br><div>hdfs dfs -ls hdfs://main:9000/data/</div>",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "If a file is 3MB and the HDFS block size is 64MB, how much disk space is used?",
+      "back": "3MB. HDFS does not waste the remaining 61MB — a smaller block is used.<br><br>If a file does NOT fit in 1 block, it is split into multiple blocks.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "Benefits of <b>high</b> replication?",
+      "back": "Better fault tolerance.<br><br>Higher read bandwidth (more DataNodes can serve the same block).",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "Benefits of <b>low</b> replication?",
+      "back": "More efficient writes (a byte of logical data is written to fewer machines).<br><br>Less storage used.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "Benefits of <b>large</b> block size in HDFS?",
+      "back": "Less memory consumed for NameNode block-map entries, and fewer lookups to the block-map (assuming files are usually bigger than the block size).<br><br>More sequential I/O (more efficient).",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "How does the NameNode detect DataNode failure?",
+      "back": "DataNodes send <b>heartbeat</b> messages every T seconds.<br><br>> M seconds silent → <b>stale</b> (no writes)<br>> N seconds silent → <b>dead</b> (underreplicated, must re-replicate)",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "What happens if a stale DataNode comes back online?",
+      "back": "Data can become <b>overreplicated</b> — extra copies may be deleted.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "In HDFS, what is the granularity of block size and replication factor?",
+      "back": "Both are per <b>file</b>.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "What does <code>hdfs dfs -du -h</code> show?",
+      "back": "Two sizes: <b>logical</b> (actual) and <b>physical</b> (with replication).<br><br>Example: 14.9K / 44.6K → 3 replicas.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "What is the difference between logical blocks and physical blocks in HDFS?",
+      "back": "Logical = chunk of the original file.<br>Physical = a replica on a DataNode.<br><br>1 logical block × 3x replication = 3 physical blocks.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "A client writes 4MB to a 5x replicated file. How much does the <b>client</b> send over the network?",
+      "back": "<b>4MB.</b> Pipelined writes — client sends to first DN only; each DN forwards to the next.",
+      "source_lecture": "19-hdfs",
+      "original_tags": "lec19"
+    },
+    {
+      "front": "Which nodes need formatting before starting an HDFS cluster?",
+      "back": "Only the <b>NameNode</b>.",
       "source_lecture": "19-hdfs",
       "original_tags": "lec19"
     }
