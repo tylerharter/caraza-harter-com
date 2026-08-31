@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+# /// script
+# requires-python = ">=3.9"
+# dependencies = [
+#     "boto3",
+#     "GitPython",
+# ]
+# ///
 
 # Copyright 2018 Tyler Caraza-Harter
 #
@@ -14,7 +21,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import boto3, uuid, os, io, json, mimetypes, git, sys
+import boto3, uuid, os, io, json, mimetypes, git, sys, subprocess
 
 # https://s3.us-east-2.amazonaws.com/caraza-harter-4dcf7c05-8564-11e8-a86d-6a00020017a0/index.html
 #
@@ -117,6 +124,11 @@ class Syncer:
         if not self.dry:
             self.set_last_commit(curr.hexsha)
 
+def flush_cdn():
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'flush-cdn.sh')
+    print('FLUSH CDN: %s' % script)
+    subprocess.run([script], check=True)
+
 def main():
     syncer = Syncer()
     paths = sys.argv[1:]
@@ -127,6 +139,8 @@ def main():
             # use short cache timeout for these since we're debugging
             print('sync %s' % path)
             syncer.sync_path(path, ttl=3)
+    if not syncer.dry:
+        flush_cdn()
 
 if __name__ == '__main__':
     main()
