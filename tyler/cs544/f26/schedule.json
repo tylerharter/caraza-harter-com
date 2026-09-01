@@ -20,11 +20,11 @@
   "projects": {
     "P1": {"release": 4, "due": 10, "title": "Docker"},
     "P2": {"release": 10, "due": 16, "title": "Network+Memory"},
-    "P3": {"release": 16, "due": 23, "title": "Compute+Storage"},
-    "P4": {"release": 23, "due": 28, "title": "HDFS"},
-    "P5": {"release": 28, "due": 31, "title": "Spark"},
-    "P6": {"release": 31, "due": 35, "title": "Cassandra"},
-    "P7": {"release": 35, "due": 38, "title": "Kafka"},
+    "P3": {"release": 16, "due": 20, "title": "Compute+Storage"},
+    "P4": {"release": 20, "due": 24, "title": "HDFS"},
+    "P5": {"release": 24, "due": 31, "title": "Spark"},
+    "P6": {"release": 31, "due": 34, "title": "Cassandra"},
+    "P7": {"release": 34, "due": 38, "title": "Kafka"},
     "P8": {"release": 38, "due": 41, "title": "Cloud"}
   },
   "worksheets": {}
