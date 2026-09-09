@@ -1,3 +1,5 @@
 Deployment (Linux Pipelines)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann ("Batch Processing with Unix Tools" of Chapter 10)</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_09_26-09%3A53%3A37/1_2dzi9gwn
