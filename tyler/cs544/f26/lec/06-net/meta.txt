@@ -1,3 +1,5 @@
 Network (Overview)
 
 <b>Read:</b> <a href="https://www.madisonpubliclibrary.org/resources/eresources/oreilly-public-libraries-tech-ebooks-and-digital-learning">Designing Data Intensive Applications, Kleppmann (Chapter 4, "Encoding and Evolution")</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_16_26-09%3A54%3A47/1_eiyqbl45
