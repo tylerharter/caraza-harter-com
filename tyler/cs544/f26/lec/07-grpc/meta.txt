@@ -1,2 +1,4 @@
 Network (gRPC)
 <b>Read:</b> <a href="https://grpc.io/docs/languages/python/basics/">gRPC Basics Tutorial</a><br>
+
+https://mediaspace.wisc.edu/media/Tyler%20Caraza-Harter-Morgridge%201570-09_18_26-09%3A54%3A20/1_kpejaky7
