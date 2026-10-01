@@ -1,0 +1,117 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>P2 Code Interview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: single reading column; questions as the primary block, process as a quieter checklist below */
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --fg: #1b1f27;
+    --muted: #5b6372;
+    --line: #dde1e8;
+    --accent: #c5050c; /* Badger red */
+    --code-bg: #eef0f4;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171c; --surface: #1c2027; --fg: #e6e8ec; --muted: #9aa2b1;
+      --line: #2e343e; --accent: #ff5a5f; --code-bg: #262b34; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171c; --surface: #1c2027; --fg: #e6e8ec; --muted: #9aa2b1;
+    --line: #2e343e; --accent: #ff5a5f; --code-bg: #262b34; color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+  .wrap { max-width: 44rem; margin: 0 auto; padding-inline: 16px; padding-block: 2.5rem 3rem; display: grid; gap: 2rem; }
+  header { display: grid; gap: .25rem; }
+  .eyebrow { font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin: 0; font-size: 1.75rem; font-weight: 600; text-wrap: balance; }
+  h2 { margin: 0; font-size: 1.15rem; font-weight: 600; }
+  .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  ol.qs { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+  ol.qs li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; display: grid; grid-template-columns: 3rem 1fr; gap: .5rem; }
+  .num { font-family: var(--mono); font-weight: 500; font-size: 1.05rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .qtext { min-width: 0; }
+  .part { display: block; font-size: .78rem; color: var(--muted); letter-spacing: .03em; margin-top: .3rem; }
+  code { font-family: var(--mono); font-size: .88em; background: var(--code-bg); padding: .08em .3em; border-radius: 3px; }
+  button { font: inherit; font-size: .9rem; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .35rem .8rem; cursor: pointer; }
+  button:hover { border-color: var(--muted); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ol.steps, ul.steps { margin: 0; padding-left: 1.4rem; display: grid; gap: .4rem; }
+  ol.steps li::marker { color: var(--muted); font-family: var(--mono); }
+  a { color: var(--accent); font-weight: 600; overflow-wrap: anywhere; }
+  section { display: grid; gap: .9rem; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">CS 544 · P2 Interview</span>
+    <h1>Distributed Property Lookup: Code Interview</h1>
+  </header>
+
+  <section aria-labelledby="w-head">
+    <h2 id="w-head">When/Where</h2>
+    <ul class="steps">
+      <li>Drop by any in-person office hour time: <a href="https://docs.google.com/spreadsheets/d/1Zzu_qW5Lu2hTpKo7nzFBVDcXY7W_n_UnaDs0gVpykog/view" target="_blank" rel="noopener">https://docs.google.com/spreadsheets/d/1Zzu_qW5Lu2hTpKo7nzFBVDcXY7W_n_UnaDs0gVpykog/view</a></li>
+      <li>We will not conduct interviews via Zoom.</li>
+      <li>You must complete your interview by Oct 23.</li>
+      <li>We may not have enough capacity to interview everybody if you come at the last possible time.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="q-head">
+    <h2 id="q-head">Questions</h2>
+    <ol class="qs" id="qs"></ol>
+  </section>
+
+  <section aria-labelledby="p-head">
+    <h2 id="p-head">Process</h2>
+    <ol class="steps">
+      <li>Student brings a laptop with their code open. During the session, the student may not use AI or other resources to look up answers.</li>
+      <li>TA/mentor asks the student the questions above.</li>
+      <li>Stop early once the student has answered 2 mostly correctly.</li>
+      <li>The student has at most 10 minutes total, across all questions.</li>
+      <li>TA/mentor submits the interview results form: <a href="https://forms.gle/8woX2g89GqBZ9rZZ8" target="_blank" rel="noopener">https://forms.gle/8woX2g89GqBZ9rZZ8</a>.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+const Q = [
+  ["Part 1", "Show the variable(s) that track which dataset server gets the next request, and where they're updated."],
+  ["Part 1", "Show the code that catches the gRPC-specific exception. What exception class is it, and what happens after it's caught?"],
+  ["Part 1", "Look at the load-balancing code in <code>cache.py</code>. Suppose a new requirement says that if a dataset server returns an error (or the gRPC call to it fails), the cache stops sending it requests for a fixed time, say 30 seconds. Describe how you would implement this."],
+  ["Part 1", "If you had to support 3 dataset servers instead of 2, what would need to change in <code>cache.py</code>? If your implementation already handles this, explain why no changes are needed."],
+  ["Part 2", "Show the data structure(s) you use to decide which entry to evict when the cache is full."],
+  ["Part 2", "On a cache hit, what does your code do to update that entry's recency? Show it."],
+  ["Part 2", "Show the code that guarantees errors are never added to the cache."],
+  ["Part 3", "Which file reads <code>addresses.csv.gz</code>, and what module or package does it use to read it?"],
+  ["Part 3", "Your code should work regardless of where each column appears in the CSV. Show the relevant code and explain why it still works if the column order changes."],
+  ["Part 3", "If <code>addresses.csv.gz</code> contained garbage instead of valid CSV, what would happen, and why? Answer by pointing to the code."],
+  ["Part 3", "Show a method in <code>dataset.py</code> that overrides a method of the generated gRPC servicer class."],
+  ["Part 3", "Show the line of code in <code>dataset.py</code> that determines which port the dataset server listens on."],
+  ["Part 3", "When, and in which file, does the command that generates <code>.py</code> files from <code>.proto</code> run? Show the command."],
+  ["Part 3", "Show how <code>cache.py</code> decides whether to connect to the Java or Python dataset servers."],
+  ["Part 4", "Why can't you simply delete <code>failed</code> from <code>AddressResponse</code> and reuse its field number for <code>error</code>? Show how your cache still works with the Java server."],
+  ["Part 4", "Trace a request to <code>/zip/53706</code>: which function in <code>cache.py</code> handles it, what gRPC call does it make, and what function in <code>dataset.py</code> answers it?"]
+];
+
+function draw() {
+  const idx = Q.map((_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  const pick = idx.slice(0, 4).sort((a, b) => a - b);
+  document.getElementById("qs").innerHTML = pick.map(i =>
+    `<li><span class="num">Q${i + 1}</span><div class="qtext">${Q[i][1]}</div></li>`
+  ).join("");
+}
+draw();
+</script>
+
+</body></html>
