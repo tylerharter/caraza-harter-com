@@ -1,0 +1,113 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>P5 Code Interview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: single reading column; questions as the primary block, process as a quieter checklist below */
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --fg: #1b1f27;
+    --muted: #5b6372;
+    --line: #dde1e8;
+    --accent: #c5050c; /* Badger red */
+    --code-bg: #eef0f4;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171c; --surface: #1c2027; --fg: #e6e8ec; --muted: #9aa2b1;
+      --line: #2e343e; --accent: #ff5a5f; --code-bg: #262b34; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171c; --surface: #1c2027; --fg: #e6e8ec; --muted: #9aa2b1;
+    --line: #2e343e; --accent: #ff5a5f; --code-bg: #262b34; color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+  .wrap { max-width: 44rem; margin: 0 auto; padding-inline: 16px; padding-block: 2.5rem 3rem; display: grid; gap: 2rem; }
+  header { display: grid; gap: .25rem; }
+  .eyebrow { font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin: 0; font-size: 1.75rem; font-weight: 600; text-wrap: balance; }
+  h2 { margin: 0; font-size: 1.15rem; font-weight: 600; }
+  .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  ol.qs { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+  ol.qs li { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.1rem; display: grid; grid-template-columns: 3rem 1fr; gap: .5rem; }
+  .num { font-family: var(--mono); font-weight: 500; font-size: 1.05rem; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .qtext { min-width: 0; }
+  .part { display: block; font-size: .78rem; color: var(--muted); letter-spacing: .03em; margin-top: .3rem; }
+  code { font-family: var(--mono); font-size: .88em; background: var(--code-bg); padding: .08em .3em; border-radius: 3px; }
+  button { font: inherit; font-size: .9rem; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: .35rem .8rem; cursor: pointer; }
+  button:hover { border-color: var(--muted); }
+  button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ol.steps, ul.steps { margin: 0; padding-left: 1.4rem; display: grid; gap: .4rem; }
+  ol.steps li::marker { color: var(--muted); font-family: var(--mono); }
+  a { color: var(--accent); font-weight: 600; overflow-wrap: anywhere; }
+  section { display: grid; gap: .9rem; }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">CS 544 · P5 Interview</span>
+    <h1>Spark Code Contests Analysis: Code Interview</h1>
+  </header>
+
+  <section aria-labelledby="w-head">
+    <h2 id="w-head">When/Where</h2>
+    <ul class="steps">
+      <li>Drop by any in-person office hour time: <a href="https://docs.google.com/spreadsheets/d/1Zzu_qW5Lu2hTpKo7nzFBVDcXY7W_n_UnaDs0gVpykog/view" target="_blank" rel="noopener">https://docs.google.com/spreadsheets/d/1Zzu_qW5Lu2hTpKo7nzFBVDcXY7W_n_UnaDs0gVpykog/view</a></li>
+      <li>We will not conduct interviews via Zoom.</li>
+      <li>You must complete your interview by Nov 25.</li>
+      <li>We may not have enough capacity to interview everybody if you come at the last possible time.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="q-head">
+    <h2 id="q-head">Questions</h2>
+    <ol class="qs" id="qs"></ol>
+  </section>
+
+  <section aria-labelledby="p-head">
+    <h2 id="p-head">Process</h2>
+    <ol class="steps">
+      <li>Student brings a laptop with their code open. During the session, the student may not use AI or other resources to look up answers.</li>
+      <li>TA/mentor asks the student the questions above.</li>
+      <li>Stop early once the student has answered 2 mostly correctly.</li>
+      <li>The student has at most 10 minutes total, across all questions.</li>
+      <li>TA/mentor submits the interview results form: <a href="https://forms.gle/KzZY9Jozeg4bmxjh6" target="_blank" rel="noopener">https://forms.gle/KzZY9Jozeg4bmxjh6</a>.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+const Q = [
+  ["Part 1", "Show your Q1 code that computes the answer via RDDs. Identify which operation is a transformation and which one is an action."],
+  ["Part 1", "Show your Q2 joins. If you had incorrectly used a LEFT or RIGHT JOIN instead of an INNER JOIN, would you risk undercounting or overcounting?"],
+  ["Part 1", "Show your Q3 code that maps <code>difficulty</code> to Easy/Medium/Hard. Suppose a new requirement adds an \"Expert\" category for difficulty above 20. What would you change?"],
+  ["Part 1", "Show your Q4 output. Based on what you see, explain which tables will have parquet files under <code>hdfs://nn:9000/user/hive/warehouse</code>."],
+  ["Part 2", "Look at your Q5 <code>explain</code> output. Is data shuffled over the network? Why or why not?"],
+  ["Part 2", "Show where your Q6 code caches the data. Why isn't the measurement right after the cache call faster than the first?"],
+  ["Part 3", "Show the prompt <code>human_query</code> builds for Q7. Does it include column types? If so, show the code that extracts them; if not, how could you get them?"],
+  ["Part 3", "For Q8, show the code that extracts the SQL from Gemini's response. What would happen if Gemini wrapped the query in a markdown code block (or didn't)?"],
+  ["Part 4", "Show your Q9 Pipeline, and identify its first stage in the code. What is the purpose of that stage?"],
+  ["Part 4", "Show your Q10 plot. Based on the results, what tree depth would you recommend, and why?"]
+];
+
+function draw() {
+  let pick = Q.map((_, i) => i);
+  if (!new URLSearchParams(location.search).has("all")) {
+    for (let i = pick.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pick[i], pick[j]] = [pick[j], pick[i]];
+    }
+    pick = pick.slice(0, 4).sort((a, b) => a - b);
+  }
+  document.getElementById("qs").innerHTML = pick.map(i =>
+    `<li><span class="num">Q${i + 1}</span><div class="qtext">${Q[i][1]}</div></li>`
+  ).join("");
+}
+draw();
+</script>
+
+</body></html>
